@@ -45,7 +45,17 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'sphinx_material'
+html_theme_options = {
+    'repo_url': 'https://github.com/ASFHyP3',
+    'repo_name': 'ASF HyP3',
+    'nav_title': 'HyP3',
+    'color_primary': 'blue',
+    'color_accent': 'cyan',
+    'heroes': {
+        'index': "The Alaska Satellite Facility's Hybrid Pluggable Processing Pipeline",
+    }
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

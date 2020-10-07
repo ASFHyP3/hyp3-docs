@@ -21,3 +21,7 @@ help:
 
 livehtml:
 	sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+.PHONY: clean
+clean:
+	rm -rf $(BUILDDIR)/*

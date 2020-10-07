@@ -46,8 +46,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'sphinx_material'
-html_logo = '_static/imgs/HyP3-graphic-only.png'
-html_favicon = '_static/imgs/favicon.ico'
+html_logo = '_static/images/HyP3-graphic-only.png'
+html_favicon = '_static/images/favicon.ico'
 html_theme_options = {
     'repo_url': 'https://github.com/ASFHyP3',
     'repo_name': 'ASF HyP3',

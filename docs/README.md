@@ -23,5 +23,5 @@ which will allow you to view the documentation at http://127.0.0.1:8000/. This
 make target will automatically watch for new/changed files in this directory and
 rebuild the website so you can see your changes live (just refresh the webpage!).
 
-*Note: Because this captures your terminal (`crtl+c` to exit), it's reccomended you
+*Note: Because this captures your terminal (`crtl+c` to exit), it's recommended you
 run this in its own terminal.*

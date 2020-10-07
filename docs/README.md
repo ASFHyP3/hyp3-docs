@@ -1,7 +1,8 @@
 # HyP3 documentation
 
-HyP3 documentation is build using [sphinx](https://www.sphinx-doc.org/en/master/) 
-and the [MyST markdown parser](https://myst-parser.readthedocs.io/en/latest/index.html). 
+HyP3 documentation is build using [sphinx](https://www.sphinx-doc.org/en/master/), 
+the [MyST markdown parser](https://myst-parser.readthedocs.io/en/latest/index.html)
+and the [Material theme](https://bashtage.github.io/sphinx-material/index.html). 
 
 ## How to
 
@@ -22,6 +23,5 @@ which will allow you to view the documentation at http://127.0.0.1:8000/. This
 make target will automatically watch for new/changed files in this directory and
 rebuild the website so you can see your changes live (just refresh the webpage!).
 
-*Note: Becuase this captures your terminal (`crtl+c` to exit), it's reccomended you
+*Note: Because this captures your terminal (`crtl+c` to exit), it's reccomended you
 run this in its own terminal.*
-

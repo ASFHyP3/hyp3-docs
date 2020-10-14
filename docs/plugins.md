@@ -1,5 +1,5 @@
 # Plugins
-Plugins are the science backbone of HyP3, they do all of the data processing and product generation.
+Plugins are the science backbone of HyP3; they do all of the data processing and product generation.
 Plugins can be added to HyP3 to generate new science products, or support different
 tools/software/algorithms/options/etc that are not currently supported by HyP3.
 
@@ -23,7 +23,7 @@ the product generation and users. When designing the interface, you may find it 
 * what options do I want to provide to users?
 * what's the *minimal* set information I need to gather from users?
   * is this information easily input by users?
-  * is this information serializable? For example, can the information be written in a json file?
+  * is this information serializable? For example, can the information be written in a JSON file?
   * could I define this information more simply?
 
 Once a MWE is developed and an interface is defined, you can use our 

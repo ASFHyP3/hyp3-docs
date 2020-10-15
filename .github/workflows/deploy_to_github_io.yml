@@ -14,7 +14,7 @@ jobs:
         with:
           path: ASFHyP3
       - uses: actions/checkout@v2
-      - with:
+        with:
           name: ASFHyP3/ASFHyP3.github.io
           path: ASFHyP3.github.io
           token: ${{ secrets.TOOLS_BOT_PAK }}

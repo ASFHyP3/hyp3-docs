@@ -18,8 +18,12 @@ jobs:
           name: ASFHyP3/ASFHyP3.github.io
           path: ASFHyP3.github.io
           token: ${{ secrets.TOOLS_BOT_PAK }}
-      - name: create conda env
-        run: "$CONDA/bin/conda env create -f conda-env.yml"
+      - uses: goanpeca/setup-miniconda@v1
+        with:
+          auto-update-conda: true
+          python-version: 3.8
+          activate-environment: ASFHyP3
+          environment-file: conda-env.yml
       - name: deploy to github.io
         run: |
           cd ASFHyP3.github.io

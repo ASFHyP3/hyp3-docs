@@ -1,0 +1,27 @@
+name: Deploy to Github.io
+
+on:
+  push:
+    branches:
+      -master
+
+jobs:
+  build_and_deploy:
+    name: Build site and deploy
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: ASFHyP3
+      - uses actions/checkout@v2
+      - with:
+          name: ASFHyP3/ASFHyP3.github.io
+          path: ASFHyP3.github.io
+          token: ${{ secrets.TOOLS_BOT_PAK }}
+      - name: create conda env
+        run: "$CONDA/bin/conda env create -f conda-env.yml"
+      - name: deploy to github.io
+        run: |
+          cd ASFHyP3.github.io
+          mkdocs gh-deploy --config-file PATH/TO/ASFHyP3/mkdocs.yml --remote-branch main
+

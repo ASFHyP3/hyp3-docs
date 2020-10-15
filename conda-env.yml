@@ -12,4 +12,4 @@ dependencies:
   - mkdocs-material-extensions
   - pip:
       - sphinx-material
-      - mkdocs-gitsnippet-plugin
+      - git+https://github.com/Jlrine2/mkdocs-gitsnippet-plugin.git

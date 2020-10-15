@@ -24,9 +24,9 @@ the product generation and users. When designing the interface, you may find it 
 
 * what options do I want to provide to users?
 * what's the *minimal* set information I need to gather from users?
-  * is this information easily input by users?
-  * is this information serializable? For example, can the information be written in a JSON file?
-  * could I define this information more simply?
+    * is this information easily input by users?
+    * is this information serializable? For example, can the information be written in a JSON file?
+    * could I define this information more simply?
 
 Once a MWE is developed and an interface is defined, you can use our 
 [HyP3 plugin cookiecuter](https://github.com/ASFHyP3/hyp3-cookiecutter)
@@ -37,17 +37,18 @@ In order to be supported by HyP3, a plugin must meet a few requirements:
 
 * the plugin must be a Docker image that is hosted in a repository where HyP3 will be able to pull it
 * he plugin's entrypoint must minimally accept the following arguments
-  * `--bucket BUCKET-NAME` where `BUCKET-NAME` is the name of an AWS S3 bucket that output products will be uploaded to
-  * `--bucket-prefix BUCKET-PREFIX` where `BUCKET-PREFIX` is a string appended to the key of any file uploaded to AWS S3
+    * `--bucket BUCKET-NAME` where `BUCKET-NAME` is the name of an AWS S3 bucket that output products will be uploaded to
+    * `--bucket-prefix BUCKET-PREFIX` where `BUCKET-PREFIX` is a string appended to the key of any file uploaded to AWS S3
     (this is effectively a subfolder in AWS S3)
-  * `--username USER` where `USER` is the username used to authenticate to EarthData Login
-  * `--password PASSWORD` where `PASSWORD` is the password used to authenticate to EarthData Login
+    * `--username USER` where `USER` is the username used to authenticate to EarthData Login
+    * `--password PASSWORD` where `PASSWORD` is the password used to authenticate to EarthData Login
 * any necessary user input should be able to be provided through entrypoint arguments
 * when uploading files to the S3 Bucket
-  * products files must be tagged with `filetype: product`
-  * if you wish to upload thumbnails or browse images, they must be tagged `filetype: thumbnail` or `filetype: browse`
-    respectively
-  (Note: the `aws` subpackage of `hyp3lib` provides helper functions for tagging and uploading files)
+    * products files must be tagged with `filetype: product`
+    * if you wish to upload thumbnails or browse images, they must be tagged `filetype: thumbnail` or `filetype: browse`
+      respectively
+    
+    *Note: the `aws` subpackage of `hyp3lib` provides helper functions for tagging and uploading files*
 
 ### Add the plugin to HyP3
 Once the plugin itself is created, it can be added to the HyP3 system by... TBD.

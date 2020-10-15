@@ -1,0 +1,31 @@
+name: Deploy to Github.io
+
+on:
+  push:
+    branches:
+      -master
+
+jobs:
+  build_and_deploy:
+    name: Build site and deploy
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: ASFHyP3
+      - uses: actions/checkout@v2
+        with:
+          name: ASFHyP3/ASFHyP3.github.io
+          path: ASFHyP3.github.io
+          token: ${{ secrets.TOOLS_BOT_PAK }}
+      - uses: goanpeca/setup-miniconda@v1
+        with:
+          auto-update-conda: true
+          python-version: 3.8
+          activate-environment: ASFHyP3
+          environment-file: conda-env.yml
+      - name: deploy to github.io
+        run: |
+          cd $GITHUB_WORKSPACE/ASFHyP3.github.io
+          mkdocs gh-deploy --config-file $GITHUB_WORKSPACE/ASFHyP3/mkdocs.yml --remote-branch main
+

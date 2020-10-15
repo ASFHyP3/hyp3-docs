@@ -7,5 +7,9 @@ dependencies:
   - sphinx
   - myst-parser
   - sphinx-autobuild
+  - mkdocs
+  - mkdocs-material
+  - mkdocs-material-extensions
   - pip:
       - sphinx-material
+      - git+https://github.com/Jlrine2/mkdocs-gitsnippet-plugin.git

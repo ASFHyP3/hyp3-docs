@@ -49,3 +49,6 @@ nav:
       - HyP3 GAMMA: plugins/gamma.md
       - HyP3 autoRIFT: plugins/autoRIFT.md
   - Contributing: contributing.md
+
+plugins:
+  - gitsnippet

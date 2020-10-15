@@ -31,18 +31,18 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  # - News: news.md
+  - Getting started: getting_started.md
+  - Using HyP3:
+      - Vertex: vertex.md
+      - SDK: sdk.md
+      - API: api.md
   - Products:
       - Overview: products.md
-      - Usage: usage.md
       - Product guides:
           - RTC Users Guide: guides/rtc_user.md
           - RTC ATBD: guides/rtc_atbd.md
-  - Tutoials:
-      - Overview: tutorials.md
-  - Software:
-      - Overview: software.md
-      - HyP3: hyp3.md
-      - SDK: sdk.md
+  - Other tools:
       - hyp3lib: hyp3lib.md
       - GIS Tools: gis_tools.md
   - Plugins:

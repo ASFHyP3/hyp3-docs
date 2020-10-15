@@ -2,7 +2,7 @@ site_name: HyP3
 site_url: https://ASFHyP3.github.io/
 site_author: ASF APD/Tools Team
 site_description: The Alaska Satellite Facility's Hybrid Pluggable Processing Pipeline
-copyright: © <script>document.write(new Date().getFullYear())</script> Alaska Satellite Facility
+copyright: © 2020 Alaska Satellite Facility
 google_analytics: ['UA-991100-5', 'search.asf.alaska.edu']
 
 theme:

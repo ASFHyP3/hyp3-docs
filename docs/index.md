@@ -29,8 +29,6 @@ Plugins are the workhorses of HyP3. They marshal the input data through complica
 SAR processing code to generate an output product. Plugins are container-based and 
 can also be used independently. 
 
-# Contributing
-
 # Contact Us
 Want to talk about HyP3? We would love to hear from you!
 

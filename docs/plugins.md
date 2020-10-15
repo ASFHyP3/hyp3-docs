@@ -6,6 +6,7 @@ tools/software/algorithms/options/etc that are not currently supported by HyP3.
 ## How plugins work
 At their most basic level, HyP3 plugins are Docker containers with an interface (entrypoint) HyP3 understands.
 Plugins handle the entire processing workflow for a single product, including:
+
 * Marshaling the required input data
 * performing any needed transformations and computations on the data
 * creating the final product
@@ -20,6 +21,7 @@ include all the necessary data to generate the product.
 
 Once a MWE is developed, it's important to define your plugin's interface  -- this is where HyP3 connects
 the product generation and users. When designing the interface, you may find it helpful to ask yourself:
+
 * what options do I want to provide to users?
 * what's the *minimal* set information I need to gather from users?
   * is this information easily input by users?
@@ -32,6 +34,7 @@ to help you build a plugin that conforms to the plugin requirements.
 
 ### Plugin requirements
 In order to be supported by HyP3, a plugin must meet a few requirements:
+
 * the plugin must be a Docker image that is hosted in a repository where HyP3 will be able to pull it
 * he plugin's entrypoint must minimally accept the following arguments
   * `--bucket BUCKET-NAME` where `BUCKET-NAME` is the name of an AWS S3 bucket that output products will be uploaded to

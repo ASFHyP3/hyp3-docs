@@ -1,22 +1,21 @@
 # HyP3 documentation
 
-HyP3 documentation is build using [sphinx](https://www.sphinx-doc.org/en/master/), 
-the [MyST markdown parser](https://myst-parser.readthedocs.io/en/latest/index.html)
-and the [Material theme](https://bashtage.github.io/sphinx-material/index.html). 
+HyP3 documentation is build using [MkDocs](https://www.mkdocs.org/) and the
+[Material theme](https://squidfunk.github.io/mkdocs-material/). 
 
 ## How to
 
-From repository root, you can setup a conda environment with all the
+From the repository root, you can setup a conda environment with all the 
 necessary dependencies
 
 ```
 conda env create -f conda-env.yml
 ```
 
-then, to build and view the documentation locally, navigate to this (`sphinx_docs`) directory, and run
+then, to build and view the documentation locally
 
 ```
-make livehtml
+mkdocs serve
 ```
 
 which will allow you to view the documentation at http://127.0.0.1:8000/. This

@@ -26,6 +26,6 @@ jobs:
           environment-file: conda-env.yml
       - name: deploy to github.io
         run: |
-          cd ASFHyP3.github.io
-          mkdocs gh-deploy --config-file PATH/TO/ASFHyP3/mkdocs.yml --remote-branch main
+          cd $GITHUB_WORKSPACE/ASFHyP3.github.io
+          mkdocs gh-deploy --config-file $GITHUB_WORKSPACE/ASFHyP3/mkdocs.yml --remote-branch main
 

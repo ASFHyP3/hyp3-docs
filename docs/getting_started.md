@@ -8,7 +8,7 @@ check out [HyP3 in Vertex](using/vertex.md).
 ## Using the Python SDK
 The HyP3 SDK is a Python library intended for people who want to use HyP3 programmatically.
 It is available in [PyPI](https://pypi.org/project/hyp3-sdk/) and can be installed with `pip install hyp3-sdk`.
-Check out [Using the HyP3 SDK](using/skd.md) for more information.
+Check out [Using the HyP3 SDK](using/sdk.md) for more information.
 
 !!! Warning
 

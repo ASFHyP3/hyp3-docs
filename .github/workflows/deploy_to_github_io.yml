@@ -23,7 +23,7 @@ jobs:
           auto-update-conda: true
           python-version: 3.8
           activate-environment: ASFHyP3
-          environment-file: /$GITHUB_WORKSPACE/ASFHyP3/conda-env.yml
+          environment-file: /{{ $GITHUB_WORKSPACE }}/ASFHyP3/conda-env.yml
       - name: deploy to github.io
         run: |
           cd /$GITHUB_WORKSPACE/ASFHyP3.github.io

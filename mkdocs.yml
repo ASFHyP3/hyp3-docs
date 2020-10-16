@@ -29,6 +29,8 @@ markdown_extensions:
       permalink: true
       toc_depth: 3
   - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
 
 nav:
   - Home: index.md

@@ -1,4 +1,4 @@
-# ASF Sentinel-1 RTC Product Guide
+# Sentinel-1 RTC Product Guide
 
 This document is a guide for users of radiometrically terrain-corrected Sentinel-1 products processed by the Alaska Satellite Facility.
 

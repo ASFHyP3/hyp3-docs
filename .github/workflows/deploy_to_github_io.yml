@@ -13,20 +13,23 @@ jobs:
       - uses: actions/checkout@v2
         with:
           path: ASFHyP3
+
       - uses: goanpeca/setup-miniconda@v1
         with:
           auto-update-conda: true
           python-version: 3.8
           activate-environment: ASFHyP3
           environment-file: ASFHyP3/conda-env.yml
+
       - uses: actions/checkout@v2
         with:
           name: ASFHyP3/ASFHyP3.github.io
           path: ASFHyP3.github.io
           token: ${{ secrets.TOOLS_BOT_PAK }}
+
       - name: deploy to github.io
+        shell: bash -l {0}
         run: |
-          shell: bash -l {0}
-          cd /$GITHUB_WORKSPACE/ASFHyP3.github.io
-          mkdocs gh-deploy --config-file /$GITHUB_WORKSPACE/ASFHyP3/mkdocs.yml --remote-branch main
+          cd ASFHyP3.github.io
+          mkdocs gh-deploy --config-file ../ASFHyP3/mkdocs.yml --remote-branch main
 

@@ -28,22 +28,23 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 3
+  - admonition
 
 nav:
   - Home: index.md
   - Getting started: getting_started.md
   - Using HyP3:
-      - Vertex: vertex.md
-      - SDK: sdk.md
-      - API: api.md
+      - Vertex: using/vertex.md
+      - SDK: using/sdk.md
+      - API: using/api.md
   - Products:
       - Overview: products.md
       - Product guides:
           - RTC Users Guide: guides/rtc_user.md
           - RTC ATBD: guides/rtc_atbd.md
   - Other tools:
-      - GIS Tools: gis_tools.md
-      - hyp3lib: hyp3lib.md
+      - ArcGIS Toolbox: tools/arcgis_toolbox.md
+      - hyp3lib: tools/hyp3lib.md
   - Plugins:
       - Overview: plugins.md
       - HyP3 GAMMA: plugins/gamma.md

@@ -13,17 +13,17 @@ jobs:
       - uses: actions/checkout@v2
         with:
           path: ASFHyP3
-      - uses: actions/checkout@v2
-        with:
-          name: ASFHyP3/ASFHyP3.github.io
-          path: ASFHyP3.github.io
-          token: ${{ secrets.TOOLS_BOT_PAK }}
       - uses: goanpeca/setup-miniconda@v1
         with:
           auto-update-conda: true
           python-version: 3.8
           activate-environment: ASFHyP3
-          environment-file: /${{ github.workspace }}/ASFHyP3/conda-env.yml
+          environment-file: ASFHyP3/conda-env.yml
+      - uses: actions/checkout@v2
+        with:
+          name: ASFHyP3/ASFHyP3.github.io
+          path: ASFHyP3.github.io
+          token: ${{ secrets.TOOLS_BOT_PAK }}
       - name: deploy to github.io
         run: |
           shell: bash -l {0}

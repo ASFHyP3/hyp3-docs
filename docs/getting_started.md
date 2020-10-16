@@ -17,5 +17,5 @@ The HyP3 SDK is a Python library for using HyP3 programmatically. It is availabl
 
 ## Using the API
 
-The HyP3 web API is the backbone behind Vertex and the SDK. The API can also be invoked directly. Visit
+The HyP3 web API is the backbone behind Vertex and the SDK. You may also use the API directly. Visit
 [Using HyP3: API](using/api.md) to learn more.

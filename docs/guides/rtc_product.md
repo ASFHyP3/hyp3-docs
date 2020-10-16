@@ -20,7 +20,7 @@ The quality of the terrain correction results is directly related to the quality
 
 Figure 1 shows the coverage of the various DEM sources. The continental U.S. (CONUS), Hawaii, and parts of Alaska are covered by the National Elevation Dataset (NED) at ⅓ arc seconds (about 10 m resolution). The rest of Alaska above 60 degrees northern latitude is only available at about 60 m resolution with 2 arc seconds NED data. The best resolution for Canada and Mexico is provided by the 1 arc second NED at about 30 m. For the remaining globe, Shuttle Radar Topography Mission (SRTM) GL1 data at 30 m resolution is used. Greenland and Antarctica are mostly covered by ice and glaciers and not suitable for terrain correction. For areas in Eurasia above 60 degrees northern latitude, no suitable DEMs are available.
 
-![alt_text](images/image1.png "image_tooltip")
+![TODO](images/image1.png "image_tooltip")
 
 *Figure 1: Coverage of the various DEM sources used for terrain correction*
 
@@ -166,7 +166,7 @@ In some cases, it may be desirable to convert the actual pixel values to a diffe
 
 ### Amplitude Scale
 
-Amplitude scale is the square root of the power scale values. This brightens the darker pixels and darkens the brighter pixels, narrowing the dynamic range of the image. In many cases, amplitude scale presents a pleasing grayscale display of RTC images. Amplitude scale works well for calculating log difference ratios (see [Quantifying Change over Time](#Quantifying Change over Time)).
+Amplitude scale is the square root of the power scale values. This brightens the darker pixels and darkens the brighter pixels, narrowing the dynamic range of the image. In many cases, amplitude scale presents a pleasing grayscale display of RTC images. Amplitude scale works well for calculating log difference ratios (see [Quantifying Change over Time](#quantifying-change-over-time)).
 
 ### dB Scale
 
@@ -196,9 +196,7 @@ To generate this type of image, choose three images that capture different seaso
 
 Combine the three images into a multiband raster and assign each to a different color band. The resulting RGB image highlights areas where there are distinctive differences among the three source image values.
 
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>> gd2md-html alert: inline image link here (to images/image2.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-![alt_text](images/image2.jpg "image_tooltip")
+![TODO](images/image2.jpg "image_tooltip")
 
 *Figure 2: Monthly median VH gamma-0 power values for May, July and September, displayed as a multiband RGB (May, July, Sept) image.*
 
@@ -208,9 +206,7 @@ A simple and informative approach to change detection is the calculation of the 
 
 In the example below (Figure 3), RTC images from before and after heavy rains caused a dam breach. The area where the reservoir was located displays a significant increase in backscatter (symbolized in red), where land once covered by standing water (which generally has very low backscatter) is now exposed and saturated with moisture (which generally returns very high backscatter values). In other surrounding areas, flooding caused decreases in radar backscatter (symbolized by blue) as agricultural fields were inundated with standing water. Areas with little change in backscatter are displayed in yellow.
 
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>> gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-![alt_text](images/image3.png "image_tooltip")
+![TODO](images/image3.png "image_tooltip")
 
 *Figure 3: Log Difference Raster with Classified Symbology*
 
@@ -220,13 +216,13 @@ Calm surface water has a very low radar cross section. Most of the signal is ref
 
 You can easily visualize the water extent using various thresholds by applying a classified symbology with two classes. It is often best to use dB scale datasets for identifying surface water. In many cases, there will be a bimodal distribution of values in an RTC image containing surface water, with the first peak comprised mostly of water values, and the second peak containing all the remaining values. A good first step is to select a break point between those two peaks, then adjust the value as needed to generate a good water mask (Figure 4).
 
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>> gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-![alt_text](images/image4.png "image_tooltip")
+![TODO](images/image4.png "image_tooltip")
 
 *Figure 4: Setting the break point to fall between the two peaks of the histogram*
 
 Once you have determined the appropriate threshold (Figure 5), you can reclassify the RTC image to include only those pixels that fall below the threshold value, providing a water mask that can be used for analysis or to overlay with other imagery to show the water extent.
+
+![TODO](images/image5.jpg "image_tooltip")
 
 *Figure 5: Water Mask*
 
@@ -234,54 +230,19 @@ Once you have determined the appropriate threshold (Figure 5), you can reclassif
 
 One of the main advantages of using RTC imagery with its all weather and day/night capabilities is the combination with other remote sensing data such as optical data. In the example below, the backscatter information of the Sentinel-1 SAR image (Figure 5) is used to enhance the spectral information of the optical Landsat 8 image (Figure 6) in the urban area of Pavia, Italy. Figure 7 shows the image fusion result of an IHS transformation. In this transformation the color channels red, green and blue (RGB) are first converted into a different color representation: intensity, hue and saturation (IHS). In the second step the optical intensity is replaced by the SAR image, before IHS is transformed back to RGB.
 
+![TODO](images/image5.jpg "image_tooltip")
 
-<table>
- <tr>
- <td>
+*Figure 5: Sentinel-1 RTC image*
 
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>> gd2md-html alert: inline image link here (to images/image5.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+![TODO](images/image6.jpg "image_tooltip")
 
+*Figure 6: False color composite (bands 5, 4, 3) of a Landsat 8 image*
 
-<img src="images/image5.jpg" width="" alt="alt_text" title="image_tooltip">
+The color values for the two rivers in the SAR image are far more similar to each other than in the optical image. The vegetated areas (highlighted in red) show up more uniformly in the data fusion result than in the optical false color composite image. Image fusion uses the complementary nature of the different sources to generate an enhanced product.
 
- </td>
- <td>
+![TODO](images/image7.jpg "image_tooltip")
 
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>> gd2md-html alert: inline image link here (to images/image6.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-<img src="images/image6.jpg" width="" alt="alt_text" title="image_tooltip">
-
- </td>
- </tr>
- <tr>
- <td>
-<strong>Figure 5: Sentinel-1 RTC image</strong>
- </td>
- <td>
-<strong>Figure 6: False color composite (bands 5, 4, 3) of a Landsat 8 image</strong>
- </td>
- </tr>
- <tr>
- <td>
-
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>> gd2md-html alert: inline image link here (to images/image7.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-<img src="images/image7.jpg" width="" alt="alt_text" title="image_tooltip">
-
- </td>
- <td>The color values for the two rivers in the SAR image are far more similar to each other than in the optical image. The vegetated areas (highlighted in red) show up more uniformly in the data fusion result than in the optical false color composite image. Image fusion uses the complementary nature of the different sources to generate an enhanced product.
- </td>
- </tr>
- <tr>
- <td>
-<strong>Figure 7: Image fusion result of SAR and optical imagery</strong>
- </td>
- <td>
- </td>
- /tr>
-</table>
+*Figure 7: Image fusion result of SAR and optical imagery*
 
 ## ArcGIS Toolbox
 

@@ -4,6 +4,7 @@ channels:
   - defaults
 dependencies:
   - python=3.8
+  - pip
   - sphinx
   - myst-parser
   - sphinx-autobuild

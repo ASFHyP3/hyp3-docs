@@ -41,6 +41,7 @@ nav:
       - API: using/api.md
   - Products:
       - Overview: products.md
+      - Digital Elevation Models: dems.md
       - Product guides:
           - RTC Users Guide: guides/rtc_user.md
           - RTC ATBD: guides/rtc_atbd.md

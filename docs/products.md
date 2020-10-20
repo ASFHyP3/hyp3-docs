@@ -13,8 +13,8 @@ spacing of 30 meters. To learn more, visit the
 [ASF Sentinel-1 RTC Product Guide](guides/rtc_user.md).
 
 A Digital Elevation Model (DEM) is required for processing InSAR, and ASF uses the
-best publicly-available DEM with full coverage of the processing area,
-see [Digital Elevation Model](dems.md) for more information.
+best publicly-available DEM with full coverage of the processing area. To learn more,
+visit [Digital Elevation Model](dems.md).
 
 ## InSAR (SDK + API only)
 
@@ -31,18 +31,21 @@ because plants can grow or move from one acquisition to the next. Use caution wh
 generating interferograms for areas with extensive/dense vegetation cover.
 
 A Digital Elevation Model (DEM) is required for processing InSAR, and ASF uses the
-best publicly-available DEM with full coverage of the processing area,
-see [Digital Elevation Model](dems.md) for more information.
+best publicly-available DEM with full coverage of the processing area. To learn more,
+visit [Digital Elevation Model](dems.md).
 
 
 ## autoRIFT (SDK + API only)
 
-
-
+[AutoRIFT](https://github.com/leiyangleon/autoRIFT), developed as part of the 
+[NASA MEaSUREs ITS_LIVE](https://its-live.jpl.nasa.gov/) project, uses a feature
+tracking algorithm to determine sub-pixel displacements between two scenes and
+produces a velocity map from the observed motion. To lean more, visit the ITS_LIVE
+project website.
 
 A Digital Elevation Model (DEM) is required for autoRIFT processing, and ASF uses the
-best publicly-available DEM with full coverage of the processing area,
-see [Digital Elevation Model](dems.md) for more information.
+best publicly-available DEM with full coverage of the processing area. To learn more,
+visit [Digital Elevation Model](dems.md).
 
 ## Product usage guidelines
 

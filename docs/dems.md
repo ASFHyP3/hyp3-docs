@@ -2,7 +2,7 @@
 
 ASF uses publicly-available Digital Elevation Models for processing SAR data.
 The DEM used will vary by scene location; the best available DEM with full
-coverage of the granule extent will be used for processing any given granule.
+coverage of the scene extent will be used for processing any given scene.
 
 ## DEM Coverage
 
@@ -50,4 +50,4 @@ ASF is currently working to make these DEMs available:
 
 AutoRIFT, a process developed by the [NASA MEaSUREs ITS_LIVE](https://its-live.jpl.nasa.gov/)
 project, processes use a custom Greenland and Antarctica DEM with a 240 m resolution. The DEM,
-associated process input files, and their details are available on the project website. 
+associated process input files, and their details are available on the ITS_LIVE project website. 

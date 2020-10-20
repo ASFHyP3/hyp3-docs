@@ -30,6 +30,8 @@ markdown_extensions:
       permalink: true
       toc_depth: 3
   - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
 
 nav:
   - Home: index.md
@@ -40,16 +42,17 @@ nav:
       - API: using/api.md
   - Products:
       - Overview: products.md
+      - Digital Elevation Models: dems.md
       - Product guides:
           - RTC Users Guide: guides/rtc_user.md
           - RTC ATBD: guides/rtc_atbd.md
   - Other tools:
       - ArcGIS Toolbox: tools/arcgis_toolbox.md
-      - hyp3lib: tools/hyp3lib.md
+      # - hyp3lib: tools/hyp3lib.md
   - Plugins:
       - Overview: plugins.md
-      - HyP3 GAMMA: plugins/gamma.md
-      - HyP3 autoRIFT: plugins/autoRIFT.md
+      # - HyP3 GAMMA: plugins/gamma.md
+      # - HyP3 autoRIFT: plugins/autoRIFT.md
   - Contributing: contributing.md
   - Code of Conduct: CODE_OF_CONDUCT.md
 

@@ -1,6 +1,6 @@
 # HyP3 documentation
 
-HyP3 documentation is build using [sphinx](https://www.sphinx-doc.org/en/master/), 
+HyP3 documentation is built using [sphinx](https://www.sphinx-doc.org/en/master/), 
 the [MyST markdown parser](https://myst-parser.readthedocs.io/en/latest/index.html)
 and the [Material theme](https://bashtage.github.io/sphinx-material/index.html). 
 

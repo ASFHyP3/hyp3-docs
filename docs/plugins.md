@@ -36,7 +36,7 @@ to help you build a plugin that conforms to the plugin requirements.
 In order to be supported by HyP3, a plugin must meet a few requirements:
 
 * the plugin must be a Docker image that is hosted in a repository where HyP3 will be able to pull it
-* he plugin's entrypoint must minimally accept the following arguments
+* the plugin's entrypoint must minimally accept the following arguments
     * `--bucket BUCKET-NAME` where `BUCKET-NAME` is the name of an AWS S3 bucket that output products will be uploaded to
     * `--bucket-prefix BUCKET-PREFIX` where `BUCKET-PREFIX` is a string appended to the key of any file uploaded to AWS S3
     (this is effectively a subfolder in AWS S3)

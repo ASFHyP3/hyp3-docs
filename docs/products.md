@@ -23,12 +23,11 @@ same area to identify regions where the distance between the sensor and the Eart
 surface has changed. This allows for the detection and quantification of deformation
 or movement.
 
-Note that the imaging surface will vary depending on the sensor wavelength. Because
-Sentinel-1 is a C-band sensor, the waves will not penetrate very deeply into vegetation.
-The imagery likely represents the top of the canopy in densely vegetated areas rather
-than the actual terrain. In addition, vegetated areas tend to have low coherence,
-because plants can grow or move from one acquisition to the next. Use caution when
-generating interferograms for areas with extensive/dense vegetation cover.
+Use caution when generating interferograms for areas with extensive/dense vegetation cover.
+Because Sentinel-1 is a C-band sensor, the waves will not penetrate very deeply into vegetation.
+Imagery of densely vegetated areas likely represents the top of the canopy rather than the
+actual terrain. In addition, vegetated areas tend to have low coherence, because plants can grow
+or move from one acquisition to the next.
 
 A Digital Elevation Model (DEM) is required for processing InSAR, and ASF uses the
 best publicly-available DEM with full coverage of the processing area. To learn more,

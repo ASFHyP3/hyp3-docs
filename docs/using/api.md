@@ -5,7 +5,6 @@ interface for exploring the API is available at:
 
 #### <https://hyp3-api.asf.alaska.edu/ui/>
 
-
 !!! warning "Authentication Required"
 
     If you get a 401 response back you need to [sign in to Vertex](https://search.asf.alaska.edu/#/) to get the `asf-urs` session cookie.

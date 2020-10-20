@@ -33,7 +33,6 @@ A Digital Elevation Model (DEM) is required for processing InSAR. ASF uses the
 best publicly-available DEM with full coverage of the processing area. To learn more,
 visit [Digital Elevation Models](dems.md).
 
-
 ## autoRIFT (SDK + API only)
 
 [AutoRIFT](https://github.com/leiyangleon/autoRIFT) produces a velocity map from

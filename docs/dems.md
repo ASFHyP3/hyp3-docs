@@ -8,7 +8,6 @@ coverage of the scene extent will be used for processing any given scene.
 
 ![DEM coverage map](images/dem-coverage-map.png "Coverage of the various DEM sources used for terrain correction")
 
-
 The source DEMs include:
 
 | Resolution | DEM | Datum | Area | Posting | Sampling |

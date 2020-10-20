@@ -22,7 +22,7 @@ To request RTC products, visit [ASF Data Search - Vertex](https://search.asf.ala
 
 ASF would love to hear from you! Let us know what you liked, didn't like, or what we can do better.
 
-* For data search and general feedback, [open a support ticket](https://fbm.earthdata.nasa.gov/tickets/new?app_name=ASF&token=%242a%2412%24t0ZIDodY843bRbaRWUZ2QuCHt3JYlCRsfEhh6RY9DMCSjEAl0S96e) or [email ASF User Services](mailto:uso@asf.alaska.edu).
+* For data search and general feedback [email ASF User Services](mailto:uso@asf.alaska.edu).
 
 * For RTC product and custom processing feedback, [chat with us on gitter](https://gitter.im/ASFHyP3/community) or [open an issue](https://github.com/ASFHyP3/ASFHyP3/issues/new).
 

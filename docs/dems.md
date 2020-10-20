@@ -48,6 +48,6 @@ ASF is currently working to make these DEMs available:
 
 ## Special Use DEMs
 
-AutoRIFT, a process developed by the [NASA MEaSUREs ITS_LIVE](https://its-live.jpl.nasa.gov/)
+[AutoRIFT](products.md#autorift-sdk-api-only), a process developed by the [NASA MEaSUREs ITS_LIVE](https://its-live.jpl.nasa.gov/)
 project, processes use a custom Greenland and Antarctica DEM with a 240 m resolution. The DEM,
 associated process input files, and their details are available on the ITS_LIVE project website. 

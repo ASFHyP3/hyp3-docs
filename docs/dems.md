@@ -43,7 +43,7 @@ ASF is currently working to make these DEMs available:
 - the Copernicus Land Monitoring Service EU-DEM (EUDEM)
 - the Greenland Ice sheet Mapping Project DEM (GIMP)
 - and the Reference Elevation Model of Antarctica DSM (REMA)
-- Interferometric Synthetic Aperture Rada (IFSAR) Digital Surface Model (DSM) 
+- Interferometric Synthetic Aperture Radar (IFSAR) Digital Surface Model (DSM) 
   and Digital Terrain Model (DTM) data for Alaska -->
 
 ## Special Use DEMs

@@ -4,7 +4,6 @@ site_author: ASF APD/Tools Team
 site_description: The Alaska Satellite Facility's Hybrid Pluggable Processing Pipeline
 copyright: © 2020 Alaska Satellite Facility
 google_analytics: ['UA-991100-5', 'search.asf.alaska.edu']
-edit_uri: ''
 
 theme:
   name: "material"
@@ -17,6 +16,7 @@ theme:
 
 repo_url: https://github.com/ASFHyP3
 repo_name: ASF HyP3
+edit_uri: ''
 
 extra:
   social:

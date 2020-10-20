@@ -48,11 +48,11 @@ nav:
           - RTC ATBD: guides/rtc_atbd.md
   - Other tools:
       - ArcGIS Toolbox: tools/arcgis_toolbox.md
-      - hyp3lib: tools/hyp3lib.md
+      # - hyp3lib: tools/hyp3lib.md
   - Plugins:
       - Overview: plugins.md
-      - HyP3 GAMMA: plugins/gamma.md
-      - HyP3 autoRIFT: plugins/autoRIFT.md
+      # - HyP3 GAMMA: plugins/gamma.md
+      # - HyP3 autoRIFT: plugins/autoRIFT.md
   - Contributing: contributing.md
   - Code of Conduct: CODE_OF_CONDUCT.md
 

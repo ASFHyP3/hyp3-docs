@@ -44,7 +44,7 @@ nav:
       - Overview: products.md
       - Digital Elevation Models: dems.md
       - Product guides:
-          - RTC Users Guide: guides/rtc_user.md
+          - RTC Product Guide: guides/rtc_product_guide.md
           - RTC ATBD: guides/rtc_atbd.md
   - Other tools:
       - ArcGIS Toolbox: tools/arcgis_toolbox.md

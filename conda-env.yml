@@ -1,16 +1,21 @@
 name: ASFHyP3
 channels:
   - conda-forge
-  - defaults
+  - nodefaults
 dependencies:
   - python=3.8
   - pip
-  - sphinx
-  - myst-parser
-  - sphinx-autobuild
+  # For SDK
+  - importlib_metadata
+  - requests
+  - setuptools
+  - setuptools_scm
+  - wheel
+  # For documentation
   - mkdocs
   - mkdocs-material
   - mkdocs-material-extensions
   - pip:
-      - sphinx-material
+      # For documentation
+      - mkdocstrings
       - git+https://github.com/Jlrine2/mkdocs-gitsnippet-plugin.git

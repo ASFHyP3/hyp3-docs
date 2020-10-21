@@ -10,7 +10,7 @@ RTC processing is a required first step for many amplitude-based SAR application
 Sentinel-1 RTC products are generated leveraging GAMMA Software.  Products are 
 distributed as UTM-projected GeoTIFFs with a pixel spacing of 30 meters. To learn
 more, visit the
-[ASF Sentinel-1 RTC Product Guide](guides/rtc_user.md).
+[ASF Sentinel-1 RTC Product Guide](guides/rtc_product_guide.md).
 
 A Digital Elevation Model (DEM) is required for processing RTC. ASF uses the
 best publicly-available DEM with full coverage of the processing area. To learn more,

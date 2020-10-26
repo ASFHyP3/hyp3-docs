@@ -58,3 +58,7 @@ nav:
 
 plugins:
   - gitsnippet
+  - mkdocstrings:
+      handlers:
+          python:
+            inherited_members: True

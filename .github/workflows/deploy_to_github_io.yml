@@ -4,11 +4,13 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build_and_deploy:
     name: Build site and deploy
     runs-on: "ubuntu-latest"
+    if: github.ref == 'refs/heads/main'  # workflow_dispatch can target any branch
     steps:
       - uses: actions/checkout@v2
         with:
@@ -32,4 +34,3 @@ jobs:
         run: |
           cd ASFHyP3.github.io
           mkdocs gh-deploy --config-file ../ASFHyP3/mkdocs.yml --remote-branch main
-

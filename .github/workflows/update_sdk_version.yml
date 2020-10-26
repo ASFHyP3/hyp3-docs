@@ -1,0 +1,41 @@
+name: Update HyP3 SDK version
+
+on:
+  workflow_dispatch:
+    inputs:
+      sdk_version:
+        desription: 'The new version of the SDK'
+        required: true
+
+jobs:
+  bump_sdk_version:
+    name: Bump the SDK Version
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.TOOLS_BOT_PAK }}
+
+      - name: create patch branch
+        id: patch
+        run: |
+          export PATCH_BRANCH="bumb-sdk-${{ github.event.inputs.sdk_version }}"
+          echo "::set-output name=branch::${PATCH_BRANCH}"
+          git checkout -b ${PATCH_BRANCH}
+          grep -lr "hyp3-sdk.git" | xargs sed -i -E "s/v[0-9]+\.[0-9]+\.[0-9]+/${{ github.event.inputs.sdk_version }}/"
+          git commit -am "Bump SDK version to ${{ github.event.inputs.sdk_version }}"
+          git push origin ${PATCH_BRANCH}
+
+      - name: open PR
+        uses: repo-sync/pull-request@v2
+        with:
+          source_branch:  ${{ steps.patch.outputs.branch }}
+          destination_branch: main
+          pr_title: Update HyP3 SDK Version to ${{ github.event.inputs.sdk_version }}
+          pr_body: |
+            PR created by a `workflow_dispatch` event
+          pr_assignee: ASFHyP3/tools
+          pr_label: tools-bot
+          pr_draft: false
+          pr_allow_empty: true
+          github_token: ${{ secrets.TOOLS_BOT_PAK }}

@@ -44,7 +44,7 @@ A normalization area image is generated. The terrain correction results in a rad
 
 ### Post-Processing
 
-After the terrain correction is completed, the RTC products are exported to GeoTIFF format. Side products including the DEM, layover shadow map, and incidence angle file are converted into GeoTIFF format. In addition, a README text file, browse images, item-specific ArcGIS-compatible XML metadata files, a log file, a shapefile, and an XML metadata file in ISO 19115-2 format are generated for the product.
+After the terrain correction is completed, the RTC products are exported to GeoTIFF format. Side products including the DEM, layover shadow map, scattering area map, and incidence angle map are converted into GeoTIFF format. In addition, a README text file, browse images, item-specific ArcGIS-compatible XML metadata files, a log file, and a shapefile indicating the data extent are generated for the product.
 
 ## Product Packaging
 
@@ -102,13 +102,14 @@ All files are stored in a folder named using the above convention, and the base 
 | _rgb.png | Color browse image | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.png |
 | .kmz | Zipped Google Earth image | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.kmz |
 | _rgb.kmz | Zipped Google Earth color image | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.kmz |
+| _area.tif | scattering area map in GeoTIFF format | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_area.tif |
 | _dem.tif | DEM used for terrain correction in GeoTIFF format | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_dem.tif |
 | _inc_map.tif | incidence angle file in GeoTIFF format | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_inc_map.tif |
 | _ls_map.tif | layover/shadow mask in GeoTIFF format | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_ls_map.tif |
 
 *Table 3: Image files in product package*
 
-Floating point GeoTIFF files are used for the main products as well as the DEM and incidence angle map. An integer GeoTIFF file is used for the layover/shadow mask. PNG format is used for both the color and the greyscale browse images, which are each 2048 pixels wide. Finally, KMZ files suitable for viewing in Google Earth are included. Note that colorized browse and KMZ images can only be created for dual-polarization (SDV and SDH) granules, not for single-polarization (SSV or SSH).
+Floating point GeoTIFF files are used for the main products as well as the DEM, incidence angle map and scattering area map. An integer GeoTIFF file is used for the layover/shadow mask. PNG format is used for both the color and the greyscale browse images, which are each 2048 pixels wide. Finally, KMZ files suitable for viewing in Google Earth are included. Note that colorized browse and KMZ images can only be created for dual-polarization (SDV and SDH) granules, not for single-polarization (SSV or SSH).
 
 ### Metadata Files
 

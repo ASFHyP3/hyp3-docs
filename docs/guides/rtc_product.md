@@ -248,7 +248,7 @@ The color values for the two rivers in the SAR image are far more similar to eac
 
 ## ArcGIS Toolbox
 
-ASF has developed a custom ArcGIS Toolbox for working with RTC datasets in either ArcGIS Desktop or ArcGIS Pro. It includes tools for converting between different SAR scales, calculating Log Difference, and reclassifying a raster to generate a water mask. For more information and to download the toolbox, visit our website: [https://asf.alaska.edu/how-to/data-tools/gis-tools/](https://asf.alaska.edu/how-to/data-tools/gis-tools/).
+ASF has developed a custom ArcGIS Toolbox for working with RTC datasets in either ArcGIS Desktop or ArcGIS Pro. It includes tools for converting between different SAR scales, calculating the log difference between two images, generating RGB Decomposition (false-color) products, and reclassifying a raster to generate a water mask. For more information and to download the toolbox, visit our website:  [https://asf.alaska.edu/how-to/data-tools/gis-tools/](https://asf.alaska.edu/how-to/data-tools/gis-tools/).
 
 ## Application Examples in the Literature
 

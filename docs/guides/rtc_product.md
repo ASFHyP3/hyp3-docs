@@ -52,7 +52,7 @@ After the terrain correction is completed, the RTC products are exported to GeoT
 
 The naming convention for the RTC products follows this pattern for its base names:
 
-S1x_yy_aaaaaaaaTbbbbbb_ppo_RTCzz_G_defklm_ssss
+S1x_yy_aaaaaaaaTbbbbbb_ppo_RTCzz_u_defklm_ssss
 
 Example: S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A
 
@@ -65,6 +65,7 @@ Example: S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A
 | pp | Polarization | DV |
 | o | Orbit Type: Precise (P), Restituted (R), or Original Predicted (O) | P |
 | zz | Terrain Correction Resolution (m) | 30 |
+| u | Software Package Used: GAMMA (G) | G |
 | d | Gamma-0 (g) or Sigma-0 (s) Output | g |
 | e | Power (p) or Amplitude (a) Output | p |
 | f | Unmasked (u) or Water Masked (w) | u |

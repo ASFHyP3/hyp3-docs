@@ -80,17 +80,16 @@ Example: S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A
 
 The default settings for RTC products are as follows:
 
-Radiometry: Gamma-0 (g)
+| Setting | Default |
+|---|---|
+| Radiometry | Gamma-0 (g) |
+| Scale | Power (p) |
+| Water Mask | No water mask applied (u) |
+| Speckle Filter | Not filtered (n) |
+| Clipping | Entire extent of input granule (e) |
+| DEM Matching | No matching; dead reckoning is used (d) |
 
-Scale: Power (p)
-
-Water Mask: No water mask applied (u)
-
-Speckle Filter: Not filtered (n)
-
-Clipping: Entire extent of input granule (e)
-
-DEM Matching: No matching; dead reckoning is used (d)
+*Table 3: Default settings for RTC products*
 
 ### Image Files
 
@@ -108,7 +107,7 @@ All files are stored in a folder named using the above convention, and the base 
 | _inc_map.tif | Incidence angle file in GeoTIFF format | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_inc_map.tif |
 | _ls_map.tif | Layover/shadow mask in GeoTIFF format | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_ls_map.tif |
 
-*Table 3: Image files in product package*
+*Table 4: Image files in product package*
 
 Floating point GeoTIFF files are used for the main products as well as the DEM, incidence angle map and scattering area map. An integer GeoTIFF file is used for the layover/shadow mask. PNG format is used for both the color and the greyscale browse images, which are each 2048 pixels wide. Finally, KMZ files suitable for viewing in Google Earth are included. Note that colorized browse and KMZ images can only be created for dual-polarization (SDV and SDH) granules, not for single-polarization (SSV or SSH).
 
@@ -126,7 +125,7 @@ Along with each of the image files, there will be one or more metadata files.
 | .png.aux.xml | Geolocation metadata for greyscale PNG browse image | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.png.aux.xml |
 | _rgb.png.aux.xml | Geolocation metadata for color PNG browse image | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.png.aux.xml |
 
-*Table 4: Metadata files and their extensions*
+*Table 5: Metadata files and their extensions*
 
 #### README File
 
@@ -155,6 +154,8 @@ A shapefile indicating the extent of the RTC data coverage is included in the pa
 | Extension | Description | Example |
 |---|---|---|
 | _shape.dbf _shape.prj _shape.shp _shape.shx | Shapefile (.shp) and supporting files | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_shape.shp |
+
+*Table 6: Shapefile files and their extensions*
 
 ## SAR Scales
 

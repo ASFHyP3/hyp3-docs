@@ -52,7 +52,7 @@ After the terrain correction is completed, the RTC products are exported to GeoT
 
 The naming convention for the RTC products follows this pattern for its base names:
 
-S1x_yy_aaaaaaaaTbbbbbb_ppo_RTCzz_u_defklm_ssss
+`S1x_yy_aaaaaaaaTbbbbbb_ppo_RTCzz_u_defklm_ssss`
 
 Example: S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A
 

@@ -169,7 +169,7 @@ In some cases, it may be desirable to convert the actual pixel values to a diffe
 
 ### Amplitude Scale
 
-Amplitude scale is the square root of the power scale values. This brightens the darker pixels and darkens the brighter pixels, narrowing the dynamic range of the image. In many cases, amplitude scale presents a pleasing grayscale display of RTC images. Amplitude scale works well for calculating log difference ratios (see [Quantifying Change over Time](#quantifying-change-over-time)).
+Amplitude scale is the square root of the power scale values. This brightens the darker pixels and darkens the brighter pixels, narrowing the dynamic range of the image. In many cases, amplitude scale presents a pleasing grayscale display of RTC images. Amplitude scale works well for calculating log difference ratios (see [Change Detection Using RTC Data](#change-detection-using-rtc-data)).
 
 ### dB Scale
 

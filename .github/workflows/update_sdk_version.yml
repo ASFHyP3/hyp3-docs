@@ -26,8 +26,8 @@ jobs:
           git config user.email "UAF-asf-apd@alaska.edu"
           echo "::set-output name=branch::${PATCH_BRANCH}"
           git checkout -b ${PATCH_BRANCH}
-          grep -lr "hyp3-sdk.git" | xargs sed -i -E "s/v[0-9]+\.[0-9]+\.[0-9]+/${SDK_VERSION}/"
-          sed -i -E "s/hyp3_sdk==[0-9]+\.[0-9]+\.[0-9]+/hyp3_sdk==${SDK_VERSION#v}/" conda-env.yml
+          grep -lr "hyp3-sdk.git" | xargs sed -i -r "s/v[0-9]+\.[0-9]+\.[0-9]+/${SDK_VERSION}/"
+          sed -i -r "s/hyp3_sdk==[0-9]+\.[0-9]+\.[0-9]+/hyp3_sdk==${SDK_VERSION#v}/" conda-env.yml
           git commit -am "Bump SDK version to ${SDK_VERSION}"
           git push origin ${PATCH_BRANCH}
 

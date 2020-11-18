@@ -19,8 +19,8 @@ jobs:
       - name: create patch branch
         id: patch
         run: |
-          git config --global user.name "hyp3-tools-bot"
-          git config --global user.email "uaf-asf-apd@alaska.edu"
+          git config user.name "tools-bot"
+          git config user.email "UAF-asf-apd@alaska.edu"
           export PATCH_BRANCH="bumb-sdk-${{ github.event.inputs.sdk_version }}"
           echo "::set-output name=branch::${PATCH_BRANCH}"
           git checkout -b ${PATCH_BRANCH}

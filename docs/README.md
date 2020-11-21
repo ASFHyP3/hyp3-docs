@@ -43,7 +43,7 @@ run this in its own terminal.*
 
 ### Deploy
 
-This documentation site is deployed as a Github Organization websites with a CNAME
+This documentation site is deployed as a Github Organization website with a CNAME
 so that it's viewable at https://hyp3-docs.asf.alaska.edu/. The website is served
 out of the special https://github.com/ASFHyP3/ASFHyP3.github.io repository. Deployment
 is handled automatically with the `.github/workflows/deploy_to_github_io.yml` Github

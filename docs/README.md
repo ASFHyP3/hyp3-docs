@@ -7,7 +7,7 @@ HyP3 documentation is build using [MkDocs](https://www.mkdocs.org/) and the
 
 ### Setting up a development environment
 
-In order to automatically document some of our APIs, we setup a `conda` environment
+In order to automatically document some of our APIs, we use a `conda` environment
 with our APIs installed. You can get Miniconda (recommended) here:
 
 https://docs.conda.io/en/latest/miniconda.html

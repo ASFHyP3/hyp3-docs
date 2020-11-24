@@ -20,7 +20,7 @@ conda env create -f conda-env.yml
 conda activate ASFHyP3
 ```
 
-Later, you can update the environments dependencies with
+Later, you can update the environment's dependencies with
 
 ```
 conda env update -f conda-env.yml
@@ -38,8 +38,8 @@ to generate the documentation. This will allow you to view it at http://127.0.0.
 MkDocs will automatically watch for new/changed files in this directory and
 rebuild the website so you can see your changes live (just refresh the webpage!).
 
-*Note: Because this captures your terminal (`crtl+c` to exit), it's recommended you
-run this in its own terminal.*
+*Note: `mkdocs serve` captures your terminal; use `crtl+c` to exit. It is recommended you
+use a second/dedicated terminal so you can keep this command running.*
 
 ### Deploy
 

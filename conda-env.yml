@@ -11,6 +11,6 @@ dependencies:
   - mkdocs-material-extensions
   - pip:
       # For documentation
-      - hyp3_sdk==0.3.2  # also pinned in docs/using/sdk.md
+      - hyp3_sdk==0.3.3  # also pinned in docs/using/sdk.md
       - mkdocstrings
       - git+https://github.com/Jlrine2/mkdocs-gitsnippet-plugin.git

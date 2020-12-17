@@ -13,5 +13,6 @@ dependencies:
       # For documentation
       - hyp3_sdk==0.3.3  # also pinned in docs/using/sdk.md
       - asf_tools==0.2.0  # also pinned in docs/tools/asf_tools.md
+      - mkdocs-section-index
       - mkdocstrings
       - git+https://github.com/Jlrine2/mkdocs-gitsnippet-plugin.git

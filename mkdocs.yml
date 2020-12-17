@@ -35,23 +35,27 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Getting started: getting_started.md
   - Using HyP3:
+      - getting_started.md
       - Vertex: using/vertex.md
-      - SDK: using/sdk.md
+      - SDK:
+        - using/sdk.md
+        - API Reference: using/sdk_api.md
       - API: using/api.md
   - Products:
-      - Overview: products.md
+      - products.md
       - Digital Elevation Models: dems.md
       - Product guides:
           - RTC Product Guide: guides/rtc_product_guide.md
           - RTC ATBD: guides/rtc_atbd.md
   - Other tools:
       - ArcGIS Toolbox: tools/arcgis_toolbox.md
-      - ASF Tools for Python: tools/asf_tools.md
+      - ASF Tools for Python:
+        - tools/asf_tools.md
+        - API Reference: tools/asf_tools_api.md
       # - hyp3lib: tools/hyp3lib.md
   - Plugins:
-      - Overview: plugins.md
+      - plugins.md
       # - HyP3 GAMMA: plugins/gamma.md
       # - HyP3 autoRIFT: plugins/autoRIFT.md
   - Contributing: contributing.md
@@ -60,6 +64,7 @@ nav:
 plugins:
   - search
   - gitsnippet
+  - section-index
   - mkdocstrings:
       handlers:
           python:

@@ -6,9 +6,7 @@ copyright: © 2020 Alaska Satellite Facility
 google_analytics: ['UA-991100-5', 'search.asf.alaska.edu']
 
 theme:
-  name: "material"
-  logo: images/HyP3-graphic-only.png
-  favicon: images/favicon.ico
+  name: "asf-theme"
   icon:
     repo: fontawesome/brands/github-alt
   features:

@@ -68,4 +68,6 @@ plugins:
   - mkdocstrings:
       handlers:
           python:
-            inherited_members: True
+            inherited_members: true
+            rendering:
+              show_root_toc_entry: false

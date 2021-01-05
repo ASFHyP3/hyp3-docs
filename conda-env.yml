@@ -13,7 +13,7 @@ dependencies:
   - asf_tools=0.2.0  # also pinned in docs/tools/asf_tools.md
   - pip:
       # For documentation
-      - mkdocs-asf-theme>=0.2.0
+      - mkdocs-asf-theme>=0.2.1
       - mkdocs-section-index
       - mkdocstrings
       - git+https://github.com/Jlrine2/mkdocs-gitsnippet-plugin.git

@@ -27,7 +27,7 @@ jobs:
           echo "::set-output name=branch::${PATCH_BRANCH}"
           git checkout -b ${PATCH_BRANCH}
           grep -lr "asf-tools.git" | xargs sed -i -r "s/v[0-9]+\.[0-9]+\.[0-9]+/${ASF_TOOLS_VERSION}/"
-          sed -i -r "s/asf_tools==[0-9]+\.[0-9]+\.[0-9]+/asf_tools==${ASF_TOOLS_VERSION#v}/" conda-env.yml
+          sed -i -r "s/asf_tools=[0-9]+\.[0-9]+\.[0-9]+/asf_tools=${ASF_TOOLS_VERSION#v}/" conda-env.yml
           git commit -am "Bump ASF Tools version to ${ASF_TOOLS_VERSION}"
           git push origin ${PATCH_BRANCH}
 

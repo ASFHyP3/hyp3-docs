@@ -1,1 +1,1 @@
-{{ gitsnippet('https://github.com/ASFHyP3/hyp3-sdk.git', 'README.md', '', 'v0.4.0') }}
+{{ gitsnippet('https://github.com/ASFHyP3/hyp3-sdk.git', 'README.md', '', 'v0.5.0') }}

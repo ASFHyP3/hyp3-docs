@@ -1,4 +1,4 @@
-# Using the HyP3 API 
+# Using the HyP3 API
 
 The HyP3 API is built on [OpenAPI](https://www.openapis.org/) and [Swagger](https://swagger.io/). A friendly
 interface for exploring the API is available at:

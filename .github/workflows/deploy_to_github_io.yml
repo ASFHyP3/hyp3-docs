@@ -30,7 +30,7 @@ jobs:
         shell: bash -l {0}
         run: |
           cd ASFHyP3
-          mkdocs build --verbose
+          mkdocs build
 
       - uses: actions/checkout@v2
         if: github.ref == 'refs/heads/main'

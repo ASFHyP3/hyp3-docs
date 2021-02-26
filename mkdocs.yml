@@ -35,7 +35,7 @@ nav:
       - Vertex: using/vertex.md
       - SDK:
         - using/sdk.md
-        - Example Notebook: https://mybinder.org/v2/gh/ASFHyP3/ASFHyP3/main?filepath=docs%2Fusing%2Fsdk_example.ipynb
+        - Example Notebook: https://nbviewer.jupyter.org/github/ASFHyP3/ASFHyP3/blob/main/docs/using/sdk_example.ipynb
         - API Reference: using/sdk_api.md
       - API: using/api.md
   - Products:

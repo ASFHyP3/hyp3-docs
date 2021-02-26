@@ -1,6 +1,5 @@
 # Using the HyP3 API 
 
-
 The HyP3 API is built on [OpenAPI](https://www.openapis.org/) and [Swagger](https://swagger.io/). A friendly
 interface for exploring the API is available at:
 
@@ -9,7 +8,7 @@ interface for exploring the API is available at:
 In order to use the API, you'll need a `asf-urs` session cookie, which you can get
 by [signing in to Vertex](https://search.asf.alaska.edu/#/)
 
-![vetex sign in](../images/vertex-sign-in.png)
+![vertex sign in](../images/vertex-sign-in.png)
 
 ### Confirm you are authenticated
 
@@ -34,8 +33,6 @@ If you get a `Code 200` you should see a JSON dictionary of your user informatio
       "type": "about:blank"
     }
     ```
-
-
 
 ## Submitting Sentinel-1 RTC jobs
 
@@ -119,7 +116,7 @@ You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://s
          ]
       },
       "job_type": "RTC_GAMMA",
-      "name": "minmal-insar-example"
+      "name": "minimal-insar-example"
     },
     {
       "job_parameters": {

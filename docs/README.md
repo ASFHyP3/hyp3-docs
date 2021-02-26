@@ -16,14 +16,14 @@ Once conda is installed, from the repository root, you can create and activate a
 conda environment with all the necessary dependencies
 
 ```
-conda env create -f conda-env.yml
+conda env create -f environment.yml
 conda activate ASFHyP3
 ```
 
 Later, you can update the environment's dependencies with
 
 ```
-conda env update -f conda-env.yml
+conda env update -f environment.yml
 ```
 
 ### Build and view the documentation site

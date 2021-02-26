@@ -23,7 +23,7 @@ jobs:
           auto-update-conda: true
           python-version: 3.8
           activate-environment: ASFHyP3
-          environment-file: ASFHyP3/conda-env.yml
+          environment-file: ASFHyP3/environment.yml
 
       - name: test build of website
         if: github.ref != 'refs/heads/main'

@@ -35,7 +35,6 @@ nav:
       - Vertex: using/vertex.md
       - SDK:
         - using/sdk.md
-        - Example Notebook: using/sdk_example.md
         - API Reference: using/sdk_api.md
       - API: using/api.md
   - Products:

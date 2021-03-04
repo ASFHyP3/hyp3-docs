@@ -98,7 +98,7 @@ The job list may contain up to 200 job definitions. You can also provide custom 
 }
 ```
 
-### Submitting Sentinel-1 InSAR jobs
+## Submitting Sentinel-1 InSAR jobs
 
 You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/naming-conventions).
 ```json
@@ -131,7 +131,7 @@ You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://s
 }
 ```
 
-### Submitting autoRIFT jobs
+## Submitting autoRIFT jobs
 
 AutoRIFT supports processing Sentinel-1, Sentinel-2, or Landsat-8 Collection 2 pairs.
 

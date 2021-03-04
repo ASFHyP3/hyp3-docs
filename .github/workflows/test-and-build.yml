@@ -1,0 +1,25 @@
+name: Test and build
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build_and_deploy:
+    name: Test build of site
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          python-version: 3.8
+          activate-environment: ASFHyP3
+          environment-file: environment.yml
+
+      - name: test build of website
+        shell: bash -l {0}
+        run: |
+          mkdocs build

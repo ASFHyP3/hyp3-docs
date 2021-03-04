@@ -4,15 +4,13 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
   build_and_deploy:
     name: Build site and deploy
     runs-on: "ubuntu-latest"
+    if: github.ref == 'refs/heads/main'  # workflow dispatch can trigger any branch
     steps:
       - uses: actions/checkout@v2
         with:
@@ -25,22 +23,13 @@ jobs:
           activate-environment: ASFHyP3
           environment-file: ASFHyP3/environment.yml
 
-      - name: test build of website
-        if: github.ref != 'refs/heads/main'
-        shell: bash -l {0}
-        run: |
-          cd ASFHyP3
-          mkdocs build
-
       - uses: actions/checkout@v2
-        if: github.ref == 'refs/heads/main'
         with:
           repository: ASFHyP3/ASFHyP3.github.io
           path: ASFHyP3.github.io
           token: ${{ secrets.TOOLS_BOT_PAK }}
 
       - name: deploy to github.io
-        if: github.ref == 'refs/heads/main'
         shell: bash -l {0}
         run: |
           cd ASFHyP3.github.io

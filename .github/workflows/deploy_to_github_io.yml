@@ -4,13 +4,11 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   build_and_deploy:
     name: Build site and deploy
     runs-on: "ubuntu-latest"
-    if: github.ref == 'refs/heads/main'  # workflow dispatch can trigger any branch
     steps:
       - uses: actions/checkout@v2
         with:

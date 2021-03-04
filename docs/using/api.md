@@ -46,13 +46,13 @@ A minimal job list for a single Sentinel-1 RTC job would look like:
 {
   "jobs": [
     {
+      "name": "minimal-rtc-example",
+      "job_type": "RTC_GAMMA",
       "job_parameters": {
         "granules": [
           "S1A_IW_GRDH_1SDV_20210214T154837_20210214T154901_036588_044C54_032E"
         ]
-      },
-      "job_type": "RTC_GAMMA",
-      "name": "minimal-rtc-example"
+      }
     }
   ]
 }
@@ -63,40 +63,36 @@ The job list may contain up to 200 job definitions. You can also provide custom 
 {
   "jobs": [
     {
+      "name": "custom-rtc-example",
+      "job_type": "RTC_GAMMA",
       "job_parameters": {
         "granules": [
           "S1B_IW_GRDH_1SDV_20210210T153157_20210210T153222_025546_030B48_2901"
         ],
-        {
-          "radiometry": "gamma0",
-          "scale": "power",
-          "dem_matching": false,
-          "include_dem": true,
-          "include_inc_map": true,
-          "include_scattering_area": false,
-          "speckle_filter": false
-        }
-      },
-      "job_type": "RTC_GAMMA",
-      "name": "custom-rtc-example"
+        "radiometry": "gamma0",
+        "scale": "power",
+        "dem_matching": false,
+        "include_dem": true,
+        "include_inc_map": true,
+        "include_scattering_area": false,
+        "speckle_filter": false
+      }
     },
     {
+      "name": "custom-rtc-example",
+      "job_type": "RTC_GAMMA",
       "job_parameters": {
         "granules": [
           "S1B_IW_GRDH_1SDV_20210210T153132_20210210T153157_025546_030B48_4E31"
         ],
-        {
-          "radiometry": "sigma0",
-          "scale": "amplitude",
-          "dem_matching": false,
-          "include_dem": false,
-          "include_inc_map": false,
-          "include_scattering_area": true,
-          "speckle_filter": true
-        }
-      },
-      "job_type": "RTC_GAMMA",
-      "name": "custom-rtc-example"
+        "radiometry": "sigma0",
+        "scale": "amplitude",
+        "dem_matching": false,
+        "include_dem": false,
+        "include_inc_map": false,
+        "include_scattering_area": true,
+        "speckle_filter": true
+      }
     }
   ]
 }
@@ -109,16 +105,18 @@ You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://s
 {
   "jobs": [
     {
+      "name": "minimal-insar-example",
+      "job_type": "RTC_GAMMA",
       "job_parameters": {
         "granules": [
           "S1A_IW_SLC__1SDV_20200203T172103_20200203T172122_031091_03929B_3048",
           "S1A_IW_SLC__1SDV_20200110T172104_20200110T172123_030741_03864E_A996"
          ]
-      },
-      "job_type": "RTC_GAMMA",
-      "name": "minimal-insar-example"
+      }
     },
     {
+      "name": "custom-insar-example",
+      "job_type": "RTC_GAMMA",
       "job_parameters": {
         "granules": [
           "S1A_IW_SLC__1SDV_20200527T195012_20200527T195028_032755_03CB56_3D96",
@@ -127,9 +125,7 @@ You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://s
         "looks": "10x2",
         "include_look_vectors": true,
         "include_los_displacement": true
-      },
-      "job_type": "RTC_GAMMA",
-      "name": "custom-insar-example"
+      }
     }
   ]
 }
@@ -137,7 +133,7 @@ You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://s
 
 ### Submitting autoRIFT jobs
 
-AutoRIFT support processing Sentinel-1, Sentinel-2, or Landsat-8 Collection 2 pairs.
+AutoRIFT supports processing Sentinel-1, Sentinel-2, or Landsat-8 Collection 2 pairs.
 
 * Sentinel-1 jobs are submitted using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/naming-conventions)
 * Sentinel-2 jobs can be submitted using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-2-msi/naming-convention)
@@ -151,43 +147,43 @@ To submit an example set of jobs including all supported missions, you could wri
   "jobs": [
     {
       "name": "autorift-example",
+      "job_type": "AUTORIFT",
       "job_parameters": {
         "granules": [
           "S1A_IW_SLC__1SSH_20170221T204710_20170221T204737_015387_0193F6_AB07",
           "S1B_IW_SLC__1SSH_20170227T204628_20170227T204655_004491_007D11_6654"
         ]
-      },
-      "job_type": "AUTORIFT"
+      }
     },
     {
       "name": "autorift-example",
+      "job_type": "AUTORIFT",
       "job_parameters": {
         "granules": [
           "S2B_MSIL1C_20200612T150759_N0209_R025_T22WEB_20200612T184700",
           "S2A_MSIL1C_20200627T150921_N0209_R025_T22WEB_20200627T170912"
         ]
-      },
-      "job_type": "AUTORIFT"
+      }
     },
     {
       "name": "autorift-example",
+      "job_type": "AUTORIFT",
       "job_parameters": {
         "granules": [
           "S2B_22WEB_20200612_0_L1C",
           "S2A_22WEB_20200627_0_L1C"
         ]
-      },
-      "job_type": "AUTORIFT"
+      }
     }
     {
       "name": "autorift-example",
+      "job_type": "AUTORIFT",
       "job_parameters": {
         "granules": [
           "LC08_L1TP_009011_20200703_20200913_02_T1",
           "LC08_L1TP_009011_20200820_20200905_02_T1"
         ]
-      },
-      "job_type": "AUTORIFT"
+      }
     }
   ]
 }
@@ -203,13 +199,13 @@ submit the jobs.
 
 ![POST /jobs execute](../images/post_jobs_execute.png)
 
-If your jobs were submitted successfully you should see a `Code 200` response and
+If your jobs were submitted successfully you should see a `Code 200` and a
 JSON response of your job list, with some additional job attributes filled in.
 
 ## Querying jobs
 
 You can `GET` job information from the `/jobs` endpoint. You may provide query
-parameters to filter jobs which jobs are returned:
+parameters to filter which jobs are returned:
 ![GET /jobs query](../images/get_jobs_query.png)
 
 For our above examples, you can get the RTC job that was submitted with the default options by
@@ -221,9 +217,17 @@ Within the jobs list, a complete job dictionary will look like:
 {
   "jobs": [
     {
-      "browse_images": [
-        "https://hyp3-contentbucket-fo259f6r6dn6.s3.us-west-2.amazonaws.com/20c377be-2511-46a8-b908-e015abd3c24e/S1A_IW_20150621T120220_SVP_RTC30_G_gpuned_0AEA.png"
-      ],
+      "name": "minimal-rtc-example",
+      "job_type": "RTC_GAMMA",
+      "job_parameters": {
+        "granules": [
+          "S1A_IW_SLC__1SSV_20150621T120220_20150621T120232_006471_008934_72D8"
+        ]
+      },
+      "job_id": "20c377be-2511-46a8-b908-e015abd3c24e",
+      "user_id": "MY_EDL_USERNAME",
+      "status_code": "SUCCEEDED",
+      "request_time": "2021-02-24T21:30:45+00:00",
       "expiration_time": "2021-03-11T00:00:00+00:00",
       "files": [
         {
@@ -236,22 +240,15 @@ Within the jobs list, a complete job dictionary will look like:
           "url": "https://hyp3-contentbucket-fo259f6r6dn6.s3.us-west-2.amazonaws.com/20c377be-2511-46a8-b908-e015abd3c24e/S1A_IW_20150621T120220_SVP_RTC30_G_gpuned_0AEA.zip"
         }
       ],
-      "job_id": "20c377be-2511-46a8-b908-e015abd3c24e",
-      "job_parameters": {
-        "granules": [
-          "S1A_IW_SLC__1SSV_20150621T120220_20150621T120232_006471_008934_72D8"
-        ]
-      },
-      "job_type": "RTC_GAMMA",
-      "logs": [
-        "https://hyp3-contentbucket-fo259f6r6dn6.s3.us-west-2.amazonaws.com/20c377be-2511-46a8-b908-e015abd3c24e/20c377be-2511-46a8-b908-e015abd3c24e.log"
-      ],
-      "request_time": "2021-02-24T21:30:45+00:00",
-      "status_code": "SUCCEEDED",
+      "browse_images": [
+        "https://hyp3-contentbucket-fo259f6r6dn6.s3.us-west-2.amazonaws.com/20c377be-2511-46a8-b908-e015abd3c24e/S1A_IW_20150621T120220_SVP_RTC30_G_gpuned_0AEA.png"
+      ],      
       "thumbnail_images": [
         "https://hyp3-contentbucket-fo259f6r6dn6.s3.us-west-2.amazonaws.com/20c377be-2511-46a8-b908-e015abd3c24e/S1A_IW_20150621T120220_SVP_RTC30_G_gpuned_0AEA_thumb.png"
       ],
-      "user_id": "MY_EDL_USERNAME"
+      "logs": [
+        "https://hyp3-contentbucket-fo259f6r6dn6.s3.us-west-2.amazonaws.com/20c377be-2511-46a8-b908-e015abd3c24e/20c377be-2511-46a8-b908-e015abd3c24e.log"
+      ]
     }
   ]
 }

@@ -4,7 +4,7 @@
 
 [Vertex](https://search.asf.alaska.edu/), ASF's data search portal, is the easiest way to use HyP3.
 Vertex provides a friendly interface to request jobs and review previous jobs. Visit
-[Using HyP3: Vertex](using/vertex.md) to learn more.
+[On Demand Processing in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand) to learn more.
 
 ## Using the Python SDK
 

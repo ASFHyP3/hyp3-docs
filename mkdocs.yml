@@ -24,6 +24,7 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 3
+  - attr_list
   - admonition
   - pymdownx.highlight
   - pymdownx.superfences
@@ -32,7 +33,7 @@ nav:
   - Home: index.md
   - Using HyP3:
       - getting_started.md
-      - Vertex: using/vertex.md
+      - Vertex: https://search.asf.alaska.edu/#/?topic=onDemand
       - SDK:
         - using/sdk.md
         - API Reference: using/sdk_api.md

@@ -35,9 +35,9 @@ visit [Digital Elevation Models](dems.md).
 
 ## autoRIFT (SDK + API only)
 
-[AutoRIFT](https://github.com/leiyangleon/autoRIFT) produces a velocity map from
+[AutoRIFT](https://github.com/leiyangleon/autoRIFT){target=_blank} produces a velocity map from
 observed motion using a feature tracking algorithm developed as part of the 
-[NASA MEaSUREs ITS_LIVE](https://its-live.jpl.nasa.gov/) project. To learn more,
+[NASA MEaSUREs ITS_LIVE](https://its-live.jpl.nasa.gov/){target=_blank} project. To learn more,
 visit the ITS_LIVE project website.
 
 A Digital Elevation Model (DEM) is required for autoRIFT processing. ASF uses the

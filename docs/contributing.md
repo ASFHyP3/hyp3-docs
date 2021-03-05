@@ -11,9 +11,9 @@ Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
 ## Issues and Pull Requests are welcome
 
 If you have any questions or ideas, or notice any problems or bugs, and want to open an issue, great!
-We recommend first [searching our open issues](https://github.com/issues?q=is%3Aopen+is%3Aissue+org%3AASFHyP3)
+We recommend first [searching our open issues](https://github.com/issues?q=is%3Aopen+is%3Aissue+org%3AASFHyP3){target=_blank}
 to see if the issue has already been submitted (we may already be working on it!). If you think your 
-issue is new, you're welcome to [create a new issue](https://github.com/ASFHyP3/ASFHyP3/issues/new) in our
+issue is new, you're welcome to [create a new issue](https://github.com/ASFHyP3/ASFHyP3/issues/new){target=_blank} in our
 general issues tracker. If you know the specific repository that your issue pertains to, you can use its 
 issues tracker (see our repositories list below).
 
@@ -29,7 +29,7 @@ We ask that you follow these guidelines with your contributions
 
 #### Style
 
-We generally follow python community standards ([PEP8](https://pep8.org/)), except we allow line 
+We generally follow python community standards ([PEP8](https://pep8.org/){target=_blank}), except we allow line
 lengths up to 120 characters. We recommend trying to keep lines 80--100 characters long, but allow 
 up to 120 when it improves readability.
 
@@ -37,11 +37,11 @@ up to 120 when it improves readability.
 
 We are working to improve our documentation!
 
-For all public-facing functions/methods (not 
-[marked internal use](https://www.python.org/dev/peps/pep-0008/#naming-conventions)), 
-please include [type hints](https://google.github.io/styleguide/pyguide.html#221-type-annotated-code) 
-(when reasonable) and a [docstring](https://www.python.org/dev/peps/pep-0257/) 
-formatted [Google style](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings).
+For all public-facing functions/methods (not
+[marked internal use](https://www.python.org/dev/peps/pep-0008/#naming-conventions){target=_blank}),
+please include [type hints](https://google.github.io/styleguide/pyguide.html#221-type-annotated-code){target=_blank}
+(when reasonable) and a [docstring](https://www.python.org/dev/peps/pep-0257/){target=_blank}
+formatted [Google style](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings){target=_blank}.
 
 #### Tests
 

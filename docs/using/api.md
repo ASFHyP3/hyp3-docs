@@ -1,12 +1,12 @@
 # Using the HyP3 API
 
-The HyP3 API is built on [OpenAPI](https://www.openapis.org/) and [Swagger](https://swagger.io/). A friendly
-interface for exploring the API is available at:
+The HyP3 API is built on [OpenAPI](https://www.openapis.org/){target=_blank} and [Swagger](https://swagger.io/){target=_blank}.
+A friendly interface for exploring the API is available at:
 
-#### <https://hyp3-api.asf.alaska.edu/ui/>
+#### <https://hyp3-api.asf.alaska.edu/ui/>{target=_blank}
 
 In order to use the API, you'll need a `asf-urs` session cookie, which you can get
-by [signing in to Vertex](https://search.asf.alaska.edu/#/)
+by [signing in to Vertex](https://search.asf.alaska.edu/#/){target=_blank}
 
 ![vertex sign in](../images/vertex-sign-in.png)
 
@@ -23,7 +23,7 @@ If you get a `Code 200` you should see a JSON dictionary of your user informatio
 
 !!! warning "Authentication Required"
 
-    If you get a 401 response back you need to [sign in to Vertex](https://search.asf.alaska.edu/#/) to get the `asf-urs` session cookie.
+    If you get a 401 response back you need to [sign in to Vertex](https://search.asf.alaska.edu/#/){target=_blank} to get the `asf-urs` session cookie.
     
     ```json
     {
@@ -39,7 +39,7 @@ If you get a `Code 200` you should see a JSON dictionary of your user informatio
 Jobs are submitted through the API by providing a JSON payload with a list of job
 definitions.
 
-Sentinel-1 jobs are submitted using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/naming-conventions).
+Sentinel-1 jobs are submitted using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/naming-conventions){target=_blank}.
 A minimal job list for a single Sentinel-1 RTC job would look like:
 
 ```json
@@ -100,7 +100,7 @@ The job list may contain up to 200 job definitions. You can also provide custom 
 
 ## Submitting Sentinel-1 InSAR jobs
 
-You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/naming-conventions).
+You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/naming-conventions){target=_blank}.
 ```json
 {
   "jobs": [
@@ -135,10 +135,10 @@ You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://s
 
 AutoRIFT supports processing Sentinel-1, Sentinel-2, or Landsat-8 Collection 2 pairs.
 
-* Sentinel-1 jobs are submitted using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/naming-conventions)
-* Sentinel-2 jobs can be submitted using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-2-msi/naming-convention)
-  or [Element 84 Earth Search IDs](https://registry.opendata.aws/sentinel-2/)
-* Landsat-8 Collection 2 jobs are submitted using [USGS scene IDs](https://www.usgs.gov/faqs/what-naming-convention-landsat-collection-2-level-1-and-level-2-scenes?qt-news_science_products=0#qt-news_science_products)
+* Sentinel-1 jobs are submitted using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/naming-conventions){target=_blank}
+* Sentinel-2 jobs can be submitted using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-2-msi/naming-convention){target=_blank}
+  or [Element 84 Earth Search IDs](https://registry.opendata.aws/sentinel-2/){target=_blank}
+* Landsat-8 Collection 2 jobs are submitted using [USGS scene IDs](https://www.usgs.gov/faqs/what-naming-convention-landsat-collection-2-level-1-and-level-2-scenes?qt-news_science_products=0#qt-news_science_products){target=_blank}
 
 To submit an example set of jobs including all supported missions, you could write a job list like:
 

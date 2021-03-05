@@ -2,14 +2,14 @@
 
 ## Using Vertex
 
-[Vertex](https://search.asf.alaska.edu/), ASF's data search portal, is the easiest way to use HyP3.
+[Vertex](https://search.asf.alaska.edu/){target=_blank}, ASF's data search portal, is the easiest way to use HyP3.
 Vertex provides a friendly interface to request jobs and review previous jobs. Visit
-[On Demand Processing in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand) to learn more.
+[On Demand Processing in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand){target=_blank} to learn more.
 
 ## Using the Python SDK
 
 The HyP3 SDK is a Python library for using HyP3 programmatically. It is available on
-[PyPI](https://pypi.org/project/hyp3-sdk/) and can be installed with `pip install hyp3-sdk`.
+[PyPI](https://pypi.org/project/hyp3-sdk/){target=_blank} and can be installed with `pip install hyp3-sdk`.
 Visit [Using HyP3: SDK](using/sdk.md) to learn more.
 
 !!! Warning

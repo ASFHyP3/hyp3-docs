@@ -1,7 +1,7 @@
 # HyP3 documentation
 
-HyP3 documentation is build using [MkDocs](https://www.mkdocs.org/) and the
-[Material theme](https://squidfunk.github.io/mkdocs-material/). 
+HyP3 documentation is build using [MkDocs](https://www.mkdocs.org/){target=_blank} and the
+[Material theme](https://squidfunk.github.io/mkdocs-material/){target=_blank}.
 
 ## How to
 

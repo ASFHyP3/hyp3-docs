@@ -22,6 +22,6 @@ Plugins are the workhorses of HyP3. They marshal the input data through complica
 # Contact Us
 Want to talk about HyP3? We would love to hear from you!
 
-Found a bug? Want to request a feature? [open an issue](https://github.com/ASFHyP3/ASFHyP3/issues/new) 
+Found a bug? Want to request a feature? [open an issue](https://github.com/ASFHyP3/ASFHyP3/issues/new){target=_blank}
 
-General questions? Suggstions? Or just want to talk to the team? [chat with us on gitter](https://gitter.im/ASFHyP3/community)
+General questions? Suggstions? Or just want to talk to the team? [chat with us on gitter](https://gitter.im/ASFHyP3/community){target=_blank}

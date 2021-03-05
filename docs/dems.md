@@ -28,7 +28,7 @@ The DEMs were pre-processed by ASF to a consistent raster format (GeoTIFF) from 
 original source formats: height (`*.hgt`), ESRI ArcGrid (`*.adf`), etc. Many of the
 NASA-provided DEMs were provided as orthometric heights with EGM96 vertical datum.
 These were converted by ASF to ellipsoid heights using the ASF
-[MapReady](https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready) tool named
+[MapReady](https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready){target=_blank} tool named
 `geoid_adjust`. The pixel reference varied from the center (pixel as point) to a
 corner (pixel as area). For terrain corrected products, the GAMMA software uses
 pixel as area and adjusts DEM coordinates as needed. Where more than
@@ -47,6 +47,6 @@ ASF is currently working to make these DEMs available:
 
 ## Special Use DEMs
 
-[AutoRIFT](products.md#autorift-sdk-api-only), a process developed by the [NASA MEaSUREs ITS_LIVE](https://its-live.jpl.nasa.gov/)
+[AutoRIFT](products.md#autorift-sdk-api-only), a process developed by the [NASA MEaSUREs ITS_LIVE](https://its-live.jpl.nasa.gov/){target=_blank}
 project, processes use a custom Greenland and Antarctica DEM with a 240 m resolution. The DEM,
 associated process input files, and their details are available on the ITS_LIVE project website. 

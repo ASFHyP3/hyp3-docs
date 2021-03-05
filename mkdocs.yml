@@ -67,3 +67,6 @@ plugins:
             inherited_members: true
             rendering:
               show_root_toc_entry: false
+  - redirects:
+      redirect_maps:
+          'using/vertex.md': 'https://search.asf.alaska.edu/#/?topic=onDemand'

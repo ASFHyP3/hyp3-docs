@@ -14,6 +14,7 @@ dependencies:
   - pip:
       # For documentation
       - mkdocs-asf-theme>=0.2.1
+      - mkdocs-redirects
       - mkdocs-section-index
       - mkdocstrings
       - git+https://github.com/Jlrine2/mkdocs-gitsnippet-plugin.git

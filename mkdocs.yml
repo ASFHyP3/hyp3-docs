@@ -39,6 +39,11 @@ nav:
         - Example Notebook: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
         - API Reference: using/sdk_api.md
       - API: using/api.md
+  - How it works:
+      - how_it_works.md
+      - Current plugins:
+        - HyP3 GAMMA: plugins/gamma.md
+        - HyP3 autoRIFT: plugins/autoRIFT.md
   - Products:
       - products.md
       - Digital Elevation Models: dems.md
@@ -50,11 +55,6 @@ nav:
       - ASF Tools for Python:
         - tools/asf_tools.md
         - API Reference: tools/asf_tools_api.md
-  - How it works:
-      - how_it_works.md
-      - Current plugins:
-        - HyP3 GAMMA: plugins/gamma.md
-        - HyP3 autoRIFT: plugins/autoRIFT.md
   - Developer docs:
       - development.md
       - Plugins: development/plugins.md

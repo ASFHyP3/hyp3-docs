@@ -12,7 +12,7 @@ handle the entire processing workflow for a single product, including:
 * creating the final product
 * uploading the product to an AWS S3 bucket for distribution
 
-![Plugin flowchart](images/HyP3-plugin.png)
+![Plugin flowchart](../images/HyP3-plugin.png)
 
 Plugins only need to define a simple interface (entrypoint) that HyP3 understands and is used to run the container.
 Generally, this interface should be usable on its own (inside or outside HyP3) and will looks something like:

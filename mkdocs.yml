@@ -50,11 +50,16 @@ nav:
       - ASF Tools for Python:
         - tools/asf_tools.md
         - API Reference: tools/asf_tools_api.md
-  - Plugins:
-      - plugins.md
-      # - HyP3 GAMMA: plugins/gamma.md
-      # - HyP3 autoRIFT: plugins/autoRIFT.md
-  - Contributing: contributing.md
+  - How it works:
+      - how_it_works.md
+      - Current plugins:
+        - HyP3 GAMMA: plugins/gamma.md
+        - HyP3 autoRIFT: plugins/autoRIFT.md
+  - Developer docs:
+      - development.md
+      - Plugins: development/plugins.md
+      - Conda: development/conda.md
+      - Contributing: development/contributing.md
   - Code of Conduct: CODE_OF_CONDUCT.md
 
 plugins:
@@ -69,4 +74,6 @@ plugins:
               show_root_toc_entry: false
   - redirects:
       redirect_maps:
-        'using/vertex.md': 'https://search.asf.alaska.edu/#/?topic=onDemand'
+        using/vertex.md: 'https://search.asf.alaska.edu/#/?topic=onDemand'
+        contributing.md: development/contributing.md
+        plugins.md: development/plugins.md

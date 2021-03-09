@@ -50,7 +50,6 @@ nav:
       - ASF Tools for Python:
         - tools/asf_tools.md
         - API Reference: tools/asf_tools_api.md
-      # - hyp3lib: tools/hyp3lib.md
   - Plugins:
       - plugins.md
       # - HyP3 GAMMA: plugins/gamma.md

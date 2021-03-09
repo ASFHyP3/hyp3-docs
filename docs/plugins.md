@@ -1,22 +1,34 @@
 # Plugins
-Plugins are the science backbone of HyP3; they do all of the data processing and product generation.
+Plugins are the science backbone of HyP3; they do all the data processing and product generation.
 Plugins can be added to HyP3 to generate new science products, or support different
 tools/software/algorithms/options/etc that are not currently supported by HyP3.
 
 ## How plugins work
-At their most basic level, HyP3 plugins are Docker containers with an interface (entrypoint) HyP3 understands.
-Plugins handle the entire processing workflow for a single product, including:
+At their most basic level, HyP3 plugins are [Docker containers](https://www.docker.com/resources/what-container) that
+handle the entire processing workflow for a single product, including:
 
 * Marshaling the required input data
 * performing any needed transformations and computations on the data
 * creating the final product
 * uploading the product to an AWS S3 bucket for distribution
 
-By encapsulating the entire workflow for generating a single product, HyP3 can arbitrarily scale to meet user need.
+![Plugin flowchart](images/HyP3-plugin.png)
+
+Plugins only need to define a simple interface (entrypoint) that HyP3 understands and is used to run the container.
+Generally, this interface should be usable on its own (inside or outside HyP3) and will looks something like:
+
+```
+docker run [PLUGIN_IMAGE] hyp3_process \
+  --username ${EDL_USERNAME} --password "${EDL_PASSWORD}" \
+  --bucket ${HYP3_BUCKET} --bucket-prefix ${JOB_PREFIX} \
+  scene_identifier ...
+```
+
+By encapsulating the entire workflow for generating a single product, HyP3 can arbitrarily scale to meet user need. 
 
 ## Developing a plugin
 To create a new HyP3 plugin, we recommend starting from a Minimal Working Example (MWE) of generating
-the product you're plugin will generate. Importantly, the MWE should be entirely self contained, and
+the product your plugin will generate. Importantly, the MWE should be entirely self-contained, and
 include all the necessary data to generate the product.
 
 Once a MWE is developed, it's important to define your plugin's interface  -- this is where HyP3 connects
@@ -28,7 +40,7 @@ the product generation and users. When designing the interface, you may find it 
     * is this information serializable? For example, can the information be written in a JSON file?
     * could I define this information more simply?
 
-Once a MWE is developed and an interface is defined, you can use our 
+Once a MWE is developed, and an interface is defined, you can use our 
 [HyP3 plugin cookiecuter](https://github.com/ASFHyP3/hyp3-cookiecutter){target=_blank}
 to help you build a plugin that conforms to the plugin requirements.
 

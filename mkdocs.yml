@@ -31,6 +31,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - How it works: how_it_works.md
   - Using HyP3:
       - Vertex: https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank
       - SDK:
@@ -38,11 +39,9 @@ nav:
         - Example Notebook: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
         - API Reference: using/sdk_api.md
       - API: using/api.md
-  - How it works:
-      - how_it_works.md
-      - Current plugins:
-        - HyP3 GAMMA: plugins/gamma.md
-        - HyP3 autoRIFT: plugins/autoRIFT.md
+  - Plugins:
+      - HyP3 GAMMA: plugins/gamma.md
+      - HyP3 autoRIFT: plugins/autoRIFT.md
   - Products:
       - products.md
       - Digital Elevation Models: dems.md

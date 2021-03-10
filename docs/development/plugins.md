@@ -1,9 +1,11 @@
 # Plugins
+
 Plugins are the science backbone of HyP3; they do all the data processing and product generation.
 Plugins can be added to HyP3 to generate new science products, or support different
 tools/software/algorithms/options/etc that are not currently supported by HyP3.
 
 ## How plugins work
+
 At their most basic level, HyP3 plugins are [Docker containers](https://www.docker.com/resources/what-container) that
 handle the entire processing workflow for a single product, including:
 
@@ -27,6 +29,7 @@ docker run [PLUGIN_IMAGE] hyp3_process \
 By encapsulating the entire workflow for generating a single product, HyP3 can arbitrarily scale to meet user need. 
 
 ## Developing a plugin
+
 To create a new HyP3 plugin, we recommend starting from a Minimal Working Example (MWE) of generating
 the product your plugin will generate. Importantly, the MWE should be entirely self-contained, and
 include all the necessary data to generate the product.
@@ -45,6 +48,7 @@ Once a MWE is developed, and an interface is defined, you can use our
 to help you build a plugin that conforms to the plugin requirements.
 
 ### Plugin requirements
+
 In order to be supported by HyP3, a plugin must meet a few requirements:
 
 * the plugin must be a Docker image that is hosted in a repository where HyP3 will be able to pull it

@@ -33,10 +33,10 @@ nav:
   - Home: index.md
   - Using HyP3:
       - getting_started.md
-      - Vertex: https://search.asf.alaska.edu/#/?topic=onDemand
+      - Vertex: https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank
       - SDK:
         - using/sdk.md
-        - Example Notebook: using/sdk_example.md
+        - Example Notebook: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
         - API Reference: using/sdk_api.md
       - API: using/api.md
   - Products:

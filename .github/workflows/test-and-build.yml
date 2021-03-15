@@ -17,7 +17,7 @@ jobs:
         with:
           auto-update-conda: true
           python-version: 3.8
-          activate-environment: ASFHyP3
+          activate-environment: hyp3-docs
           environment-file: environment.yml
 
       - name: Test build of website

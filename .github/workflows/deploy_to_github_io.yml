@@ -12,14 +12,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          path: ASFHyP3
+          path: docs-dev
 
       - uses: conda-incubator/setup-miniconda@v2
         with:
           auto-update-conda: true
           python-version: 3.8
-          activate-environment: ASFHyP3
-          environment-file: ASFHyP3/environment.yml
+          activate-environment: hyp3-docs
+          environment-file: docs-dev/environment.yml
 
       - uses: actions/checkout@v2
         with:
@@ -31,4 +31,4 @@ jobs:
         shell: bash -l {0}
         run: |
           cd ASFHyP3.github.io
-          mkdocs gh-deploy --config-file ../ASFHyP3/mkdocs.yml --remote-branch main
+          mkdocs gh-deploy --config-file ../docs-dev/mkdocs.yml --remote-branch main

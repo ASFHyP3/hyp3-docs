@@ -17,7 +17,7 @@ conda environment with all the necessary dependencies
 
 ```
 conda env create -f environment.yml
-conda activate ASFHyP3
+conda activate hyp3-docs
 ```
 
 Later, you can update the environment's dependencies with
@@ -28,7 +28,7 @@ conda env update -f environment.yml
 
 ### Build and view the documentation site
 
-With the `ASFHyP3` conda environment activated, run
+With the `hyp3-docs` conda environment activated, run
 
 ```
 mkdocs serve

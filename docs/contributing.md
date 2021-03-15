@@ -13,7 +13,7 @@ Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
 If you have any questions or ideas, or notice any problems or bugs, and want to open an issue, great!
 We recommend first [searching our open issues](https://github.com/issues?q=is%3Aopen+is%3Aissue+org%3AASFHyP3){target=_blank}
 to see if the issue has already been submitted (we may already be working on it!). If you think your 
-issue is new, you're welcome to [create a new issue](https://github.com/ASFHyP3/ASFHyP3/issues/new){target=_blank} in our
+issue is new, you're welcome to [create a new issue](https://github.com/ASFHyP3/ASFHyP3.github.io/issues/new){target=_blank} in our
 general issues tracker. If you know the specific repository that your issue pertains to, you can use its 
 issues tracker (see our repositories list below).
 

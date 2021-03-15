@@ -1,4 +1,4 @@
-name: ASFHyP3
+name: hyp3-docs
 channels:
   - conda-forge
   - nodefaults

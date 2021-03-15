@@ -31,8 +31,8 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - How it works: how_it_works.md
   - Using HyP3:
-      - getting_started.md
       - Vertex: https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank
       - SDK:
         - using/sdk.md
@@ -69,4 +69,7 @@ plugins:
               show_root_toc_entry: false
   - redirects:
       redirect_maps:
-        'using/vertex.md': 'https://search.asf.alaska.edu/#/?topic=onDemand'
+        # full link to our hosted docs needed b/c mkdocs-redirects doesn't support hash fragments
+        #    See: https://github.com/datarobot/mkdocs-redirects/issues/16
+        getting_started.md: 'https://hyp3-docs.asf.alaska.edu/#getting-started'
+        using/vertex.md: 'https://search.asf.alaska.edu/#/?topic=onDemand'

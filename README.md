@@ -49,7 +49,7 @@ out of the special <https://github.com/ASFHyP3/ASFHyP3.github.io> repository. De
 is handled automatically with the `.github/workflows/deploy_to_github_io.yml` Github
 Action for any merge to `main`.
 
-There is also a test site deployed to <https://hyp3-docs.asf.alaska.edu/docs-dev>, which
+There is also a test site deployed to <https://hyp3-docs.asf.alaska.edu/hyp3-docs>, which
 tracks the `develop` branch of this repo and is served out of the `gh-pages` branch
 of this repo.
 

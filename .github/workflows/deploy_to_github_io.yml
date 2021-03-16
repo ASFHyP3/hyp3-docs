@@ -27,6 +27,8 @@ jobs:
         shell: bash -l {0}
         run: |
           cd hyp3-docs
+          # Remove conflicting CNAME for project site
+          rm docs/CNAME
           mkdocs gh-deploy
 
       - uses: actions/checkout@v2

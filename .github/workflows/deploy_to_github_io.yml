@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - develop
 
 jobs:
   build_and_deploy:
@@ -21,13 +22,22 @@ jobs:
           activate-environment: hyp3-docs
           environment-file: hyp3-docs/environment.yml
 
+      - name: Deploy test website
+        if: github.ref == 'refs/heads/develop'
+        shell: bash -l {0}
+        run: |
+          cd hyp3-docs
+          mkdocs gh-deploy
+
       - uses: actions/checkout@v2
+        if: github.ref == 'refs/heads/main'
         with:
           repository: ASFHyP3/ASFHyP3.github.io
           path: ASFHyP3.github.io
           token: ${{ secrets.TOOLS_BOT_PAK }}
 
       - name: deploy to github.io
+        if: github.ref == 'refs/heads/main'
         shell: bash -l {0}
         run: |
           cd ASFHyP3.github.io

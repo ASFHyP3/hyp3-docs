@@ -24,9 +24,3 @@ jobs:
         shell: bash -l {0}
         run: |
           mkdocs build
-
-      - name: Deploy test website
-        if: github.ref == 'refs/heads/develop'
-        shell: bash -l {0}
-        run: |
-          mkdocs gh-deploy

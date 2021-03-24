@@ -10,5 +10,5 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 * HyP3 user documentation for the SDK and API, and links for Vertex's On Demand usage
-* HyP3 product documentation for RTC, InSAR, and autoRIFT products. 
+* HyP3 product documentation for RTC, InSAR, and autoRIFT products
 * Other associated tools documentation

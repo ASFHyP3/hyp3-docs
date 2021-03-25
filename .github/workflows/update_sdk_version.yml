@@ -35,7 +35,7 @@ jobs:
         uses: repo-sync/pull-request@v2
         with:
           source_branch:  ${{ steps.patch.outputs.branch }}
-          destination_branch: develop
+          destination_branch: main
           pr_title: Update HyP3 SDK version to ${{ github.event.inputs.sdk_version }}
           pr_body: |
             PR created by a `workflow_dispatch` event

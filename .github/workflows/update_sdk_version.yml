@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       sdk_version:
-        desription: 'The new version of the SDK'
+        description: 'The new version of the SDK'
         required: true
 
 jobs:

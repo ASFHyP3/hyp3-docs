@@ -13,7 +13,7 @@ dependencies:
   - asf_tools=0.2.0  # also pinned in docs/tools/asf_tools.md
   - pip:
       # For documentation
-      - mkdocs-asf-theme>=0.2.1
+      - mkdocs-asf-theme>=0.2.3
       - mkdocs-redirects
       - mkdocs-section-index
       - mkdocstrings

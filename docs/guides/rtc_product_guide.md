@@ -33,9 +33,9 @@ In the past, ASF maintained a collection of DEMs that were pre-processed as appr
 
 Table 1 summarizes ASF's DEM sources. Note that in each case, the DEM is resampled to RTC spacing and reprojected to a UTM Zone (WGS84), and a geoid correction is applied before being used for RTC processing.
 
-| Resolution | DEM | Datum | Area | Posting | Priority |
+| Resolution | DEM | Vertical Datum | Area | Posting | Priority |
 |------------|-------|--------|------|---------|----------|
-| Medium | COP30 | FIXME | Global | 1 arc second | Default | 
+| Medium | COP30 | EGM2008 | Global | 1 arc second | Default | 
 | High | NED13 | NAVD88 | CONUS, Hawaii, parts of Alaska | 1/3 arc seconds | 1 |
 | Medium | SRTMGL1 | EGM96 | 60 N to 57 S latitude | 1 arc second | 2 |
 | Medium | NED1 | NAVD88 | Canada | 1 arc second | 3 |

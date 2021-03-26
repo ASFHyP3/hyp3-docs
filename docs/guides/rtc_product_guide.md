@@ -111,9 +111,9 @@ Example: S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A
 | yy | Beam Mode | IW |
 | aaaaaaaa | Start Year-Month-Day | 20180128 |
 | bbbbbb | Start Hour-Minute-Second | 161201 |
-| pp | Polarization | DV |
+| pp | Polarization: Dual-pol (D) vs. Single-pos (S), Primary Polarization (H or V) | DV |
 | o | Orbit Type: Precise (P), Restituted (R), or Original Predicted (O) | P |
-| zz | Terrain Correction Resolution (m) | 30 |
+| zz | Terrain Correction Pixel Spacing (m) | 30 |
 | u | Software Package Used: GAMMA (G) | G |
 | d | Gamma-0 (g) or Sigma-0 (s) Output | g |
 | e | Power (p) or Amplitude (a) Output | p |

@@ -89,7 +89,7 @@ When custom-ordering imagery, however, the DEM Matching option is available for 
 
 During processing, a surface scattering area image for the scene is calculated and saved. This projected area image is used to create the RTC product - the SAR image is multiplied by the ratio of an ellipsoidal scattering image (used during calibration) and this scattering area image. Note that this image is, by default, projected to gamma-nought (γ<sub>0</sub>). However, when custom ordering imagery,  selecting sigma-nought (σ<sub>0</sub>) output will result in a sigma-nought projected area image.  
 
-In a final step, the RTC product is geocoded into map-projected space. Thus, radiometric terrain correction results in a geocoded radiometrically calibrated multi-looked image with (γ<sub>0</sub>) power scale values by default, though there are options to process to (σ<sub>0</sub>) radiometry and amplitude scale.
+In a final step, the RTC product is geocoded into map-projected space. Thus, radiometric terrain correction results in a geocoded radiometrically calibrated multi-looked image with gamma-nought (γ<sub>0</sub>) power scale values by default, though there are options to process to sigma-nought (σ<sub>0</sub>) radiometry and amplitude scale.
 
 ### Post-Processing
 

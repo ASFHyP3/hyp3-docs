@@ -9,14 +9,15 @@ This document is a guide for users of radiometrically terrain-corrected Sentinel
 The quality of the terrain correction results is directly related to the quality of the digital elevation models (DEMs) used in the process of geometrically and radiometrically correcting the SAR imagery. Table 1 summarizes the various DEM sources and the way they are used in the radiometric terrain correction (RTC).
 Note that in each case, the DEM is resampled to RTC spacing and reprojected to WGS84 UTM during processing.
 
-| Resolution | DEM | Datum | Area | Posting |
-|------------|-------|--------|------|---------|
-| High | NED13 | NAVD88 | CONUS, Hawaii, parts of Alaska | 1/3 arc seconds |
-| Medium | SRTMGL1 | EGM96 | 60 N to 57 S latitude | 1 arc second |
-| Medium | NED1 | NAVD88 | CONUS, Hawaii, parts of Alaska, Canada, Mexico | 1 arc second |
-| Low | NED2 | NAVD88 | Alaska | 2 arc seconds |
+| Resolution | DEM | Datum | Area | Posting | Priority |
+|------------|-------|--------|------|---------|----------|
+| Medium | COP30 | FIXME | Global | 1 arc second | Default | 
+| High | NED13 | NAVD88 | CONUS, Hawaii, parts of Alaska | 1/3 arc seconds | 1 |
+| Medium | SRTMGL1 | EGM96 | 60 N to 57 S latitude | 1 arc second | 2 |
+| Medium | NED1 | NAVD88 | CONUS, Hawaii, parts of Alaska, Canada, Mexico | 1 arc second | 3 |
+| Low | NED2 | NAVD88 | Alaska | 2 arc seconds | 4 |
 
-*Table 1: DEMs used in order of priority in RTC processing*
+*Table 1: DEMs used for RTC processing. Note that the Copernicus 30 m DEM is the default, while the other 4 DEMs are only used is the _legacy_ options is invoked.*
 
 Figure 1 shows the coverage of the various DEM sources. The continental U.S. (CONUS), Hawaii, and parts of Alaska are covered by the National Elevation Dataset (NED) at ⅓ arc seconds (about 10 m resolution). The rest of Alaska above 60 degrees northern latitude is only available at about 60 m resolution with 2 arc seconds NED data. The best resolution for Canada and Mexico is provided by the 1 arc second NED at about 30 m. For the remaining globe, Shuttle Radar Topography Mission (SRTM) GL1 data at 30 m resolution is used. Greenland and Antarctica are mostly covered by ice and glaciers and not suitable for terrain correction. For areas in Eurasia above 60 degrees northern latitude, no suitable DEMs are available.
 

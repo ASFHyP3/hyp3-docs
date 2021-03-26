@@ -1,12 +1,11 @@
 # Sentinel-1 RTC Product Guide
-
 This document is a guide for users of radiometrically terrain-corrected Sentinel-1 products processed by the Alaska Satellite Facility.
 
 ## Data Processing
 
 ### Digital Elevation Models
 
-The quality of the terrain correction results is directly related to the quality of the digital elevation models (DEMs) used in the process of geometrically and radiometrically correcting the SAR imagery. Table 1 summarizes the various DEM sources and the way they are used in the radiometric terrain correction (RTC).
+The quality of the terrain corrections are directly related to the quality of the digital elevation models (DEMs) used in the process of geometrically and radiometrically correcting the SAR imagery. Table 1 summarizes the various DEM sources and the way they are used in the radiometric terrain correction (RTC).
 Note that in each case, the DEM is resampled to RTC spacing and reprojected to WGS84 UTM during processing.
 
 | Resolution | DEM | Datum | Area | Posting | Priority |
@@ -14,18 +13,20 @@ Note that in each case, the DEM is resampled to RTC spacing and reprojected to W
 | Medium | COP30 | FIXME | Global | 1 arc second | Default | 
 | High | NED13 | NAVD88 | CONUS, Hawaii, parts of Alaska | 1/3 arc seconds | 1 |
 | Medium | SRTMGL1 | EGM96 | 60 N to 57 S latitude | 1 arc second | 2 |
-| Medium | NED1 | NAVD88 | CONUS, Hawaii, parts of Alaska, Canada, Mexico | 1 arc second | 3 |
-| Low | NED2 | NAVD88 | Alaska | 2 arc seconds | 4 |
+| Medium | NED1 | NAVD88 | Canada | 1 arc second | 3 |
+| Low | NED2 | NAVD88 | Parts of Alaska | 2 arc seconds | 4 |
 
-*Table 1: DEMs used for RTC processing. Note that the Copernicus 30 m DEM is the default, while the other 4 DEMs are only used is the _legacy_ options is invoked.*
+*Table 1: DEMs used for RTC processing. Note that the Copernicus 30 m DEM is the default, while the other 4 DEMs are only used if the legacy option is invoked.*
 
-Figure 1 shows the coverage of the various DEM sources. The continental U.S. (CONUS), Hawaii, and parts of Alaska are covered by the National Elevation Dataset (NED) at ⅓ arc seconds (about 10 m resolution). The rest of Alaska above 60 degrees northern latitude is only available at about 60 m resolution with 2 arc seconds NED data. The best resolution for Canada and Mexico is provided by the 1 arc second NED at about 30 m. For the remaining globe, Shuttle Radar Topography Mission (SRTM) GL1 data at 30 m resolution is used. Greenland and Antarctica are mostly covered by ice and glaciers and not suitable for terrain correction. For areas in Eurasia above 60 degrees northern latitude, no suitable DEMs are available.
+Figure 1 shows the coverage of the various DEM sources. The default DEM used is Copernicus 30 m which has global coverage, minus Azerbaijan.  If legacy DEM processing is selected, then one of the following 4 DEMs will be selected instead. The continental U.S. (CONUS), Hawaii, and parts of Alaska are covered by the National Elevation Dataset (NED) at ⅓ arc seconds (about 10 m resolution) which is the first DEM to be examined for coverage.  Shuttle Radar Topography Mission (SRTM) GL1 data at 30 m resolution is used where NED 13 is not available.  Because SRTM does not extend past 60 latitude, the best resolution for Canada is provided by the 1 arc second NED at about 30 m. Parts of Alaska above 60 degrees northern latitude are only available at about 60 m resolution with 2 arc seconds NED data.  If using legacy DEMs where more than one DEM is available, the DEMs are selected by priority as given in table 1.  DEM coverage of at least 20% from a single DEM source is required for legacy processing to proceed.
 
 ![Figure 1](../images/dem-coverage-map.png "Coverage of the various DEM sources used for terrain correction")
 
-*Figure 1: Coverage of the various DEM sources used for terrain correction*
+*Figure 1: Coverage of the various legacy DEM sources used for terrain correction*
 
-The DEMs were pre-processed by ASF to a consistent raster format (GeoTIFF) from the original source formats: height (\*.hgt), ESRI ArcGrid (\*.adf), etc. Many of the NASA-provided DEMs were provided as orthometric heights with EGM96 vertical datum. These were converted by ASF to ellipsoid heights using the ASF [MapReady](https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready) tool named *geoid_adjust*. The pixel reference varied from the center (pixel as point) to a corner (pixel as area). The GAMMA software, used to generate the terrain corrected products, uses pixel as area and adjusts DEM coordinates as needed. Where more than one DEM is available, the best-resolution DEM is used for processing. DEM coverage of at least 20% from a single DEM source is required for processing to proceed.
+The legacy DEMs were pre-processed by ASF to a consistent raster format (GeoTIFF) from the original source formats: height (\*.hgt), ESRI ArcGrid (\*.adf), etc. Many of the NASA-provided DEMs were provided as orthometric heights with EGM96 vertical datum. These were converted by ASF to ellipsoid heights using the ASF [MapReady](https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready) tool named *geoid_adjust*. The pixel reference varied from the center (pixel as point) to a corner (pixel as area). The GAMMA software, used to generate the terrain corrected products, uses pixel as area and adjusts DEM coordinates as needed. 
+
+The Copernicus DEM is pre-processed during the actual RTC run. The process involves geoid adjustment and reprojection to WGS84 UTM.
 
 ## Terrain Correction Workflow
 

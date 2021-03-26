@@ -73,4 +73,3 @@ plugins:
         #    See: https://github.com/datarobot/mkdocs-redirects/issues/16
         getting_started.md: 'https://hyp3-docs.asf.alaska.edu/#getting-started'
         using/vertex.md: 'https://search.asf.alaska.edu/#/?topic=onDemand'
-        guides/Sentinel_RTC_Product_Guide.pdf: guides/rtc_product_guide.md

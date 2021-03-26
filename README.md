@@ -1,27 +1,101 @@
-# ASFHyP3
-A collection of services and plugins to support HyP3 by the Alaska Satellite Facility.
+# HyP3 documentation
 
-# What is HyP3
-HyP3 (Hybrid Pluggable Processing Pipeline) is a system that addresses many of the issues that people face when processing Synthetic Aperture Radar (SAR) imagery:
-* Most SAR datasets require at least some processing to remove distortions before they are analysis-ready
-* SAR processing is computing-intensive
-* Software for SAR processing is complicated to use and/or prohibitively expensive
-* Producing analysis-ready SAR data has a steep learning curve that acts as a barrier to entry
+HyP3 documentation is built using [MkDocs](https://www.mkdocs.org/) and the
+[ASF Theme](https://github.com/ASFHyP3/mkdocs-asf-theme).
 
-HyP3 solves these problems by providing a **free** service where people can request SAR processing on-demand. These processing requests are picked up by automated systems, which handle the complexity of SAR processing on behalf of the user. HyP3 doesn't require users to have a lot of knowledge of SAR processing before getting started; users only need to submit the input data, and set a few optional parameters if desired. With HyP3, analysis-ready products are just a few clicks away.
+## How to
 
-# How it Works
-HyP3 is made up of multiple parts, but they fall into roughly two categories: Orchestration and Plugins. 
+### Setting up a development environment
 
-The Orchestration of HyP3 runs HyP3 plugins in the cloud and makes it easy for users to request processing, monitor their requests, and download finished products without needing to manage any of the plugins. HyP3 Orchestration can be deployed independently.
+In order to automatically document some of our APIs, we use a `conda` environment
+with our APIs installed. You can get Miniconda (recommended) here:
 
-Plugins are the workhorses of HyP3. They marshal the input data through complicated SAR processing code to generate an output product. Plugins are container-based and can also be used independently. 
+<https://docs.conda.io/en/latest/miniconda.html>
 
-# Contributing
+Once conda is installed, from the repository root, you can create and activate a 
+conda environment with all the necessary dependencies
 
-# Contact Us
-Want to talk about HyP3? We would love to hear from you!
+```
+conda env create -f environment.yml
+conda activate hyp3-docs
+```
 
-Found a bug? Want to request a feature? [open an issue](https://github.com/ASFHyP3/ASFHyP3/issues/new){target=_blank}
+Later, you can update the environment's dependencies with
 
-General questions? Suggstions? Or just want to talk to the team? [chat with us on gitter](https://gitter.im/ASFHyP3/community){target=_blank}
+```
+conda env update -f environment.yml
+```
+
+### Build and view the documentation site
+
+With the `hyp3-docs` conda environment activated, run
+
+```
+mkdocs serve
+```
+
+to generate the documentation. This will allow you to view it at <http://127.0.0.1:8000/>.
+MkDocs will automatically watch for new/changed files in this directory and
+rebuild the website so you can see your changes live (just refresh the webpage!).
+
+*Note: `mkdocs serve` captures your terminal; use `crtl+c` to exit. It is recommended you
+use a second/dedicated terminal so you can keep this command running.*
+
+### Deploy
+
+This documentation site is deployed as a Github Organization website with a CNAME
+so that it's viewable at <https://hyp3-docs.asf.alaska.edu/>. The website is served
+out of the special <https://github.com/ASFHyP3/ASFHyP3.github.io> repository. Deployment
+is handled automatically with the `.github/workflows/deploy_to_github_io.yml` Github
+Action for any merge to `main`.
+
+There is also a test site deployed to <https://hyp3-docs.asf.alaska.edu/hyp3-docs>, which
+tracks the `develop` branch of this repo and is served out of the `gh-pages` branch
+of this repo.
+
+## Markdown formatting
+
+The way MkDocs and GitHub parse the markdown documents are slightly different. Some compatibility tips:
+
+* Raw links should be wrapped in angle brackets: `<https://example.com>`
+* MkDocs is pickier about whitespace between types (e.g., headers, paragraphs, lists) and seems to 
+expect indents to be 4 spaces. So to get a representation like:
+
+    <hr/>
+    
+    - A list item
+    
+         ##### A sub list heading
+        - A sub-list item
+    
+    <hr/>
+      
+    in MkDocs, you'll want to write it like: 
+        
+    ### Good
+    ```
+    - A list item
+    
+        ##### A sub list heading
+        - A sub-list item
+    ```
+    
+    ### Bad
+    ```
+    - A list item
+      ##### A sub list heading
+      - A sub-list item
+    ```
+    
+    ```
+    - A list item
+        ##### A sub list heading
+        - A sub-list item
+    ```
+    
+    ```
+    - A list item
+    
+      ##### A sub list heading
+      - A sub-list item
+    ```

@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - develop
 
 jobs:
   build_and_deploy:
@@ -12,23 +13,36 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          path: ASFHyP3
+          path: hyp3-docs
 
       - uses: conda-incubator/setup-miniconda@v2
         with:
           auto-update-conda: true
           python-version: 3.8
-          activate-environment: ASFHyP3
-          environment-file: ASFHyP3/environment.yml
+          activate-environment: hyp3-docs
+          environment-file: hyp3-docs/environment.yml
+
+      - name: Deploy test website
+        if: github.ref == 'refs/heads/develop'
+        shell: bash -l {0}
+        run: |
+          cd hyp3-docs
+          # Remove conflicting CNAME for project site
+          rm docs/CNAME
+          # Set site URL for dev site
+          sed -i 's|site_url: https://hyp3-docs.asf.alaska.edu/|site_url: https://hyp3-docs.asf.alaska.edu/hyp3-docs/|' mkdocs.yml
+          mkdocs gh-deploy --force
 
       - uses: actions/checkout@v2
+        if: github.ref == 'refs/heads/main'
         with:
           repository: ASFHyP3/ASFHyP3.github.io
           path: ASFHyP3.github.io
           token: ${{ secrets.TOOLS_BOT_PAK }}
 
       - name: deploy to github.io
+        if: github.ref == 'refs/heads/main'
         shell: bash -l {0}
         run: |
           cd ASFHyP3.github.io
-          mkdocs gh-deploy --config-file ../ASFHyP3/mkdocs.yml --remote-branch main
+          mkdocs gh-deploy  --force --config-file ../hyp3-docs/mkdocs.yml --remote-branch main

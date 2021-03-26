@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - main
+      - develop
 
 jobs:
   build_and_deploy:
@@ -16,10 +17,10 @@ jobs:
         with:
           auto-update-conda: true
           python-version: 3.8
-          activate-environment: ASFHyP3
+          activate-environment: hyp3-docs
           environment-file: environment.yml
 
-      - name: test build of website
+      - name: Test build of website
         shell: bash -l {0}
         run: |
           mkdocs build

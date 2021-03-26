@@ -1,5 +1,27 @@
 # Sentinel-1 RTC Product Guide
-This document is a guide for users of radiometrically terrain-corrected Sentinel-1 products processed by the Alaska Satellite Facility.
+This document is a guide for users of Radiometrically Terrain Corrected (RTC) Sentinel-1 products processed by the Alaska Satellite Facility (ASF).
+
+## Introduction
+
+There are a number of distortions inherent to SAR data due to the side-looking nature of the sensor, and these impacts will be more prevalent in areas with rugged terrain. The process of radiometric terrain correction addresses the geometric distortions that lead to geolocation errors in terrain features, and also normalizes the backscatter values based on the actual area contributing returns. This process generates an image that aligns well with other geospatial data and is suitable for GIS applications or time-series analysis. 
+
+### SAR Distortions
+
+The key distortions present in SAR images are foreshortening, layover and shadow (Figure 00). 
+
+![Figure 00](../images/sar_distortions.png "Diagrams illustrating the drivers of terrain distortion in SAR imagery.")
+
+*Figure 00: Diagrams illustrating the drivers of terrain distortion in SAR imagery.*
+
+In the case of **foreshortening**, the backscatter from the front side of the mountain is compressed, with returns from a large area arriving back to the sensor at about the same time. This results in the front slope being displayed as a narrow, bright band. 
+
+When **layover** occurs, returns from the front slope (and potentially even some of the area before the slope starts) are not received. Instead, the upper reaches of the back slope are interpreted as the returns from the front slope. In this case, the data from the front slope cannot be extracted from the returns.
+
+Another condition that results in missing data is radar **shadow**. In this case, the angle of the back slope is such that none of the signal can be returned to the sensor.
+
+When RTC is performed, foreshortened areas are corrected based on the DEM. Areas impacted by layover or shadow, however, do not actually have data returns to correct. In this case, the pixels in the resulting RTC image will have a value of No Data. We do not interpolate missing data; users who would like to fill holes with estimated values will need to do so as appropriate for their particular application.
+
+The RTC product package includes a Layover-Shadow mask. If you find that there are No Data pixels in your image, you can refer to that reference raster to see if the missing pixels are due to layover or shadow effects.
 
 ## Data Processing
 

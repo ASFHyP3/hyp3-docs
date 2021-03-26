@@ -181,7 +181,7 @@ This scale is not always the best choice for general visualization of RTC produc
 
 ## RTC Use Examples
 
-The RTC products are presented as Cloud-Optimized GeoTIFFs (COGs), a user-friendly format that is GIS compatible. The products do not include pre-generated overviews, so users may need to generate pyramids to display the images efficiently in a GIS environment.
+The RTC products are presented as Cloud-Optimized GeoTIFFs (COGs), a user-friendly format that is GIS compatible.
 
 The side-looking geometry of SAR imagery leads to geometric and radiometric distortions. RTC adjusts images so that the values relate to actual topographic features, alleviating shadows, foreshortening, and layover effects inherent to SAR images. These corrected images can then be used as “just another layer” within a GIS, and can be combined with other datasets in a number of ways.
 

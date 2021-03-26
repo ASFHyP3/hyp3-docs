@@ -4,9 +4,8 @@ This document is a guide for users of radiometrically terrain-corrected Sentinel
 ## Data Processing
 
 ### Digital Elevation Models
-
-The quality of the terrain corrections are directly related to the quality of the digital elevation models (DEMs) used in the process of geometrically and radiometrically correcting the SAR imagery. Table 1 summarizes the various DEM sources and the way they are used in the radiometric terrain correction (RTC).
-Note that in each case, the DEM is resampled to RTC spacing and reprojected to WGS84 UTM during processing.
+durubg
+The quality of the terrain corrections are directly related to the quality of the digital elevation models (DEMs) used in the process of geometrically and radiometrically correcting the SAR imagery. Table 1 summarizes the various DEM sources and the way they are used in radiometric terrain correction (RTC). Note that in each case, the DEM is resampled to RTC spacing and reprojected to WGS84 UTM during processing.
 
 | Resolution | DEM | Datum | Area | Posting | Priority |
 |------------|-------|--------|------|---------|----------|
@@ -18,7 +17,16 @@ Note that in each case, the DEM is resampled to RTC spacing and reprojected to W
 
 *Table 1: DEMs used for RTC processing. Note that the Copernicus 30 m DEM is the default, while the other 4 DEMs are only used if the legacy option is invoked.*
 
-Figure 1 shows the coverage of the various DEM sources. The default DEM used is Copernicus 30 m which has global coverage, minus Azerbaijan.  If legacy DEM processing is selected, then one of the following 4 DEMs will be selected instead. The continental U.S. (CONUS), Hawaii, and parts of Alaska are covered by the National Elevation Dataset (NED) at ⅓ arc seconds (about 10 m resolution) which is the first DEM to be examined for coverage.  Shuttle Radar Topography Mission (SRTM) GL1 data at 30 m resolution is used where NED 13 is not available.  Because SRTM does not extend past 60 latitude, the best resolution for Canada is provided by the 1 arc second NED at about 30 m. Parts of Alaska above 60 degrees northern latitude are only available at about 60 m resolution with 2 arc seconds NED data.  If using legacy DEMs where more than one DEM is available, the DEMs are selected by priority as given in table 1.  DEM coverage of at least 20% from a single DEM source is required for legacy processing to proceed.
+Figure 1 shows the coverage of the various DEM sources. The default DEM used is Copernicus 30 m which has global coverage, minus Azerbaijan.  
+
+If legacy DEM processing is selected, then one of the following DEMs will be selected
+
+1. The National Elevation Dataset (NED) ⅓ arc second (about 10 m resolution) DEM covers the continental U.S. (CONUS), Hawaii, and parts of Alaska.
+2. Shuttle Radar Topography Mission (SRTM) GL1 data at 30 m resolution is used where NED 13 is not available.  
+3. 1 arc second NED gives coverage of Canada at about 30 m resolution. 
+4. 2 arc second NED (about 60 m) covers the remaining parts of Alaska above 60 degrees northern latitude.
+
+Since  more than one DEM may be available in legacy processing, DEMs are selected in priority order as given in table 1.  DEM coverage of at least 20% from a single DEM source is required for legacy processing to proceed.  In no case will the DEM selected be from more than one source; only the single best source of terrain height values is used for a given scene.  No such restriction applies to the Copernicus DEM. 
 
 ![Figure 1](../images/dem-coverage-map.png "Coverage of the various DEM sources used for terrain correction")
 

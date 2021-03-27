@@ -3,9 +3,18 @@ This document is a guide for users of Radiometrically Terrain Corrected (RTC) Se
 
 ## Introduction
 
-There are a number of distortions inherent to SAR data due to the side-looking nature of the sensor, and these impacts will be more prevalent in areas with rugged terrain. The process of radiometric terrain correction addresses the geometric distortions that lead to geolocation errors in terrain features, and also normalizes the backscatter values based on the actual area contributing returns. This process generates an image that aligns well with other geospatial data and is suitable for GIS applications or time-series analysis. 
+### Sentinel-1 Mission
+The [Sentinel-1 mission](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1) collects C-band band SAR from a pair of polar-orbiting satellites launched by the European Space Agency (ESA) as part of the [Copernicus program](http://www.esa.int/Applications/Observing_the_Earth/Copernicus/Overview4). The Sentinel-1A satellite was launched April 3, 2014, and the Sentinel-1B satellite was launched April 25, 2016.
+
+The two Sentinel-1 satellites each have a 12-day repeat cycle, but their orbits are offset 180 degrees so that one or the other will pass over the same location on earth every 6 days. Most areas of the earth will still only have imagery collected every 12 days, but Europe and select areas of interest are imaged with a 6-day interval, as described in the [mission observation scenario](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1/observation-scenario).
+
+Because this is a polar-orbiting satellite constellation, areas near the poles may have a number of overlapping paths, resulting in even more frequent acquisitions with similar footprints. 
+
+The relatively short interval between acquisitions makes this SAR dataset a very useful tool for monitoring rapid or sudden landscape changes. In addition, SAR can image the earth's surface through cloud or smoke cover and does not require sunlight, so valid imagery can be collected on every pass. This is particularly useful for monitoring conditions during natural disasters such as hurricanes or wildfires, or in areas that are prone to frequent cloud cover.
 
 ### SAR Distortions
+
+There are a number of distortions inherent to SAR data due to the side-looking nature of the sensor, and these impacts will be more prevalent in areas with rugged terrain. The process of radiometric terrain correction addresses the geometric distortions that lead to geolocation errors in terrain features, and also normalizes the backscatter values based on the actual area contributing returns. This process generates an image that aligns well with other geospatial data and is suitable for GIS applications or time-series analysis.
 
 The key distortions present in SAR images are foreshortening, layover and shadow (Figure 1). 
 
@@ -237,11 +246,7 @@ This scale is not always the best choice for general visualization of RTC produc
 
 ## RTC Use Examples
 
-The RTC products are presented as Cloud-Optimized GeoTIFFs (COGs), a user-friendly format that is GIS compatible. The products do not include pre-generated overviews, so users may need to generate pyramids to display the images efficiently in a GIS environment.
-
-The side-looking geometry of SAR imagery leads to geometric and radiometric distortions. RTC adjusts images so that the values relate to actual topographic features, alleviating shadows, foreshortening, and layover effects inherent to SAR images. These corrected images can then be used as “just another layer” within a GIS, and can be combined with other datasets in a number of ways.
-
-The two satellites that comprise the Sentinel-1 mission each have a 12-day repeat cycle, so most areas of the earth will have imagery at least every 6 days, but many areas have coverage even more frequently, making this SAR dataset a very useful tool for monitoring rapid or sudden landscape changes. In addition, SAR is not impacted by either cloud cover or lack of light, so RTC imagery can be collected at any time, and in areas or situations where cloud cover often causes problems for other imagery types.
+The RTC products are presented as Cloud-Optimized GeoTIFFs (COGs), a user-friendly format that is GIS compatible. The products include pre-generated overviews, so users will not need to generate pyramids to display the images efficiently in a GIS environment.
 
 The following sections present examples of how one might use RTC datasets to identify areas of change and integrate RTC datasets into other datasets for enhanced results. We also present a bibliography of some of the scientific literature making use of Sentinel-1 RTC datasets.
 

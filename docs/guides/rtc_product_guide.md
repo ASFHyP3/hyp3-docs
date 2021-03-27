@@ -11,7 +11,7 @@ The key distortions present in SAR images are foreshortening, layover and shadow
 
 ![Figure 00](../images/sar_distortions.png "Diagrams illustrating the drivers of terrain distortion in SAR imagery.")
 
-*Figure 00: Diagrams illustrating the drivers of terrain distortion in SAR imagery.*
+*Figure 00: Diagrams illustrating the drivers of terrain distortion in SAR imagery*
 
 In the case of **foreshortening**, the backscatter from the front side of the mountain is compressed, with returns from a large area arriving back to the sensor at about the same time. This results in the front slope being displayed as a narrow, bright band. 
 
@@ -21,7 +21,7 @@ Another condition that results in missing data is radar **shadow**. In this case
 
 When RTC is performed, foreshortened areas are corrected based on the DEM. Areas impacted by layover or shadow, however, do not actually have data returns to correct. In this case, the pixels in the resulting RTC image will have a value of No Data. We do not interpolate missing data; users who would like to fill holes with estimated values will need to do so as appropriate for their particular application.
 
-The RTC product package includes a Layover-Shadow mask. If you find that there are No Data pixels in your image, you can refer to that reference raster to see if the missing pixels are due to layover or shadow effects.
+The RTC product package includes a Layover-Shadow mask (see [Image Files section](#image-files)) If you find that there are No Data pixels in your image, you can refer to that reference raster to see if the missing pixels are due to layover or shadow effects.
 
 ## Data Processing
 
@@ -118,7 +118,7 @@ Example: S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A
 | yy | Beam Mode | IW |
 | aaaaaaaa | Start Year-Month-Day | 20180128 |
 | bbbbbb | Start Hour-Minute-Second | 161201 |
-| pp | Polarization: Dual-pol (D) vs. Single-pos (S), Primary Polarization (H or V) | DV |
+| pp | Polarization: Dual-pol (D) vs. Single-pol (S), Primary Polarization (H or V) | DV |
 | o | Orbit Type: Precise (P), Restituted (R), or Original Predicted (O) | P |
 | zz | Terrain Correction Pixel Spacing (m) | 30 |
 | u | Software Package Used: GAMMA (G) | G |

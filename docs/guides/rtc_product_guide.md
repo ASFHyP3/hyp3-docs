@@ -29,7 +29,7 @@ The RTC product package includes a Layover-Shadow mask. If you find that there a
 
 The quality of the terrain corrections are directly related to the quality of the digital elevation models (DEMs) used in the process of geometrically and radiometrically correcting the SAR imagery. We use DEMs that are publicly available and have wide-ranging coverage. 
 
-In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. With the public release of the GLO-30 Copernicus DEM, we have changed our default DEM strategy to leverage a cloud-hosted copy of the Copernicus DEM. 
+In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. With the public release of the GLO-30 Copernicus DEM, we have changed our default DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. 
 
 Table 1 summarizes ASF's DEM sources. Note that in each case, the DEM is resampled to RTC spacing and reprojected to a UTM Zone (WGS84), and a geoid correction is applied before being used for RTC processing.
 
@@ -49,8 +49,15 @@ When ordering On-Demand RTC products, you can choose to include a copy of the DE
 
 The GLO-30 Copernicus DEM provides global coverage (with the current exception of an area covering Armenia and Azerbaijan) at 30-m pixel spacing. When an RTC job is requested, we access the required DEM tiles from a public S3 bucket hosted in Amazon Web Services (AWS), mosaic them, reproject them to the appropriate UTM Zone for the location of the SAR granule to be processed, and a geoid correction is applied before it is used for RTC processing.
 
-Figure 0 shows the coverage of the GLO-30 Copernicus DEM. 
+Figure 0 shows the coverage of the GLO-30 Copernicus DEM, and figure 0B details the area currently not covered.
 
+![Figure 0](../images/cop-coverage-map.png "Coverage of the Copernicus DEM GLO-30")
+
+*Figure 0: Copernicus DEM GLO-30 coverage map*
+
+![Figure 0B](../images/cop-missing-100.png "Current hold in coverage of Copernicus DEM GLO-30")
+
+*Figure 0B: Detail of area currently not covered by Copernicus DEM GLO-30.*
 
 #### Legacy DEMs
 

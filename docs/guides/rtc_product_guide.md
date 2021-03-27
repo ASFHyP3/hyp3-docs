@@ -100,7 +100,7 @@ In a final step, the RTC product is geocoded into map-projected space. Thus, rad
 
 ### Post-Processing
 
-After the terrain correction is completed, the RTC products are exported to GeoTIFF format. If the scene being processed is dual polarization, a color decomposition will be created.  Side products including the DEM, layover shadow map, scattering area map, and incidence angle map are converted into GeoTIFF format. In addition, a README text file, browse images, item-specific ArcGIS-compatible XML metadata files, a log file, and a shapefile indicating the data extent are generated for the product.
+After the terrain correction is completed, the RTC products are exported to GeoTIFF format. If the scene being processed is dual polarization, users have the option to add a full-resolution RGB Decomposition GeoTIFF to the RTC product package.  Side products including the DEM, layover shadow map, scattering area map, and incidence angle map are converted into GeoTIFF format. In addition, a README text file, browse images, item-specific ArcGIS-compatible XML metadata files, a log file, and a shapefile indicating the data extent are generated for the product.
 
 ## Product Packaging
 

@@ -149,7 +149,7 @@ The default settings for RTC products are as follows:
 
 ### Image Files
 
-All files are stored in a folder named using the above convention, and the base name for each file matches the folder name. Multiple types of image files are present in this folder.
+All files are stored in a folder named using the above convention, and the base name for each file matches the folder name. Multiple types of image files are present in this folder, and some of the files are optional. Users can choose to exclude the RGB Decomposition GeoTIFF, scattering area map, DEM, and incidence angle map rasters when ordering On-Demand RTC products.
 
 | Extension | Description | Example |
 |---|---|---|
@@ -158,15 +158,15 @@ All files are stored in a folder named using the above convention, and the base 
 | _rgb.png | Color browse image | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.png |
 | .kmz | Zipped Google Earth image | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.kmz |
 | _rgb.kmz | Zipped Google Earth color image | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.kmz |
-| _rgb.tif | Color decomposition in GeoTIFF format | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.tif |
-| _area.tif | Scattering area map in GeoTIFF format | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_area.tif |
-| _dem.tif | DEM used for terrain correction in GeoTIFF format | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_dem.tif |
-| _inc_map.tif | Incidence angle file in GeoTIFF format | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_inc_map.tif |
+| _rgb.tif | Color decomposition in GeoTIFF format (optional)| S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.tif |
+| _area.tif | Scattering area map in GeoTIFF format (optional)| S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_area.tif |
+| _dem.tif | DEM used for terrain correction in GeoTIFF format (optional)| S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_dem.tif |
+| _inc_map.tif | Incidence angle file in GeoTIFF format (optional)| S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_inc_map.tif |
 | _ls_map.tif | Layover/shadow mask in GeoTIFF format | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_ls_map.tif |
 
 *Table 4: Image files in product package*
 
-Floating point GeoTIFF files are used for the main products as well as the DEM, colorized product, incidence angle map and scattering area map. An integer GeoTIFF file is used for the layover/shadow mask. PNG format is used for both the color and the greyscale browse images, which are each 2048 pixels wide. Finally, KMZ files suitable for viewing in Google Earth are included. Note that colorized products can only be created for dual-polarization (SDV and SDH) granules, not for single-polarization (SSV or SSH).
+The RTC products (one for each available polarization) are generated as 32-bit floating-point single-band GeoTIFF files, as are the incidence angle and scattering area maps. The RGB Decomposition is a 3-band unsigned 8-bit GeoTIFF file, the layover/shadow mask is a single-band unsigned 8-bit GeoTIFF, and the DEM is a 16-bit unsigned integer GeoTIFF. The browse images (both grayscale and color) are generated in PNG format, and are each 2048 pixels wide. Finally, KMZ files suitable for viewing in Google Earth are included. Note that colorized products (RGB Decomposition GeoTIFF or color browse PNG) can only be created for dual-polarization (SDV and SDH) granules, not for single-polarization (SSV or SSH).
 
 ### Metadata Files
 

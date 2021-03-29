@@ -18,15 +18,15 @@ There are a number of distortions inherent to SAR data due to the side-looking n
 
 The key distortions present in SAR images are foreshortening, layover and shadow (Figure 1). 
 
-![Figure 1](../images/sar_distortions.png "Diagrams illustrating the drivers of terrain distortion in SAR imagery.")
+![Figure 1](../images/sar_distortions.png)
 
-*Figure 1: Diagrams illustrating the drivers of terrain distortion in SAR imagery*
+*Figure 1: Distortions induced by side-looking SAR. Ground points a, b, c are ‘seen’ by radar as points a’, b’, c’ in the slant range.*
 
 In the case of **foreshortening**, the backscatter from the front side of the mountain is compressed, with returns from a large area arriving back to the sensor at about the same time. This results in the front slope being displayed as a narrow, bright band. 
 
-When **layover** occurs, returns from the front slope (and potentially even some of the area before the slope starts) are not received. Instead, the upper reaches of the back slope are interpreted as the returns from the front slope. In this case, the data from the front slope cannot be extracted from the returns.
+When **layover** occurs, returns from the front slope (and potentially even some of the area before the slope starts) are received at the same time as returns from the back slope. Thus, area in the front of the slope is projected onto the back side in the slant range image. In this case, the data from the front slope cannot be extracted from the returns.
 
-Another condition that results in missing data is radar **shadow**. In this case, the angle of the back slope is such that none of the signal can be returned to the sensor.
+Another condition that results in missing data is radar **shadow**. In this case, the angle of the back slope is such that the sensor can not image it at all. These areas with steep back slopes offer no information to the SAR sensor.
 
 When RTC is performed, foreshortened areas are corrected based on the DEM. Areas impacted by layover or shadow, however, do not actually have data returns to correct. In this case, the pixels in the resulting RTC image will have a value of No Data. We do not interpolate missing data; users who would like to fill holes with estimated values will need to do so as appropriate for their particular application.
 
@@ -103,7 +103,7 @@ By default, images are not coregistered to the DEM. While RTC results can be imp
 
 When custom-ordering imagery, however, the DEM Matching option is available for selection. In this case, the first step is the co-registration of the SAR image with a simulated SAR image derived from the DEM. An initial offset is first attempted as a single match; if it fails, a larger number of image chips are used to determine an average offset in azimuth and range direction. This initial offset is then refined using strict matching criteria. Matching may fail for three different reasons: (1) no match can be found, (2) the magnitude of the residual offset errors is greater than 2 pixels, or (3) the maximum calculated offset is greater than 50m. In any of these cases, the _dead reckoning_ approach is taken when matching fails. This approach solely relies on the geolocations calculated from state vectors (the same approach used when DEM matching is not selected as an option) - no geolocation refinement is applied.
 
-During processing, a surface scattering area image for the scene is calculated and saved. This projected area image is used to create the RTC product - the SAR image is multiplied by the ratio of an ellipsoidal scattering image (used during calibration) and this scattering area image. Note that this image is, by default, projected to gamma-nought (γ<sub>0</sub>). However, when custom ordering imagery,  selecting sigma-nought (σ<sub>0</sub>) output will result in a sigma-nought projected area image.  
+During processing, a surface scattering area image for the scene is calculated and saved. This projected area image is used to create the RTC product - the SAR image is multiplied by the ratio of an ellipsoidal scattering image (used during calibration) and this scattering area image. Note that this image is always projected to gamma-nought (γ<sub>0</sub>). 
 
 In a final step, the RTC product is geocoded into map-projected space. Thus, radiometric terrain correction results in a geocoded radiometrically calibrated multi-looked image with gamma-nought (γ<sub>0</sub>) power scale values by default, though there are options to process to sigma-nought (σ<sub>0</sub>) radiometry and amplitude scale.
 

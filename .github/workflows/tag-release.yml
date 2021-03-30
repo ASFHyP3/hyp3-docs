@@ -38,7 +38,7 @@ jobs:
       - name: Upload query artifacts for debugging
         uses: actions/upload-artifact@v2
         with:
-          name: query-responces
+          name: query-responses
           path: '*.json'
 
       - uses: actions/setup-python@v1
@@ -59,7 +59,6 @@ jobs:
           BUMP_PART=$(jq --raw-output  "${LABEL_QUERY} | ${SELECT}" labels.json | sort | head -1)
           PR_QUERY='.data.repository.commit.associatedPullRequests.edges[0].node.title'
           TAG_MSG=$(jq --raw-output "${PR_QUERY}"  pr.json)
-          bump2version --current-version $(git describe --abbrev=0) \
-              --tag --tag-message "${TAG_MSG}" "${BUMP_PART}"
+          bump2version --current-version $(git describe --abbrev=0) --tag --tag-message "${TAG_MSG}" "${BUMP_PART}"
           git push --tags
           echo "Tagged version $(git describe --abbrev=0) and pushed back to repo"

@@ -255,3 +255,12 @@ Within the jobs list, a complete job dictionary will look like:
 ```
 
 Importantly, the `files` block provides download links for the product files.
+
+For large queries not all jobs may be provided single request. In this case there will be a `next` key in the response that will continue the query (this response may be similarly truncated and include a `next` key).
+```JSON
+{
+  "jobs": [
+    ...
+    ],
+  "next": "https://hyp3-api.asf.alaska.edu/jobs?start_token=eyJqb2JfaWQiOiAiYzk1MDUzY2ItYWQzNy00ZGFhLTgxZDItYzA0YmQ4NWZiNDhiIiwgInVzZXJfaWQiOiAiamxyaW5lMiIsICJyZXF1ZXN0X3RpbWUiOiAiMjAyMC0xMC0yOVQxOTo0Mzo0NCswMDowMCJ9"
+}

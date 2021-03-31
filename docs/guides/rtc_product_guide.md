@@ -20,7 +20,7 @@ The key distortions present in SAR images are foreshortening, layover and shadow
 
 ![Figure 1](../images/sar_distortions.png)
 
-*Figure 1: Distortions induced by side-looking SAR. Ground points a, b, c are ‘seen’ by radar as points a’, b’, c’ in the slant range.*
+*Figure 1: Distortions induced by side-looking SAR. Ground points a, b, c are ‘seen’ by radar as points a’, b’, c’ in the slant range. Credit: Franz J. Meyer*
 
 In the case of **foreshortening**, the backscatter from the front side of the mountain is compressed, with returns from a large area arriving back to the sensor at about the same time. This results in the front slope being displayed as a narrow, bright band. 
 
@@ -264,7 +264,7 @@ Combine the three images into a multiband raster and assign each to a different 
 
 ![Figure 5](../images/seasonal-change-example.jpg "Monthly median VH gamma-0 power values for May, July and September, displayed as a multiband RGB (May, July, Sept) image")
 
-*Figure 5: Monthly median VH gamma-0 power values for May, July and September, displayed as a multiband RGB (May, July, Sept) image*
+*Figure 5: Monthly median VH gamma-0 power values for May, July and September, displayed as a multiband RGB (May, July, Sept) image. Contains modified Copernicus Sentinel data 2017, processed by ESA.*
 
 #### Quantifying Change over Time
 
@@ -274,7 +274,7 @@ In the example below (Figure 6), RTC images from before and after heavy rains ca
 
 ![Figure 6](../images/log-difference-raster.png "Log Difference Raster with Classified Symbology")
 
-*Figure 6: Log Difference Raster with Classified Symbology*
+*Figure 6: Log Difference Raster with Classified Symbology. Contains modified Copernicus Sentinel data 2020, processed by ESA.*
 
 ### Identifying Surface Water
 
@@ -290,7 +290,7 @@ Once you have determined the appropriate threshold (Figure 8), you can reclassif
 
 ![Figure 8](../images/water-mask.png "Water Mask")
 
-*Figure 8: Water Mask*
+*Figure 8: Water Mask. Contains modified Copernicus Sentinel data 2020, processed by ESA.*
 
 ### Combination of RTC Image with other Remote Sensing Data
 
@@ -298,7 +298,7 @@ One of the main advantages of using RTC imagery with its all weather and day/nig
 
 ![Figure 9](../images/sentinel-1-rtc-image.jpg "Sentinel-1 RTC image")
 
-*Figure 9: Sentinel-1 RTC image*
+*Figure 9: Sentinel-1 RTC image.*
 
 ![Figure 10](../images/landsat-false-color-composite.jpg "False color composite (bands 5, 4, 3) of a Landsat 8 image")
 

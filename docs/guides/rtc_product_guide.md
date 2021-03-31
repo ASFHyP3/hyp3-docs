@@ -76,8 +76,8 @@ These processed DEM collections are stored by ASF in AWS. When an RTC job is req
 
 If legacy DEM processing is selected, one of the following DEMs will be used:
 
-1. The National Elevation Dataset (NED) ⅓ arc second (about 10 m resolution) DEM covers the continental U.S. (CONUS), Hawaii, and parts of Alaska.
-2. Shuttle Radar Topography Mission (SRTM) GL1 data at 30 m resolution is used where NED 13 is not available.  
+1. The [National Elevation Dataset (NED)](https://pubs.er.usgs.gov/publication/70201572) ⅓ arc second (about 10 m resolution) DEM covers the continental U.S. (CONUS), Hawaii, and parts of Alaska.
+2. [Shuttle Radar Topography Mission (SRTM)](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1-arc?qt-science_center_objects=0#qt-science_center_objects) GL1 data at 30 m resolution is used where NED 13 is not available.  
 3. 1 arc second NED gives coverage of Canada at about 30 m resolution. 
 4. 2 arc second NED (about 60 m) covers the remaining parts of Alaska above 60 degrees northern latitude.
 

@@ -18,7 +18,7 @@ There are a number of distortions inherent to SAR data due to the side-looking n
 
 The key distortions present in SAR images are foreshortening, layover and shadow (Figure 1). 
 
-![Figure 1](../images/sar_distortions.png)
+![Figure 1](../images/sar_distortions.png "Distortions induced by side-looking SAR. Ground points a, b, c are ‘seen’ by radar as points a’, b’, c’ in the slant range.")
 
 *Figure 1: Distortions induced by side-looking SAR. Ground points a, b, c are ‘seen’ by radar as points a’, b’, c’ in the slant range. Credit: Franz J. Meyer*
 
@@ -60,13 +60,13 @@ The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/fr/dataset-details?a
 
 Figure 2 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and figure 3 details the land area currently not covered.
 
-![Figure 2](../images/cop-coverage-map.png "Coverage of the Copernicus DEM GLO-30")
+![Figure 2](../images/cop-coverage-map.png "Copernicus DEM GLO-30 coverage map")
 
 *Figure 2: Copernicus DEM GLO-30 coverage map*
 
-![Figure 3](../images/cop-missing-100.png "Current hold in coverage of Copernicus DEM GLO-30")
+![Figure 3](../images/cop-missing-100.png "Detail of area currently not covered by Copernicus DEM GLO-30")
 
-*Figure 3: Detail of area currently not covered by Copernicus DEM GLO-30.*
+*Figure 3: Detail of area currently not covered by Copernicus DEM GLO-30*
 
 #### Legacy DEMs
 
@@ -85,7 +85,7 @@ Since  more than one DEM may be available in legacy processing, DEMs are selecte
 
 Figure 4 shows the coverage of the various legacy DEM sources. 
 
-![Figure 4](../images/dem-coverage-map.png "Coverage of the various DEM sources used for terrain correction")
+![Figure 4](../images/dem-coverage-map.png "Coverage of the various legacy DEM sources used for terrain correction")
 
 *Figure 4: Coverage of the various legacy DEM sources used for terrain correction*
 

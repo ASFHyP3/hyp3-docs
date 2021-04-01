@@ -1,7 +1,7 @@
 # HyP3 documentation
 
-HyP3 documentation is build using [MkDocs](https://www.mkdocs.org/){target=_blank} and the
-[Material theme](https://squidfunk.github.io/mkdocs-material/){target=_blank}.
+HyP3 documentation is built using [MkDocs](https://www.mkdocs.org/) and the
+[ASF Theme](https://github.com/ASFHyP3/mkdocs-asf-theme).
 
 ## How to
 
@@ -57,7 +57,7 @@ of this repo.
 
 The way MkDocs and GitHub parse the markdown documents are slightly different. Some compatibility tips:
 
-* Raw links should be wrapped in carrots: `<https://example.com>`
+* Raw links should be wrapped in angle brackets: `<https://example.com>`
 * MkDocs is pickier about whitespace between types (e.g., headers, paragraphs, lists) and seems to 
 expect indents to be 4 spaces. So to get a representation like:
 

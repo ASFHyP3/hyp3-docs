@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       asf_tools_version:
-        desription: 'The new version of ASF Tools'
+        description: 'The new version of ASF Tools'
         required: true
 
 jobs:

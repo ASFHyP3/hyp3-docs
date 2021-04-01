@@ -9,11 +9,11 @@ dependencies:
   - mkdocs
   - mkdocs-material=6.2
   - mkdocs-material-extensions
-  - hyp3_sdk=0.6.0  # also pinned in docs/using/sdk.md
+  - hyp3_sdk=1.0.0  # also pinned in docs/using/sdk.md
   - asf_tools=0.2.0  # also pinned in docs/tools/asf_tools.md
   - pip:
       # For documentation
-      - mkdocs-asf-theme>=0.2.1
+      - mkdocs-asf-theme>=0.2.3
       - mkdocs-redirects
       - mkdocs-section-index
       - mkdocstrings

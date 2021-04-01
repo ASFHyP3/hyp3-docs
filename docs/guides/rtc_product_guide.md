@@ -44,7 +44,7 @@ Table 1 summarizes ASF's DEM sources. Note that in each case, the DEM is resampl
 
 | Resolution | DEM | Vertical Datum | Area | Posting | Priority |
 |------------|-------|--------|------|---------|----------|
-| Medium | GLO30 | EGM2008 | Global | 1 arc second | Default | 
+| Medium | GLO-30 | EGM2008 | Global | 1 arc second | Default |
 | High | NED13 | NAVD88 | CONUS, Hawaii, parts of Alaska | 1/3 arc seconds | 1 |
 | Medium | SRTMGL1 | EGM96 | 60 N to 57 S latitude | 1 arc second | 2 |
 | Medium | NED1 | NAVD88 | Canada | 1 arc second | 3 |

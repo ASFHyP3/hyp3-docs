@@ -1,1 +1,1 @@
-{{ get_markdown('https://raw.githubusercontent.com/ASFHyP3/asf-tools/develop/ArcGIS-toolbox/README.md') }}
+{{ get_content('https://raw.githubusercontent.com/ASFHyP3/asf-tools/main/ArcGIS-toolbox/README.md') }}

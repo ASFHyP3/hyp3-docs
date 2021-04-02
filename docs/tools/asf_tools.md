@@ -1,1 +1,1 @@
-{{ get_markdown('https://raw.githubusercontent.com/ASFHyP3/asf-tools/develop/asf_tools/README.md') }}
+{{ get_content('https://raw.githubusercontent.com/ASFHyP3/asf-tools/v0.2.0/asf_tools/README.md') }}

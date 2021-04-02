@@ -28,11 +28,11 @@ The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/fr/dataset-details?a
 
 Figure 1 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and figure 2 details the land area currently not covered.
 
-![Figure 1](../images/cop-coverage-map.png "Copernicus DEM GLO-30 coverage map")
+![Figure 1](images/cop-coverage-map.png "Copernicus DEM GLO-30 coverage map")
 
 *Figure 1: Copernicus DEM GLO-30 coverage map*
 
-![Figure 2](../images/cop-missing-100.png "Detail of area currently not covered by Copernicus DEM GLO-30")
+![Figure 2](images/cop-missing-100.png "Detail of area currently not covered by Copernicus DEM GLO-30")
 
 *Figure 2: Detail of area currently not covered by Copernicus DEM GLO-30*
 
@@ -53,7 +53,7 @@ Since  more than one DEM may be available in legacy processing, DEMs are selecte
 
 Figure 3 shows the coverage of the various legacy DEM sources. 
 
-![Figure 3](../images/dem-coverage-map.png "Coverage of the various legacy DEM sources used for terrain correction")
+![Figure 3](images/dem-coverage-map.png "Coverage of the various legacy DEM sources used for terrain correction")
 
 *Figure 3: Coverage of the various legacy DEM sources used for terrain correction*
 

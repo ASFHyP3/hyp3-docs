@@ -1,2 +1,1 @@
-TODO: replace gitsnippet with macro
 {{ get_markdown('https://raw.githubusercontent.com/ASFHyP3/hyp3-sdk/develop/README.md') }}

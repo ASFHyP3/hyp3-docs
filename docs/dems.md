@@ -1,49 +1,70 @@
 # Digital Elevation Models (DEMs)
 
-ASF uses publicly-available Digital Elevation Models for processing SAR data.
-The DEM used will vary by scene location; the best available DEM with full
-coverage of the scene extent will be used for processing any given scene.
+The quality of the terrain corrections are directly related to the quality of the digital elevation models (DEMs) used in the process of geometrically and radiometrically correcting the SAR imagery. We use DEMs that are publicly available and have wide-ranging coverage.
 
-## DEM Coverage
+In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. With the public release of the GLO-30 Copernicus DEM, we have changed our default DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM.
 
-![DEM coverage map](images/dem-coverage-map.png "Coverage of the various DEM sources used for terrain correction")
+Table 1 summarizes ASF's DEM sources. Note that in each case, the DEM is resampled to RTC spacing and reprojected to a UTM Zone (WGS84), and a geoid correction is applied before being used for RTC processing.
 
-The source DEMs include:
-
-| Resolution | DEM | Datum | Area | Posting | Sampling |
+| Resolution | DEM | Vertical Datum | Area | Posting | Priority |
 |------------|-------|--------|------|---------|----------|
-| High | NED13 | NAVD88 | CONUS, Hawaii, parts of Alaska | 1/3 arc seconds | Resampled to product spacing, reprojected to WGS84 UTM |
-| Medium | SRTMGL1 | EGM96 | 60 N to 57 S latitude | 1 arc second | Resampled to product spacing, reprojected to WGS84 UTM |
-| Medium | SRTM US1 | EGM96 | CONUS, Hawaii, parts of Alaska | 1 arc second | Resampled to product spacing, reprojected to WGS84 UTM |
-| Medium | NED1 | NAVD88 | CONUS, Hawaii, parts of Alaska, Canada, Mexico | 1 arc second | Resampled to product spacing, reprojected to WGS84 UTM |
-| Medium | NED2 | NAVD88 | Alaska | 2 arc seconds | Resampled to product spacing, reprojected to WGS84 UTM |
+| Medium | GLO-30 | EGM2008 | Global | 1 arc second | Default* |
+| High | NED13 | NAVD88 | CONUS, Hawaii, parts of Alaska | 1/3 arc seconds | 1 |
+| Medium | SRTMGL1 | EGM96 | 60 N to 57 S latitude | 1 arc second | 2 |
+| Medium | NED1 | NAVD88 | Canada | 1 arc second | 3 |
+| Low | NED2 | NAVD88 | Parts of Alaska | 2 arc seconds | 4 |
 
-!!! Note
+    *Copernicus DEM to be default by 3Q 2021
 
-    For terrain corrected products, the quality of the results is directly related
-    to the quality of the digital elevation models (DEMs) used in the process of 
-    geometrically and radiometrically correcting the SAR imagery.
+*Table 1: DEMs used for RTC processing. Note that the Copernicus 30 m DEM is the default, while the other four DEMs are only used if the legacy option is invoked.*
 
-The DEMs were pre-processed by ASF to a consistent raster format (GeoTIFF) from the
-original source formats: height (`*.hgt`), ESRI ArcGrid (`*.adf`), etc. Many of the
-NASA-provided DEMs were provided as orthometric heights with EGM96 vertical datum.
-These were converted by ASF to ellipsoid heights using the ASF
-[MapReady](https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready){target=_blank} tool named
-`geoid_adjust`. The pixel reference varied from the center (pixel as point) to a
-corner (pixel as area). For terrain corrected products, the GAMMA software uses
-pixel as area and adjusts DEM coordinates as needed. Where more than
-one DEM is available, the best-resolution DEM is used for processing. DEM coverage
-of at least 20% from a single DEM source is required for processing to proceed.
+When ordering On-Demand RTC products, you can choose to include a copy of the DEM used for RTC processing in the RTC product package. This DEM copy is converted to 16-bit signed integer format, but is otherwise the same as the DEM used in the RTC process. Note that the height values will differ from the original source DEM in all cases, due to the geoid correction applied to prepare the DEM for use in RTC processing.
 
-<!-- ## DEMs Under Evaluation
+## Copernicus DEM
+
+The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/fr/dataset-details?articleId=394198) provides global coverage (with the current exception of an area covering Armenia and Azerbaijan, see Figure 2) at 30-m pixel spacing. When an RTC job is requested, we download the required DEM tiles from the Copernicus Digital Elevation Model (DEM) GLO-30 Public dataset available in the [Registry of Open Data on AWS](https://registry.opendata.aws/copernicus-dem/), managed by [Sinergise](https://www.sinergise.com/). We mosaic the tiles and reproject them to the appropriate UTM Zone for the location of the SAR granule to be processed, resampling them to match the pixel spacing and alignment of the RTC product. A geoid correction is applied before it is used for RTC processing.
+
+Figure 1 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and figure 2 details the land area currently not covered.
+
+![Figure 1](../images/cop-coverage-map.png "Copernicus DEM GLO-30 coverage map")
+
+*Figure 1: Copernicus DEM GLO-30 coverage map*
+
+![Figure 2](../images/cop-missing-100.png "Detail of area currently not covered by Copernicus DEM GLO-30")
+
+*Figure 2: Detail of area currently not covered by Copernicus DEM GLO-30*
+
+## Legacy DEMs
+
+The legacy DEMs were pre-processed by ASF to a consistent raster format (GeoTIFF) from the original source formats: height (\*.hgt), ESRI ArcGrid (\*.adf), etc. Many of the NASA-provided DEMs were provided as orthometric heights with EGM96 vertical datum. These were converted by ASF to ellipsoid heights using the ASF [MapReady](https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready) tool named *geoid_adjust*. The pixel reference varied from the center (pixel as point) to a corner (pixel as area). The GAMMA software, used to generate the terrain corrected products, uses pixel as area and adjusts DEM coordinates as needed.
+
+These processed DEM collections are stored by ASF in AWS. When an RTC job is requested, the best-available DEM covering the SAR granule is selected, and the necessary tiles are reprojected to a mosaic in the UTM Zone appropriate for the granule location.
+
+If legacy DEM processing is selected, one of the following DEMs will be used:
+
+1. The [National Elevation Dataset (NED)](https://pubs.er.usgs.gov/publication/70201572) ⅓ arc second (about 10 m resolution) DEM covers the continental U.S. (CONUS), Hawaii, and parts of Alaska.
+2. [Shuttle Radar Topography Mission (SRTM)](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1-arc?qt-science_center_objects=0#qt-science_center_objects) GL1 data at 30 m resolution is used where NED 13 is not available.
+3. 1 arc second NED gives coverage of Canada at about 30 m resolution.
+4. 2 arc second NED (about 60 m) covers the remaining parts of Alaska above 60 degrees northern latitude.
+
+Since  more than one DEM may be available in legacy processing, DEMs are selected in priority order as listed in Table 1.  DEM coverage of at least 20% from a single DEM source is required for legacy processing to proceed.  In no case will the DEM selected be from more than one source; only the single best source of terrain height values is used for a given scene.
+
+Figure 3 shows the coverage of the various legacy DEM sources.
+
+![Figure 3](../images/dem-coverage-map.png "Coverage of the various legacy DEM sources used for terrain correction")
+
+*Figure 3: Coverage of the various legacy DEM sources used for terrain correction*
+
+
+## DEMs Under Evaluation
 
 ASF is currently working to make these DEMs available:
 
-- the Copernicus Land Monitoring Service EU-DEM (EUDEM)
+- the Copernicus Land Monitoring Service EU-DEM (EUDEM) [to be released April 2021]
 - the Greenland Ice sheet Mapping Project DEM (GIMP)
 - and the Reference Elevation Model of Antarctica DSM (REMA)
 - Interferometric Synthetic Aperture Radar (IFSAR) Digital Surface Model (DSM) 
-  and Digital Terrain Model (DTM) data for Alaska -->
+  and Digital Terrain Model (DTM) data for Alaska
 
 ## Special Use DEMs
 

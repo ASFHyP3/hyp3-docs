@@ -4,6 +4,10 @@ The quality of the terrain corrections are directly related to the quality of th
 
 In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. With the public release of the GLO-30 Copernicus DEM, we are changing our default DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. 
 
+!!! important "Copernicus DEM GLO-30 Public Coming Soon" 
+
+    We are in the process of adding the [Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/fr/dataset-details?articleId=394198) as our default DEM for RTC processing. The legacy DEM is still the default for [On-Demand RTC in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand) and using the [API](https://hyp3-docs.asf.alaska.edu/using/api/), but Copernicus DEM is now the default when using the newest version of the [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/). It will soon be the default DEM for the API and Vertex as well. Stay tuned!
+
 Table 1 summarizes ASF's DEM sources. Note that in each case, the DEM is resampled to RTC spacing and reprojected to a UTM Zone (WGS84), and a geoid correction is applied before being used for RTC processing.
 
 | Resolution | DEM | Vertical Datum | Area | Posting | Priority |

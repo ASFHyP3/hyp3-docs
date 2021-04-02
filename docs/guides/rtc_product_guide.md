@@ -32,13 +32,11 @@ When RTC is performed, foreshortened areas are corrected based on the DEM. Areas
 
 The RTC product package includes a Layover-Shadow mask (see [Image Files section](#image-files)) If you find that there are No Data pixels in your image, you can refer to that reference raster to see if the missing pixels are due to layover or shadow effects.
 
-## Data Processing
-
-### Digital Elevation Models
+## Digital Elevation Models
 
 The quality of the terrain corrections are directly related to the quality of the digital elevation models (DEMs) used in the process of geometrically and radiometrically correcting the SAR imagery. We use DEMs that are publicly available and have wide-ranging coverage. 
 
-In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. With the public release of the GLO-30 Copernicus DEM, we have changed our default DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. 
+In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. With the public release of the GLO-30 Copernicus DEM, we are changing our default DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. 
 
 Table 1 summarizes ASF's DEM sources. Note that in each case, the DEM is resampled to RTC spacing and reprojected to a UTM Zone (WGS84), and a geoid correction is applied before being used for RTC processing.
 
@@ -54,7 +52,7 @@ Table 1 summarizes ASF's DEM sources. Note that in each case, the DEM is resampl
 
 When ordering On-Demand RTC products, you can choose to include a copy of the DEM used for RTC processing in the RTC product package. This DEM copy is converted to 16-bit signed integer format, but is otherwise the same as the DEM used in the RTC process. Note that the height values will differ from the original source DEM in all cases, due to the geoid correction applied to prepare the DEM for use in RTC processing.
 
-#### Copernicus DEM
+### Copernicus DEM : Coming Soon
 
 The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/fr/dataset-details?articleId=394198) provides global coverage (with the current exception of an area covering Armenia and Azerbaijan, see Figure 3) at 30-m pixel spacing. When an RTC job is requested, we download the required DEM tiles from the Copernicus Digital Elevation Model (DEM) GLO-30 Public dataset available in the [Registry of Open Data on AWS](https://registry.opendata.aws/copernicus-dem/), managed by [Sinergise](https://www.sinergise.com/). We mosaic the tiles and reproject them to the appropriate UTM Zone for the location of the SAR granule to be processed, resampling them to match the pixel spacing and alignment of the RTC product. A geoid correction is applied before it is used for RTC processing.
 
@@ -68,7 +66,7 @@ Figure 2 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and fig
 
 *Figure 3: Detail of area currently not covered by Copernicus DEM GLO-30*
 
-#### Legacy DEMs
+### Legacy DEMs
 
 The legacy DEMs were pre-processed by ASF to a consistent raster format (GeoTIFF) from the original source formats: height (\*.hgt), ESRI ArcGrid (\*.adf), etc. Many of the NASA-provided DEMs were provided as orthometric heights with EGM96 vertical datum. These were converted by ASF to ellipsoid heights using the ASF [MapReady](https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready) tool named *geoid_adjust*. The pixel reference varied from the center (pixel as point) to a corner (pixel as area). The GAMMA software, used to generate the terrain corrected products, uses pixel as area and adjusts DEM coordinates as needed. 
 

@@ -6,4 +6,4 @@ def define_env(env):
         response = requests.get(url)
         response.raise_for_status()
         return response.content.decode()
-    env.macro(get_content, 'get_markdown')
+    env.macro(get_content, 'get_content')

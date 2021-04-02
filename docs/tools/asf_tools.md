@@ -1,1 +1,1 @@
-{{ gitsnippet('https://github.com/ASFHyP3/asf-tools.git', 'asf_tools/README.md', '', 'v0.2.0') }}
+{{ get_content('https://raw.githubusercontent.com/ASFHyP3/asf-tools/v0.2.0/asf_tools/README.md') }}

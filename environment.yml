@@ -17,4 +17,4 @@ dependencies:
       - mkdocs-redirects
       - mkdocs-section-index
       - mkdocstrings
-      - git+https://github.com/Jlrine2/mkdocs-gitsnippet-plugin.git
+      - mkdocs-macros-plugin

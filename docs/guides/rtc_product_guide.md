@@ -7,6 +7,8 @@ ASF's [Sentinel-1 On-Demand RTC](https://search.asf.alaska.edu/#/?topic=onDemand
 
 A [Digital Elevation Model (DEM)](#digital-elevation-models) is required for processing RTC. ASF uses the best publicly-available DEM with full coverage of the processing area. 
 
+For a step-by-step tutorial on ordering On-Demand RTC Products using Vertex, visit our [RTC On Demand story map](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35), which also includes links to sample workflows using Sentinel-1 RTC products for GIS applications.
+
 ## Introduction
 
 ### Sentinel-1 Mission

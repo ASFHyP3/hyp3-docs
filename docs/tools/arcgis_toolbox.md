@@ -1,1 +1,1 @@
-{{ gitsnippet('https://github.com/ASFHyP3/asf-tools.git', 'ArcGIS-toolbox/README.md', '', 'main') }}
+{{ get_content('https://raw.githubusercontent.com/ASFHyP3/asf-tools/v0.2.0/ArcGIS-toolbox/README.md') }}

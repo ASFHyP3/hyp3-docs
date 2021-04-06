@@ -16,7 +16,7 @@ A Digital Elevation Model (DEM) is required for processing RTC. ASF uses the
 best publicly-available DEM with full coverage of the processing area. To learn more,
 visit [Digital Elevation Models](dems.md).
 
-## InSAR (SDK + API only)
+## InSAR
 
 Interferometric SAR (InSAR) uses the phase differences from repeat passes over the
 same area to identify regions where the distance between the sensor and the Earth's
@@ -33,7 +33,7 @@ A Digital Elevation Model (DEM) is required for processing InSAR. ASF uses the
 best publicly-available DEM with full coverage of the processing area. To learn more,
 visit [Digital Elevation Models](dems.md).
 
-## autoRIFT (SDK + API only)
+## autoRIFT
 
 [AutoRIFT](https://github.com/leiyangleon/autoRIFT){target=_blank} produces a velocity map from
 observed motion using a feature tracking algorithm developed as part of the 

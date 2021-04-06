@@ -58,9 +58,10 @@ nav:
   - Code of Conduct: CODE_OF_CONDUCT.md
 
 plugins:
-  - gitsnippet
   - search
   - section-index
+  - macros:
+      module_name: macros
   - mkdocstrings:
       handlers:
           python:

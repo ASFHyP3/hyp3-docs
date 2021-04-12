@@ -20,11 +20,32 @@ Some SAR systems can transmit chirps with either a horizontal or vertical polari
 
 Polarimetry is an emerging field of SAR processing which is used in a number of applications such as measuring vegetation properties and changes of vegetation over time.  Additional applications include oceanography, geology, and disaster response.
 
-![Figure 2](../images/polarizations.png "SAR signals are transmitted either vertically or horizontally. Likewise, the sensor can listen for both horizontally and vertically returns."){:style="float: right;margin-right: 7px;margin-top: 7px;"}
+![Figure 2](../images/polarizations.png "SAR signals are transmitted either vertically or horizontally. Likewise, the sensor can listen for both horizontally and vertically returns.")
 
 *Figure 2: SAR signals are transmitted either vertically (V) or horizontally (H). Likewise, the sensor can listen for both horizontally and vertically returns. This gives rise to four different polarization combinations - VV, VH, HH, and HV.   Credit: Franz J Meyer*
 
 -------
+
+## SAR Scale
+
+SAR backscatter are recorded in both return strength and phase.  Each pixel in a single-look complex SAR image represents these values as an imaginary number (I,Q).  To create the visible images we are used to looking at, the SAR image is *detected*.  This process calculates the square root of the sum of the squares of the I and Q values found in an SLC image, creating a so called intensity image.  This image is real valued, and, when calbrated, gives the absolute backscatter of the surface imaged.  Detected images can be stored using several different scales, including power, amplitude, and dB.  Note the default scale of Sentinel-1 RTC products from HyP3 is power. However, in some cases, it may be desirable to convert the actual pixel values to a different scale. Two other scales commonly used for SAR data are amplitude and dB.
+
+### Power Scale
+
+The values in this scale are generally very close to zero, so the dynamic range of the SAR image can be easily skewed by a few bright scatterers in the image. Power scale is appropriate for statistical analysis of the SAR dataset, but may not always be the best option for data visualization. 
+
+When viewing a SAR image in power scale in a GIS environment, it may appear mostly or all black, and you may need to adjust the stretch to see features in the image. Often applying a stretch of 2 standard deviations, or setting the Min-Max stretch values to 0 and 0.3, will greatly improve the appearance of the image. You can adjust the stretch as desired to display your image to full advantage. Be aware that this does not change the actual pixel values.
+
+### Amplitude Scale
+
+Amplitude scale is the square root of the power scale values. This brightens the darker pixels and darkens the brighter pixels, narrowing the dynamic range of the image. In many cases, amplitude scale presents a pleasing grayscale display of RTC images. Amplitude scale works well for calculating log difference ratios (see [ASF Sentinel-1 RTC Product Guide](../guides/rtc_product_guide.md/#change-detection-using-rtc-data)).
+
+
+### dB Scale
+
+The dB scale is calculated by multiplying 10 times the Log10 of the power scale values. This scale brightens the pixels, allowing for better differentiation among very dark pixels. When identifying water on the landscape, this is often a good scale to use; the water pixels generally remain very dark, while the terrestrial pixels are even brighter (see [Identifying Surface Water](#identifying-surface-water)).
+
+This scale is not always the best choice for general visualization of SAR products, as it can give a washed-out appearance, and because it is in a log scale, it is not appropriate for all types of statistical analyses.
 
 ## Backscatter Contributors
 
@@ -52,13 +73,13 @@ The strength of the return, or backscatter, is partially based upon relative rou
 
 *Figure 5: Scattering mechanisms. Rough surfaces give bright returns due to the wide scattering.  Vegetated surfaces cause volumetric scattering, which gives a darker return to the imaging platform.  Double bounce returns, found mostly in urban areas, give the brightest return, as the majority of the energy is re-directed back towards the sensor.*
 
-The resolution of Sentinel-1 SAR images is roughly 10 m.  This means that a square of 10 meters on the ground is represented by a single pixel in the SAR image. The relativate roughness of this patch of ground compared to the wavelength used will effect the backscatter strength (see Figure 4).  However, there are additional types of bounce mechanisms beyond specular and diffuse.  In vegetation, *volumetric* scattering occurs when signals bounce around inside the vegetation imaged.  The *double bounce* mechanism which occurs in urban areas and is exploited by corner reflectors, causes chrip to be reflected directly back to the sensor, causing a very strong backscatter.  Double bounce returns are so strong in some places that they cause over saturation of the sensor, resulting in visible sidelobes.  These sidelobes are evidenced by bright crosses surrounding the double bounce target.
+The resolution of Sentinel-1 SAR images is roughly 10 m.  This means that a square of 10 meters on the ground is represented by a single pixel in the SAR image. The relativate roughness of this patch of ground compared to the wavelength used will effect the backscatter strength (see figure 4).  However, there are additional types of bounce mechanisms beyond specular and diffuse, as shown in figure 5.  In vegetation, *volumetric* scattering occurs when signals bounce around inside the vegetation imaged.  The *double bounce* mechanism which occurs in urban areas and is exploited by corner reflectors, causes chrip to be reflected directly back to the sensor, causing a very strong backscatter.  Double bounce returns are so strong in some places that they cause over saturation of the sensor, resulting in visible sidelobes.  These sidelobes are evidenced by bright crosses surrounding the double bounce target.
 
 ## Geometric Distortions
 
 There are a number of distortions inherent to SAR data due to the side-looking nature of the sensor, and these impacts will be more prevalent in areas with rugged terrain. The process of radiometric terrain correction addresses the geometric distortions that lead to geolocation errors in terrain features, and also normalizes the backscatter values based on the actual area contributing returns. This process generates an image that aligns well with other geospatial data and is suitable for GIS applications or time-series analysis.
 
-The key distortions present in SAR images are foreshortening, layover and shadow (Figure 6).
+The key distortions present in SAR images are foreshortening, layover and shadow (figure 6).
 
 ![Figure 6](../images/sar_distortions.png "Distortions induced by side-looking SAR. Ground points a, b, c are ‘seen’ by radar as points a’, b’, c’ in the slant range.")
 

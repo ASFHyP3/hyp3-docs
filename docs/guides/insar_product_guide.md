@@ -55,7 +55,7 @@ In contrast to the (physical) baseline, the *temporal baseline* refers to the ti
 
 ## InSAR Workflow
 
-The InSAR workflow used in HyP3 was developed by ASF using GAMMA software.  The steps include pre-processing steps, interferogram preparation, and product creation  
+The InSAR workflow used in HyP3 was developed by ASF using GAMMA software.  The steps include pre-processing steps, interferogram preparation, and product creation.  Once these steps are performed, an output product package will be created.  See [product packaging](#product-packaging) for details on the inividual files in the package.  
 
 ### Pre-Processing
 
@@ -63,9 +63,8 @@ Pre-processing steps prepare the SAR images to be used in interferometry.  This 
 
 #### Image co-registration
 
-
-
 #### Common-band filtering
+
 #### Baseline calculation
 
 ### Interferogram Preparation
@@ -73,21 +72,32 @@ Pre-processing steps prepare the SAR images to be used in interferometry.  This 
 #### Ellipsoidal fringe removal (phase flattening)
 #### Interferogram filtering
 #### Phase unwrapping
+
 ### Product Creation
 #### Coherence Estimation
+
 ### Computation of heights
 #### Resampling to map coordinates
 
 ## Differential InSAR
 ### Removal of topographic phase
 ### Removal of differential phase
+
+## Product Packaging
+### Naming Convention
+### Default Settings
+### Image Files
+### Metadata files
+
 ## Limitations
 ## Error Sources
 ## Data Sources
+
 ## Examples
 ### Surface Deformation 
 ### Volcanic Deformation
 ### Subsidence
 ### Earthquakes
+
 ## Data Access
 

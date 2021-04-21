@@ -1,4 +1,5 @@
 # Introduction to SAR
+---------------------
 
 ## How SAR Operates
 
@@ -26,32 +27,12 @@ Polarimetry is an emerging field of SAR processing which is used in a number of 
 
 -------
 
-## SAR Scale
-
-SAR backscatter are recorded in both return strength and phase.  Each pixel in a single-look complex SAR image represents these values as an imaginary number (I,Q).  To create the visible images we are used to looking at, the SAR image is *detected*.  This process calculates the square root of the sum of the squares of the I and Q values found in an SLC image, creating a so called intensity image.  This image is real valued, and, when calbrated, gives the absolute backscatter of the surface imaged.  Detected images can be stored using several different scales, including power, amplitude, and dB.  Note the default scale of Sentinel-1 RTC products from HyP3 is power. However, in some cases, it may be desirable to convert the actual pixel values to a different scale. Two other scales commonly used for SAR data are amplitude and dB.
-
-### Power Scale
-
-The values in this scale are generally very close to zero, so the dynamic range of the SAR image can be easily skewed by a few bright scatterers in the image. Power scale is appropriate for statistical analysis of the SAR dataset, but may not always be the best option for data visualization. 
-
-When viewing a SAR image in power scale in a GIS environment, it may appear mostly or all black, and you may need to adjust the stretch to see features in the image. Often applying a stretch of 2 standard deviations, or setting the Min-Max stretch values to 0 and 0.3, will greatly improve the appearance of the image. You can adjust the stretch as desired to display your image to full advantage. Be aware that this does not change the actual pixel values.
-
-### Amplitude Scale
-
-Amplitude scale is the square root of the power scale values. This brightens the darker pixels and darkens the brighter pixels, narrowing the dynamic range of the image. In many cases, amplitude scale presents a pleasing grayscale display of RTC images. Amplitude scale works well for calculating log difference ratios (see [ASF Sentinel-1 RTC Product Guide](../guides/rtc_product_guide.md/#change-detection-using-rtc-data)).
-
-
-### dB Scale
-
-The dB scale is calculated by multiplying 10 times the Log10 of the power scale values. This scale brightens the pixels, allowing for better differentiation among very dark pixels. When identifying water on the landscape, this is often a good scale to use; the water pixels generally remain very dark, while the terrestrial pixels are even brighter (see [Identifying Surface Water](#identifying-surface-water)).
-
-This scale is not always the best choice for general visualization of SAR products, as it can give a washed-out appearance, and because it is in a log scale, it is not appropriate for all types of statistical analyses.
-
 ## Backscatter Contributors
 
-Many factors influence the backscatter recieved by the SAR sensor.  SAR wavelength, surface roughness and scattering type are discussed in this section.
+Many factors influence the backscatter recieved by the SAR sensor.  The wavelength used by the SAR influences the signal's penetration, and, thus, what is being imaged. Surface roughness will modulate the backscatter returns from nothing up to a strong return, decreasing or increasing the brightness of the resulting pixel. Scattering mechanisms like volume scattering or double bounce can strongly influence the brightness of the SAR image as well, sometimes resulting in total saturation by the received signal.
 
-### Penetration of Surfaces
+
+### Wavelength
 
 The wavelength of the SAR system influences the amount of ground penetration that occurs. As shown in figure 3, X-band has the least penetration, scattering from the top of the canopy in vegetated areas.  All three bands will penetrate dry sand, with stronger returns from both C-band and L-band.  L-band has the most penetration overall, with returns from the ground in vegetated areas, stong returns from substances under dry alluvium, and deep penetration of ice and snow.
 
@@ -74,6 +55,31 @@ The strength of the return, or backscatter, is partially based upon relative rou
 *Figure 5: Scattering mechanisms. Rough surfaces give bright returns due to the wide scattering.  Vegetated surfaces cause volumetric scattering, which gives a darker return to the imaging platform.  Double bounce returns, found mostly in urban areas, give the brightest return, as the majority of the energy is re-directed back towards the sensor.*
 
 The resolution of Sentinel-1 SAR images is roughly 10 m.  This means that a square of 10 meters on the ground is represented by a single pixel in the SAR image. The relativate roughness of this patch of ground compared to the wavelength used will effect the backscatter strength (see figure 4).  However, there are additional types of bounce mechanisms beyond specular and diffuse, as shown in figure 5.  In vegetation, *volumetric* scattering occurs when signals bounce around inside the vegetation imaged.  The *double bounce* mechanism which occurs in urban areas and is exploited by corner reflectors, causes chrip to be reflected directly back to the sensor, causing a very strong backscatter.  Double bounce returns are so strong in some places that they cause over saturation of the sensor, resulting in visible sidelobes.  These sidelobes are evidenced by bright crosses surrounding the double bounce target.
+
+------------------------
+
+## SAR Scale
+
+SAR backscatter are recorded in both return strength and phase.  Each pixel in a single-look complex SAR image represents these values as an imaginary number (I,Q).  To create the visible images we are used to looking at, the SAR image is *detected*.  This process calculates the square root of the sum of the squares of the I and Q values found in an SLC image, creating a so called intensity image.  This image is real valued, and, when calbrated, gives the absolute backscatter of the surface imaged.  Detected images can be stored using several different scales, including power, amplitude, and dB.  Note the default scale of Sentinel-1 RTC products from HyP3 is power. However, in some cases, it may be desirable to convert the actual pixel values to a different scale. Two other scales commonly used for SAR data are amplitude and dB.
+
+### Power Scale
+
+The values in this scale are generally very close to zero, so the dynamic range of the SAR image can be easily skewed by a few bright scatterers in the image. Power scale is appropriate for statistical analysis of the SAR dataset, but may not always be the best option for data visualization. 
+
+When viewing a SAR image in power scale in a GIS environment, it may appear mostly or all black, and you may need to adjust the stretch to see features in the image. Often applying a stretch of 2 standard deviations, or setting the Min-Max stretch values to 0 and 0.3, will greatly improve the appearance of the image. You can adjust the stretch as desired to display your image to full advantage. Be aware that this does not change the actual pixel values.
+
+### Amplitude Scale
+
+Amplitude scale is the square root of the power scale values. This brightens the darker pixels and darkens the brighter pixels, narrowing the dynamic range of the image. In many cases, amplitude scale presents a pleasing grayscale display of RTC images. Amplitude scale works well for calculating log difference ratios (see [ASF Sentinel-1 RTC Product Guide](../guides/rtc_product_guide.md/#change-detection-using-rtc-data)).
+
+
+### dB Scale
+
+The dB scale is calculated by multiplying 10 times the Log10 of the power scale values. This scale brightens the pixels, allowing for better differentiation among very dark pixels. When identifying water on the landscape, this is often a good scale to use; the water pixels generally remain very dark, while the terrestrial pixels are even brighter (see [Identifying Surface Water](#identifying-surface-water)).
+
+This scale is not always the best choice for general visualization of SAR products, as it can give a washed-out appearance, and because it is in a log scale, it is not appropriate for all types of statistical analyses.
+
+------------------------
 
 ## Geometric Distortions
 

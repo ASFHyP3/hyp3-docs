@@ -208,6 +208,27 @@ The baseline is defined as the difference of the platform positions when a given
 
 ## Error Sources
 
+### Atmospheric Delay
+While SAR signals can penetrate clouds, atmospheric conditions can delay the transmission of the signal. This results in phase differences that can look like surface deformation signals, but are actually driven by differences in the atmospheric conditions between the pair of acquisitions used to generate the interferogram. 
+
+In some cases, atmospheric errors can be corrected by using an atmospheric model to remove the impacts of the turbulent delay from the interferogram. Another approach is to use time series analysis to identify outliers.
+
+ALWAYS DOUBT YOUR INTERFEROGRAM FIRST! View the interferogram critically, and consider if fringe patterns coul potentially be driven by atmospheric effects. 
+
+#### Turbulent Delay
+These delays are generally caused by differences in water vapor distribution from one image to the next. They often manifest as wobbly or sausage-shaped fringes, and can potentially mask the signal of a small earthquake. 
+
+#### Stratified Delay
+This type of delay is driven mostly by pressure and temperature differences or gradients through the atmospheric column, and often correlates with topography. This atmospheric signature can be confused with movement caused by volcanic activity. If there are multiple volcanoes in an image and they all exhibit similar patterns, it is likely being driven by this type of atmospheric delay. 
+
+### DEM Errors
+A DEM is used to remove topographic phase impacts, but if there are inaccuracies in the DEM, residual impacts of those errors can remain in the interferogram. 
+
+### Decorrelation Noise
+
+### Orbit Uncertainties
+This is generally not an issue for Sentinel-1 data, as the orbits are very precise and generally reliable. It was cause for greater concern in older datasets. 
+
 ## Data Sources
 
 ## Examples

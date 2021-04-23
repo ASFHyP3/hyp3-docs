@@ -1,7 +1,8 @@
 # Sentinel-1 InSAR Product Guide
 
 ## Introduction
-Interferometric SAR (InSAR) processing uses two SAR images of the same area to determine geometric properties of the surface. With InSAR, Digital elevation models (DEMs) can be routinely created (SRTM, GLO-30). Moreover, two or more pairs of images can be used to extract surface motion or deformation at the millimeter level scale.
+Interferometric SAR (InSAR) processing uses two SAR images of the same area to determine geometric properties of the surface. 
+Using two or more pairs of images, this method can be used to extract surface motion or deformation at the millimeter level scale.
 
 ### Contents of InSAR guide
 The InSAR workflow used to create HyP3 InSAR surface motion products constitutes a large portion of this document.  Users are cautioned to read the sections on limitations and error sources in InSAR products before attempting to use InSAR data. Sections on data sources and application examples are presented as well.  For a more complete description of the properties of SAR, see our *Introduction to SAR* guide. 
@@ -130,7 +131,7 @@ To finish interferogram processing, steps 1 through 4 are run once again, this t
 
 ### Phase Unwrapping
 
-All of the phase differences in a wrapped interferograms lie between -&#960 and &#960.  Phase unwrapping attempts to assign multiples of 2&#960 to add to each pixel in the interferogram to restrict the number 2&#960 jumps in the phase to the regions where they may actually occur.  These regions  are areas of radar layover or areas of deformation exceeding half a wavelength in the line of sight.  Thermal noise and interferometric decorrelation can also result in these 2&#960 phase jumps called *residues*.   
+All of the phase differences in a wrapped interferograms lie between -&#960 and &#960.  Phase unwrapping attempts to assign multiples of 2&#960 to add to each pixel in the interferogram to restrict the number 2&#960 jumps in the phase to the regions where they may actually occur.  These regions  are areas of radar layover or areas of deformation exceeding half a wavelength in the line of sight.  Thermal noise and interferometric decorrelation can also result in these 2&#960 phase discontinuities called *residues*.   
 
 Before the interferogram can be unwrapped, it must be filtered to remove noise.  This is accomplished using an adaptive spectral filtering algorithm.  This adaptive interferogram filtering aims to reduce phase noise, increase the accuracy of the interferometric phase, and reduce the number of interferogram residues as an aid to phase unwrapping. In this case, residues are points in the interferogram where the sum of the phase differences between pixels around a closed path is not 0.0, which indicates a jump in phase.
 

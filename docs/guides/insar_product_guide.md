@@ -3,15 +3,15 @@
 ## Introduction
 Interferometric SAR (InSAR) processing uses two SAR images of the same area to determine geometric properties of the surface. With InSAR, Digital elevation models (DEMs) can be routinely created (SRTM, GLO-30). Moreover, two or more pairs of images can be used to extract surface motion or deformation at the millimeter level scale.
 
-### Contents of InSAR guide
-The InSAR workflow used to create HyP3 InSAR surface motion products constitutes a large portion of this document.  Users are cautioned to read the sections on limitations and error sources in InSAR products before attempting to use InSAR data. Sections on data sources and application examples are presented as well.  For a more complete description of the properties of SAR, see our *Introduction to SAR* guide. 
+### Contents of InSAR Guide
+The InSAR workflow used to create HyP3 InSAR surface motion products constitutes a large portion of this document.  Users are cautioned to read the sections on limitations and error sources in InSAR products before attempting to use InSAR data. Sections on data sources and application examples are presented as well.  For a more complete description of the properties of SAR, see our [Introduction to SAR](../guides/sar_intro.md) guide. 
 
 ### Brief Overview of InSAR
 SAR is an active sensor that transmits pulses and listens for echoes. These echoes are recorded in phase and amplitude, with the phase being used to determine the distance from the sensor to the target and the amplitude yielding information about the roughness and dielectric constant of that target.
 
 ![Figure 1](../images/phase_diff.png "Difference in range shows movement of the surface imaged")
 
-*Figure 1: Two passes of an imaging SAR taken at time T<sub>0</sub> and T<sub>0</sub> + ∆t, will give two distances to the ground, R<sub>1</sub> and R<sub>2</sub>.  A difference between R<sub>1</sub> and R<sub>2</sub> shows motion on the ground.  In this case, a subsidence makes R<sub>2</sub> greater than R<sub>1</sub>.  Credit: Franz J Meyer*
+*Figure 1: Two passes of an imaging SAR taken at time T<sub>0</sub> and T<sub>0</sub> + ∆t, will give two distances to the ground, R<sub>1</sub> and R<sub>2</sub>.  A difference between R<sub>1</sub> and R<sub>2</sub> shows motion on the ground.  In this case, a subsidence makes R<sub>2</sub> greater than R<sub>1</sub>.  Credit: Franz J. Meyer*
 
 InSAR exploits the phase difference between two SAR images to create an interferogram that shows where the phase, and, therefore the distance to the target, has changed from one pass to the next as illustrated in Figure 1.  There are several factors that influence the interferogram including earth curvature, topographic effects, atmospheric delays, surface motion, and noise.  With the proper processing, InSAR can be used to create topographic maps and to detect millimeter scale changes in the earth's surface. Applications include volcanic deformation, subsidence, landslide detection, and earthquake assessment.
 
@@ -26,7 +26,7 @@ For InSAR applications, processing is generally performed on the co-pol (VV or H
 
 ![Figure 2](../images/baseline.png "Geometry of InSAR Baselines.")
 
-*Figure 2: Geometry of InSAR baselines. Two satellite passes image the same area on the ground from positions S1 and S2, resulting a baseline of B which can be decomposed into normal (B<sub>n</sub>) and perpendicular (B<sub>p</sub>) components.  Here Y is the direction of travel or *along-track* and X is the direction perpendicular to motion, referred to as the *cross-track* or *range* direction.   Credit: Franz J Meyer*
+*Figure 2: Geometry of InSAR baselines. Two satellite passes image the same area on the ground from positions S1 and S2, resulting a baseline of B which can be decomposed into normal (B<sub>n</sub>) and perpendicular (B<sub>p</sub>) components.  Here Y is the direction of travel or *along-track* and X is the direction perpendicular to motion, referred to as the *cross-track* or *range* direction.   Credit: Franz J. Meyer*
 
 In order to determine topography, two slightly different vantage points are required.  The term *baseline* refers to the physical distance between these two vantage points. The baseline is decomposed into a normal and a perpendicular components as shown in Figure 2.  Sensitivity to topography depends on the perpendicular baseline, the sensor wavelength, the distance between the satellite and the ground, and the sensor look angle as given in equation 1.  The parameters are diagrammed in Figure 3. 
 
@@ -41,7 +41,7 @@ In order to determine topography, two slightly different vantage points are requ
 
 ![Figure 3](../images/baseline2.png "Parameters Affecting Topographic Sensitivity")
 
-*Figure 3: Parameters affecting topographic sensitivity include the perpendicular baseline B&#8869, the wavelength  of the sensor &#955, the distance from the sensor to the ground R, and the sensor look angle &#952. Credit: Franz Meyer*
+*Figure 3: Parameters affecting topographic sensitivity include the perpendicular baseline B&#8869, the wavelength  of the sensor &#955, the distance from the sensor to the ground R, and the sensor look angle &#952. Credit: Franz J. Meyer*
 
 In contrast to the (physical) baseline, the *temporal baseline* refers to the time separation between imaging passes.  Along-track interferometry measures motion in the millisecond to second range.  This technique can detect ocean currents and rapidly moving objects like boats.  Differential interferometry is the standard method used to detect motion in the days to years range.  This is the type of interferometry is performed by the Sentinel-1 HyP3 InSAR processing algorithm.  Table 1 lists different temporal baselines, their common names, and what they can be used to measure.  
 
@@ -51,7 +51,7 @@ In contrast to the (physical) baseline, the *temporal baseline* refers to the ti
 | days | differential | glacier/ice fields/lava flows, surface water extent, hydrology |
 | days to years | differential | subsidence, seismic events, volcanic activity, crustal displacement | 
 
-*Table 1: Temporal baselines and what they measure. Different geophysical phenomena can be detected based upon the temporal baseline. In general, the longer the temporal baseline, the smaller the motion that can be detect.*
+*Table 1: Temporal baselines and what they measure. Different geophysical phenomena can be detected based upon the temporal baseline. In general, the longer the temporal baseline, the smaller the motion that can be detected.*
 
 ## InSAR Workflow
 
@@ -61,7 +61,7 @@ The InSAR workflow used in HyP3 was developed by ASF using GAMMA software.  The 
 
 Pre-processing steps prepare the SAR images to be used in interferometry.  The pre-processing steps include image selection, ingest (including calibration), creation of a suitable DEM, and calculation of the burst overlap.
 
-#### Finding an InSAR pair
+#### Finding an InSAR Pair
 
 Although it is possible to start from RAW data, Sentinel-1 InSAR processing is typically done with [Interferometric Wide swath Single Look Complex](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath "Link to ESA IW SLC description") (IW SLC) data.  This mean that the data has been formed into an image through SAR processing, but has not been multi-looked.  When selecting an InSAR pair, observe the following required conditions:
 
@@ -96,17 +96,17 @@ Immediately after ingesting the SLC, the state vectors are updated to use the be
 
 *Figure 4: Position of the orbit type in the HyP3 product name.*  
 
-#### Prepare the DEM file
+#### Prepare the DEM File
 
 In order to create differential InSAR products that show motion on the ground, one must subtract the topographic phase from the interferogram. The topographic phase, in this case, is replicated by using an existing DEM to calculate the actual topographic phase. This phase is then removed from the interferogram leaving just the motion or deformation signal (plus atmospheric delays and noise).  
 
 The DEM that is used for HyP3 InSAR is the Copernicus GLO-30 DSM.  This is the state of the art in publicly available DEMs and was selected over NED and STRM for its contribution to creating high quality interferometric products.
 
-#### Calculate overlapping bursts
+#### Calculate Overlapping Bursts
 
 The interferometric wide single look complex (IW SLC) Sentinel-1 data comes in three swaths. However, a further subdivision is made in the data, wherein *bursts* occur.  Bursts are the fundamental building block for Sentinel-1 imagery. Each one is a portion of the final image, around 1500 lines long and one swath width wide.  Thus, the more busts, the longer the file is in length.
 
-Each burst is precisely timed to repeat at a given time interval.  This consistent repeat combined with precise velocity control gives rise to the fact that the bursts start at the same time on each pass around the globe, e.g. a burst images a piece of the Galapagos Islands.  The next time that same piece of the island is imaged, the time of day will be the same, to within few milliseconds. Only the frames containing overlapping bursts can be used to perform InSAR processing.  This means, of course, that **if there is no burst overlap in the pair selected as input, then the process will not run**.
+Each burst is precisely timed to repeat at a given time interval.  This consistent repeat combined with precise velocity control gives rise to the fact that the bursts start at the same time on each pass around the globe, e.g. a burst images a piece of the Galápagos Islands.  The next time that same piece of the island is imaged, the time of day will be the same, to within few milliseconds. Only the frames containing overlapping bursts can be used to perform InSAR processing.  This means, of course, that **if there is no burst overlap in the pair selected as input, then the process will not run**.
 
 Repeatable burst timing is exploited by HyP3 in order to calculate the bursts that overlap between two scenes.  These overlapping bursts are the only ones used in the rest of the InSAR process. The rest are discarded.
 
@@ -148,7 +148,6 @@ Geocoding is the process of reprojecting pixels from SAR slant range space (wher
 
 Files are next exported from GAMMA internal format into the widely-used GeoTIFF format, complete with geolocation information. GeoTIFFs are created for the amplitude, coherence, unwrapped phase, and the vertical displacement by default. Optionally, GeoTIFFs of look vectors and the line-of-sight displacement can be founded taken from the reference scene.  
  
-
 ## Product Packaging
 
 HyP3 InSAR output is a zip file containing a variety of files including up to 8 GeoTIFFs, PNG browse images with geolocation information, a Google Earth KMZ file, a metadata file, and a README file
@@ -180,7 +179,7 @@ All of the main InSAR product GeoTIFFs are 32-bit floating-point single-band fil
 
 *Table 2: Image files in product package*
 
-### Metadata files
+### Metadata Files
 
 Along with the image files, there are currently two text files - the main readme and an important InSAR parameters file.  Beyond this, there are two auxiliary xml format metadata files, one for each of the PNG browse images. These are all identified by their extensions, as shown in Table 3.
 
@@ -213,7 +212,7 @@ While SAR signals can penetrate clouds, atmospheric conditions can delay the tra
 
 In some cases, atmospheric errors can be corrected by using an atmospheric model to remove the impacts of the turbulent delay from the interferogram. Another approach is to use time series analysis to identify outliers.
 
-ALWAYS DOUBT YOUR INTERFEROGRAM FIRST! View the interferogram critically, and consider if fringe patterns coul potentially be driven by atmospheric effects. 
+ALWAYS DOUBT YOUR INTERFEROGRAM FIRST! View the interferogram critically, and consider if fringe patterns could potentially be driven by atmospheric effects. 
 
 #### Turbulent Delay
 These delays are generally caused by differences in water vapor distribution from one image to the next. They often manifest as wobbly or sausage-shaped fringes, and can potentially mask the signal of a small earthquake. 

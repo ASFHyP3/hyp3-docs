@@ -20,7 +20,7 @@ jobs:
         id: patch
         env:
           ASF_TOOLS_VERSION: ${{ github.event.inputs.asf_tools_version }}
-          PATCH_BRANCH: bumb-asf-tools-${{ github.event.inputs.asf_tools_version }}
+          PATCH_BRANCH: bump-asf-tools-${{ github.event.inputs.asf_tools_version }}
         run: |
           git config user.name "tools-bot"
           git config user.email "UAF-asf-apd@alaska.edu"

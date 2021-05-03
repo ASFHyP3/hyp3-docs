@@ -63,7 +63,7 @@ Pre-processing steps prepare the SAR images to be used in interferometry.  The p
 
 #### Finding an InSAR Pair
 
-Although it is possible to start from RAW data, Sentinel-1 InSAR processing is typically done with [Interferometric Wide swath Single Look Complex](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath "Link to ESA IW SLC description") (IW SLC) data.  This mean that the data has been formed into an image through SAR processing, but has not been multi-looked.  When selecting an InSAR pair, observe the following required conditions:
+Although it is possible to start from RAW data, Sentinel-1 InSAR processing is typically done with [Interferometric Wide swath Single Look Complex](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath "Link to ESA IW SLC description") (IW SLC) data.  This means that the data has been formed into an image through SAR processing, but has not been multi-looked.  When selecting an InSAR pair, observe the following required conditions:
 
 1. Images from an identical orbit direction (either ascending or descending)
 2. Images with identical incidence angles and beam mode
@@ -100,7 +100,7 @@ Immediately after ingesting the SLC, the state vectors are updated to use the be
 
 In order to create differential InSAR products that show motion on the ground, one must subtract the topographic phase from the interferogram. The topographic phase, in this case, is replicated by using an existing DEM to calculate the actual topographic phase. This phase is then removed from the interferogram leaving just the motion or deformation signal (plus atmospheric delays and noise).  
 
-The DEM that is used for HyP3 InSAR is the Copernicus GLO-30 DSM.  This is the state of the art in publicly available DEMs and was selected over NED and STRM for its contribution to creating high quality interferometric products.
+The DEM that is used for HyP3 InSAR is the [Copernicus GLO-30 Public DEM](https://registry.opendata.aws/copernicus-dem/).  This is the state of the art in publicly available DEMs and was selected over NED and STRM for its contribution to creating high quality interferometric products.
 
 #### Calculate Overlapping Bursts
 
@@ -146,15 +146,15 @@ Geocoding is the process of reprojecting pixels from SAR slant range space (wher
 
 #### Product Creation
 
-Files are next exported from GAMMA internal format into the widely-used GeoTIFF format, complete with geolocation information. GeoTIFFs are created for the amplitude, coherence, unwrapped phase, and the vertical displacement by default. Optionally, GeoTIFFs of look vectors and the line-of-sight displacement can be founded taken from the reference scene.  
+Files are next exported from GAMMA internal format into the widely-used GeoTIFF format, complete with geolocation information. GeoTIFFs are created for the amplitude, coherence, unwrapped phase, and the vertical displacement by default. Optionally, GeoTIFFs of look vectors, line-of-sight displacement, and incidence angle can also be requested.  
  
 ## Product Packaging
 
-HyP3 InSAR output is a zip file containing a variety of files including up to 8 GeoTIFFs, PNG browse images with geolocation information, a Google Earth KMZ file, a metadata file, and a README file
+HyP3 InSAR output is a zip file containing a variety of files including GeoTIFFs, PNG browse images with geolocation information, Google Earth KMZ files, a metadata file, and a README file.
 
 ### Naming Convention
 
-As with our RTC products, HyP3 product names are packed with information pertaining to the processing of the data.  The platform names, either Sentinel1-A or Sentinel1-B are abbreviated "A" or "B", indicating the reference and secondary granule's imaging platform.  The reference start date and time and the secondary start date and time are given next.  The following section of the name includes the polarizations for the pair, either HH or VV, the orbit type, and the days of separation for the pair.  After that, is the product type (always INT for InSAR) and the pixel spacing, which will be either 80 or 160, based upon the number of looks selected at job submission time.  The software package used for processing is always GAMMA for GAMMA InSAR products.  The following three characters denote whether to product is water masked (w) or not (u), the clipping of the scene (e for entire area, c for clipped), and the swath number either 1, 2, 3, or F for full swath.  Finally, the ASF product ID, a 4 digit hexadecimal number, ends the file name. All of these parameters and their location in the HyP3 InSAR products are diagrammed in Figure 5. 
+As with our RTC products, HyP3 product names are packed with information pertaining to the processing of the data.  The platform names, either Sentinel1-A or Sentinel1-B are abbreviated "A" or "B", indicating the reference and secondary granule's imaging platform.  The reference start date and time and the secondary start date and time are given next.  The following section of the name includes the polarizations for the pair, either HH or VV, the orbit type, and the days of separation for the pair.  After that is the product type (always INT for InSAR) and the pixel spacing, which will be either 80 or 160, based upon the number of looks selected at job submission time.  The software package used for processing is always GAMMA for GAMMA InSAR products.  The following three characters denote whether to product is water masked (w) or not (u), the clipping of the scene (e for entire area, c for clipped), and the swath number either 1, 2, 3, or F for full swath.  Finally, the ASF product ID, a 4 digit hexadecimal number, ends the file name. All of these parameters and their location in the HyP3 InSAR products are diagrammed in Figure 5. 
 
 ![Figure 5](../images/asf_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
 
@@ -166,14 +166,15 @@ All of the main InSAR product GeoTIFFs are 32-bit floating-point single-band fil
 
 | Extension | Description | Example |
 |---|---|---|
-| _amp.tif      | amplitude | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_amp.tif |
-| _corr.tif      | normalized coherence file | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_corr.tif |
-| _unw_phase.tif | unwrapped geocoded interferogram | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_unw_phase.tif |
-| _los__disp.tif | line-of-sight displacement | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_los_disp.tif |
-| _vert_disp.tif | vertical displacement | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_vert_disp.tif |
+| _amp.tif      | Amplitude | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_amp.tif |
+| _corr.tif      | Normalized coherence file | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_corr.tif |
+| _unw_phase.tif | Unwrapped geocoded interferogram | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_unw_phase.tif |
+| _los__disp.tif | Line-of-sight displacement | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_los_disp.tif |
+| _vert_disp.tif | Vertical displacement | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_vert_disp.tif |
 | _lv_phi.tif    | Look vector &#966 | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_lv_phi.tif |
-| _lv_theta.tif  | Look vector  | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_lv_theta.tif |
-| .kmz | Zipped Google Earth image | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_amp.kmz |
+| _lv_theta.tif  | Look vector &#952 | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_lv_theta.tif |
+| _inc_map.tif  | Incidence angle  | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_inc_map.tif |
+| .kmz | Zipped Google Earth image | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_unw_phase.kmz |
 | _color_phase.png | Wrapped phase browse image | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_color_phase.png |
 | _unw_phase.png | Unwrapped phase browse image | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_unw_phase.png |
 
@@ -193,13 +194,15 @@ Along with the image files, there are currently two text files - the main readme
 
 ### Options 
 
-There are several options offered with the InSAR products.  Currently, these are (1) the number of looks to take, (2) inclusion of look vectors, and (3) inclusion of the line of sight displacement file.
+There are several options offered with the InSAR products.  Currently, these are (1) the number of looks to take, (2) inclusion of look vectors, (3) inclusion of the line of sight displacement file, and (4) inclusion of the incidence angle map.
 
 The number of looks drives the pixel spacing of the output products.  Selecting 10x2 looks will yield larger products with 80 m pixel spacings.  Selecting 20x4 looks reduces the resolution to 160 m and reduces the size of the products (roughly 1/4 the size of 10x2 look products).  The default is 20x4 looks.
 
-The look vectors are stored in two files.  The lv_theta indicates the SAR look vector elevation angle at each pixel, ranging from -pi/2 (down) to pi/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface. The lv_phi map indicates the SAR look vector orientation angle at each pixel, ranging from 0 (east) to pi/2 (north). The look vector orientation angle is defined as the angle between the East direction and the projection of the look vector on the horizontal surface plan. The orientation angle increases towards north, with the North direction corresponding to &#960/2 (and south to -&#960/2). Both angles are expressed in radians.  The default is to not include these files in the output product bundle.
+The look vectors are stored in two files.  The lv_theta indicates the SAR look vector elevation angle at each pixel, ranging from -&#960/2 (down) to &#960/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface. The lv_phi map indicates the SAR look vector orientation angle at each pixel, ranging from 0 (east) to &#960/2 (north). The look vector orientation angle is defined as the angle between the East direction and the projection of the look vector on the horizontal surface plan. The orientation angle increases towards north, with the North direction corresponding to &#960/2 (and south to -&#960/2). Both angles are expressed in radians.  The default is to not include these files in the output product bundle.
 
 The line-of-sight displacement is the ground movement away from or towards the platform.  It is used to create the vertical displacement map during the final steps of InSAR processing. In order to have this file included in the output zip file, this option must be selected.  The default is to not include the line-of-sight data file.
+
+The local incidence angle is defined as the angle between the incident radar signal and the local surface normal, expressed in radians. The default is to not include the incidence angle data file.
 
 ## Limitations
 

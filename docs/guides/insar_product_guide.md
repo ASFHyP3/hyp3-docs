@@ -147,8 +147,7 @@ Geocoding is the process of reprojecting pixels from SAR slant range space (wher
 
 #### Product Creation
 
-Files are next exported from GAMMA internal format into the widely-used GeoTIFF format, complete with geolocation information. GeoTIFFs are created for the amplitude, coherence, unwrapped phase, and the vertical displacement by default. Optionally, GeoTIFFs of look vectors and the line-of-sight displacement can be founded taken from the reference scene.  
- 
+Files are next exported from GAMMA internal format into the widely-used GeoTIFF format, complete with geolocation information. GeoTIFFs are created for the amplitude, coherence, unwrapped phase, and the vertical displacement by default. Optionally, GeoTIFFs of look vectors and the line-of-sight displacement can be created.
 
 ## Product Packaging
 
@@ -164,7 +163,18 @@ As with our RTC products, HyP3 product names are packed with information pertain
 
 ### Image Files
 
-All of the main InSAR product GeoTIFFs are 32-bit floating-point single-band files. The amplitude image is the amplitude from the reference scene. The coherence file contains values from 0.0 to 1.0, with zero being non-coherent to 1.0 being perfectly coherent. The color phase is the wrapped colorized interferogram phase. The unwrapped phase file shows the results of the phase unwrapping process.  This is the main interferogram output.  The line-of-sight displacement file contains the displacement directly away from the satellite, while the vertical displacement is just the vertical component of that displacement. The looks vectors, &#966 and &#952 describe the look vector elevation and orientation angles. The KMZ files are Google Earth formatted files provided for simple viewing on that platform.  Finally, there are the colorized wrapped phase and the unwrapped phase browse images, which are 2048-pixel wide PNG format images.  The extension used and example files names are included in Table 2 below. 
+All of the main InSAR product GeoTIFFs are 32-bit floating-point single-band files.
+
+- The amplitude image is the amplitude from the reference scene. 
+- The coherence file contains values from 0.0 to 1.0, with zero being non-coherent to 1.0 being perfectly coherent. 
+- The color phase is the wrapped colorized interferogram phase. 
+- The unwrapped phase file shows the results of the phase unwrapping process.  This is the main interferogram output. 
+- The line-of-sight displacement file contains the displacement directly away from the satellite.
+- The vertical displacement is just the vertical component of that displacement. o
+- The looks vectors, &#966 and &#952 describe the look vector elevation and orientation angles. 
+- The KMZ files are Google Earth formatted files provided for simple viewing on that platform.  
+
+Finally, there are the colorized wrapped phase and the unwrapped phase browse images, which are 2048-pixel wide PNG format images.  The extension used and example files names are included in Table 2 below. 
 
 | Extension | Description | Example |
 |---|---|---|
@@ -173,8 +183,11 @@ All of the main InSAR product GeoTIFFs are 32-bit floating-point single-band fil
 | _unw_phase.tif | unwrapped geocoded interferogram | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_unw_phase.tif |
 | _los__disp.tif | line-of-sight displacement | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_los_disp.tif |
 | _vert_disp.tif | vertical displacement | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_vert_disp.tif |
+| _dem.tif       | Digital elevation model | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_dem.tif |
+| _inc_map.tif   | Incidence angle file |  S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_inc_map.tif |
+| _slant_range.tif | Slant range distance to the target imaged | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_slant_range.tif |
 | _lv_phi.tif    | Look vector &#966 | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_lv_phi.tif |
-| _lv_theta.tif  | Look vector  | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_lv_theta.tif |
+| _lv_theta.tif  | Look vector &#952 | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_lv_theta.tif |
 | .kmz | Zipped Google Earth image | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_amp.kmz |
 | _color_phase.png | Wrapped phase browse image | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_color_phase.png |
 | _unw_phase.png | Unwrapped phase browse image | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_unw_phase.png |

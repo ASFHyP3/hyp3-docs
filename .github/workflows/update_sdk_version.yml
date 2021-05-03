@@ -20,7 +20,7 @@ jobs:
         id: patch
         env:
           SDK_VERSION: ${{ github.event.inputs.sdk_version }}
-          PATCH_BRANCH: bumb-sdk-${{ github.event.inputs.sdk_version }}
+          PATCH_BRANCH: bump-sdk-${{ github.event.inputs.sdk_version }}
         run: |
           git config user.name "tools-bot"
           git config user.email "UAF-asf-apd@alaska.edu"

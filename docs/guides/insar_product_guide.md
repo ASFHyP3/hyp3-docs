@@ -171,9 +171,9 @@ All of the main InSAR product GeoTIFFs are 32-bit floating-point single-band fil
 - The line-of-sight displacement file contains the displacement directly away from the satellite.
 - The vertical displacement is just the vertical component of that displacement. 
 - The looks vectors, &#966 and &#952 describe the look vector elevation and orientation angles. 
-- The DEM file gives the local terrain heights
-- The water mask image has zeros for water and 1 for land
-- The incidence angle map gives the local incidence angle of the terrain
+- The DEM file gives the local terrain heights.
+- The water mask image has zeros for water and 1 for land.
+- The incidence angle map gives the local incidence angle of the terrain.
 - The KMZ files are Google Earth formatted files provided for simple viewing on that platform.  
 
 Finally, there are the colorized wrapped phase and the unwrapped phase browse images, which are 2048-pixel wide PNG format images.  The extension used and example files names are included in Table 2 below. 

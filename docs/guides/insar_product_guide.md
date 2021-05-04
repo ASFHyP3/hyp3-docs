@@ -44,6 +44,7 @@ In order to determine topography, two slightly different vantage points are requ
 
 ![Figure 2](../images/baseline.png "Geometry of InSAR Baselines.")
 
+*Figure 2: Geometry of InSAR baselines. Two satellite passes image the same area on the ground from positions S1 and S2, resulting a baseline of B which can be decomposed into normal (B<sub>n</sub>) and perpendicular (B<sub>p</sub>) components. Here Y is the direction of travel or *along-track* and X is the direction perpendicular to motion, referred to as the *cross-track* or *range* direction. Credit: Franz J. Meyer*
 
 --------
 

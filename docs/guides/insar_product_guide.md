@@ -236,7 +236,7 @@ The local incidence angle is defined as the angle between the incident radar sig
 The baseline is defined as the difference of the platform positions when a given area is imaged. HyP3 baselines are calculated using the best state vectors available. These are either restituted or precise. **If no restituted or precise state vectors are available, the process will not run**.
 
 ## Error Sources
-There are a number of potential sources for error in InSAR products, and these may be present in the On Demand products. We do not currently offer the option to apply corrections to On Demand InSAR products, but further processing or time series analysis can be performed by the user to identify or reduce the impact of errors when using InSAR for analysis. 
+On Demand InSAR products do not currently correct for some common sources of error in interferometry, such as atmospheric effects. Further processing or time series analysis can be performed by the user to identify or reduce the impact of some of these errors when using On Demand InSAR products for analysis.
 
 ### Atmospheric Delay
 While SAR signals can penetrate clouds, atmospheric conditions can delay the transmission of the signal. This results in phase differences that can look like surface deformation signals, but are actually driven by differences in the atmospheric conditions between the pair of acquisitions used to generate the interferogram. 

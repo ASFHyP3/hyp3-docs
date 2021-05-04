@@ -1,8 +1,12 @@
 # Sentinel-1 InSAR Product Guide
 
 ## Introduction
-Interferometric SAR (InSAR) processing uses two SAR images of the same area to determine geometric properties of the surface. 
-Using two or more pairs of images, this method can be used to extract surface motion or deformation at the millimeter level scale.
+Interferometric Synthetic Aperture Radar (InSAR) processing uses two SAR images of the same area to determine geometric properties of the surface. Missions such as Sentinel-1 are [designed for](https://sentinel.esa.int/web/sentinel/missions/sentinel-1/mission-objectives) monitoring surface deformation using InSAR, which is optimal when acquisitions are made from a consistent location in space ([short perpendicular baseline](#baselines)) over regular time intervals. 
+
+The phase measurements of two SAR images acquired at different times from the same place in orbit are differenced to detect and quantify surface changes, such as deformation caused by earthquakes, volcanoes, or groundwater subsidence.
+
+InSAR can also be used to generate digital elevation models, but the optimal mission for DEM generation has the opposite characteristics of the Sentinel-1 mission. Topography is best mapped when the two acquisitions are obtained as close together as possible in time ([short temporal baseline](#baselines)), but from different vantage points in space (larger perpendicular baseline than would be optimal for deformation mapping). 
+
 
 ### Contents of InSAR Guide
 The InSAR workflow used to create HyP3 InSAR surface motion products constitutes a large portion of this document.  Users are cautioned to read the sections on limitations and error sources in InSAR products before attempting to use InSAR data. Sections on data sources and application examples are presented as well.  For a more complete description of the properties of SAR, see our [Introduction to SAR](../guides/sar_intro.md) guide. 

@@ -40,24 +40,11 @@ The term *baseline* refers to the physical distance between the two vantage poin
 
 To monitor surface deformation, the perpendicular baseline for the two acquisitions should be very small in order to maximize the coherence of the phase measurements. 
 
-In order to determine topography, two slightly different vantage points are required. Sensitivity to topography depends on the perpendicular baseline, the sensor wavelength, the distance between the satellite and the ground, and the sensor look angle as given in equation 1. The parameters are diagrammed in Figure 3. 
+In order to determine topography, two slightly different vantage points are required. Sensitivity to topography depends on the perpendicular baseline, the sensor wavelength, the distance between the satellite and the ground, and the sensor look angle.
 
 ![Figure 2](../images/baseline.png "Geometry of InSAR Baselines.")
 
 *Figure 2: Geometry of InSAR baselines. Two satellite passes image the same area on the ground from positions S1 and S2, resulting a baseline of B which can be decomposed into normal (B<sub>n</sub>) and perpendicular (B<sub>p</sub>) components. Here Y is the direction of travel or *along-track* and X is the direction perpendicular to motion, referred to as the *cross-track* or *range* direction. Credit: Franz J. Meyer*
-
---------
-
-![Equation 1](../images/phi_topo_eq.png "Equation 1: Calculation of topographic phase")
-
-*Equation 1: Calculation of topographic phase*
-
---------
-
-
-![Figure 3](../images/baseline2.png "Parameters Affecting Topographic Sensitivity")
-
-*Figure 3: Parameters affecting topographic sensitivity include the perpendicular baseline B&#8869, the wavelength  of the sensor &#955, the distance from the sensor to the ground R, and the sensor look angle &#952. Credit: Franz J. Meyer*
 
 #### Temporal Baseline
 In contrast to the (physical) baseline, the *temporal baseline* refers to the time separation between imaging passes. Along-track interferometry measures motion in the millisecond to second range. This technique can detect ocean currents and rapidly moving objects like boats. Differential interferometry is the standard method used to detect motion in the range of days to years. This is the type of interferometry that is performed by the Sentinel-1 HyP3 InSAR processing algorithm. Table 1 lists different temporal baselines, their common names, and what they can be used to measure.  

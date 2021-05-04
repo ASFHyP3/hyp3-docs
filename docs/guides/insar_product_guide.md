@@ -1,4 +1,4 @@
--1 InSAR Product Guide
+# Sentinel-1 InSAR Product Guide
 
 ## Introduction
 Interferometric SAR (InSAR) processing uses two SAR images of the same area to determine geometric properties of the surface. 

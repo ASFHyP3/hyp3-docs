@@ -61,7 +61,8 @@ In order to determine topography, two slightly different vantage points are requ
 
 *Figure 3: Parameters affecting topographic sensitivity include the perpendicular baseline B&#8869, the wavelength  of the sensor &#955, the distance from the sensor to the ground R, and the sensor look angle &#952. Credit: Franz J. Meyer*
 
-In contrast to the (physical) baseline, the *temporal baseline* refers to the time separation between imaging passes.  Along-track interferometry measures motion in the millisecond to second range.  This technique can detect ocean currents and rapidly moving objects like boats.  Differential interferometry is the standard method used to detect motion in the days to years range.  This is the type of interferometry is performed by the Sentinel-1 HyP3 InSAR processing algorithm.  Table 1 lists different temporal baselines, their common names, and what they can be used to measure.  
+#### Temporal Baseline
+In contrast to the (physical) baseline, the *temporal baseline* refers to the time separation between imaging passes. Along-track interferometry measures motion in the millisecond to second range. This technique can detect ocean currents and rapidly moving objects like boats. Differential interferometry is the standard method used to detect motion in the range of days to years. This is the type of interferometry that is performed by the Sentinel-1 HyP3 InSAR processing algorithm. Table 1 lists different temporal baselines, their common names, and what they can be used to measure.  
 
 |Duration | Known as | Measurement of | 
 |---------|----------|----------------|

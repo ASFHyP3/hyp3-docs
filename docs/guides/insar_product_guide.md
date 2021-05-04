@@ -92,9 +92,9 @@ Although it is possible to start from RAW data, Sentinel-1 InSAR processing is t
 
 In addition, the following suggestions may be helpful:
 
-1. For topographic mapping: limited time separation between images (small temporal baseline)
-2. For deformation mapping: Limited spatial separation of acquisition locations (small physical baseline)
-3. Use images from similar seasons/growth/weather conditions
+1. Use images from similar seasons/growth/weather conditions
+2. For deformation mapping: limited spatial separation of acquisition locations (small physical baseline)
+3. For topographic mapping: limited time separation between images (small temporal baseline) 
 
 ------
 > **Aside:  Critical Baseline**

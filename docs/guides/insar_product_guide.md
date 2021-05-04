@@ -171,7 +171,15 @@ HyP3 InSAR output is a zip file containing a variety of files including GeoTIFFs
 
 ### Naming Convention
 
-As with our RTC products, HyP3 product names are packed with information pertaining to the processing of the data.  The platform names, either Sentinel1-A or Sentinel1-B are abbreviated "A" or "B", indicating the reference and secondary granule's imaging platform.  The reference start date and time and the secondary start date and time are given next.  The following section of the name includes the polarizations for the pair, either HH or VV, the orbit type, and the days of separation for the pair.  After that is the product type (always INT for InSAR) and the pixel spacing, which will be either 80 or 160, based upon the number of looks selected at job submission time.  The software package used for processing is always GAMMA for GAMMA InSAR products.  The following three characters denote whether to product is water masked (w) or not (u), the clipping of the scene (e for entire area, c for clipped), and the swath number either 1, 2, 3, or F for full swath.  Finally, the ASF product ID, a 4 digit hexadecimal number, ends the file name. All of these parameters and their location in the HyP3 InSAR products are diagrammed in Figure 5. 
+As with our RTC products, HyP3 product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 5. 
+- The platform names, either Sentinel-1A or Sentinel-1B, are abbreviated "A" or "B", indicating the reference and secondary granule's imaging platform
+- The reference start date and time and the secondary start date and time, with the date and time separated by the letter T
+- The polarizations for the pair, either HH or VV, the orbit type, and the days of separation for the pair
+- The product type (always INT for InSAR) and the pixel spacing, which will be either 80 or 160, based upon the number of looks selected when the job was submitted for processing
+- The software package used for processing is always GAMMA for GAMMA InSAR products
+- User-defined options are denoted by three characters indicating whether the product is water masked (w) or not (u), the scene is clipped (e for entire area, c for clipped), and whether a single swath was processed or the entire granule (either 1, 2, 3, or F for full swath)
+- Last is the ASF product ID, a 4 digit hexadecimal number
+
 
 ![Figure 5](../images/asf_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
 

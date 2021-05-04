@@ -35,6 +35,12 @@ Most modern SAR systems can transmit chirps with either a horizontal or vertical
 For InSAR applications, processing is generally performed on the co-pol (VV or HH) data and not on the cross-pol (VH or HV) data. Also, each image used in an InSAR pair is required to be the same polarization - two HH images of the same area could form a valid pair, while a single HH with a single VV of the same area would not.
 
 ### Baselines
+#### Perpendicular Baseline
+The term *baseline* refers to the physical distance between the two vantage points from which images used as an InSAR pair are acquired. The baseline is decomposed into a normal and a perpendicular component as shown in Figure 2. 
+
+To monitor surface deformation, the perpendicular baseline for the two acquisitions should be very small in order to maximize the coherence of the phase measurements. 
+
+In order to determine topography, two slightly different vantage points are required. Sensitivity to topography depends on the perpendicular baseline, the sensor wavelength, the distance between the satellite and the ground, and the sensor look angle as given in equation 1. The parameters are diagrammed in Figure 3. 
 
 ![Figure 2](../images/baseline.png "Geometry of InSAR Baselines.")
 

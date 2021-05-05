@@ -142,7 +142,7 @@ In order to create differential InSAR products that show motion on the ground, o
 
 The DEM that is used for HyP3 InSAR is the [Copernicus GLO-30 Public DEM](https://registry.opendata.aws/copernicus-dem/). This DEM provides global coverage at 30-m pixel spacing, and provides higher-quality products over a wider area than the older DEMs (SRTM and NED) previously used to generate ASF's On Demand products.
 
-The DEM tiles necessary to cover the input granules for the InSAR product are downloaded. A geoid correction applied to the DEM, and it is resampled to match the [output resolution](#processing-options) of the InSAR product (160 m for 20x4 products, 80 m for 10x2 products).
+The DEM tiles necessary to cover the input granules for the InSAR product are downloaded. A geoid correction applied to the DEM, and it is resampled to match the [output resolution](#processing-options) of the InSAR product (160 m for 20x4 products, 80 m for 10x2 products) and projected to the appropriate UTM Zone for the granule location.
 
 #### Calculate Overlapping Bursts
 

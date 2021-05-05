@@ -142,6 +142,8 @@ In order to create differential InSAR products that show motion on the ground, o
 
 The DEM that is used for HyP3 InSAR is the [Copernicus GLO-30 Public DEM](https://registry.opendata.aws/copernicus-dem/). This DEM provides global coverage at 30-m pixel spacing, and provides higher-quality products over a wider area than the older DEMs (SRTM and NED) previously used to generate ASF's On Demand products.
 
+The DEM tiles necessary to cover the input granules for the InSAR product are downloaded. A geoid correction applied to the DEM, and it is resampled to match the [output resolution](#processing-options) of the InSAR product (160 m for 20x4 products, 80 m for 10x2 products).
+
 #### Calculate Overlapping Bursts
 
 The interferometric wide single look complex (IW SLC) Sentinel-1 data comes in three swaths. However, a further subdivision is made in the data, wherein *bursts* occur. Bursts are the fundamental building block for Sentinel-1 imagery. Each one is a portion of the final image, around 1500 lines long and one swath width wide. Thus, the more busts, the longer the file is in length.

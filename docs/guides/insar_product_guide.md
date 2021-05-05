@@ -199,13 +199,14 @@ HyP3 InSAR output is a zip file containing a variety of files including GeoTIFFs
 ### Naming Convention
 
 The InSAR product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 4. 
+
 - The platform names, either Sentinel-1A or Sentinel-1B, are abbreviated "A" or "B", indicating the reference and secondary granule's imaging platform
 - The reference start date and time and the secondary start date and time, with the date and time separated by the letter T
 - The polarizations for the pair, either HH or VV, the orbit type, and the days of separation for the pair
 - The product type (always INT for InSAR) and the pixel spacing, which will be either 80 or 160, based upon the number of looks selected when the job was submitted for processing
 - The software package used for processing is always GAMMA for GAMMA InSAR products
 - User-defined options are denoted by three characters indicating whether the product is water masked (w) or not (u), the scene is clipped (e for entire area, c for clipped), and whether a single swath was processed or the entire granule (either 1, 2, 3, or F for full swath)
-- Last is the ASF product ID, a 4 digit hexadecimal number
+- The filename ends with the ASF product ID, a 4 digit hexadecimal number
 
 
 ![Figure 4](../images/asf_insar_names.png "Breakdown of ASF InSAR Naming Scheme")

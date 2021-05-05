@@ -119,7 +119,7 @@ During ingest into GAMMA's internal format, the SLC data is calibrated by applyi
 
 Immediately after ingesting the SLC, the state vectors are updated to use the best available state vectors. The state vector types in order of absolute correctness are original predicted (O), restituted (R), and precision (P). In practice, one will never receive an InSAR product that uses the original predicted orbit - only granules for which a restituted or precision orbit is available can be used in HyP3 InSAR processing. The orbit type used for generating the InSAR product is indicated in the product filename, as shown in Figure 3.
 
-![Figure 3](../images/orbit_in_name.png "Position of the orbit type in HyP3 product names")
+![Figure 3](../images/orbit_in_name.png "Position of the orbit type in InSAR product names")
 
 *Figure 3: Position of the orbit type in the HyP3 product name.*  
 
@@ -241,18 +241,6 @@ Along with the image files, there are currently two text files - the main readme
 | .README.md.txt | Main README file for GAMMA InSAR | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09.README.md.txt |
 
 *Table 3: Metadata files in product package*
-
-### Options 
-
-There are several options offered with the InSAR products.  Currently, these are (1) the number of looks to take, (2) inclusion of look vectors, (3) inclusion of the line of sight displacement file, and (4) inclusion of the incidence angle map.
-
-1. The **number of looks** drives the resolution and pixel spacing of the output products. Selecting 10x2 looks will yield larger products with 80 m resolution and pixel spacing of 40 m. Selecting 20x4 looks reduces the resolution to 160 m and reduces the size of the products (roughly 1/4 the size of 10x2 look products), with a pixel spacing of 80 m. The default is 20x4 looks.
-
-2. The **look vectors** are stored in two files. The lv_theta indicates the SAR look vector elevation angle at each pixel, ranging from -&#960/2 (down) to &#960/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface. The lv_phi map indicates the SAR look vector orientation angle at each pixel, ranging from 0 (east) to &#960/2 (north). The look vector orientation angle is defined as the angle between the East direction and the projection of the look vector on the horizontal surface plan. The orientation angle increases towards north, with the North direction corresponding to &#960/2 (and south to -&#960/2). Both angles are expressed in radians. The default is to not include these files in the output product bundle.
-
-3. The **line-of-sight displacement** is the ground movement away from or towards the platform. It is used to create the vertical displacement map during the final steps of InSAR processing. In order to have this file included in the output zip file, this option must be selected.  The default is to not include the line-of-sight data file.
-
-4. The **local incidence angle** is defined as the angle between the incident radar signal and the local surface normal, expressed in radians. The default is to not include the incidence angle data file.
 
 ## Limitations
 ### Baseline Calculation

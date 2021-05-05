@@ -117,7 +117,7 @@ Once the InSAR pair has been identified, the selected SLC data are ingested into
 
 During ingest into GAMMA's internal format, the SLC data is calibrated by applying the calibration coefficients that are supplied with each product. This process puts the SAR backscatter into a known scale where the diffuse volume scattering of the Amazon rainforest is a constant -6.5 dB.
 
-Immediately after ingesting the SLC, the state vectors are updated to use the best available state vectors. The state vector types in order of absolute correctness are original predicted (O), restituted (R), and precision (P). In practice, one will never receive an InSAR product that uses the original predicted orbit - only granules for which a restituted or precision orbit is available can be used in HyP3 InSAR processing. The orbit type used for generating the InSAR product is indicatd in the product filename, as shown in Figure 3.
+Immediately after ingesting the SLC, the state vectors are updated to use the best available state vectors. The state vector types in order of absolute correctness are original predicted (O), restituted (R), and precision (P). In practice, one will never receive an InSAR product that uses the original predicted orbit - only granules for which a restituted or precision orbit is available can be used in HyP3 InSAR processing. The orbit type used for generating the InSAR product is indicated in the product filename, as shown in Figure 3.
 
 ![Figure 3](../images/orbit_in_name.png "Position of the orbit type in HyP3 product names")
 

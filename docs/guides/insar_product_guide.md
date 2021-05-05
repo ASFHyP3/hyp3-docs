@@ -31,7 +31,7 @@ For slower processes that require a longer time interval to detect movement, lon
 ### Polarizations
 Polarization refers to the direction of travel of an electromagnetic wave.  A horizontal wave is transmitted so that it oscillates in a plane parallel to the surface imaged, while a vertical wave oscillates in a plane perpendicular to the surface imaged. 
 
-Most modern SAR systems can transmit chirps with either a horizontal or vertical polarization. In addition, some of these sensors can listen for either horizontal of vertical backscatter. This gives rise to 4 different types of returns HH, HV, VV, and VH. Here the first letter is the transmit method and the second is the receive method, e.g. VH is a vertically polarized transmit signal with horizontally polarized echoes recorded. 
+Most modern SAR systems can transmit chirps with either a horizontal or vertical polarization. In addition, some of these sensors can listen for either horizontal or vertical backscatter. This gives rise to 4 different types of returns: HH, HV, VV, and VH, with the first letter indicating the transmit method and the second the receive method. For example, VH is a vertically polarized transmit signal with horizontally polarized echoes recorded. 
 
 For InSAR applications, processing is generally performed on the co-pol (VV or HH) data and not on the cross-pol (VH or HV) data. Also, each image used in an InSAR pair is required to be the same polarization - two HH images of the same area could form a valid pair, while a single HH with a single VV of the same area would not.
 

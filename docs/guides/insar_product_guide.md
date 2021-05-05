@@ -231,7 +231,7 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 
 Browse images are included for the wrapped (color_phase) and unwrapped (unw_phase) phase files, which are in PNG format and are each 2048 pixels wide. 
 
-The extension used and example files names are included in Table 2 below. 
+The tags and extensions used and example file names for each raster are listed in Table 2 below. 
 
 | Extension | Description | Example |
 |---|---|---|

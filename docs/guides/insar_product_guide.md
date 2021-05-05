@@ -82,6 +82,8 @@ In addition, the following suggestions may be helpful:
 2. For deformation mapping: limited spatial separation of acquisition locations (small physical baseline)
 3. For topographic mapping: limited time separation between images (small temporal baseline) 
 
+To analyze deformation caused by a single discrete event, such as an earthquake, select images that bracket the event as closely in time as possible. Keeping the window narrowly focused on the time of the event will reduce the impacts of other processes that may mask the signal of the event of interest.
+
 ------
 > **Aside: Critical Baseline**
 >

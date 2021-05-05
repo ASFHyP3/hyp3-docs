@@ -18,7 +18,7 @@ SAR is an active sensor that transmits pulses and listens for echoes. These echo
 
 *Figure 1: Two passes of an imaging SAR taken at time T<sub>0</sub> and T<sub>0</sub> + ∆t, will give two distances to the ground, R<sub>1</sub> and R<sub>2</sub>.  A difference between R<sub>1</sub> and R<sub>2</sub> shows motion on the ground.  In this case, a subsidence makes R<sub>2</sub> greater than R<sub>1</sub>.  Credit: Franz J. Meyer*
 
-InSAR exploits the phase difference between two SAR images to create an interferogram that shows where the phase and, therefore, the distance to the target has changed from one pass to the next, as illustrated in Figure 1.  There are several factors that influence the interferogram including earth curvature, topographic effects, atmospheric delays, surface motion, and noise.  With proper processing (and appropriate sensor wavelengths), InSAR can be used to detect changes in the earth's surface down to the millimeter scale. Applications include volcanic deformation, subsidence, landslide detection, and earthquake assessment.
+InSAR exploits the phase difference between two SAR images to create an interferogram that shows where the phase and, therefore, the distance to the target has changed from one pass to the next, as illustrated in Figure 1.  There are several factors that influence the interferogram, including earth curvature, topographic effects, atmospheric delays, surface motion, and noise.  With proper processing, InSAR can be used to detect changes in the earth's surface down to the centimeter scale. Applications include volcanic deformation, subsidence, landslide detection, and earthquake assessment.
 
 ### Wavelengths
 The SAR sensors on the Sentinel-1 satellites transmit C-band signals, with a wavelength of 5.6 cm. The signal wavelength impacts the penetration capability of the signal, so it is important to be aware of the sensor wavelength when working with SAR datasets. C-band SAR will penetrate more deeply into canopy or surfaces than an X-band signal, but not nearly as deep as an L-band SAR signal, which, with a wavelength on the order of 25 cm, is better able to penetrate canopy and return signals from the forest floor. 
@@ -80,12 +80,12 @@ Pre-processing steps prepare the SAR images to be used in interferometry.  The p
 
 #### Finding an InSAR Pair
 
-Although it is possible to start from RAW data, Sentinel-1 InSAR processing is typically done with [Interferometric Wide swath Single Look Complex](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath "Link to ESA IW SLC description") (IW SLC) data.  This means that the data has been formed into an image through SAR processing, but has not been multi-looked.  When selecting an InSAR pair, observe the following required conditions:
+Although it is possible to start from RAW data, Sentinel-1 InSAR processing is typically done using [Interferometric Wide swath Single Look Complex](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath "Link to ESA IW SLC description") (IW SLC) data as the input.  This means that the data has been formed into an image through SAR processing, but has not been multi-looked.  When selecting an InSAR pair, observe the following required conditions:
 
 1. Images from an identical orbit direction (either ascending or descending)
 2. Images with identical incidence angles and beam mode
 3. Images with identical resolution and wavelength (usually from the same sensor)
-4. Images with the same viewing geometry (same track and frame)
+4. Images with the same viewing geometry (same path and frame)
 5. Images with identical polarizations (both HH or VV)
 
 In addition, the following suggestions may be helpful:
@@ -105,7 +105,7 @@ In addition, the following suggestions may be helpful:
 
 Once the InSAR pair has been identified, the selected SLC data are ingested into GAMMA internal format. This is performed by the GAMMA program *par_s1_slc*. GAMMA format has raw data files (only data, no headers or line leaders) with metadata stored in external files with a .par extension.  
 
-During the ingest into GAMMA's internal format, the SLC data is calibrated by applying the calibration coefficients that are supplied with each product. This process puts the SAR backscatter into a known scale where the diffuse volume scattering of the Amazon rain forest is a constant -6.5 dB.
+During ingest into GAMMA's internal format, the SLC data is calibrated by applying the calibration coefficients that are supplied with each product. This process puts the SAR backscatter into a known scale where the diffuse volume scattering of the Amazon rainforest is a constant -6.5 dB.
 
 Immediately after ingesting the SLC, the state vectors are updated to use the best available state vectors. The state vector types in order of absolute correctness are original predicted (O), restituted (R), and precision (P). In practice, one will never receive an InSAR product that uses the original predicted - only granules for which a restituted or precision orbit is available can be used in HyP3 InSAR processing. One can determine a file's orbit type from the orbit type character in the filename as shown in Figure 4.
 

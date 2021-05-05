@@ -146,7 +146,7 @@ The DEM tiles necessary to cover the input granules for the InSAR product are do
 
 #### Calculate Overlapping Bursts
 
-The IW SLC Sentinel-1 data comes in three swaths. However, a further subdivision is made in the data, wherein *bursts* occur. Bursts are the fundamental building block for Sentinel-1 imagery. Each one is a portion of the final image, around 1500 lines long and one swath width wide. Thus, the more busts, the longer the file is in length.
+The IW SLC Sentinel-1 data comes in three sub-swaths. However, a further subdivision is made in the data, wherein *bursts* occur. Bursts are the fundamental building block for Sentinel-1 imagery. Each one is a portion of the final image, around 1500 lines long and one sub-swath width wide. Thus, the more busts, the longer the file is in length.
 
 Each burst is precisely timed to repeat at a given time interval. This consistent repeat combined with precise velocity control gives rise to the fact that the bursts start at the same time on each pass around the globe. 
 
@@ -205,8 +205,8 @@ The InSAR product names are packed with information pertaining to the processing
 - The polarizations for the pair, either HH or VV, the orbit type, and the days of separation for the pair
 - The product type (always INT for InSAR) and the pixel spacing, which will be either 80 or 40, based upon the number of looks selected when the job was submitted for processing
 - The software package used for processing is always GAMMA for GAMMA InSAR products
-- User-defined options are denoted by three characters indicating whether the product is water masked (w) or not (u), the scene is clipped (e for entire area, c for clipped), and whether a single subswath was processed or the entire granule (either 1, 2, 3, or F for full swath)
-    - *Currently only the water masking is available as a user-selected option; the products always include the full granule extent with all three subswaths*
+- User-defined options are denoted by three characters indicating whether the product is water masked (w) or not (u), the scene is clipped (e for entire area, c for clipped), and whether a single sub-swath was processed or the entire granule (either 1, 2, 3, or F for full swath)
+    - *Currently only the water masking is available as a user-selected option; the products always include the full granule extent with all three sub-swaths*
 - The filename ends with the ASF product ID, a 4 digit hexadecimal number
 
 

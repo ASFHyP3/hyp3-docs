@@ -94,11 +94,11 @@ Once the InSAR pair has been identified, the selected SLC data are ingested into
 
 During the ingest into GAMMA's internal format, the SLC data is calibrated by applying the calibration coefficients that are supplied with each product. This process puts the SAR backscatter into a known scale where the diffuse volume scattering of the Amazon rain forest is a constant -6.5 dB.
 
-Immediately after ingesting the SLC, the state vectors are updated to use the best available state vectors. The state vector types in order of absolute correctness are original predicted (O), restituted (R), and precision (P). In practice, one will never receive an InSAR product that uses the original predicted - only granules for which a restituted or precision orbit is available can be used in HyP3 InSAR processing. One can determine a file's orbit type from the orbit type character in the filename as shown in Figure 4.
+Immediately after ingesting the SLC, the state vectors are updated to use the best available state vectors. The state vector types in order of absolute correctness are original predicted (O), restituted (R), and precision (P). In practice, one will never receive an InSAR product that uses the original predicted - only granules for which a restituted or precision orbit is available can be used in HyP3 InSAR processing. One can determine a file's orbit type from the orbit type character in the filename as shown in Figure 3.
 
-![Figure 4](../images/orbit_in_name.png "Position of the orbit type in HyP3 product names")
+![Figure 3](../images/orbit_in_name.png "Position of the orbit type in HyP3 product names")
 
-*Figure 4: Position of the orbit type in the HyP3 product name.*  
+*Figure 3: Position of the orbit type in the HyP3 product name.*  
 
 #### Prepare the DEM File
 
@@ -158,7 +158,7 @@ HyP3 InSAR output is a zip file containing a variety of files including GeoTIFFs
 
 ### Naming Convention
 
-As with our RTC products, HyP3 product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 5. 
+As with our RTC products, HyP3 product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 4. 
 - The platform names, either Sentinel-1A or Sentinel-1B, are abbreviated "A" or "B", indicating the reference and secondary granule's imaging platform
 - The reference start date and time and the secondary start date and time, with the date and time separated by the letter T
 - The polarizations for the pair, either HH or VV, the orbit type, and the days of separation for the pair
@@ -168,9 +168,9 @@ As with our RTC products, HyP3 product names are packed with information pertain
 - Last is the ASF product ID, a 4 digit hexadecimal number
 
 
-![Figure 5](../images/asf_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
+![Figure 4](../images/asf_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
 
-*Figure 5: Breakdown of ASF InSAR naming scheme.*
+*Figure 4: Breakdown of ASF InSAR naming scheme.*
 
 ### Image Files
 

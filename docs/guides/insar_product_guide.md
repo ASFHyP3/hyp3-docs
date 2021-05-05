@@ -113,7 +113,7 @@ There are several options offered with the InSAR products.  Currently, these are
 
 ## InSAR Workflow
 
-The InSAR workflow used in HyP3 was developed by ASF using GAMMA software.  The steps include pre-processing steps, interferogram preparation, and product creation.  Once these steps are performed, an output product package will be created.  See [product packaging](#product-packaging) for details on the individual files in the package.  
+The InSAR workflow used in HyP3 was developed by ASF using GAMMA software.  The steps include pre-processing steps, interferogram preparation, and product creation.  Once these steps are performed, an output product package will be created.  See [product packaging](#product-packaging) for details on the individual files included in the package.  
 
 ### Pre-Processing
 
@@ -146,9 +146,11 @@ The DEM tiles necessary to cover the input granules for the InSAR product are do
 
 #### Calculate Overlapping Bursts
 
-The interferometric wide single look complex (IW SLC) Sentinel-1 data comes in three swaths. However, a further subdivision is made in the data, wherein *bursts* occur. Bursts are the fundamental building block for Sentinel-1 imagery. Each one is a portion of the final image, around 1500 lines long and one swath width wide. Thus, the more busts, the longer the file is in length.
+The IW SLC Sentinel-1 data comes in three swaths. However, a further subdivision is made in the data, wherein *bursts* occur. Bursts are the fundamental building block for Sentinel-1 imagery. Each one is a portion of the final image, around 1500 lines long and one swath width wide. Thus, the more busts, the longer the file is in length.
 
-Each burst is precisely timed to repeat at a given time interval. This consistent repeat combined with precise velocity control gives rise to the fact that the bursts start at the same time on each pass around the globe, e.g. a burst images a piece of the Galápagos Islands. The next time that same piece of the island is imaged, the time of day will be the same, to within few milliseconds. Only the frames containing overlapping bursts can be used to perform InSAR processing. This means, of course, that **if there is no burst overlap in the pair selected as input, then the process will not run**.
+Each burst is precisely timed to repeat at a given time interval. This consistent repeat combined with precise velocity control gives rise to the fact that the bursts start at the same time on each pass around the globe. 
+
+For example: a burst images a piece of the Galápagos Islands. The next time that same piece of the island is imaged, the time of day will be the same, to within few milliseconds. Only the frames containing overlapping bursts can be used to perform InSAR processing. This means that **if there is no burst overlap in the pair selected as input, the InSAR process will not run**.
 
 Repeatable burst timing is exploited by HyP3 in order to calculate the bursts that overlap between two scenes.  These overlapping bursts are the only ones used in the rest of the InSAR process. The rest are discarded.
 

@@ -104,9 +104,9 @@ Immediately after ingesting the SLC, the state vectors are updated to use the be
 
 #### Prepare the DEM File
 
-In order to create differential InSAR products that show motion on the ground, one must subtract the topographic phase from the interferogram. The topographic phase, in this case, is replicated by using an existing DEM to calculate the actual topographic phase. This phase is then removed from the interferogram leaving just the motion or deformation signal (plus atmospheric delays and noise).  
+In order to create differential InSAR products that show motion on the ground, one must subtract the topographic phase from the interferogram. The topographic phase, in this case, is replicated by using an [existing DEM](docs/dems.md) to calculate the actual topographic phase. This phase is then removed from the interferogram leaving just the motion or deformation signal (plus atmospheric delays and noise).  
 
-The DEM that is used for HyP3 InSAR is the [Copernicus GLO-30 Public DEM](https://registry.opendata.aws/copernicus-dem/). This is the state of the art in publicly available DEMs and was selected over NED and STRM for its contribution to creating high quality interferometric products.
+The DEM that is used for HyP3 InSAR is the [Copernicus GLO-30 Public DEM](https://registry.opendata.aws/copernicus-dem/). This DEM provides global coverage at 30-m pixel spacing, and provides higher-quality products over a wider area than the older DEMs (SRTM and NED) previously used to generate ASF's On Demand products.
 
 #### Calculate Overlapping Bursts
 

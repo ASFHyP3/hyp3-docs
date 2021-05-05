@@ -298,15 +298,3 @@ A DEM is used to remove topographic phase impacts, but if there are inaccuracies
 
 ### Orbit Uncertainties
 This is generally not an issue for Sentinel-1 data, as the orbits are very precise and generally reliable. On Demand InSAR products are only processed once restituted or precise orbits are available. Orbit uncertainties are more problematic when working with datasets from older missions.
-
-## Data Sources
-
-## Examples
-### Surface Deformation 
-### Volcanic Deformation
-### Subsidence
-### Earthquakes
-
-## Data Access
-
-

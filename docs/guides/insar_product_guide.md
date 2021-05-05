@@ -229,7 +229,9 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 - The incidence angle map gives the local incidence angle of the terrain.
 - The KMZ files are Google Earth formatted files provided for simple viewing on that platform.  
 
-Finally, there are the colorized wrapped phase and the unwrapped phase browse images, which are 2048-pixel wide PNG format images.  The extension used and example files names are included in Table 2 below. 
+Browse images are included for the wrapped (color_phase) and unwrapped (unw_phase) phase files, which are in PNG format and are each 2048 pixels wide. 
+
+The extension used and example files names are included in Table 2 below. 
 
 | Extension | Description | Example |
 |---|---|---|

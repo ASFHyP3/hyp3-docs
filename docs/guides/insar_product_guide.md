@@ -219,7 +219,7 @@ The InSAR product names are packed with information pertaining to the processing
 All of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs.
 
 - The amplitude image is the calibrated radiometric backscatter from the reference granule in sigma-nought power. The image is terrain corrected using a geometric correction, but not radiometrically corrected. 
-- The coherence file contains values from 0.0 to 1.0, with zero being non-coherent to 1.0 being perfectly coherent. 
+- The coherence file contains values from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent. 
 - The unwrapped phase file shows the results of the phase unwrapping process. This is the main interferogram output. 
 - The line-of-sight displacement file indicates the displacement in meters along the look direction of the sensor (perpendicular to the direction of movement of the satellite).
 - The vertical displacement is generated from the line of sight displacement values and the DEM, and makes assumptions that likely do not hold true for most deformation processes that are impacted by horizontal motion as well as vertical motion.

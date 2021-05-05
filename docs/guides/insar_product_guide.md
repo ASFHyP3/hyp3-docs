@@ -58,17 +58,17 @@ In contrast to the (physical) baseline, the *temporal baseline* refers to the ti
 
 *Table 1: Temporal baselines and what they measure. Different geophysical phenomena can be detected based upon the temporal baseline. In general, the longer the temporal baseline, the smaller the motion that can be detected.*
 
-## InSAR Workflow
+## Ordering On Demand InSAR Products
+[On Demand InSAR](https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3) products are generated using ASF's HyP3 platform. Jobs can be submitted for processing using the [Vertex](https://search.asf.alaska.edu/#/) data portal, the [HyP3 Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/) or the [HyP3 API](https://hyp3-docs.asf.alaska.edu/using/api/). 
 
-The InSAR workflow used in HyP3 was developed by ASF using GAMMA software.  The steps include pre-processing steps, interferogram preparation, and product creation.  Once these steps are performed, an output product package will be created.  See [product packaging](#product-packaging) for details on the individual files in the package.  
+### Vertex 
+InSAR pairs are selected in [Vertex](https://search.asf.alaska.edu/#/) using the [SBAS Tool](https://docs.asf.alaska.edu/vertex/sbas/). The tool is designed for generating time series of InSAR pairs with short baselines for SBAS analysis, but it is currently the only interface where InSAR pairs can be selected for processing. Even if you are only interested in very specific pairings, you will need to submit them from the SBAS search interface. Refer to our [step-by-step tutorial](https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3) for guidance on using the SBAS tool for this process.
 
-### Pre-Processing
+### HyP3 SDK and API
+You may still find the Geographic Search and SBAS tool functionality useful when submitting InSAR jobs via the [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/) or [API](https://hyp3-docs.asf.alaska.edu/using/api/). When you generate a list of pairs in the SBAS Tool, there is an option at the top of the results list to download the list as a CSV file. This list can then be used to populate your SDK or API request.
 
-Pre-processing steps prepare the SAR images to be used in interferometry.  The pre-processing steps include image selection, ingest (including calibration), creation of a suitable DEM, and calculation of the burst overlap.
-
-#### Finding an InSAR Pair
-
-Although it is possible to start from RAW data, Sentinel-1 InSAR processing is typically done using [Interferometric Wide swath Single Look Complex](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath "Link to ESA IW SLC description") (IW SLC) data as the input.  This means that the data has been formed into an image through SAR processing, but has not been multi-looked.  When selecting an InSAR pair, observe the following required conditions:
+### Considerations for Selecting an InSAR Pair
+When selecting an InSAR pair, observe the following required conditions:
 
 1. Images from an identical orbit direction (either ascending or descending)
 2. Images with identical incidence angles and beam mode
@@ -90,6 +90,18 @@ In addition, the following suggestions may be helpful:
 > For deformation mapping, it is best to minimize the perpendicular baseline whenever possible, but there may be tradeoffs in terms of finding suitable temporal baselines. In most cases, however, pairs selected for deformation mapping will have perpendicular baselines *much* smaller than the critical baseline.
 
 ------ 
+## InSAR Workflow
+
+The InSAR workflow used in HyP3 was developed by ASF using GAMMA software.  The steps include pre-processing steps, interferogram preparation, and product creation.  Once these steps are performed, an output product package will be created.  See [product packaging](#product-packaging) for details on the individual files in the package.  
+
+### Pre-Processing
+
+Pre-processing steps prepare the SAR images to be used in interferometry.  The pre-processing steps include image selection, ingest (including calibration), creation of a suitable DEM, and calculation of the burst overlap.
+
+#### Select an InSAR Pair
+Although it is possible to start from RAW data, Sentinel-1 InSAR processing is typically done using [Interferometric Wide swath Single Look Complex](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath "Link to ESA IW SLC description") (IW SLC) data as the input.  This means that the data has been formed into an image through SAR processing, but has not been multi-looked.  
+
+The SLC pair is [defined by the user](#ordering-on-demand-insar-products), either through the Vertex interface, or using the HyP3 API or SDK. 
 
 #### Ingest SLC data into GAMMA format
 

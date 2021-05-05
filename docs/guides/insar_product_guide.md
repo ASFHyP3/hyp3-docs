@@ -198,7 +198,7 @@ HyP3 InSAR output is a zip file containing a variety of files including GeoTIFFs
 
 ### Naming Convention
 
-As with our RTC products, HyP3 product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 4. 
+The InSAR product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 4. 
 - The platform names, either Sentinel-1A or Sentinel-1B, are abbreviated "A" or "B", indicating the reference and secondary granule's imaging platform
 - The reference start date and time and the secondary start date and time, with the date and time separated by the letter T
 - The polarizations for the pair, either HH or VV, the orbit type, and the days of separation for the pair

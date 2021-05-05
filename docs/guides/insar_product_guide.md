@@ -285,7 +285,7 @@ While SAR signals can penetrate clouds, atmospheric conditions can delay the tra
 
 In some cases, atmospheric errors can be corrected by using an atmospheric model to remove the impacts of the turbulent delay from the interferogram. Another approach is to use time series analysis to identify outliers.
 
-ALWAYS DOUBT YOUR INTERFEROGRAM FIRST! View the interferogram critically, and consider if fringe patterns could potentially be driven by atmospheric effects. 
+***Always doubt your interferogram first!*** View the interferogram critically, and consider if fringe patterns could potentially be driven by atmospheric effects. 
 
 #### Turbulent Delay
 These delays are generally caused by differences in water vapor distribution from one image to the next. They often manifest as wobbly or sausage-shaped fringes, and can potentially mask the signal of a small earthquake. 

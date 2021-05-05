@@ -40,24 +40,11 @@ The term *baseline* refers to the physical distance between the two vantage poin
 
 To monitor surface deformation, the perpendicular baseline for the two acquisitions should be very small in order to maximize the coherence of the phase measurements. 
 
-In order to determine topography, two slightly different vantage points are required. Sensitivity to topography depends on the perpendicular baseline, the sensor wavelength, the distance between the satellite and the ground, and the sensor look angle as given in equation 1. The parameters are diagrammed in Figure 3. 
+In order to determine topography, two slightly different vantage points are required. Sensitivity to topography depends on the perpendicular baseline, the sensor wavelength, the distance between the satellite and the ground, and the sensor look angle. 
 
 ![Figure 2](../images/baseline.png "Geometry of InSAR Baselines.")
 
 *Figure 2: Geometry of InSAR baselines. Two satellite passes image the same area on the ground from positions S1 and S2, resulting a baseline of B which can be decomposed into normal (B<sub>n</sub>) and perpendicular (B<sub>p</sub>) components. Here Y is the direction of travel or *along-track* and X is the direction perpendicular to motion, referred to as the *cross-track* or *range* direction. Credit: Franz J. Meyer*
-
---------
-
-![Equation 1](../images/phi_topo_eq.png "Equation 1: Calculation of topographic phase")
-
-*Equation 1: Calculation of topographic phase*
-
---------
-
-
-![Figure 3](../images/baseline2.png "Parameters Affecting Topographic Sensitivity")
-
-*Figure 3: Parameters affecting topographic sensitivity include the perpendicular baseline B&#8869, the wavelength  of the sensor &#955, the distance from the sensor to the ground R, and the sensor look angle &#952. Credit: Franz J. Meyer*
 
 #### Temporal Baseline
 In contrast to the (physical) baseline, the *temporal baseline* refers to the time separation between imaging passes. Along-track interferometry measures motion in the millisecond to second range. This technique can detect ocean currents and rapidly moving objects like boats. Differential interferometry is the standard method used to detect motion in the range of days to years. This is the type of interferometry that is performed by the Sentinel-1 HyP3 InSAR processing algorithm. Table 1 lists different temporal baselines, their common names, and what they can be used to measure.  
@@ -96,8 +83,10 @@ In addition, the following suggestions may be helpful:
 
 ------
 > **Aside: Critical Baseline**
-
-> Large baselines are better than small for deformation detection. However, as the baseline increases, coherence decreases. As some point, it is impossible create an interferogram because of baseline decorrelation. The maximum viable baseline per platform, referred to as the *critical baseline*, is a function of the distance to the ground, the wavelength, and the viewing geometry of the platform. For Sentinel-1 this critical baseline is about 5 KM. In practice if the perpendicular baseline between images is more than 3/4 of the critical baseline, interferogram creation will be problematic due to the level of noise. 
+>
+> Large baselines are better than small for topographic mapping. However, as the baseline increases, coherence decreases. As some point, it is impossible to create an interferogram because of baseline decorrelation. The maximum viable baseline per platform, referred to as the *critical baseline*, is a function of the distance to the ground, the wavelength, and the viewing geometry of the platform. For Sentinel-1 this critical baseline is about 5 km. In practice, if the perpendicular baseline between images is more than 3/4 of the critical baseline, interferogram creation will be problematic due to the level of noise. 
+> 
+> For deformation mapping, it is best to minimize the perpendicular baseline whenever possible, but there may be tradeoffs in terms of finding suitable temporal baselines. In most cases, however, pairs selected for deformation mapping will have perpendicular baselines *much* smaller than the critical baseline.
 
 ------ 
 
@@ -107,11 +96,11 @@ Once the InSAR pair has been identified, the selected SLC data are ingested into
 
 During the ingest into GAMMA's internal format, the SLC data is calibrated by applying the calibration coefficients that are supplied with each product. This process puts the SAR backscatter into a known scale where the diffuse volume scattering of the Amazon rain forest is a constant -6.5 dB.
 
-Immediately after ingesting the SLC, the state vectors are updated to use the best available state vectors. The state vector types in order of absolute correctness are original predicted (O), restituted (R), and precision (P). In practice, one will never receive an InSAR product that uses the original predicted - only granules for which a restituted or precision orbit is available can be used in HyP3 InSAR processing. One can determine a file's orbit type from the orbit type character in the filename as shown in Figure 4.
+Immediately after ingesting the SLC, the state vectors are updated to use the best available state vectors. The state vector types in order of absolute correctness are original predicted (O), restituted (R), and precision (P). In practice, one will never receive an InSAR product that uses the original predicted - only granules for which a restituted or precision orbit is available can be used in HyP3 InSAR processing. One can determine a file's orbit type from the orbit type character in the filename as shown in Figure 3.
 
-![Figure 4](../images/orbit_in_name.png "Position of the orbit type in HyP3 product names")
+![Figure 3](../images/orbit_in_name.png "Position of the orbit type in HyP3 product names")
 
-*Figure 4: Position of the orbit type in the HyP3 product name.*  
+*Figure 3: Position of the orbit type in the HyP3 product name.*  
 
 #### Prepare the DEM File
 
@@ -171,7 +160,7 @@ HyP3 InSAR output is a zip file containing a variety of files including GeoTIFFs
 
 ### Naming Convention
 
-As with our RTC products, HyP3 product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 5. 
+As with our RTC products, HyP3 product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 4. 
 - The platform names, either Sentinel-1A or Sentinel-1B, are abbreviated "A" or "B", indicating the reference and secondary granule's imaging platform
 - The reference start date and time and the secondary start date and time, with the date and time separated by the letter T
 - The polarizations for the pair, either HH or VV, the orbit type, and the days of separation for the pair
@@ -181,9 +170,9 @@ As with our RTC products, HyP3 product names are packed with information pertain
 - Last is the ASF product ID, a 4 digit hexadecimal number
 
 
-![Figure 5](../images/asf_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
+![Figure 4](../images/asf_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
 
-*Figure 5: Breakdown of ASF InSAR naming scheme.*
+*Figure 4: Breakdown of ASF InSAR naming scheme.*
 
 ### Image Files
 

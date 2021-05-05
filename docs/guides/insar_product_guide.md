@@ -265,7 +265,7 @@ Along with the image files, there are currently two text files - the main readme
 
 ## Limitations
 ### Baseline Calculation
-The baseline is defined as the difference of the platform positions when a given area is imaged. HyP3 baselines are calculated using the best state vectors available. These are either restituted or precise. **If no restituted or precise state vectors are available, the process will not run**.
+The baseline is defined as the difference of the platform positions when a given area is imaged. HyP3 baselines are calculated using the best state vectors available. If precise orbits are not yet available for the input granules, restituted orbits will be used. The original predicted orbits are not used for InSAR processing in HyP3. **If no restituted or precise state vectors are available, the process will not run.**
 
 ### Coherence
 The phase measurements in the two images used in InSAR must be coherent in order to detect change. Random changes in phase from one acquisition to the next can mask actual surface deformation. Vegetation is a common driver of decorrelation, as changes can easily take place in the interval between two acquisitions due to growth, seasonal changes, or wind effects. It will be difficult to generate valid interferograms with C-band data in heavily vegetated regions due to lack of coherence even with fairly short time intervals. 

@@ -297,4 +297,4 @@ This type of delay is driven mostly by pressure and temperature differences or g
 A DEM is used to remove topographic phase impacts, but if there are inaccuracies in the DEM, residual impacts of those errors can remain in the interferogram. 
 
 ### Orbit Uncertainties
-This is generally not an issue for Sentinel-1 data, as the orbits are very precise and generally reliable. On Demand InSAR products are only processed once restituted or precise orbits are available. Orbit uncertainties are more problematic when working with datasets from older missions.
+This is generally not an issue for Sentinel-1 data, as the orbits are very precise and generally reliable. On Demand InSAR products are only processed once [restituted or precise orbits](#baseline-calculation) are available. Orbit uncertainties are more problematic when working with datasets from older missions.

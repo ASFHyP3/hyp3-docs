@@ -235,17 +235,18 @@ The tags and extensions used and example file names for each raster are listed i
 
 | Extension | Description | Example |
 |---|---|---|
-| _amp.tif      | Amplitude | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_amp.tif |
-| _corr.tif      | Normalized coherence file | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_corr.tif |
+| _amp.tif | Amplitude | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_amp.tif |
+| _corr.tif | Normalized coherence file | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_corr.tif |
 | _unw_phase.tif | Unwrapped geocoded interferogram | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_unw_phase.tif |
 | _los__disp.tif | Line-of-sight displacement | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_los_disp.tif |
 | _vert_disp.tif | Vertical displacement | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_vert_disp.tif |
-| _lv_phi.tif    | Look vector &#966 | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_lv_phi.tif |
-| _lv_theta.tif  | Look vector &#952 | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_lv_theta.tif |
-| _dem.tif       | Digital elevation model | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_dem.tif |
-| _mask.tif       | Water mask | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_mask.tif |
-| _inc_map.tif  | Incidence angle  | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_inc_map.tif |
-| .kmz | Zipped Google Earth image | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_unw_phase.kmz |
+| _lv_phi.tif | Look vector &#966 | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_lv_phi.tif |
+| _lv_theta.tif | Look vector &#952 | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_lv_theta.tif |
+| _dem.tif | Digital elevation model | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_dem.tif |
+| _mask.tif | Water mask | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_mask.tif |
+| _inc_map.tif | Incidence angle | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_inc_map.tif |
+| _color_phase.kmz | Wrapped phase kmz file | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_color_phase.kmz |
+| _unw_phase.kmz | Unwrapped phase kmz file | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_unw_phase.kmz |
 | _color_phase.png | Wrapped phase browse image | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_color_phase.png |
 | _unw_phase.png | Unwrapped phase browse image | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_unw_phase.png |
 

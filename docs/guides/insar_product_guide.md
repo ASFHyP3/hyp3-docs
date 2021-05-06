@@ -218,16 +218,16 @@ The InSAR product names are packed with information pertaining to the processing
 
 All of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs.
 
-- The amplitude image is the calibrated radiometric backscatter from the reference granule in sigma-nought power. The image is terrain corrected using a geometric correction, but not radiometrically corrected. 
-- The coherence file contains values from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent. 
-- The unwrapped phase file shows the results of the phase unwrapping process. This is the main interferogram output. 
-- The line-of-sight displacement file indicates the displacement in meters along the look direction of the sensor.
-- The vertical displacement is generated from the line of sight displacement values, and makes the assumption that deformation only occurs in the vertical direction. Note that this assumption may not hold true in cases where the deformation also has a horizontal component.
-- The look vectors &#966 and &#952 describe the elevation and orientation angles of the sensor's look direction. 
-- The DEM file gives the local terrain heights in meters, with a geoid correction applied.
-- The water mask image has pixels with a value of 0 for water and 1 for land.
-- The incidence angle map gives the local incidence angle of the terrain.
-- The KMZ files are Google Earth formatted files provided for simple viewing on that platform.  
+- The *amplitude* image is the calibrated radiometric backscatter from the reference granule in sigma-nought power. The image is terrain corrected using a geometric correction, but not radiometrically corrected. 
+- The *coherence* file pixel values range from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent. 
+- The *unwrapped phase* file shows the results of the phase unwrapping process. This is the main interferogram output.
+- The *wrapped phase* file indicates the interferogram phase after applying the adpaptive filter immediately before unwrapping. *(optional)*
+- The *line-of-sight displacement* file indicates the displacement in meters along the look direction of the sensor. *(optional)*
+- The *vertical displacement* is generated from the line of sight displacement values, and makes the assumption that deformation only occurs in the vertical direction. Note that this assumption may not hold true in cases where the deformation also has a horizontal component.
+- The *look vectors* &#966 and &#952 describe the elevation and orientation angles of the sensor's look direction. *(optional)*
+- The *incidence angle* map gives the local incidence angle of the terrain. *(optional)*
+- The *water mask* image has pixels with a value of 0 for water and 1 for land. *(optional)*
+- The *DEM* file gives the local terrain heights in meters, with a geoid correction applied. *(optional)*
 
 Browse images are included for the wrapped (color_phase) and unwrapped (unw_phase) phase files, which are in PNG format and are each 2048 pixels wide. 
 

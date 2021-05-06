@@ -221,8 +221,8 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 - The amplitude image is the calibrated radiometric backscatter from the reference granule in sigma-nought power. The image is terrain corrected using a geometric correction, but not radiometrically corrected. 
 - The coherence file contains values from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent. 
 - The unwrapped phase file shows the results of the phase unwrapping process. This is the main interferogram output. 
-- The line-of-sight displacement file indicates the displacement in meters along the look direction of the sensor (perpendicular to the direction of movement of the satellite).
-- The vertical displacement is generated from the line of sight displacement values and the DEM, and makes assumptions that likely do not hold true for most deformation processes that are impacted by horizontal motion as well as vertical motion.
+- The line-of-sight displacement file indicates the displacement in meters along the look direction of the sensor.
+- The vertical displacement is generated from the line of sight displacement values, and makes the assumption that deformation only occurs in the vertical direction. Note that this assumption may not hold true in cases where the deformation also has a horizontal component.
 - The look vectors &#966 and &#952 describe the elevation and orientation angles of the sensor's look direction. 
 - The DEM file gives the local terrain heights in meters, with a geoid correction applied.
 - The water mask image has pixels with a value of 0 for water and 1 for land.
@@ -275,7 +275,7 @@ Consider seasonality when selecting image pairs. Decorrelation can be particular
 ### Line-of-sight Measurements
 When looking at a single interferogram, the only reliable deformation measurements are in the line-of-sight orientation of the sensor. InSAR is not sensitive to motion in the azimuth direction of the satellite, so motion that occurs in the same direction as the satellite's direction of travel will not be detected. 
 
-In addition, a single interferogram cannot be used to determine the relative contributions of vertical and horizontal movement to the line-of-sight displacement measurement. The vertical displacement map is generated based on the assumption that the movement is entirely in the vertical direction. For many processes, that may not actually be the case. 
+In addition, a single interferogram cannot be used to determine the relative contributions of vertical and horizontal movement to the line-of-sight displacement measurement. The vertical displacement map is generated based on the assumption that the movement is entirely in the vertical direction, which may not be realistic for some processes. To determine how much of the signal is driven by vertical vs. horizontal movement, you must either use a time series of interferograms, or use reference measurements with known vertical and horizontal components (such as GNSS measurements from the region of deformation) to deconstruct the line-of-sight displacement.
 
 ## Error Sources
 On Demand InSAR products do not currently correct for some common sources of error in interferometry, such as atmospheric effects. Further processing or time series analysis can be performed by the user to identify or reduce the impact of some of these errors when using On Demand InSAR products for analysis.

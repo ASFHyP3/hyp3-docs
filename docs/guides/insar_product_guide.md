@@ -178,16 +178,17 @@ As with our RTC products, HyP3 product names are packed with information pertain
 
 All of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs.
 
-- The amplitude image is the amplitude from the reference scene. 
-- The coherence file contains values from 0.0 to 1.0, with zero being non-coherent to 1.0 being perfectly coherent. 
-- The unwrapped phase file shows the results of the phase unwrapping process.  This is the main interferogram output. 
-- The line-of-sight displacement file contains the displacement directly away from the satellite.
-- The vertical displacement is just the vertical component of that displacement. 
-- The looks vectors, &#966 and &#952 describe the look vector elevation and orientation angles. 
-- The DEM file gives the local terrain heights.
-- The water mask image has zeros for water and 1 for land.
-- The incidence angle map gives the local incidence angle of the terrain.
-- The KMZ files are Google Earth formatted files provided for simple viewing on that platform.  
+- The *amplitude* image is the amplitude from the reference scene. 
+- The *coherence* file contains values from 0.0 to 1.0, with zero being non-coherent to 1.0 being perfectly coherent.
+- The *unwrapped phase* file shows the results of the phase unwrapping process.  This is the main interferogram output.
+- The *wrapped phase* file contains the interferogram phase after applying the adpaptive filter immediately before unwrapping. *(optional)*
+- The *line-of-sight displacement* file contains the displacement directly away from the satellite. *(optional)*
+- The *vertical displacement* is just the vertical component of that displacement.
+- The *looks vectors*, &#966 and &#952 describe the look vector elevation and orientation angles. *(optional)*
+- The *incidence angle* map gives the local incidence angle of the terrain. *(optional)*
+- The *water mask* image has zeros for water and 1 for land. *(optional)*
+- The *DEM* file gives the local terrain heights. *(optional)*
+- The *KMZ* files are Google Earth formatted files provided for simple viewing on that platform.
 
 Finally, there are the colorized wrapped phase and the unwrapped phase browse images, which are 2048-pixel wide PNG format images.  The extension used and example files names are included in Table 2 below. 
 
@@ -196,6 +197,7 @@ Finally, there are the colorized wrapped phase and the unwrapped phase browse im
 | _amp.tif      | Amplitude | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_amp.tif |
 | _corr.tif      | Normalized coherence file | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_corr.tif |
 | _unw_phase.tif | Unwrapped geocoded interferogram | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_unw_phase.tif |
+| _wrapped_phase.tif | Wrapped geocoded interogram | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_wrapped_phase.tif |
 | _los__disp.tif | Line-of-sight displacement | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_los_disp.tif |
 | _vert_disp.tif | Vertical displacement | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_vert_disp.tif |
 | _lv_phi.tif    | Look vector &#966 | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_lv_phi.tif |

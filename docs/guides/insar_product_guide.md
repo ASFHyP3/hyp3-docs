@@ -9,7 +9,7 @@ InSAR can also be used to generate digital elevation models, but the optimal mis
 
 
 ### Contents of InSAR Guide
-The InSAR workflow used to create HyP3 InSAR surface motion products constitutes a large portion of this document.  Users are cautioned to read the sections on limitations and error sources in InSAR products before attempting to use InSAR data. Sections on data sources and application examples are presented as well.  For a more complete description of the properties of SAR, see our [Introduction to SAR](../guides/sar_intro.md) guide. 
+The InSAR workflow used to create HyP3 InSAR surface motion products constitutes a large portion of this document.  Users are cautioned to read the sections on limitations and error sources in InSAR products before attempting to use InSAR data. Sections on data sources and application examples are presented as well.  For a more complete description of the properties of SAR, see our [Introduction to SAR](../guides/introduction_to_sar.md) guide. 
 
 ### Brief Overview of InSAR
 SAR is an active sensor that transmits pulses and listens for echoes. These echoes are recorded in phase and amplitude, with the phase being used to determine the distance from the sensor to the target and the amplitude yielding information about the roughness and dielectric constant of that target.

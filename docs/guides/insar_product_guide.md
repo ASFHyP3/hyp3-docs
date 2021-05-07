@@ -241,7 +241,7 @@ The tags and extensions used and example file names for each raster are listed i
 | _corr.tif | Normalized coherence file | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09<br>_corr.tif |
 | _unw_phase.tif | Unwrapped geocoded interferogram | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09<br>_unw_phase.tif |
 | _wrapped_phase.tif | Wrapped geocoded interogram | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09<br>_wrapped_phase.tif |
-| _los__disp.tif | Line-of-sight displacement | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09<br>_los_disp.tif |
+| _los_disp.tif | Line-of-sight displacement | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09<br>_los_disp.tif |
 | _vert_disp.tif | Vertical displacement | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09<br>_vert_disp.tif |
 | _lv_phi.tif | Look vector &#966 | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09<br>_lv_phi.tif |
 | _lv_theta.tif | Look vector &#952 | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09<br>_lv_theta.tif |

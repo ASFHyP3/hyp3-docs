@@ -232,12 +232,13 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 - The *vertical displacement* is generated from the line of sight displacement values, and makes the assumption that deformation only occurs in the vertical direction. Note that this assumption may not hold true in cases where the deformation also has a horizontal component.
 - The *look vectors* &#966 and &#952 describe the elevation and orientation angles of the sensor's look direction. *(optional)*
 - The *incidence angle* map gives the local incidence angle of the terrain. *(optional)*
-- The *water mask* image has pixels with a value of 0 for water and 1 for land. *(optional)*
 - The *DEM* file gives the local terrain heights in meters, with a geoid correction applied. *(optional)*
 
-Browse images are included for the wrapped (color_phase) and unwrapped (unw_phase) phase files, which are in PNG format and are each 2048 pixels wide. 
+If the **water mask** option is applied, a byte type GeoTIFF with pixel values of 0 for areas masked as water and 1 for unmasked areas is included in the package for reference. The water mask is not precise; land is buffered to reduce the possibility of near-shore features being excluded while reducing the impact of phase-unwrapping errors over large expanses of water.
 
-KMZ files are included for the wrapped (color_phase) and unwrapped (unw_phase) phase files, which allow users to view the outputs in Google Earth or other platforms that support kmz files. 
+**Browse images** are included for the wrapped (color_phase) and unwrapped (unw_phase) phase files, which are in PNG format and are each 2048 pixels wide. 
+
+**KMZ files** are included for the wrapped (color_phase) and unwrapped (unw_phase) phase images, which allow users to view the outputs in Google Earth or other platforms that support kmz files. 
 
 The tags and extensions used and example file names for each raster are listed in Table 2 below. 
 

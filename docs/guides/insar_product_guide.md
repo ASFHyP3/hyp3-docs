@@ -235,7 +235,7 @@ KMZ files are included for the wrapped (color_phase) and unwrapped (unw_phase) p
 
 The tags and extensions used and example file names for each raster are listed in Table 2 below. 
 
-{% set base_name = 'S1AB&#8203;_20171111T150004&#8203;_20171117T145926&#8203;_VVP006&#8203;_INT80&#8203;_G&#8203;_ueF&#8203;_4D09&#8203;' %}
+{% set base_name = 'S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>' %}
 
 | Extension | Description | Example |
 |---|---|---|

@@ -3,7 +3,7 @@ This document is a guide for users of Interferometric Synthetic Aperture Radar (
 
 For a step-by-step tutorial on ordering On-Demand InSAR Products using Vertex, visit our [InSAR On Demand story map](https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3).
 
-Users are cautioned to read the sections on [limitations](#limitations) and [error sources](#error-sources) in InSAR products before attempting to use InSAR data. For a more complete description of the properties of SAR, see our [Introduction to SAR](../guides/sar_intro.md) guide. 
+Users are cautioned to read the sections on [limitations](#limitations) and [error sources](#error-sources) in InSAR products before attempting to use InSAR data. For a more complete description of the properties of SAR, see our [Introduction to SAR](../guides/introduction_to_sar.md) guide. 
 
 ## Introduction
 Interferometric Synthetic Aperture Radar (InSAR) processing uses two SAR images collected over the same area to determine geometric properties of the surface. Missions such as Sentinel-1 are [designed for](https://sentinel.esa.int/web/sentinel/missions/sentinel-1/mission-objectives) monitoring surface deformation using InSAR, which is optimal when acquisitions are made from a consistent location in space ([short perpendicular baseline](#baselines)) over regular time intervals. 

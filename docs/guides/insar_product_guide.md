@@ -115,7 +115,7 @@ There are several options users can set when ordering InSAR On Demand products. 
 
 6. There is an option to apply a **water mask**. This mask generally only includes oceans and seas, though some large inland lakes are also masked. There is a buffer applied to the shoreline mask so that most of the waterbody is masked without inadvertantly masking near-shore features. Masking waterbodies can have a significant impact during the phase unwrapping, as water can sometimes exhibit enough coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid. When this option is selected, a separate water mask GeoTIFF (indicating which pixels are masked) is also included in the product package. Water masking is turned off by default. 
 
-6. A copy of the **DEM** used for processing can optionally be included in the product package. The height values will differ from the original Copernicus DEM dataset, as a geoid correction has been applied, and it has been projected to UTM Zone coordinates. The DEM is excluded by default.
+7. A copy of the **DEM** used for processing can optionally be included in the product package. The height values will differ from the original Copernicus DEM dataset, as a geoid correction has been applied, and it has been projected to UTM Zone coordinates. The DEM is excluded by default.
 
 ## InSAR Workflow
 

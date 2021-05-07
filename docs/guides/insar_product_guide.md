@@ -221,7 +221,7 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 - The *amplitude* image is the calibrated radiometric backscatter from the reference granule in sigma-nought power. The image is terrain corrected using a geometric correction, but not radiometrically corrected. 
 - The *coherence* file pixel values range from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent. 
 - The *unwrapped phase* file shows the results of the phase unwrapping process. This is the main interferogram output.
-- The *wrapped phase* file indicates the interferogram phase after applying the adpaptive filter immediately before unwrapping. *(optional)*
+- The *wrapped phase* file indicates the interferogram phase after applying the adaptive filter immediately before unwrapping. *(optional)*
 - The *line-of-sight displacement* file indicates the displacement in meters along the look direction of the sensor. *(optional)*
 - The *vertical displacement* is generated from the line of sight displacement values, and makes the assumption that deformation only occurs in the vertical direction. Note that this assumption may not hold true in cases where the deformation also has a horizontal component.
 - The *look vectors* &#966 and &#952 describe the elevation and orientation angles of the sensor's look direction. *(optional)*
@@ -240,7 +240,7 @@ The tags and extensions used and example file names for each raster are listed i
 | _amp.tif | Amplitude | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_amp.tif |
 | _corr.tif | Normalized coherence file | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_corr.tif |
 | _unw_phase.tif | Unwrapped geocoded interferogram | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_unw_phase.tif |
-| _wrapped_phase.tif | Wrapped geocoded interogram | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_wrapped_phase.tif |
+| _wrapped_phase.tif | Wrapped geocoded interferogram | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_wrapped_phase.tif |
 | _los_disp.tif | Line-of-sight displacement | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_los_disp.tif |
 | _vert_disp.tif | Vertical displacement | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_vert_disp.tif |
 | _lv_phi.tif | Look vector &#966 | S1AB_20171111T150004_20171117T145926_VVP006_INT80_G_ueF_4D09_lv_phi.tif |

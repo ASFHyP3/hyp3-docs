@@ -101,7 +101,7 @@ To analyze deformation caused by a single discrete event, such as an earthquake,
 
 ### Processing Options 
 
-There are several options offered with the InSAR products.  Currently, these are (1) the number of looks to take, (2) inclusion of look vectors, (3) inclusion of the line of sight displacement file, and (4) inclusion of the incidence angle map.
+There are several options users can set when ordering InSAR On Demand products.  Currently, users can choose the number of looks to take (which drives the resolution and pixel spacing of the products), whether to apply a water mask, and which optional products to include in the output package. The options are described below: 
 
 1. The **number of looks** drives the resolution and pixel spacing of the output products. Selecting 10x2 looks will yield larger products with 80 m resolution and pixel spacing of 40 m. Selecting 20x4 looks reduces the resolution to 160 m and reduces the size of the products (roughly 1/4 the size of 10x2 look products), with a pixel spacing of 80 m. The default is 20x4 looks.
 
@@ -109,7 +109,13 @@ There are several options offered with the InSAR products.  Currently, these are
 
 3. The **line-of-sight displacement** is the ground movement away from or towards the platform. It is used to create the vertical displacement map during the final steps of InSAR processing. In order to have this file included in the output zip file, this option must be selected.  The default is to not include the line-of-sight data file.
 
-4. The **local incidence angle** is defined as the angle between the incident radar signal and the local surface normal, expressed in radians. The default is to not include the incidence angle data file.
+4. The **wrapped phase** GeoTIFF can be included in the output package. The browse version of this GeoTIFF (_color_phase.png) is always included, but the GeoTIFF version is not included by default. The specific color ramp displayed in the png is most valuable for many users, but some may wish to work with the actual wrapped phase values.
+   
+5. The **local incidence angle** is defined as the angle between the incident radar signal and the local surface normal, expressed in radians. The default is to not include the incidence angle data file.
+
+6. There is an option to apply a **water mask**. This mask generally only includes oceans and seas, though some large inland lakes are also masked. There is a buffer applied to the shoreline mask so that most of the waterbody is masked without inadvertantly masking near-shore features. Masking waterbodies can have a significant impact during the phase unwrapping, as water can sometimes exhibit enough coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid. When this option is selected, a separate water mask GeoTIFF (indicating which pixels are masked) is also included in the product package. Water masking is turned off by default. 
+
+6. A copy of the **DEM** used for processing can optionally be included in the product package. The height values will differ from the original Copernicus DEM dataset, as a geoid correction has been applied, and it has been projected to UTM Zone coordinates. The DEM is excluded by default.
 
 ## InSAR Workflow
 

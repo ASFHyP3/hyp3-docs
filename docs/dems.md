@@ -66,6 +66,6 @@ Figure 3 shows the coverage of the various legacy DEM sources.
 
 ## Special Use DEMs
 
-[AutoRIFT](products.md#autorift-sdk-api-only){target=blank}, a process developed by the [NASA MEaSUREs ITS_LIVE](https://its-live.jpl.nasa.gov/){target=_blank}
+[AutoRIFT](products.md#autorift){target=blank}, a process developed by the [NASA MEaSUREs ITS_LIVE](https://its-live.jpl.nasa.gov/){target=_blank}
 project, processes use a custom Greenland and Antarctica DEM with a 240 m resolution. The DEM,
 associated process input files, and their details are available on the ITS_LIVE project website. 

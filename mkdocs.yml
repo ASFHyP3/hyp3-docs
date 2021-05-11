@@ -43,8 +43,10 @@ nav:
       - products.md
       - Digital Elevation Models: dems.md
       - Product guides:
+          - Introduction to SAR: guides/introduction_to_sar.md
           - RTC Product Guide: guides/rtc_product_guide.md
           - RTC ATBD: guides/rtc_atbd.md
+          - InSAR Product Guide: guides/insar_product_guide.md
   - Other tools:
       - ArcGIS Toolbox: tools/arcgis_toolbox.md
       - ASF Tools for Python:

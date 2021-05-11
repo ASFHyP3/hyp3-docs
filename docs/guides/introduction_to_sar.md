@@ -100,8 +100,3 @@ When RTC is performed, foreshortened areas are corrected based on the DEM. Areas
 ## Speckle
   
 In most cases, the patch of ground illuminated by the SAR transmitter will not be homogeneous. Instead it will be comprised of many different types of individual scatterers. The scatterers may interfere with each other either strengthening the return or weakening it. This creates a grainy (salt & pepper) appearance in SAR imagery. This a result of the nature of SAR and, thus, occurs in all SAR scenes.  Speckle in SAR images can be mitigated by multi-looking, which, in effect, uses averaging to smooth out the image, resulting in a more homogeneous appearance at the expense of resolution.
-
-## Geocoding
-## Acquisition Modes
-## Product Levels
-

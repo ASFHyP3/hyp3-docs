@@ -58,6 +58,13 @@ In contrast to the (physical) baseline, the *temporal baseline* refers to the ti
 
 *Table 1: Temporal baselines and what they measure. Different geophysical phenomena can be detected based upon the temporal baseline. In general, the longer the temporal baseline, the smaller the motion that can be detected.*
 
+#### Critical Baseline
+Large baselines are better than small for topographic mapping. However, as the baseline increases, coherence decreases. At some point, it is impossible to create an interferogram because of baseline decorrelation. The maximum viable baseline per platform, referred to as the *critical baseline*, is a function of the distance to the ground, the wavelength, and the viewing geometry of the platform. 
+
+For Sentinel-1 this critical baseline is about 5 km. In practice, if the perpendicular baseline between images is more than 3/4 of the critical baseline, interferogram creation will be problematic due to the level of noise.
+
+For deformation mapping, it is best to minimize the perpendicular baseline whenever possible, but there may be tradeoffs in terms of finding suitable temporal baselines. In most cases, however, pairs selected for deformation mapping will have perpendicular baselines *much* smaller than the critical baseline.
+
 ## Ordering On Demand InSAR Products
 [On Demand InSAR](https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3) products are generated using ASF's HyP3 platform. Jobs can be submitted for processing using the [Vertex](https://search.asf.alaska.edu/#/) data portal, the [HyP3 Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/) or the [HyP3 API](https://hyp3-docs.asf.alaska.edu/using/api/). 
 
@@ -89,15 +96,6 @@ In addition, the following suggestions may be helpful:
 3. For topographic mapping: limited time separation between images (small temporal baseline) 
 
 To analyze deformation caused by a single discrete event, such as an earthquake, select images that bracket the event as closely in time as possible. Keeping the window narrowly focused on the time of the event will reduce the impacts of other processes that may mask the signal of the event of interest.
-
-------
-> **Aside: Critical Baseline**
->
-> Large baselines are better than small for topographic mapping. However, as the baseline increases, coherence decreases. As some point, it is impossible to create an interferogram because of baseline decorrelation. The maximum viable baseline per platform, referred to as the *critical baseline*, is a function of the distance to the ground, the wavelength, and the viewing geometry of the platform. For Sentinel-1 this critical baseline is about 5 km. In practice, if the perpendicular baseline between images is more than 3/4 of the critical baseline, interferogram creation will be problematic due to the level of noise. 
-> 
-> For deformation mapping, it is best to minimize the perpendicular baseline whenever possible, but there may be tradeoffs in terms of finding suitable temporal baselines. In most cases, however, pairs selected for deformation mapping will have perpendicular baselines *much* smaller than the critical baseline.
-
------- 
 
 ### Processing Options 
 

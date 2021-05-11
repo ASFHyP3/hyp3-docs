@@ -93,13 +93,17 @@ To analyze deformation caused by a single discrete event, such as an earthquake,
 ------
 > **Aside: Critical Baseline**
 >
-> Large baselines are better than small for topographic mapping. However, as the baseline increases, coherence decreases. As some point, it is impossible to create an interferogram because of baseline decorrelation. The maximum viable baseline per platform, referred to as the *critical baseline*, is a function of the distance to the ground, the wavelength, and the viewing geometry of the platform. For Sentinel-1 this critical baseline is about 5 km. In practice, if the perpendicular baseline between images is more than 3/4 of the critical baseline, interferogram creation will be problematic due to the level of noise. 
+> Large baselines are better than small for topographic mapping. However, as the baseline increases, coherence decreases. At some point, it is impossible to create an interferogram because of baseline decorrelation. The maximum viable baseline per platform, referred to as the *critical baseline*, is a function of the distance to the ground, the wavelength, and the viewing geometry of the platform. For Sentinel-1 this critical baseline is about 5 km. In practice, if the perpendicular baseline between images is more than 3/4 of the critical baseline, interferogram creation will be problematic due to the level of noise. 
 > 
 > For deformation mapping, it is best to minimize the perpendicular baseline whenever possible, but there may be tradeoffs in terms of finding suitable temporal baselines. In most cases, however, pairs selected for deformation mapping will have perpendicular baselines *much* smaller than the critical baseline.
 
 ------ 
 
 ### Processing Options 
+
+!!! important "New Processing Options Coming Soon" 
+
+    The only InSAR processing options currently available in Vertex are the resolution (number of looks), and whether to include the look vector maps and the line-of-sight displacement map. The other options listed below are in the process of being implemented and will be available soon. 
 
 There are several options users can set when ordering InSAR On Demand products.  Currently, users can choose the number of looks to take (which drives the resolution and pixel spacing of the products), whether to apply a water mask, and which optional products to include in the output package. The options are described below: 
 

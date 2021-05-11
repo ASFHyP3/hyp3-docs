@@ -38,9 +38,6 @@ nav:
       - Example Notebook: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
       - API Reference: using/sdk_api.md
     - API: using/api.md
-  - Introduction to SAR:
-    - guides/introduction_to_sar.md
-    - Digital Elevation Models: dems.md
   - Products:
     - products.md
     - RTC:
@@ -54,6 +51,10 @@ nav:
       - Story Map: https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank
     - AutoRIFT: https://its-live.jpl.nasa.gov/" target="_blank
     - Usage Guidelines: usage_guidelines.md
+  - SAR Basics:
+    - guides/introduction_to_sar.md
+    - Introduction to SAR: guides/introduction_to_sar.md
+    - Digital Elevation Models: dems.md
   - Other Tools:
     - ArcGIS Toolbox: tools/arcgis_toolbox.md
     - ASF Tools for Python:

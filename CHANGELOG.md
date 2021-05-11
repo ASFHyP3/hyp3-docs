@@ -12,6 +12,9 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 * Added "Introduction to SAR" page
 * Added "InSAR Product Guide" page
 
+### Changed
+* Updated status of Copernicus DEM in RTC Product Guide and DEM reference page
+
 ## [0.2.2](https://github.com/ASFHyP3/hyp3-docs/compare/v0.2.1...v0.2.2)
 
 ### Changed

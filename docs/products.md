@@ -47,14 +47,3 @@ visit the ITS_LIVE project website.
 A Digital Elevation Model (DEM) is required for autoRIFT processing. ASF uses the
 best publicly-available DEM with full coverage of the processing area. To learn more,
 visit [Digital Elevation Models](dems.md).
-
-## Product usage guidelines
-
-When using this data in a publication or presentation, we ask that you include the
-acknowledgement provided with each product. DOIs are also provided for citation
-when discussing the HyP3 software or plugins.
-
-- For multi-file products, the acknowledgement and relevant DOIs are included in
-  the `*.README.md.txt` file.
-- For netCDF products, the acknowledgement is included in the `source` global attribute
-  and the DOIs are included in the `references` global attribute.

@@ -15,8 +15,8 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 * Re-organized site table of contents
 * Moved product usage guidelines from Products page to a new Products ->
-  [Usage Guidelines](docs/usage_guidelines.md)
-* Updated RTC Product Guide and DEM reference page to state the Copernicus DEM is available
+  [Usage Guidelines](docs/usage_guidelines.md) page
+* Updated RTC Product Guide and DEM reference page to state that the Copernicus DEM is now available
 
 ## [0.2.2](https://github.com/ASFHyP3/hyp3-docs/compare/v0.2.1...v0.2.2)
 

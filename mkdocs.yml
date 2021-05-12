@@ -61,6 +61,7 @@ nav:
     - ASF Tools for Python:
       - tools/asf_tools.md
       - API Reference: tools/asf_tools_api.md
+  - Contact Us: contact.md
   - Developers:
     - Architecture: how_it_works.md
     - Plugins: plugins.md

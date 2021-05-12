@@ -9,6 +9,8 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.3.0](https://github.com/ASFHyP3/hyp3-docs/compare/v0.2.2...v0.3.0)
 
 ### Added
+* Added a [Contact Us snippet](docs/contact-snippet.md) that is used on the [Home](docs/index.md) page
+  and a new [Contact Us](docs/contact-snippet.md) page
 * Added SAR Basics -> [Introduction to SAR](docs/guides/introduction_to_sar.md) page
 * Added Products -> InSAR -> [InSAR Product Guide](docs/guides/insar_product_guide.md) page
 
@@ -33,7 +35,8 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 * Updated the RTC Product Guide and DEM Information section to include the Copernicus DEM GLO-30
 * Added an abstract to the RTC Product Guide  
-* Updated the RTC Product Guide to include more information on SAR distortions, how they are addressed by radiometric terrain correction, and how to access ASF's On-Demand RTC processing functionality and resources
+* Updated the RTC Product Guide to include more information on SAR distortions, how they are addressed by
+  radiometric terrain correction, and how to access ASF's On-Demand RTC processing functionality and resources
 
 ## [0.1.0](https://github.com/ASFHyP3/hyp3-docs/compare/v0.0.0...v0.1.0)
 

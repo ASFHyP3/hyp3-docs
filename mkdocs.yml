@@ -31,31 +31,42 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - How it works: how_it_works.md
   - Using HyP3:
-      - Vertex: https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank
-      - SDK:
-        - using/sdk.md
-        - Example Notebook: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
-        - API Reference: using/sdk_api.md
-      - API: using/api.md
+    - Vertex: https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank
+    - SDK:
+      - using/sdk.md
+      - Example Notebook: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
+      - API Reference: using/sdk_api.md
+    - API: using/api.md
   - Products:
-      - products.md
-      - Digital Elevation Models: dems.md
-      - Product guides:
-          - RTC Product Guide: guides/rtc_product_guide.md
-          - RTC ATBD: guides/rtc_atbd.md
-  - Other tools:
-      - ArcGIS Toolbox: tools/arcgis_toolbox.md
-      - ASF Tools for Python:
-        - tools/asf_tools.md
-        - API Reference: tools/asf_tools_api.md
-  - Plugins:
-      - plugins.md
-      # - HyP3 GAMMA: plugins/gamma.md
-      # - HyP3 autoRIFT: plugins/autoRIFT.md
-  - Contributing: contributing.md
-  - Code of Conduct: CODE_OF_CONDUCT.md
+    - products.md
+    - RTC:
+      - guides/rtc_product_guide.md
+      - Product Guide: guides/rtc_product_guide.md
+      - Story Map: https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35" target="_blank
+      - Theoretical Basis: guides/rtc_atbd.md
+    - InSAR:
+      - guides/insar_product_guide.md
+      - Product Guide: guides/insar_product_guide.md
+      - Story Map: https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank
+    - AutoRIFT: https://its-live.jpl.nasa.gov/" target="_blank
+    - Usage Guidelines: usage_guidelines.md
+  - SAR Basics:
+    - guides/introduction_to_sar.md
+    - Introduction to SAR: guides/introduction_to_sar.md
+    - Digital Elevation Models: dems.md
+    - SAR FAQ: https://asf.alaska.edu/information/sar-information/what-is-sar/#sar_faq" target="_blank
+  - Other Tools:
+    - ArcGIS Toolbox: tools/arcgis_toolbox.md
+    - ASF Tools for Python:
+      - tools/asf_tools.md
+      - API Reference: tools/asf_tools_api.md
+  - Developers:
+    - Architecture: how_it_works.md
+    - Plugins: plugins.md
+    - Contributing: contributing.md
+    - Code of Conduct: CODE_OF_CONDUCT.md
+  - Contact Us: contact.md
 
 plugins:
   - search

@@ -9,13 +9,14 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.3.0](https://github.com/ASFHyP3/hyp3-docs/compare/v0.2.2...v0.3.0)
 
 ### Added
-* Added "Introduction to SAR" page
-* Added "InSAR Product Guide" page
+* Added SAR Basics -> [Introduction to SAR](docs/guides/introduction_to_sar.md) page
+* Added Products -> InSAR -> [InSAR Product Guide](docs/guides/insar_product_guide.md) page
 
 ### Changed
 * Re-organized site table of contents
-* Moved product usage guidelines from Products page to a new Usage Guidelines page
-* Updated status of Copernicus DEM in RTC Product Guide and DEM reference page
+* Moved product usage guidelines from Products page to a new Products ->
+  [Usage Guidelines](docs/usage_guidelines.md)
+* Updated RTC Product Guide and DEM reference page to state the Copernicus DEM is available
 
 ## [0.2.2](https://github.com/ASFHyP3/hyp3-docs/compare/v0.2.1...v0.2.2)
 

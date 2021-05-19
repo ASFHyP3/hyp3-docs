@@ -106,7 +106,7 @@ You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://s
   "jobs": [
     {
       "name": "minimal-insar-example",
-      "job_type": "RTC_GAMMA",
+      "job_type": "INSAR_GAMMA",
       "job_parameters": {
         "granules": [
           "S1A_IW_SLC__1SDV_20200203T172103_20200203T172122_031091_03929B_3048",
@@ -116,7 +116,7 @@ You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://s
     },
     {
       "name": "custom-insar-example",
-      "job_type": "RTC_GAMMA",
+      "job_type": "INSAR_GAMMA",
       "job_parameters": {
         "granules": [
           "S1A_IW_SLC__1SDV_20200527T195012_20200527T195028_032755_03CB56_3D96",

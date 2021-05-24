@@ -99,9 +99,11 @@ To analyze deformation caused by a single discrete event, such as an earthquake,
 
 ### Processing Options 
 
-!!! important "New Processing Options Coming Soon" 
+!!! important "New Options Available!" 
 
-    The only InSAR processing options currently available in Vertex are the resolution (number of looks), and whether to include the look vector maps and the line-of-sight displacement map. The other options listed below are in the process of being implemented and will be available soon. 
+    Users can now include GeoTIFF outputs for the **wrapped phase**, the **local incidence angle**, and the **DEM** used for processing. This is in addition to the original options to set the resolution (number of looks), and whether to include the look vector maps and the line-of-sight displacement map.
+
+    The water masking option is under development and will be available soon. 
 
 There are several options users can set when ordering InSAR On Demand products.  Currently, users can choose the number of looks to take (which drives the resolution and pixel spacing of the products), whether to apply a water mask, and which optional products to include in the output package. The options are described below: 
 

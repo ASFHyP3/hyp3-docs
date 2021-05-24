@@ -99,7 +99,7 @@ To analyze deformation caused by a single discrete event, such as an earthquake,
 
 ### Processing Options 
 
-!!! important "New Processing Options Released, Water Masking Coming Soon!" 
+!!! important "New Options Available!" 
 
     Users can now include GeoTIFF outputs for the **wrapped phase**, the **local incidence angle**, and the **DEM** used for processing. This is in addition to the original options to set the resolution (number of looks), and whether to include the look vector maps and the line-of-sight displacement map.
 

@@ -296,22 +296,22 @@ The text file with extension .txt includes processing parameters used to generat
 | UTCTime | Time in the UTC time zone | 54004.989128 seconds |
 | Heading | Spacecraft heading measured clockwise from north | -13.0235756 degrees |
 | Spacecraft height | Height of the spacecraft above nadir point | 699974.5329 meters | 
-| Earth radius at nadir | Ellipsoidal  earth radius at the point directly below the satellite | 6371383.6099 meters |
+| Earth radius at nadir | Ellipsoidal earth radius at the point directly below the satellite | 6371383.6099 meters |
 | Slant range near | Distance from satellite to nearest point imaged | 799002.2677 meters | 
 | Slant range center | Distance from satellite to the center point imaged | 878813.0619 meters | 
 | Slant range far | Distance from satellite to furthest point imaged | 958623.8560 meters |
 | Range looks | Number of looks taken in the range direction | 20 | 
 | Azimuth looks | Number of looks taken in the azimuth direction | 4 |
 | InSAR phase filter | Name of the phase filter used | adf | 
-| Phase filter parameter | dampening factor | 0.6 |
+| Phase filter parameter | Dampening factor | 0.6 |
 | Resolution of output | Pixel spacing for output products | 80 meters | 
-| Range bandpass filter | Flag to tell whether a range bandpass filter has been applied during processing | no |
-| Azimuith bandpass filter | Flag to tell whether an azimuth bandpass filter has been applied during processing | no |
-| DEM source | Origin of DEM used in processing | GLO-30 |
+| Range bandpass filter | Range bandpass filter flag | no |
+| Azimuith bandpass filter | Azimuth bandpass filter flag | no |
+| DEM source | DEM used in processing | GLO-30 |
 | DEM resolution | Pixel spacing for DEM used to process this scene | 160 meters |
 | Unwrapping type | Type of phase unwrapper used | mcf |
-| Unwrapping threshold | Minimum coherence required unwrap a given pixel | none |
-| Speckle Filter | Flag to determine if speckle filtering has been applied | off |
+| Unwrapping threshold | Minimum coherence required to unwrap a given pixel | none |
+| Speckle Filter | Speckle filtering flag | off |
 
 *Table 4: List of InSAR parameters*
 

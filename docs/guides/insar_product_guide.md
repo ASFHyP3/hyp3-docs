@@ -270,14 +270,14 @@ The tags and extensions used and example file names for each raster are listed i
 
 ### Metadata Files
 
-Along with each of the image files, there will be one or more metadata files.
+The product package also includes a number of metadata files.
 
 | Extension | Description | Example |
 |-----------|-------------|---------|
 | .README.md.txt | Main README file for GAMMA InSAR | {{ base_name }}.README.md.txt |
 | .txt | Parameters and metadata for the InSAR pair | {{ base_name }}.txt |
-| .tif.xml | ArcGIS compliant XML metadata | {{ base_name }}_unw_phase.tif.xml |
-| .png.xml | ArcGIS compliant XML metadata | {{ base_name }}_color_phase.png.xml |
+| .tif.xml | ArcGIS compliant XML metadata for GeoTIFF files | {{ base_name }}_unw_phase.tif.xml |
+| .png.xml | ArcGIS compliant XML metadata for PNG files | {{ base_name }}_color_phase.png.xml |
 | .png.aux.xml | Geolocation information for png browse images | {{ base_name }}_color_phase.png.aux.xml |
 
 *Table 3: Metadata files in product package*
@@ -286,7 +286,7 @@ Along with each of the image files, there will be one or more metadata files.
 The text file with extension .README.md.txt explains the files included in the folder, and is customized to reflect that particular product. Users unfamiliar with InSAR products should start by reading this README file, which will give some background on each of the files included in the product folder.
 
 #### InSAR Parameter File
-The text file with extension .txt includes processing parameters used to generate the InSAR product as well as metadata attributes for the InSAR pair.  These are detailed in table 4.  
+The text file with extension .txt includes processing parameters used to generate the InSAR product as well as metadata attributes for the InSAR pair.  These are detailed in Table 4.  
 
 | Name | Description | Possible Value |
 |------|-------------|----------------|
@@ -313,7 +313,7 @@ The text file with extension .txt includes processing parameters used to generat
 | Unwrapping threshold | Minimum coherence required to unwrap a given pixel | none |
 | Speckle filtering | Speckle filtering flag | off |
 
-*Table 4: List of InSAR parameters*
+*Table 4: List of InSAR parameters included in the parameter text file*
 
 #### ArcGIS-Compatible XML Files
 There is an ArcGIS-compatible xml file for each raster in the product folder. When ArcGIS Desktop users view any of the rasters in ArcCatalog or the Catalog window in ArcMap, they can open the Item Description to view the contents of the associated xml file. ArcGIS Pro users can access the information from the Metadata tab. These files will not appear as separate items in ArcCatalog, though if you use Windows Explorer to look at the contents of the folder you will see them listed individually. Because each one is named identically to the product it describes (with the addition of the .xml extension), ArcGIS recognizes the appropriate file as the raster’s associated metadata, and integrates the metadata accordingly.

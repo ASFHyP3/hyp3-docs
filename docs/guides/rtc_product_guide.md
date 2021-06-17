@@ -195,18 +195,15 @@ The RTC products (one for each available polarization) are generated as 32-bit f
 
 ### Metadata Files
 
-Along with each of the image files, there will be one or more metadata files.
+The product package also includes a number of metadata files.
 
 | Extension | Description | Example |
-|---|---|---|
-| .README.md.txt | README file | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.README.md.txt |
-| .log | Log file of the processing steps | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.log |
-| .tif.xml | ArcGIS compliant XML metadata | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_VV.tif.xml |
-| _rgb.tif.xml | ArcGIS compliant XML metadata | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_VV_rgb.tif.xml |
-| .png.xml | ArcGIS compliant XML metadata | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.png.xml |
-| _rgb.png.xml | ArcGIS compliant XML metadata | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.png.xml |
-| .png.aux.xml | Geolocation metadata for greyscale PNG browse image | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.png.aux.xml |
-| _rgb.png.aux.xml | Geolocation metadata for color PNG browse image | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.png.aux.xml |
+|------|-------------|----------------|
+| .README.md.txt | README file | S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.README.md.txt |
+| .log | Log file of the processing steps | S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.log |
+| .tif.xml | ArcGIS compliant XML metadata for GeoTIFF files | S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A<wbr>_VV.tif.xml |
+| .png.xml | ArcGIS compliant XML metadata for PNG files | S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.png.xml |
+| .png.aux.xml | Geolocation metadata for PNG browse images | S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.png.aux.xml |
 
 *Table 5: Metadata files and their extensions*
 

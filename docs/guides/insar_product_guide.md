@@ -290,8 +290,8 @@ The text file with extension .txt includes processing parameters used to generat
 
 | Name | Description | Possible Value |
 |------|-------------|----------------|
-| Reference Granule | ESA granule name for reference scene. Always the data with the oldest timestamp. | S1A_IW_SLC__1SDV_20171111T150004_20171111T150032_019219_0208AF_EE89 |
-| Secondary Granule | ESA granule name for secondary scene. Always the data with the newest timestamp. | S1B_IW_SLC__1SDV_20171117T145926_20171117T145953_008323_00EBAB_AFB8 |
+| Reference Granule | ESA granule name for reference scene. Always the data with the oldest timestamp. | S1A<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20171111T150004<wbr>_20171111T150032<wbr>_019219<wbr>_0208AF<wbr>_EE89 |
+| Secondary Granule | ESA granule name for secondary scene. Always the data with the newest timestamp. | S1B<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20171117T145926<wbr>_20171117T145953<wbr>_008323<wbr>_00EBAB<wbr>_AFB8 |
 | Baseline | Perpendicular baseline | 61.8974 meters | 
 | UTCTime | Time in the UTC time zone | 54004.989128 seconds |
 | Heading | Spacecraft heading measured clockwise from north | -13.0235756 degrees |
@@ -306,7 +306,7 @@ The text file with extension .txt includes processing parameters used to generat
 | Phase filter parameter | Dampening factor | 0.6 |
 | Resolution of output | Pixel spacing for output products | 80 meters | 
 | Range bandpass filter | Range bandpass filter flag | no |
-| Azimuith bandpass filter | Azimuth bandpass filter flag | no |
+| Azimuth bandpass filter | Azimuth bandpass filter flag | no |
 | DEM source | DEM used in processing | GLO-30 |
 | DEM resolution | Pixel spacing for DEM used to process this scene | 160 meters |
 | Unwrapping type | Type of phase unwrapper used | mcf |

@@ -311,7 +311,7 @@ The text file with extension .txt includes processing parameters used to generat
 | DEM resolution | Pixel spacing for DEM used to process this scene | 160 meters |
 | Unwrapping type | Type of phase unwrapper used | mcf |
 | Unwrapping threshold | Minimum coherence required to unwrap a given pixel | none |
-| Speckle Filter | Speckle filtering flag | off |
+| Speckle filtering | Speckle filtering flag | off |
 
 *Table 4: List of InSAR parameters*
 

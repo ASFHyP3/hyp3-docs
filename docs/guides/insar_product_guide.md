@@ -270,14 +270,14 @@ The tags and extensions used and example file names for each raster are listed i
 
 ### Metadata Files
 
-Along with each of the image files, there will be one or more metadata files.
+The product package also includes a number of metadata files.
 
 | Extension | Description | Example |
 |-----------|-------------|---------|
 | .README.md.txt | Main README file for GAMMA InSAR | {{ base_name }}.README.md.txt |
 | .txt | Parameters and metadata for the InSAR pair | {{ base_name }}.txt |
-| .tif.xml | ArcGIS compliant XML metadata | {{ base_name }}_unw_phase.tif.xml |
-| .png.xml | ArcGIS compliant XML metadata | {{ base_name }}_color_phase.png.xml |
+| .tif.xml | ArcGIS compliant XML metadata for GeoTIFF files | {{ base_name }}_unw_phase.tif.xml |
+| .png.xml | ArcGIS compliant XML metadata for PNG files | {{ base_name }}_color_phase.png.xml |
 | .png.aux.xml | Geolocation information for png browse images | {{ base_name }}_color_phase.png.aux.xml |
 
 *Table 3: Metadata files in product package*

@@ -270,15 +270,60 @@ The tags and extensions used and example file names for each raster are listed i
 
 ### Metadata Files
 
-Along with the image files, there are currently two text files - the main readme and an important InSAR parameters file. Beyond this, there are two auxiliary xml format metadata files, one for each of the PNG browse images. These are all identified by their extensions, as shown in Table 3.
+The product package also includes a number of metadata files.
 
 | Extension | Description | Example |
 |-----------|-------------|---------|
-| png.aux.xml | Geolocation information for png browse images | {{ base_name }}_color_phase.png.aux.xml |
-| .txt | Useful metadata fields for the InSAR pair | {{ base_name }}.txt |
 | .README.md.txt | Main README file for GAMMA InSAR | {{ base_name }}.README.md.txt |
+| .txt | Parameters and metadata for the InSAR pair | {{ base_name }}.txt |
+| .tif.xml | ArcGIS compliant XML metadata for GeoTIFF files | {{ base_name }}_unw_phase.tif.xml |
+| .png.xml | ArcGIS compliant XML metadata for PNG files | {{ base_name }}_color_phase.png.xml |
+| .png.aux.xml | Geolocation information for png browse images | {{ base_name }}_color_phase.png.aux.xml |
 
 *Table 3: Metadata files in product package*
+
+#### README File
+The text file with extension .README.md.txt explains the files included in the folder, and is customized to reflect that particular product. Users unfamiliar with InSAR products should start by reading this README file, which will give some background on each of the files included in the product folder.
+
+#### InSAR Parameter File
+The text file with extension .txt includes processing parameters used to generate the InSAR product as well as metadata attributes for the InSAR pair.  These are detailed in Table 4.  
+
+| Name | Description | Possible Value |
+|------|-------------|----------------|
+| Reference Granule | ESA granule name for reference scene. Always the data with the oldest timestamp. | S1A<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20171111T150004<wbr>_20171111T150032<wbr>_019219<wbr>_0208AF<wbr>_EE89 |
+| Secondary Granule | ESA granule name for secondary scene. Always the data with the newest timestamp. | S1B<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20171117T145926<wbr>_20171117T145953<wbr>_008323<wbr>_00EBAB<wbr>_AFB8 |
+| Baseline | Perpendicular baseline | 61.8974 meters | 
+| UTCTime | Time in the UTC time zone | 54004.989128 seconds |
+| Heading | Spacecraft heading measured clockwise from north | -13.0235756 degrees |
+| Spacecraft height | Height of the spacecraft above nadir point | 699974.5329 meters | 
+| Earth radius at nadir | Ellipsoidal earth radius at the point directly below the satellite | 6371383.6099 meters |
+| Slant range near | Distance from satellite to nearest point imaged | 799002.2677 meters | 
+| Slant range center | Distance from satellite to the center point imaged | 878813.0619 meters | 
+| Slant range far | Distance from satellite to furthest point imaged | 958623.8560 meters |
+| Range looks | Number of looks taken in the range direction | 20 | 
+| Azimuth looks | Number of looks taken in the azimuth direction | 4 |
+| InSAR phase filter | Name of the phase filter used | adf | 
+| Phase filter parameter | Dampening factor | 0.6 |
+| Resolution of output | Pixel spacing for output products | 80 meters | 
+| Range bandpass filter | Range bandpass filter flag | no |
+| Azimuth bandpass filter | Azimuth bandpass filter flag | no |
+| DEM source | DEM used in processing | GLO-30 |
+| DEM resolution | Pixel spacing for DEM used to process this scene | 160 meters |
+| Unwrapping type | Type of phase unwrapper used | mcf |
+| Unwrapping threshold | Minimum coherence required to unwrap a given pixel | none |
+| Speckle filtering | Speckle filtering flag | off |
+
+*Table 4: List of InSAR parameters included in the parameter text file*
+
+#### ArcGIS-Compatible XML Files
+There is an ArcGIS-compatible xml file for each raster in the product folder. When ArcGIS Desktop users view any of the rasters in ArcCatalog or the Catalog window in ArcMap, they can open the Item Description to view the contents of the associated xml file. ArcGIS Pro users can access the information from the Metadata tab. These files will not appear as separate items in ArcCatalog, though if you use Windows Explorer to look at the contents of the folder you will see them listed individually. Because each one is named identically to the product it describes (with the addition of the .xml extension), ArcGIS recognizes the appropriate file as the raster’s associated metadata, and integrates the metadata accordingly.
+
+ArcGIS users should take care not to change these xml files outside of the ArcGIS environment; changing the filename or content directly may render the files unreadable by ArcGIS.
+
+Those not using ArcGIS will still find the contents of these xml files useful, but will have to contend with the xml tagging when viewing the files as text or in a browser.
+
+#### Auxiliary Geolocation Files
+Geolocation XML files (aux files) are included for each of the PNG browse images to allow for proper display in GIS platforms.
 
 ## Limitations
 ### Baseline Calculation

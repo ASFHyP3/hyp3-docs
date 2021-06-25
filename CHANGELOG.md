@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/) 
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+## [0.3.6](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.5...v0.3.6)
+
+### Added 
+* A [News and Notes](docs/news.md) page which displays [@ASFHyP3's](https://twitter.com/ASFHyP3) twitter feed
+* A News and Notes section to the home page, with a limited view of [@ASFHyP3's](https://twitter.com/ASFHyP3) twitter feed
+
 ## [0.3.5](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.4...v0.3.5)
 
 ### Added

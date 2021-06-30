@@ -4,14 +4,27 @@ on:
       - develop
     paths:
       - 'tweets/**'
-      - '**twitter-preview.yml'
-      - '**twitter-tweet.yml'
+      - '**twitter-together.yml'
+
+  pull_request:
+    paths:
+      - 'tweets/**'
+      - '**twitter-together.yml'
 
 name: Twitter, together!
 jobs:
+  preview:
+    name: Preview
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: gr2m/twitter-together@v1.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   tweet:
     name: Tweet
     runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
     environment:
       name: twitter
       url: https://twitter.com/ASFHyP3

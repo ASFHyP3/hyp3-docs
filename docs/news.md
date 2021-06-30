@@ -1,4 +1,4 @@
-# News and Notes
+# What's new
 
 Follow us on Twitter to keep up to date on all things HyP3!
 

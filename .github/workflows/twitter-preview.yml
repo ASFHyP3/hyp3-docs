@@ -1,0 +1,17 @@
+on:
+  push:
+  pull_request:
+    paths:
+      - 'tweets/**'
+      - '**twitter-preview.yml'
+      - '**twitter-tweet.yml'
+
+name: Twitter, together!
+jobs:
+  preview:
+    name: Preview
+    runs-on: ubuntu-latest
+    steps:
+      - uses: gr2m/twitter-together@v1.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

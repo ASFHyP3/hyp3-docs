@@ -18,7 +18,6 @@ jobs:
   preview:
     name: Preview
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
     steps:
       - uses: gr2m/twitter-together@v1.x
         env:

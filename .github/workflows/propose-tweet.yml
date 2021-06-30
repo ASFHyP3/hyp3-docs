@@ -1,0 +1,44 @@
+name: Propose Tweet
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'The message to tweet'
+        required: true
+
+jobs:
+  propose-tweet:
+    name: Propose a tweet
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.TOOLS_BOT_PAK }}
+
+      - name: generate branch name
+        run: |
+          echo "BRANCH_NAME=tweet-$(date +%s)" >> $GITHUB_ENV
+
+      - name: create tweet branch
+        run: |
+          git config user.name "tools-bot"
+          git config user.email "UAF-asf-apd@alaska.edu"
+          git switch -c ${{ env.BRANCH_NAME }}
+          echo '${{ github.event.inputs.message }}' > tweets/${{ env.BRANCH_NAME }}.tweet
+          git add tweets/${{ env.BRANCH_NAME }}.tweet
+          git commit -m "propose ${{ env.BRANCH_NAME }}"
+          git push origin ${{ env.BRANCH_NAME }}
+
+      - name: open PR
+        uses: repo-sync/pull-request@v2
+        with:
+          source_branch:  ${{ env.BRANCH_NAME }}
+          destination_branch: develop
+          pr_title: Propose ${{ env.BRANCH_NAME }}
+          pr_body: |
+            PR created by a `workflow_dispatch` event
+          pr_label: tools-bot
+          pr_draft: false
+          pr_allow_empty: true
+          github_token: ${{ secrets.TOOLS_BOT_PAK }}

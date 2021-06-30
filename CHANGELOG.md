@@ -10,7 +10,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.3.6](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.5...v0.3.6)
 
 ### Added 
-* A [What's New](docs/news.md) page which displays [@ASFHyP3's](https://twitter.com/ASFHyP3) twitter feed
+* A [What's New](docs/whats_new.md) page which displays [@ASFHyP3's](https://twitter.com/ASFHyP3) twitter feed
 * A News and Notes section to the home page, with a limited view of [@ASFHyP3's](https://twitter.com/ASFHyP3) twitter feed
 
 ## [0.3.5](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.4...v0.3.5)

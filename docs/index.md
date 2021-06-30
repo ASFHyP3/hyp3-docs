@@ -47,7 +47,7 @@ The HyP3 web API is the backbone behind Vertex and the SDK. You may also use the
 
 ## What's New
 
-Follow us on Twitter, or check our [What's New](news.md) page, to keep up to date on all things HyP3!
+Follow us on Twitter, or check our [What's New](whats_new.md) page, to keep up to date on all things HyP3!
 
 <a class="twitter-timeline" data-height="400" href="https://twitter.com/ASFHyP3">Tweets by ASFHyP3</a>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

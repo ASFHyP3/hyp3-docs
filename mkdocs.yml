@@ -66,6 +66,7 @@ nav:
     - Plugins: plugins.md
     - Contributing: contributing.md
     - Code of Conduct: CODE_OF_CONDUCT.md
+  - What's New: whats_new.md
   - Contact Us: contact.md
 
 plugins:

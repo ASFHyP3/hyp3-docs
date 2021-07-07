@@ -27,6 +27,7 @@ jobs:
           echo "::set-output name=branch::${PATCH_BRANCH}"
           git checkout -b ${PATCH_BRANCH}
           sed -i -r "s|asf-tools/v[0-9]+\.[0-9]+\.[0-9]+|asf-tools/${ASF_TOOLS_VERSION}|" docs/tools/asf_tools.md
+          sed -i -r "s|\`asf_tools\` \*v[0-9]+\.[0-9]+\.[0-9]+\*|\`asf_tools\` \*${ASF_TOOLS_VERSION}\*|" docs/tools/asf_tools_api.md
           sed -i -r "s|asf_tools=[0-9]+\.[0-9]+\.[0-9]+|asf_tools=${ASF_TOOLS_VERSION#v}|" environment.yml
           git commit -am "Bump ASF Tools version to ${ASF_TOOLS_VERSION}"
           git push origin ${PATCH_BRANCH}

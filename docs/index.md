@@ -45,6 +45,11 @@ Visit [Using HyP3: SDK](using/sdk.md) to learn more.
 The HyP3 web API is the backbone behind Vertex and the SDK. You may also use the API directly. Visit
 [Using HyP3: API](using/api.md) to learn more.
 
+## What's New
+
+Follow [@ASFHyP3](https://twitter.com/ASFHyP3) on Twitter, or check our [What's New](whats_new.md) page,
+to keep up to date on all things HyP3!
+
 ## Contact Us
 
 {% include 'contact-snippet.md' %}

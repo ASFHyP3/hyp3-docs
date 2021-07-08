@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/) 
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.8](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.7...v0.3.8)
+
+### Changed
+* Updated the [InSAR Product Guide](docs/guides/insar_product_guide.md) to document the inclusion of a water mask in the InSAR product package
 
 ## [0.3.7](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.6...v0.3.7)
 

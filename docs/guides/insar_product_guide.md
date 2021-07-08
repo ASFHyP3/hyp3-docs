@@ -99,11 +99,11 @@ To analyze deformation caused by a single discrete event, such as an earthquake,
 
 ### Processing Options 
 
-!!! important "New Options Available!" 
+!!! important "Water Mask GeoTIFF Now Included" 
 
-    Users can now include GeoTIFF outputs for the **wrapped phase**, the **local incidence angle**, and the **DEM** used for processing. This is in addition to the original options to set the resolution (number of looks), and whether to include the look vector maps and the line-of-sight displacement map.
+    A water mask GeoTIFF is now included with the InSAR product output. The mask uses the [GSHHG shoreline data](http://www.soest.hawaii.edu/wessel/gshhg/) with a 3-km buffer applied to reduce the chance that land may be excluded. Inland waters are not masked. Pixels over water have a value of 0, while pixels over land have a value of 1.
 
-    The water masking option is under development and will be available soon. 
+    The option to apply the water mask to the InSAR product prior to phase unwrapping is currently under development. Stay tuned!
 
 There are several options users can set when ordering InSAR On Demand products.  Currently, users can choose the number of looks to take (which drives the resolution and pixel spacing of the products), whether to apply a water mask, and which optional products to include in the output package. The options are described below: 
 

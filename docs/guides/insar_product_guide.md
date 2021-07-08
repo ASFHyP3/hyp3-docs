@@ -237,8 +237,9 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 - The *look vectors* &#966 and &#952 describe the elevation and orientation angles of the sensor's look direction. *(optional)*
 - The *incidence angle* map gives the local incidence angle of the terrain. *(optional)*
 - The *DEM* file gives the local terrain heights in meters, with a geoid correction applied. *(optional)*
+- The *water mask* file indicates coastal waters beyond 3 km from the shoreline. Pixel values of 1 indicate land and 0 indicate water. This file is in 8-bit unsigned integer format.
 
-If the **water mask** option is applied, a byte type GeoTIFF with pixel values of 0 for areas masked as water and 1 for unmasked areas is included in the package for reference. The water mask is not precise; land is buffered to reduce the possibility of near-shore features being excluded while reducing the impact of phase-unwrapping errors over large expanses of water.
+If the **water mask** option is selected, the water mask is applied prior to phase unwrapping to exclude water pixels from the process. The water mask is not precise; the coastal shorelines from the [GSHHG](http://www.soest.hawaii.edu/wessel/gshhg/land) are buffered out to 3 km from shore to reduce the possibility of near-shore features being excluded while reducing the number of water pixels that may impact the quality of the phase unwrapping process. Inland waters are not masked.
 
 **Browse images** are included for the wrapped (color_phase) and unwrapped (unw_phase) phase files, which are in PNG format and are each 2048 pixels wide. 
 

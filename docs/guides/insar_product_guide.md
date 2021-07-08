@@ -119,8 +119,6 @@ There are several options users can set when ordering InSAR On Demand products. 
 
 6. A copy of the **DEM** used for processing can optionally be included in the product package. The height values will differ from the original Copernicus DEM dataset, as a geoid correction has been applied, and it has been projected to UTM Zone coordinates. The source DEM is also downsampled to twice the pixel spacing of the output product to smooth it for use in processing, then resampled again to match the pixel spacing of the InSAR product. The DEM is excluded by default.
 
-7. *Under Development:* There is an option to apply a **water mask**. This mask generally only includes oceans and seas, though some large inland lakes are also masked. There is a buffer applied to the shoreline mask so that most of the waterbody is masked without inadvertently masking near-shore features. Masking waterbodies can have a significant impact during the phase unwrapping, as water can sometimes exhibit enough coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid. A GeoTIFF of the water mask is always included with the InSAR product package, but when this option is selected, the conditional water mask will be applied along with coherence and intensity thresholds during the phase unwrapping process. Water masking is turned off by default. 
-
 ## InSAR Workflow
 
 The InSAR workflow used in HyP3 was developed by ASF using GAMMA software.  The steps include pre-processing steps, interferogram preparation, and product creation.  Once these steps are performed, an output product package will be created.  See [product packaging](#product-packaging) for details on the individual files included in the package.  
@@ -216,7 +214,7 @@ The InSAR product names are packed with information pertaining to the processing
 - The product type (always INT for InSAR) and the pixel spacing, which will be either 80 or 40, based upon the number of looks selected when the job was submitted for processing
 - The software package used for processing is always GAMMA for GAMMA InSAR products
 - User-defined options are denoted by three characters indicating whether the product is water masked (w) or not (u), the scene is clipped (e for entire area, c for clipped), and whether a single sub-swath was processed or the entire granule (either 1, 2, 3, or F for full swath)
-    - *Currently only the water masking is available as a user-selected option; the products always include the full granule extent with all three sub-swaths*
+    - *Currently only the water masking will be made available as a user-selected option; the products always include the full granule extent with all three sub-swaths*
 - The filename ends with the ASF product ID, a 4 digit hexadecimal number
 
 
@@ -238,8 +236,6 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 - The *incidence angle* map gives the local incidence angle of the terrain. *(optional)*
 - The *DEM* file gives the local terrain heights in meters, with a geoid correction applied. *(optional)*
 - The *water mask* file indicates coastal waters beyond 3 km from the shoreline. Pixel values of 1 indicate land and 0 indicate water. This file is in 8-bit unsigned integer format.
-
-If the **water mask** option is selected, the water mask is applied prior to phase unwrapping to exclude water pixels from the process. The water mask is not precise; the coastal shorelines from the [GSHHG](http://www.soest.hawaii.edu/wessel/gshhg/land) are buffered out to 3 km from shore to reduce the possibility of near-shore features being excluded while reducing the number of water pixels that may impact the quality of the phase unwrapping process. Inland waters are not masked.
 
 **Browse images** are included for the wrapped (color_phase) and unwrapped (unw_phase) phase files, which are in PNG format and are each 2048 pixels wide. 
 

@@ -260,8 +260,8 @@ The tags and extensions used and example file names for each raster are listed i
 | _lv_phi.tif | Look vector &#966 | {{ base_name }}_lv_phi.tif |
 | _lv_theta.tif | Look vector &#952 | {{ base_name }}_lv_theta.tif |
 | _dem.tif | Digital elevation model | {{ base_name }}_dem.tif |
-| _mask.tif | Water mask | {{ base_name }}_mask.tif |
 | _inc_map.tif | Incidence angle | {{ base_name }}_inc_map.tif |
+| _water_mask.tif | Water mask | {{ base_name }}_water_mask.tif |
 | _color_phase.kmz | Wrapped phase kmz file | {{ base_name }}_color_phase.kmz |
 | _unw_phase.kmz | Unwrapped phase kmz file | {{ base_name }}_unw_phase.kmz |
 | _color_phase.png | Wrapped phase browse image | {{ base_name }}_color_phase.png |

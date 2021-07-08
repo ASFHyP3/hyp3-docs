@@ -200,7 +200,7 @@ Geocoding is the process of reprojecting pixels from SAR slant range space (wher
 
 #### Product Creation
 
-Files are next exported from GAMMA internal format into the widely-used GeoTIFF format, complete with geolocation information. GeoTIFFs are created for amplitude, coherence, unwrapped phase, and vertical displacement by default. Optionally, GeoTIFFs of look vectors, line-of-sight displacement, incidence angle, and a water mask can also be requested.  
+Files are next exported from GAMMA internal format into the widely-used GeoTIFF format, complete with geolocation information. GeoTIFFs are created for amplitude, coherence, unwrapped phase, and vertical displacement by default, and a water mask GeoTIFF is also included in the product package. Optionally, GeoTIFFs of wrapped phase, look vectors, line-of-sight displacement and incidence angle can also be requested, as can a copy of the DEM used for processing.
  
 ## Product Packaging
 

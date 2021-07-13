@@ -198,7 +198,7 @@ Geocoding is the process of reprojecting pixels from SAR slant range space (wher
 
 #### Product Creation
 
-Files are next exported from GAMMA internal format into the widely-used GeoTIFF format, complete with geolocation information. GeoTIFFs are created for amplitude, coherence, unwrapped phase, and vertical displacement by default, and a water mask GeoTIFF is also included in the product package. Optionally, GeoTIFFs of wrapped phase, look vectors, line-of-sight displacement and incidence angle can also be requested, as can a copy of the DEM used for processing.
+Files are next exported from GAMMA internal format into the widely-used GeoTIFF format, complete with geolocation information. GeoTIFFs are created for amplitude, coherence, unwrapped phase, and vertical displacement by default, and a water mask GeoTIFF is also included in the product package. Optionally, GeoTIFFs of wrapped phase, look vectors, line-of-sight displacement and incidence angle maps can also be requested, as can a copy of the DEM used for processing.
  
 ## Product Packaging
 
@@ -233,7 +233,7 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 - The *line-of-sight displacement* file indicates the displacement in meters along the look direction of the sensor. *(optional)*
 - The *vertical displacement* is generated from the line of sight displacement values, and makes the assumption that deformation only occurs in the vertical direction. Note that this assumption may not hold true in cases where the deformation also has a horizontal component.
 - The *look vectors* &#966 and &#952 describe the elevation and orientation angles of the sensor's look direction. *(optional)*
-- The *incidence angle* map gives the local incidence angle of the terrain. *(optional)*
+- The *incidence angle* maps indicate the angle between the incident signal and the normal of either the terrain (local incidence angle) or the ellipsoid (ellipsoid incidence angle). *(optional)*
 - The *DEM* file gives the local terrain heights in meters, with a geoid correction applied. *(optional)*
 - The *water mask* file indicates coastal waters beyond 3 km from the shoreline. Pixel values of 1 indicate land and 0 indicate water. This file is in 8-bit unsigned integer format.
 
@@ -256,7 +256,8 @@ The tags and extensions used and example file names for each raster are listed i
 | _lv_phi.tif | Look vector &#966 | {{ base_name }}_lv_phi.tif |
 | _lv_theta.tif | Look vector &#952 | {{ base_name }}_lv_theta.tif |
 | _dem.tif | Digital elevation model | {{ base_name }}_dem.tif |
-| _inc_map.tif | Incidence angle | {{ base_name }}_inc_map.tif |
+| _inc_map_ell.tif | Ellipsoid incidence angle | {{ base_name }}_inc_map_ell.tif |
+| _inc_map.tif | Local incidence angle | {{ base_name }}_inc_map.tif |
 | _water_mask.tif | Water mask | {{ base_name }}_water_mask.tif |
 | _color_phase.kmz | Wrapped phase kmz file | {{ base_name }}_color_phase.kmz |
 | _unw_phase.kmz | Unwrapped phase kmz file | {{ base_name }}_unw_phase.kmz |

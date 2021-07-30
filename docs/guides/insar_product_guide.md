@@ -101,7 +101,7 @@ To analyze deformation caused by a single discrete event, such as an earthquake,
 
 !!! important "Water Mask GeoTIFF Now Included" 
 
-    A water mask GeoTIFF is now included with the InSAR product output. The mask uses the [GSHHG shoreline data](http://www.soest.hawaii.edu/wessel/gshhg/) with a 3-km buffer applied to reduce the chance that land may be excluded. Inland waters are not masked. Pixels over water have a value of 0, while pixels over land have a value of 1.
+    A water mask GeoTIFF is now included with the InSAR product output. The mask uses the [GSHHG shoreline data](http://www.soest.hawaii.edu/wessel/gshhg/) with a 3-km buffer applied to reduce the chance that land may be excluded. Both coastal waters and large inland waterbodies are masked. Pixels over water have a value of 0, while pixels over land have a value of 1.
 
     The option to apply the water mask to the InSAR product prior to phase unwrapping is currently under development. Stay tuned!
 
@@ -235,7 +235,7 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 - The *look vectors* &#966 and &#952 describe the elevation and orientation angles of the sensor's look direction. *(optional)*
 - The *incidence angle* maps indicate the angle between the incident signal and the surface normal of either the terrain (local incidence angle) or the ellipsoid (ellipsoid incidence angle). *(optional)*
 - The *DEM* file gives the local terrain heights in meters, with a geoid correction applied. *(optional)*
-- The *water mask* file indicates coastal waters beyond 3 km from the shoreline. Pixel values of 1 indicate land and 0 indicate water. This file is in 8-bit unsigned integer format.
+- The *water mask* file indicates coastal waters and large inland waterbodies beyond 3 km from the shoreline. Pixel values of 1 indicate land and 0 indicate water. This file is in 8-bit unsigned integer format.
 
 **Browse images** are included for the wrapped (color_phase) and unwrapped (unw_phase) phase files, which are in PNG format and are each 2048 pixels wide. 
 

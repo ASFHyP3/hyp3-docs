@@ -10,6 +10,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 * Updated the [InSAR Product Guide](docs/guides/insar_product_guide.md) to document the inclusion of an ellipsoid incidence angle map in the InSAR product package
+* Updated the water mask description in the [InSAR Product Guide](docs/guides/insar_product_guide.md) to include large inland waterbodies
 
 ## [0.3.8](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.7...v0.3.8)
 

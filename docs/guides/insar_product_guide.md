@@ -101,9 +101,7 @@ To analyze deformation caused by a single discrete event, such as an earthquake,
 
 !!! important "New Water Masking Option Available!" 
 
-    A water mask GeoTIFF is now included with the InSAR product output. The mask uses the [GSHHG shoreline data](http://www.soest.hawaii.edu/wessel/gshhg/) with a 3-km buffer applied to reduce the chance that land may be excluded. Both coastal waters and large inland waterbodies are masked. Pixels over water have a value of 0, while pixels over land have a value of 1.
-
-    The option to apply the water mask to the InSAR product prior to phase unwrapping is currently under development. Stay tuned!
+    InSAR products can now be phase unwrapped using a water mask. The option to "Apply water mask" sets pixels over coastal waters and large inland waterbodies as invalid for phase unwrapping. This reduces phase unwrapping errors and outputs a less noisy unwrapped interferogram.
 
 There are several options users can set when ordering InSAR On Demand products. Currently, users can choose the number of looks to take (which drives the resolution and pixel spacing of the products), and which optional products to include in the output package. The options are described below: 
 

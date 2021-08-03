@@ -186,7 +186,12 @@ All of the phase differences in a wrapped interferograms lie between -&#960 and 
 
 Before the interferogram can be unwrapped, it must be filtered to remove noise. This is accomplished using an adaptive spectral filtering algorithm. This adaptive interferogram filtering aims to reduce phase noise, increase the accuracy of the interferometric phase, and reduce the number of interferogram residues as an aid to phase unwrapping. In this case, residues are points in the interferogram where the sum of the phase differences between pixels around a closed path is not 0.0, which indicates a jump in phase.
 
-Another step before unwrapping is to create a coherence mask to guide the phase unwrapping process. The coherence is estimated from the normalized interferogram and the co-registered intensity images using an MLI estimator with rectangular weighting with a 5x5 moving window. This file has values from 0.0 (total decorrelation) to 1.0 (perfectly coherent).  The coherence is then turned into a mask wherein all pixels are either 0 (don't unwrap) or 1 (unwrap). Any input pixel with a coherence less than 0.1 or an intensity below 0.2 are set to zero and not used during unwrapping.
+#### Masking
+Another step before unwrapping is to create a validity mask to guide the phase unwrapping process. This mask is generated from the coherence and amplitude (backscatter intensity) values. 
+
+Coherence is estimated from the normalized interferogram and the co-registered intensity images using an MLI estimator with rectangular weighting with a 5x5 moving window. This file has values from 0.0 (total decorrelation) to 1.0 (perfectly coherent). The coherence is then turned into a mask wherein all pixels are either 0 (don't unwrap) or 1 (unwrap). Any input pixel with a coherence value less than 0.1 or an intensity value less than 0.2 is set to zero and not used during unwrapping.
+
+When the water masking option is applied, the validity mask is further amended to apply 0 values to any pixels classified as water in the water mask. In some cases, pixels over water may still meet the coherence and amplitude threshold criteria for inclusion, even though they are not valid for use during phase unwrapping. When processing scenes with extensive coverage by coastal waters or large inland waterbodies, there can be erroneous phase jumps introduced if unwrapping proceeds over water as if it were land. In such cases, choosing the option to apply the water mask can significantly improve the results. 
 
 ### Geocoding and Product Creation
 

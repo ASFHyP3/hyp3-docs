@@ -99,7 +99,7 @@ To analyze deformation caused by a single discrete event, such as an earthquake,
 
 ### Processing Options 
 
-!!! important "Water Mask GeoTIFF Now Included" 
+!!! important "New Water Masking Option Available!" 
 
     A water mask GeoTIFF is now included with the InSAR product output. The mask uses the [GSHHG shoreline data](http://www.soest.hawaii.edu/wessel/gshhg/) with a 3-km buffer applied to reduce the chance that land may be excluded. Both coastal waters and large inland waterbodies are masked. Pixels over water have a value of 0, while pixels over land have a value of 1.
 
@@ -119,7 +119,7 @@ There are several options users can set when ordering InSAR On Demand products. 
 
 6. A copy of the **DEM** used for processing can optionally be included in the product package. The height values will differ from the original Copernicus DEM dataset, as a geoid correction has been applied, and it has been projected to UTM Zone coordinates. The source DEM is also downsampled to twice the pixel spacing of the output product to smooth it for use in processing, then resampled again to match the pixel spacing of the InSAR product. The DEM is excluded by default.
 
-7. *Under Development:* There is an option to apply a **water mask**. This mask generally only includes oceans and seas, though some large inland lakes are also masked. There is a buffer applied to the shoreline mask so that most of the waterbody is masked without inadvertently masking near-shore features. Masking waterbodies can have a significant impact during the phase unwrapping, as water can sometimes exhibit enough coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid. A GeoTIFF of the water mask is always included with the InSAR product package, but when this option is selected, the conditional water mask will be applied along with coherence and intensity thresholds during the phase unwrapping process. Water masking is turned off by default. 
+7. There is an option to apply a **water mask**. This mask includes coastal waters and large inland waterbodies. There is a 3-km buffer applied to the shoreline mask so that most of the waterbody is masked without inadvertently masking near-shore features. Masking waterbodies can have a significant impact during the phase unwrapping, as water can sometimes exhibit enough coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid. A GeoTIFF of the water mask is always included with the InSAR product package, but when this option is selected, the conditional water mask will be applied along with coherence and intensity thresholds during the phase unwrapping process. Water masking is turned off by default. 
 
 ## InSAR Workflow
 

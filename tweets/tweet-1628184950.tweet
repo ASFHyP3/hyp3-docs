@@ -1,0 +1,10 @@
+HyP3 SDK v1.3.0
+### Added
+- `extract_zipped_product` function to `hyp3_sdk.util` which will extract zipped HyP3 products
+- `chunk` function to `hyp3_sdk.util` which will split a sequence into small chunks and
+  is particularly useful for submitting large batches
+
+### Changed
+- HyP3 API URL constants have been renamed to be more descriptive
+  - `hyp3_sdk.HyP3_PROD` is now `hyp3_sdk.PROD_API`
+  - `hyp3_sdk.HyP3_TEST` is now `hyp3_sdk.TEST_API`

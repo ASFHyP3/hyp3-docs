@@ -9,6 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.3.10](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.9...v0.3.10)
 
 ### Changed
+* Updated HyP3 SDK to [v1.3.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#130)
 * Updated the [InSAR Product Guide](docs/guides/insar_product_guide.md) to document the option to apply a water mask during phase unwrapping
 
 ## [0.3.9](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.8...v0.3.9)

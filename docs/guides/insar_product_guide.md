@@ -99,11 +99,9 @@ To analyze deformation caused by a single discrete event, such as an earthquake,
 
 ### Processing Options 
 
-!!! important "Water Mask GeoTIFF Now Included" 
+!!! important "New Water Masking Option Available!" 
 
-    A water mask GeoTIFF is now included with the InSAR product output. The mask uses the [GSHHG shoreline data](http://www.soest.hawaii.edu/wessel/gshhg/) with a 3-km buffer applied to reduce the chance that land may be excluded. Both coastal waters and large inland waterbodies are masked. Pixels over water have a value of 0, while pixels over land have a value of 1.
-
-    The option to apply the water mask to the InSAR product prior to phase unwrapping is currently under development. Stay tuned!
+    InSAR products can now be phase unwrapped using a water mask. The option to "Apply water mask" sets pixels over coastal waters and large inland waterbodies as invalid for phase unwrapping. This reduces phase unwrapping errors and outputs a less noisy unwrapped interferogram.
 
 There are several options users can set when ordering InSAR On Demand products. Currently, users can choose the number of looks to take (which drives the resolution and pixel spacing of the products), and which optional products to include in the output package. The options are described below: 
 
@@ -118,6 +116,8 @@ There are several options users can set when ordering InSAR On Demand products. 
 5. The **local incidence angle** is defined as the angle between the incident radar signal and the local surface normal, expressed in radians. The default is to not include the incidence angle data file.
 
 6. A copy of the **DEM** used for processing can optionally be included in the product package. The height values will differ from the original Copernicus DEM dataset, as a geoid correction has been applied, and it has been projected to UTM Zone coordinates. The source DEM is also downsampled to twice the pixel spacing of the output product to smooth it for use in processing, then resampled again to match the pixel spacing of the InSAR product. The DEM is excluded by default.
+
+7. There is an option to apply a **water mask**. This mask includes coastal waters and large inland waterbodies. There is a 3-km buffer applied to the shoreline mask so that most of the waterbody is masked without inadvertently masking near-shore features. Masking waterbodies can have a significant impact during the phase unwrapping, as water can sometimes exhibit enough coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid. A GeoTIFF of the water mask is always included with the InSAR product package, but when this option is selected, the conditional water mask will be applied along with coherence and intensity thresholds during the phase unwrapping process. Water masking is turned off by default. 
 
 ## InSAR Workflow
 
@@ -186,7 +186,12 @@ All of the phase differences in a wrapped interferograms lie between -&#960 and 
 
 Before the interferogram can be unwrapped, it must be filtered to remove noise. This is accomplished using an adaptive spectral filtering algorithm. This adaptive interferogram filtering aims to reduce phase noise, increase the accuracy of the interferometric phase, and reduce the number of interferogram residues as an aid to phase unwrapping. In this case, residues are points in the interferogram where the sum of the phase differences between pixels around a closed path is not 0.0, which indicates a jump in phase.
 
-Another step before unwrapping is to create a coherence mask to guide the phase unwrapping process. The coherence is estimated from the normalized interferogram and the co-registered intensity images using an MLI estimator with rectangular weighting with a 5x5 moving window. This file has values from 0.0 (total decorrelation) to 1.0 (perfectly coherent).  The coherence is then turned into a mask wherein all pixels are either 0 (don't unwrap) or 1 (unwrap). Any input pixel with a coherence less than 0.1 or an intensity below 0.2 are set to zero and not used during unwrapping.
+#### Masking
+Another step before unwrapping is to create a validity mask to guide the phase unwrapping process. This mask is generated from the coherence and amplitude (backscatter intensity) values. 
+
+Coherence is estimated from the normalized interferogram and the co-registered intensity images using an MLI estimator with rectangular weighting with a 5x5 moving window. The pixel values in this file range from 0.0 (total decorrelation) to 1.0 (perfectly coherent). Any input pixel with a coherence value less than 0.1 or an intensity value less than 0.2 is given a validity mask value of zero and not used during unwrapping.
+
+When the water masking option is applied, the validity mask is further amended to apply 0 values to any pixels classified as water in the water mask. In some cases, pixels over water may still meet the coherence and amplitude threshold criteria for inclusion, even though they are not valid for use during phase unwrapping. When processing scenes with extensive coverage by coastal waters or large inland waterbodies, there can be erroneous phase jumps introduced if unwrapping proceeds over water as if it were land. In such cases, choosing the option to apply the water mask can significantly improve the results. 
 
 ### Geocoding and Product Creation
 
@@ -214,7 +219,7 @@ The InSAR product names are packed with information pertaining to the processing
 - The product type (always INT for InSAR) and the pixel spacing, which will be either 80 or 40, based upon the number of looks selected when the job was submitted for processing
 - The software package used for processing is always GAMMA for GAMMA InSAR products
 - User-defined options are denoted by three characters indicating whether the product is water masked (w) or not (u), the scene is clipped (e for entire area, c for clipped), and whether a single sub-swath was processed or the entire granule (either 1, 2, 3, or F for full swath)
-    - *Currently only the water masking will be made available as a user-selected option; the products always include the full granule extent with all three sub-swaths*
+    - *Currently only the water masking is available as a user-selected option; the products always include the full granule extent with all three sub-swaths*
 - The filename ends with the ASF product ID, a 4 digit hexadecimal number
 
 
@@ -236,6 +241,8 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 - The *incidence angle* maps indicate the angle between the incident signal and the surface normal of either the terrain (local incidence angle) or the ellipsoid (ellipsoid incidence angle). *(optional)*
 - The *DEM* file gives the local terrain heights in meters, with a geoid correction applied. *(optional)*
 - The *water mask* file indicates coastal waters and large inland waterbodies beyond 3 km from the shoreline. Pixel values of 1 indicate land and 0 indicate water. This file is in 8-bit unsigned integer format.
+
+If the **water mask** option is selected, the water mask is applied prior to phase unwrapping to exclude water pixels from the process. The water mask is not precise; the coastal shorelines from the [GSHHG](http://www.soest.hawaii.edu/wessel/gshhg/land) are buffered out to 3 km from shore to reduce the possibility of near-shore features being excluded while reducing the number of water pixels that may impact the quality of the phase unwrapping process. Inland waters are not masked.
 
 **Browse images** are included for the wrapped (color_phase) and unwrapped (unw_phase) phase files, which are in PNG format and are each 2048 pixels wide. 
 

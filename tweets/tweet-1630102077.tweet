@@ -1,0 +1,5 @@
+HyP3 SDK v1.3.2
+### Added
+- Exposed new `apply_water_mask` parameter for InSAR jobs in `HyP3.submit_insar_job()` and
+  `HyP3.prepare_insar_job()`, which sets pixels over coastal waters and large inland waterbodies
+                as invalid for phase unwrapping

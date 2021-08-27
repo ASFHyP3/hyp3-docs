@@ -1,0 +1,6 @@
+📢 HyP3 SDK v1.3.0 Released!
+
+We added helpers to unzip HyP3 products and break large submissions into submittable chunks (200 jobs / submit).  
+
+Check out the full release notes:
+https://github.com/ASFHyP3/hyp3-sdk/releases/tag/v1.3.0

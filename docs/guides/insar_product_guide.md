@@ -101,7 +101,7 @@ To analyze deformation caused by a single discrete event, such as an earthquake,
 
 !!! important "New Water Masking Option Available!" 
 
-    InSAR products can now be phase unwrapped using a water mask. The option to "Apply water mask" sets pixels over coastal waters and large inland waterbodies as invalid for phase unwrapping. This reduces phase unwrapping errors and outputs a less noisy unwrapped interferogram.
+    InSAR products can now be phase unwrapped using a water mask. The option to "Apply water mask" sets pixels over coastal waters and large inland waterbodies as invalid for phase unwrapping. This reduces phase unwrapping errors and outputs a less noisy unwrapped interferogram. This option is currently available in the [API](https://hyp3-docs.asf.alaska.edu/using/api/) and [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/), and is coming soon in Vertex!
 
 There are several options users can set when ordering InSAR On Demand products. Currently, users can choose the number of looks to take (which drives the resolution and pixel spacing of the products), and which optional products to include in the output package. The options are described below: 
 

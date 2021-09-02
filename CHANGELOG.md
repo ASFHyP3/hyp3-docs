@@ -8,8 +8,8 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.3.15](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.14...v0.3.15)
 
-### Changed
-* Added information on the impacts of the phase unwrapping reference point on the phase difference and LOS Displacement values in the [InSAR Product Guide](docs/guides/insar_product_guide.md)
+### Added
+* Added information on the impacts of the phase unwrapping reference point on the phase difference and LOS Displacement values to the [InSAR Product Guide](docs/guides/insar_product_guide.md)
 
 ## [0.3.14](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.13...v0.3.14)
 

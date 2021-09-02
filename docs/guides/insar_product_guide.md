@@ -193,6 +193,11 @@ Coherence is estimated from the normalized interferogram and the co-registered i
 
 When the water masking option is applied, the validity mask is further amended to apply 0 values to any pixels classified as water in the water mask. In some cases, pixels over water may still meet the coherence and amplitude threshold criteria for inclusion, even though they are not valid for use during phase unwrapping. When processing scenes with extensive coverage by coastal waters or large inland waterbodies, there can be erroneous phase jumps introduced if unwrapping proceeds over water as if it were land. In such cases, choosing the option to apply the water mask can significantly improve the results. 
 
+#### Reference point
+In order to perform phase unwrapping, a reference point must be selected. The unwrapping will proceed relative to this reference point; the 2&#960 integer multiples will be applied to the wrapped phase using this pixel as the starting point.
+
+Ideally, the reference point for phase unwrapping would be located in an area with high coherence in a stable region close to an area with surface deformation. Choosing an optimal reference point requires knowledge of the site characteristics and examination of the interferogram, which is not practical in an automated, global workflow. As such, the top left corner of the interferogram is always designated as the reference point for ASF's On Demand InSAR products. Refer to the [Limitations](#phase-unwrapping-reference-point) section of this document for more information on the implications of an arbitrary phase unwrapping reference point. 
+
 ### Geocoding and Product Creation
 
 After the phase is unwrapped, the final steps are geocoding and product creation.  
@@ -343,6 +348,8 @@ Consider seasonality when selecting image pairs. Decorrelation can be particular
 When looking at a single interferogram, the only reliable deformation measurements are in the line-of-sight orientation of the sensor. InSAR is not sensitive to motion in the azimuth direction of the satellite, so motion that occurs in the same direction as the satellite's direction of travel will not be detected. 
 
 In addition, a single interferogram cannot be used to determine the relative contributions of vertical and horizontal movement to the line-of-sight displacement measurement. The vertical displacement map is generated based on the assumption that the movement is entirely in the vertical direction, which may not be realistic for some processes. To determine how much of the signal is driven by vertical vs. horizontal movement, you must either use a time series of interferograms, or use reference measurements with known vertical and horizontal components (such as GNSS measurements from the region of deformation) to deconstruct the line-of-sight displacement.
+
+### Phase Unwrapping Reference Point
 
 ## Error Sources
 On Demand InSAR products do not currently correct for some common sources of error in interferometry, such as atmospheric effects. Further processing or time series analysis can be performed by the user to identify or reduce the impact of some of these errors when using On Demand InSAR products for analysis.

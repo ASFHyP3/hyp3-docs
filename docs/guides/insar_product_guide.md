@@ -356,6 +356,12 @@ Even when there are not phase unwrapping errors introduced by phase discontinuit
 
 In cases where there are not significant phase discontinuities, you can select a reference point that is optimal for your use case, calculate the difference in phase or line-of-sight displacement, and apply a correction to the entire raster to adjust the values to be relative to that new reference point.
 
+!!! example "Example of Correcting to a New Reference Point" 
+
+    To adjust phase values so that a user-defined reference point is set to have a phase difference of 0, find the value of the pixel at your desired reference point, and subtract that value from each pixel in the raster. 
+
+    If the original pixel value at the desired reference point was 0.7, subtract 0.7 from each pixel in the image. If the pixel value at the original reference point was 0.3, the phase difference at the desired reference point will now be 0.0, while the pixel value at the original reference point will be -0.4.
+
 In general, calculating displacement values from a single interferogram is not recommended. While the displacement rasters provided with ASF's On Demand InSAR products can be helpful to visualize changes, we do not recommend that you rely on a single interferogram when coming to conclusions about surface displacement, even if you apply a correction based on a manually selected reference point. It will be more robust to use a time series approach to more accurately determine the pattern of movement. When using SAR time-series software such as [MintPy](https://mintpy.readthedocs.io/en/latest/), you have the option to select a specific reference point, and the values of the input rasters will be adjusted accordingly. 
 
 ## Error Sources

@@ -107,7 +107,7 @@ There are several options users can set when ordering InSAR On Demand products. 
 
 1. The **number of looks** drives the resolution and pixel spacing of the output products. Selecting 10x2 looks will yield larger products with 80 m resolution and pixel spacing of 40 m. Selecting 20x4 looks reduces the resolution to 160 m and reduces the size of the products (roughly 1/4 the size of 10x2 look products), with a pixel spacing of 80 m. The default is 20x4 looks.
 
-2. The **look vectors** are stored in two files. The lv_theta indicates the SAR look vector elevation angle at each pixel, ranging from -&#960/2 (down) to &#960/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface. The lv_phi map indicates the SAR look vector orientation angle at each pixel, ranging from 0 (east) to &#960/2 (north). The look vector orientation angle is defined as the angle between the East direction and the projection of the look vector on the horizontal surface plan. The orientation angle increases towards north, with the North direction corresponding to &#960/2 (and south to -&#960/2). Both angles are expressed in radians. The default is to not include these files in the output product bundle.
+2. The **look vectors** are stored in two files. The lv_theta indicates the SAR look vector elevation angle at each pixel, ranging from -π/2 (down) to π/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface. The lv_phi map indicates the SAR look vector orientation angle at each pixel, ranging from 0 (east) to π/2 (north). The look vector orientation angle is defined as the angle between the East direction and the projection of the look vector on the horizontal surface plan. The orientation angle increases towards north, with the North direction corresponding to π/2 (and south to -π/2). Both angles are expressed in radians. The default is to not include these files in the output product bundle.
 
 3. The **line-of-sight displacement** is the ground movement away from or towards the platform. It is used to create the vertical displacement map during the final steps of InSAR processing. In order to have this file included in the output zip file, this option must be selected.  The default is to not include the line-of-sight data file.
 
@@ -182,7 +182,7 @@ To finish interferogram processing, steps 1 through 4 are run once again, this t
 
 ### Phase Unwrapping
 
-All of the phase differences in a wrapped interferograms lie between -&#960 and &#960. Phase unwrapping attempts to assign multiples of 2&#960 to add to each pixel in the interferogram to restrict the number of 2&#960 jumps in the phase to the regions where they may actually occur. These regions  are areas of radar layover or areas of deformation exceeding half a wavelength in the line of sight. Thermal noise and interferometric decorrelation can also result in these 2&#960 phase discontinuities called *residues*.   
+All of the phase differences in a wrapped interferograms lie between -π and π. Phase unwrapping attempts to assign multiples of 2π to add to each pixel in the interferogram to restrict the number of 2π jumps in the phase to the regions where they may actually occur. These regions  are areas of radar layover or areas of deformation exceeding half a wavelength in the line of sight. Thermal noise and interferometric decorrelation can also result in these 2π phase discontinuities called *residues*.   
 
 Before the interferogram can be unwrapped, it must be filtered to remove noise. This is accomplished using an adaptive spectral filtering algorithm. This adaptive interferogram filtering aims to reduce phase noise, increase the accuracy of the interferometric phase, and reduce the number of interferogram residues as an aid to phase unwrapping. In this case, residues are points in the interferogram where the sum of the phase differences between pixels around a closed path is not 0.0, which indicates a jump in phase.
 
@@ -192,6 +192,15 @@ Another step before unwrapping is to create a validity mask to guide the phase u
 Coherence is estimated from the normalized interferogram and the co-registered intensity images using an MLI estimator with rectangular weighting with a 5x5 moving window. The pixel values in this file range from 0.0 (total decorrelation) to 1.0 (perfectly coherent). Any input pixel with a coherence value less than 0.1 or an intensity value less than 0.2 is given a validity mask value of zero and not used during unwrapping.
 
 When the water masking option is applied, the validity mask is further amended to apply 0 values to any pixels classified as water in the water mask. In some cases, pixels over water may still meet the coherence and amplitude threshold criteria for inclusion, even though they are not valid for use during phase unwrapping. When processing scenes with extensive coverage by coastal waters or large inland waterbodies, there can be erroneous phase jumps introduced if unwrapping proceeds over water as if it were land. In such cases, choosing the option to apply the water mask can significantly improve the results. 
+
+#### Reference point
+In order to perform phase unwrapping, a reference point must be selected. The unwrapping will proceed relative to this reference point; the 2π integer multiples will be applied to the wrapped phase using this pixel as the starting point.
+
+Ideally, the reference point for phase unwrapping would be located in an area with high coherence in a stable region close to an area with surface deformation. Choosing an optimal reference point requires knowledge of the site characteristics and examination of the interferogram, which is not practical in an automated, global workflow. By default, the first point of the combined scene is used as the reference point for ASF's On Demand InSAR products. 
+
+This (0,0) pixel of the interferogram is designated in SAR space, which will differ in map space depending on the direction of the image acquisition. For ascending scenes, the first point is the lower left corner of the interferogram when viewed in map space; for descending scenes, the first point is the upper right corner. 
+
+Refer to the [Limitations](#phase-unwrapping-reference-point) section of this document for more information on the implications of an arbitrary phase unwrapping reference point. 
 
 ### Geocoding and Product Creation
 
@@ -344,6 +353,15 @@ When looking at a single interferogram, the only reliable deformation measuremen
 
 In addition, a single interferogram cannot be used to determine the relative contributions of vertical and horizontal movement to the line-of-sight displacement measurement. The vertical displacement map is generated based on the assumption that the movement is entirely in the vertical direction, which may not be realistic for some processes. To determine how much of the signal is driven by vertical vs. horizontal movement, you must either use a time series of interferograms, or use reference measurements with known vertical and horizontal components (such as GNSS measurements from the region of deformation) to deconstruct the line-of-sight displacement.
 
+### Phase Unwrapping Reference Point
+The reference point for phase unwrapping is set to be the upper left corner of the image by default. This may not always be an ideal location. If it's in an area of low coherence, or if it's in a patch of coherent pixels that is separated from the area undergoing deformation by a gap of incoherent pixels, the unwrapping may be of lower quality than if the reference point was in a more suitable location. 
+
+Even when there are not phase unwrapping errors introduced by phase discontinuities, it is important to be aware that unwrapped phase differences and displacement values are all relative to the reference point. If you are interested in the amount of displacement in a particular area, you may wish to apply a correction to the image so that the range of values are more appropriate for your study area or application.
+
+In cases where there are not significant phase discontinuities, you can select a reference point that is optimal for your use case, calculate the difference in phase or line-of-sight displacement, and apply a correction to the entire raster to adjust the values to be relative to that new reference point. To adjust phase values so that a user-defined reference point is set to have a phase difference of 0, find the value of the pixel at your desired reference point, and subtract that value from each pixel in the raster. 
+
+In general, calculating displacement values from a single interferogram is not recommended. While the displacement rasters provided with ASF's On Demand InSAR products can be helpful to visualize changes, we do not recommend that you rely on a single interferogram when coming to conclusions about surface displacement, even if you apply a correction based on a manually selected reference point. It will be more robust to use a time series approach to more accurately determine the pattern of movement. When using SAR time-series software such as [MintPy](https://mintpy.readthedocs.io/en/latest/), you have the option to select a specific reference point, and the values of the input rasters will be adjusted accordingly. 
+
 ## Error Sources
 On Demand InSAR products do not currently correct for some common sources of error in interferometry, such as atmospheric effects. Further processing or time series analysis can be performed by the user to identify or reduce the impact of some of these errors when using On Demand InSAR products for analysis.
 
@@ -352,7 +370,7 @@ While SAR signals can penetrate clouds, atmospheric conditions can delay the tra
 
 In some cases, atmospheric errors can be corrected by using an atmospheric model to remove the impacts of the turbulent delay from the interferogram. Another approach is to use time series analysis to identify outliers.
 
-***Always doubt your interferogram first!*** View the interferogram critically, and consider if fringe patterns could potentially be driven by atmospheric effects. 
+***Always doubt your interferogram first!*** View the interferogram critically, and consider if fringe patterns could potentially be driven by atmospheric effects. In general, it is best to avoid drawing conclusions from the outcome of a single interferogram. 
 
 #### Turbulent Delay
 These delays are generally caused by differences in water vapor distribution from one image to the next. They often manifest as wobbly or sausage-shaped fringes, and can potentially mask the signal of a small earthquake. 

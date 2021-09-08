@@ -1,0 +1,4365 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Alaska Satellite Facility's Hybrid Pluggable Processing Pipeline">
+      
+      
+      
+        <meta name="author" content="ASF APD/Tools Team">
+      
+      
+        <link rel="canonical" href="https://hyp3-docs.asf.alaska.edu/hyp3-docs/using/sdk_api/">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-6.2.8">
+    
+    
+      
+        <title>API Reference - HyP3</title>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    <link rel="stylesheet" href="../../assets/stylesheets/asf.css">
+
+    
+
+<script src="https://fbm.earthdata.nasa.gov/for/ASF/feedback.js" type="text/javascript"></script>
+<script type="text/javascript">
+ // This prevents the FBM flyout banner from appearing on the side of the page.
+feedback.init({showIcon: false});
+</script>
+
+<script src="https://cdn.earthdata.nasa.gov/tophat2/tophat2.js"
+        id="earthdata-tophat-script"
+        data-show-fbm="true"
+        data-show-status="false"
+        data-fbm-subject-line="How can we help you?"
+        data-current-daac="ASF DAAC">
+</script>
+
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    
+  
+    <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Google Analytics integration -->
+
+  
+
+<script type="application/javascript">
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+
+  /* Set up integration and send page view */
+  ga("create", "UA-991100-5", "search.asf.alaska.edu")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", function() {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+
+  /* Send page view on document switch (instant loading, custom event) */
+  document.addEventListener("DOMContentSwitch", function() {
+    ga("send", "pageview", document.location.pathname)
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+  
+
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hyp3_sdk-v132-api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Mitigate bug: https://github.com/mkdocs/mkdocs/issues/2191 -->
+
+
+
+<!-- Application header -->
+<header class="md-header" data-md-component="header">
+
+  <!-- Top-level navigation -->
+  <nav class="md-header-nav md-grid" aria-label="Header">
+
+    
+      <!-- Link to ASF -->
+      <a
+        href="https://asf.alaska.edu/"
+        title="ASF"
+        class="md-header-nav__button md-logo"
+        aria-label="ASF"
+      >
+      <img src="../../assets/images/ASFLogo-Blue2.png" alt="logo" />
+    
+    <!-- Link to home -->
+    <a
+      href="https://hyp3-docs.asf.alaska.edu/hyp3-docs/"
+      title="HyP3"
+      class="md-header-nav__button md-logo"
+      aria-label="HyP3"
+    >
+      <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Logo -->
+
+  <img src="../../images/HyP3-graphic-only.png" alt="logo" />
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            HyP3
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              API Reference
+            
+          </span>
+        </div>
+      
+    </div>
+
+    
+     <!-- Search interface -->
+      <div class="expert-rec-search">
+  <ci-search></ci-search>
+</div>
+    
+
+    <!-- Repository containing source -->
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/ASFHyP3" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ASF HyP3
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://hyp3-docs.asf.alaska.edu/hyp3-docs/" title="HyP3" class="md-nav__button md-logo" aria-label="HyP3">
+      <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Logo -->
+
+  <img src="../../images/HyP3-graphic-only.png" alt="logo" />
+
+    </a>
+    HyP3
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/ASFHyP3" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ASF HyP3
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      
+      <label class="md-nav__link" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        
+          Using HyP3
+        
+      </label>
+      <nav class="md-nav" aria-label="Using HyP3" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          
+            Using HyP3
+          
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank" class="md-nav__link">
+        Vertex
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+      
+      <label class="md-nav__link" for="nav-2-2">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../sdk/" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          SDK
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="SDK" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-2">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../sdk/" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            SDK
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank" class="md-nav__link">
+        Example Notebook
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="./" class="md-nav__link md-nav__link--active"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            API Reference
+          </a>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        API Reference
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hyp3_sdk.asf_search" class="md-nav__link">
+    asf_search
+  </a>
+  
+    <nav class="md-nav" aria-label="asf_search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.asf_search.get_metadata" class="md-nav__link">
+    get_metadata()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.asf_search.get_nearest_neighbors" class="md-nav__link">
+    get_nearest_neighbors()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyp3_sdk.exceptions" class="md-nav__link">
+    exceptions
+  </a>
+  
+    <nav class="md-nav" aria-label="exceptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.exceptions.ASFSearchError" class="md-nav__link">
+    ASFSearchError
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.exceptions.AuthenticationError" class="md-nav__link">
+    AuthenticationError
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.exceptions.HyP3Error" class="md-nav__link">
+    HyP3Error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.exceptions.HyP3SDKError" class="md-nav__link">
+    HyP3SDKError
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.exceptions.ServerError" class="md-nav__link">
+    ServerError
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyp3_sdk.hyp3" class="md-nav__link">
+    hyp3
+  </a>
+  
+    <nav class="md-nav" aria-label="hyp3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.hyp3.HyP3" class="md-nav__link">
+    HyP3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyp3_sdk.jobs" class="md-nav__link">
+    jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.jobs.Batch" class="md-nav__link">
+    Batch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.jobs.Job" class="md-nav__link">
+    Job
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyp3_sdk.util" class="md-nav__link">
+    util
+  </a>
+  
+    <nav class="md-nav" aria-label="util">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.util.chunk" class="md-nav__link">
+    chunk()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.util.download_file" class="md-nav__link">
+    download_file()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.util.extract_zipped_product" class="md-nav__link">
+    extract_zipped_product()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.util.get_authenticated_session" class="md-nav__link">
+    get_authenticated_session()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../products/" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          Products
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="Products" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../products/" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            Products
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" >
+      
+      <label class="md-nav__link" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../guides/rtc_product_guide/" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          RTC
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="RTC" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-1">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../guides/rtc_product_guide/" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            RTC
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/rtc_product_guide/" class="md-nav__link">
+        Product Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35" target="_blank" class="md-nav__link">
+        Story Map
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/rtc_atbd/" class="md-nav__link">
+        Theoretical Basis
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
+      
+      <label class="md-nav__link" for="nav-3-2">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../guides/insar_product_guide/" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          InSAR
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="InSAR" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-2">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../guides/insar_product_guide/" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            InSAR
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/insar_product_guide/" class="md-nav__link">
+        Product Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank" class="md-nav__link">
+        Story Map
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://its-live.jpl.nasa.gov/" target="_blank" class="md-nav__link">
+        AutoRIFT
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage_guidelines/" class="md-nav__link">
+        Usage Guidelines
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+      
+      <label class="md-nav__link" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../guides/introduction_to_sar/" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          SAR Basics
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="SAR Basics" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../guides/introduction_to_sar/" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            SAR Basics
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/introduction_to_sar/" class="md-nav__link">
+        Introduction to SAR
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dems/" class="md-nav__link">
+        Digital Elevation Models
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://asf.alaska.edu/information/sar-information/what-is-sar/#sar_faq" target="_blank" class="md-nav__link">
+        SAR FAQ
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+      
+      <label class="md-nav__link" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        
+          Other Tools
+        
+      </label>
+      <nav class="md-nav" aria-label="Other Tools" data-md-level="1">
+        <label class="md-nav__title" for="nav-5">
+          <span class="md-nav__icon md-icon"></span>
+          
+            Other Tools
+          
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/arcgis_toolbox/" class="md-nav__link">
+        ArcGIS Toolbox
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2" >
+      
+      <label class="md-nav__link" for="nav-5-2">
+        <span class="md-nav__icon md-icon"></span>
+        
+          <a href="../../tools/asf_tools/" class="md-nav__link"
+            style="margin: initial; padding: initial; pointer-events: initial">
+        
+          ASF Tools for Python
+        </a>
+      </label>
+      <nav class="md-nav" aria-label="ASF Tools for Python" data-md-level="2">
+        <label class="md-nav__title" for="nav-5-2">
+          <span class="md-nav__icon md-icon"></span>
+          
+            <a href="../../tools/asf_tools/" class="md-nav__link"
+              style="margin: initial; padding: initial; pointer-events: initial">
+          
+            ASF Tools for Python
+          </a>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/asf_tools_api/" class="md-nav__link">
+        API Reference
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
+      
+      <label class="md-nav__link" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        
+          Developers
+        
+      </label>
+      <nav class="md-nav" aria-label="Developers" data-md-level="1">
+        <label class="md-nav__title" for="nav-6">
+          <span class="md-nav__icon md-icon"></span>
+          
+            Developers
+          
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how_it_works/" class="md-nav__link">
+        Architecture
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plugins/" class="md-nav__link">
+        Plugins
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CODE_OF_CONDUCT/" class="md-nav__link">
+        Code of Conduct
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../whats_new/" class="md-nav__link">
+        What's New
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        Contact Us
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hyp3_sdk.asf_search" class="md-nav__link">
+    asf_search
+  </a>
+  
+    <nav class="md-nav" aria-label="asf_search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.asf_search.get_metadata" class="md-nav__link">
+    get_metadata()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.asf_search.get_nearest_neighbors" class="md-nav__link">
+    get_nearest_neighbors()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyp3_sdk.exceptions" class="md-nav__link">
+    exceptions
+  </a>
+  
+    <nav class="md-nav" aria-label="exceptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.exceptions.ASFSearchError" class="md-nav__link">
+    ASFSearchError
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.exceptions.AuthenticationError" class="md-nav__link">
+    AuthenticationError
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.exceptions.HyP3Error" class="md-nav__link">
+    HyP3Error
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.exceptions.HyP3SDKError" class="md-nav__link">
+    HyP3SDKError
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.exceptions.ServerError" class="md-nav__link">
+    ServerError
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyp3_sdk.hyp3" class="md-nav__link">
+    hyp3
+  </a>
+  
+    <nav class="md-nav" aria-label="hyp3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.hyp3.HyP3" class="md-nav__link">
+    HyP3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyp3_sdk.jobs" class="md-nav__link">
+    jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.jobs.Batch" class="md-nav__link">
+    Batch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.jobs.Job" class="md-nav__link">
+    Job
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyp3_sdk.util" class="md-nav__link">
+    util
+  </a>
+  
+    <nav class="md-nav" aria-label="util">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.util.chunk" class="md-nav__link">
+    chunk()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.util.download_file" class="md-nav__link">
+    download_file()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.util.extract_zipped_product" class="md-nav__link">
+    extract_zipped_product()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3_sdk.util.get_authenticated_session" class="md-nav__link">
+    get_authenticated_session()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="hyp3_sdk-v132-api-reference"><code>hyp3_sdk</code> <em>v1.3.2</em> API Reference<a class="headerlink" href="#hyp3_sdk-v132-api-reference" title="Permanent link">&para;</a></h1>
+
+
+  <div class="doc doc-object doc-module">
+
+
+    <div class="doc doc-contents first">
+
+      <p>A python wrapper around the HyP3 API</p>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-module">
+
+
+
+<h2 id="hyp3_sdk.asf_search" class="doc doc-heading">
+        <code>asf_search</code>
+
+
+
+<a href="#hyp3_sdk.asf_search" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="hyp3_sdk.asf_search.get_metadata" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_metadata</span><span class="p">(</span><span class="n">granules</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.asf_search.get_metadata" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Get the metadata for a granule or list of granules</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>granules</code></td>
+        <td><code>Union[str, Iterable[str]]</code></td>
+        <td><p>granule(s) to lookup metadata for</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Union[dict, List[dict]]</code></td>
+      <td><p>metadata: metadata for the granule(s)</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/asf_search.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_metadata</span><span class="p">(</span><span class="n">granules</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">str</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]]:</span>
+    <span class="sd">&quot;&quot;&quot;Get the metadata for a granule or list of granules</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        granules: granule(s) to lookup metadata for</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        metadata: metadata for the granule(s)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">granules</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">granule_list</span> <span class="o">=</span> <span class="n">granules</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">granule_list</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">granules</span><span class="p">)</span>
+
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="s1">&#39;jsonlite&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;granule_list&#39;</span><span class="p">:</span> <span class="n">granule_list</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">_SEARCH_API</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">_raise_for_search_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+    <span class="n">metadata</span> <span class="o">=</span> <span class="p">[</span><span class="n">result</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;productType&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;METADATA_&#39;</span><span class="p">)]</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">granules</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">metadata</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">metadata</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="hyp3_sdk.asf_search.get_nearest_neighbors" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_nearest_neighbors</span><span class="p">(</span><span class="n">granule</span><span class="p">,</span> <span class="n">max_neighbors</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.asf_search.get_nearest_neighbors" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Get a Sentinel-1 granule's nearest neighbors from a temporal stack (backwards in time)</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>granule</code></td>
+        <td><code>str</code></td>
+        <td><p>reference granule</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>max_neighbors</code></td>
+        <td><code>int</code></td>
+        <td><p>maximum number of neighbors to return</p></td>
+        <td><code>2</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>List[dict]</code></td>
+      <td><p>neighbors: a list of neighbors sorted by time</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/asf_search.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_nearest_neighbors</span><span class="p">(</span><span class="n">granule</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">max_neighbors</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Get a Sentinel-1 granule&#39;s nearest neighbors from a temporal stack (backwards in time)</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        granule: reference granule</span>
+<span class="sd">        max_neighbors: maximum number of neighbors to return</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        neighbors: a list of neighbors sorted by time</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>  <span class="c1"># jsonlite doesn&#39;t include centerLat/centerLon</span>
+        <span class="s1">&#39;platform&#39;</span><span class="p">:</span> <span class="s1">&#39;S1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;granule_list&#39;</span><span class="p">:</span> <span class="n">granule</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">_SEARCH_API</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">_raise_for_search_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    <span class="n">references</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">r</span><span class="p">[</span><span class="s1">&#39;processingLevel&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;METADATA_&#39;</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">references</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">ASFSearchError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Reference Sentinel-1 granule </span><span class="si">{</span><span class="n">granule</span><span class="si">}</span><span class="s1"> could not be found&#39;</span><span class="p">)</span>
+    <span class="n">reference</span> <span class="o">=</span> <span class="n">references</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="s1">&#39;jsonlite&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;platform&#39;</span><span class="p">:</span> <span class="s1">&#39;S1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;intersectsWith&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;POINT (</span><span class="si">{</span><span class="n">reference</span><span class="p">[</span><span class="s2">&quot;centerLon&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">reference</span><span class="p">[</span><span class="s2">&quot;centerLat&quot;</span><span class="p">]</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">[</span><span class="s1">&#39;startTime&#39;</span><span class="p">],</span>  <span class="c1"># includes reference scene</span>
+        <span class="s1">&#39;beamMode&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">[</span><span class="s1">&#39;beamMode&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;flightDirection&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">[</span><span class="s1">&#39;flightDirection&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;processingLevel&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">[</span><span class="s1">&#39;processingLevel&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;relativeOrbit&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">[</span><span class="s1">&#39;relativeOrbit&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;polarization&#39;</span><span class="p">:</span> <span class="n">_get_matching_polarizations</span><span class="p">(</span><span class="n">reference</span><span class="p">[</span><span class="s1">&#39;polarization&#39;</span><span class="p">]),</span>
+        <span class="s1">&#39;lookDirection&#39;</span><span class="p">:</span> <span class="n">reference</span><span class="p">[</span><span class="s1">&#39;lookDirection&#39;</span><span class="p">],</span>
+    <span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">_SEARCH_API</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">_raise_for_search_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    <span class="n">neighbors</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;results&#39;</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;startTime&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">neighbors</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">max_neighbors</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+  <div class="doc doc-object doc-module">
+
+
+
+<h2 id="hyp3_sdk.exceptions" class="doc doc-heading">
+        <code>exceptions</code>
+
+
+
+<a href="#hyp3_sdk.exceptions" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Errors and exceptions to raise when the SDK runs into problems</p>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h3 id="hyp3_sdk.exceptions.ASFSearchError" class="doc doc-heading">
+        <code>ASFSearchError</code>
+
+
+
+<a href="#hyp3_sdk.exceptions.ASFSearchError" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Raise for errors when using the ASF Search module</p>
+
+
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h3 id="hyp3_sdk.exceptions.AuthenticationError" class="doc doc-heading">
+        <code>AuthenticationError</code>
+
+
+
+<a href="#hyp3_sdk.exceptions.AuthenticationError" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Raise when authentication does not succeed</p>
+
+
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h3 id="hyp3_sdk.exceptions.HyP3Error" class="doc doc-heading">
+        <code>HyP3Error</code>
+
+
+
+<a href="#hyp3_sdk.exceptions.HyP3Error" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Raise for errors when using the HyP3 module</p>
+
+
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h3 id="hyp3_sdk.exceptions.HyP3SDKError" class="doc doc-heading">
+        <code>HyP3SDKError</code>
+
+
+
+<a href="#hyp3_sdk.exceptions.HyP3SDKError" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Base Exception for the HyP3 SDK</p>
+
+
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h3 id="hyp3_sdk.exceptions.ServerError" class="doc doc-heading">
+        <code>ServerError</code>
+
+
+
+<a href="#hyp3_sdk.exceptions.ServerError" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Raise when the HyP3 SDK encounters a server error</p>
+
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-module">
+
+
+
+<h2 id="hyp3_sdk.hyp3" class="doc doc-heading">
+        <code>hyp3</code>
+
+
+
+<a href="#hyp3_sdk.hyp3" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h3 id="hyp3_sdk.hyp3.HyP3" class="doc doc-heading">
+        <code>HyP3</code>
+
+
+
+<a href="#hyp3_sdk.hyp3.HyP3" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>A python wrapper around the HyP3 API</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_url</span><span class="o">=</span><span class="s1">&#39;https://hyp3-api.asf.alaska.edu&#39;</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+<a href="#hyp3_sdk.hyp3.HyP3.__init__" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>api_url</code></td>
+        <td><code>str</code></td>
+        <td><p>Address of the HyP3 API</p></td>
+        <td><code>&#39;https://hyp3-api.asf.alaska.edu&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>username</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>Username for authenticating to <code>urs.earthdata.nasa.gov</code>.
+Both username and password must be provided if either is provided.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>password</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>Password for authenticating to <code>urs.earthdata.nasa.gov</code>.
+Both username and password must be provided if either is provided.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>prompt</code></td>
+        <td><code>bool</code></td>
+        <td><p>Prompt for username and/or password interactively when they
+are not provided as keyword parameters</p></td>
+        <td><code>False</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">PROD_API</span><span class="p">,</span> <span class="n">username</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+             <span class="n">prompt</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Args:</span>
+<span class="sd">        api_url: Address of the HyP3 API</span>
+<span class="sd">        username: Username for authenticating to `urs.earthdata.nasa.gov`.</span>
+<span class="sd">            Both username and password must be provided if either is provided.</span>
+<span class="sd">        password: Password for authenticating to `urs.earthdata.nasa.gov`.</span>
+<span class="sd">            Both username and password must be provided if either is provided.</span>
+<span class="sd">        prompt: Prompt for username and/or password interactively when they</span>
+<span class="sd">            are not provided as keyword parameters</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">api_url</span>
+
+    <span class="k">if</span> <span class="n">username</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">prompt</span><span class="p">:</span>
+        <span class="n">username</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;NASA Earthdata Login username: &#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">password</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">prompt</span><span class="p">:</span>
+        <span class="n">password</span> <span class="o">=</span> <span class="n">getpass</span><span class="p">(</span><span class="s1">&#39;NASA Earthdata Login password: &#39;</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">get_authenticated_session</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">hyp3_sdk</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">})</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.check_quota" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">check_quota</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.hyp3.HyP3.check_quota" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>int</code></td>
+      <td><p>The number of jobs left in your quota</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">check_quota</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        The number of jobs left in your quota</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">my_info</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">info</span><span class="p">[</span><span class="s1">&#39;quota&#39;</span><span class="p">][</span><span class="s1">&#39;remaining&#39;</span><span class="p">]</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.find_jobs" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">find_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">job_type</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.hyp3.HyP3.find_jobs" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Gets a Batch of jobs from HyP3 matching the provided search criteria</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>start</code></td>
+        <td><code>Optional[datetime.datetime]</code></td>
+        <td><p>only jobs submitted after given time</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>end</code></td>
+        <td><code>Optional[datetime.datetime]</code></td>
+        <td><p>only jobs submitted before given time</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>status_code</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>only jobs matching this status (SUCCEEDED, FAILED, RUNNING, PENDING)</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>only jobs with this name</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>job_type</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>only jobs with this job_type</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Batch</code></td>
+      <td><p>A Batch object containing the found jobs</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">find_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">datetime</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+              <span class="n">status_code</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+              <span class="n">job_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Gets a Batch of jobs from HyP3 matching the provided search criteria</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        start: only jobs submitted after given time</span>
+<span class="sd">        end: only jobs submitted before given time</span>
+<span class="sd">        status_code: only jobs matching this status (SUCCEEDED, FAILED, RUNNING, PENDING)</span>
+<span class="sd">        name: only jobs with this name</span>
+<span class="sd">        job_type: only jobs with this job_type</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A Batch object containing the found jobs</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">param_name</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;status_code&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;job_type&#39;</span><span class="p">):</span>
+        <span class="n">param_value</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">param_name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">param_value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">param_value</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">param_value</span><span class="o">.</span><span class="n">tzinfo</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">param_value</span> <span class="o">=</span> <span class="n">param_value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">utc</span><span class="p">)</span>
+                <span class="n">param_value</span> <span class="o">=</span> <span class="n">param_value</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s1">&#39;seconds&#39;</span><span class="p">)</span>
+
+            <span class="n">params</span><span class="p">[</span><span class="n">param_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">param_value</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/jobs&#39;</span><span class="p">),</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+    <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    <span class="n">jobs</span> <span class="o">=</span> <span class="p">[</span><span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">job</span><span class="p">)</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;jobs&#39;</span><span class="p">]]</span>
+
+    <span class="k">while</span> <span class="s1">&#39;next&#39;</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">():</span>
+        <span class="n">next_url</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;next&#39;</span><span class="p">]</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">next_url</span><span class="p">)</span>
+        <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="n">jobs</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">job</span><span class="p">)</span> <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;jobs&#39;</span><span class="p">]])</span>
+
+    <span class="k">return</span> <span class="n">Batch</span><span class="p">(</span><span class="n">jobs</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.get_job_by_id" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_job_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_id</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.hyp3.HyP3.get_job_by_id" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Get job by job ID</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>job_id</code></td>
+        <td><code>str</code></td>
+        <td><p>A job ID</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Job</code></td>
+      <td><p>A Job object</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_job_by_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Job</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Get job by job ID</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        job_id: A job ID</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A Job object</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;/jobs/</span><span class="si">{</span><span class="n">job_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">))</span>
+    <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.my_info" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">my_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.hyp3.HyP3.my_info" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>Your user information</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">my_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        Your user information</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/user&#39;</span><span class="p">))</span>
+    <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.prepare_autorift_job" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">prepare_autorift_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
+  </span>
+
+<a href="#hyp3_sdk.hyp3.HyP3.prepare_autorift_job" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Submit an autoRIFT job</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>granule1</code></td>
+        <td><code>str</code></td>
+        <td><p>The first granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>granule2</code></td>
+        <td><code>str</code></td>
+        <td><p>The second granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>A name for the job</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>A dictionary containing the prepared autoRIFT job</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">prepare_autorift_job</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Submit an autoRIFT job</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        granule1: The first granule (scene) to use</span>
+<span class="sd">        granule2: The second granule (scene) to use</span>
+<span class="sd">        name: A name for the job</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A dictionary containing the prepared autoRIFT job</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;granules&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">]},</span>
+        <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;AUTORIFT&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">job_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">return</span> <span class="n">job_dict</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.prepare_insar_job" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">prepare_insar_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_wrapped_phase</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">apply_water_mask</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
+  </span>
+
+<a href="#hyp3_sdk.hyp3.HyP3.prepare_insar_job" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Submit an InSAR job</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>granule1</code></td>
+        <td><code>str</code></td>
+        <td><p>The first granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>granule2</code></td>
+        <td><code>str</code></td>
+        <td><p>The second granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>A name for the job</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>include_look_vectors</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the look vector theta and phi files in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_los_displacement</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include a GeoTIFF in the product package containing displacement values
+along the Line-Of-Sight (LOS)</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_inc_map</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the local and ellipsoidal incidence angle maps in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>looks</code></td>
+        <td><code>Literal[&#39;20x4&#39;, &#39;10x2&#39;]</code></td>
+        <td><p>Number of looks to take in range and azimuth</p></td>
+        <td><code>&#39;20x4&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>include_dem</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the digital elevation model GeoTIFF in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_wrapped_phase</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the wrapped phase GeoTIFF in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>apply_water_mask</code></td>
+        <td><code>bool</code></td>
+        <td><p>Sets pixels over coastal waters and large inland waterbodies
+as invalid for phase unwrapping</p></td>
+        <td><code>False</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>A dictionary containing the prepared InSAR job</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">prepare_insar_job</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span>
+                      <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                      <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                      <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                      <span class="n">include_look_vectors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                      <span class="n">include_los_displacement</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                      <span class="n">include_inc_map</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                      <span class="n">looks</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="s1">&#39;10x2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;20x4&#39;</span><span class="p">,</span>
+                      <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                      <span class="n">include_wrapped_phase</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                      <span class="n">apply_water_mask</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        granule1: The first granule (scene) to use</span>
+<span class="sd">        granule2: The second granule (scene) to use</span>
+<span class="sd">        name: A name for the job</span>
+<span class="sd">        include_look_vectors: Include the look vector theta and phi files in the product package</span>
+<span class="sd">        include_los_displacement: Include a GeoTIFF in the product package containing displacement values</span>
+<span class="sd">            along the Line-Of-Sight (LOS)</span>
+<span class="sd">        include_inc_map: Include the local and ellipsoidal incidence angle maps in the product package</span>
+<span class="sd">        looks: Number of looks to take in range and azimuth</span>
+<span class="sd">        include_dem: Include the digital elevation model GeoTIFF in the product package</span>
+<span class="sd">        include_wrapped_phase: Include the wrapped phase GeoTIFF in the product package</span>
+<span class="sd">        apply_water_mask: Sets pixels over coastal waters and large inland waterbodies</span>
+<span class="sd">            as invalid for phase unwrapping</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        A dictionary containing the prepared InSAR job</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">job_parameters</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;cls&#39;</span><span class="p">,</span> <span class="s1">&#39;granule1&#39;</span><span class="p">,</span> <span class="s1">&#39;granule2&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]:</span>
+        <span class="n">job_parameters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+    <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;granules&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">],</span> <span class="o">**</span><span class="n">job_parameters</span><span class="p">},</span>
+        <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;INSAR_GAMMA&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">job_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">return</span> <span class="n">job_dict</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.prepare_rtc_job" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">prepare_rtc_job</span><span class="p">(</span><span class="n">granule</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dem_matching</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_rgb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_scattering_area</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">radiometry</span><span class="o">=</span><span class="s1">&#39;gamma0&#39;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s1">&#39;power&#39;</span><span class="p">,</span> <span class="n">speckle_filter</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dem_name</span><span class="o">=</span><span class="s1">&#39;copernicus&#39;</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
+  </span>
+
+<a href="#hyp3_sdk.hyp3.HyP3.prepare_rtc_job" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Submit an RTC job</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>granule</code></td>
+        <td><code>str</code></td>
+        <td><p>The granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>A name for the job</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>dem_matching</code></td>
+        <td><code>bool</code></td>
+        <td><p>Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_dem</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the DEM file in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_inc_map</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the local incidence angle map in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_rgb</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include a false-color RGB decomposition in the product package for dual-pol granules
+(ignored for single-pol granules)</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_scattering_area</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the scattering area in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>radiometry</code></td>
+        <td><code>Literal[&#39;sigma0&#39;, &#39;gamma0&#39;]</code></td>
+        <td><p>Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area
+projected into the look direction (gamma0)</p></td>
+        <td><code>&#39;gamma0&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>resolution</code></td>
+        <td><code>Literal[30]</code></td>
+        <td><p>Desired output pixel spacing in meters</p></td>
+        <td><code>30</code></td>
+      </tr>
+      <tr>
+        <td><code>scale</code></td>
+        <td><code>Literal[&#39;amplitude&#39;, &#39;power&#39;]</code></td>
+        <td><p>Scale of output image; either power or amplitude</p></td>
+        <td><code>&#39;power&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>speckle_filter</code></td>
+        <td><code>bool</code></td>
+        <td><p>Apply an Enhanced Lee speckle filter</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>dem_name</code></td>
+        <td><code>Literal[&#39;copernicus&#39;, &#39;legacy&#39;]</code></td>
+        <td><p>Name of the DEM to use for processing.  <code>copernicus</code> will use the Copernicus GLO-30 Public DEM,
+while <code>legacy</code> will use the DEM with the best coverage from ASF's legacy SRTM/NED datasets.</p></td>
+        <td><code>&#39;copernicus&#39;</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>dict</code></td>
+      <td><p>A dictionary containing the prepared RTC job</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="nd">@classmethod</span>
+<span class="k">def</span> <span class="nf">prepare_rtc_job</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span>
+                    <span class="n">granule</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                    <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="n">dem_matching</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                    <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                    <span class="n">include_inc_map</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                    <span class="n">include_rgb</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                    <span class="n">include_scattering_area</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                    <span class="n">radiometry</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;sigma0&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">,</span>
+                    <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+                    <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
+                    <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                    <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        granule: The granule (scene) to use</span>
+<span class="sd">        name: A name for the job</span>
+<span class="sd">        dem_matching: Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files</span>
+<span class="sd">        include_dem: Include the DEM file in the product package</span>
+<span class="sd">        include_inc_map: Include the local incidence angle map in the product package</span>
+<span class="sd">        include_rgb: Include a false-color RGB decomposition in the product package for dual-pol granules</span>
+<span class="sd">            (ignored for single-pol granules)</span>
+<span class="sd">        include_scattering_area: Include the scattering area in the product package</span>
+<span class="sd">        radiometry: Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area</span>
+<span class="sd">            projected into the look direction (gamma0)</span>
+<span class="sd">        resolution: Desired output pixel spacing in meters</span>
+<span class="sd">        scale: Scale of output image; either power or amplitude</span>
+<span class="sd">        speckle_filter: Apply an Enhanced Lee speckle filter</span>
+<span class="sd">        dem_name: Name of the DEM to use for processing.  `copernicus` will use the Copernicus GLO-30 Public DEM,</span>
+<span class="sd">            while `legacy` will use the DEM with the best coverage from ASF&#39;s legacy SRTM/NED datasets.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A dictionary containing the prepared RTC job</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">job_parameters</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;granule&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;cls&#39;</span><span class="p">]:</span>
+        <span class="n">job_parameters</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="n">job_dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;job_parameters&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;granules&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">granule</span><span class="p">],</span> <span class="o">**</span><span class="n">job_parameters</span><span class="p">},</span>
+        <span class="s1">&#39;job_type&#39;</span><span class="p">:</span> <span class="s1">&#39;RTC_GAMMA&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">job_dict</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">return</span> <span class="n">job_dict</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.refresh" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_or_batch</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.hyp3.HyP3.refresh" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Refresh each jobs' information</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>job_or_batch</code></td>
+        <td><code>Union[hyp3_sdk.jobs.Batch, hyp3_sdk.jobs.Job]</code></td>
+        <td><p>A Batch of Job object to refresh</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Union[hyp3_sdk.jobs.Batch, hyp3_sdk.jobs.Job]</code></td>
+      <td><p>A Batch or Job object with refreshed information</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="nd">@singledispatchmethod</span>
+<span class="k">def</span> <span class="nf">refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_or_batch</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Batch</span><span class="p">,</span> <span class="n">Job</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">Batch</span><span class="p">,</span> <span class="n">Job</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Refresh each jobs&#39; information</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        job_or_batch: A Batch of Job object to refresh</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A Batch or Job object with refreshed information</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Cannot refresh </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">job_or_batch</span><span class="p">)</span><span class="si">}</span><span class="s1"> type object&#39;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.submit_autorift_job" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">submit_autorift_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.hyp3.HyP3.submit_autorift_job" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Submit an autoRIFT job</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>granule1</code></td>
+        <td><code>str</code></td>
+        <td><p>The first granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>granule2</code></td>
+        <td><code>str</code></td>
+        <td><p>The second granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>A name for the job</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Batch</code></td>
+      <td><p>A Batch object containing the autoRIFT job</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">submit_autorift_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Submit an autoRIFT job</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        granule1: The first granule (scene) to use</span>
+<span class="sd">        granule2: The second granule (scene) to use</span>
+<span class="sd">        name: A name for the job</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A Batch object containing the autoRIFT job</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">job_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_autorift_job</span><span class="p">(</span><span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit_prepared_jobs</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="o">=</span><span class="n">job_dict</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.submit_insar_job" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">submit_insar_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule1</span><span class="p">,</span> <span class="n">granule2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">include_look_vectors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_los_displacement</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">looks</span><span class="o">=</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_wrapped_phase</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">apply_water_mask</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.hyp3.HyP3.submit_insar_job" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Submit an InSAR job</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>granule1</code></td>
+        <td><code>str</code></td>
+        <td><p>The first granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>granule2</code></td>
+        <td><code>str</code></td>
+        <td><p>The second granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>A name for the job</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>include_look_vectors</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the look vector theta and phi files in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_los_displacement</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include a GeoTIFF in the product package containing displacement values
+along the Line-Of-Sight (LOS)</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_inc_map</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the local and ellipsoidal incidence angle maps in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>looks</code></td>
+        <td><code>Literal[&#39;20x4&#39;, &#39;10x2&#39;]</code></td>
+        <td><p>Number of looks to take in range and azimuth</p></td>
+        <td><code>&#39;20x4&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>include_dem</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the digital elevation model GeoTIFF in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_wrapped_phase</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the wrapped phase GeoTIFF in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>apply_water_mask</code></td>
+        <td><code>bool</code></td>
+        <td><p>Sets pixels over coastal waters and large inland waterbodies
+as invalid for phase unwrapping</p></td>
+        <td><code>False</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Batch</code></td>
+      <td><p>A Batch object containing the InSAR job</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">submit_insar_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                     <span class="n">granule1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                     <span class="n">granule2</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                     <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                     <span class="n">include_look_vectors</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                     <span class="n">include_los_displacement</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                     <span class="n">include_inc_map</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                     <span class="n">looks</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;20x4&#39;</span><span class="p">,</span> <span class="s1">&#39;10x2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;20x4&#39;</span><span class="p">,</span>
+                     <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                     <span class="n">include_wrapped_phase</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                     <span class="n">apply_water_mask</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Submit an InSAR job</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        granule1: The first granule (scene) to use</span>
+<span class="sd">        granule2: The second granule (scene) to use</span>
+<span class="sd">        name: A name for the job</span>
+<span class="sd">        include_look_vectors: Include the look vector theta and phi files in the product package</span>
+<span class="sd">        include_los_displacement: Include a GeoTIFF in the product package containing displacement values</span>
+<span class="sd">            along the Line-Of-Sight (LOS)</span>
+<span class="sd">        include_inc_map: Include the local and ellipsoidal incidence angle maps in the product package</span>
+<span class="sd">        looks: Number of looks to take in range and azimuth</span>
+<span class="sd">        include_dem: Include the digital elevation model GeoTIFF in the product package</span>
+<span class="sd">        include_wrapped_phase: Include the wrapped phase GeoTIFF in the product package</span>
+<span class="sd">        apply_water_mask: Sets pixels over coastal waters and large inland waterbodies</span>
+<span class="sd">            as invalid for phase unwrapping</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A Batch object containing the InSAR job</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">arguments</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">arguments</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;self&#39;</span><span class="p">)</span>
+    <span class="n">job_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_insar_job</span><span class="p">(</span><span class="o">**</span><span class="n">arguments</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit_prepared_jobs</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="o">=</span><span class="n">job_dict</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.submit_prepared_jobs" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">submit_prepared_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prepared_jobs</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.hyp3.HyP3.submit_prepared_jobs" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Submit a prepared job dictionary, or list of prepared job dictionaries</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>prepared_jobs</code></td>
+        <td><code>Union[dict, List[dict]]</code></td>
+        <td><p>A prepared job dictionary, or list of prepared job dictionaries</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Batch</code></td>
+      <td><p>A Batch object containing the submitted job(s)</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">submit_prepared_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prepared_jobs</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">dict</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Submit a prepared job dictionary, or list of prepared job dictionaries</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        prepared_jobs: A prepared job dictionary, or list of prepared job dictionaries</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A Batch object containing the submitted job(s)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;jobs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">prepared_jobs</span><span class="p">]}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;jobs&#39;</span><span class="p">:</span> <span class="n">prepared_jobs</span><span class="p">}</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">urljoin</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;/jobs&#39;</span><span class="p">),</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+    <span class="n">_raise_for_hyp3_status</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+    <span class="n">batch</span> <span class="o">=</span> <span class="n">Batch</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;jobs&#39;</span><span class="p">]:</span>
+        <span class="n">batch</span> <span class="o">+=</span> <span class="n">Job</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">batch</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.submit_rtc_job" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">submit_rtc_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">granule</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dem_matching</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_dem</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_inc_map</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_rgb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_scattering_area</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">radiometry</span><span class="o">=</span><span class="s1">&#39;gamma0&#39;</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="s1">&#39;power&#39;</span><span class="p">,</span> <span class="n">speckle_filter</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dem_name</span><span class="o">=</span><span class="s1">&#39;copernicus&#39;</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.hyp3.HyP3.submit_rtc_job" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Submit an RTC job</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>granule</code></td>
+        <td><code>str</code></td>
+        <td><p>The granule (scene) to use</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>Optional[str]</code></td>
+        <td><p>A name for the job</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>dem_matching</code></td>
+        <td><code>bool</code></td>
+        <td><p>Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_dem</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the DEM file in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_inc_map</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the local incidence angle map in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_rgb</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include a false-color RGB decomposition in the product package for dual-pol granules
+(ignored for single-pol granules)</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_scattering_area</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include the scattering area in the product package</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>radiometry</code></td>
+        <td><code>Literal[&#39;sigma0&#39;, &#39;gamma0&#39;]</code></td>
+        <td><p>Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area
+projected into the look direction (gamma0)</p></td>
+        <td><code>&#39;gamma0&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>resolution</code></td>
+        <td><code>Literal[30]</code></td>
+        <td><p>Desired output pixel spacing in meters</p></td>
+        <td><code>30</code></td>
+      </tr>
+      <tr>
+        <td><code>scale</code></td>
+        <td><code>Literal[&#39;amplitude&#39;, &#39;power&#39;]</code></td>
+        <td><p>Scale of output image; either power or amplitude</p></td>
+        <td><code>&#39;power&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>speckle_filter</code></td>
+        <td><code>bool</code></td>
+        <td><p>Apply an Enhanced Lee speckle filter</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>dem_name</code></td>
+        <td><code>Literal[&#39;copernicus&#39;, &#39;legacy&#39;]</code></td>
+        <td><p>Name of the DEM to use for processing.  <code>copernicus</code> will use the Copernicus GLO-30 Public DEM,
+while <code>legacy</code> will use the DEM with the best coverage from ASF's legacy SRTM/NED datasets.</p></td>
+        <td><code>&#39;copernicus&#39;</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Batch</code></td>
+      <td><p>A Batch object containing the RTC job</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">submit_rtc_job</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                   <span class="n">granule</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                   <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                   <span class="n">dem_matching</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                   <span class="n">include_dem</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                   <span class="n">include_inc_map</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                   <span class="n">include_rgb</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                   <span class="n">include_scattering_area</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                   <span class="n">radiometry</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;sigma0&#39;</span><span class="p">,</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;gamma0&#39;</span><span class="p">,</span>
+                   <span class="n">resolution</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+                   <span class="n">scale</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;power&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span><span class="p">,</span>
+                   <span class="n">speckle_filter</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                   <span class="n">dem_name</span><span class="p">:</span> <span class="n">Literal</span><span class="p">[</span><span class="s1">&#39;copernicus&#39;</span><span class="p">,</span> <span class="s1">&#39;legacy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;copernicus&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Submit an RTC job</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        granule: The granule (scene) to use</span>
+<span class="sd">        name: A name for the job</span>
+<span class="sd">        dem_matching: Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files</span>
+<span class="sd">        include_dem: Include the DEM file in the product package</span>
+<span class="sd">        include_inc_map: Include the local incidence angle map in the product package</span>
+<span class="sd">        include_rgb: Include a false-color RGB decomposition in the product package for dual-pol granules</span>
+<span class="sd">            (ignored for single-pol granules)</span>
+<span class="sd">        include_scattering_area: Include the scattering area in the product package</span>
+<span class="sd">        radiometry: Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area</span>
+<span class="sd">            projected into the look direction (gamma0)</span>
+<span class="sd">        resolution: Desired output pixel spacing in meters</span>
+<span class="sd">        scale: Scale of output image; either power or amplitude</span>
+<span class="sd">        speckle_filter: Apply an Enhanced Lee speckle filter</span>
+<span class="sd">        dem_name: Name of the DEM to use for processing.  `copernicus` will use the Copernicus GLO-30 Public DEM,</span>
+<span class="sd">            while `legacy` will use the DEM with the best coverage from ASF&#39;s legacy SRTM/NED datasets.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A Batch object containing the RTC job</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">arguments</span> <span class="o">=</span> <span class="nb">locals</span><span class="p">()</span>
+    <span class="n">arguments</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;self&#39;</span><span class="p">)</span>
+    <span class="n">job_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_rtc_job</span><span class="p">(</span><span class="o">**</span><span class="n">arguments</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit_prepared_jobs</span><span class="p">(</span><span class="n">prepared_jobs</span><span class="o">=</span><span class="n">job_dict</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.hyp3.HyP3.watch" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">watch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_or_batch</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10800</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.hyp3.HyP3.watch" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Watch jobs until they complete</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>job_or_batch</code></td>
+        <td><code>Union[hyp3_sdk.jobs.Batch, hyp3_sdk.jobs.Job]</code></td>
+        <td><p>A Batch or Job object of jobs to watch</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>timeout</code></td>
+        <td><code>int</code></td>
+        <td><p>How long to wait until exiting in seconds</p></td>
+        <td><code>10800</code></td>
+      </tr>
+      <tr>
+        <td><code>interval</code></td>
+        <td><code>Union[int, float]</code></td>
+        <td><p>How often to check for updates in seconds</p></td>
+        <td><code>60</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Union[hyp3_sdk.jobs.Batch, hyp3_sdk.jobs.Job]</code></td>
+      <td><p>A Batch or Job object with refreshed watched jobs</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/hyp3.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="nd">@singledispatchmethod</span>
+<span class="k">def</span> <span class="nf">watch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_or_batch</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Batch</span><span class="p">,</span> <span class="n">Job</span><span class="p">],</span> <span class="n">timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10800</span><span class="p">,</span>
+          <span class="n">interval</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mi">60</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">Batch</span><span class="p">,</span> <span class="n">Job</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Watch jobs until they complete</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        job_or_batch: A Batch or Job object of jobs to watch</span>
+<span class="sd">        timeout: How long to wait until exiting in seconds</span>
+<span class="sd">        interval: How often to check for updates in seconds</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A Batch or Job object with refreshed watched jobs</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Cannot watch </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">job_or_batch</span><span class="p">)</span><span class="si">}</span><span class="s1"> type object&#39;</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-module">
+
+
+
+<h2 id="hyp3_sdk.jobs" class="doc doc-heading">
+        <code>jobs</code>
+
+
+
+<a href="#hyp3_sdk.jobs" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h3 id="hyp3_sdk.jobs.Batch" class="doc doc-heading">
+        <code>Batch</code>
+
+
+
+<a href="#hyp3_sdk.jobs.Batch" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.jobs.Batch.any_expired" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">any_expired</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.jobs.Batch.any_expired" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Check succeeded jobs for expiration</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">any_expired</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Check succeeded jobs for expiration&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">job</span><span class="o">.</span><span class="n">expired</span><span class="p">():</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">except</span> <span class="n">HyP3SDKError</span><span class="p">:</span>
+            <span class="k">continue</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.jobs.Batch.complete" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">complete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.jobs.Batch.complete" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Returns: True if all jobs are complete, otherwise returns False</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">complete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns: True if all jobs are complete, otherwise returns False</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">job</span><span class="o">.</span><span class="n">complete</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.jobs.Batch.download_files" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.jobs.Batch.download_files" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>location</code></td>
+        <td><code>Union[pathlib.Path, str]</code></td>
+        <td><p>Directory location to put files into</p></td>
+        <td><code>&#39;.&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>create</code></td>
+        <td><code>bool</code></td>
+        <td><p>Create <code>location</code> if it does not point to an existing directory</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>      <p>Returns: list of Path objects to downloaded files</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Args:</span>
+<span class="sd">        location: Directory location to put files into</span>
+<span class="sd">        create: Create `location` if it does not point to an existing directory</span>
+
+<span class="sd">    Returns: list of Path objects to downloaded files</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">downloaded_files</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">tqdm</span> <span class="o">=</span> <span class="n">get_tqdm_progress_bar</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">downloaded_files</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">download_files</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="n">create</span><span class="p">))</span>
+        <span class="k">except</span> <span class="n">HyP3SDKError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Warning: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">. Skipping download for </span><span class="si">{</span><span class="n">job</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">downloaded_files</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.jobs.Batch.filter_jobs" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">filter_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">succeeded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">running</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">failed</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">include_expired</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.jobs.Batch.filter_jobs" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Filter jobs by status. By default, only succeeded and still running jobs will be in the returned batch.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>succeeded</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include all succeeded jobs</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>running</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include all running jobs</p></td>
+        <td><code>True</code></td>
+      </tr>
+      <tr>
+        <td><code>failed</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include all failed jobs</p></td>
+        <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>include_expired</code></td>
+        <td><code>bool</code></td>
+        <td><p>Include expired jobs in the result</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Batch</code></td>
+      <td><p>batch: A batch object containing jobs matching all the selected statuses</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">filter_jobs</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">succeeded</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">running</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">failed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">include_expired</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Batch&#39;</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Filter jobs by status. By default, only succeeded and still running jobs will be in the returned batch.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        succeeded: Include all succeeded jobs</span>
+<span class="sd">        running: Include all running jobs</span>
+<span class="sd">        failed: Include all failed jobs</span>
+<span class="sd">        include_expired: Include expired jobs in the result</span>
+
+
+<span class="sd">    Returns:</span>
+<span class="sd">         batch: A batch object containing jobs matching all the selected statuses</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">filtered_jobs</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">job</span><span class="o">.</span><span class="n">succeeded</span><span class="p">()</span> <span class="ow">and</span> <span class="n">succeeded</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">include_expired</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">job</span><span class="o">.</span><span class="n">expired</span><span class="p">():</span>
+                <span class="n">filtered_jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">job</span><span class="o">.</span><span class="n">running</span><span class="p">()</span> <span class="ow">and</span> <span class="n">running</span><span class="p">:</span>
+            <span class="n">filtered_jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">job</span><span class="o">.</span><span class="n">failed</span><span class="p">()</span> <span class="ow">and</span> <span class="n">failed</span><span class="p">:</span>
+            <span class="n">filtered_jobs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">Batch</span><span class="p">(</span><span class="n">filtered_jobs</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.jobs.Batch.succeeded" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">succeeded</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.jobs.Batch.succeeded" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Returns: True if all jobs have succeeded, otherwise returns False</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">succeeded</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns: True if all jobs have succeeded, otherwise returns False</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobs</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">job</span><span class="o">.</span><span class="n">succeeded</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h3 id="hyp3_sdk.jobs.Job" class="doc doc-heading">
+        <code>Job</code>
+
+
+
+<a href="#hyp3_sdk.jobs.Job" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="hyp3_sdk.jobs.Job.download_files" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.jobs.Job.download_files" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>location</code></td>
+        <td><code>Union[pathlib.Path, str]</code></td>
+        <td><p>Directory location to put files into</p></td>
+        <td><code>&#39;.&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>create</code></td>
+        <td><code>bool</code></td>
+        <td><p>Create <code>location</code> if it does not point to an existing directory</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>      <p>Returns: list of Path objects to downloaded files</p>
+
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/jobs.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">download_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">location</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">create</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Path</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Args:</span>
+<span class="sd">        location: Directory location to put files into</span>
+<span class="sd">        create: Create `location` if it does not point to an existing directory</span>
+
+<span class="sd">    Returns: list of Path objects to downloaded files</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">succeeded</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">HyP3SDKError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Only succeeded jobs can be downloaded; job is </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">expired</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">HyP3SDKError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Expired jobs cannot be downloaded; &#39;</span>
+                           <span class="sa">f</span><span class="s1">&#39;job expired </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">expiration_time</span><span class="o">.</span><span class="n">isoformat</span><span class="p">(</span><span class="n">timespec</span><span class="o">=</span><span class="s2">&quot;seconds&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">create</span><span class="p">:</span>
+        <span class="n">location</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">location</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">NotADirectoryError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">location</span><span class="p">))</span>
+
+    <span class="n">downloaded_files</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">files</span><span class="p">:</span>
+        <span class="n">download_url</span> <span class="o">=</span> <span class="n">file</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]</span>
+        <span class="n">filename</span> <span class="o">=</span> <span class="n">location</span> <span class="o">/</span> <span class="n">file</span><span class="p">[</span><span class="s1">&#39;filename&#39;</span><span class="p">]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">downloaded_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">download_file</span><span class="p">(</span><span class="n">download_url</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">10485760</span><span class="p">))</span>
+        <span class="k">except</span> <span class="n">HTTPError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">HyP3SDKError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unable to download file: </span><span class="si">{</span><span class="n">download_url</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">downloaded_files</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-module">
+
+
+
+<h2 id="hyp3_sdk.util" class="doc doc-heading">
+        <code>util</code>
+
+
+
+<a href="#hyp3_sdk.util" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents ">
+
+      <p>Extra utilities for working with HyP3</p>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="hyp3_sdk.util.chunk" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">chunk</span><span class="p">(</span><span class="n">itr</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.util.chunk" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Split a sequence into small chunks</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>itr</code></td>
+        <td><code>Sequence[Any]</code></td>
+        <td><p>A sequence object to chunk</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>n</code></td>
+        <td><code>int</code></td>
+        <td><p>Size of the chunks to return</p></td>
+        <td><code>200</code></td>
+      </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/util.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">chunk</span><span class="p">(</span><span class="n">itr</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">200</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Split a sequence into small chunks</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        itr: A sequence object to chunk</span>
+<span class="sd">        n: Size of the chunks to return</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;n must be a positive integer: </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">itr</span><span class="p">),</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">itr</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="n">n</span><span class="p">]</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="hyp3_sdk.util.download_file" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filepath</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">backoff_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.util.download_file" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Download a file</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>url</code></td>
+        <td><code>str</code></td>
+        <td><p>URL of the file to download</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>filepath</code></td>
+        <td><code>Union[pathlib.Path, str]</code></td>
+        <td><p>Location to place file into</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>chunk_size</code></td>
+        <td><code></code></td>
+        <td><p>Size to chunk the download into</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>retries</code></td>
+        <td><code></code></td>
+        <td><p>Number of retries to attempt</p></td>
+        <td><code>2</code></td>
+      </tr>
+      <tr>
+        <td><code>backoff_factor</code></td>
+        <td><code></code></td>
+        <td><p>Factor for calculating time between retries</p></td>
+        <td><code>1</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Path</code></td>
+      <td><p>download_path: The path to the downloaded file</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/util.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">filepath</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="n">chunk_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">backoff_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Download a file</span>
+<span class="sd">    Args:</span>
+<span class="sd">        url: URL of the file to download</span>
+<span class="sd">        filepath: Location to place file into</span>
+<span class="sd">        chunk_size: Size to chunk the download into</span>
+<span class="sd">        retries: Number of retries to attempt</span>
+<span class="sd">        backoff_factor: Factor for calculating time between retries</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        download_path: The path to the downloaded file</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">filepath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+    <span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+    <span class="n">retry_strategy</span> <span class="o">=</span> <span class="n">Retry</span><span class="p">(</span>
+        <span class="n">total</span><span class="o">=</span><span class="n">retries</span><span class="p">,</span>
+        <span class="n">backoff_factor</span><span class="o">=</span><span class="n">backoff_factor</span><span class="p">,</span>
+        <span class="n">status_forcelist</span><span class="o">=</span><span class="p">[</span><span class="mi">429</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">502</span><span class="p">,</span> <span class="mi">503</span><span class="p">,</span> <span class="mi">504</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">session</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;https://&#39;</span><span class="p">,</span> <span class="n">HTTPAdapter</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="n">retry_strategy</span><span class="p">))</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;http://&#39;</span><span class="p">,</span> <span class="n">HTTPAdapter</span><span class="p">(</span><span class="n">max_retries</span><span class="o">=</span><span class="n">retry_strategy</span><span class="p">))</span>
+
+    <span class="k">with</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+        <span class="n">s</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="n">tqdm</span> <span class="o">=</span> <span class="n">get_tqdm_progress_bar</span><span class="p">()</span>
+        <span class="k">with</span> <span class="n">tqdm</span><span class="o">.</span><span class="n">wrapattr</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">),</span> <span class="s1">&#39;write&#39;</span><span class="p">,</span> <span class="n">miniters</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">filepath</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                           <span class="n">total</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content-length&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="n">chunk_size</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">chunk</span><span class="p">:</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">filepath</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="hyp3_sdk.util.extract_zipped_product" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">extract_zipped_product</span><span class="p">(</span><span class="n">zip_file</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.util.extract_zipped_product" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Extract a zipped HyP3 product</p>
+<p>Extract a zipped HyP3 product to the same directory as the zipped HyP3 product, optionally
+deleting <code>zip file</code> afterward.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>zip_file</code></td>
+        <td><code>Union[str, pathlib.Path]</code></td>
+        <td><p>Zipped HyP3 product to extract</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>delete</code></td>
+        <td><code>bool</code></td>
+        <td><p>Delete <code>zip_file</code> after it has been extracted</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Path</code></td>
+      <td><p>Path to the HyP3 product folder containing the product files</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/util.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">extract_zipped_product</span><span class="p">(</span><span class="n">zip_file</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">],</span> <span class="n">delete</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Extract a zipped HyP3 product</span>
+
+<span class="sd">    Extract a zipped HyP3 product to the same directory as the zipped HyP3 product, optionally</span>
+<span class="sd">    deleting `zip file` afterward.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        zip_file: Zipped HyP3 product to extract</span>
+<span class="sd">        delete: Delete `zip_file` after it has been extracted</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Path to the HyP3 product folder containing the product files</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">zip_file</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">zip_file</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">ZipFile</span><span class="p">(</span><span class="n">zip_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">z</span><span class="p">:</span>
+        <span class="n">z</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">zip_file</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">delete</span><span class="p">:</span>
+        <span class="n">zip_file</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">zip_file</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="n">zip_file</span><span class="o">.</span><span class="n">stem</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h3 id="hyp3_sdk.util.get_authenticated_session" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_authenticated_session</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span></code>
+
+
+<a href="#hyp3_sdk.util.get_authenticated_session" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+      <p>Log into HyP3 using credentials for <code>urs.earthdata.nasa.gov</code> from either the provided
+ credentials or a <code>.netrc</code> file.</p>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Session</code></td>
+      <td><p>An authenticated HyP3 Session</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>hyp3_sdk/util.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_authenticated_session</span><span class="p">(</span><span class="n">username</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Log into HyP3 using credentials for `urs.earthdata.nasa.gov` from either the provided</span>
+<span class="sd">     credentials or a `.netrc` file.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        An authenticated HyP3 Session</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">hyp3_sdk</span><span class="o">.</span><span class="n">TESTING</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">s</span>
+    <span class="k">if</span> <span class="n">username</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">password</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">AUTH_URL</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">))</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">AuthenticationError</span><span class="p">(</span><span class="s1">&#39;Was not able to authenticate with credentials provided</span><span class="se">\n</span><span class="s1">&#39;</span>
+                                      <span class="s1">&#39;This could be due to invalid credentials or a connection error.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">AUTH_URL</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">HTTPError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">AuthenticationError</span><span class="p">(</span><span class="s1">&#39;Was not able to authenticate with .netrc file and no credentials provided</span><span class="se">\n</span><span class="s1">&#39;</span>
+                                      <span class="s1">&#39;This could be due to invalid credentials in .netrc or a connection error.&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">s</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Application footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    <div class="md-footer-nav">
+      <nav
+        class="md-footer-nav__inner md-grid"
+        aria-label="Footer"
+      >
+
+        <!-- Link to previous page -->
+        
+          <a href="../sdk/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                SDK
+              </div>
+            </div>
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          <a href="../api/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                API
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+
+      <!-- ASF Footer information-->
+      <div class="md-grid">
+        <div class="md-footer-container md-grid">
+          <div class="md-footer-container-item">
+            <img src="../../assets/images/asf-logo-blue-nav.png"
+                 alt="ASF Logo"
+                 class="md-footer-logo">
+          </div>
+          <div class="md-footer-container-item md-about-us">
+            <h1>About Us</h1>
+            <p>
+              The Alaska Satellite Facility downlinks, processes, archives, and
+              distributes remote-sensing data to scientific users around the world.
+              ASF’s mission is to make remote-sensing data accessible.
+            </p>
+            <p>
+              <a href="https://asf.alaska.edu/about-asf/" target="_blank">
+                Read More
+              </a>
+            </p>
+          </div>
+          <div class="md-footer-container-item md-contact-info">
+            <h1>Contact Info</h1>
+            <p>
+              Alaska Satellite Facility<br>
+              2156 Koyukuk Drive<br>
+              Fairbanks, AK 99775<br>
+              (907) 474-5041<br>
+              uso@asf.alaska.edu<br>
+            </p>
+            <p>
+              <a href="javascript:feedback.showForm();">Send Us A Message</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+      <!-- Copyright and theme information -->
+      <div class="md-footer-copyright">
+        <div class="md-footer-copyright__highlight">
+          
+            &copy; <span id="copyright-year"></span>
+            <script type="text/javascript">
+                current_year = new Date().getFullYear();
+                document.getElementById("copyright-year").innerHTML=current_year;
+            </script>
+            Alaska Satellite Facility
+          
+          <!-- ASF non-discrimination disclaimer-->
+          &nbsp;&nbsp;
+          <a href="https://www.alaska.edu/nondiscrimination"
+             target="_blank"
+             class="md-footer-copyright-link">
+            UA is an AA/EO employer and educational institution and prohibits
+            illegal discrimination against any individual
+          </a>
+        </div>
+      </div>
+
+      <!-- Social links -->
+      <!--
+  Copyright (c) 2016-2020 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Social links in footer -->
+<div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://www.facebook.com/AKSatellite" target="_blank" rel="noopener" title="www.facebook.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/Ak_Satellite" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.youtube.com/channel/UChCfI0oVWw4qDwEidnDskJQ" target="_blank" rel="noopener" title="www.youtube.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+      </a>
+    
+    
+        
+          
+          
+            
+            
+          
+          <a
+            href="https://gitter.im/ASFHyP3/community"
+            target="_blank" rel="noopener"
+            title="gitter.im"
+            class="md-footer-social__link"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M66.4 322.5H16V0h50.4v322.5zM166.9 76.1h-50.4V512h50.4V76.1zm100.6 0h-50.4V512h50.4V76.1zM368 76h-50.4v247H368V76z"/></svg>
+          </a>
+        
+    
+</div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+    
+      <script src="../../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.instant'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+    <script src="../../assets/javascripts/expert-rec-search.js"></script>
+
+  </body>
+</html>

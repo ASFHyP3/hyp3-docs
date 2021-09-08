@@ -196,7 +196,11 @@ When the water masking option is applied, the validity mask is further amended t
 #### Reference point
 In order to perform phase unwrapping, a reference point must be selected. The unwrapping will proceed relative to this reference point; the 2π integer multiples will be applied to the wrapped phase using this pixel as the starting point.
 
-Ideally, the reference point for phase unwrapping would be located in an area with high coherence in a stable region close to an area with surface deformation. Choosing an optimal reference point requires knowledge of the site characteristics and examination of the interferogram, which is not practical in an automated, global workflow. As such, the top left corner of the interferogram is always designated as the reference point for ASF's On Demand InSAR products. Note that the "top left" is in SAR space, which may be different from the top left of the interferogram when looking at the product in map space. Refer to the [Limitations](#phase-unwrapping-reference-point) section of this document for more information on the implications of an arbitrary phase unwrapping reference point. 
+Ideally, the reference point for phase unwrapping would be located in an area with high coherence in a stable region close to an area with surface deformation. Choosing an optimal reference point requires knowledge of the site characteristics and examination of the interferogram, which is not practical in an automated, global workflow. By default, the first point of the combined scene is used as the reference point for ASF's On Demand InSAR products. 
+
+This (0,0) pixel of the interferogram is designated in SAR space, which will differ in map space depending on the direction of the image acquisition. For ascending scenes, the first point is the left lower corner of the interferogram when viewed in map space; for descending scenes, the first point is the upper right corner. 
+
+Refer to the [Limitations](#phase-unwrapping-reference-point) section of this document for more information on the implications of an arbitrary phase unwrapping reference point. 
 
 ### Geocoding and Product Creation
 

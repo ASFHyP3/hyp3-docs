@@ -198,7 +198,7 @@ In order to perform phase unwrapping, a reference point must be selected. The un
 
 Ideally, the reference point for phase unwrapping would be located in an area with high coherence in a stable region close to an area with surface deformation. Choosing an optimal reference point requires knowledge of the site characteristics and examination of the interferogram, which is not practical in an automated, global workflow. By default, the first point of the combined scene is used as the reference point for ASF's On Demand InSAR products. 
 
-This (0,0) pixel of the interferogram is designated in SAR space, which will differ in map space depending on the direction of the image acquisition. For ascending scenes, the first point is the left lower corner of the interferogram when viewed in map space; for descending scenes, the first point is the upper right corner. 
+This (0,0) pixel of the interferogram is designated in SAR space, which will differ in map space depending on the direction of the image acquisition. For ascending scenes, the first point is the lower left corner of the interferogram when viewed in map space; for descending scenes, the first point is the upper right corner. 
 
 Refer to the [Limitations](#phase-unwrapping-reference-point) section of this document for more information on the implications of an arbitrary phase unwrapping reference point. 
 

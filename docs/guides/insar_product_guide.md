@@ -186,7 +186,7 @@ To finish interferogram processing, steps 1 through 4 are run once again, this t
 
 ### Phase Unwrapping
 
-All of the phase differences in a wrapped interferograms lie between -π and π. Phase unwrapping attempts to assign multiples of 2π to add to each pixel in the interferogram to restrict the number of 2π jumps in the phase to the regions where they may actually occur. These regions  are areas of radar layover or areas of deformation exceeding half a wavelength in the line of sight. Thermal noise and interferometric decorrelation can also result in these 2π phase discontinuities called *residues*.   
+All of the phase differences in a wrapped interferograms lie between -π and π. Phase unwrapping attempts to assign multiples of 2π to add to each pixel in the interferogram to restrict the number of 2π jumps in the phase to the regions where they may actually occur. These regions are areas of radar layover or areas of deformation exceeding half a wavelength in the sensor's line of sight. Thermal noise and interferometric decorrelation can also result in these 2π phase discontinuities called *residues*.   
 
 Before the interferogram can be unwrapped, it must be filtered to remove noise. This is accomplished using an adaptive spectral filtering algorithm. This adaptive interferogram filtering aims to reduce phase noise, increase the accuracy of the interferometric phase, and reduce the number of interferogram residues as an aid to phase unwrapping. In this case, residues are points in the interferogram where the sum of the phase differences between pixels around a closed path is not 0.0, which indicates a jump in phase.
 

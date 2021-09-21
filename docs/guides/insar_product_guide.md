@@ -103,6 +103,10 @@ To analyze deformation caused by a single discrete event, such as an earthquake,
 
     InSAR products can now be phase unwrapped using a water mask. The option to "Apply water mask" sets pixels over coastal waters and large inland waterbodies as invalid for phase unwrapping. This reduces phase unwrapping errors and outputs a less noisy unwrapped interferogram. This option is currently available in the [API](https://hyp3-docs.asf.alaska.edu/using/api/) and [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/), and is coming soon in Vertex!
 
+!!! important "Change in Displacement Map Options"
+
+    There is now a single option for including displacement maps. Both line-of-sight and vertical displacement maps will now only be added to the product package if the option to "Include Displacement Maps" is selected when submitting On-Demand InSAR jobs. Use caution when referencing the values included in the displacement maps, as the values are calculated relative to an arbitrary reference point. Refer to the [Phase Unwrapping Reference Point](#phase-unwrapping-reference-point) section for more information. 
+
 There are several options users can set when ordering InSAR On Demand products. Currently, users can choose the number of looks to take (which drives the resolution and pixel spacing of the products), and which optional products to include in the output package. The options are described below: 
 
 1. The **number of looks** drives the resolution and pixel spacing of the output products. Selecting 10x2 looks will yield larger products with 80 m resolution and pixel spacing of 40 m. Selecting 20x4 looks reduces the resolution to 160 m and reduces the size of the products (roughly 1/4 the size of 10x2 look products), with a pixel spacing of 80 m. The default is 20x4 looks.

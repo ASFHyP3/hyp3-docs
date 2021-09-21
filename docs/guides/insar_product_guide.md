@@ -117,7 +117,7 @@ There are several options users can set when ordering InSAR On Demand products. 
 
 4. The **wrapped phase** GeoTIFF can be included in the output package. The browse version of this GeoTIFF (_color_phase.png) is always included, but the GeoTIFF version is not included by default. The specific color ramp displayed in the png is most valuable for many users, but some may wish to work with the actual wrapped phase values.
    
-5. The **local incidence angle** is defined as the angle between the incident radar signal and the local surface normal, expressed in radians. The default is to not include the incidence angle data file.
+5. The **incidence angle maps** indicate the angle of the radar signal. The local incidence angle is defined as the angle between the incident radar signal and the local surface normal, expressed in radians, while the ellipsoid incidence angle indicates the angle in between the incident radar beam and the direction perpendicular to the WGS84 ellipsoid model. These files are excluded from the product package by default.
 
 6. A copy of the **DEM** used for processing can optionally be included in the product package. The height values will differ from the original Copernicus DEM dataset, as a geoid correction has been applied, and it has been projected to UTM Zone coordinates. The source DEM is also downsampled to twice the pixel spacing of the output product to smooth it for use in processing, then resampled again to match the pixel spacing of the InSAR product. The DEM is excluded by default.
 

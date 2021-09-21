@@ -249,7 +249,7 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 - The *unwrapped phase* file shows the results of the phase unwrapping process. This is the main interferogram output.
 - The *wrapped phase* file indicates the interferogram phase after applying the adaptive filter immediately before unwrapping. *(optional)*
 - The *line-of-sight displacement* file indicates the displacement in meters along the look direction of the sensor. *(optional)*
-- The *vertical displacement* is generated from the line of sight displacement values, and makes the assumption that deformation only occurs in the vertical direction. Note that this assumption may not hold true in cases where the deformation also has a horizontal component.
+- The *vertical displacement* is generated from the line of sight displacement values, and makes the assumption that deformation only occurs in the vertical direction. Note that this assumption may not hold true in cases where the deformation also has a horizontal component. *(optional)*
 - The *look vectors* &#966 and &#952 describe the elevation and orientation angles of the sensor's look direction. *(optional)*
 - The *incidence angle* maps indicate the angle between the incident signal and the surface normal of either the terrain (local incidence angle) or the ellipsoid (ellipsoid incidence angle). *(optional)*
 - The *DEM* file gives the local terrain heights in meters, with a geoid correction applied. *(optional)*

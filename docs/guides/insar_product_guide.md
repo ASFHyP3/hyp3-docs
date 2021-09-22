@@ -273,8 +273,8 @@ The tags and extensions used and example file names for each raster are listed i
 | _wrapped_phase.tif | Wrapped geocoded interferogram | {{ base_name }}_wrapped_phase.tif |
 | _los_disp.tif | Line-of-sight displacement | {{ base_name }}_los_disp.tif |
 | _vert_disp.tif | Vertical displacement | {{ base_name }}_vert_disp.tif |
-| _lv_phi.tif | Look vector φ | {{ base_name }}_lv_phi.tif |
-| _lv_theta.tif | Look vector θ | {{ base_name }}_lv_theta.tif |
+| _lv_phi.tif | Look vector φ  (orientation) | {{ base_name }}_lv_phi.tif |
+| _lv_theta.tif | Look vector θ  (elevation) | {{ base_name }}_lv_theta.tif |
 | _dem.tif | Digital elevation model | {{ base_name }}_dem.tif |
 | _inc_map_ell.tif | Ellipsoid incidence angle | {{ base_name }}_inc_map_ell.tif |
 | _inc_map.tif | Local incidence angle | {{ base_name }}_inc_map.tif |

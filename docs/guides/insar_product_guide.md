@@ -250,7 +250,7 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 - The *wrapped phase* file indicates the interferogram phase after applying the adaptive filter immediately before unwrapping. *(optional)*
 - The *line-of-sight displacement* file indicates the displacement in meters along the look direction of the sensor. *(optional)*
 - The *vertical displacement* is generated from the line of sight displacement values, and makes the assumption that deformation only occurs in the vertical direction. Note that this assumption may not hold true in cases where the deformation also has a horizontal component. *(optional)*
-- The *look vectors* &#966 and &#952 describe the elevation and orientation angles of the sensor's look direction. *(optional)*
+- The *look vectors* φ and θ describe the elevation and orientation angles of the sensor's look direction. *(optional)*
 - The *incidence angle* maps indicate the angle between the incident signal and the surface normal of either the terrain (local incidence angle) or the ellipsoid (ellipsoid incidence angle). *(optional)*
 - The *DEM* file gives the local terrain heights in meters, with a geoid correction applied. *(optional)*
 - The *water mask* file indicates coastal waters and large inland waterbodies beyond 3 km from the shoreline. Pixel values of 1 indicate land and 0 indicate water. This file is in 8-bit unsigned integer format.
@@ -273,8 +273,8 @@ The tags and extensions used and example file names for each raster are listed i
 | _wrapped_phase.tif | Wrapped geocoded interferogram | {{ base_name }}_wrapped_phase.tif |
 | _los_disp.tif | Line-of-sight displacement | {{ base_name }}_los_disp.tif |
 | _vert_disp.tif | Vertical displacement | {{ base_name }}_vert_disp.tif |
-| _lv_phi.tif | Look vector &#966 | {{ base_name }}_lv_phi.tif |
-| _lv_theta.tif | Look vector &#952 | {{ base_name }}_lv_theta.tif |
+| _lv_phi.tif | Look vector φ | {{ base_name }}_lv_phi.tif |
+| _lv_theta.tif | Look vector θ | {{ base_name }}_lv_theta.tif |
 | _dem.tif | Digital elevation model | {{ base_name }}_dem.tif |
 | _inc_map_ell.tif | Ellipsoid incidence angle | {{ base_name }}_inc_map_ell.tif |
 | _inc_map.tif | Local incidence angle | {{ base_name }}_inc_map.tif |

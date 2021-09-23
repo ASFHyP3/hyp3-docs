@@ -366,9 +366,9 @@ Even when there are not phase unwrapping errors introduced by phase discontinuit
 
 If you are interested in the amount of displacement in a particular area, you may wish to choose your own reference point. The ideal reference point would be in an area of high coherence beyond where deformation has occurred. The unwrapped phase measurements can be adjusted to be relative to this new reference point instead, and displacement values can be recalculated accordingly. To adjust the values in the unwrapped phase GeoTIFF, simply select a reference point that is optimal for your use case and subtract the unwrapped phase value of that reference point from each pixel in the unwrapped phase raster: 
 
-  ΔΨ<sup>&ast;</sup> = ΔΨ - ΔΨ<sub>ref</sub> 
+  ΔΨ<sup>&ast;</sup> = ΔΨ - Δψ<sub>ref</sub> 
 
-where ΔΨ<sup>&ast;</sup> is the adjusted unwrapped phase, ΔΨ is the original unwrapped phase, and ΔΨ<sub>ref</sub> is the unwrapped phase value at the new reference point.
+where ΔΨ<sup>&ast;</sup> is the adjusted unwrapped phase, ΔΨ is the original unwrapped phase, and Δψ<sub>ref</sub> is the unwrapped phase value at the new reference point.
 
 #### Impacts on Displacement Measurements
 The measurements in the displacement maps are calculated from the unwrapped phase values, so will similarly be impacted by the location of the reference point. You may wish to recalculate the displacement values relative to a new reference point. The approach for correcting the displacement maps will be different for the line-of-sight and vertical measurements. 
@@ -384,9 +384,9 @@ Setting the ΔΨ<sup>&ast;</sup> value to be negative reverses the sign so that 
 
 If you are not interested in adjusted unwrapped phase values, you can also directly correct the LOS Displacement map included optionally in the InSAR product package:
 
-  ΔΣ<sup>&ast;</sup> = ΔΣ - ΔΣ<sub>ref</sub>
+  ΔΣ<sup>&ast;</sup> = ΔΣ - Δσ<sub>ref</sub>
 
-where ΔΣ<sup>&ast;</sup> is the adjusted line-of-sight displacement in meters, ΔΣ is the original line-of-sight displacement in meters, and ΔΣ<sub>ref</sub> is the line-of-sight displacement value at the new reference point.
+where ΔΣ<sup>&ast;</sup> is the adjusted line-of-sight displacement in meters, ΔΣ is the original line-of-sight displacement in meters, and Δσ<sub>ref</sub> is the line-of-sight displacement value at the new reference point.
 
 ##### Correcting Vertical Displacement Maps
 Vertical displacement maps cannot be adjusted directly, and must be recalculated from the adjusted unwrapped phase image. You will also need the θ look vector map (lv_theta GeoTIFF) for this calculation. The look vector maps are not included in the InSAR product package by default; the option to Include Look Vectors must be selected when ordering the product.

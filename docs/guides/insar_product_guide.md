@@ -378,7 +378,7 @@ If you have already corrected the unwrapped phase raster, you can calculate a ne
 
   ΔΣ<sup>&ast;</sup> = - ΔΨ<sup>&ast;</sup> λ / 4π
 
-where ΔΣ<sup>&ast;</sup> is the adjusted line-of-sight displacement in meters, ΔΨ<sup>&ast;</sup> is the [adjusted unwrapped phase](#phase-unwrapping-reference-point), and λ is the wavelength of the sensor in meters (0.0547 for Sentinel-1). 
+where ΔΣ<sup>&ast;</sup> is the adjusted line-of-sight displacement in meters, ΔΨ<sup>&ast;</sup> is the [adjusted unwrapped phase](#phase-unwrapping-reference-point), and λ is the wavelength of the sensor in meters (0.055465763 for Sentinel-1). 
 
 Setting the ΔΨ<sup>&ast;</sup> value to be negative reverses the sign so that the difference is relative to the earth rather than the sensor. A positive phase difference value indicates subsidence, which is unintuitive when thinking about movement on the earth's surface. Applying the negative will return positive displacement values for uplift and negative values for subsidence.
 
@@ -395,7 +395,7 @@ To calculate an adjusted vertical displacement raster, calculate the [adjusted u
 
   Δϒ<sup>&ast;</sup> = - ΔΨ<sup>&ast;</sup> λ cos(½π - *ℓⅴ*<sub>θ</sub>) / 4π
 
-where Δϒ<sup>&ast;</sup> is the adjusted vertical displacement in meters, ΔΨ<sup>&ast;</sup> is the adjusted unwrapped phase, λ is the wavelength of the sensor in meters (0.0547 for Sentinel-1), and *ℓⅴ*<sub>θ</sub> is the theta look vector (from the lv_theta GeoTIFF).
+where Δϒ<sup>&ast;</sup> is the adjusted vertical displacement in meters, ΔΨ<sup>&ast;</sup> is the adjusted unwrapped phase, λ is the wavelength of the sensor in meters (0.055465763 for Sentinel-1), and *ℓⅴ*<sub>θ</sub> is the theta look vector (from the lv_theta GeoTIFF).
 
 As with the LOS Displacement maps, setting the ΔΨ<sup>&ast;</sup> value to be negative reverses the sign so that the difference is relative to the earth rather than the sensor. Applying the negative will return positive displacement values for uplift and negative values for subsidence.
 

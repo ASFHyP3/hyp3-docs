@@ -393,9 +393,9 @@ Vertical displacement maps cannot be adjusted directly, and must be recalculated
 
 To calculate an adjusted vertical displacement raster, calculate the [adjusted unwrapped phase](#phase-unwrapping-reference-point), then apply the following: 
 
-  **Δϒ<sup>&ast;</sup>** = - **ΔΨ<sup>&ast;</sup>** λ cos(½π - ***ℓⅴ*<sub>θ</sub>**) / 4π
+  **Δϒ<sup>&ast;</sup>** = - **ΔΨ<sup>&ast;</sup>** λ cos(½π - ***LV*<sub>θ</sub>**) / 4π
 
-where **Δϒ<sup>&ast;</sup>** is the adjusted vertical displacement in meters, **ΔΨ<sup>&ast;</sup>** is the adjusted unwrapped phase, λ is the wavelength of the sensor in meters (0.055465763 for Sentinel-1), and ***ℓⅴ*<sub>θ</sub>** is the theta look vector (from the lv_theta GeoTIFF).
+where **Δϒ<sup>&ast;</sup>** is the adjusted vertical displacement in meters, **ΔΨ<sup>&ast;</sup>** is the adjusted unwrapped phase, λ is the wavelength of the sensor in meters (0.055465763 for Sentinel-1), and ***LV*<sub>θ</sub>** is the theta look vector (from the lv_theta GeoTIFF).
 
 As with the LOS Displacement maps, setting the **ΔΨ<sup>&ast;</sup>** value to be negative reverses the sign so that the difference is relative to the earth rather than the sensor. Applying the negative will return positive displacement values for uplift and negative values for subsidence.
 

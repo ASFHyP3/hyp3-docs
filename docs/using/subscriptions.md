@@ -6,7 +6,7 @@ Users define their area of interest and search parameters, along with On Demand 
 This service alleviates the need for users to search through acquisitions manually to discover any new images to process for their area of interest. It is particularly useful for ongoing monitoring efforts where users need regular updates over an area of interest, and want to make sure that they process all available images for that area.
 
 ## Guidelines for Using Subscriptions
-1. Subscriptions are only necessary for applications that require imagery to be processed beyond the date of the initial search. If all of the images required for a project were acquired before the date of the search, they can be submitted directly for [On Demand processing](https://search.asf.alaska.edu/#/?topic=onDemand).
+1. Subscriptions are only necessary for applications that require imagery to be processed beyond the date of the initial search. If all of the images required for a project were acquired before the date of the search, they can be submitted directly for [On Demand processing](https://search.asf.alaska.edu/#/?topic=onDemand){target=_blank}.
    
 2. Set an end date that is appropriate for your use case. You must define an end date; you cannot set an open-ended subscription. If your project extends beyond your original end date, you can change it, so there is no need to set it far into the future.
    

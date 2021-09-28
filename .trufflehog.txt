@@ -1,3 +1,4 @@
 .*gitleaks.toml$
 .*/vertex.md$
 docs/ViewerJS/.*
+docs/v2-transition.md

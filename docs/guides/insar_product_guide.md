@@ -103,19 +103,23 @@ To analyze deformation caused by a single discrete event, such as an earthquake,
 
     InSAR products can now be phase unwrapped using a water mask. The option to "Apply water mask" sets pixels over coastal waters and large inland waterbodies as invalid for phase unwrapping. This reduces phase unwrapping errors and outputs a less noisy unwrapped interferogram. This option is currently available in the [API](https://hyp3-docs.asf.alaska.edu/using/api/) and [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/), and is coming soon in Vertex!
 
+!!! important "Change in Displacement Map Options"
+
+    There is now a single option for including displacement maps. Both line-of-sight and vertical displacement maps will only be added to the product package if the option to "Include Displacement Maps" is selected when submitting On-Demand InSAR jobs. Use caution when referencing the values included in the displacement maps, as the values are calculated relative to an arbitrary reference point. Refer to the [Phase Unwrapping Reference Point](#phase-unwrapping-reference-point) section for more information. 
+
 There are several options users can set when ordering InSAR On Demand products. Currently, users can choose the number of looks to take (which drives the resolution and pixel spacing of the products), and which optional products to include in the output package. The options are described below: 
 
 1. The **number of looks** drives the resolution and pixel spacing of the output products. Selecting 10x2 looks will yield larger products with 80 m resolution and pixel spacing of 40 m. Selecting 20x4 looks reduces the resolution to 160 m and reduces the size of the products (roughly 1/4 the size of 10x2 look products), with a pixel spacing of 80 m. The default is 20x4 looks.
 
-2. The **look vectors** are stored in two files. The lv_theta indicates the SAR look vector elevation angle at each pixel, ranging from -π/2 (down) to π/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface. The lv_phi map indicates the SAR look vector orientation angle at each pixel, ranging from 0 (east) to π/2 (north). The look vector orientation angle is defined as the angle between the East direction and the projection of the look vector on the horizontal surface plan. The orientation angle increases towards north, with the North direction corresponding to π/2 (and south to -π/2). Both angles are expressed in radians. The default is to not include these files in the output product bundle.
+2. The **look vectors** are stored in two files. The lv_theta (θ) indicates the SAR look vector elevation angle at each pixel, ranging from -π/2 (down) to π/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface. The lv_phi (φ) map indicates the SAR look vector orientation angle at each pixel, ranging from 0 (east) to π/2 (north). The look vector orientation angle is defined as the angle between the East direction and the projection of the look vector on the horizontal surface plan. The orientation angle increases towards north, with the North direction corresponding to π/2 (and south to -π/2). Both angles are expressed in radians. The default is to not include these files in the output product bundle.
 
-3. The **line-of-sight displacement** is the ground movement away from or towards the platform. It is used to create the vertical displacement map during the final steps of InSAR processing. In order to have this file included in the output zip file, this option must be selected.  The default is to not include the line-of-sight data file.
+3. The **displacement maps** convert the phase difference values from the unwrapped interferogram into measurements of ground displacement in meters. The line-of-sight displacement map indicates the amount of movement away from or towards the sensor. The vertical displacement calculates the vertical component of the line-of-sight displacement, using the assumption that all deformation is in the vertical direction. These files are excluded from the product package by default.
 
-4. The **wrapped phase** GeoTIFF can be included in the output package. The browse version of this GeoTIFF (_color_phase.png) is always included, but the GeoTIFF version is not included by default. The specific color ramp displayed in the png is most valuable for many users, but some may wish to work with the actual wrapped phase values.
+4. The **wrapped phase GeoTIFF** can be included in the output package. The browse version of this GeoTIFF (_color_phase.png) is always included, but the GeoTIFF version is not included by default. The specific color ramp displayed in the png is most valuable for many users, but some may wish to work with the actual wrapped phase values.
    
-5. The **local incidence angle** is defined as the angle between the incident radar signal and the local surface normal, expressed in radians. The default is to not include the incidence angle data file.
+5. The **incidence angle maps** indicate the angle of the radar signal. The local incidence angle is defined as the angle between the incident radar signal and the local surface normal, expressed in radians, while the ellipsoid incidence angle indicates the angle between the incident radar beam and the direction perpendicular to the WGS84 ellipsoid model. These files are excluded from the product package by default.
 
-6. A copy of the **DEM** used for processing can optionally be included in the product package. The height values will differ from the original Copernicus DEM dataset, as a geoid correction has been applied, and it has been projected to UTM Zone coordinates. The source DEM is also downsampled to twice the pixel spacing of the output product to smooth it for use in processing, then resampled again to match the pixel spacing of the InSAR product. The DEM is excluded by default.
+6. A copy of the **DEM** used for processing can optionally be included in the product package. The height values will differ from the original [Copernicus DEM](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960) dataset, as a geoid correction has been applied, and it has been projected to UTM Zone coordinates. The source DEM is also downsampled to twice the pixel spacing of the output product to smooth it for use in processing, then resampled again to match the pixel spacing of the InSAR product. The DEM is excluded by default.
 
 7. There is an option to apply a **water mask**. This mask includes coastal waters and large inland waterbodies. There is a 3-km buffer applied to the shoreline mask so that most of the waterbody is masked without inadvertently masking near-shore features. Masking waterbodies can have a significant impact during the phase unwrapping, as water can sometimes exhibit enough coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid. A GeoTIFF of the water mask is always included with the InSAR product package, but when this option is selected, the conditional water mask will be applied along with coherence and intensity thresholds during the phase unwrapping process. Water masking is turned off by default. 
 
@@ -148,7 +152,7 @@ Immediately after ingesting the SLC, the state vectors are updated to use the be
 
 In order to create differential InSAR products that show motion on the ground, one must subtract the topographic phase from the interferogram. The topographic phase, in this case, is replicated by using an [existing DEM](../dems.md) to calculate the actual topographic phase. This phase is then removed from the interferogram leaving just the motion or deformation signal (plus atmospheric delays and noise).
 
-The DEM that is used for HyP3 InSAR is the [Copernicus GLO-30 Public DEM](https://registry.opendata.aws/copernicus-dem/). This DEM provides global coverage at 30-m pixel spacing, and provides higher-quality products over a wider area than the older DEMs (SRTM and NED) previously used to generate ASF's On Demand products.
+The DEM that is used for HyP3 InSAR processing is the [Copernicus GLO-30 Public DEM](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960) dataset [publicly available on AWS](https://registry.opendata.aws/copernicus-dem/). This DEM provides global coverage at 30-m pixel spacing, and provides higher-quality products over a wider area than the older DEMs (SRTM and NED) previously used to generate ASF's On Demand products. For details on the [Copernicus GLO-30 DEM](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960), refer to the [Product Handbook](https://spacedata.copernicus.eu/documents/20126/0/GEO1988-CopernicusDEM-SPE-002_ProductHandbook_I1.00.pdf).
 
 The DEM tiles necessary to cover the input granules for the InSAR product are downloaded. A geoid correction applied to the DEM, and it is resampled to match the [output resolution](#processing-options) of the InSAR product (160 m for 20x4 products, 80 m for 10x2 products) and projected to the appropriate UTM Zone for the granule location.
 
@@ -182,7 +186,7 @@ To finish interferogram processing, steps 1 through 4 are run once again, this t
 
 ### Phase Unwrapping
 
-All of the phase differences in a wrapped interferograms lie between -π and π. Phase unwrapping attempts to assign multiples of 2π to add to each pixel in the interferogram to restrict the number of 2π jumps in the phase to the regions where they may actually occur. These regions  are areas of radar layover or areas of deformation exceeding half a wavelength in the line of sight. Thermal noise and interferometric decorrelation can also result in these 2π phase discontinuities called *residues*.   
+All of the phase differences in a wrapped interferograms lie between -π and π. Phase unwrapping attempts to assign multiples of 2π to add to each pixel in the interferogram to restrict the number of 2π jumps in the phase to the regions where they may actually occur. These regions are areas of radar layover or areas of deformation exceeding half a wavelength in the sensor's line of sight. Thermal noise and interferometric decorrelation can also result in these 2π phase discontinuities called *residues*.   
 
 Before the interferogram can be unwrapped, it must be filtered to remove noise. This is accomplished using an adaptive spectral filtering algorithm. This adaptive interferogram filtering aims to reduce phase noise, increase the accuracy of the interferometric phase, and reduce the number of interferogram residues as an aid to phase unwrapping. In this case, residues are points in the interferogram where the sum of the phase differences between pixels around a closed path is not 0.0, which indicates a jump in phase.
 
@@ -212,7 +216,7 @@ Geocoding is the process of reprojecting pixels from SAR slant range space (wher
 
 #### Product Creation
 
-Files are next exported from GAMMA internal format into the widely-used GeoTIFF format, complete with geolocation information. GeoTIFFs are created for amplitude, coherence, unwrapped phase, and vertical displacement by default, and a water mask GeoTIFF is also included in the product package. Optionally, GeoTIFFs of wrapped phase, look vectors, line-of-sight displacement and incidence angle maps can also be requested, as can a copy of the DEM used for processing.
+Files are next exported from GAMMA internal format into the widely-used GeoTIFF format, complete with geolocation information. GeoTIFFs are created for amplitude, coherence, and unwrapped phase by default, and a water mask GeoTIFF is also included in the product package. Optionally, GeoTIFFs of wrapped phase, look vectors, displacement maps (line-of-sight and vertical), and incidence angle maps can be included, as can a copy of the DEM used for processing.
  
 ## Product Packaging
 
@@ -245,8 +249,8 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 - The *unwrapped phase* file shows the results of the phase unwrapping process. This is the main interferogram output.
 - The *wrapped phase* file indicates the interferogram phase after applying the adaptive filter immediately before unwrapping. *(optional)*
 - The *line-of-sight displacement* file indicates the displacement in meters along the look direction of the sensor. *(optional)*
-- The *vertical displacement* is generated from the line of sight displacement values, and makes the assumption that deformation only occurs in the vertical direction. Note that this assumption may not hold true in cases where the deformation also has a horizontal component.
-- The *look vectors* &#966 and &#952 describe the elevation and orientation angles of the sensor's look direction. *(optional)*
+- The *vertical displacement* is generated from the line of sight displacement values, and makes the assumption that deformation only occurs in the vertical direction. Note that this assumption may not hold true in cases where the deformation also has a horizontal component. *(optional)*
+- The *look vectors* theta (θ) and phi (φ) describe the elevation and orientation angles of the sensor's look direction. *(optional)*
 - The *incidence angle* maps indicate the angle between the incident signal and the surface normal of either the terrain (local incidence angle) or the ellipsoid (ellipsoid incidence angle). *(optional)*
 - The *DEM* file gives the local terrain heights in meters, with a geoid correction applied. *(optional)*
 - The *water mask* file indicates coastal waters and large inland waterbodies beyond 3 km from the shoreline. Pixel values of 1 indicate land and 0 indicate water. This file is in 8-bit unsigned integer format.
@@ -269,8 +273,8 @@ The tags and extensions used and example file names for each raster are listed i
 | _wrapped_phase.tif | Wrapped geocoded interferogram | {{ base_name }}_wrapped_phase.tif |
 | _los_disp.tif | Line-of-sight displacement | {{ base_name }}_los_disp.tif |
 | _vert_disp.tif | Vertical displacement | {{ base_name }}_vert_disp.tif |
-| _lv_phi.tif | Look vector &#966 | {{ base_name }}_lv_phi.tif |
-| _lv_theta.tif | Look vector &#952 | {{ base_name }}_lv_theta.tif |
+| _lv_phi.tif | Look vector φ (orientation) | {{ base_name }}_lv_phi.tif |
+| _lv_theta.tif | Look vector θ (elevation) | {{ base_name }}_lv_theta.tif |
 | _dem.tif | Digital elevation model | {{ base_name }}_dem.tif |
 | _inc_map_ell.tif | Ellipsoid incidence angle | {{ base_name }}_inc_map_ell.tif |
 | _inc_map.tif | Local incidence angle | {{ base_name }}_inc_map.tif |
@@ -348,17 +352,54 @@ The phase measurements in the two images used in InSAR must be coherent in order
 
 Consider seasonality when selecting image pairs. Decorrelation can be particularly high when comparing phase from different seasons. Changes in the condition of vegetation (especially deciduous canopies), snow, moisture, or freeze/thaw state can impact phase measurements. In cases where a temporal baseline is required that spans seasons, it may be better to use an annual interferogram if possible so that the images are more comparable in terms of seasonality.
 
-### Line-of-sight Measurements
-When looking at a single interferogram, the only reliable deformation measurements are in the line-of-sight orientation of the sensor. InSAR is not sensitive to motion in the azimuth direction of the satellite, so motion that occurs in the same direction as the satellite's direction of travel will not be detected. 
+### Line-of-Sight Measurements
+When looking at a single interferogram, the deformation measurements in the line-of-sight orientation of the sensor indicate relative motion towards or away from the sensor. InSAR is not sensitive to motion in the azimuth direction of the satellite, so motion that occurs in the same direction as the satellite's direction of travel will not be detected. 
 
-In addition, a single interferogram cannot be used to determine the relative contributions of vertical and horizontal movement to the line-of-sight displacement measurement. The vertical displacement map is generated based on the assumption that the movement is entirely in the vertical direction, which may not be realistic for some processes. To determine how much of the signal is driven by vertical vs. horizontal movement, you must either use a time series of interferograms, or use reference measurements with known vertical and horizontal components (such as GNSS measurements from the region of deformation) to deconstruct the line-of-sight displacement.
+A single interferogram cannot be used to determine the relative contributions of vertical and horizontal movement to the line-of-sight displacement measurement. The vertical displacement map is generated based on the assumption that the movement is entirely in the vertical direction, which may not be realistic for some processes. To determine how much of the signal is driven by vertical vs. horizontal movement, you must either use a time series of interferograms, or use reference measurements with known vertical and horizontal components (such as GNSS measurements from the region of deformation) to deconstruct the line-of-sight displacement.
+
+All displacement values are calculated relative to a [reference point](#phase-unwrapping-reference-point), which may or may not be an appropriate benchmark for measuring particular areas of displacement within the interferogram.
 
 ### Phase Unwrapping Reference Point
-The reference point for phase unwrapping is set to be the upper left corner of the image by default. This may not always be an ideal location. If it's in an area of low coherence, or if it's in a patch of coherent pixels that is separated from the area undergoing deformation by a gap of incoherent pixels, the unwrapping may be of lower quality than if the reference point was in a more suitable location. 
+The reference point for phase unwrapping is set to be the first point of the combined scene by default (top right corner for descending scenes, bottom left corner for ascending scenes). As described in the [phase unwrapping section](#reference-point), this may not always be an ideal location to use as a reference point. If it is located in an area of low coherence, or in a patch of coherent pixels that is separated from the area undergoing deformation by a gap of incoherent pixels, the unwrapping may be of lower quality than if the reference point was in a more suitable location. 
 
-Even when there are not phase unwrapping errors introduced by phase discontinuities, it is important to be aware that unwrapped phase differences and displacement values are all relative to the reference point. If you are interested in the amount of displacement in a particular area, you may wish to apply a correction to the image so that the range of values are more appropriate for your study area or application.
+Even when there are not phase unwrapping errors introduced by phase discontinuities, it is important to be aware that unwrapped phase differences and displacement values are all calculated relative to the reference point. If the location of the default reference point is in the middle of an area that underwent deformation, displacement values may be different than expected.
 
-In cases where there are not significant phase discontinuities, you can select a reference point that is optimal for your use case, calculate the difference in phase or line-of-sight displacement, and apply a correction to the entire raster to adjust the values to be relative to that new reference point. To adjust phase values so that a user-defined reference point is set to have a phase difference of 0, find the value of the pixel at your desired reference point, and subtract that value from each pixel in the raster. 
+If you are interested in the amount of displacement in a particular area, you may wish to choose your own reference point. The ideal reference point would be in an area of high coherence beyond where deformation has occurred. The unwrapped phase measurements can be adjusted to be relative to this new reference point instead, and displacement values can be recalculated accordingly. To adjust the values in the unwrapped phase GeoTIFF, simply select a reference point that is optimal for your use case and subtract the unwrapped phase value of that reference point from each pixel in the unwrapped phase raster: 
+
+  **ΔΨ<sup>&ast;</sup>** = **ΔΨ** - Δψ<sub>ref</sub> 
+
+where **ΔΨ<sup>&ast;</sup>** is the adjusted unwrapped phase, **ΔΨ** is the original unwrapped phase, and Δψ<sub>ref</sub> is the unwrapped phase value at the new reference point.
+
+#### Impacts on Displacement Measurements
+The measurements in the displacement maps are calculated from the unwrapped phase values, so will similarly be impacted by the location of the reference point. You may wish to recalculate the displacement values relative to a new reference point. The approach for correcting the displacement maps will be different for the line-of-sight and vertical measurements. 
+
+##### Correcting Line-of-Sight Displacement Maps
+If you have already corrected the unwrapped phase raster, you can calculate a new line-of-sight (LOS) displacement map by applying the following calculation on a pixel-by-pixel basis using the unwrapped phase GeoTIFF:
+
+  **ΔΩ<sup>&ast;</sup>** = - **ΔΨ<sup>&ast;</sup>** λ / 4π
+
+where **ΔΩ<sup>&ast;</sup>** is the adjusted line-of-sight displacement in meters, **ΔΨ<sup>&ast;</sup>** is the [adjusted unwrapped phase](#phase-unwrapping-reference-point), and λ is the wavelength of the sensor in meters (0.055465763 for Sentinel-1). 
+
+Setting the **ΔΨ<sup>&ast;</sup>** value to be negative reverses the sign so that the difference is relative to the earth rather than the sensor. A positive phase difference value indicates subsidence, which is unintuitive when thinking about movement on the earth's surface. Applying the negative will return positive displacement values for uplift and negative values for subsidence.
+
+If you are not interested in adjusted unwrapped phase values, you can also directly correct the LOS Displacement map included optionally in the InSAR product package:
+
+  **ΔΩ<sup>&ast;</sup>** = **ΔΩ** - Δω<sub>ref</sub>
+
+where **ΔΩ<sup>&ast;</sup>** is the adjusted line-of-sight displacement in meters, **ΔΩ** is the original line-of-sight displacement in meters, and Δω<sub>ref</sub> is the line-of-sight displacement value at the new reference point.
+
+##### Correcting Vertical Displacement Maps
+Vertical displacement maps cannot be adjusted directly, and must be recalculated from the adjusted unwrapped phase image. You will also need the θ look vector map (lv_theta GeoTIFF) for this calculation. The look vector maps are not included in the InSAR product package by default; the option to Include Look Vectors must be selected when ordering the product.
+
+To calculate an adjusted vertical displacement raster, calculate the [adjusted unwrapped phase](#phase-unwrapping-reference-point), then apply the following: 
+
+  **Δϒ<sup>&ast;</sup>** = - **ΔΨ<sup>&ast;</sup>** λ cos(½π - ***LV*<sub>θ</sub>**) / 4π
+
+where **Δϒ<sup>&ast;</sup>** is the adjusted vertical displacement in meters, **ΔΨ<sup>&ast;</sup>** is the adjusted unwrapped phase, λ is the wavelength of the sensor in meters (0.055465763 for Sentinel-1), and ***LV*<sub>θ</sub>** is the theta look vector (from the lv_theta GeoTIFF).
+
+As with the LOS Displacement maps, setting the **ΔΨ<sup>&ast;</sup>** value to be negative reverses the sign so that the difference is relative to the earth rather than the sensor. Applying the negative will return positive displacement values for uplift and negative values for subsidence.
+
+#### Displacement Values from a Single Interferogram
 
 In general, calculating displacement values from a single interferogram is not recommended. While the displacement rasters provided with ASF's On Demand InSAR products can be helpful to visualize changes, we do not recommend that you rely on a single interferogram when coming to conclusions about surface displacement, even if you apply a correction based on a manually selected reference point. It will be more robust to use a time series approach to more accurately determine the pattern of movement. When using SAR time-series software such as [MintPy](https://mintpy.readthedocs.io/en/latest/), you have the option to select a specific reference point, and the values of the input rasters will be adjusted accordingly. 
 

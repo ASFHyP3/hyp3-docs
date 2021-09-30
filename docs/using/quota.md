@@ -1,7 +1,7 @@
 # User Quota
 
 !!! attention
-    Due to the incredible popularity of On Demand processing, and inorder to
+    Due to the incredible popularity of On Demand processing, and in order to
     continue providing this service for free, **beginning October 2021, user quotas
     will be 250 jobs per month.**
 

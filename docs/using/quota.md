@@ -3,7 +3,7 @@
 !!! attention
     Due to the increasing popularity of On Demand processing, and in order to
     continue providing this service at no cost to users, **beginning October 2021,
-    processing quotas will be 250 jobs per user per month.**
+    processing quotas will be set to 250 jobs per user per month.**
 
     If this change impacts your current workflows, or doesn't meet your needs,
     please let us know!

@@ -8,6 +8,9 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.3.16](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.15...v0.3.16)
 
+### Added
+* A [User Quota](docs/using/quota.md) page describing user quotas
+
 ### Changed
 * Updated the [InSAR Product Guide](docs/guides/insar_product_guide.md) to reflect changes in the option for including displacement maps in InSAR product packages
 * Updated the URL for the [Copernicus DEM](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960)

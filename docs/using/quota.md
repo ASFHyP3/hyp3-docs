@@ -14,7 +14,7 @@ In order to provide On Demand products across the community, and to support our 
 we've implemented a monthly processing quota. Anyone with an [Earthdata Login](https://urs.earthdata.nasa.gov/home)
 can freely request 250 jobs each calendar month.
 
-We may periodically adjust this quota based on usage with the goal of
+We may periodically adjust this quota based on usage, with the goal of
 providing valuable products to the widest breadth of users possible.
 
 If the quota doesn't meet your needs, please contact us and let us know how you

@@ -38,6 +38,7 @@ nav:
       - Example Notebook: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
       - API Reference: using/sdk_api.md
     - API: using/api.md
+    - Processing Quota: using/quota.md
     - Subscriptions: using/subscriptions.md
   - Products:
     - products.md

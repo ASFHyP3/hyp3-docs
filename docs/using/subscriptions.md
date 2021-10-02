@@ -1,7 +1,15 @@
 # Subscriptions in HyP3
 For monitoring applications, we provide a subscription service for On Demand processing, which automatically processes new Sentinel-1 acquisitions as they appear in ASF's data holdings. 
 
-Users define their area of interest and search parameters, along with On Demand processing types and options, and set a date range that extends into the future. As ASF receives new acquisitions that meet the search criteria for the subscription, they will automatically be submitted to HyP3 for On Demand processing. 
+To create a subscription, users define the following parameters:
+- Geographic Area of Interest 
+- Search Filters (file type, direction, path, platform, etc.)
+- On Demand processing type (InSAR, RTC)
+- On Demand processing options
+- Project Name
+- Date range extending into the future
+  
+As ASF receives new acquisitions that meet the search criteria for the subscription, they will automatically be submitted to HyP3 for On Demand processing using the defined parameters. 
 
 This service alleviates the need for users to search through acquisitions manually to discover any new images to process for their area of interest. It is particularly useful for ongoing monitoring efforts where users need regular updates over an area of interest, and want to make sure that they process all available images for that area.
 

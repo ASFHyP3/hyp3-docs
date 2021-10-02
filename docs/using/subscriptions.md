@@ -25,6 +25,9 @@ This service alleviates the need for users to search through acquisitions manual
 
 5. Deactivate your subscription when you no longer need it. If you want to restart your monitoring effort later, you can reactivate your subscription and it will process all of the images that were acquired over the time your subscription was inactive. If you do not need the data acquired during that time, you can start a new subscription.
 
+## Accessing Subscriptions
+Subscriptions are currently only available in the API. Stay tuned for a Subscriptions User Interface coming to Vertex!
+
 
 
 

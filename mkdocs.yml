@@ -39,6 +39,7 @@ nav:
       - API Reference: using/sdk_api.md
     - API: using/api.md
     - Processing Quota: using/quota.md
+    - Subscriptions: using/subscriptions.md
   - Products:
     - products.md
     - RTC:

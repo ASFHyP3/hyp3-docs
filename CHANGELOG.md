@@ -7,6 +7,11 @@ and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.3.18](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.17...v0.3.18)
+
+### Added
+* A [Subscriptions](docs/using/subscriptions.md) page describing subscription functionality
+
 ## [0.3.17](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.16...v0.3.17)
 
 ### Changed

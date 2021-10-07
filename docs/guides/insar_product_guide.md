@@ -328,7 +328,7 @@ The text file with extension .txt includes processing parameters used to generat
 | Azimuth bandpass filter | Azimuth bandpass filter flag | no |
 | DEM source | DEM used in processing | GLO-30 |
 | DEM resolution | Pixel spacing for DEM used to process this scene | 160 meters |
-| Unwrapping type | Type of phase unwrapper used | mcf |
+| Unwrapping type | Phase unwrapping algorithm used | mcf |
 | Unwrapping threshold | Minimum coherence required to unwrap a given pixel | none |
 | Speckle filtering | Speckle filtering flag | off |
 

@@ -198,11 +198,13 @@ Coherence is estimated from the normalized interferogram and the co-registered i
 When the water masking option is applied, the validity mask is further amended to apply 0 values to any pixels classified as water in the water mask. In some cases, pixels over water may still meet the coherence and amplitude threshold criteria for inclusion, even though they are not valid for use during phase unwrapping. When processing scenes with extensive coverage by coastal waters or large inland waterbodies, there can be erroneous phase jumps introduced if unwrapping proceeds over water as if it were land. In such cases, choosing the option to apply the water mask can significantly improve the results. 
 
 #### Reference point
-In order to perform phase unwrapping, a reference point must be selected. The unwrapping will proceed relative to this reference point; the 2π integer multiples will be applied to the wrapped phase using this pixel as the starting point.
+In order to perform phase unwrapping, a reference point must be selected. The unwrapping will proceed relative to this reference point; the 2π integer multiples will be applied to the wrapped phase using this pixel as the starting point. The unwrapped phase value is set to 0 at the reference point.
 
-Ideally, the reference point for phase unwrapping would be located in an area with high coherence in a stable region close to an area with surface deformation. Choosing an optimal reference point requires knowledge of the site characteristics and examination of the interferogram, which is not practical in an automated, global workflow. By default, ASF's On Demand InSAR products use the pixel with the highest coherence value as the reference point. 
+Ideally, the reference point for phase unwrapping would be located in an area with high coherence in a stable region close to an area with surface deformation. Choosing an optimal reference point requires knowledge of the site characteristics and examination of the interferogram, which is not practical in an automated, global workflow. 
 
-Refer to the [Limitations](#phase-unwrapping-reference-point) section of this document for more information on the implications of an arbitrary phase unwrapping reference point. 
+By default, ASF's On Demand InSAR products use the location of the pixel with the highest coherence value as the reference point. This may be an appropriate location in many cases, as it meets the criteria of having high coherence, and stable areas have higher coherence than areas undergoing significant deformation. If a user wants to set a different location as the phase unwrapping reference point, however, a correction can be applied to the unwrapped interferogram.
+
+For more information on the impact of the phase unwrapping reference point location on unwrapped phase and displacement measurements, refer to the [Limitations](#phase-unwrapping-reference-point) section of this document, which also includes instructions for applying a correction based on a custom reference point. 
 
 ### Geocoding and Product Creation
 

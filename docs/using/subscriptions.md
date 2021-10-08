@@ -12,7 +12,7 @@ To create a subscription, users define the following parameters:
   
 As ASF receives new acquisitions that meet the search criteria for the subscription, they will automatically be submitted to HyP3 for On Demand processing using the defined parameters. 
 
-This service is particularly useful for ongoing monitoring efforts where users need regular updates over an area of interest, and want to make sure that they process all available images for that area. Without a subscription, a user would need to search regularly to find new images acquired through time and submit them for processing.
+This service is particularly useful for ongoing monitoring efforts where users need regular updates over an area of interest, and want to make sure that they process all available images for that area. Without a subscription, a user would need to search regularly to find new images acquired through time and manually submit them for processing.
 
 ## Guidelines for Using Subscriptions
 1. Subscriptions are only necessary for applications that require imagery to be processed beyond the date of the initial search. If all of the images required for a project were acquired before the date of the search, they can be submitted directly for [On Demand processing](https://search.asf.alaska.edu/#/?topic=onDemand){target=_blank}.

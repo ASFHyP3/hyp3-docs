@@ -309,28 +309,37 @@ The text file with extension .txt includes processing parameters used to generat
 
 | Name | Description | Possible Value |
 |------|-------------|----------------|
-| Reference Granule | ESA granule name for reference scene. Always the data with the oldest timestamp. | S1A<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20171111T150004<wbr>_20171111T150032<wbr>_019219<wbr>_0208AF<wbr>_EE89 |
-| Secondary Granule | ESA granule name for secondary scene. Always the data with the newest timestamp. | S1B<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20171117T145926<wbr>_20171117T145953<wbr>_008323<wbr>_00EBAB<wbr>_AFB8 |
-| Baseline | Perpendicular baseline | 61.8974 meters | 
-| UTCTime | Time in the UTC time zone | 54004.989128 seconds |
-| Heading | Spacecraft heading measured clockwise from north | -13.0235756 degrees |
-| Spacecraft height | Height of the spacecraft above nadir point | 699974.5329 meters | 
-| Earth radius at nadir | Ellipsoidal earth radius at the point directly below the satellite | 6371383.6099 meters |
-| Slant range near | Distance from satellite to nearest point imaged | 799002.2677 meters | 
-| Slant range center | Distance from satellite to the center point imaged | 878813.0619 meters | 
-| Slant range far | Distance from satellite to furthest point imaged | 958623.8560 meters |
+| Reference Granule | ESA granule name for reference scene (of the two scenes in the pair, the dataset with the oldest timestamp) | S1A<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20200116T032559<wbr>_20200116T032627<wbr>_030820<wbr>_038928<wbr>_F5DC |
+| Secondary Granule | ESA granule name for secondary scene (of the two scenes in the pair, the dataset with the newest timestamp) | S1B<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20200128T032559<wbr>_20200128T032627<wbr>_030995<wbr>_038F51<wbr>_7D4F |
+| Baseline | Perpendicular baseline in meters | 58.3898 | 
+| UTCTime | Time in the UTC time zone in seconds | 12360.691361 |
+| Heading | Spacecraft heading measured in degrees clockwise from north | 193.2939317 |
+| Spacecraft height | Height in meters of the spacecraft above nadir point | 700618.6318999995 | 
+| Earth radius at nadir | Ellipsoidal earth radius in meters at the point directly below the satellite | 6370250.0667 |
+| Slant range near | Distance in meters from satellite to nearest point imaged | 799517.4338 | 
+| Slant range center | Distance in meters from satellite to the center point imaged | 879794.1404 | 
+| Slant range far | Distance in meters from satellite to farthest point imaged | 960070.8469 |
 | Range looks | Number of looks taken in the range direction | 20 | 
 | Azimuth looks | Number of looks taken in the azimuth direction | 4 |
 | InSAR phase filter | Name of the phase filter used | adf | 
 | Phase filter parameter | Dampening factor | 0.6 |
-| Resolution of output | Pixel spacing for output products | 80 meters | 
-| Range bandpass filter | Range bandpass filter flag | no |
-| Azimuth bandpass filter | Azimuth bandpass filter flag | no |
+| Resolution of output (m)| Pixel spacing in meters for output products | 80 | 
+| Range bandpass filter | Range bandpass filter flag applied | no |
+| Azimuth bandpass filter | Azimuth bandpass filter flag applied | no |
 | DEM source | DEM used in processing | GLO-30 |
-| DEM resolution | Pixel spacing for DEM used to process this scene | 160 meters |
+| DEM resolution | Pixel spacing in meters for DEM used to process this scene | 160 |
 | Unwrapping type | Phase unwrapping algorithm used | mcf |
+| Phase at Reference Point | Original unwrapped phase value at the reference point (set to 0 in output unwrapped phase raster) | -4.21967
+| Azimuth line of the reference point in SAR | Row number (in SAR space) of the reference point | 2737.0
+| Range pixel of the reference point in SAR | Column number (in SAR space) of the reference point | 739.0
+| Row of the reference point in MAP | Row number (in map space) of the reference point | 2307.333
+| Column of the reference point in MAP | Column number (in map space) of the reference point | 2517.345
+| Y of the reference point in MAP | Latitude of the reference point in projected coordinates (UTM Zone - meters) | 4112453.3223
+| X of the reference point in MAP | Longitude of the reference point in projected coordinates (UTM Zone - meters) | 589307.6248
+| Latitude of the reference point | Latitude of the reference point in WGS84 Geographic Coordinate System (degrees) | 37.1542125
+| Longitude of the reference point | Longitude of the reference point in WGS84 Geographic Coordinate System (degrees) | 40.00574707
 | Unwrapping threshold | Minimum coherence required to unwrap a given pixel | none |
-| Speckle filtering | Speckle filtering flag | off |
+| Speckle filtering | Speckle filtering function status | off |
 
 *Table 4: List of InSAR parameters included in the parameter text file*
 

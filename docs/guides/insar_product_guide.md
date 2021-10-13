@@ -257,7 +257,10 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 
 If the **water mask** option is selected, the water mask is applied prior to phase unwrapping to exclude water pixels from the process. The water mask is not precise; the coastal shorelines from the [GSHHG](http://www.soest.hawaii.edu/wessel/gshhg/land) are buffered out to 3 km from shore to reduce the possibility of near-shore features being excluded while reducing the number of water pixels that may impact the quality of the phase unwrapping process. Inland waters are not masked.
 
-**Browse images** are included for the wrapped (color_phase) and unwrapped (unw_phase) phase files, which are in PNG format and are each 2048 pixels wide. 
+**Browse images** are included for the wrapped (color_phase) and unwrapped (unw_phase) phase files, which are in PNG format and are each 2048 pixels wide. The browse images are displayed using a cyclic color ramp to generate fringes. 
+
+- Each fringe in a wrapped (color_phase) browse image represents a 2-pi phase difference, and the line-of-sight displacement for each fringe is equivalent to half the wavelength of the sensor. The wavelength of Sentinel-1 is about 5.6 cm, so each 2-pi fringe represents a line-of-sight displacement of about 2.8 cm.
+- Each fringe in an unwrapped (unw_phase) browse image represents a phase difference of 6 pi. Because each 2-pi difference is equivalent to half the wavelength of the sensor, each 6-pi fringe represents about 8.3 cm of line-of-sight displacement for these Sentinel-1 products.
 
 **KMZ files** are included for the wrapped (color_phase) and unwrapped (unw_phase) phase images, which allow users to view the outputs in Google Earth or other platforms that support kmz files. 
 

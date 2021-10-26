@@ -198,13 +198,13 @@ Coherence is estimated from the normalized interferogram and the co-registered i
 When the water masking option is applied, the validity mask is further amended to apply 0 values to any pixels classified as water in the water mask. In some cases, pixels over water may still meet the coherence and amplitude threshold criteria for inclusion, even though they are not valid for use during phase unwrapping. When processing scenes with extensive coverage by coastal waters or large inland waterbodies, there can be erroneous phase jumps introduced if unwrapping proceeds over water as if it were land. In such cases, choosing the option to apply the water mask can significantly improve the results. 
 
 #### Reference point
-In order to perform phase unwrapping, a reference point must be selected. The unwrapping will proceed relative to this reference point; the 2π integer multiples will be applied to the wrapped phase using this pixel as the starting point.
+In order to perform phase unwrapping, a reference point must be selected. The unwrapping will proceed relative to this reference point; the 2π integer multiples will be applied to the wrapped phase using this pixel as the starting point. The unwrapped phase value is set to 0 at the reference point.
 
-Ideally, the reference point for phase unwrapping would be located in an area with high coherence in a stable region close to an area with surface deformation. Choosing an optimal reference point requires knowledge of the site characteristics and examination of the interferogram, which is not practical in an automated, global workflow. By default, the first point of the combined scene is used as the reference point for ASF's On Demand InSAR products. 
+Ideally, the reference point for phase unwrapping would be located in an area with high coherence in a stable region close to an area with surface deformation. Choosing an optimal reference point requires knowledge of the site characteristics and examination of the interferogram, which is not practical in an automated, global workflow. 
 
-This (0,0) pixel of the interferogram is designated in SAR space, which will differ in map space depending on the direction of the image acquisition. For ascending scenes, the first point is the lower left corner of the interferogram when viewed in map space; for descending scenes, the first point is the upper right corner. 
+By default, ASF's On Demand InSAR products use the location of the pixel with the highest coherence value as the reference point. This may be an appropriate location in many cases, as it meets the criteria of having high coherence, and stable areas have higher coherence than areas undergoing significant deformation. If a user wants to set a different location as the phase unwrapping reference point, however, a correction can be applied to the unwrapped interferogram.
 
-Refer to the [Limitations](#phase-unwrapping-reference-point) section of this document for more information on the implications of an arbitrary phase unwrapping reference point. 
+For more information on the impact of the phase unwrapping reference point location on unwrapped phase and displacement measurements, refer to the [Limitations](#phase-unwrapping-reference-point) section of this document, which also includes instructions for applying a correction based on a custom reference point. 
 
 ### Geocoding and Product Creation
 
@@ -311,28 +311,37 @@ The text file with extension .txt includes processing parameters used to generat
 
 | Name | Description | Possible Value |
 |------|-------------|----------------|
-| Reference Granule | ESA granule name for reference scene. Always the data with the oldest timestamp. | S1A<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20171111T150004<wbr>_20171111T150032<wbr>_019219<wbr>_0208AF<wbr>_EE89 |
-| Secondary Granule | ESA granule name for secondary scene. Always the data with the newest timestamp. | S1B<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20171117T145926<wbr>_20171117T145953<wbr>_008323<wbr>_00EBAB<wbr>_AFB8 |
-| Baseline | Perpendicular baseline | 61.8974 meters | 
-| UTCTime | Time in the UTC time zone | 54004.989128 seconds |
-| Heading | Spacecraft heading measured clockwise from north | -13.0235756 degrees |
-| Spacecraft height | Height of the spacecraft above nadir point | 699974.5329 meters | 
-| Earth radius at nadir | Ellipsoidal earth radius at the point directly below the satellite | 6371383.6099 meters |
-| Slant range near | Distance from satellite to nearest point imaged | 799002.2677 meters | 
-| Slant range center | Distance from satellite to the center point imaged | 878813.0619 meters | 
-| Slant range far | Distance from satellite to furthest point imaged | 958623.8560 meters |
+| Reference Granule | ESA granule name for reference scene (of the two scenes in the pair, the dataset with the oldest timestamp) | S1A<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20200116T032559<wbr>_20200116T032627<wbr>_030820<wbr>_038928<wbr>_F5DC |
+| Secondary Granule | ESA granule name for secondary scene (of the two scenes in the pair, the dataset with the newest timestamp) | S1B<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20200128T032559<wbr>_20200128T032627<wbr>_030995<wbr>_038F51<wbr>_7D4F |
+| Baseline | Perpendicular baseline in meters | 58.3898 | 
+| UTCTime | Time in the UTC time zone in seconds | 12360.691361 |
+| Heading | Spacecraft heading measured in degrees clockwise from north | 193.2939317 |
+| Spacecraft height | Height in meters of the spacecraft above nadir point | 700618.6318999995 | 
+| Earth radius at nadir | Ellipsoidal earth radius in meters at the point directly below the satellite | 6370250.0667 |
+| Slant range near | Distance in meters from satellite to nearest point imaged | 799517.4338 | 
+| Slant range center | Distance in meters from satellite to the center point imaged | 879794.1404 | 
+| Slant range far | Distance in meters from satellite to farthest point imaged | 960070.8469 |
 | Range looks | Number of looks taken in the range direction | 20 | 
 | Azimuth looks | Number of looks taken in the azimuth direction | 4 |
 | InSAR phase filter | Name of the phase filter used | adf | 
 | Phase filter parameter | Dampening factor | 0.6 |
-| Resolution of output | Pixel spacing for output products | 80 meters | 
-| Range bandpass filter | Range bandpass filter flag | no |
-| Azimuth bandpass filter | Azimuth bandpass filter flag | no |
+| Resolution of output (m)| Pixel spacing in meters for output products | 80 | 
+| Range bandpass filter | Range bandpass filter flag applied | no |
+| Azimuth bandpass filter | Azimuth bandpass filter flag applied | no |
 | DEM source | DEM used in processing | GLO-30 |
-| DEM resolution | Pixel spacing for DEM used to process this scene | 160 meters |
-| Unwrapping type | Type of phase unwrapper used | mcf |
+| DEM resolution | Pixel spacing in meters for DEM used to process this scene | 160 |
+| Unwrapping type | Phase unwrapping algorithm used | mcf |
+| Phase at Reference Point | Original unwrapped phase value at the reference point (set to 0 in output unwrapped phase raster) | -4.21967
+| Azimuth line of the reference point in SAR | Row number (in SAR space) of the reference point | 2737.0
+| Range pixel of the reference point in SAR | Column number (in SAR space) of the reference point | 739.0
+| Row of the reference point in MAP | Row number (in map space) of the reference point | 2307.333
+| Column of the reference point in MAP | Column number (in map space) of the reference point | 2517.345
+| Y of the reference point in MAP | Latitude of the reference point in projected coordinates (UTM Zone - meters) | 4112453.3223
+| X of the reference point in MAP | Longitude of the reference point in projected coordinates (UTM Zone - meters) | 589307.6248
+| Latitude of the reference point | Latitude of the reference point in WGS84 Geographic Coordinate System (degrees) | 37.1542125
+| Longitude of the reference point | Longitude of the reference point in WGS84 Geographic Coordinate System (degrees) | 40.00574707
 | Unwrapping threshold | Minimum coherence required to unwrap a given pixel | none |
-| Speckle filtering | Speckle filtering flag | off |
+| Speckle filtering | Speckle filtering function status | off |
 
 *Table 4: List of InSAR parameters included in the parameter text file*
 
@@ -363,11 +372,11 @@ A single interferogram cannot be used to determine the relative contributions of
 All displacement values are calculated relative to a [reference point](#phase-unwrapping-reference-point), which may or may not be an appropriate benchmark for measuring particular areas of displacement within the interferogram.
 
 ### Phase Unwrapping Reference Point
-The reference point for phase unwrapping is set to be the first point of the combined scene by default (top right corner for descending scenes, bottom left corner for ascending scenes). As described in the [phase unwrapping section](#reference-point), this may not always be an ideal location to use as a reference point. If it is located in an area of low coherence, or in a patch of coherent pixels that is separated from the area undergoing deformation by a gap of incoherent pixels, the unwrapping may be of lower quality than if the reference point was in a more suitable location. 
+The reference point for phase unwrapping is set to be the location of the pixel with the highest coherence value. As described in the [phase unwrapping section](#reference-point), this may not always be an ideal location to use as a reference point. If it is located in an area undergoing deformation, or in a patch of coherent pixels that is separated from the area undergoing deformation by a gap of incoherent pixels, the unwrapping may be of lower quality than if the reference point was in a more suitable location. 
 
-Even when there are not phase unwrapping errors introduced by phase discontinuities, it is important to be aware that unwrapped phase differences and displacement values are all calculated relative to the reference point. If the location of the default reference point is in the middle of an area that underwent deformation, displacement values may be different than expected.
+Even when there are not phase unwrapping errors introduced by phase discontinuities, it is important to be aware that unwrapped phase differences and displacement values are all calculated relative to the reference point. The phase difference value of the reference point is set to 0 during phase unwrapping, so any displacement values will be relative to that benchmark. If the location of the default reference point is in the middle of an area that underwent deformation, displacement values may be different than expected.
 
-If you are interested in the amount of displacement in a particular area, you may wish to choose your own reference point. The ideal reference point would be in an area of high coherence beyond where deformation has occurred. The unwrapped phase measurements can be adjusted to be relative to this new reference point instead, and displacement values can be recalculated accordingly. To adjust the values in the unwrapped phase GeoTIFF, simply select a reference point that is optimal for your use case and subtract the unwrapped phase value of that reference point from each pixel in the unwrapped phase raster: 
+If you are interested in the amount of displacement in a particular area, you may wish to choose your own reference point. The ideal reference point would be in an area of high coherence beyond where deformation has occurred. The unwrapped phase measurements can be adjusted to be relative to this new reference point, and displacement values can be recalculated accordingly. To adjust the values in the unwrapped phase GeoTIFF, simply select a reference point that is optimal for your use case and subtract the unwrapped phase value of that reference point from each pixel in the unwrapped phase raster: 
 
   **ΔΨ<sup>&ast;</sup>** = **ΔΨ** - Δψ<sub>ref</sub> 
 

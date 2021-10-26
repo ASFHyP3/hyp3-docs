@@ -313,6 +313,10 @@ The text file with extension .txt includes processing parameters used to generat
 |------|-------------|----------------|
 | Reference Granule | ESA granule name for reference scene (of the two scenes in the pair, the dataset with the oldest timestamp) | S1A<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20200116T032559<wbr>_20200116T032627<wbr>_030820<wbr>_038928<wbr>_F5DC |
 | Secondary Granule | ESA granule name for secondary scene (of the two scenes in the pair, the dataset with the newest timestamp) | S1B<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20200128T032559<wbr>_20200128T032627<wbr>_030995<wbr>_038F51<wbr>_7D4F |
+| Reference Pass Direction | Orbit direction of the reference scene | DESCENDING
+| Reference Orbit Number | Absolute orbit number of the reference scene | 30741
+| Secondary Pass Direction | Orbit direction of the reference scene | DESCENDING
+| Secondary Orbit Number | Absolute orbit number of the secondary scene | 31091
 | Baseline | Perpendicular baseline in meters | 58.3898 | 
 | UTCTime | Time in the UTC time zone in seconds | 12360.691361 |
 | Heading | Spacecraft heading measured in degrees clockwise from north | 193.2939317 |
@@ -332,14 +336,12 @@ The text file with extension .txt includes processing parameters used to generat
 | DEM resolution | Pixel spacing in meters for DEM used to process this scene | 160 |
 | Unwrapping type | Phase unwrapping algorithm used | mcf |
 | Phase at Reference Point | Original unwrapped phase value at the reference point (set to 0 in output unwrapped phase raster) | -4.21967
-| Azimuth line of the reference point in SAR | Row number (in SAR space) of the reference point | 2737.0
-| Range pixel of the reference point in SAR | Column number (in SAR space) of the reference point | 739.0
-| Row of the reference point in MAP | Row number (in map space) of the reference point | 2307.333
-| Column of the reference point in MAP | Column number (in map space) of the reference point | 2517.345
-| Y of the reference point in MAP | Latitude of the reference point in projected coordinates (UTM Zone - meters) | 4112453.3223
-| X of the reference point in MAP | Longitude of the reference point in projected coordinates (UTM Zone - meters) | 589307.6248
-| Latitude of the reference point | Latitude of the reference point in WGS84 Geographic Coordinate System (degrees) | 37.1542125
-| Longitude of the reference point | Longitude of the reference point in WGS84 Geographic Coordinate System (degrees) | 40.00574707
+| Azimuth line of the reference point in SAR space | Row number (in SAR space) of the reference point | 2737.0
+| Range pixel of the reference point in SAR space | Column number (in SAR space) of the reference point | 739.0
+| Y coordinate of the reference point in the map projection | Latitude of the reference point in projected coordinates (UTM Zone - meters) | 4112453.3223
+| X coordinate of the reference point in the map projection | Longitude of the reference point in projected coordinates (UTM Zone - meters) | 589307.6248
+| Latitude of the reference point (WGS84) | Latitude of the reference point in WGS84 Geographic Coordinate System (degrees) | 37.1542125
+| Longitude of the reference point (WGS84) | Longitude of the reference point in WGS84 Geographic Coordinate System (degrees) | 40.00574707
 | Unwrapping threshold | Minimum coherence required to unwrap a given pixel | none |
 | Speckle filtering | Speckle filtering function status | off |
 

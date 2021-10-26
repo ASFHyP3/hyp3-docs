@@ -343,7 +343,7 @@ The text file with extension .txt includes processing parameters used to generat
 | Latitude of the reference point (WGS84) | Latitude of the reference point in WGS84 Geographic Coordinate System (degrees) | 37.1542125 |
 | Longitude of the reference point (WGS84) | Longitude of the reference point in WGS84 Geographic Coordinate System (degrees) | 40.00574707 |
 | Unwrapping threshold | Minimum coherence required to unwrap a given pixel | none |
-| Speckle filtering | Speckle filtering function status | off |
+| Speckle filtering | Speckle filter applied | no |
 
 *Table 4: List of InSAR parameters included in the parameter text file*
 

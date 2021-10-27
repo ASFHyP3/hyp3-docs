@@ -330,8 +330,8 @@ The text file with extension .txt includes processing parameters used to generat
 | InSAR phase filter | Name of the phase filter used | adf | 
 | Phase filter parameter | Dampening factor | 0.6 |
 | Resolution of output (m)| Pixel spacing in meters for output products | 80 | 
-| Range bandpass filter | Range bandpass filter flag applied | no |
-| Azimuth bandpass filter | Azimuth bandpass filter flag applied | no |
+| Range bandpass filter | Range bandpass filter applied | no |
+| Azimuth bandpass filter | Azimuth bandpass filter applied | no |
 | DEM source | DEM used in processing | GLO-30 |
 | DEM resolution | Pixel spacing in meters for DEM used to process this scene | 160 |
 | Unwrapping type | Phase unwrapping algorithm used | mcf |

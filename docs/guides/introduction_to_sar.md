@@ -11,7 +11,7 @@ At the most fundamental level, SAR transmits an encoded burst, called a chirp, o
 
 ![Figure 1](../images/microwave-emr.png "The spectrum of electro-magnetic radiation. SAR is imaged using microwave wavelengths (&#955 ≈ 3-23 cm)")
 
-*Figure 1: The spectrum of electro-magnetic radiation. SAR is imaged using microwave wavelengths (&#955 ≈ 3-23 cm) Credit: Franz J. Meyer*
+*Figure 1: The spectrum of electro-magnetic radiation. SAR is imaged using microwave wavelengths (&#955 ≈ 3-23 cm).*
 
 ### Polarizations
 
@@ -23,7 +23,7 @@ Polarimetry is an emerging field of SAR processing which is used in a number of 
 
 ![Figure 2](../images/polarizations.png "SAR signals are transmitted either vertically or horizontally. Likewise, the sensor can listen for both horizontally and vertically returns.")
 
-*Figure 2: SAR signals are transmitted either vertically (V) or horizontally (H). Likewise, the sensor can listen for both horizontally and vertically returns. This gives rise to four different polarization combinations - VV, VH, HH, and HV.   Credit: Franz J. Meyer*
+*Figure 2: SAR signals are transmitted either vertically (V) or horizontally (H). Likewise, the sensor can listen for both horizontally and vertically returns. This gives rise to four different polarization combinations - VV, VH, HH, and HV.*
 
 -------
 
@@ -37,7 +37,7 @@ The wavelength of the SAR system influences the amount of ground penetration tha
 
 ![Figure 3](../images/SAR_band_types.png "Effects of SAR band on penetration of surfaces.  The longer the wavelength, the deeper the penetration through most land types.")
 
-*Figure 3: Effects of the SAR band on penetration of surfaces.  The longer the wavelength, the deeper the penetration through most land types. Credit: Franz J. Meyer*
+*Figure 3: Effects of the SAR band on penetration of surfaces.  The longer the wavelength, the deeper the penetration through most land types. Credit: [The SAR Handbook](https://gis1.servirglobal.net/TrainingMaterials/SAR/Chp2Content.pdf)*
 
 ### Surface Roughness 
 
@@ -45,13 +45,13 @@ The strength of the return, or backscatter, is partially based upon relative rou
 
 ![Figure 4](../images/wavelength_vs_roughness.png "The amount of backscatter from a surface depends largely on the surface's roughness")
 
-*Figure 4: The amount of backscatter from a surface depends largely on the surface's roughness, with smooth surfaces getting the least returns and rough surfaces getting the strongest returns. Credit:  Franz J. Meyer*
+*Figure 4: The amount of backscatter from a surface depends largely on the surface's roughness, with smooth surfaces getting the least returns and rough surfaces getting the strongest returns. Credit: [The SAR Handbook](https://gis1.servirglobal.net/TrainingMaterials/SAR/Chp2Content.pdf)*
 
 ### Types of Scattering
 
 ![Figure 5](../images/scattering_types.png "Scattering mechanisms. Rough surfaces give bright returns due to the wide scattering.  Vegetated surfaces cause volumetric scattering, which has a darker return to the imaging platform.  Double bounce returns, found mostly in urban areas, give the brightest return, as the majority of the energy is re-directed back towards the sensor.")
 
-*Figure 5: Scattering mechanisms. Rough surfaces give bright returns due to the wide scattering.  Vegetated surfaces cause volumetric scattering, which gives a darker return to the imaging platform.  Double bounce returns, found mostly in urban areas, give the brightest return, as the majority of the energy is re-directed back towards the sensor.*
+*Figure 5: Scattering mechanisms. Rough surfaces give bright returns due to the wide scattering.  Vegetated surfaces cause volumetric scattering, which gives a darker return to the imaging platform.  Double bounce returns, found mostly in urban areas, give the brightest return, as the majority of the energy is re-directed back towards the sensor. Credit: [The SAR Handbook](https://gis1.servirglobal.net/TrainingMaterials/SAR/Chp2Content.pdf)*
 
 The resolution of Sentinel-1 SAR images is roughly 10 m.  This means that a square of 10 meters on the ground is represented by a single pixel in the SAR image. The relative roughness of this patch of ground compared to the wavelength used will affect the backscatter strength (see figure 4).  However, there are additional types of bounce mechanisms beyond specular and diffuse, as shown in figure 5.  In vegetation, *volumetric* scattering occurs when signals bounce around inside the vegetation imaged.  The *double bounce* mechanism which occurs in urban areas and is exploited by corner reflectors, causes chirp to be reflected directly back to the sensor, causing a very strong backscatter.  Double bounce returns are so strong in some places that they cause over saturation of the sensor, resulting in visible sidelobes.  These sidelobes are evidenced by bright crosses surrounding the double bounce target.
 

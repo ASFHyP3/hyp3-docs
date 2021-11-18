@@ -45,7 +45,7 @@ In order to determine topography, two slightly different vantage points are requ
 
 ![Figure 2](../images/baseline.png "Geometry of InSAR Baselines.")
 
-*Figure 2: Geometry of InSAR baselines. Two satellite passes image the same area on the ground from positions S1 and S2, resulting a baseline of B which can be decomposed into normal (B<sub>n</sub>) and perpendicular (B<sub>p</sub>) components. Here Y is the direction of travel, referred to as the ****along-track**** or ****azimuth**** direction, and X is the direction perpendicular to motion, referred to as the ****cross-track**** or ****range**** direction. Credit: Franz J. Meyer*
+*Figure 2: Geometry of InSAR baselines. Two satellite passes image the same area on the ground from positions S1 and S2, resulting a baseline of B which can be decomposed into normal (B<sub>n</sub>) and perpendicular (B<sub>p</sub>) components. Here Y is the direction of travel, referred to as the ****along-track**** or ****azimuth**** direction, and X is the direction perpendicular to motion, referred to as the ****cross-track**** or ****range**** direction.*
 
 #### Temporal Baseline
 In contrast to the (physical) baseline, the *temporal baseline* refers to the time separation between imaging passes. Along-track interferometry measures motion in the millisecond to second range. This technique can detect ocean currents and rapidly moving objects like boats. Differential interferometry is the standard method used to detect motion in the range of days to years. This is the type of interferometry that is performed by the Sentinel-1 HyP3 InSAR processing algorithm. Table 1 lists different temporal baselines, their common names, and what they can be used to measure.  

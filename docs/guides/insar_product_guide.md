@@ -17,7 +17,7 @@ SAR is an active sensor that transmits pulses and listens for echoes. These echo
 
 ![Figure 1](../images/phase_diff.png "Difference in range shows movement of the surface imaged")
 
-*Figure 1: Two passes of an imaging SAR taken at time T<sub>0</sub> and T<sub>0</sub> + ∆t, will give two distances to the ground, R<sub>1</sub> and R<sub>2</sub>.  A difference between R<sub>1</sub> and R<sub>2</sub> shows motion on the ground.  In this case, a subsidence makes R<sub>2</sub> greater than R<sub>1</sub>.  Credit: Franz J. Meyer*
+*Figure 1: Two passes of an imaging SAR taken at time T<sub>0</sub> and T<sub>0</sub> + ∆t, will give two distances to the ground, R<sub>1</sub> and R<sub>2</sub>.  A difference between R<sub>1</sub> and R<sub>2</sub> shows motion on the ground.  In this case, a subsidence makes R<sub>2</sub> greater than R<sub>1</sub>.  Credit: [TRE ALTAMIRA](https://site.tre-altamira.com/insar/)*
 
 InSAR exploits the phase difference between two SAR images to create an interferogram that shows where the phase and, therefore, the distance to the target has changed from one pass to the next, as illustrated in Figure 1.  There are several factors that influence the interferogram, including earth curvature, topographic effects, atmospheric delays, surface motion, and noise.  With proper processing, Sentinel-1 InSAR can be used to detect changes in the earth's surface down to the centimeter scale. Applications include volcanic deformation, subsidence, landslide detection, and earthquake assessment.
 
@@ -45,7 +45,7 @@ In order to determine topography, two slightly different vantage points are requ
 
 ![Figure 2](../images/baseline.png "Geometry of InSAR Baselines.")
 
-*Figure 2: Geometry of InSAR baselines. Two satellite passes image the same area on the ground from positions S1 and S2, resulting a baseline of B which can be decomposed into normal (B<sub>n</sub>) and perpendicular (B<sub>p</sub>) components. Here Y is the direction of travel, referred to as the ****along-track**** or ****azimuth**** direction, and X is the direction perpendicular to motion, referred to as the ****cross-track**** or ****range**** direction. Credit: Franz J. Meyer*
+*Figure 2: Geometry of InSAR baselines. Two satellite passes image the same area on the ground from positions S1 and S2, resulting a baseline of B which can be decomposed into normal (B<sub>n</sub>) and perpendicular (B<sub>p</sub>) components. Here Y is the direction of travel, referred to as the ****along-track**** or ****azimuth**** direction, and X is the direction perpendicular to motion, referred to as the ****cross-track**** or ****range**** direction.*
 
 #### Temporal Baseline
 In contrast to the (physical) baseline, the *temporal baseline* refers to the time separation between imaging passes. Along-track interferometry measures motion in the millisecond to second range. This technique can detect ocean currents and rapidly moving objects like boats. Differential interferometry is the standard method used to detect motion in the range of days to years. This is the type of interferometry that is performed by the Sentinel-1 HyP3 InSAR processing algorithm. Table 1 lists different temporal baselines, their common names, and what they can be used to measure.  

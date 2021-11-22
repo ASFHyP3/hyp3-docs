@@ -1,0 +1,4 @@
+HyP3 SDK v1.4.1
+### Fixed
+- Slicing a `Batch` object will now return a new `Batch` instead of `list` of jobs
+- `Batch` equality now compares the contained jobs and not object identity

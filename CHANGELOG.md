@@ -12,7 +12,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 * Updated HyP3 SDK to [v1.4.1](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#141)
 
-## [0.3.22](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.20...v0.3.21)
+## [0.3.22](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.21...v0.3.22)
 
 ### Changed
 * Corrected the attribution for figures in the [InSAR Product Guide](docs/guides/insar_product_guide.md) and the [Introduction to SAR](docs/guides/introduction_to_sar.md)

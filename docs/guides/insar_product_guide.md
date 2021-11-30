@@ -242,7 +242,7 @@ The InSAR product names are packed with information pertaining to the processing
 
 ### Image Files
 
-All of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs. To learn more about the rasters included in the product package, refer to the [Exploring Sentinel-1 InSAR Story Map](https://storymaps.arcgis.com/stories/8be186e4125741518118d0102e6835e5).
+All of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs. To learn more about the rasters included in the product package, refer to the [Exploring Sentinel-1 InSAR Story Map](https://storymaps.arcgis.com/stories/8be186e4125741518118d0102e6835e5){target=_blank}.
 
 - The *amplitude* image is the calibrated radiometric backscatter from the reference granule in sigma-nought power. The image is terrain corrected using a geometric correction, but not radiometrically corrected. 
 - The *coherence* file pixel values range from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent. 

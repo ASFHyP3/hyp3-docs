@@ -7,6 +7,11 @@ and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.3.24](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.23...v0.3.24)
+
+### Changed
+* Set external links in [InSAR Product Guide](docs/guides/insar_product_guide.md) to display the target URL in the tool tip and open in a new browser tab.
+
 ## [0.3.23](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.22...v0.3.23)
 
 ### Changed

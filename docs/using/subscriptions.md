@@ -1,5 +1,5 @@
 # Subscriptions in HyP3
-For monitoring applications, we provide a subscription service for On Demand processing, which automatically processes new Sentinel-1 acquisitions as they appear in ASF's data holdings. 
+For monitoring applications, we provide a [subscription service](https://docs.asf.alaska.edu/vertex/manual/#subscriptions "https://docs.asf.alaska.edu/vertex/manual/#subscriptions" ){target=_blank} for On Demand processing, which automatically processes new Sentinel-1 acquisitions as they appear in ASF's data holdings. 
 
 To create a subscription, users define the following parameters:
 
@@ -14,8 +14,10 @@ As ASF receives new acquisitions that meet the search criteria for the subscript
 
 This service is particularly useful for ongoing monitoring efforts where users need regular updates over an area of interest, and want to make sure that they process all available images for that area. Without a subscription, a user would need to periodically search to find new images acquired through time and manually submit them for processing.
 
+Subscriptions can be created and managed in the Vertex interface. Refer to the [Vertex On Demand Subscription documentation](https://docs.asf.alaska.edu/vertex/manual/#subscriptions "https://docs.asf.alaska.edu/vertex/manual/#subscriptions" ){target=_blank} for more information.
+
 ## Guidelines for Using Subscriptions
-1. Subscriptions are only necessary for applications that require imagery to be processed beyond the date of the initial search. If all of the images required for a project were acquired before the date of the search, they can be submitted directly for [On Demand processing](https://search.asf.alaska.edu/#/?topic=onDemand){target=_blank}.
+1. Subscriptions are only necessary for applications that require imagery to be processed beyond the date of the initial search. If all of the images required for a project were acquired before the date of the search, they can be submitted directly for [On Demand processing](https://search.asf.alaska.edu/#/?topic=onDemand "https://search.asf.alaska.edu/#/?topic=onDemand" ){target=_blank}.
    
 2. Set an end date that is appropriate for your use case. You must define an end date; you cannot set an open-ended subscription. If your project extends beyond your original end date, you can change it, so there is no need to set it far into the future.
    
@@ -26,6 +28,6 @@ This service is particularly useful for ongoing monitoring efforts where users n
 5. Deactivate your subscription when you no longer need it. If you want to restart your monitoring effort later, you can reactivate your subscription or create a new one.
 
 ## Accessing Subscriptions
-Subscriptions are currently only available in the API. 
+Subscriptions can be created and managed in [Vertex](https://docs.asf.alaska.edu/vertex/manual/#subscriptions "https://docs.asf.alaska.edu/vertex/manual/#subscriptions" ){target=_blank} and the HyP3 API. 
 
-Stay tuned for a Subscriptions User Interface coming to Vertex and support in the HyP3 Python SDK!
+Stay tuned for subscription support in the HyP3 Python SDK!

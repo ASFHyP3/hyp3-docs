@@ -28,6 +28,6 @@ Subscriptions can be created and managed in the Vertex interface. Refer to the [
 5. Deactivate your subscription when you no longer need it. If you want to restart your monitoring effort later, you can reactivate your subscription or create a new one.
 
 ## Accessing Subscriptions
-Subscriptions can be created and managed in [Vertex](https://docs.asf.alaska.edu/vertex/manual/#subscriptions "https://docs.asf.alaska.edu/vertex/manual/#subscriptions" ){target=_blank} and the HyP3 API. 
+Subscriptions can be created and managed in [Vertex](https://docs.asf.alaska.edu/vertex/manual/#subscriptions "https://docs.asf.alaska.edu/vertex/manual/#subscriptions" ){target=_blank} and the [HyP3 API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api/" ){target=_blank}. 
 
 Stay tuned for subscription support in the HyP3 Python SDK!

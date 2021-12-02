@@ -7,12 +7,18 @@ and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.3.24](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.23...v0.3.24)
+
+### Changed
+* Set external links in [InSAR Product Guide](docs/guides/insar_product_guide.md) to display the target URL in the tool tip and open in a new browser tab.
+* Updated [Subscriptions](docs/using/subscriptions.md) document to include links to [Vertex subscription documentation](https://docs.asf.alaska.edu/vertex/manual/#subscriptions).
+
 ## [0.3.23](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.22...v0.3.23)
 
 ### Changed
 * Updated HyP3 SDK to [v1.4.1](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#141)
 
-## [0.3.22](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.20...v0.3.21)
+## [0.3.22](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.21...v0.3.22)
 
 ### Changed
 * Corrected the attribution for figures in the [InSAR Product Guide](docs/guides/insar_product_guide.md) and the [Introduction to SAR](docs/guides/introduction_to_sar.md)

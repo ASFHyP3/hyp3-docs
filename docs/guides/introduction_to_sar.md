@@ -29,7 +29,7 @@ There are four different polarization combinations commonly used by SAR sensors:
 | HH | Horizontal | Horizontal |
 
 
-![Figure 2](../images/polarizations_ASF.png "SAR signals are transmitted either vertically or horizontally. Likewise, the sensor can listen for either horizontally or vertically polarized returns.")
+![Figure 2](../images/polarizations_ASF_dashed.png "SAR signals are transmitted either vertically or horizontally. Likewise, the sensor can listen for either horizontally or vertically polarized returns.")
 
 *Figure 2: SAR signals are transmitted and received either vertically (V) or horizontally (H). This gives the potential for four different polarization combinations (transmit listed first, receive second): VV, VH, HH, and HV. Credit: ASF*
 

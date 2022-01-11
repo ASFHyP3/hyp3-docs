@@ -31,7 +31,7 @@ There are four different polarization combinations commonly used by SAR sensors:
 
 ![Figure 2](../images/polarizations_ASF.png "SAR signals are transmitted either vertically or horizontally. Likewise, the sensor can listen for both horizontally and vertically returns.")
 
-*Figure 2: SAR signals are transmitted and received either vertically (V) or horizontally (H). This gives the potential for four different polarization combinations: VV, VH, HH, and HV. Credit: ASF*
+*Figure 2: SAR signals are transmitted and received either vertically (V) or horizontally (H). This gives the potential for four different polarization combinations, (transmit listed first, receive second): VV, VH, HH, and HV. Credit: ASF*
 
 Different SAR sensors have different polarization capabilities. Single-pol sensors send out a signal in one polarization and can only measure returns that are in that same polarization (VV or HH). Dual-pol sensors send out a signal in one polarization, but can measure returns that are in that same polarization (co-pol: VV or HH) as well as returns that are in the other polarization (cross-pol: VH or HV). Some SAR systems can transmit chirps with both a horizontal or vertical polarization and listen for both horizontal or vertical returns, giving full quad-pol capabilities (VV, VH, HV, HH).  
 

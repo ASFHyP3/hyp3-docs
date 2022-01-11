@@ -35,7 +35,6 @@ There are four different polarization combinations commonly used by SAR sensors:
 
 Different SAR sensors have different polarization capabilities. Single-pol sensors send out a signal in one polarization and can only measure returns that are in that same polarization (VV or HH). Dual-pol sensors send out a signal in one polarization, but can measure returns that are in that same polarization (co-pol: VV or HH) as well as returns that are in the other polarization (cross-pol: VH or HV). Some SAR systems can transmit chirps with both a horizontal or vertical polarization and listen for both horizontal or vertical returns, giving full quad-pol capabilities (VV, VH, HV, HH).  
 
-
 Polarimetry is an emerging field of SAR processing which is used in a number of applications such as measuring vegetation properties and changes of vegetation over time. Additional applications include oceanography, geology, and disaster response.
 
 -------

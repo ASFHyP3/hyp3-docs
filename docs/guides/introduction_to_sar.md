@@ -15,7 +15,7 @@ At the most fundamental level, SAR transmits an encoded burst, called a chirp, o
 
 ### Polarizations
 
-Polarization refers to the direction of travel of an electromagnetic wave. A horizontal wave is transmitted so that it oscillates in a plane parallel to the surface imaged, while a vertical wave oscillates in a plane perpendicular to the surface imaged. 
+Polarization refers to the direction of travel of an electromagnetic wave. A horizontal wave is transmitted so that it oscillates in a plane parallel to the surface imaged, while a vertical wave oscillates in a plane perpendicular to the surface imaged.
 
 There are four different polarization combinations commonly used by SAR sensors: VV, VH, HV and HH, as listed in Table 1. The first letter indicates the polarization used to transmit the signal, and the second letter indicates the polarization of the measured return, as illustrated in Figure 2.
 

@@ -9,9 +9,9 @@ SAR is an active sensor that transmits pulses and listens for echoes, called bac
 
 At the most fundamental level, SAR transmits an encoded burst, called a chirp, of electro-magnetic energy (Figure 1) and then listens for the return signal, called echoes.  The wavelength of this chirp is in the centimeter range, with X-band (~3 cm), C-band (~6 cm), and L-band (~23 cm) all in common use.
 
-![Figure 1](../images/microwave-emr.png "The spectrum of electro-magnetic radiation. SAR is imaged using microwave wavelengths (&#955 ≈ 3-23 cm)")
+![Figure 1](../images/microwave-emr.png "The spectrum of electro-magnetic radiation. SAR is imaged using microwave wavelengths")
 
-*Figure 1: The spectrum of electromagnetic radiation. SAR is imaged using microwave wavelengths (&#955 ≈ 3-23 cm).*
+*Figure 1: The spectrum of electromagnetic radiation. SAR is imaged using microwave wavelengths.*
 
 ### Polarizations
 

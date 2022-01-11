@@ -11,7 +11,7 @@ At the most fundamental level, SAR transmits an encoded burst, called a chirp, o
 
 ![Figure 1](../images/microwave-emr.png "The spectrum of electro-magnetic radiation. SAR is imaged using microwave wavelengths")
 
-*Figure 1: The spectrum of electromagnetic radiation. SAR is imaged using microwave wavelengths.*
+*Figure 1: The spectrum of electromagnetic radiation. SAR is imaged using microwave wavelengths. The microwave range extends from about 1 mm to 1 m in wavelength, with most radar applications using bands within the 3 mm to 30 cm range.*
 
 ### Polarizations
 

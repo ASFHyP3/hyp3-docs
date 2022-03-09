@@ -208,7 +208,7 @@ Ideally, the reference point for phase unwrapping would be located in an area wi
 
 By default, ASF's On Demand InSAR products use the location of the pixel with the highest coherence value as the reference point. The coherence map is examined to determine the maximum value, and all pixels with this value are examined using a 9-pixel window. The pixel with the highest sum of values within its 9-pixel window is selected as the reference point. If more than one pixel has the same 9-pixel sum, the first pixel from the origin pixel (bottom left corner for ascending scenes, top right corner for descending scenes) is selected.
 
-This may be an appropriate location in many cases, as it meets the criteria of having high coherence, and stable areas have higher coherence than areas undergoing significant deformation. If a user wants to set a different location as the phase unwrapping reference point, however, a correction can be applied to the unwrapped interferogram.
+This may be an appropriate reference point location in many cases, as it meets the criteria of having high coherence, and stable areas have higher coherence than areas undergoing significant deformation. If a user wants to set a different location as the phase unwrapping reference point, however, a correction can be applied to the unwrapped interferogram.
 
 For more information on the impact of the phase unwrapping reference point location on unwrapped phase and displacement measurements, refer to the [Limitations](#phase-unwrapping-reference-point "Link to Phase Unwrapping Reference Point part of the Limitations section") section of this document, which also includes instructions for applying a correction based on a custom reference point. 
 

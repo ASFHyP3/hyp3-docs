@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.3.27](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.26...v0.3.27)
 
 ### Changed
-* Updated description of validity mask thresholds and reference point calculation in [InSAR Product Guide](docs/guides/insar_product_guide.md) to reflect changes to InSAR processing code.
+* Updated descriptions of validity mask thresholds and reference point calculation in [InSAR Product Guide](docs/guides/insar_product_guide.md) to reflect changes to InSAR processing code.
 
 ## [0.3.26](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.25...v0.3.26)
 

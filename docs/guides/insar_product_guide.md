@@ -197,7 +197,7 @@ Coherence is estimated from the normalized interferogram and the co-registered i
 
 !!! important "Change to Validity Mask Thresholds"
 
-    In the past, we also set a power threshold of 0.2. While this approach tends to mask out inland waters, providing a cleaner-looking interferogram, it also masks arid regions that have low amplitude values but reasonably high coherence. As of March 2022, we have set the power threshold to 0.0, so that coherence is the only driver of the validity mask.
+    In the past, we also used a power threshold of 0.2 when generating the validity mask. While this approach tends to mask out inland waters, providing a less noisy interferogram in some cases, it also masks arid regions that have low amplitude values but reasonably high coherence. As of March 2022, we have set the power threshold to 0.0, so that coherence is the only driver of the validity mask.
 
 When the water masking option is applied, the validity mask is further amended to apply 0 values to any pixels classified as water in the water mask. In some cases, pixels over water may still meet the coherence and amplitude threshold criteria for inclusion, even though they are not valid for use during phase unwrapping. When processing scenes with extensive coverage by coastal waters or large inland waterbodies, there can be erroneous phase jumps introduced if unwrapping proceeds over water as if it were land. In such cases, choosing the option to apply the water mask can improve the results. 
 

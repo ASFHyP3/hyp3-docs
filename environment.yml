@@ -10,7 +10,7 @@ dependencies:
   - mkdocs-material=6.2
   - mkdocs-material-extensions
   - hyp3_sdk=1.4.1  # also pinned in docs/using/sdk.md
-  - asf_tools=0.3.1  # also pinned in docs/tools/asf_tools.md
+  - asf_tools=0.3.3  # also pinned in docs/tools/asf_tools.md
   - requests
   - pip:
       # For documentation

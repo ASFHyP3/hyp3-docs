@@ -23,7 +23,7 @@ visit [Digital Elevation Models](dems.md).
 Interferometric SAR (InSAR) uses the phase differences from repeat passes over the
 same area to identify regions where the distance between the sensor and the Earth's
 surface has changed. This allows for the detection and quantification of deformation
-or movement.
+or movement. To learn more, visit the [ASF Sentinel-1 RTC Product Guide](guides/rtc_product_guide.md)
 
 Use caution when generating interferograms for areas with extensive/dense vegetation cover.
 Because Sentinel-1 is a C-band sensor, the waves will not penetrate very deeply into vegetation.

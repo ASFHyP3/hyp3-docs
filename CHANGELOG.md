@@ -6,13 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/) 
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.3.28](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.27...v0.3.28)
+
+## [0.3.29]
 
 ### Changed
 * Updated descriptions of validity mask thresholds and reference point calculation in [InSAR Product Guide](docs/guides/insar_product_guide.md) to reflect changes to InSAR processing code.
 * Added a link for the [InSAR Product Guide](docs/guides/insar_product_guide.md) to the [Products](docs/products.md) page.
 
-## [0.3.27](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.26...v0.3.27)
+## [0.3.28]
+
+### Changed
+* Updated ASF Tools for Python to [v0.3.3](https://github.com/ASFHyP3/asf-tools/blob/main/CHANGELOG.md#033)
+
+## [0.3.27]
 
 ### Changed
 * Updated ASF Tools for Python to [v0.3.1](https://github.com/ASFHyP3/asf-tools/blob/main/CHANGELOG.md#031)

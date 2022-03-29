@@ -1,1 +1,1 @@
-{{ get_content('https://raw.githubusercontent.com/ASFHyP3/asf-tools/v0.3.1/asf_tools/README.md') }}
+{{ get_content('https://raw.githubusercontent.com/ASFHyP3/asf-tools/v0.3.3/asf_tools/README.md') }}

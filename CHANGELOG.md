@@ -7,6 +7,12 @@ and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.3.30]
+
+### Fixed
+* Update MkDocs to version >1.2.3 to fix a Jinja2 compatibility issue
+  (see [#197](https://github.com/ASFHyP3/hyp3-docs/pull/197))
+
 ## [0.3.29]
 
 ### Changed

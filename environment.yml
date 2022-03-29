@@ -6,7 +6,7 @@ dependencies:
   - python=3.8
   - pip
   # For documentation
-  - jinja<3.1  # FIXME: Hack until mkdocs >1.2.3 released
+  - jinja2<3.1  # FIXME: Hack until mkdocs >1.2.3 released
   - mkdocs
   - mkdocs-material=6.2
   - mkdocs-material-extensions

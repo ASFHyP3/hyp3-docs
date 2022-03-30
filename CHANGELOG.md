@@ -7,6 +7,12 @@ and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.3.29]
+
+### Changed
+* Updated descriptions of validity mask thresholds and reference point calculation in [InSAR Product Guide](docs/guides/insar_product_guide.md) to reflect changes to InSAR processing code.
+* Added a link for the [InSAR Product Guide](docs/guides/insar_product_guide.md) to the [Products](docs/products.md) page.
+
 ## [0.3.28]
 
 ### Changed

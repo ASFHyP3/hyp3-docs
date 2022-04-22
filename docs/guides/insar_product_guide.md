@@ -134,7 +134,7 @@ Pre-processing steps prepare the SAR images to be used in interferometry.  The p
 #### Select an InSAR Pair
 Although it is possible to start from RAW data, Sentinel-1 InSAR processing is typically done using [Interferometric Wide swath Single Look Complex](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath "https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath" ){target=_blank} (IW SLC) data as the input.  This means that the data has been formed into an image through SAR processing, but has not been multi-looked.  
 
-The SLC pair is [defined by the user](#ordering-on-demand-insar-products "Link to Ordering On Demand InSAR Products section"), either through the Vertex interface, or using the HyP3 API or SDK. 
+The SLC pair is [defined by the user](#ordering-on-demand-insar-products "Link to Ordering On Demand InSAR Products section"), either through the Vertex interface, or using the HyP3 API or SDK. To ensure consistency, the older SLC image is always used as the reference image, and the younger SLC image is always used as the secondary image. This means that positive values in the resulting interferogram represent movement towards the SAR platform and negative values represent movement away from the SAR platform. However, these values are relative to the reference point of the interferogram. See the [phase unwrapping section](#reference-point "Link to Reference Point section") for more details.
 
 #### Ingest SLC data into GAMMA format
 

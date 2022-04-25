@@ -14,6 +14,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 * Updated description of SAR image pair selection in [InSAR Product Guide](docs/guides/insar_product_guide.md) to specify that HyP3 always uses the older image as the reference image.
+* Pinned `pygments=2.11.2` in environment.yml to resolve a breaking change impacting `mkdocs-material v6.2.8`
 
 ## [0.3.29]
 

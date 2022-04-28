@@ -9,8 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.3.31]
 
 ### Changed
-* Updated `asf-tools` version to 0.4.0. 
-
+* Updated ASF Tools to include flood_map in [v0.4.0](https://github.com/ASFHyP3/asf-tools/blob/main/CHANGELOG.md##040)
 
 ## [0.3.30]
 

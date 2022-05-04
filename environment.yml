@@ -9,14 +9,14 @@ dependencies:
   - mkdocs>1.2.3
   - mkdocs-material=6.2
   - mkdocs-material-extensions
-  - hyp3_sdk=1.4.1  # also pinned in docs/using/sdk.md
-  - asf_tools=0.3.3  # also pinned in docs/tools/asf_tools.md
+  - hyp3_sdk=1.4.1  # also pinned in docs/using/sdk_api.md
+  - asf_tools=0.3.3  # also pinned in docs/tools/asf_tools_api.md
   - requests
-  - pygments=2.11.2 # avoids breaking change in v2.12.0 impacting mkdocs-material v6.2.8
+  - pygments=2.12.0
   - pip:
       # For documentation
       - mkdocs-asf-theme>=0.2.3
       - mkdocs-redirects
       - mkdocs-section-index
-      - mkdocstrings
+      - mkdocstrings[python]
       - mkdocs-macros-plugin

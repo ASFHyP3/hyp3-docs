@@ -59,7 +59,7 @@ nav:
     - Digital Elevation Models: dems.md
     - SAR FAQ: https://asf.alaska.edu/information/sar-information/what-is-sar/#sar_faq" target="_blank
   - Tutorials:
-    - InSAR time series with MintPy: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-docs/blob/prep_for_ts/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank
+    - InSAR time series with MintPy: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank
   - Other Tools:
     - ArcGIS Toolbox: tools/arcgis_toolbox.md
     - ASF Tools for Python:

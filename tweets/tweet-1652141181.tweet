@@ -1,0 +1,6 @@
+HyP3 SDK v1.5.0### Added
+- Added `processing_time_in_seconds` to `Job` class.
+### Removed
+- `hyp3_sdk.asf_search` has been removed and its functionality has been superseded by the
+  [`asf_search`](https://github.com/asfadmin/Discovery-asf_search) Python package, which provides a more comprehensive
+  ASF search experience and is available on conda-forge and PyPI.

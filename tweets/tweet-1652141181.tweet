@@ -1,4 +1,5 @@
-HyP3 SDK v1.5.0### Added
+HyP3 SDK v1.5.0
+### Added
 - Added `processing_time_in_seconds` to `Job` class.
 ### Removed
 - `hyp3_sdk.asf_search` has been removed and its functionality has been superseded by the

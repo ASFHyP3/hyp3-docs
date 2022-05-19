@@ -1,0 +1,2 @@
+HyP3 SDK v1.6.0### Changed
+- `Job.expired()` now returns `False` if `expiration_time` is `None`.

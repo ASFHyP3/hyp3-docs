@@ -6,10 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/) 
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.3.33]
+## [0.3.35]
 
 ### Changed
 * refactor the notebook for time series analysis with hyp3 and mintpy
+
+## [0.3.34]
+
+### Changed
+* Updated HyP3 SDK to [v1.5.1](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#151)
+
+## [0.3.33]
+
+### Changed
+* Updated HyP3 SDK to [v1.5.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#150)
+>>>>>>> develop
 
 ## [0.3.32]
 
@@ -215,7 +226,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 * Updated the RTC Product Guide and DEM Information section to include the Copernicus DEM GLO-30
-* Added an abstract to the RTC Product Guide  
+* Added an abstract to the RTC Product Guide
 * Updated the RTC Product Guide to include more information on SAR distortions, how they are addressed by
   radiometric terrain correction, and how to access ASF's On-Demand RTC processing functionality and resources
 

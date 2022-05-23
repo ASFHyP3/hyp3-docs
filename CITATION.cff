@@ -31,6 +31,6 @@ authors:
   orcid: "https://orcid.org/0000-0002-2491-526X"
 date-released: 2020-10-20
 repository-code: "https://github.com/ASFHyP3/hyp3-docs"
-title: "Hybrid Pluggable Processing Pipeline (HyP3): A cloud-based infrastructure for generic processing of SAR data"
+title: "Hybrid Pluggable Processing Pipeline (HyP3): A cloud-native infrastructure for generic processing of SAR data"
 doi: 10.5281/zenodo.4646138
 license: "BSD-3-Clause"

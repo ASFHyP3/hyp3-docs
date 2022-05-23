@@ -4,38 +4,28 @@ authors:
 - family-names: "Meyer"
   given-names: "Franz"
   orcid: "https://orcid.org/0000-0002-2491-526X"
-
 - family-names: "Kristenson"
   given-names: "Heidi"
   orcid: "https://orcid.org/0000-0002-2130-4527"
-
 - family-names: "Kennedy"
   given-names: "Joseph"
   orcid: "https://orcid.org/0000-0002-9348-693X"
-
 - family-names: "Johnston"
   given-names: "Andrew"
-
 - family-names: "Rine"
   given-names: "James"
-
 - family-names: "Logan"
   given-names: "Thomas"
-
 - family-names: "Zhu"
   given-names: "Jiang"
-
 - family-names: "Williams"
   given-names: "Forrest"
   orcid: "https://orcid.org/0000-0001-8721-6020"
-
 - family-names: "Herrmann"
   given-names: "Jake"
-
 - family-names: "Smale"
   given-names: "Jacquelyn"
-
-date-released: "2020-07-10"
+date-released: 2020-07-10
 repository-code: "https://github.com/ASFHyP3/hyp3"
 title: "Hybrid Pluggable Processing Pipeline (HyP3): A cloud-based infrastructure for generic processing of SAR data"
 doi: 10.5281/zenodo.6568160

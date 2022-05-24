@@ -12,6 +12,8 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 * Created a `CITATION.cff` file for the repository that will make it easier for others to cite.
 
 ## [0.3.36]
+
+### Changed
 * Updated the MintPy time series analysis notebook
 
 ## [0.3.35]

@@ -1,36 +1,36 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: If you use this software, please cite it as below.
 authors:
-- family-names: "Hogenson"
-  given-names: "Kirk"
-- family-names: "Kristenson"
-  given-names: "Heidi"
-  orcid: "https://orcid.org/0000-0002-2130-4527"
-- family-names: "Kennedy"
-  given-names: "Joseph"
-  orcid: "https://orcid.org/0000-0002-9348-693X"
-- family-names: "Johnston"
-  given-names: "Andrew"
-- family-names: "Rine"
-  given-names: "James"
-- family-names: "Logan"
-  given-names: "Thomas"
-- family-names: "Zhu"
-  given-names: "Jiang"
+- family-names: Hogenson
+  given-names: Kirk
+- family-names: Kristenson
+  given-names: Heidi
+  orcid: https://orcid.org/0000-0002-2130-4527
+- family-names: Kennedy
+  given-names: Joseph
+  orcid: https://orcid.org/0000-0002-9348-693X
+- family-names: Johnston
+  given-names: Andrew
+- family-names: Rine
+  given-names: James
+- family-names: Logan
+  given-names: Thomas
+- family-names: Zhu
+  given-names: Jiang
   orcid: https://orcid.org/0000-0001-6833-5518
-- family-names: "Williams"
-  given-names: "Forrest"
-  orcid: "https://orcid.org/0000-0001-8721-6020"
-- family-names: "Herrmann"
-  given-names: "Jake"
-- family-names: "Smale"
-  given-names: "Jacquelyn"
+- family-names: Williams
+  given-names: Forrest
+  orcid: https://orcid.org/0000-0001-8721-6020
+- family-names: Herrmann
+  given-names: Jake
+- family-names: Smale
+  given-names: Jacquelyn
   orcid: https://orcid.org/0000-0002-2749-5010
-- family-names: "Meyer"
-  given-names: "Franz"
-  orcid: "https://orcid.org/0000-0002-2491-526X"
+- family-names: Meyer
+  given-names: Franz
+  orcid: https://orcid.org/0000-0002-2491-526X
 date-released: 2020-10-20
-repository-code: "https://github.com/ASFHyP3/hyp3-docs"
+repository-code: https://github.com/ASFHyP3/hyp3-docs
 title: "Hybrid Pluggable Processing Pipeline (HyP3): A cloud-native infrastructure for generic processing of SAR data"
 doi: 10.5281/zenodo.4646138
-license: "BSD-3-Clause"
+license: BSD-3-Clause

@@ -48,7 +48,7 @@ In the past, ASF maintained a collection of DEMs that were pre-processed as appr
 
 !!! important "Copernicus DEM GLO-30 Now Available" 
 
-    The [Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960){target=blank} is now the default DEM for RTC processing. 
+    The [2021 release of the Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/blogs/-/blogs/copernicus-dem-2021-release-now-available){target=blank} is now the default DEM for RTC processing. 
 
     Processing RTC using the legacy DEMs is still available as an option for processing [On Demand in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand) and when using the [API](https://hyp3-docs.asf.alaska.edu/using/api/) or [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/), but we recommend using the Copernicus DEM whenever possible.
 

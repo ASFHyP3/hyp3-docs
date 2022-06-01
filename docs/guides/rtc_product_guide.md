@@ -50,7 +50,7 @@ In the past, ASF maintained a collection of DEMs that were pre-processed as appr
 
     We use the [Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960){target=blank} as our default DEM for RTC and InSAR processing. We have now updated to the [2021 release of the Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/blogs/-/blogs/copernicus-dem-2021-release-now-available){target=blank}, which improves coverage over Norway, and includes 5 additional tiles.
 
-    Processing RTC using the legacy DEMs is still available as an option for processing [On Demand in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand) and when using the [API](https://hyp3-docs.asf.alaska.edu/using/api/) or [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/), but we recommend using the Copernicus DEM whenever possible.
+    Users still have the option to use the legacy DEMs when processing RTC jobs [On Demand in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand) and when using the [API](https://hyp3-docs.asf.alaska.edu/using/api/) or [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/), but we recommend using the Copernicus DEM whenever possible.
 
 Table 1 summarizes ASF's DEM sources. Note that in each case, the DEM is resampled to RTC spacing and reprojected to a UTM Zone (WGS84), and a geoid correction is applied before being used for RTC processing.
 

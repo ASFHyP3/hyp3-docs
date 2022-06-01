@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.3.38]
 
 ### Changed
-* Updated the [Copernicus DEM GLO-30 coverage map](docs/images/cop-coverage-map.png) to include the additional tiles added to the DEM dataset with the latest release
+* Updated references to Copernicus DEM GLO-30 to reflect the [latest 2021 release of the dataset](https://spacedata.copernicus.eu/blogs/-/blogs/copernicus-dem-2021-release-now-available).
 
 ## [0.3.37]
 

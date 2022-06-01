@@ -5,11 +5,11 @@ ASF uses DEMs that are publicly available and have wide-ranging coverage. In the
 
 With the public release of the [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/documents/20126/0/GEO1988-CopernicusDEM-SPE-002_ProductHandbook_I1.00.pdf){target=blank}, we have changed our default DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. This is now the default DEM for processing RTC products, and the only option available for processing InSAR products. 
 
-!!! important "Copernicus DEM GLO-30 Now Available" 
+!!! important "Copernicus DEM GLO-30 Updated" 
 
-    We have added the [Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960){target=blank} as our default DEM for RTC and InSAR processing. 
+    We use the [Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960){target=blank} as our default DEM for RTC and InSAR processing. We have now updated to the [2021 release of the Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/blogs/-/blogs/copernicus-dem-2021-release-now-available){target=blank}, which improves coverage over Norway, and includes 5 additional tiles.
 
-    Processing using the legacy DEMs is still available as an option for RTC processing [On-Demand in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand) and when using the [API](https://hyp3-docs.asf.alaska.edu/using/api/) or [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/), but we recommend using the Copernicus DEM whenever possible.
+    Users still have the option to use the legacy DEMs when processing RTC jobs [On Demand in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand) and when using the [API](https://hyp3-docs.asf.alaska.edu/using/api/) or [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/), but we recommend using the Copernicus DEM whenever possible.
 
     When processing InSAR On Demand products, the Copernicus DEM is the only option available. The legacy DEMs are no longer supported for InSAR processing.
 

@@ -48,7 +48,7 @@ In the past, ASF maintained a collection of DEMs that were pre-processed as appr
 
 !!! important "Copernicus DEM GLO-30 Updated" 
 
-    We use the [Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960){target=blank} as our default DEM for RTC and InSAR processing. We have now updated to the [2021 release of the Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/blogs/-/blogs/copernicus-dem-2021-release-now-available){target=blank}, which improves coverage over Norway, and includes 5 additional tiles.
+    We use the [Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960){target=blank} as our default DEM for RTC and InSAR processing. We have now updated to the [2021 release of the Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/blogs/-/blogs/copernicus-dem-2021-release-now-available){target=blank}, which improves coverage over Norway, and includes 5 additional tiles. For more information, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/web/cscda/dataset-details?articleId=394198){target=blank}.
 
     Users still have the option to use the legacy DEMs when processing RTC jobs [On Demand in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand) and when using the [API](https://hyp3-docs.asf.alaska.edu/using/api/) or [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/), but we recommend using the Copernicus DEM whenever possible.
 

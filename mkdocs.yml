@@ -32,6 +32,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Using HyP3:
+    - index.md
     - Vertex: https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank
     - SDK:
       - using/sdk.md

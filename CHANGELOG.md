@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/) 
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.39]
+
+### Added
+* Added information and reference links to the [InSAR Product Guide](docs/guides/insar_product_guide.md) for the [Minimum Cost Flow](https://www.gamma-rs.ch/uploads/media/2002-5_TR_Phase_Unwrapping.pdf) phase unwrapping algorithm used for On Demand InSAR products
+* Added clarification to the [InSAR Product Guide](docs/guides/insar_product_guide.md) that the sign convention used for unwrapped phase is opposite to that used for displacement maps.
+
 ## [0.3.38]
 
 ### Changed

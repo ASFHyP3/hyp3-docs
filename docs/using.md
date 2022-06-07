@@ -1,6 +1,6 @@
 # Using ASF HyP3
 
-On Demand products processed by HyP3 can be requested quickly and easily. ASF's [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu/" ){target=_blank} Data Search portal provides a rich interface to explore Sentinel-1 acquisitions and find images to submit for On Demand processing. It also provides tools for selecting pairs and stacks for InSAR analysis.
+On Demand products processed by HyP3 can be requested quickly and easily. ASF's [Data Search Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu/" ){target=_blank} portal provides a rich interface to explore Sentinel-1 acquisitions and find images to submit for On Demand processing. It also provides tools for selecting pairs and stacks for InSAR analysis.
 
 [![Vertex Image](../images/vertex.png "Click to open Vertex in a new tab")](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=blank}
 

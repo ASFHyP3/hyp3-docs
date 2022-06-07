@@ -186,8 +186,11 @@ To finish interferogram processing, steps 1 through 4 are run once again, this t
 
 ### Phase Unwrapping
 
-All of the phase differences in a wrapped interferograms lie between -π and π. Phase unwrapping attempts to assign multiples of 2π to add to each pixel in the interferogram to restrict the number of 2π jumps in the phase to the regions where they may actually occur. These regions are areas of radar layover or areas of deformation exceeding half a wavelength in the sensor's line of sight. Thermal noise and interferometric decorrelation can also result in these 2π phase discontinuities called *residues*.   
+All of the phase differences in a wrapped interferograms lie between -π and π. Phase unwrapping attempts to assign multiples of 2π to add to each pixel in the interferogram to restrict the number of 2π jumps in the phase to the regions where they may actually occur. These regions are areas of radar layover or areas of deformation exceeding half a wavelength in the sensor's line of sight. Thermal noise and interferometric decorrelation can also result in these 2π phase discontinuities called *residues*. 
 
+The phase unwrapping algorithm used for these products is Minimum Cost Flow (MCF) and Triangulation. Refer to [this Technical Report from GAMMA Remote Sensing](https://www.gamma-rs.ch/uploads/media/2002-5_TR_Phase_Unwrapping.pdf "https://www.gamma-rs.ch/uploads/media/2002-5_TR_Phase_Unwrapping.pdf" ){target=blank} for more information on the MCF phase unwrapping approach.
+
+#### Filtering
 Before the interferogram can be unwrapped, it must be filtered to remove noise. This is accomplished using an adaptive spectral filtering algorithm. This adaptive interferogram filtering aims to reduce phase noise, increase the accuracy of the interferometric phase, and reduce the number of interferogram residues as an aid to phase unwrapping. In this case, residues are points in the interferogram where the sum of the phase differences between pixels around a closed path is not 0.0, which indicates a jump in phase.
 
 #### Masking
@@ -252,10 +255,10 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 
 - The *amplitude* image is the calibrated radiometric backscatter from the reference granule in sigma-nought power. The image is terrain corrected using a geometric correction, but not radiometrically corrected. 
 - The *coherence* file pixel values range from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent. 
-- The *unwrapped phase* file shows the results of the phase unwrapping process. This is the main interferogram output.
-- The *wrapped phase* file indicates the interferogram phase after applying the adaptive filter immediately before unwrapping. *(optional)*
-- The *line-of-sight displacement* file indicates the displacement in meters along the look direction of the sensor. *(optional)*
-- The *vertical displacement* is generated from the line of sight displacement values, and makes the assumption that deformation only occurs in the vertical direction. Note that this assumption may not hold true in cases where the deformation also has a horizontal component. *(optional)*
+- The *unwrapped phase* file shows the results of the phase unwrapping process. Negative values indicate movement towards the sensor, and positive values indicate movement away from the sensor. This is the main interferogram output.
+- The *wrapped phase* file indicates the interferogram phase after applying the adaptive filter immediately before unwrapping. Values range from negative pi to positive pi. *(optional)*
+- The *line-of-sight displacement* file indicates the displacement in meters along the look direction of the sensor. The sign is opposite to that of the unwrapped phase: positive values indicate motion towards the sensor, negative values indicate motion away from the sensor. *(optional)*
+- The *vertical displacement* is generated from the line of sight displacement values, and makes the assumption that deformation only occurs in the vertical direction. Note that this assumption may not hold true in cases where the deformation also has a horizontal component. Positive values indicate uplift, and negative values indicate subsidence. *(optional)*
 - The *look vectors* theta (θ) and phi (φ) describe the elevation and orientation angles of the sensor's look direction. *(optional)*
 - The *incidence angle* maps indicate the angle between the incident signal and the surface normal of either the terrain (local incidence angle) or the ellipsoid (ellipsoid incidence angle). *(optional)*
 - The *DEM* file gives the local terrain heights in meters, with a geoid correction applied. *(optional)*

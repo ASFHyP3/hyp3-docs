@@ -4,15 +4,17 @@ The Alaska Satellite Facility offers On Demand processing of Sentinel-1 datasets
 
 [![Vertex Image](images/vertex.png "Click to open Vertex in a new tab")](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=blank}
 
-On Demand Sentinel-1 products are generated using ASF's HyP3 processing platform, leveraging GAMMA Software. Products are distributed as UTM-projected GeoTIFFs. To learn more, visit the [ASF Sentinel-1 RTC Product Guide](https://asf.alaska.edu/wp-content/uploads/2019/02/Sentinel_RTC_Users_Guide.pdf).
+On Demand Sentinel-1 products are generated using ASF's HyP3 processing platform, leveraging GAMMA Software. Products are distributed as UTM-projected GeoTIFFs. To learn more about the finished products, refer to the Product Guides:
+- [ASF Sentinel-1 RTC Product Guide](guides/rtc_product_guide.md)
+- [ASF Sentinel-1 RTC Product Guide](guides/insar_product_guide.md)
 
 ## Getting Started
 
 To request On Demand products, visit [ASF Data Search - Vertex](https://search.asf.alaska.edu).
 
-1. **Select your scenes** - RTC processing is available for Sentinel-1 GRD-H and SLC scenes with a beam mode of IW. InSAR processing requires pairs of IW SLC scenes. Use the Geographic Search in Vertex to find individual scenes to submit for RTC processing, or reference scenes to use for generating InSAR pairs. For InSAR, once you find a reference scene, use either the Baseline or SBAS Search to find scene pairs to submit for processing. 
+1. **Select your scenes** - RTC processing is available for Sentinel-1 GRD-H and SLC scenes with a beam mode of IW. InSAR processing requires pairs of IW SLC scenes. Use the Geographic Search in Vertex to find individual scenes to submit for RTC processing, or reference scenes to use for generating InSAR pairs. For InSAR, once you find a reference scene, use either the [Baseline](https://docs.asf.alaska.edu/vertex/baseline/ "Vertex Baseline Documentation" ){target=blank} or [SBAS](https://docs.asf.alaska.edu/vertex/sbas/ "Vertex SBAS Documentation" ){target=blank} Search to find scene pairs to submit for processing. 
 
-2. **Submit your request** - After selecting your scenes, access the  *On Demand* <img width="30" src="https://user-images.githubusercontent.com/17994518/95892024-588b9280-0d32-11eb-8734-f1a54a9d2a20.png" /> queue to submit your processing request. You may process up to 200 scenes per month.
+2. **Submit your request** - After selecting your scenes, access the  *On Demand* <img width="30" src="https://user-images.githubusercontent.com/17994518/95892024-588b9280-0d32-11eb-8734-f1a54a9d2a20.png" /> queue to submit your processing request. You may process up to 1000 jobs per month.
 
 3. **Monitor your request** - The *On Demand Products* search type displays your running and completed requests. New requests are typically available for download within an hour, but wait time will depend on processing load.
 

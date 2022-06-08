@@ -1,6 +1,6 @@
 # On Demand Sentinel-1 Processing in Vertex
 
-The Alaska Satellite Facility offers On Demand processing of Sentinel-1 datasets to Radiometric Terrain Correction (RTC) or Interferometric SAR (InSAR) products through [ASF Data Search - Vertex](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=blank}.  You can submit scenes to be processed into higher-level products, avoiding the cost and complexity of performing such processing yourself.
+The Alaska Satellite Facility offers [On Demand processing of Sentinel-1 datasets to Radiometric Terrain Correction (RTC) or Interferometric SAR (InSAR) products through Vertex](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=blank}, ASF's Data Search web portal.  You can submit scenes to be processed into higher-level products, avoiding the cost and complexity of performing such processing yourself.
 
 [![Vertex Image](images/vertex.png "Click to open Vertex in a new tab")](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=blank}
 

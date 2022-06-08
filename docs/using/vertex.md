@@ -2,12 +2,12 @@
 
 The Alaska Satellite Facility offers [On Demand processing of Sentinel-1 datasets to Radiometric Terrain Correction (RTC) or Interferometric SAR (InSAR) products through Vertex](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=blank}, ASF's Data Search web portal.  You can submit scenes to be processed into higher-level products, avoiding the cost and complexity of performing such processing yourself.
 
-[![Vertex Image](images/vertex.png "Click to open Vertex in a new tab")](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=blank}
+[![Vertex Image](../images/vertex.png "Click to open Vertex in a new tab")](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=blank}
 
 On Demand Sentinel-1 products are generated using ASF's HyP3 processing platform, leveraging GAMMA Software. Products are distributed as UTM-projected GeoTIFFs. To learn more about the finished products, refer to the Product Guides:
 
-* [ASF Sentinel-1 RTC Product Guide](guides/rtc_product_guide.md)
-* [ASF Sentinel-1 RTC Product Guide](guides/insar_product_guide.md)
+* [ASF Sentinel-1 RTC Product Guide](../guides/rtc_product_guide.md)
+* [ASF Sentinel-1 RTC Product Guide](../guides/insar_product_guide.md)
 
 ## Getting Started
 
@@ -25,6 +25,6 @@ To request On Demand products, visit [ASF Data Search - Vertex](https://search.a
 
 Refer to our step-by-step tutorials for ordering and accessing [RTC](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand Story Map" ){target=blank} and [InSAR](https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3 "InSAR On Demand Story Map" ){target=blank} products in Vertex.
 
-[![RTC On Demand Image](images/rtc-tutorial.png "Click to open RTC On Demand! tutorial")](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand!" ){target=blank} 
-[![InSAR On Demand Image](images/insar-tutorial.png "Click to open InSAR On Demand! tutorial")](https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3 "InSAR On Demand!" ){target=blank}
+[![RTC On Demand Image](../images/rtc-tutorial.png "Click to open RTC On Demand! tutorial")](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand!" ){target=blank} 
+[![InSAR On Demand Image](../images/insar-tutorial.png "Click to open InSAR On Demand! tutorial")](https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3 "InSAR On Demand!" ){target=blank}
 

@@ -33,7 +33,8 @@ nav:
   - Home: index.md
   - Using HyP3:
     - using.md
-    - Vertex: using/vertex.md
+    - Vertex:
+      - using/vertex.md
     - SDK:
       - using/sdk.md
       - Example Notebook: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank

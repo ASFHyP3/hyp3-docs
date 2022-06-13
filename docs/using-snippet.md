@@ -1,5 +1,5 @@
-On Demand products processed by HyP3 can be requested quickly and easily, using
-either a web interface or programmatically.
+On Demand products processed by HyP3 can be requested quickly and easily, either by
+using a web interface or programmatically.
 
 ### Web Access 
 

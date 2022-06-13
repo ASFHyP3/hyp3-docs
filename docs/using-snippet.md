@@ -1,10 +1,11 @@
-On Demand products processed by HyP3 can be requested quickly and easily,
-using either a web interface or programmatically. 
+On Demand products processed by HyP3 can be requested quickly and easily, using
+either a web interface or programmatically.
 
 ### Web Access 
 
-ASF's Data Search Vertex portal provides a rich interface to explore Sentinel-1 acquisitions and
-find images to submit for On Demand processing. It also provides tools for selecting pairs and stacks for InSAR analysis.
+ASF's Data Search Vertex portal provides a rich interface to explore Sentinel-1
+acquisitions and find images to submit for On Demand processing. It also provides
+tools for selecting pairs and stacks for InSAR analysis.
 
 * [Vertex](vertex.md "Using Vertex")
 

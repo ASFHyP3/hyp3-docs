@@ -23,7 +23,7 @@ extra:
 markdown_extensions:
   - toc:
       permalink: true
-      toc_depth: 3
+      toc_depth: 4
   - attr_list
   - admonition
   - pymdownx.highlight
@@ -33,7 +33,7 @@ nav:
   - Home: index.md
   - Using HyP3:
     - using.md
-    - Vertex: vertex.md
+    - Vertex: using/vertex.md
     - SDK:
       - using/sdk.md
       - Example Notebook: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
@@ -91,4 +91,3 @@ plugins:
         # full link to our hosted docs needed b/c mkdocs-redirects doesn't support hash fragments
         #    See: https://github.com/datarobot/mkdocs-redirects/issues/16
         getting_started.md: 'https://hyp3-docs.asf.alaska.edu/#getting-started'
-        using/vertex.md: 'https://search.asf.alaska.edu/#/?topic=onDemand'

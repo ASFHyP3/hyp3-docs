@@ -8,3 +8,5 @@ when discussing the HyP3 software or plugins.
   the `*.README.md.txt` file.
 - For netCDF products, the acknowledgement is included in the `source` global attribute
   and the DOIs are included in the `references` global attribute.
+  
+{% include 'citing-snippet.md' %}

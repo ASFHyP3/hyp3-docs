@@ -11,6 +11,8 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 * Added information and reference links to the [InSAR Product Guide](docs/guides/insar_product_guide.md) for the [Minimum Cost Flow](https://www.gamma-rs.ch/uploads/media/2002-5_TR_Phase_Unwrapping.pdf) phase unwrapping algorithm used for On Demand InSAR products
 * Added clarification to the [InSAR Product Guide](docs/guides/insar_product_guide.md) that the sign convention used for unwrapped phase is opposite to that used for displacement maps.
+* Added landing page for [Using HyP3](docs/using.md) section 
+* Added references to repo citation
 
 ## [0.3.38]
 

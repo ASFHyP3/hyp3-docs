@@ -1,15 +1,6 @@
 # Using ASF HyP3
 
-On Demand products processed by HyP3 can be requested quickly and easily, using either a web interface or programmatic options. 
-
-## Web Access 
-### [Vertex](vertex.md "Using Vertex")
-ASF's [Data Search Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu/" ){target=_blank} portal provides a rich interface to explore Sentinel-1 acquisitions and find images to submit for On Demand processing. It also provides tools for selecting pairs and stacks for InSAR analysis.
-
-## Programmatic Access
-Users have two programmatic options for requesting and downloading On Demand products:
-###[HyP3 SDK](using/sdk.md "Using SDK") 
-###[HyP3 API](using/api.md "Using API")
+{% include 'using-snippet.md' %}
 
 ## Citing HyP3
 

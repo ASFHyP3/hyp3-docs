@@ -7,7 +7,7 @@ The Alaska Satellite Facility offers [On Demand processing of Sentinel-1 dataset
 On Demand Sentinel-1 products are generated using ASF's HyP3 processing platform, leveraging GAMMA Software. Products are distributed as UTM-projected GeoTIFFs. To learn more about the finished products, refer to the Product Guides:
 
 * [ASF Sentinel-1 RTC Product Guide](../guides/rtc_product_guide.md)
-* [ASF Sentinel-1 RTC Product Guide](../guides/insar_product_guide.md)
+* [ASF Sentinel-1 InSAR Product Guide](../guides/insar_product_guide.md)
 
 ## Getting Started
 

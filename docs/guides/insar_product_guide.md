@@ -31,7 +31,7 @@ For slower processes that require a longer time interval to detect movement, lon
 ### Polarizations
 Polarization refers to the direction of travel of an electromagnetic wave.  A horizontal wave is transmitted so that it oscillates in a plane parallel to the surface imaged, while a vertical wave oscillates in a plane perpendicular to the surface imaged. 
 
-Most modern SAR systems can transmit chirps with either a horizontal or vertical polarization. In addition, some of these sensors can listen for either horizontal or vertical backscatter. This gives rise to 4 different types of returns: HH, HV, VV, and VH, with the first letter indicating the transmit method and the second the receive method. For example, VH is a vertically polarized transmit signal with horizontally polarized echoes recorded. 
+Most modern SAR systems can transmit chirps with either a horizontal or vertical polarization. In addition, some of these sensors can listen for either horizontal or vertical backscatter. This gives rise to 4 different types of returns: HH, HV, VV, and VH, with the first letter indicating the transmission method and the second the receive method. For example, VH is a vertically polarized transmit signal with horizontally polarized echoes recorded. 
 
 For InSAR applications, processing is generally performed on the co-pol (VV or HH) data and not on the cross-pol (VH or HV) data. Also, each image used in an InSAR pair is required to be the same polarization - two HH images of the same area could form a valid pair, while a single HH with a single VV of the same area would not.
 
@@ -61,7 +61,7 @@ In contrast to the (physical) baseline, the *temporal baseline* refers to the ti
 #### Critical Baseline
 Large baselines are better than small for topographic mapping. However, as the baseline increases, coherence decreases. At some point, it is impossible to create an interferogram because of baseline decorrelation. The maximum viable baseline per platform, referred to as the *critical baseline*, is a function of the distance to the ground, the wavelength, and the viewing geometry of the platform. 
 
-For Sentinel-1 this critical baseline is about 5 km. In practice, if the perpendicular baseline between images is more than 3/4 of the critical baseline, interferogram creation will be problematic due to the level of noise.
+For Sentinel-1, this critical baseline is about 5 km. In practice, if the perpendicular baseline between images is more than 3/4 of the critical baseline, interferogram creation will be problematic due to the level of noise.
 
 For deformation mapping, it is best to minimize the perpendicular baseline whenever possible, but there may be tradeoffs in terms of finding suitable temporal baselines. In most cases, however, pairs selected for deformation mapping will have perpendicular baselines *much* smaller than the critical baseline.
 
@@ -111,7 +111,7 @@ There are several options users can set when ordering InSAR On Demand products. 
 
 1. The **number of looks** drives the resolution and pixel spacing of the output products. Selecting 10x2 looks will yield larger products with 80 m resolution and pixel spacing of 40 m. Selecting 20x4 looks reduces the resolution to 160 m and reduces the size of the products (roughly 1/4 the size of 10x2 look products), with a pixel spacing of 80 m. The default is 20x4 looks.
 
-2. The **look vectors** are stored in two files. The lv_theta (θ) indicates the SAR look vector elevation angle at each pixel, ranging from -π/2 (down) to π/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface. The lv_phi (φ) map indicates the SAR look vector orientation angle at each pixel, ranging from 0 (east) to π/2 (north). The look vector orientation angle is defined as the angle between the East direction and the projection of the look vector on the horizontal surface plan. The orientation angle increases towards north, with the North direction corresponding to π/2 (and south to -π/2). Both angles are expressed in radians. The default is to not include these files in the output product bundle.
+2. The **look vectors** are stored in two files. The lv_theta (θ) indicates the SAR look vector elevation angle at each pixel, ranging from -π/2 (down) to π/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface. The lv_phi (φ) map indicates the SAR look vector orientation angle at each pixel, ranging from 0 (east) to π/2 (north). The look vector orientation angle is defined as the angle between the East direction and the projection of the look vector on the horizontal surface plane. The orientation angle increases towards north, with the North direction corresponding to π/2 (and south to -π/2). Both angles are expressed in radians. The default is to not include these files in the output product bundle.
 
 3. The **displacement maps** convert the phase difference values from the unwrapped interferogram into measurements of ground displacement in meters. The line-of-sight displacement map indicates the amount of movement away from or towards the sensor. The vertical displacement calculates the vertical component of the line-of-sight displacement, using the assumption that all deformation is in the vertical direction. These files are excluded from the product package by default.
 
@@ -154,7 +154,7 @@ In order to create differential InSAR products that show motion on the ground, o
 
 The DEM that is used for HyP3 InSAR processing is the [2021 Release of the Copernicus GLO-30 Public DEM](https://spacedata.copernicus.eu/blogs/-/blogs/copernicus-dem-2021-release-now-available "https://spacedata.copernicus.eu/blogs/-/blogs/copernicus-dem-2021-release-now-available" ){target=_blank} dataset [publicly available on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem/" ){target=_blank}. This DEM provides global coverage at 30-m pixel spacing, and provides higher-quality products over a wider area than the older DEMs (SRTM and NED) previously used to generate ASF's On Demand products. For details on the [Copernicus GLO-30 DEM](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960 "https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960" ){target=_blank}, refer to the [Product Handbook](https://spacedata.copernicus.eu/documents/20126/0/GEO1988-CopernicusDEM-SPE-002_ProductHandbook_I1.00.pdf "https://spacedata.copernicus.eu/documents/20126/0/GEO1988-CopernicusDEM-SPE-002_ProductHandbook_I1.00.pdf" ){target=_blank}. For more information about the 2021 updates, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/web/cscda/dataset-details?articleId=394198 "https://spacedata.copernicus.eu/web/cscda/dataset-details?articleId=394198" ){target=blank}.
 
-The DEM tiles necessary to cover the input granules for the InSAR product are downloaded. A geoid correction applied to the DEM, and it is resampled to match the [output resolution](#processing-options "Link to Processing Options section") of the InSAR product (160 m for 20x4 products, 80 m for 10x2 products) and projected to the appropriate UTM Zone for the granule location.
+The DEM tiles necessary to cover the input granules for the InSAR product are downloaded. A geoid correction is applied to the DEM, and it is resampled to match the [output resolution](#processing-options "Link to Processing Options section") of the InSAR product (160 m for 20x4 products, 80 m for 10x2 products) and projected to the appropriate UTM Zone for the granule location.
 
 #### Calculate Overlapping Bursts
 
@@ -162,7 +162,7 @@ The IW SLC Sentinel-1 data comes in three sub-swaths. However, a further subdivi
 
 Each burst is precisely timed to repeat at a given time interval. This consistent repeat combined with precise velocity control gives rise to the fact that the bursts start at the same time on each pass around the globe. 
 
-For example: a burst images a piece of the Galápagos Islands. The next time that same piece of the island is imaged, the time of day will be the same, to within few milliseconds. Only the frames containing overlapping bursts can be used to perform InSAR processing. This means that **if there is no burst overlap in the pair selected as input, the InSAR process will not run**.
+For example, a burst images a piece of the Galápagos Islands. The next time that same piece of the island is imaged, the time of day will be the same, to within few milliseconds. Only the frames containing overlapping bursts can be used to perform InSAR processing. This means that **if there is no burst overlap in the pair selected as input, the InSAR process will not run**.
 
 Repeatable burst timing is exploited by HyP3 in order to calculate the bursts that overlap between two scenes.  These overlapping bursts are the only ones used in the rest of the InSAR process. The rest are discarded.
 
@@ -175,7 +175,7 @@ Once these steps have been performed, the two SLCs are co-registered to within 0
 1. Resample the secondary SLC using previously calculated offset polynomial
 2. Match the reference and secondary SLC images using intensity cross-correlation
 3. Estimate range and azimuth offset polynomial coefficients from results of matching
-4. Create differential interferogram using the co-registered SLCs and the simulated interferogram
+4. Create a differential interferogram using the co-registered SLCs and the simulated interferogram
 5. Update offset polynomial by adding the current estimates
 
 Note that these steps are automatically run 4 times.  At that point, **if the last offset calculated was more than 0.02 pixels, then the procedure will fail to complete**.
@@ -186,7 +186,7 @@ To finish interferogram processing, steps 1 through 4 are run once again, this t
 
 ### Phase Unwrapping
 
-All of the phase differences in a wrapped interferograms lie between -π and π. Phase unwrapping attempts to assign multiples of 2π to add to each pixel in the interferogram to restrict the number of 2π jumps in the phase to the regions where they may actually occur. These regions are areas of radar layover or areas of deformation exceeding half a wavelength in the sensor's line of sight. Thermal noise and interferometric decorrelation can also result in these 2π phase discontinuities called *residues*. 
+All of the phase differences in wrapped interferograms lie between -π and π. Phase unwrapping attempts to assign multiples of 2π to add to each pixel in the interferogram to restrict the number of 2π jumps in the phase to the regions where they may actually occur. These regions are areas of radar layover or areas of deformation exceeding half a wavelength in the sensor's line of sight. Thermal noise and interferometric decorrelation can also result in these 2π phase discontinuities called *residues*. 
 
 The phase unwrapping algorithm used for these products is Minimum Cost Flow (MCF) and Triangulation. Refer to [this Technical Report from GAMMA Remote Sensing](https://www.gamma-rs.ch/uploads/media/2002-5_TR_Phase_Unwrapping.pdf "https://www.gamma-rs.ch/uploads/media/2002-5_TR_Phase_Unwrapping.pdf" ){target=blank} for more information on the MCF phase unwrapping approach.
 
@@ -221,7 +221,7 @@ After the phase is unwrapped, the final steps are geocoding and product creation
 
 #### Geocoding
 
-Geocoding is the process of reprojecting pixels from SAR slant range space (where all the calculations have been performed) into map projected ground range space (where analysis of products is simplest). Using the look up table previously computed, this process takes each pixel in the input product and relocates it to the UTM zone of the DEM used in processing. This is accomplished using nearest-neighbor resampling so that original pixel values are preserved.
+Geocoding is the process of reprojecting pixels from SAR slant range space (where all the calculations have been performed) into map-projected ground range space (where analysis of products is simplest). Using the look up table previously computed, this process takes each pixel in the input product and relocates it to the UTM zone of the DEM used in processing. This is accomplished using nearest-neighbor resampling so that original pixel values are preserved.
 
 #### Product Creation
 
@@ -229,7 +229,7 @@ Files are next exported from GAMMA internal format into the widely-used GeoTIFF 
  
 ## Product Packaging
 
-HyP3 InSAR output is a zip file containing a variety of files including GeoTIFFs, PNG browse images with geolocation information, Google Earth KMZ files, a metadata file, and a README file.
+HyP3 InSAR output is a zip file containing various files, including GeoTIFFs, PNG browse images with geolocation information, Google Earth KMZ files, a metadata file, and a README file.
 
 ### Naming Convention
 
@@ -241,7 +241,7 @@ The InSAR product names are packed with information pertaining to the processing
 - The product type (always INT for InSAR) and the pixel spacing, which will be either 80 or 40, based upon the number of looks selected when the job was submitted for processing
 - The software package used for processing is always GAMMA for GAMMA InSAR products
 - User-defined options are denoted by three characters indicating whether the product is water masked (w) or not (u), the scene is clipped (e for entire area, c for clipped), and whether a single sub-swath was processed or the entire granule (either 1, 2, 3, or F for full swath)
-    - *Currently only the water masking is available as a user-selected option; the products always include the full granule extent with all three sub-swaths*
+    - *Currently, only the water masking is available as a user-selected option; the products always include the full granule extent with all three sub-swaths*
 - The filename ends with the ASF product ID, a 4 digit hexadecimal number
 
 
@@ -257,7 +257,7 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 - The *coherence* file pixel values range from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent. 
 - The *unwrapped phase* file shows the results of the phase unwrapping process. Negative values indicate movement towards the sensor, and positive values indicate movement away from the sensor. This is the main interferogram output.
 - The *wrapped phase* file indicates the interferogram phase after applying the adaptive filter immediately before unwrapping. Values range from negative pi to positive pi. *(optional)*
-- The *line-of-sight displacement* file indicates the displacement in meters along the look direction of the sensor. The sign is opposite to that of the unwrapped phase: positive values indicate motion towards the sensor, negative values indicate motion away from the sensor. *(optional)*
+- The *line-of-sight displacement* file indicates the displacement in meters along the look direction of the sensor. The sign is opposite to that of the unwrapped phase: positive values indicate motion towards the sensor and negative values indicate motion away from the sensor. *(optional)*
 - The *vertical displacement* is generated from the line of sight displacement values, and makes the assumption that deformation only occurs in the vertical direction. Note that this assumption may not hold true in cases where the deformation also has a horizontal component. Positive values indicate uplift, and negative values indicate subsidence. *(optional)*
 - The *look vectors* theta (θ) and phi (φ) describe the elevation and orientation angles of the sensor's look direction. *(optional)*
 - The *incidence angle* maps indicate the angle between the incident signal and the surface normal of either the terrain (local incidence angle) or the ellipsoid (ellipsoid incidence angle). *(optional)*
@@ -424,13 +424,13 @@ As with the LOS Displacement maps, setting the **ΔΨ<sup>&ast;</sup>** value to
 
 #### Displacement Values from a Single Interferogram
 
-In general, calculating displacement values from a single interferogram is not recommended. While the displacement rasters provided with ASF's On Demand InSAR products can be helpful to visualize changes, we do not recommend that you rely on a single interferogram when coming to conclusions about surface displacement, even if you apply a correction based on a manually selected reference point. It will be more robust to use a time series approach to more accurately determine the pattern of movement. When using SAR time-series software such as [MintPy](https://mintpy.readthedocs.io/en/latest/ "https://mintpy.readthedocs.io/en/latest/" ){target=_blank}, you have the option to select a specific reference point, and the values of the input rasters will be adjusted accordingly. 
+In general, calculating displacement values from a single interferogram is not recommended. While the displacement rasters provided with ASF's On Demand InSAR products can be helpful in visualizing changes, we do not recommend that you rely on a single interferogram when coming to conclusions about surface displacement, even if you apply a correction based on a manually selected reference point. It will be more robust to use a time series approach to more accurately determine the pattern of movement. When using SAR time-series software such as [MintPy](https://mintpy.readthedocs.io/en/latest/ "https://mintpy.readthedocs.io/en/latest/" ){target=_blank}, you have the option to select a specific reference point, and the values of the input rasters will be adjusted accordingly. 
 
 ## Error Sources
 On Demand InSAR products do not currently correct for some common sources of error in interferometry, such as atmospheric effects. Further processing or time series analysis can be performed by the user to identify or reduce the impact of some of these errors when using On Demand InSAR products for analysis.
 
 ### Atmospheric Delay
-While SAR signals can penetrate clouds, atmospheric conditions can delay the transmission of the signal. This results in phase differences that can look like surface deformation signals, but are actually driven by differences in the atmospheric conditions between the pair of acquisitions used to generate the interferogram. 
+While SAR signals can penetrate clouds, atmospheric conditions can delay the transmission of the signal. This results in phase differences that can look like surface deformation signals but are actually driven by differences in the atmospheric conditions between the pair of acquisitions used to generate the interferogram. 
 
 In some cases, atmospheric errors can be corrected by using an atmospheric model to remove the impacts of the turbulent delay from the interferogram. Another approach is to use time series analysis to identify outliers.
 

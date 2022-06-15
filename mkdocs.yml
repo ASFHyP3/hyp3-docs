@@ -46,12 +46,12 @@ nav:
     - RTC:
       - guides/rtc_product_guide.md
       - Product Guide: guides/rtc_product_guide.md
-      - Story Map: https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35" target="_blank
+      - StoryMap: https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35" target="_blank
       - Theoretical Basis: guides/rtc_atbd.md
     - InSAR:
       - guides/insar_product_guide.md
       - Product Guide: guides/insar_product_guide.md
-      - Story Map: https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank
+      - StoryMap: https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank
     - AutoRIFT: https://its-live.jpl.nasa.gov/" target="_blank
     - Usage Guidelines: usage_guidelines.md
   - SAR Basics:
@@ -61,8 +61,9 @@ nav:
     - SAR FAQ: https://asf.alaska.edu/information/sar-information/what-is-sar/#sar_faq" target="_blank
   - Tutorials:
     - tutorials.md
+    - Using HyP3 Python SDK: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
     - InSAR time series with MintPy: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank
-    - Story Map Tutorials: https://asf-daac.maps.arcgis.com/home/index.html" target="_blank
+    - StoryMap Tutorials: https://asf-daac.maps.arcgis.com/home/index.html" target="_blank
   - Other Tools:
     - ArcGIS Toolbox: tools/arcgis_toolbox.md
     - ASF Tools for Python:

@@ -10,7 +10,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 * Added a quick link, `https://hyp3-docs.asf.alaska.edu/tutorials/mintpy`, to our [MintPy tutorial notebook](https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb)
-* Added a Landing page for [HyP3 tutorials](docs/tutorials.md)
+* Added a landing page for [HyP3 tutorials](docs/tutorials.md)
 * Added the HyP3 Python SDK tutorial as a navigation menu item under the "Tutorials" section
 
 ## [0.3.39]

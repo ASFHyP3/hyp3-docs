@@ -61,7 +61,7 @@ nav:
     - SAR FAQ: https://asf.alaska.edu/information/sar-information/what-is-sar/#sar_faq" target="_blank
   - Tutorials:
     - tutorials.md
-    - Using HyP3 Python SDK: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb
+    - Using HyP3 Python SDK: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
     - InSAR time series with MintPy: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank
     - StoryMap Tutorials: https://asf-daac.maps.arcgis.com/home/index.html" target="_blank
   - Other Tools:

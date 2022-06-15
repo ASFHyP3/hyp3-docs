@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/) 
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.40]
+
+### Added
+* Added a quick link, `https://hyp3-docs.asf.alaska.edu/tutorials/mintpy`, to our [MintPy tutorial notebook](https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb)
+* Added a landing page for [HyP3 tutorials](docs/tutorials.md)
+* Added the HyP3 Python SDK tutorial as a navigation menu item under the "Tutorials" section
+
 ## [0.3.39]
 
 ### Added

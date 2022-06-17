@@ -2,7 +2,7 @@
 
 ***Alaska Satellite Facility's Hybrid Pluggable Processing Pipeline***
 
-HyP3 is a service for processing Synthetic Aperture Radar (SAR) imagery that addresses many common issues for users of
+HyP3 (pronounced ***HYPE***) is a service for processing Synthetic Aperture Radar (SAR) imagery that addresses many common issues for users of
 SAR data:
 
 * Most SAR datasets require at least some processing to remove distortions before they are analysis-ready

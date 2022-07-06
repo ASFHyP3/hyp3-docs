@@ -1,0 +1,2 @@
+HyP3 SDK v1.6.1### Added
+- `Job` now has a `subscription_id` attribute.

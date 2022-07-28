@@ -7,10 +7,19 @@ and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.3.43]
+
+### Fixed
+* API references for `hyp3_sdk` and `asf_tools` now document all modules recursively.
+
 ## [0.3.42]
+
+### Changed
 * Updated ASF Tools for Python to [v0.4.1](https://github.com/ASFHyP3/asf-tools/blob/main/CHANGELOG.md#041)
 
 ## [0.3.41]
+
+### Changed
 * Updated HyP3 SDK to [v1.6.1](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#161)
 
 ## [0.3.40]

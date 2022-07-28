@@ -87,6 +87,7 @@ plugins:
           python:
             inherited_members: true
             rendering:
+              show_submodules: true
               show_root_toc_entry: false
   - redirects:
       redirect_maps:

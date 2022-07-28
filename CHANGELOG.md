@@ -10,7 +10,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.3.43]
 
 ### Fixed
-* API references for `hyp3_sdk` and `asf_tools` now document all modules recursively. Fixes [#243](https://github.com/ASFHyP3/hyp3-docs/issues/243)
+* API reference and `asf_tools` now documents all modules recursively. Fixes [#243](https://github.com/ASFHyP3/hyp3-docs/issues/243)
 
 ## [0.3.42]
 

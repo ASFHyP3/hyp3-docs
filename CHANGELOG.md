@@ -11,8 +11,6 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 * Updated ASF Tools for Python to [v0.4.2](https://github.com/ASFHyP3/asf-tools/blob/main/CHANGELOG.md#042)
 
-## [0.3.43]
-
 ### Fixed
 * API references for `hyp3_sdk` and `asf_tools` now document all modules recursively. Fixes [#243](https://github.com/ASFHyP3/hyp3-docs/issues/243)
 

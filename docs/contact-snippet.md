@@ -6,4 +6,4 @@ Found a bug? Want to request a feature?
 General questions? Suggestions? Or just want to talk to the team?
 [Chat with us on Gitter](https://gitter.im/ASFHyP3/community "ASF HyP3 Gitter Community" ){target=_blank}
 
-You can also reach us by email through ASF User Services: [Email ASF User Services](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu" ){target=_blank}
+You can also reach us by email through ASF User Services: [Email ASF User Services](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu")

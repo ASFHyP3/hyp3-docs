@@ -1,15 +1,15 @@
 # Digital Elevation Models
-Digital Elevation Models are required when processing SAR data to higher-level products, such as the [Radiometric Terrain Correction (RTC)](products.md#rtc) and [Interferometric SAR (InSAR)](products.md#insar) products available [On Demand](https://search.asf.alaska.edu/#/?topic=onDemand) from ASF. 
+Digital Elevation Models are required when processing SAR data to higher-level products, such as the [Radiometric Terrain Correction (RTC)](products.md#rtc "RTC Product Documentation" ){target=_blank} and [Interferometric SAR (InSAR)](products.md#insar "InSAR Product Documentation " ){target=_blank} products available [On Demand](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=_blank) from ASF. 
 
 ASF uses DEMs that are publicly available and have wide-ranging coverage. In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. 
 
-With the public release of the [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/documents/20126/0/GEO1988-CopernicusDEM-SPE-002_ProductHandbook_I1.00.pdf){target=blank}, we have changed our default DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. This is now the default DEM for processing RTC products, and the only option available for processing InSAR products. 
+With the public release of the [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/documents/20126/0/GEO1988-CopernicusDEM-SPE-002_ProductHandbook_I1.00.pdf "Copernicus DEM GLO-30 Handbook" ){target=blank}, we have changed our default DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. This is now the default DEM for processing RTC products, and the only option available for processing InSAR products. 
 
 !!! important "Copernicus DEM GLO-30 Updated" 
 
-    We use the [Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960){target=blank} as our default DEM for RTC and InSAR processing. We have now updated to the [2021 release of the Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/blogs/-/blogs/copernicus-dem-2021-release-now-available){target=blank}, which improves coverage over Norway, and includes 5 additional tiles. For more information, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/web/cscda/dataset-details?articleId=394198){target=blank}.
+    We use the [Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960 "Copernicus DEM GLO-30 Information" ){target=_blank} as our default DEM for RTC and InSAR processing. We have now updated to the [2021 release of the Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/blogs/-/blogs/copernicus-dem-2021-release-now-available "Copernicus DEM GLO-30 Press Release" ){target=_blank}, which improves coverage over Norway, and includes 5 additional tiles. For more information, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/web/cscda/dataset-details?articleId=394198 "Copernicus DEM GLO-30 Dataset Details" ){target=_blank}.
 
-    Users still have the option to use the legacy DEMs when processing RTC jobs [On Demand in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand) and when using the [API](https://hyp3-docs.asf.alaska.edu/using/api/) or [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/), but we recommend using the Copernicus DEM whenever possible.
+    Users still have the option to use the legacy DEMs when processing RTC jobs [On Demand in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=_blank} and when using the [API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank} or [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank}, but we recommend using the Copernicus DEM whenever possible.
 
     When processing InSAR On Demand products, the Copernicus DEM is the only option available. The legacy DEMs are no longer supported for InSAR processing.
 
@@ -31,7 +31,7 @@ Note that the height values will differ from the original source DEM in all case
 
 ## Copernicus DEM
 
-The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960){target=blank} provides global coverage (with the current exception of an area covering Armenia and Azerbaijan, see Figure 2) at 30-m pixel spacing. When an On Demand job is requested, we download the required DEM tiles from the Copernicus Digital Elevation Model (DEM) GLO-30 Public dataset available in the [Registry of Open Data on AWS](https://registry.opendata.aws/copernicus-dem/){target=blank}, managed by [Sinergise](https://www.sinergise.com/){target=blank}. We mosaic the tiles and reproject them to the appropriate UTM Zone for the location of the SAR granule to be processed, resampling them as required for processing. A geoid correction is applied before it is used for On Demand processing.
+The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960 "Copernicus DEM GLO-30 Information" ){target=_blank} provides global coverage (with the current exception of an area covering Armenia and Azerbaijan, see Figure 2) at 30-m pixel spacing. When an On Demand job is requested, we download the required DEM tiles from the Copernicus Digital Elevation Model (DEM) GLO-30 Public dataset available in the [Registry of Open Data on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank}, managed by [Sinergise](https://www.sinergise.com/ "https://www.sinergise.com" ){target=blank}. We mosaic the tiles and reproject them to the appropriate UTM Zone for the location of the SAR granule to be processed, resampling them as required for processing. A geoid correction is applied before it is used for On Demand processing.
 
 Figure 1 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and Figure 2 details the land area currently not covered.
 
@@ -45,14 +45,14 @@ Figure 1 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and Fig
 
 ## Legacy DEMs
 
-The legacy DEMs were pre-processed by ASF to a consistent raster format (GeoTIFF) from the original source formats: height (\*.hgt), ESRI ArcGrid (\*.adf), etc. Many of the NASA-provided DEMs were provided as orthometric heights with EGM96 vertical datum. These were converted by ASF to ellipsoid heights using the ASF [MapReady](https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready){target=blank} tool named *geoid_adjust*. The pixel reference varied from the center (pixel as point) to a corner (pixel as area). The GAMMA software, used to generate the terrain corrected products, uses pixel as area and adjusts DEM coordinates as needed. 
+The legacy DEMs were pre-processed by ASF to a consistent raster format (GeoTIFF) from the original source formats: height (\*.hgt), ESRI ArcGrid (\*.adf), etc. Many of the NASA-provided DEMs were provided as orthometric heights with EGM96 vertical datum. These were converted by ASF to ellipsoid heights using the ASF [MapReady](https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready "https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready" ){target=_blank} tool named *geoid_adjust*. The pixel reference varied from the center (pixel as point) to a corner (pixel as area). The GAMMA software, used to generate the terrain corrected products, uses pixel as area and adjusts DEM coordinates as needed. 
 
 These processed DEM collections are stored by ASF in AWS. When an On Demand job is requested, the best-available DEM covering the SAR granule is selected, and the necessary tiles are reprojected to a mosaic in the UTM Zone appropriate for the granule location.
 
 If legacy DEM processing is selected, one of the following DEMs will be used:
 
-1. The [National Elevation Dataset (NED)](https://pubs.er.usgs.gov/publication/70201572){target=blank} ⅓ arc second (about 10 m resolution) DEM covers the continental U.S. (CONUS), Hawaii, and parts of Alaska.
-2. [Shuttle Radar Topography Mission (SRTM)](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1-arc?qt-science_center_objects=0#qt-science_center_objects){target=blank} GL1 data at 30 m resolution is used where NED 13 is not available.  
+1. The [National Elevation Dataset (NED)](https://pubs.er.usgs.gov/publication/70201572 "NED Information" ){target=_blank} ⅓ arc second (about 10 m resolution) DEM covers the continental U.S. (CONUS), Hawaii, and parts of Alaska.
+2. [Shuttle Radar Topography Mission (SRTM)](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1-arc?qt-science_center_objects=0#qt-science_center_objects "SRTM DEM Information" ){target=_blank} GL1 data at 30 m resolution is used where NED 13 is not available.  
 3. 1 arc second NED gives coverage of Canada at about 30 m resolution. 
 4. 2 arc second NED (about 60 m) covers the remaining parts of Alaska above 60 degrees northern latitude.
 
@@ -66,6 +66,5 @@ Figure 3 shows the coverage of the various legacy DEM sources.
 
 ## Special Use DEMs
 
-[AutoRIFT](products.md#autorift){target=blank}, a process developed by the [NASA MEaSUREs ITS_LIVE](https://its-live.jpl.nasa.gov/){target=_blank}
-project, processes use a custom Greenland and Antarctica DEM with a 240 m resolution. The DEM,
-associated process input files, and their details are available on the ITS_LIVE project website. 
+[AutoRIFT](products.md#autorift "AutoRIFT Documentation" ){target=_blank}, a process developed by the [NASA MEaSUREs ITS_LIVE](https://its-live.jpl.nasa.gov/ "https://its-live.jpl.nasa.gov" ){target=_blank}
+project, processes use a custom Greenland and Antarctica DEM with a 240 m resolution. The DEM, associated process input files, and their details are available on the ITS_LIVE project website. 

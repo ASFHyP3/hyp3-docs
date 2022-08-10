@@ -1,5 +1,5 @@
 # Digital Elevation Models
-Digital Elevation Models are required when processing SAR data to higher-level products, such as the [Radiometric Terrain Correction (RTC)](products.md#rtc "RTC Product Documentation" ){target=_blank} and [Interferometric SAR (InSAR)](products.md#insar "InSAR Product Documentation " ){target=_blank} products available [On Demand](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=_blank) from ASF. 
+Digital Elevation Models are required when processing SAR data to higher-level products, such as the [Radiometric Terrain Correction (RTC)](products.md#rtc "RTC Products" ){target=_blank} and [Interferometric SAR (InSAR)](products.md#insar "InSAR Products" ){target=_blank} products available [On Demand](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=_blank} from ASF. 
 
 ASF uses DEMs that are publicly available and have wide-ranging coverage. In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. 
 

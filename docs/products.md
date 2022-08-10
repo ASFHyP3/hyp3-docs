@@ -11,7 +11,7 @@ Sentinel-1 RTC products are generated leveraging GAMMA Software. Products are
 distributed as UTM-projected GeoTIFFs with a pixel spacing of 30 meters. To learn
 more, refer to our [ASF Sentinel-1 RTC Product Guide](guides/rtc_product_guide.md "ASF Sentinel-1 RTC Product Guide" ){target=_blank}.
 
-For step-by-step instructions for searching for, ordering, downloading and using On Demand RTC products, visit our [RTC On Demand!](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand! Story Map" ){target=_blank} tutorial.
+For step-by-step instructions for searching for, ordering, downloading and using On Demand RTC products, visit our [RTC On Demand!](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand! StoryMap" ){target=_blank} tutorial.
 
 A Digital Elevation Model (DEM) is required for processing RTC. ASF uses the
 best publicly-available DEM with full coverage of the processing area. To learn more,
@@ -30,7 +30,7 @@ Imagery of densely vegetated areas likely represents the top of the canopy rathe
 actual terrain. In addition, vegetated areas tend to have low coherence, because plants can grow
 or move from one acquisition to the next.
 
-For step-by-step instructions for searching for, ordering and downloading On Demand InSAR products, visit our [InSAR On Demand!](https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3 "InSAR On Demand!" ){target=_blank} tutorial.
+For step-by-step instructions for searching for, ordering and downloading On Demand InSAR products, visit our [InSAR On Demand!](https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3 "InSAR On Demand! StoryMap" ){target=_blank} tutorial.
 
 A Digital Elevation Model (DEM) is required for processing InSAR. ASF uses the
 best publicly-available DEM with full coverage of the processing area. To learn more,

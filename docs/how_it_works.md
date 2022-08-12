@@ -12,7 +12,7 @@ platform can be integrated with any number of plugins.
 
 Plugins are the workhorses of HyP3. Each plugin implements a particular processing workflow and
 produces a product. At their most basic level, HyP3 plugins are
-[Docker containers](https://www.docker.com/resources/what-container){target=_blank}
+[Docker containers](https://www.docker.com/resources/what-container "https://www.docker.com/resources/what-container" ){target=_blank}
 that handle the entire processing workflow for a single product, including:
 
 * Marshaling the required input data
@@ -26,4 +26,4 @@ By encapsulating the entire workflow for generating a single product, HyP3 can a
 ## Products
 
 Products are the end result of processing, typically one or more data files. For more information about
-our current products, see our [products page](products.md).
+our current products, see our [products page](products.md "HyP3 Products" ){target=_blank}.

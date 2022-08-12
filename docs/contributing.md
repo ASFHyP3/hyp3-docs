@@ -14,8 +14,7 @@ If you have any questions or ideas, or notice any problems or bugs, and want to 
 We recommend first [searching our open issues](https://github.com/issues?q=is%3Aopen+is%3Aissue+org%3AASFHyP3 "https://github.com/issues" ){target=_blank}
 to see if the issue has already been submitted (we may already be working on it!). If you think your 
 issue is new, you're welcome to [create a new issue](https://github.com/ASFHyP3/ASFHyP3.github.io/issues/new "https://github.com/ASFHyP3/ASFHyP3.github.io/issues/new" ){target=_blank} in our
-general issues tracker. If you know the specific repository that your issue pertains to, you can use its 
-issues tracker (see our repositories list below).
+general issues tracker. If you know the specific [repository](https://github.com/orgs/ASFHyP3/repositories "https://github.com/orgs/ASFHyP3/repositories" ){target=_blank} that your issue pertains to, you can use its issues tracker.
 
 Found a typo, know how to fix a bug, want to update the docs, want to add a new feature? Even better!
 The smaller the PR, the easier it is to review and test, and the more likely it is to be successful.

@@ -29,7 +29,7 @@ the product generation and users. When designing the interface, you may find it 
     * could I define this information more simply?
 
 Once a MWE is developed and an interface is defined, you can use our 
-[HyP3 plugin cookiecuter](https://github.com/ASFHyP3/hyp3-cookiecutter){target=_blank}
+[HyP3 plugin cookiecutter](https://github.com/ASFHyP3/hyp3-cookiecutter "https://github.com/ASFHyP3/hyp3-cookiecutter" ){target=_blank}
 to help you build a plugin that conforms to the plugin requirements.
 
 ### Plugin requirements

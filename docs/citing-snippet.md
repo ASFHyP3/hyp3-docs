@@ -1,4 +1,4 @@
-To reference HyP3 in manuscripts, cite our documentation available at [ASF's hyp3-docs GitHub repository](https://github.com/ASFHyP3/hyp3-docs "https://github.com/ASFHyP3/hyp3-docs" ){target=blank}:
+To reference HyP3 in manuscripts, cite our documentation available at [ASF's hyp3-docs GitHub repository](https://github.com/ASFHyP3/hyp3-docs "https://github.com/ASFHyP3/hyp3-docs" ){target=_blank}:
 
 !!! note ""
 

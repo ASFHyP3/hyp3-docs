@@ -10,8 +10,8 @@
 
 
 In order to provide On Demand products across the community, and to support our mission of
-[making remote-sensing data accessible](https://asf.alaska.edu/about-asf/),
-we've implemented a monthly processing quota. Anyone with an [Earthdata Login](https://urs.earthdata.nasa.gov/home)
+[making remote-sensing data accessible](https://asf.alaska.edu/about-asf/ "https://asf.alaska.edu/about-asf/" ){target=_blank},
+we've implemented a monthly processing quota. Anyone with an [Earthdata Login](https://urs.earthdata.nasa.gov/home "https://urs.earthdata.nasa.gov/home" ){target=_blank}
 can freely request 1000 jobs each calendar month.
 
 We may periodically adjust this quota based on usage, with the goal of

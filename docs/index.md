@@ -22,8 +22,7 @@ clicks away.
 
 ## What's New
 
-Follow [@ASFHyP3](https://twitter.com/ASFHyP3) on Twitter, or check our [What's New](whats_new.md) page,
-to keep up to date on all things HyP3!
+Follow [@ASFHyP3](https://twitter.com/ASFHyP3 "https://twitter.com/ASFHyP3" ){target=_blank} on Twitter, or check our [What's New](whats_new.md "HyP3 What's New" ){target=_blank} page to keep up to date on all things HyP3!
 
 ## Contact Us
 

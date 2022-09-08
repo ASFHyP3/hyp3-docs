@@ -2,7 +2,7 @@
 
 The Sentinel-1 satellite constellation is part of the Copernicus Earth Observation program, coordinated by the European Space Agency (ESA) on behalf of the European Commission (EC). Sentinel-1 satellites carry C-band Synthetic Aperture Radar (SAR) instruments for global, around-the-clock imagery, even through cloud cover. 
 
-More information about the mission is available from [The European Space Agency](https://earth.esa.int/web/guest/missions/esa-operational-eo-missions/sentinel-1 "Sentinel-1 Mission" ){target=_blank}.
+More information about the mission is available from the [European Space Agency Sentinel-1 Mission website](https://earth.esa.int/web/guest/missions/esa-operational-eo-missions/sentinel-1 "Sentinel-1 Mission" ){target=_blank}.
 
 ## The Sentinel-1 Constellation
 

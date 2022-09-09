@@ -1,5 +1,7 @@
 # Available HyP3 Products
 
+On-demand SAR products generated using HyP3 are currently available for the [Sentinel-1 mission](sentinel1.md "Sentinel-1 Mission" ){target=_blank} only.
+
 ## RTC
 
 SAR datasets inherently contain geometric and radiometric distortions due to terrain

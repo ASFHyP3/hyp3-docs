@@ -1,6 +1,6 @@
 # Sentinel-1 Mission
 
-The Sentinel-1 satellite constellation is part of the Copernicus Earth Observation program, coordinated by the European Space Agency (ESA) on behalf of the European Commission (EC). Sentinel-1 satellites carry C-band Synthetic Aperture Radar (SAR) instruments for global, around-the-clock imagery, even through cloud cover. 
+The Sentinel-1 satellite constellation is part of the Copernicus Earth Observation program, coordinated by the European Space Agency (ESA) on behalf of the European Commission (EC). Sentinel-1 satellites carry C-band Synthetic Aperture Radar (SAR) instruments for global, around-the-clock imagery acquisition, even through cloud cover. 
 
 More information about the mission is available from the [European Space Agency Sentinel-1 Mission website](https://earth.esa.int/web/guest/missions/esa-operational-eo-missions/sentinel-1 "Sentinel-1 Mission" ){target=_blank}.
 
@@ -18,6 +18,6 @@ While both satellites were actively imaging, most global landmasses were imaged 
 
 While Sentinel-1A is still healthy, the loss of Sentinel-1B has resulted in a significant reduction in the spatial and temporal coverage of the Sentinel-1 mission. Refer to [this article by Iain Woodhouse](https://www.earthblox.io/articles/the-impact-of-the-sentinel-1b-failure-and-looking-forward-to-sentinel-1c "The impact of the Sentinel-1B failure and looking forward to Sentinel-1C" ){target=_blank} for an illustration of the global impact of the Sentinel-1B failure. The image below illustrates a hole in the acquisitions over Alaska. This area of the Yukon-Kuskokwim Delta did not have a Sentinel-1 acquisition during the summer of 2022 until August 15.
 
-![Figure 1](images/s1b_hole_alaska.png "Lack of acquisitions over the Yukon-Kuskokwim Delta, Alaska")
+![Y-K Delta Hole](images/s1b_hole_alaska.png "Lack of acquisitions over the Yukon-Kuskokwim Delta, Alaska")
 
 The good news is that Sentinel-1C is waiting in the wings, and launch is anticipated in 2023. This satellite will replace Sentinel-1B, but until that is in place, there will continue to be reduced coverage. The holes were particularly noticeable the first few months after Sentinel-1B lost power, but there are still some areas with little to no coverage. Keep this in mind as you search for data in your area of interest. If there are fewer results than you would expect, you can [download current acquisition plans for the mission from ESA](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1/observation-scenario/acquisition-segments "Sentinel-1 Acquisition Segments" ){target=_blank} to view the acquisition plan for your area and time period of interest.

@@ -54,6 +54,7 @@ nav:
       - StoryMap: https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank
     - AutoRIFT: https://its-live.jpl.nasa.gov/" target="_blank
     - Usage Guidelines: usage_guidelines.md
+    - Sentinel-1 Mission: sentinel1.md
   - SAR Basics:
     - guides/introduction_to_sar.md
     - Introduction to SAR: guides/introduction_to_sar.md

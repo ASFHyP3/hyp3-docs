@@ -1,5 +1,5 @@
 On Demand products processed by HyP3 can be requested quickly and easily, either by
-using a web interface or programmatically. These services are currently only available for Sentinel-1 datasets.
+using a web interface or programmatically. These services are currently only available for [Sentinel-1 datasets](sentinel1.md "Sentinel-1 Mission" ){target=_blank}.
 
 ### Web Access 
 

@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/) 
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.45]
+
+### Added
+* Added an information page about the Sentinel-1 mission to the Products section, bringing particular attention to the end of mission for Sentinel-1B
+
 ## [0.3.44]
 
 ### Changed

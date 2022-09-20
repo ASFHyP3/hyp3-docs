@@ -1,0 +1,4 @@
+HyP3 SDK v1.7.0### Added
+- Added a `processing_times` attribute to the `hyp3_sdk.Job` class to support jobs with multiple processing steps.
+### Removed
+- Removed the `processing_time_in_seconds` attribute from the `hyp3_sdk.Job` class.

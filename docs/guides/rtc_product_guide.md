@@ -357,6 +357,6 @@ To view or download Sentinel-1 RTC products, please see the links below:
 
 **API:** [https://asf.alaska.edu/api/](https://asf.alaska.edu/api/ "https://asf.alaska.edu/api" ){target=_blank}
 
-For details on accessing data, including other SAR datasets, see ASF’s Get Started guide: [https://asf.alaska.edu/how-to/get-started/](https://asf.alaska.edu/how-to/get-started/ "https://asf.alaska.edu/how-to/get-started" ){target=_blank}
+For details on accessing data, including other SAR datasets, see ASF’s Get Started guide: [https://asf.alaska.edu/getstarted/](https://asf.alaska.edu/getstarted/ "https://asf.alaska.edu/getstarted/" ){target=_blank}
 
 To access data recipes, which are step-by-step tutorials for processing and working with SAR data, see ASF’s tutorials page: [https://asf.alaska.edu/how-to/data-recipes/data-recipe-tutorials/](https://asf.alaska.edu/how-to/data-recipes/data-recipe-tutorials/ "https://asf.alaska.edu/how-to/data-recipes/data-recipe-tutorials" ){target=_blank}

@@ -136,8 +136,7 @@ You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://s
 AutoRIFT supports processing Sentinel-1, Sentinel-2, or Landsat-8 Collection 2 pairs.
 
 * Sentinel-1 jobs are submitted using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/naming-conventions){target=_blank}
-* Sentinel-2 jobs can be submitted using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-2-msi/naming-convention){target=_blank}
-  or [Element 84 Earth Search IDs](https://registry.opendata.aws/sentinel-2/){target=_blank}
+* Sentinel-2 jobs are submitted using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-2-msi/naming-convention){target=_blank}
 * Landsat-8 Collection 2 jobs are submitted using [USGS scene IDs](https://www.usgs.gov/faqs/what-naming-convention-landsat-collection-2-level-1-and-level-2-scenes?qt-news_science_products=0#qt-news_science_products){target=_blank}
 
 To submit an example set of jobs including all supported missions, you could write a job list like:
@@ -165,16 +164,6 @@ To submit an example set of jobs including all supported missions, you could wri
         ]
       }
     },
-    {
-      "name": "autorift-example",
-      "job_type": "AUTORIFT",
-      "job_parameters": {
-        "granules": [
-          "S2B_22WEB_20200612_0_L1C",
-          "S2A_22WEB_20200627_0_L1C"
-        ]
-      }
-    }
     {
       "name": "autorift-example",
       "job_type": "AUTORIFT",

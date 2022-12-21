@@ -148,7 +148,7 @@ Example: S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A
 | zz | Terrain Correction Pixel Spacing (m) | 30 |
 | u | Software Package Used: GAMMA (G) | G |
 | d | Gamma-0 (g) or Sigma-0 (s) Output | g |
-| e | Power (p) or Amplitude (a) Output | p |
+| e | Power (p), Decibel (d), or Amplitude (a) Output | p |
 | f | Unmasked (u) or Water Masked (w) | u |
 | k | Not Filtered (n) or Filtered (f) | n |
 | l | Entire Area (e) or Clipped Area (c) | e |

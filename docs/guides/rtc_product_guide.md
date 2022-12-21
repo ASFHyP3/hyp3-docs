@@ -137,23 +137,23 @@ The naming convention for the RTC products follows this pattern for its base nam
 
 Example: S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A
 
-| Element | Definition                                                                   | Example |
-|---|------------------------------------------------------------------------------|---|
-| x | Mission: A or B                                                              | A |
-| yy | Beam Mode                                                                    | IW |
-| aaaaaaaa | Start Year-Month-Day                                                         | 20180128 |
-| bbbbbb | Start Hour-Minute-Second                                                     | 161201 |
+| Element | Definition | Example |
+|---|---|---|
+| x | Mission: A or B | A |
+| yy | Beam Mode | IW |
+| aaaaaaaa | Start Year-Month-Day | 20180128 |
+| bbbbbb | Start Hour-Minute-Second | 161201 |
 | pp | Polarization: Dual-pol (D) vs. Single-pol (S), Primary Polarization (H or V) | DV |
-| o | Orbit Type: Precise (P), Restituted (R), or Original Predicted (O)           | P |
-| zz | Terrain Correction Pixel Spacing (m)                                         | 30 |
-| u | Software Package Used: GAMMA (G)                                             | G |
-| d | Gamma-0 (g) or Sigma-0 (s) Output                                            | g |
-| e | Power (p), Decibel (d), or Amplitude (a) Output                              | p |
-| f | Unmasked (u) or Water Masked (w)                                             | u |
-| k | Not Filtered (n) or Filtered (f)                                             | n |
-| l | Entire Area (e) or Clipped Area (c)                                          | e |
-| m | Dead Reckoning (d) or DEM Matching (m)                                       | d |
-| ssss | Product ID                                                                   | FD6A |
+| o | Orbit Type: Precise (P), Restituted (R), or Original Predicted (O) | P |
+| zz | Terrain Correction Pixel Spacing (m) | 30 |
+| u | Software Package Used: GAMMA (G) | G |
+| d | Gamma-0 (g) or Sigma-0 (s) Output | g |
+| e | Power (p), Decibel (d), or Amplitude (a) Output | p |
+| f | Unmasked (u) or Water Masked (w) | u |
+| k | Not Filtered (n) or Filtered (f) | n |
+| l | Entire Area (e) or Clipped Area (c) | e |
+| m | Dead Reckoning (d) or DEM Matching (m) | d |
+| ssss | Product ID | FD6A |
 
 *Table 2: Naming convention for RTC products*
 

@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.3.53]
 
-### Changed
+### Added
 * Added the decibel option in the Table 2 of the rtc-product-guide.md
 
 ## [0.3.52]

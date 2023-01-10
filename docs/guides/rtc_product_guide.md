@@ -171,6 +171,7 @@ The default settings for RTC products are as follows:
 
 | Setting | Default |
 |---|---|
+| Pixel Spacing | 30 |
 | Radiometry | Gamma-0 (g) |
 | Scale | Power (p) |
 | Water Mask | No water mask applied (u) |

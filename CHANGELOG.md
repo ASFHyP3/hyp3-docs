@@ -10,7 +10,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.3.55]
 
 ## Changed
-* Updated ASF Tools version to [v0.4.5]
+* Updated ASF Tools for Python to [v0.4.5](https://github.com/ASFHyP3/asf-tools/blob/main/CHANGELOG.md#045)
 
 ## [0.3.54]
 

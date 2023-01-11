@@ -101,6 +101,14 @@ Figure 4 shows the coverage of the various legacy DEM sources.
 
 *Figure 4: Coverage of the various legacy DEM sources used for terrain correction*
 
+## Pixel Spacing
+
+RTC products can be output either at 30-meter or 10-meter pixel spacing. In most cases, the input SAR image has a higher resolution than either of the RTC outputs. The 10-m RTC product will be closer to the resolution of the source SAR granule, but the 30-m RTC product has a much smaller file size. 
+
+It is *much* faster to process and analyze 30-m RTC products, so it's a good idea to start with the coarser resolution option if possible. If the 30-m pixel spacing is not sufficient for your use case, try the larger 10-m RTC products. 
+
+Keep in mind that the same DEM is used for processing both the 10-m and 30-m RTC products. By default, the DEM is the Copernicus Global DEM with a pixel spacing of 30 meters. The DEM is resampled to a pixel spacing of 10 meters when used for processing the 10-m RTC products, and the output DEM included in the 10-m RTC product package has a pixel spacing of 10 meters to match the output RTC product. *This does not indicate that the source DEM used for the 10-m products is of higher resolution.*
+
 ## Radiometric Terrain Correction Workflow
 
 ### Pre-processing
@@ -163,6 +171,7 @@ The default settings for RTC products are as follows:
 
 | Setting | Default |
 |---|---|
+| Pixel Spacing | 30 |
 | Radiometry | Gamma-0 (g) |
 | Scale | Power (p) |
 | Water Mask | No water mask applied (u) |

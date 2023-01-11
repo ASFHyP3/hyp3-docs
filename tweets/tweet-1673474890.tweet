@@ -1,0 +1,2 @@
+HyP3 SDK v1.7.3### Added
+* 10 m can now be provided to the `resolution` keyword argument of `hyp3.submit_rtc_job` and `hyp3.prepare_rtc_job`.

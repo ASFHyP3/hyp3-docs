@@ -1,0 +1,2 @@
+HyP3 SDK v1.7.5### Fixed
+* Path to `README.md` in `pyproject.toml` so that there is a package description on PyPI

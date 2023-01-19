@@ -11,7 +11,7 @@ For a step-by-step tutorial on ordering On-Demand RTC Products using Vertex, vis
 
 !!! important "New RTC Processing Options Available"
 
-    On Demand Sentinel-1 RTC products can now be processed at [10-m pixel spacing](#pixel-spacing "RTC Pixel Spacing Documentation" ){target=_blank}, and can be output in [dB (decibel) scale](#sar-scales). 
+    On Demand Sentinel-1 RTC products can now be processed at [10-m pixel spacing](#pixel-spacing "RTC Pixel Spacing Documentation" ){target=_blank}, and can be output in [dB (decibel) scale](#sar-scales "SAR Scales Documentation" ){target=_blank}. 
 
 ## Introduction
 

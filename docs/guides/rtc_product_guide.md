@@ -103,6 +103,10 @@ Figure 4 shows the coverage of the various legacy DEM sources.
 
 ## Pixel Spacing
 
+!!! important "On Demand Sentinel-1 RTC now available at 10-m pixel spacing" 
+
+    There is now a pixel spacing processing option available for Sentinel-1 RTC products. Users can choose to output the RTC products at a pixel spacing of either 30 meters or 10 meters.
+
 RTC products can be output either at 30-meter or 10-meter pixel spacing. In most cases, the input SAR image has a higher resolution than either of the RTC outputs. The 10-m RTC product will be closer to the resolution of the source SAR granule, but the 30-m RTC product has a much smaller file size. 
 
 It is *much* faster to process and analyze 30-m RTC products, so it's a good idea to start with the coarser resolution option if possible. If the 30-m pixel spacing is not sufficient for your use case, try the larger 10-m RTC products. 

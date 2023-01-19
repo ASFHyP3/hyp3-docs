@@ -9,9 +9,11 @@ being imaged by a side-looking instrument. Radiometric Terrain Correction (RTC) 
 these distortions and creates analysis-ready data suitable for use in GIS applications.
 RTC processing is a required first step for many amplitude-based SAR applications.
 
-Sentinel-1 RTC products are generated leveraging GAMMA Software. Products are 
-distributed as UTM-projected GeoTIFFs with a pixel spacing of 30 meters. To learn
-more, refer to our [ASF Sentinel-1 RTC Product Guide](guides/rtc_product_guide.md "ASF Sentinel-1 RTC Product Guide" ){target=_blank}.
+Sentinel-1 RTC products are generated leveraging GAMMA Software. Products are distributed as
+UTM-projected GeoTIFFs with a pixel spacing of either 
+[10 or 30 meters](https://hyp3-docs.asf.alaska.edu/guides/rtc_product_guide/#pixel-spacing "RTC Pixel Spacing Documentation" ){target=_blank}. 
+To learn more, refer to our [ASF Sentinel-1 RTC Product Guide](guides/rtc_product_guide.md 
+"ASF Sentinel-1 RTC Product Guide" ){target=_blank}.
 
 For step-by-step instructions for searching for, ordering, downloading and using On Demand RTC products, visit our [RTC On Demand!](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand! StoryMap" ){target=_blank} tutorial.
 

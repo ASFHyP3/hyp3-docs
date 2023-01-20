@@ -9,6 +9,10 @@ A [Digital Elevation Model (DEM)](#digital-elevation-models "Jump to DEM Section
 
 For a step-by-step tutorial on ordering On-Demand RTC Products using Vertex, visit our [RTC On Demand! StoryMap](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand! StoryMap" ){target=_blank}, which also includes links to sample workflows using Sentinel-1 RTC products for GIS applications.
 
+!!! important "New RTC Processing Options Available"
+
+    On Demand Sentinel-1 RTC products can now be processed at [10-m pixel spacing](#pixel-spacing "RTC Pixel Spacing Documentation" ){target=_blank}, and can be output in [decibel (dB) scale](#sar-scales "SAR Scales Documentation" ){target=_blank}. 
+
 ## Introduction
 
 ### Sentinel-1 Mission
@@ -103,6 +107,10 @@ Figure 4 shows the coverage of the various legacy DEM sources.
 
 ## Pixel Spacing
 
+!!! important "On Demand Sentinel-1 RTC now available at 10-m pixel spacing" 
+
+    There is now a pixel spacing processing option available for Sentinel-1 RTC products. Users can choose to output the RTC products at a pixel spacing of either 30 meters or 10 meters.
+
 RTC products can be output either at 30-meter or 10-meter pixel spacing. In most cases, the input SAR image has a higher resolution than either of the RTC outputs. The 10-m RTC product will be closer to the resolution of the source SAR granule, but the 30-m RTC product has a much smaller file size. 
 
 It is *much* faster to process and analyze 30-m RTC products, so it's a good idea to start with the coarser resolution option if possible. If the 30-m pixel spacing is not sufficient for your use case, try the larger 10-m RTC products. 
@@ -129,7 +137,7 @@ During processing, a surface scattering area image for the scene is calculated a
 
 ### Geocoding
 
-In a final step, the RTC product is geocoded into map-projected space. Thus, radiometric terrain correction results in a geocoded radiometrically calibrated multi-looked image with gamma-nought (γ<sub>0</sub>) power scale values by default, though there are options to process to sigma-nought (σ<sub>0</sub>) radiometry and amplitude scale.
+In a final step, the RTC product is geocoded into map-projected space. Thus, radiometric terrain correction results in a geocoded radiometrically calibrated multi-looked image with gamma-nought (γ<sub>0</sub>) power scale values by default, though there are options to process to sigma-nought (σ<sub>0</sub>) radiometry and amplitude or decibel (dB) scale.
 
 ### Post-Processing
 
@@ -248,21 +256,25 @@ A shapefile indicating the extent of the RTC data coverage is included in the pa
 
 ## SAR Scales
 
+!!! important "On Demand Sentinel-1 RTC Products now available in dB scale"
+
+    Users can now choose to output Sentinel-1 RTC products in decibel (dB) scale. Previously, the only choices for output scale were power and amplitude. The default scale continues to be power.
+
 ### Power Scale
 
 Note that the default output of Sentinel-1 RTC products from HyP3 is in power scale. The values in this scale are generally very close to zero, so the dynamic range of the RTC image can be easily skewed by a few bright scatterers in the image. Power scale is appropriate for statistical analysis of the RTC dataset, but may not always be the best option for data visualization.
 
 When viewing an RTC image in power scale in a GIS environment, it may appear mostly or all black, and you may need to adjust the stretch to see features in the image. Often applying a stretch of 2 standard deviations, or setting the Min-Max stretch values to 0 and 0.3, will greatly improve the appearance of the image. You can adjust the stretch as desired to display your image to full advantage. Be aware that this does not change the actual pixel values.
 
-In some cases, it may be desirable to convert the actual pixel values to a different scale. Two other scales commonly used for SAR data are amplitude and dB.
+In some cases, it may be desirable to convert the actual pixel values to a different scale. Two other scales commonly used for SAR data are amplitude and decibel (dB).
 
 ### Amplitude Scale
 
 Amplitude scale is the square root of the power scale values. This brightens the darker pixels and darkens the brighter pixels, narrowing the dynamic range of the image. In many cases, amplitude scale presents a pleasing grayscale display of RTC images. Amplitude scale works well for calculating log difference ratios (see [Change Detection Using RTC Data](#change-detection-using-rtc-data "Jump to Change Detection Using RTC Data section in document")).
 
-### dB Scale
+### Decibel (dB) Scale
 
-The dB scale is calculated by multiplying 10 times the Log10 of the power scale values. This scale brightens the pixels, allowing for better differentiation among very dark pixels. When identifying water on the landscape, this is often a good scale to use; the water pixels generally remain very dark, while the terrestrial pixels are even brighter (see [Identifying Surface Water](#identifying-surface-water "Jump to Identifying Surface Water section in document")).
+The decibel (dB) scale is calculated by multiplying 10 times the Log10 of the power scale values. This scale brightens the pixels, allowing for better differentiation among very dark pixels. When identifying water on the landscape, this is often a good scale to use; the water pixels generally remain very dark, while the terrestrial pixels are even brighter (see [Identifying Surface Water](#identifying-surface-water "Jump to Identifying Surface Water section in document")).
 
 This scale is not always the best choice for general visualization of RTC products, as it can give a washed-out appearance, and because it is in a log scale, it is not appropriate for all types of statistical analyses.
 

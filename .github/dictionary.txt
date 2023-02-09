@@ -116,8 +116,7 @@ polarization
 polarizations
 PR
 PRs
-pre-processed
-pre-processing
+pre-process
 Pre-processing
 Pre-Processing
 radiometrically

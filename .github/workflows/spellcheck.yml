@@ -1,0 +1,15 @@
+name: Spell Check .md
+on: push
+
+jobs:
+  spellcheck:
+    runs-on: ubuntu-latest
+    name: Spellcheck
+    steps:
+      - uses: actions/checkout@v3
+      - uses: tbroadley/spellchecker-cli-action@v1
+        with:
+          files: "docs/**/*.md **/*.md *.md"
+          quiet: true
+          dictionaries: ".github/dictionary.txt"
+          plugins: "spell indefinite-article repeated-words syntax-mentions syntax-urls frontmatter"

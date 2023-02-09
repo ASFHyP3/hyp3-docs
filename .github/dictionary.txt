@@ -7,6 +7,7 @@ ArcGrid
 ArcMap
 ASF
 ASF's
+ASFHyP3
 backscatter
 Backscatter
 bandpass
@@ -48,7 +49,6 @@ Geospatial
 GeoTIFF
 GeoTIFFs
 GeoTIFF's
-GL1
 GLO-30
 GIS
 GitOps
@@ -82,9 +82,7 @@ JS
 Jupyter
 kmz
 KMZ
-L1
 L1/L5
-L2
 L3
 L4
 L5
@@ -105,6 +103,7 @@ NED13
 NoSQL
 OpenAPI
 orthometric
+PEP8
 pip
 png
 PNG
@@ -116,7 +115,8 @@ polarization
 polarizations
 PR
 PRs
-pre-process
+pre-processed
+pre-processing
 Pre-processing
 Pre-Processing
 radiometrically
@@ -160,7 +160,6 @@ StoryMap
 tradeoffs
 TRE
 TODO
-.txt
 UAF
 unintuitive
 UTCTime
@@ -175,7 +174,6 @@ Watermap
 WGS84
 xml
 XML
-.xml
 xx
 yy
 zz

@@ -1,3 +1,4 @@
+ArcGIS
 ASF
 ASF's
 backscatter
@@ -14,6 +15,7 @@ ESD
 front-end
 full-fledged
 Galápagos
+geocoded
 Geocoding
 geocoding
 geoid
@@ -22,6 +24,7 @@ Geolocation
 GeoTIFF
 GeoTIFFs
 GeoTIFF's
+GSHHG
 GitOps
 GLO-30
 HH
@@ -47,7 +50,17 @@ IW
 JOSS
 JS
 Jupyter
+kmz
 KMZ
+L1
+L1/L5
+L2
+L3
+L4
+L5
+L7
+L8
+L9
 lifecycle
 MCF
 MTI
@@ -68,6 +81,7 @@ radiometrically
 rainforest
 raster
 rasters
+README
 restituted
 reprojecting
 reproject
@@ -81,6 +95,7 @@ Sentinel-1A
 Sentinel-1B
 Sentinel-1C
 Sentinel-2
+shapefile
 sigma-nought
 SLC
 SLCs
@@ -89,6 +104,7 @@ StoryMap
 tradeoffs
 TRE
 TODO
+.txt
 UAF
 UTM
 UI
@@ -103,6 +119,9 @@ WGS84
 20x4
 π
 π/2
+2π
+φ
+θ
 lv_phi
 lv_theta
 par_s1_slc

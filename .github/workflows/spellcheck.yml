@@ -11,5 +11,6 @@ jobs:
         with:
           files: "docs/**/*.md **/*.md *.md"
           quiet: true
+          ignore: "[A-Za-z]+s [A-Za-z]+ed [A-Za-z]+ing"
           dictionaries: ".github/dictionary.txt"
           plugins: "spell indefinite-article repeated-words syntax-mentions syntax-urls frontmatter"

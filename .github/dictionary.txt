@@ -7,7 +7,10 @@ ArcGrid
 ArcMap
 ASF
 ASF's
+asf_tools
 ASFHyP3
+autoRIFT
+AutoRIFT
 backscatter
 Backscatter
 bandpass
@@ -54,6 +57,7 @@ GIS
 GitOps
 GNSS
 grayscale
+Greyscale
 GSHHG
 HH
 HV
@@ -79,10 +83,13 @@ iteratively
 IW
 JOSS
 JS
+JSON
 Jupyter
 kmz
 KMZ
+L1
 L1/L5
+L2
 L3
 L4
 L5
@@ -105,6 +112,7 @@ OpenAPI
 orthometric
 PEP8
 pip
+.png
 png
 PNG
 polarimetry
@@ -130,6 +138,10 @@ Restituted
 reproject
 reprojected
 reprojecting
+rgb
+rgb.png
+rgb.kmz
+rgb.tif
 RGB
 RTC
 S1A
@@ -146,6 +158,7 @@ Sentinel-1B
 Sentinel-1C
 Sentinel-2
 shapefile
+Shapefile
 sigma-nought
 SLC
 SLCs
@@ -162,6 +175,9 @@ TRE
 TODO
 UAF
 unintuitive
+url
+URL
+USGS
 UTCTime
 UTC
 UTM
@@ -172,6 +188,7 @@ waterbodies
 waterbody
 Watermap
 WGS84
+.xml
 xml
 XML
 xx

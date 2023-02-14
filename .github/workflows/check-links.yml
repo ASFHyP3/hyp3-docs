@@ -10,6 +10,8 @@ jobs:
       - name: Link Checker
         id: lychee
         uses: lycheeverse/lychee-action@v1.5.4
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
           args: --insecure "docs/**/*.md" "README.md" "CODE_OF_CONDUCT.md"
           fail: true

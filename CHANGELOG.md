@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/) 
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.62]
+
+## Added
+* Added a GitHub Action for spell checking
+* Added .github/dictionary.txt for ASF-specific words
+
+## Fixed
+* Fixed spelling mistakes to ensure that spell check test passes
+
 ## [0.3.61]
 
 ## Changed

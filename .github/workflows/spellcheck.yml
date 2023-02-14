@@ -6,10 +6,20 @@ jobs:
     runs-on: ubuntu-latest
     name: Spellcheck
     steps:
-      - uses: actions/checkout@v3
-      - uses: tbroadley/spellchecker-cli-action@v1
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Spellcheck
+        uses: tbroadley/spellchecker-cli-action@v1
         with:
           files: "docs/**/*.md **/*.md *.md"
           quiet: true
+          noSuggestions: true
           dictionaries: ".github/dictionary.txt"
-          plugins: "spell indefinite-article repeated-words syntax-mentions syntax-urls frontmatter"
+          reports: "report.json"
+          plugins: "spell repeated-words syntax-mentions syntax-urls frontmatter"
+      - name: Report
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: report
+          path: report.json

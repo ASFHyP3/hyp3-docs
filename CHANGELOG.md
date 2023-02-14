@@ -9,11 +9,12 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.3.62]
 
 ## Added
-* Added a GitHub Action for spell checking
-* Added .github/dictionary.txt for ASF-specific words
+* A GitHub Action for spell checking, with ASF-specific words whitelisted in [.github/dictionary.txt](.github/dictionary.txt)
+* A GitHub Action for link checking, with whitelisted links in [.lycheeignore](.lycheeignore)
 
 ## Fixed
-* Fixed spelling mistakes to ensure that spell check test passes
+* Minor grammatical and spelling mistakes
+* Broken Copernicus DEM links
 
 ## [0.3.61]
 

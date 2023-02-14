@@ -245,7 +245,7 @@ Within the jobs list, a complete job dictionary will look like:
 
 Importantly, the `files` block provides download links for the product files.
 
-For large queries results may be truncated. In this case there will be a `next` key in the response that will contain a url to continue the query (this response may be similarly truncated and include a `next` key).
+For large queries results may be truncated. In this case there will be a `next` key in the response that will contain an url to continue the query (this response may be similarly truncated and include a `next` key).
 ```JSON
 {
   "jobs": [

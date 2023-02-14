@@ -1,5 +1,6 @@
 .github
 .kmz
+.lycheeignore
 .png
 .png.aux.xml
 .png.xml

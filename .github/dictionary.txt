@@ -1,3 +1,4 @@
+.github
 .kmz
 .png
 .png.aux.xml
@@ -26,6 +27,7 @@ ArcMap
 area.tif
 ASF
 ASF's
+ASF-specific
 asf_search
 asf_tools
 ASFHyP3

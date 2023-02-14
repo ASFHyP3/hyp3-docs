@@ -15,3 +15,7 @@ jobs:
           dictionaries: ".github/dictionary.txt"
           reports: "misspelled.json"
           plugins: "spell indefinite-article repeated-words syntax-mentions syntax-urls frontmatter"
+      - uses: actions/upload-artifact@v1
+        with:
+          name: report
+          path: report/report.json

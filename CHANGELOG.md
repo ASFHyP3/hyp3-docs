@@ -8,8 +8,13 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.3.62]
 
+## Added
+* Added a GitHub Action for spell checking, with ASF-specific words whitelisted in [.gihub/dictionary.txt](.gihub/dictionary.txt)
+* Added a GitHub Action for link checking, with whitelisted links in [.lycheeignore](.lycheeignore)
+
 ## Fixed
-* Broken Copernicus DEM links.
+* Minor gramatical and spelling mistakes
+* Broken Copernicus DEM links
 
 ## [0.3.61]
 

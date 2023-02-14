@@ -11,6 +11,5 @@ jobs:
         id: lychee
         uses: lycheeverse/lychee-action@v1.5.4
         with:
-          files: "docs/**/*.md **/*.md *.md"
-          args: "--insecure"
+          args: --insecure "docs/**/*.md" "**/*.md" "*.md"
           fail: true

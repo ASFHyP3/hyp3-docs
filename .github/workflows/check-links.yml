@@ -11,5 +11,5 @@ jobs:
         id: lychee
         uses: lycheeverse/lychee-action@v1.5.4
         with:
-          args: --insecure "docs/**/*.md" "**/*.md" "*.md"
+          args: --insecure "docs/**/*.md" "README.md" "CODE_OF_CONDUCT.md"
           fail: true

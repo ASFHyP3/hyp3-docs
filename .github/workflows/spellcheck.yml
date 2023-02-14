@@ -15,11 +15,11 @@ jobs:
           quiet: true
           noSuggestions: true
           dictionaries: ".github/dictionary.txt"
-          reports: "misspelled.json"
+          reports: "report.json"
           plugins: "spell indefinite-article repeated-words syntax-mentions syntax-urls frontmatter"
       - name: Report
         if: ${{ failure() }}
         uses: actions/upload-artifact@v3
         with:
           name: report
-          path: report/report.json
+          path: report.json

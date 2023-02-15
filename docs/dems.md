@@ -15,13 +15,13 @@ With the public release of the [GLO-30 Copernicus DEM](https://spacedata.coperni
 
 Table 1 summarizes ASF's DEM sources. Note that in all cases the DEM is reprojected to the UTM Zone (WGS84) appropriate for the granule location, and a geoid correction is applied before being used for processing. For RTC processing, the DEM is resampled to the pixel spacing of the output product. The Copernicus DEM is the only option available for InSAR processing, and the DEM is resampled to twice the pixel spacing of the output InSAR product (160 m for 20x4 looks, 80 m for 10x2 looks).
 
-| Resolution | DEM | Vertical Datum | Area | Posting | Priority |
-|------------|-------|--------|------|---------|----------|
-| Medium | GLO-30 | EGM2008 | Global | 1 arc second | Default |
-| High | NED13 | NAVD88 | CONUS, Hawaii, parts of Alaska | 1/3 arc seconds | 1 |
-| Medium | SRTMGL1 | EGM96 | 60 N to 57 S latitude | 1 arc second | 2 |
-| Medium | NED1 | NAVD88 | Canada | 1 arc second | 3 |
-| Low | NED2 | NAVD88 | Parts of Alaska | 2 arc seconds | 4 |
+| Resolution | DEM     | Vertical Datum | Area                           | Posting         | Priority |
+|------------|---------|----------------|--------------------------------|-----------------|----------|
+| Medium     | GLO-30  | EGM2008        | Global                         | 1 arc second    | Default  |
+| High       | NED13   | NAVD88         | CONUS, Hawaii, parts of Alaska | 1/3 arc seconds | 1        |
+| Medium     | SRTMGL1 | EGM96          | 60 N to 57 S latitude          | 1 arc second    | 2        |
+| Medium     | NED1    | NAVD88         | Canada                         | 1 arc second    | 3        |
+| Low        | NED2    | NAVD88         | Parts of Alaska                | 2 arc seconds   | 4        |
 
 *Table 1: DEMs used for On Demand processing. For RTC products, the Copernicus 30 m DEM is the default, while the other four DEMs are only used if the legacy option is invoked. The Copernicus DEM is the only option available when processing InSAR products.*
 

@@ -3,11 +3,11 @@ Digital Elevation Models are required when processing SAR data to higher-level p
 
 ASF uses DEMs that are publicly available and have wide-ranging coverage. In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. 
 
-With the public release of the [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/documents/20126/0/GEO1988-CopernicusDEM-SPE-002_ProductHandbook_I1.00.pdf "Copernicus DEM GLO-30 Handbook" ){target=_blank}, we have changed our default DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. This is now the default DEM for processing RTC products, and the only option available for processing InSAR products. 
+With the public release of the [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, we have changed our default DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. This is now the default DEM for processing RTC products, and the only option available for processing InSAR products.
 
 !!! important "Copernicus DEM GLO-30 Updated" 
 
-    We use the [Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960 "Copernicus DEM GLO-30 Information" ){target=_blank} as our default DEM for RTC and InSAR processing. We have now updated to the [2021 release of the Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/blogs/-/blogs/copernicus-dem-2021-release-now-available "Copernicus DEM GLO-30 Press Release" ){target=_blank}, which improves coverage over Norway, and includes 5 additional tiles. For more information, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/web/cscda/dataset-details?articleId=394198 "Copernicus DEM GLO-30 Dataset Details" ){target=_blank}.
+    We use the Copernicus DEM GLO-30 Public dataset as our default DEM for RTC and InSAR processing. We have now updated to the 2021 release of the Copernicus DEM GLO-30 Public dataset, which improves coverage over Norway, and includes 5 additional tiles. For more information, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}.
 
     Users still have the option to use the legacy DEMs when processing RTC jobs [On Demand in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=_blank} and when using the [API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank} or [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank}, but we recommend using the Copernicus DEM whenever possible.
 
@@ -15,13 +15,13 @@ With the public release of the [GLO-30 Copernicus DEM](https://spacedata.coperni
 
 Table 1 summarizes ASF's DEM sources. Note that in all cases the DEM is reprojected to the UTM Zone (WGS84) appropriate for the granule location, and a geoid correction is applied before being used for processing. For RTC processing, the DEM is resampled to the pixel spacing of the output product. The Copernicus DEM is the only option available for InSAR processing, and the DEM is resampled to twice the pixel spacing of the output InSAR product (160 m for 20x4 looks, 80 m for 10x2 looks).
 
-| Resolution | DEM | Vertical Datum | Area | Posting | Priority |
-|------------|-------|--------|------|---------|----------|
-| Medium | GLO-30 | EGM2008 | Global | 1 arc second | Default |
-| High | NED13 | NAVD88 | CONUS, Hawaii, parts of Alaska | 1/3 arc seconds | 1 |
-| Medium | SRTMGL1 | EGM96 | 60 N to 57 S latitude | 1 arc second | 2 |
-| Medium | NED1 | NAVD88 | Canada | 1 arc second | 3 |
-| Low | NED2 | NAVD88 | Parts of Alaska | 2 arc seconds | 4 |
+| Resolution | DEM     | Vertical Datum | Area                           | Posting         | Priority |
+|------------|---------|----------------|--------------------------------|-----------------|----------|
+| Medium     | GLO-30  | EGM2008        | Global                         | 1 arc second    | Default  |
+| High       | NED13   | NAVD88         | CONUS, Hawaii, parts of Alaska | 1/3 arc seconds | 1        |
+| Medium     | SRTMGL1 | EGM96          | 60 N to 57 S latitude          | 1 arc second    | 2        |
+| Medium     | NED1    | NAVD88         | Canada                         | 1 arc second    | 3        |
+| Low        | NED2    | NAVD88         | Parts of Alaska                | 2 arc seconds   | 4        |
 
 *Table 1: DEMs used for On Demand processing. For RTC products, the Copernicus 30 m DEM is the default, while the other four DEMs are only used if the legacy option is invoked. The Copernicus DEM is the only option available when processing InSAR products.*
 
@@ -31,7 +31,7 @@ Note that the height values will differ from the original source DEM in all case
 
 ## Copernicus DEM
 
-The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960 "Copernicus DEM GLO-30 Information" ){target=_blank} provides global coverage (with the current exception of an area covering Armenia and Azerbaijan, see Figure 2) at 30-m pixel spacing. When an On Demand job is requested, we download the required DEM tiles from the Copernicus Digital Elevation Model (DEM) GLO-30 Public dataset available in the [Registry of Open Data on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank}, managed by [Sinergise](https://www.sinergise.com/ "https://www.sinergise.com" ){target=_blank}. We mosaic the tiles and reproject them to the appropriate UTM Zone for the location of the SAR granule to be processed, resampling them as required for processing. A geoid correction is applied before it is used for On Demand processing.
+The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} provides global coverage (with the current exception of an area covering Armenia and Azerbaijan, see Figure 2) at 30-m pixel spacing. When an On Demand job is requested, we download the required DEM tiles from the Copernicus Digital Elevation Model (DEM) GLO-30 Public dataset available in the [Registry of Open Data on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank}, managed by [Sinergise](https://www.sinergise.com/ "https://www.sinergise.com" ){target=_blank}. We mosaic the tiles and reproject them to the appropriate UTM Zone for the location of the SAR granule to be processed, resampling them as required for processing. A geoid correction is applied before it is used for On Demand processing.
 
 Figure 1 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and Figure 2 details the land area currently not covered.
 

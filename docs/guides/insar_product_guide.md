@@ -50,10 +50,10 @@ In order to determine topography, two slightly different vantage points are requ
 #### Temporal Baseline
 In contrast to the (physical) baseline, the *temporal baseline* refers to the time separation between imaging passes. Along-track interferometry measures motion in the millisecond to second range. This technique can detect ocean currents and rapidly moving objects like boats. Differential interferometry is the standard method used to detect motion in the range of days to years. This is the type of interferometry that is performed by the Sentinel-1 HyP3 InSAR processing algorithm. Table 1 lists different temporal baselines, their common names, and what they can be used to measure.  
 
-|Duration | Known as | Measurement of | 
-|---------|----------|----------------|
-| ms to sec | along-track | ocean currents, moving object detection, MTI | 
-| days | differential | glacier/ice fields/lava flows, surface water extent, hydrology |
+| Duration      | Known as     | Measurement of                                                      | 
+|---------------|--------------|---------------------------------------------------------------------|
+| ms to sec     | along-track  | ocean currents, moving object detection, MTI                        | 
+| days          | differential | glacier/ice fields/lava flows, surface water extent, hydrology      |
 | days to years | differential | subsidence, seismic events, volcanic activity, crustal displacement | 
 
 *Table 1: Temporal baselines and what they measure. Different geophysical phenomena can be detected based upon the temporal baseline. In general, the longer the temporal baseline, the smaller the motion that can be detected.*
@@ -121,7 +121,7 @@ There are several options users can set when ordering InSAR On Demand products. 
    
 5. The **incidence angle maps** indicate the angle of the radar signal. The local incidence angle is defined as the angle between the incident radar signal and the local surface normal, expressed in radians, while the ellipsoid incidence angle indicates the angle between the incident radar beam and the direction perpendicular to the WGS84 ellipsoid model. These files are excluded from the product package by default.
 
-6. A copy of the **DEM** used for processing can optionally be included in the product package. The height values will differ from the original [Copernicus DEM](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960 "Copernicus DEM GLO-30 Information" ){target=_blank} dataset, as a geoid correction has been applied, and it has been projected to UTM Zone coordinates. The source DEM is also downsampled to twice the pixel spacing of the output product to smooth it for use in processing, then resampled again to match the pixel spacing of the InSAR product. The DEM is excluded by default.
+6. A copy of the **DEM** used for processing can optionally be included in the product package. The height values will differ from the original [Copernicus DEM GLO-30](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} dataset, as a geoid correction has been applied, and it has been projected to UTM Zone coordinates. The source DEM is also downsampled to twice the pixel spacing of the output product to smooth it for use in processing, then resampled again to match the pixel spacing of the InSAR product. The DEM is excluded by default.
 
 7. There is an option to apply a **water mask**. This mask includes coastal waters and large inland waterbodies. Masking waterbodies can have a significant impact during the phase unwrapping, as water can sometimes exhibit enough coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid. A GeoTIFF of the water mask is always included with the InSAR product package, but when this option is selected, the conditional water mask will be applied along with coherence and intensity thresholds during the phase unwrapping process. Water masking is turned off by default. Visit our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information.
 
@@ -154,7 +154,7 @@ Immediately after ingesting the SLC, the state vectors are updated to use the be
 
 In order to create differential InSAR products that show motion on the ground, one must subtract the topographic phase from the interferogram. The topographic phase, in this case, is replicated by using an [existing DEM](../dems.md "HyP3 DEM Documentation" ){target=_blank} to calculate the actual topographic phase. This phase is then removed from the interferogram leaving just the motion or deformation signal (plus atmospheric delays and noise).
 
-The DEM that is used for HyP3 InSAR processing is the [2021 Release of the Copernicus GLO-30 Public DEM](https://spacedata.copernicus.eu/blogs/-/blogs/copernicus-dem-2021-release-now-available "Copernicus DEM GLO-30 Press Release" ){target=_blank} dataset [publicly available on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank}. This DEM provides global coverage at 30-m pixel spacing, and provides higher-quality products over a wider area than the older DEMs (SRTM and NED) previously used to generate ASF's On Demand products. For details on the [Copernicus GLO-30 DEM](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960 "Copernicus DEM GLO-30 Information" ){target=_blank}, refer to the [Product Handbook](https://spacedata.copernicus.eu/documents/20126/0/GEO1988-CopernicusDEM-SPE-002_ProductHandbook_I1.00.pdf "Copernicus DEM Handbook" ){target=_blank}. For more information about the 2021 updates, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/web/cscda/dataset-details?articleId=394198 "Copernicus DEM GLO-30 Dataset Details" ){target=_blank}.
+The DEM that is used for HyP3 InSAR processing is the [2021 Release of the Copernicus GLO-30 Public DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} dataset [publicly available on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank}. This DEM provides global coverage at 30-m pixel spacing, and provides higher-quality products over a wider area than the older DEMs (SRTM and NED) previously used to generate ASF's On Demand products. For more information about the 2021 updates, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}.
 
 The DEM tiles necessary to cover the input granules for the InSAR product are downloaded. A geoid correction is applied to the DEM, and it is resampled to match the [output resolution](#processing-options "Jump to Processing Options section of this document") of the InSAR product (160 m for 20x4 products, 80 m for 10x2 products) and projected to the appropriate UTM Zone for the granule location.
 
@@ -266,7 +266,7 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 - The *DEM* file gives the local terrain heights in meters, with a geoid correction applied. *(optional)*
 - The *water mask* file indicates coastal waters and large inland waterbodies. Pixel values of 1 indicate land and 0 indicate water. This file is in 8-bit unsigned integer format.
 
-If the **water mask** option is selected, the water mask is applied prior to phase unwrapping to exclude water pixels from the process. The water mask is generated using the [GSHHG](http://www.soest.hawaii.edu/wessel/gshhg/land "http://www.soest.hawaii.edu/wessel/gshhg/land" ){target=_blank} dataset. To compile the reference shapefile, the full-resolution L1 dataset (boundary between land and ocean) and L5 dataset (boundary between Antarctic ice and ocean) were combined. The L3 dataset (boundary between islands and the lakes they are within) was removed from the L2 dataset (boundary between lakes and land), and this combined dataset was removed from the combined L1/L5 dataset. The portion of the shapefile covering the scene is converted to a raster for inclusion in the phase unwrapping mask during InSAR processing. The GSHHG dataset was last updated in 2017, so there may be discrepancies where shorelines have changed. Visit our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information about water masking.
+If the **water mask** option is selected, the water mask is applied prior to phase unwrapping to exclude water pixels from the process. The water mask is generated using the [GSHHG](http://www.soest.hawaii.edu/wessel/gshhg "http://www.soest.hawaii.edu/wessel/gshhg/land" ){target=_blank} dataset. To compile the reference shapefile, the full-resolution L1 dataset (boundary between land and ocean) and L5 dataset (boundary between Antarctic ice and ocean) were combined. The L3 dataset (boundary between islands and the lakes they are within) was removed from the L2 dataset (boundary between lakes and land), and this combined dataset was removed from the combined L1/L5 dataset. The portion of the shapefile covering the scene is converted to a raster for inclusion in the phase unwrapping mask during InSAR processing. The GSHHG dataset was last updated in 2017, so there may be discrepancies where shorelines have changed. Visit our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information about water masking.
 
 **Browse images** are included for the wrapped (color_phase) and unwrapped (unw_phase) phase files, which are in PNG format and are each 2048 pixels wide. The browse images are displayed using a cyclic color ramp to generate fringes. 
 
@@ -279,24 +279,24 @@ The tags and extensions used and example file names for each raster are listed i
 
 {% set base_name = 'S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>' %}
 
-| Extension | Description | Example |
-|---|---|---|
-| _amp.tif | Amplitude | {{ base_name }}_amp.tif |
-| _corr.tif | Normalized coherence file | {{ base_name }}_corr.tif |
-| _unw_phase.tif | Unwrapped geocoded interferogram | {{ base_name }}_unw_phase.tif |
-| _wrapped_phase.tif | Wrapped geocoded interferogram | {{ base_name }}_wrapped_phase.tif |
-| _los_disp.tif | Line-of-sight displacement | {{ base_name }}_los_disp.tif |
-| _vert_disp.tif | Vertical displacement | {{ base_name }}_vert_disp.tif |
-| _lv_phi.tif | Look vector φ (orientation) | {{ base_name }}_lv_phi.tif |
-| _lv_theta.tif | Look vector θ (elevation) | {{ base_name }}_lv_theta.tif |
-| _dem.tif | Digital elevation model | {{ base_name }}_dem.tif |
-| _inc_map_ell.tif | Ellipsoid incidence angle | {{ base_name }}_inc_map_ell.tif |
-| _inc_map.tif | Local incidence angle | {{ base_name }}_inc_map.tif |
-| _water_mask.tif | Water mask | {{ base_name }}_water_mask.tif |
-| _color_phase.kmz | Wrapped phase kmz file | {{ base_name }}_color_phase.kmz |
-| _unw_phase.kmz | Unwrapped phase kmz file | {{ base_name }}_unw_phase.kmz |
-| _color_phase.png | Wrapped phase browse image | {{ base_name }}_color_phase.png |
-| _unw_phase.png | Unwrapped phase browse image | {{ base_name }}_unw_phase.png |
+| Extension          | Description                      | Example                           |
+|--------------------|----------------------------------|-----------------------------------|
+| _amp.tif           | Amplitude                        | {{ base_name }}_amp.tif           |
+| _corr.tif          | Normalized coherence file        | {{ base_name }}_corr.tif          |
+| _unw_phase.tif     | Unwrapped geocoded interferogram | {{ base_name }}_unw_phase.tif     |
+| _wrapped_phase.tif | Wrapped geocoded interferogram   | {{ base_name }}_wrapped_phase.tif |
+| _los_disp.tif      | Line-of-sight displacement       | {{ base_name }}_los_disp.tif      |
+| _vert_disp.tif     | Vertical displacement            | {{ base_name }}_vert_disp.tif     |
+| _lv_phi.tif        | Look vector φ (orientation)      | {{ base_name }}_lv_phi.tif        |
+| _lv_theta.tif      | Look vector θ (elevation)        | {{ base_name }}_lv_theta.tif      |
+| _dem.tif           | Digital elevation model          | {{ base_name }}_dem.tif           |
+| _inc_map_ell.tif   | Ellipsoid incidence angle        | {{ base_name }}_inc_map_ell.tif   |
+| _inc_map.tif       | Local incidence angle            | {{ base_name }}_inc_map.tif       |
+| _water_mask.tif    | Water mask                       | {{ base_name }}_water_mask.tif    |
+| _color_phase.kmz   | Wrapped phase kmz file           | {{ base_name }}_color_phase.kmz   |
+| _unw_phase.kmz     | Unwrapped phase kmz file         | {{ base_name }}_unw_phase.kmz     |
+| _color_phase.png   | Wrapped phase browse image       | {{ base_name }}_color_phase.png   |
+| _unw_phase.png     | Unwrapped phase browse image     | {{ base_name }}_unw_phase.png     |
 
 *Table 2: Image files in product package*
 
@@ -304,13 +304,13 @@ The tags and extensions used and example file names for each raster are listed i
 
 The product package also includes a number of metadata files.
 
-| Extension | Description | Example |
-|-----------|-------------|---------|
-| .README.md.txt | Main README file for GAMMA InSAR | {{ base_name }}.README.md.txt |
-| .txt | Parameters and metadata for the InSAR pair | {{ base_name }}.txt |
-| .tif.xml | ArcGIS compliant XML metadata for GeoTIFF files | {{ base_name }}_unw_phase.tif.xml |
-| .png.xml | ArcGIS compliant XML metadata for PNG files | {{ base_name }}_color_phase.png.xml |
-| .png.aux.xml | Geolocation information for png browse images | {{ base_name }}_color_phase.png.aux.xml |
+| Extension      | Description                                     | Example                                 |
+|----------------|-------------------------------------------------|-----------------------------------------|
+| .README.md.txt | Main README file for GAMMA InSAR                | {{ base_name }}.README.md.txt           |
+| .txt           | Parameters and metadata for the InSAR pair      | {{ base_name }}.txt                     |
+| .tif.xml       | ArcGIS compliant XML metadata for GeoTIFF files | {{ base_name }}_unw_phase.tif.xml       |
+| .png.xml       | ArcGIS compliant XML metadata for PNG files     | {{ base_name }}_color_phase.png.xml     |
+| .png.aux.xml   | Geolocation information for png browse images   | {{ base_name }}_color_phase.png.aux.xml |
 
 *Table 3: Metadata files in product package*
 
@@ -320,50 +320,50 @@ The text file with extension .README.md.txt explains the files included in the f
 #### InSAR Parameter File
 The text file with extension .txt includes processing parameters used to generate the InSAR product as well as metadata attributes for the InSAR pair.  These are detailed in Table 4.  
 
-| Name | Description | Possible Value |
-|------|-------------|----------------|
-| Reference Granule | ESA granule name for reference scene (of the two scenes in the pair, the dataset with the oldest timestamp) | S1A<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20200116T032559<wbr>_20200116T032627<wbr>_030820<wbr>_038928<wbr>_F5DC |
-| Secondary Granule | ESA granule name for secondary scene (of the two scenes in the pair, the dataset with the newest timestamp) | S1B<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20200128T032559<wbr>_20200128T032627<wbr>_030995<wbr>_038F51<wbr>_7D4F |
-| Reference Pass Direction | Orbit direction of the reference scene | DESCENDING |
-| Reference Orbit Number | Absolute orbit number of the reference scene | 30741 |
-| Secondary Pass Direction | Orbit direction of the reference scene | DESCENDING |
-| Secondary Orbit Number | Absolute orbit number of the secondary scene | 31091 |
-| Baseline | Perpendicular baseline in meters | 58.3898 | 
-| UTCTime | Time in the UTC time zone in seconds | 12360.691361 |
-| Heading | Spacecraft heading measured in degrees clockwise from north | 193.2939317 |
-| Spacecraft height | Height in meters of the spacecraft above nadir point | 700618.6318999995 | 
-| Earth radius at nadir | Ellipsoidal earth radius in meters at the point directly below the satellite | 6370250.0667 |
-| Slant range near | Distance in meters from satellite to nearest point imaged | 799517.4338 | 
-| Slant range center | Distance in meters from satellite to the center point imaged | 879794.1404 | 
-| Slant range far | Distance in meters from satellite to farthest point imaged | 960070.8469 |
-| Range looks | Number of looks taken in the range direction | 20 | 
-| Azimuth looks | Number of looks taken in the azimuth direction | 4 |
-| InSAR phase filter | Name of the phase filter used | adf | 
-| Phase filter parameter | Dampening factor | 0.6 |
-| Resolution of output (m)| Pixel spacing in meters for output products | 80 | 
-| Range bandpass filter | Range bandpass filter applied | no |
-| Azimuth bandpass filter | Azimuth bandpass filter applied | no |
-| DEM source | DEM used in processing | GLO-30 |
-| DEM resolution | Pixel spacing in meters for DEM used to process this scene | 160 |
-| Unwrapping type | Phase unwrapping algorithm used | mcf |
-| Phase at Reference Point | Original unwrapped phase value at the reference point (set to 0 in output unwrapped phase raster) | -4.21967 |
-| Azimuth line of the reference point in SAR space | Row number (in SAR space) of the reference point | 2737.0 |
-| Range pixel of the reference point in SAR space | Column number (in SAR space) of the reference point | 739.0 |
-| Y coordinate of the reference point in the map projection | Latitude of the reference point in projected coordinates (UTM Zone - meters) | 4112453.3223 |
-| X coordinate of the reference point in the map projection | Longitude of the reference point in projected coordinates (UTM Zone - meters) | 589307.6248 |
-| Latitude of the reference point (WGS84) | Latitude of the reference point in WGS84 Geographic Coordinate System (degrees) | 37.1542125 |
-| Longitude of the reference point (WGS84) | Longitude of the reference point in WGS84 Geographic Coordinate System (degrees) | 40.00574707 |
-| Unwrapping threshold | Minimum coherence required to unwrap a given pixel | none |
-| Speckle filter | Speckle filter applied | no |
+| Name                                                      | Description                                                                                                 | Possible Value                                                                                              |
+|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| Reference Granule                                         | ESA granule name for reference scene (of the two scenes in the pair, the dataset with the oldest timestamp) | S1A<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20200116T032559<wbr>_20200116T032627<wbr>_030820<wbr>_038928<wbr>_F5DC |
+| Secondary Granule                                         | ESA granule name for secondary scene (of the two scenes in the pair, the dataset with the newest timestamp) | S1B<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20200128T032559<wbr>_20200128T032627<wbr>_030995<wbr>_038F51<wbr>_7D4F |
+| Reference Pass Direction                                  | Orbit direction of the reference scene                                                                      | DESCENDING                                                                                                  |
+| Reference Orbit Number                                    | Absolute orbit number of the reference scene                                                                | 30741                                                                                                       |
+| Secondary Pass Direction                                  | Orbit direction of the reference scene                                                                      | DESCENDING                                                                                                  |
+| Secondary Orbit Number                                    | Absolute orbit number of the secondary scene                                                                | 31091                                                                                                       |
+| Baseline                                                  | Perpendicular baseline in meters                                                                            | 58.3898                                                                                                     | 
+| UTCTime                                                   | Time in the UTC time zone in seconds                                                                        | 12360.691361                                                                                                |
+| Heading                                                   | Spacecraft heading measured in degrees clockwise from north                                                 | 193.2939317                                                                                                 |
+| Spacecraft height                                         | Height in meters of the spacecraft above nadir point                                                        | 700618.6318999995                                                                                           | 
+| Earth radius at nadir                                     | Ellipsoidal earth radius in meters at the point directly below the satellite                                | 6370250.0667                                                                                                |
+| Slant range near                                          | Distance in meters from satellite to nearest point imaged                                                   | 799517.4338                                                                                                 | 
+| Slant range center                                        | Distance in meters from satellite to the center point imaged                                                | 879794.1404                                                                                                 | 
+| Slant range far                                           | Distance in meters from satellite to farthest point imaged                                                  | 960070.8469                                                                                                 |
+| Range looks                                               | Number of looks taken in the range direction                                                                | 20                                                                                                          | 
+| Azimuth looks                                             | Number of looks taken in the azimuth direction                                                              | 4                                                                                                           |
+| InSAR phase filter                                        | Name of the phase filter used                                                                               | adf                                                                                                         | 
+| Phase filter parameter                                    | Dampening factor                                                                                            | 0.6                                                                                                         |
+| Resolution of output (m)                                  | Pixel spacing in meters for output products                                                                 | 80                                                                                                          | 
+| Range bandpass filter                                     | Range bandpass filter applied                                                                               | no                                                                                                          |
+| Azimuth bandpass filter                                   | Azimuth bandpass filter applied                                                                             | no                                                                                                          |
+| DEM source                                                | DEM used in processing                                                                                      | GLO-30                                                                                                      |
+| DEM resolution                                            | Pixel spacing in meters for DEM used to process this scene                                                  | 160                                                                                                         |
+| Unwrapping type                                           | Phase unwrapping algorithm used                                                                             | mcf                                                                                                         |
+| Phase at Reference Point                                  | Original unwrapped phase value at the reference point (set to 0 in output unwrapped phase raster)           | -4.21967                                                                                                    |
+| Azimuth line of the reference point in SAR space          | Row number (in SAR space) of the reference point                                                            | 2737.0                                                                                                      |
+| Range pixel of the reference point in SAR space           | Column number (in SAR space) of the reference point                                                         | 739.0                                                                                                       |
+| Y coordinate of the reference point in the map projection | Latitude of the reference point in projected coordinates (UTM Zone - meters)                                | 4112453.3223                                                                                                |
+| X coordinate of the reference point in the map projection | Longitude of the reference point in projected coordinates (UTM Zone - meters)                               | 589307.6248                                                                                                 |
+| Latitude of the reference point (WGS84)                   | Latitude of the reference point in WGS84 Geographic Coordinate System (degrees)                             | 37.1542125                                                                                                  |
+| Longitude of the reference point (WGS84)                  | Longitude of the reference point in WGS84 Geographic Coordinate System (degrees)                            | 40.00574707                                                                                                 |
+| Unwrapping threshold                                      | Minimum coherence required to unwrap a given pixel                                                          | none                                                                                                        |
+| Speckle filter                                            | Speckle filter applied                                                                                      | no                                                                                                          |
 
 *Table 4: List of InSAR parameters included in the parameter text file*
 
 #### ArcGIS-Compatible XML Files
-There is an ArcGIS-compatible xml file for each raster in the product folder. When ArcGIS Desktop users view any of the rasters in ArcCatalog or the Catalog window in ArcMap, they can open the Item Description to view the contents of the associated xml file. ArcGIS Pro users can access the information from the Metadata tab. These files will not appear as separate items in ArcCatalog, though if you use Windows Explorer to look at the contents of the folder you will see them listed individually. Because each one is named identically to the product it describes (with the addition of the .xml extension), ArcGIS recognizes the appropriate file as the raster’s associated metadata, and integrates the metadata accordingly.
+There is an ArcGIS-compatible XML file for each raster in the product folder. When ArcGIS Desktop users view any of the rasters in ArcCatalog or the Catalog window in ArcMap, they can open the Item Description to view the contents of the associated XML file. ArcGIS Pro users can access the information from the Metadata tab. These files will not appear as separate items in ArcCatalog, though if you use Windows Explorer to look at the contents of the folder you will see them listed individually. Because each one is named identically to the product it describes (with the addition of the .xml extension), ArcGIS recognizes the appropriate file as the raster’s associated metadata, and integrates the metadata accordingly.
 
-ArcGIS users should take care not to change these xml files outside of the ArcGIS environment; changing the filename or content directly may render the files unreadable by ArcGIS.
+ArcGIS users should take care not to change these XML files outside of the ArcGIS environment; changing the filename or content directly may render the files unreadable by ArcGIS.
 
-Those not using ArcGIS will still find the contents of these xml files useful, but will have to contend with the xml tagging when viewing the files as text or in a browser.
+Those not using ArcGIS will still find the contents of these XML files useful, but will have to contend with the XML tagging when viewing the files as text or in a browser.
 
 #### Auxiliary Geolocation Files
 Geolocation XML files (aux files) are included for each of the PNG browse images to allow for proper display in GIS platforms.

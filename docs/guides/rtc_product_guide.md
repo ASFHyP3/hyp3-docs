@@ -48,23 +48,23 @@ The RTC product package includes a Layover-Shadow mask (see [Image Files section
 
 The quality of the terrain corrections are directly related to the quality of the digital elevation models (DEMs) used in the process of geometrically and radiometrically correcting the SAR imagery. We use DEMs that are publicly available and have wide-ranging coverage. 
 
-In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. With the public release of the [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/documents/20126/0/GEO1988-CopernicusDEM-SPE-002_ProductHandbook_I1.00.pdf "Copernicus DEM Product Handbook" ){target=_blank}, we have changed our default DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. This is now the default DEM for processing RTC products. 
+In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. With the public release of the [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, we have changed our default DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. This is now the default DEM for processing RTC products.
 
 !!! important "Copernicus DEM GLO-30 Updated" 
 
-    We use the [Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960 "Copernicus DEM GLO-30 Information" ){target=_blank} as our default DEM for RTC and InSAR processing. We have now updated to the [2021 release of the Copernicus DEM GLO-30 Public dataset](https://spacedata.copernicus.eu/blogs/-/blogs/copernicus-dem-2021-release-now-available "Copernicus DEM GLO-30 Press Release" ){target=_blank}, which improves coverage over Norway, and includes 5 additional tiles. For more information, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/web/cscda/dataset-details?articleId=394198 "Copernicus DEM GLO-30 Dataset Details" ){target=_blank}.
+    We use the Copernicus DEM GLO-30 Public dataset as our default DEM for RTC and InSAR processing. We have now updated to the 2021 release of the Copernicus DEM GLO-30 Public dataset, which improves coverage over Norway, and includes 5 additional tiles. For more information, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}.
 
     Users still have the option to use the legacy DEMs when processing RTC jobs [On Demand in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=_blank} and when using the [API](https://hyp3-docs.asf.alaska.edu/using/api/ "HyP3 API Documentation" ){target=_blank} or [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "HyP3 Python SDK Documentation" ){target=_blank}, but we recommend using the Copernicus DEM whenever possible.
 
 Table 1 summarizes ASF's DEM sources. Note that in each case, the DEM is resampled to RTC spacing and reprojected to a UTM Zone (WGS84), and a geoid correction is applied before being used for RTC processing.
 
-| Resolution | DEM | Vertical Datum | Area | Posting | Priority |
-|------------|-------|--------|------|---------|----------|
-| Medium | GLO-30 | EGM2008 | Global | 1 arc second | Default |
-| High | NED13 | NAVD88 | CONUS, Hawaii, parts of Alaska | 1/3 arc seconds | 1 |
-| Medium | SRTMGL1 | EGM96 | 60 N to 57 S latitude | 1 arc second | 2 |
-| Medium | NED1 | NAVD88 | Canada | 1 arc second | 3 |
-| Low | NED2 | NAVD88 | Parts of Alaska | 2 arc seconds | 4 |
+| Resolution | DEM     | Vertical Datum | Area                           | Posting         | Priority |
+|------------|---------|----------------|--------------------------------|-----------------|----------|
+| Medium     | GLO-30  | EGM2008        | Global                         | 1 arc second    | Default  |
+| High       | NED13   | NAVD88         | CONUS, Hawaii, parts of Alaska | 1/3 arc seconds | 1        |
+| Medium     | SRTMGL1 | EGM96          | 60 N to 57 S latitude          | 1 arc second    | 2        |
+| Medium     | NED1    | NAVD88         | Canada                         | 1 arc second    | 3        |
+| Low        | NED2    | NAVD88         | Parts of Alaska                | 2 arc seconds   | 4        |
 
 *Table 1: DEMs used for RTC processing. Note that the Copernicus 30 m DEM is the default, while the other four DEMs are only used if the legacy option is invoked.*
 
@@ -72,7 +72,7 @@ When ordering On-Demand RTC products, you can choose to include a copy of the DE
 
 ### Copernicus DEM
 
-The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/explore-more/news-archive/-/asset_publisher/Ye8egYeRPLEs/blog/id/434960 "Copernicus DEM GLO-30 Information" ){target=_blank} provides global coverage (with the current exception of an area covering Armenia and Azerbaijan, see Figure 3) at 30-m pixel spacing. When an RTC job is requested, we download the required DEM tiles from the Copernicus Digital Elevation Model (DEM) GLO-30 Public dataset available in the [Registry of Open Data on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank}, managed by [Sinergise](https://www.sinergise.com/ "https://www.sinergise.com" ){target=_blank}. We mosaic the tiles and reproject them to the appropriate UTM Zone for the location of the SAR granule to be processed, resampling them to match the pixel spacing and alignment of the RTC product. A geoid correction is applied before it is used for RTC processing.
+The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} provides global coverage (with the current exception of an area covering Armenia and Azerbaijan, see Figure 3) at 30-m pixel spacing. When an RTC job is requested, we download the required DEM tiles from the Copernicus Digital Elevation Model (DEM) GLO-30 Public dataset available in the [Registry of Open Data on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank}, managed by [Sinergise](https://www.sinergise.com/ "https://www.sinergise.com" ){target=_blank}. We mosaic the tiles and reproject them to the appropriate UTM Zone for the location of the SAR granule to be processed, resampling them to match the pixel spacing and alignment of the RTC product. A geoid correction is applied before it is used for RTC processing.
 
 Figure 2 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and Figure 3 details the land area currently not covered.
 
@@ -153,23 +153,23 @@ The naming convention for the RTC products follows this pattern for its base nam
 
 Example: S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A
 
-| Element | Definition | Example |
-|---|---|---|
-| x | Mission: A or B | A |
-| yy | Beam Mode | IW |
-| aaaaaaaa | Start Year-Month-Day | 20180128 |
-| bbbbbb | Start Hour-Minute-Second | 161201 |
-| pp | Polarization: Dual-pol (D) vs. Single-pol (S), Primary Polarization (H or V) | DV |
-| o | Orbit Type: Precise (P), Restituted (R), or Original Predicted (O) | P |
-| zz | Terrain Correction Pixel Spacing (m) | 30 |
-| u | Software Package Used: GAMMA (G) | G |
-| d | Gamma-0 (g) or Sigma-0 (s) Output | g |
-| e | Power (p), Decibel (d), or Amplitude (a) Output | p |
-| f | Unmasked (u) or Water Masked (w) | u |
-| k | Not Filtered (n) or Filtered (f) | n |
-| l | Entire Area (e) or Clipped Area (c) | e |
-| m | Dead Reckoning (d) or DEM Matching (m) | d |
-| ssss | Product ID | FD6A |
+| Element  | Definition                                                                   | Example  |
+|----------|------------------------------------------------------------------------------|----------|
+| x        | Mission: A or B                                                              | A        |
+| yy       | Beam Mode                                                                    | IW       |
+| aaaaaaaa | Start Year-Month-Day                                                         | 20180128 |
+| bbbbbb   | Start Hour-Minute-Second                                                     | 161201   |
+| pp       | Polarization: Dual-pol (D) vs. Single-pol (S), Primary Polarization (H or V) | DV       |
+| o        | Orbit Type: Precise (P), Restituted (R), or Original Predicted (O)           | P        |
+| zz       | Terrain Correction Pixel Spacing (m)                                         | 30       |
+| u        | Software Package Used: GAMMA (G)                                             | G        |
+| d        | Gamma-0 (g) or Sigma-0 (s) Output                                            | g        |
+| e        | Power (p), Decibel (d), or Amplitude (a) Output                              | p        |
+| f        | Unmasked (u) or Water Masked (w)                                             | u        |
+| k        | Not Filtered (n) or Filtered (f)                                             | n        |
+| l        | Entire Area (e) or Clipped Area (c)                                          | e        |
+| m        | Dead Reckoning (d) or DEM Matching (m)                                       | d        |
+| ssss     | Product ID                                                                   | FD6A     |
 
 *Table 2: Naming convention for RTC products*
 
@@ -177,15 +177,15 @@ Example: S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A
 
 The default settings for RTC products are as follows:
 
-| Setting | Default |
-|---|---|
-| Pixel Spacing | 30 |
-| Radiometry | Gamma-0 (g) |
-| Scale | Power (p) |
-| Water Mask | No water mask applied (u) |
-| Speckle Filter | Not filtered (n) |
-| Clipping | Entire extent of input granule (e) |
-| DEM Matching | No matching; dead reckoning is used (d) |
+| Setting        | Default                                 |
+|----------------|-----------------------------------------|
+| Pixel Spacing  | 30                                      |
+| Radiometry     | Gamma-0 (g)                             |
+| Scale          | Power (p)                               |
+| Water Mask     | No water mask applied (u)               |
+| Speckle Filter | Not filtered (n)                        |
+| Clipping       | Entire extent of input granule (e)      |
+| DEM Matching   | No matching; dead reckoning is used (d) |
 
 *Table 3: Default settings for RTC products*
 
@@ -193,18 +193,18 @@ The default settings for RTC products are as follows:
 
 All files are stored in a folder named using the above convention, and the base name for each file matches the folder name. Multiple types of image files are present in this folder, and some of the files are optional. Users can choose to exclude the RGB Decomposition GeoTIFF, scattering area map, DEM, and incidence angle map rasters when ordering On-Demand RTC products.
 
-| Extension | Description | Example |
-|---|---|---|
-| _VV.tif, _VH.tif, _HH.tif, _HV.tif | Terrain corrected product stored in separate files for each available polarization in GeoTIFF format | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_VV.tif |
-| .png | Greyscale browse image | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.png |
-| _rgb.png | Color browse image | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.png |
-| .kmz | Zipped Google Earth image | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.kmz |
-| _rgb.kmz | Zipped Google Earth color image | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.kmz |
-| _rgb.tif | Color decomposition in GeoTIFF format (optional)| S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.tif |
-| _area.tif | Scattering area map in GeoTIFF format (optional)| S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_area.tif |
-| _dem.tif | DEM used for terrain correction in GeoTIFF format (optional)| S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_dem.tif |
-| _inc_map.tif | Incidence angle file in GeoTIFF format (optional)| S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_inc_map.tif |
-| _ls_map.tif | Layover/shadow mask in GeoTIFF format | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_ls_map.tif |
+| Extension                          | Description                                                                                          | Example                                                    |
+|------------------------------------|------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+| _VV.tif, _VH.tif, _HH.tif, _HV.tif | Terrain corrected product stored in separate files for each available polarization in GeoTIFF format | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_VV.tif      |
+| .png                               | Grayscale browse image                                                                               | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.png         |
+| _rgb.png                           | Color browse image                                                                                   | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.png     |
+| .kmz                               | Zipped Google Earth image                                                                            | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.kmz         |
+| _rgb.kmz                           | Zipped Google Earth color image                                                                      | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.kmz     |
+| _rgb.tif                           | Color decomposition in GeoTIFF format (optional)                                                     | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.tif     |
+| _area.tif                          | Scattering area map in GeoTIFF format (optional)                                                     | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_area.tif    |
+| _dem.tif                           | DEM used for terrain correction in GeoTIFF format (optional)                                         | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_dem.tif     |
+| _inc_map.tif                       | Incidence angle file in GeoTIFF format (optional)                                                    | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_inc_map.tif |
+| _ls_map.tif                        | Layover/shadow mask in GeoTIFF format                                                                | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_ls_map.tif  |
 
 *Table 4: Image files in product package*
 
@@ -214,13 +214,13 @@ The RTC products (one for each available polarization) are generated as 32-bit f
 
 The product package also includes a number of metadata files.
 
-| Extension | Description | Example |
-|------|-------------|----------------|
-| .README.md.txt | README file | S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.README.md.txt |
-| .log | Log file of the processing steps | S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.log |
-| .tif.xml | ArcGIS compliant XML metadata for GeoTIFF files | S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A<wbr>_VV.tif.xml |
-| .png.xml | ArcGIS compliant XML metadata for PNG files | S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.png.xml |
-| .png.aux.xml | Geolocation metadata for PNG browse images | S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.png.aux.xml |
+| Extension      | Description                                     | Example                                                                                           |
+|----------------|-------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| .README.md.txt | README file                                     | S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.README.md.txt   |
+| .log           | Log file of the processing steps                | S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.log             |
+| .tif.xml       | ArcGIS compliant XML metadata for GeoTIFF files | S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A<wbr>_VV.tif.xml |
+| .png.xml       | ArcGIS compliant XML metadata for PNG files     | S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.png.xml         |
+| .png.aux.xml   | Geolocation metadata for PNG browse images      | S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.png.aux.xml     |
 
 *Table 5: Metadata files and their extensions*
 
@@ -230,11 +230,11 @@ The text file with extension .README.md.txt explains the files included in the f
 
 #### ArcGIS-Compatible XML Files
 
-There is an ArcGIS-compatible xml file for each raster in the product folder. When ArcGIS Desktop users view any of the rasters in ArcCatalog or the Catalog window in ArcMap, they can open the Item Description to view the contents of the associated xml file. ArcGIS Pro users can access the information from the Metadata tab. These files will not appear as separate items in ArcCatalog, though if you use Windows Explorer to look at the contents of the folder you will see them listed individually. Because each one is named identically to the product it describes (with the addition of the .xml extension), ArcGIS recognizes the appropriate file as the raster’s associated metadata, and integrates the metadata accordingly.
+There is an ArcGIS-compatible XML file for each raster in the product folder. When ArcGIS Desktop users view any of the rasters in ArcCatalog or the Catalog window in ArcMap, they can open the Item Description to view the contents of the associated XML file. ArcGIS Pro users can access the information from the Metadata tab. These files will not appear as separate items in ArcCatalog, though if you use Windows Explorer to look at the contents of the folder you will see them listed individually. Because each one is named identically to the product it describes (with the addition of the .xml extension), ArcGIS recognizes the appropriate file as the raster’s associated metadata, and integrates the metadata accordingly.
 
-ArcGIS users should take care not to change these xml files outside of the ArcGIS environment; changing the filename or content directly may render the files unreadable by ArcGIS.
+ArcGIS users should take care not to change these XML files outside of the ArcGIS environment; changing the filename or content directly may render the files unreadable by ArcGIS.
 
-Those not using ArcGIS will still find the contents of these xml files useful, but will have to contend with the xml tagging when viewing the files as text or in a browser.
+Those not using ArcGIS will still find the contents of these XML files useful, but will have to contend with the XML tagging when viewing the files as text or in a browser.
 
 #### Auxiliary Geolocation Files
 
@@ -248,8 +248,8 @@ A log file detailing the processing parameters and outputs is also included for 
 
 A shapefile indicating the extent of the RTC data coverage is included in the package.
 
-| Extension | Description | Example |
-|---|---|---|
+| Extension                                   | Description                           | Example                                                  |
+|---------------------------------------------|---------------------------------------|----------------------------------------------------------|
 | _shape.dbf _shape.prj _shape.shp _shape.shx | Shapefile (.shp) and supporting files | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_shape.shp |
 
 *Table 6: Shapefile files and their extensions*

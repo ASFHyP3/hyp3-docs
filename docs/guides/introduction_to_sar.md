@@ -7,9 +7,9 @@ SAR is an active sensor that transmits pulses and listens for echoes, called bac
 
 ### Propagation of EM Waves
 
-At the most fundamental level, SAR transmits an encoded burst, called a chirp, of electro-magnetic energy (Figure 1) and then listens for the return signal, called echoes.  The wavelength of this chirp is in the centimeter range, with X-band (~3 cm), C-band (~6 cm), and L-band (~23 cm) all in common use.
+At the most fundamental level, SAR transmits an encoded burst, called a chirp, of electromagnetic energy (Figure 1) and then listens for the return signal, called echoes.  The wavelength of this chirp is in the centimeter range, with X-band (~3 cm), C-band (~6 cm), and L-band (~23 cm) all in common use.
 
-![Figure 1](../images/microwave-emr.png "The spectrum of electro-magnetic radiation. SAR is imaged using microwave wavelengths")
+![Figure 1](../images/microwave-emr.png "The spectrum of electromagnetic radiation. SAR is imaged using microwave wavelengths")
 
 *Figure 1: The spectrum of electromagnetic radiation. SAR is imaged using microwave wavelengths. The microwave range extends from about 1 mm to 1 m in wavelength, with most radar applications using bands within the 3 mm to 30 cm range.*
 
@@ -22,11 +22,11 @@ There are four different polarization combinations commonly used by SAR sensors:
 *Table 1: SAR Polarizations*
 
 | Polarization Code | Transmit Signal Polarization | Return Signal Polarization |
-|---|---|---|
-| VV | Vertical | Vertical |
-| VH | Vertical | Horizontal |
-| HV | Horizontal | Vertical |
-| HH | Horizontal | Horizontal |
+|-------------------|------------------------------|----------------------------|
+| VV                | Vertical                     | Vertical                   |
+| VH                | Vertical                     | Horizontal                 |
+| HV                | Horizontal                   | Vertical                   |
+| HH                | Horizontal                   | Horizontal                 |
 
 
 ![Figure 2](../images/polarizations_ASF_dashed.png "SAR signals are transmitted either vertically or horizontally. Likewise, the sensor can listen for either horizontally or vertically polarized returns.")

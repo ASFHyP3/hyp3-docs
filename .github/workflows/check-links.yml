@@ -1,0 +1,17 @@
+name: Check links
+on: push
+
+jobs:
+  linkChecker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Link Checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v1.5.4
+        env:
+          GITHUB_TOKEN: ${{secrets.TOOLS_BOT_PAK}}
+        with:
+          args: --insecure "docs/**/*.md" "README.md" "CODE_OF_CONDUCT.md"
+          fail: true

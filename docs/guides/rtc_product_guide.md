@@ -193,18 +193,18 @@ The default settings for RTC products are as follows:
 
 All files are stored in a folder named using the above convention, and the base name for each file matches the folder name. Multiple types of image files are present in this folder, and some of the files are optional. Users can choose to exclude the RGB Decomposition GeoTIFF, scattering area map, DEM, and incidence angle map rasters when ordering On-Demand RTC products.
 
-| Extension | Description | Example |
-|---|---|---|
+| Extension | Description                                                                                          | Example |
+|---|------------------------------------------------------------------------------------------------------|---|
 | _VV.tif, _VH.tif, _HH.tif, _HV.tif | Terrain corrected product stored in separate files for each available polarization in GeoTIFF format | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_VV.tif |
-| .png | Greyscale browse image | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.png |
-| _rgb.png | Color browse image | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.png |
-| .kmz | Zipped Google Earth image | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.kmz |
-| _rgb.kmz | Zipped Google Earth color image | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.kmz |
-| _rgb.tif | Color decomposition in GeoTIFF format (optional)| S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.tif |
-| _area.tif | Scattering area map in GeoTIFF format (optional)| S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_area.tif |
-| _dem.tif | DEM used for terrain correction in GeoTIFF format (optional)| S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_dem.tif |
-| _inc_map.tif | Incidence angle file in GeoTIFF format (optional)| S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_inc_map.tif |
-| _ls_map.tif | Layover/shadow mask in GeoTIFF format | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_ls_map.tif |
+| .png | Grayscale browse image                                                                               | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.png |
+| _rgb.png | Color browse image                                                                                   | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.png |
+| .kmz | Zipped Google Earth image                                                                            | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.kmz |
+| _rgb.kmz | Zipped Google Earth color image                                                                      | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.kmz |
+| _rgb.tif | Color decomposition in GeoTIFF format (optional)                                                     | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.tif |
+| _area.tif | Scattering area map in GeoTIFF format (optional)                                                     | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_area.tif |
+| _dem.tif | DEM used for terrain correction in GeoTIFF format (optional)                                         | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_dem.tif |
+| _inc_map.tif | Incidence angle file in GeoTIFF format (optional)                                                    | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_inc_map.tif |
+| _ls_map.tif | Layover/shadow mask in GeoTIFF format                                                                | S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_ls_map.tif |
 
 *Table 4: Image files in product package*
 
@@ -230,11 +230,11 @@ The text file with extension .README.md.txt explains the files included in the f
 
 #### ArcGIS-Compatible XML Files
 
-There is an ArcGIS-compatible xml file for each raster in the product folder. When ArcGIS Desktop users view any of the rasters in ArcCatalog or the Catalog window in ArcMap, they can open the Item Description to view the contents of the associated xml file. ArcGIS Pro users can access the information from the Metadata tab. These files will not appear as separate items in ArcCatalog, though if you use Windows Explorer to look at the contents of the folder you will see them listed individually. Because each one is named identically to the product it describes (with the addition of the .xml extension), ArcGIS recognizes the appropriate file as the raster’s associated metadata, and integrates the metadata accordingly.
+There is an ArcGIS-compatible XML file for each raster in the product folder. When ArcGIS Desktop users view any of the rasters in ArcCatalog or the Catalog window in ArcMap, they can open the Item Description to view the contents of the associated XML file. ArcGIS Pro users can access the information from the Metadata tab. These files will not appear as separate items in ArcCatalog, though if you use Windows Explorer to look at the contents of the folder you will see them listed individually. Because each one is named identically to the product it describes (with the addition of the .xml extension), ArcGIS recognizes the appropriate file as the raster’s associated metadata, and integrates the metadata accordingly.
 
-ArcGIS users should take care not to change these xml files outside of the ArcGIS environment; changing the filename or content directly may render the files unreadable by ArcGIS.
+ArcGIS users should take care not to change these XML files outside of the ArcGIS environment; changing the filename or content directly may render the files unreadable by ArcGIS.
 
-Those not using ArcGIS will still find the contents of these xml files useful, but will have to contend with the xml tagging when viewing the files as text or in a browser.
+Those not using ArcGIS will still find the contents of these XML files useful, but will have to contend with the XML tagging when viewing the files as text or in a browser.
 
 #### Auxiliary Geolocation Files
 

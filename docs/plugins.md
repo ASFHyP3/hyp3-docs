@@ -40,8 +40,8 @@ In order to be supported by HyP3, a plugin must meet a few requirements:
     * `--bucket BUCKET-NAME` where `BUCKET-NAME` is the name of an AWS S3 bucket that output products will be uploaded to
     * `--bucket-prefix BUCKET-PREFIX` where `BUCKET-PREFIX` is a string appended to the key of any file uploaded to AWS S3
     (this is effectively a subfolder in AWS S3)
-    * `--username USER` where `USER` is the username used to authenticate to EarthData Login
-    * `--password PASSWORD` where `PASSWORD` is the password used to authenticate to EarthData Login
+    * `--username USER` where `USER` is the username used to authenticate to Earthdata Login
+    * `--password PASSWORD` where `PASSWORD` is the password used to authenticate to Earthdata Login
 * any necessary user input should be able to be provided through entrypoint arguments
 * when uploading files to the S3 Bucket
     * products files must be tagged with `filetype: product`

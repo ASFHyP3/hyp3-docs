@@ -359,11 +359,11 @@ The text file with extension .txt includes processing parameters used to generat
 *Table 4: List of InSAR parameters included in the parameter text file*
 
 #### ArcGIS-Compatible XML Files
-There is an ArcGIS-compatible xml file for each raster in the product folder. When ArcGIS Desktop users view any of the rasters in ArcCatalog or the Catalog window in ArcMap, they can open the Item Description to view the contents of the associated xml file. ArcGIS Pro users can access the information from the Metadata tab. These files will not appear as separate items in ArcCatalog, though if you use Windows Explorer to look at the contents of the folder you will see them listed individually. Because each one is named identically to the product it describes (with the addition of the .xml extension), ArcGIS recognizes the appropriate file as the raster’s associated metadata, and integrates the metadata accordingly.
+There is an ArcGIS-compatible XML file for each raster in the product folder. When ArcGIS Desktop users view any of the rasters in ArcCatalog or the Catalog window in ArcMap, they can open the Item Description to view the contents of the associated XML file. ArcGIS Pro users can access the information from the Metadata tab. These files will not appear as separate items in ArcCatalog, though if you use Windows Explorer to look at the contents of the folder you will see them listed individually. Because each one is named identically to the product it describes (with the addition of the .xml extension), ArcGIS recognizes the appropriate file as the raster’s associated metadata, and integrates the metadata accordingly.
 
-ArcGIS users should take care not to change these xml files outside of the ArcGIS environment; changing the filename or content directly may render the files unreadable by ArcGIS.
+ArcGIS users should take care not to change these XML files outside of the ArcGIS environment; changing the filename or content directly may render the files unreadable by ArcGIS.
 
-Those not using ArcGIS will still find the contents of these xml files useful, but will have to contend with the xml tagging when viewing the files as text or in a browser.
+Those not using ArcGIS will still find the contents of these XML files useful, but will have to contend with the XML tagging when viewing the files as text or in a browser.
 
 #### Auxiliary Geolocation Files
 Geolocation XML files (aux files) are included for each of the PNG browse images to allow for proper display in GIS platforms.

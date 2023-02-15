@@ -45,10 +45,10 @@ use a second/dedicated terminal so you can keep this command running.*
 
 ### Deploy
 
-This documentation site is deployed as a Github Organization website with a CNAME
+This documentation site is deployed as a GitHub Organization website with a CNAME
 so that it's viewable at <https://hyp3-docs.asf.alaska.edu/>. The website is served
 out of the special <https://github.com/ASFHyP3/ASFHyP3.github.io> repository. Deployment
-is handled automatically with the `.github/workflows/deploy_to_github_io.yml` Github
+is handled automatically with the `.github/workflows/deploy_to_github_io.yml` GitHub
 Action for any merge to `main`.
 
 There is also a test site deployed to <https://hyp3-docs.asf.alaska.edu/hyp3-docs>, which

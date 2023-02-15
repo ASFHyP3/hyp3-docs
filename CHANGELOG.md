@@ -336,7 +336,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 * Added descriptions for each type of metadata file in the [InSAR Product Guide](docs/guides/insar_product_guide.md),
-  including the new ArcGIS-compliant metadata xml files added in hyp3-gamma
+  including the new ArcGIS-compliant metadata XML files added in hyp3-gamma
   [4.6.0](https://github.com/ASFHyP3/hyp3-gamma/blob/develop/CHANGELOG.md#460)
 
 ## [0.3.4](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.3...v0.3.4)

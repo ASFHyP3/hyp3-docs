@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/) 
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.63]
+
+## Changed
+* Updated ASF Tools for Python to [v0.5.2](https://github.com/ASFHyP3/asf-tools/blob/main/CHANGELOG.md#052)
+
+## Fixed
+* Fix the reference to Copernicus DEM release version
+
 ## [0.3.62]
 
 ## Added

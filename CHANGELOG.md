@@ -8,6 +8,9 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.3.63]
 
+## Changed
+* Updated ASF Tools for Python to [v0.5.2](https://github.com/ASFHyP3/asf-tools/blob/main/CHANGELOG.md#052)
+
 ## Fixed
 * Fix the reference to Copernicus DEM release version
 

@@ -117,6 +117,36 @@ It is *much* faster to process and analyze 30-m RTC products, so it's a good ide
 
 Keep in mind that the same DEM is used for processing both the 10-m and 30-m RTC products. By default, the DEM is the Copernicus Global DEM with a pixel spacing of 30 meters. The DEM is resampled to a pixel spacing of 10 meters when used for processing the 10-m RTC products, and the output DEM included in the 10-m RTC product package has a pixel spacing of 10 meters to match the output RTC product. *This does not indicate that the source DEM used for the 10-m products is of higher resolution.*
 
+## Processing Options
+
+There are several options users can set when ordering RTC On Demand products. The options are described below:
+
+1. The **Dem Matching** is a bool option (True/False). It decides whether attempt to co-register the image to the DEM or not. The default value is False.  
+
+2. The **Dem Name** is the DEM to use for RTC processing; `copernicus` or `legacy`. The default value is `copernicus`.
+
+3. The **radiometry** option allows users to select radiometry of the output backscatter image(s); `gamma0` or `sigma0` (refer Figure 4 for detail). The default value is `gamma0`.
+
+4. The **resolution** decides the pixel size of the output images. It is either 10.0 or default 30.0 meters. 
+
+5. The **scale** decides the scale of the output backscatter image(s); `decibel`, `power`, or `amplitude`. The default output backscatter image(s) are in power unit. 
+
+6. The **speckle filter** can be chosen (True/False) to mitigate the speckles. If it is True, an enhanced Lee speckle filter is applied. The default value is False.  
+
+7. The **include dem** decides if the DEM GeoTIFF is included in the product. The default values is False, which means the product does not include the DEM file.
+
+8. The **include inc map** is either True or False. It decides if the output product include the incidence angle GeoTIFF file. The default value is False. 
+
+9. The **include scattering area** has bool value (True/False). It decides if the product includes the local scattering area GeoTIFF file or not. The default is False which indicates the local scattering area file is not included in the product.
+
+10. The **include rgb** is either True or False. The product includes the rgb file if the value of the option is True. This setting is ignored when processing a single-polarization product. The default value is False, meaning no rgb file is included in the product.
+
+Radiometry of the SAR backscatter is illustrated in Figure 5.
+
+![Figure 5](../images/three_rader_backscatter_convention.jpg "Normalization areas for SAR backscatter")
+
+*Figure 5:  Normalization areas for SAR backscatter, from avid Small, 2011, Flattening Gamma: Radiometric Terrain Correction for SAR Imagery, IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 49, NO. 8, AUGUST 2011*
+
 ## Radiometric Terrain Correction Workflow
 
 ### Pre-processing
@@ -290,59 +320,59 @@ There are a number of ways that SAR data sets can be used to identify areas of c
 
 #### Seasonal Change
 
-Stacking RTC images into a multiband image (Figure 5) allows the user to display different times of year at the same time, using the color bands to highlight areas that differ in radar backscatter values from one month to the next.
+Stacking RTC images into a multiband image (Figure 6) allows the user to display different times of year at the same time, using the color bands to highlight areas that differ in radar backscatter values from one month to the next.
 
 To generate this type of image, choose three images that capture different seasons or months of interest. These can either be individual RTC images from different times of the year, or rasters displaying the monthly median calculated from multiple RTC images collected in the same month.
 
 Combine the three images into a multiband raster and assign each to a different color band. The resulting RGB image highlights areas where there are distinctive differences among the three source image values.
 
-![Figure 5](../images/seasonal-change-example.jpg "Monthly median VH gamma-0 power values for May, July and September, displayed as a multiband RGB (May, July, Sept) image")
+![Figure 6](../images/seasonal-change-example.jpg "Monthly median VH gamma-0 power values for May, July and September, displayed as a multiband RGB (May, July, Sept) image")
 
-*Figure 5: Monthly median VH gamma-0 power values for May, July and September, displayed as a multiband RGB (May, July, Sept) image. Contains modified Copernicus Sentinel data 2017, processed by ESA.*
+*Figure 6: Monthly median VH gamma-0 power values for May, July and September, displayed as a multiband RGB (May, July, Sept) image. Contains modified Copernicus Sentinel data 2017, processed by ESA.*
 
 #### Quantifying Change over Time
 
 A simple and informative approach to change detection is the calculation of the log difference between two RTC datasets from different dates. By calculating Log10(date2/date1) and applying a classified symbology, it is easy to identify areas where change occurred, as well as the direction of the change. Negative values indicate a decrease in radar backscatter over time, while positive values indicate an increase in backscatter.
 
-In the example below (Figure 6), RTC images from before and after heavy rains caused a dam breach. The area where the reservoir was located displays a significant increase in backscatter (symbolized in red). This positive change is driven by land that was once covered by standing water, which generally has very low backscatter, now being exposed saturated soil, which generally returns very high backscatter values. In surrounding areas, decreases in radar backscatter (symbolized by blue), are possibly the result of agricultural fields undergoing desiccation/hardening of the surface soil following the heavy rainfall and standing water. Areas with little change in backscatter are displayed in yellow.
+In the example below (Figure 7), RTC images from before and after heavy rains caused a dam breach. The area where the reservoir was located displays a significant increase in backscatter (symbolized in red). This positive change is driven by land that was once covered by standing water, which generally has very low backscatter, now being exposed saturated soil, which generally returns very high backscatter values. In surrounding areas, decreases in radar backscatter (symbolized by blue), are possibly the result of agricultural fields undergoing desiccation/hardening of the surface soil following the heavy rainfall and standing water. Areas with little change in backscatter are displayed in yellow.
 
-![Figure 6](../images/log-difference-raster.png "Log Difference Raster with Classified Symbology")
+![Figure 7](../images/log-difference-raster.png "Log Difference Raster with Classified Symbology")
 
-*Figure 6: Log Difference Raster with Classified Symbology. Contains modified Copernicus Sentinel data 2020, processed by ESA.*
+*Figure 7: Log Difference Raster with Classified Symbology. Contains modified Copernicus Sentinel data 2020, processed by ESA.*
 
 ### Identifying Surface Water
 
 Calm surface water has a very low radar cross section. Most of the signal is reflected off the smooth surface, due to the high dielectric constant of freshwater, so little to none of the signal is returned as backscatter. Because of this, it is often easy to delineate surface water using a simple threshold value, where all pixels below the threshold are assumed to be water.
 
-You can easily visualize the water extent using various thresholds by applying a classified symbology with two classes. It is often best to use dB scale datasets for identifying surface water. In many cases, there will be a bimodal distribution of values in an RTC image containing surface water, with the first peak comprised mostly of water values, and the second peak containing all the remaining values. A good first step is to select a break point between those two peaks, then adjust the value as needed to generate a good water mask (Figure 7).
+You can easily visualize the water extent using various thresholds by applying a classified symbology with two classes. It is often best to use dB scale datasets for identifying surface water. In many cases, there will be a bimodal distribution of values in an RTC image containing surface water, with the first peak comprised mostly of water values, and the second peak containing all the remaining values. A good first step is to select a break point between those two peaks, then adjust the value as needed to generate a good water mask (Figure 8).
 
-![Figure 7](../images/water-histogram.png "Setting the break point to fall between the two peaks of the histogram")
+![Figure 8](../images/water-histogram.png "Setting the break point to fall between the two peaks of the histogram")
 
-*Figure 7: Setting the break point to fall between the two peaks of the histogram*
+*Figure 8: Setting the break point to fall between the two peaks of the histogram*
 
-Once you have determined the appropriate threshold (Figure 8), you can reclassify the RTC image to include only those pixels that fall below the threshold value, providing a water mask that can be used for analysis or to overlay with other imagery to show the water extent.
+Once you have determined the appropriate threshold (Figure 9), you can reclassify the RTC image to include only those pixels that fall below the threshold value, providing a water mask that can be used for analysis or to overlay with other imagery to show the water extent.
 
-![Figure 8](../images/water-mask.png "Water Mask")
+![Figure 9](../images/water-mask.png "Water Mask")
 
-*Figure 8: Water Mask. Contains modified Copernicus Sentinel data 2020, processed by ESA.*
+*Figure 9: Water Mask. Contains modified Copernicus Sentinel data 2020, processed by ESA.*
 
 ### Combination of RTC Image with other Remote Sensing Data
 
-One of the main advantages of using RTC imagery with its all weather and day/night capabilities is the combination with other remote sensing data such as optical data. In the example below, the backscatter information of the Sentinel-1 SAR image (Figure 9) is used to enhance the spectral information of the optical Landsat 8 image (Figure 10) in the urban area of Pavia, Italy. Figure 11 shows the image fusion result of an IHS transformation. In this transformation the color channels red, green and blue (RGB) are first converted into a different color representation: intensity, hue and saturation (IHS). In the second step the optical intensity is replaced by the SAR image, before IHS is transformed back to RGB.
+One of the main advantages of using RTC imagery with its all weather and day/night capabilities is the combination with other remote sensing data such as optical data. In the example below, the backscatter information of the Sentinel-1 SAR image (Figure 10) is used to enhance the spectral information of the optical Landsat 8 image (Figure 11) in the urban area of Pavia, Italy. Figure 12 shows the image fusion result of an IHS transformation. In this transformation the color channels red, green and blue (RGB) are first converted into a different color representation: intensity, hue and saturation (IHS). In the second step the optical intensity is replaced by the SAR image, before IHS is transformed back to RGB.
 
-![Figure 9](../images/sentinel-1-rtc-image.jpg "Sentinel-1 RTC image")
+![Figure 10](../images/sentinel-1-rtc-image.jpg "Sentinel-1 RTC image")
 
-*Figure 9: Sentinel-1 RTC image.*
+*Figure 10: Sentinel-1 RTC image.*
 
-![Figure 10](../images/landsat-false-color-composite.jpg "False color composite (bands 5, 4, 3) of a Landsat 8 image")
+![Figure 11](../images/landsat-false-color-composite.jpg "False color composite (bands 5, 4, 3) of a Landsat 8 image")
 
-*Figure 10: False color composite (bands 5, 4, 3) of a Landsat 8 image*
+*Figure 11: False color composite (bands 5, 4, 3) of a Landsat 8 image*
 
 The color values for the two rivers in the SAR image are far more similar to each other than in the optical image. The vegetated areas (highlighted in red) show up more uniformly in the data fusion result than in the optical false color composite image. Image fusion uses the complementary nature of the different sources to generate an enhanced product.
 
-![Figure 11](../images/sar-optical-fusion.jpg "Image fusion result of SAR and optical imagery")
+![Figure 12](../images/sar-optical-fusion.jpg "Image fusion result of SAR and optical imagery")
 
-*Figure 11: Image fusion result of SAR and optical imagery*
+*Figure 12: Image fusion result of SAR and optical imagery*
 
 ## ArcGIS Toolbox
 

@@ -145,7 +145,7 @@ Radiometry of the SAR backscatter is illustrated in Figure 5.
 
 ![Figure 5](../images/three_rader_backscatter_convention.jpg "Normalization areas for SAR backscatter")
 
-*Figure 5:  Normalization areas for SAR backscatter, from avid Small, 2011, Flattening Gamma: Radiometric Terrain Correction for SAR Imagery, IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 49, NO. 8, AUGUST 2011*
+*Figure 5:  Normalization areas for SAR backscatter, from David Small, 2011, Flattening Gamma: Radiometric Terrain Correction for SAR Imagery, IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 49, NO. 8, AUGUST 2011*
 
 ## Radiometric Terrain Correction Workflow
 

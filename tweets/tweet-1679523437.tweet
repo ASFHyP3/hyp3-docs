@@ -1,0 +1,4 @@
+HyP3 SDK v2.0.0### Changed
+* Improved error messages when Earthdata user must select Study Area or accept EULA.
+### Removed
+* The `hyp3_sdk.TESTING` constant has been removed in favor of mocking objects in unit tests.

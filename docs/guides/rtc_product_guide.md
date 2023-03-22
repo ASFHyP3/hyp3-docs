@@ -125,7 +125,7 @@ There are several options users can set when ordering RTC On Demand products. Th
 
 2. The **Dem Name** is the DEM to use for RTC processing; `copernicus` or `legacy`. The default value is `copernicus`.
 
-3. The **radiometry** option allows users to select radiometry of the output backscatter image(s); `gamma0` or `sigma0` (refer Figure 4 for detail). The default value is `gamma0`.
+3. The **radiometry** option allows users to select radiometry of the output backscatter image(s); `gamma0` or `sigma0` (refer Figure 5 for detail). The default value is `gamma0`.
 
 4. The **resolution** decides the pixel size of the output images. It is either 10.0 or 30.0 meters (default). 
 
@@ -141,11 +141,14 @@ There are several options users can set when ordering RTC On Demand products. Th
 
 10. The **include rgb** is either True or False. The product includes the rgb file if the value of the option is True. This setting is ignored when processing a single-polarization product. The default value is False, meaning no rgb file is included in the product.
 
+Co-register the image in SAR range-Doppler coordinates (RDC) to DEM includes 4 steps. Step 1, calculate the initial lookup table and simulated image with the inputs of image in RDC and DEM. Step 2, measure initial offset between simulated SAR image and actual SAR image. Step 3, perform refinement of lookup table by offset measurement with respect to the simulated SAR image. Step 4, produce terrain geocoded SAR image and DEM in SAR range-Doppler coordinates (RDC).
+
 Radiometry of the SAR backscatter is illustrated in Figure 5.
 
 ![Figure 5](../images/three_rader_backscatter_convention.jpg "Normalization areas for SAR backscatter")
 
-*Figure 5:  Normalization areas for SAR backscatter, from David Small, 2011, Flattening Gamma: Radiometric Terrain Correction for SAR Imagery, IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 49, NO. 8, AUGUST 2011*
+*Figure 5:  Normalization areas for SAR backscatter, where the gamma0 is the red area (A$\gamma$) and the sigma0 is the pink area (A$\sigma$). This figure comes from David Small, 2011, Flattening Gamma: Radiometric Terrain Correction for SAR Imagery, IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 49, NO. 8, AUGUST 2011*
+
 
 ## Radiometric Terrain Correction Workflow
 

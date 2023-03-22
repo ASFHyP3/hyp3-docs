@@ -121,7 +121,7 @@ Keep in mind that the same DEM is used for processing both the 10-m and 30-m RTC
 
 There are several options users can set when ordering RTC On Demand products. The options are described below:
 
-1. The **Dem Matching** is a bool option (True/False). It decides whether attempt to co-register the image to the DEM or not. The default value is False.  
+1. The **Dem Matching** is a boolean option (True/False). It decides whether attempt to co-register the image to the DEM or not. The default value is False.  
 
 2. The **Dem Name** is the DEM to use for RTC processing; `copernicus` or `legacy`. The default value is `copernicus`.
 
@@ -137,7 +137,7 @@ There are several options users can set when ordering RTC On Demand products. Th
 
 8. The **include inc map** is either True or False. It decides if the output product include the incidence angle GeoTIFF file. The default value is False. 
 
-9. The **include scattering area** has bool value (True/False). It decides if the product includes the local scattering area GeoTIFF file or not. The default is False which indicates the local scattering area file is not included in the product.
+9. The **include scattering area** has boolean value (True/False). It decides if the product includes the local scattering area GeoTIFF file or not. The default is False which indicates the local scattering area file is not included in the product.
 
 10. The **include rgb** is either True or False. The product includes the rgb file if the value of the option is True. This setting is ignored when processing a single-polarization product. The default value is False, meaning no rgb file is included in the product.
 

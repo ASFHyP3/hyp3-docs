@@ -127,7 +127,7 @@ There are several options users can set when ordering RTC On Demand products. Th
 
 3. The **radiometry** option allows users to select radiometry of the output backscatter image(s); `gamma0` or `sigma0` (refer Figure 4 for detail). The default value is `gamma0`.
 
-4. The **resolution** decides the pixel size of the output images. It is either 10.0 or default 30.0 meters. 
+4. The **resolution** decides the pixel size of the output images. It is either 10.0 or 30.0 meters (default). 
 
 5. The **scale** decides the scale of the output backscatter image(s); `decibel`, `power`, or `amplitude`. The default output backscatter image(s) are in power unit. 
 

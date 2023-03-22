@@ -28,7 +28,7 @@ markdown_extensions:
   - admonition
   - pymdownx.highlight
   - pymdownx.superfences
-  - pymdownx.arithmatex
+  - pymdownx.arithmatex:
       generic: true
 
 extra_javascript:

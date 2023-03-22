@@ -119,8 +119,6 @@ Keep in mind that the same DEM is used for processing both the 10-m and 30-m RTC
 
 ## Processing Options
 
-$\alpha$
-
 There are several options users can set when ordering RTC On Demand products. The options are described below:
 
 1. The **Dem Matching** is a boolean option (True/False). It decides whether attempt to co-register the image to the DEM or not. The default value is False.  

@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/) 
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.64]
+
+### Changed
+* Updated HyP3 SDK to [v2.0.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#200)
+
 ## [0.3.63]
 
 ## Changed

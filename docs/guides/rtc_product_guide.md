@@ -138,7 +138,7 @@ There are several options users can set when ordering RTC On Demand products. Th
 
 
 
-The **Dem Matching** decides whether or not attempt to do coregister in the terrain geocoding of SAR images process. The terrain geocoding includes 4 steps. Step 1, calculate the initial lookup table and simulated image with the image processing parameters and DEM. Step 2 (optional), measure initial offset between simulated SAR image and actual SAR image. Step 3 (optional), perform refinement of lookup table by offset measurement with respect to the simulated SAR image. Step 4, produce terrain geocoded SAR image and DEM in SAR range-Doppler coordinates (RDC). Coregister is composed of step 2 and 3. It improves the quality of output images.
+The **Dem Matching** decides whether or not attempt to coregister in the terrain geocoding of SAR images process. The terrain geocoding includes 4 steps. Step 1, calculate the initial lookup table and simulated image with the image processing parameters and DEM. Step 2 (optional), measure initial offset between simulated SAR image and actual SAR image. Step 3 (optional), perform refinement of lookup table by offset measurement with respect to the simulated SAR image. Step 4, produce terrain geocoded SAR image and DEM in SAR range-Doppler coordinates (RDC). Coregister is composed of step 2 and 3. It improves the quality of output images.
 
 The **Dem Name** is the name of DEM to use for RTC processing. Please refer the "Digital Elevation Models" session for detail.
 
@@ -148,8 +148,8 @@ The **radiometry** option allows users to select output backscatter image(s) wit
 
 *Figure 5:  Normalization areas for SAR backscatter, from David Small, 2011, Flattening Gamma: Radiometric Terrain Correction for SAR Imagery, IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 49, NO. 8, AUGUST 2011*
 
-As you can see in the Figure 5, the scattering coefficient gamma0 is with respect to the area A$\gamma$ (red) and the sigma0 is with respect to area A$\sigma$ (pink). Sigma0 is takes into account the incidence angle and gamma0 takes into account the local incidence
-angle through a DEM. If your application needs take into account the impact of topography, you have to choose gamma0. 
+As you can see in the Figure 5, the scattering coefficient gamma0 is with respect to the area A$\gamma$ (red) and the sigma0 is with respect to area A$\sigma$ (pink). Sigma0 takes into account the incidence angle and gamma0 takes into account the local incidence
+angle through a DEM. If your application needs to consider the impact of topography, you have to choose gamma0. 
 
 The **resolution** decides the pixel size of the output images. Producing product with 10.0 meters resolution takes much longer time than the product with 30.0 meters resolution.   
 

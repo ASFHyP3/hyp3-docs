@@ -119,36 +119,51 @@ Keep in mind that the same DEM is used for processing both the 10-m and 30-m RTC
 
 ## Processing Options
 
-There are several options users can set when ordering RTC On Demand products. The options are described below:
+There are several options users can set when ordering RTC On Demand products. The options are described in the following Table 2:
 
-1. The **Dem Matching** is a boolean option (True/False). It decides whether attempt to co-register the image to the DEM or not. The default value is False.  
+| Option Name             | Value Range                 | Default  | Description                                        |
+|-------------------------|-----------------------------|----------|----------------------------------------------------|
+| Dem Matching            | {True, False}               | False    | coregister the image to the DEM                    |
+ | Dem Name                | {copernicus, legacy}        | legacy   | copernicus                                         |
+ | radiometry              | {gamma0, sigma0}            | gamma0   | backscatter with respect to different radiometry   |
+ | resolution              | {10.0, 30.0}                | 30.0     | pixel size of output image in meters               |
+ | scale                   | {power, decibel, amplitude} | power    | scale of output beackscatter                       |
+ | speckle filter          | {True, False}               | False    | mitigrate the speckle                              |
+ | include dem             | {True, False}               | False    | output DEM GeoTIFF in the product                  |
+ | include inc map         | {True, False}               | False    | output incidence angle GeoTIFF in the product      |
+ | include scattering area | {True, False}               | False    | output local scattering area GeoTIFF in the product |
+ |include rgb              | {True, False}               | False    | output rgb GeoTIFF in the product                  |
 
-2. The **Dem Name** is the DEM to use for RTC processing; `copernicus` or `legacy`. The default value is `copernicus`.
+*Table 2: Processing Options*
 
-3. The **radiometry** option allows users to select radiometry of the output backscatter image(s); `gamma0` or `sigma0` (refer Figure 5 for detail). The default value is `gamma0`.
 
-4. The **resolution** decides the pixel size of the output images. It is either 10.0 or 30.0 meters (default). 
 
-5. The **scale** decides the scale of the output backscatter image(s); `decibel`, `power`, or `amplitude`. The default output backscatter image(s) are in power unit. 
+The **Dem Matching** decides whether or not attempt to do coregister in the terrain geocoding of SAR images process. The terrain geocoding includes 4 steps. Step 1, calculate the initial lookup table and simulated image with the image processing parameters and DEM. Step 2 (optional), measure initial offset between simulated SAR image and actual SAR image. Step 3 (optional), perform refinement of lookup table by offset measurement with respect to the simulated SAR image. Step 4, produce terrain geocoded SAR image and DEM in SAR range-Doppler coordinates (RDC). Coregister is composed of step 2 and 3. It improves the quality of output images.
 
-6. The **speckle filter** can be chosen (True/False) to mitigate the speckles. If it is True, an enhanced Lee speckle filter is applied. The default value is False.  
+The **Dem Name** is the name of DEM to use for RTC processing. Please refer the "Digital Elevation Models" session for detail.
 
-7. The **include dem** decides if the DEM GeoTIFF is included in the product. The default values is False, which means the product does not include the DEM file.
-
-8. The **include inc map** is either True or False. It decides if the output product include the incidence angle GeoTIFF file. The default value is False. 
-
-9. The **include scattering area** has boolean value (True/False). It decides if the product includes the local scattering area GeoTIFF file or not. The default is False which indicates the local scattering area file is not included in the product.
-
-10. The **include rgb** is either True or False. The product includes the rgb file if the value of the option is True. This setting is ignored when processing a single-polarization product. The default value is False, meaning no rgb file is included in the product.
-
-Co-register the image in SAR range-Doppler coordinates (RDC) to DEM includes 4 steps. Step 1, calculate the initial lookup table and simulated image with the inputs of image in RDC and DEM. Step 2, measure initial offset between simulated SAR image and actual SAR image. Step 3, perform refinement of lookup table by offset measurement with respect to the simulated SAR image. Step 4, produce terrain geocoded SAR image and DEM in SAR range-Doppler coordinates (RDC).
-
-Radiometry of the SAR backscatter is illustrated in Figure 5.
+The **radiometry** option allows users to select output backscatter image(s) with respect to different radiometry (`gamma0` or `sigma0`). SAR backscatter radiometry is illustrated in Figure 5.
 
 ![Figure 5](../images/three_rader_backscatter_convention.jpg "Normalization areas for SAR backscatter")
 
-*Figure 5:  Normalization areas for SAR backscatter, where the gamma0 is the red area (A$\gamma$) and the sigma0 is the pink area (A$\sigma$). This figure comes from David Small, 2011, Flattening Gamma: Radiometric Terrain Correction for SAR Imagery, IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 49, NO. 8, AUGUST 2011*
+*Figure 5:  Normalization areas for SAR backscatter, from David Small, 2011, Flattening Gamma: Radiometric Terrain Correction for SAR Imagery, IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 49, NO. 8, AUGUST 2011*
 
+As you can see in the Figure 5, the scattering coefficient gamma0 is with respect to the area A$\gamma$ (red) and the sigma0 is with respect to area A$\sigma$ (pink). Sigma0 is takes into account the incidence angle and gamma0 takes into account the local incidence
+angle through a DEM. If your application needs take into account the impact of topography, you have to choose gamma0. 
+
+The **resolution** decides the pixel size of the output images. Producing product with 10.0 meters resolution takes much longer time than the product with 30.0 meters resolution.   
+
+The **scale** decides the scale of the output backscatter image(s); `decibel`, `power`, or `amplitude`. 
+
+The **speckle filter** can be chosen (True/False) to mitigate the speckles. If it is True, an enhanced Lee speckle filter is applied. 
+
+The **include dem** decides if the DEM GeoTIFF is included in the product. The default values is False, which means the product does not include the DEM file.
+
+The **include inc map** is either True or False. It decides if the output product include the incidence angle GeoTIFF file. The default value is False. 
+
+The **include scattering area** has boolean value (True/False). It decides if the product includes the local scattering area GeoTIFF file or not. The default is False which indicates the local scattering area file is not included in the product.
+
+The **include rgb** is either True or False. The product includes the rgb file if the value of the option is True. This setting is ignored when processing a single-polarization product. The default value is False, meaning no rgb file is included in the product.
 
 ## Radiometric Terrain Correction Workflow
 
@@ -204,23 +219,8 @@ Example: S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A
 | m        | Dead Reckoning (d) or DEM Matching (m)                                       | d        |
 | ssss     | Product ID                                                                   | FD6A     |
 
-*Table 2: Naming convention for RTC products*
+*Table 3: Naming convention for RTC products*
 
-### Default Settings
-
-The default settings for RTC products are as follows:
-
-| Setting        | Default                                 |
-|----------------|-----------------------------------------|
-| Pixel Spacing  | 30                                      |
-| Radiometry     | Gamma-0 (g)                             |
-| Scale          | Power (p)                               |
-| Water Mask     | No water mask applied (u)               |
-| Speckle Filter | Not filtered (n)                        |
-| Clipping       | Entire extent of input granule (e)      |
-| DEM Matching   | No matching; dead reckoning is used (d) |
-
-*Table 3: Default settings for RTC products*
 
 ### Image Files
 

@@ -148,8 +148,7 @@ The **radiometry** option allows users to select output backscatter image(s) wit
 
 *Figure 5:  Normalization areas for SAR backscatter, from David Small, 2011, Flattening Gamma: Radiometric Terrain Correction for SAR Imagery, IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 49, NO. 8, AUGUST 2011*
 
-As you can see in the Figure 5, the scattering coefficient gamma0 is with respect to the area A$\gamma$ (red) and the sigma0 is with respect to area A$\sigma$ (pink). Sigma0 takes into account the incidence angle and gamma0 takes into account the local incidence
-angle through a DEM. If your application needs to consider the impact of topography, you have to choose gamma0. 
+As you can see in the Figure 5, the scattering coefficient gamma0 is with respect to the area A$\gamma$ (red) and the sigma0 is with respect to area A$\sigma$ (pink). Although both sigma0 and gamma0 backscatter include the impact of local topography, the sensitivity of the impact is different. In application which needs to consider the topography, gamma0 image is prioritized choice.  
 
 The **resolution** decides the pixel size of the output images. Producing product with 10.0 meters resolution takes much longer time than the product with 30.0 meters resolution.   
 

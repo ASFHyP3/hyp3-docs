@@ -1,0 +1,2 @@
+HyP3 SDK v2.0.1### Fixed
+* Display the improved error messages regardless of whether the Earthdata credentials were provided by a `.netrc` file.

@@ -117,28 +117,30 @@ It is *much* faster to process and analyze 30-m RTC products, so it's a good ide
 
 Keep in mind that the same DEM is used for processing both the 10-m and 30-m RTC products. By default, the DEM is the Copernicus Global DEM with a pixel spacing of 30 meters. The DEM is resampled to a pixel spacing of 10 meters when used for processing the 10-m RTC products, and the output DEM included in the 10-m RTC product package has a pixel spacing of 10 meters to match the output RTC product. *This does not indicate that the source DEM used for the 10-m products is of higher resolution.*
 
-## Processing Options
+## Processing Options and Optional Files
 
-There are several options users can set when ordering RTC On Demand products. The options are described in the following Table 2:
+There are a number of options users can set when ordering RTC On Demand products. Some of these options are applied to the RTC processing, and some of them allow users to add additional files to the product package that are not included by default. Table 2 lists all of the options as displayed in the Vertex user interface and the HyP3 API, and the Processing Options and Optional Files sections provide more information about each option.
 
-| Option Name             | Value Range                 | Default  | Description                                        |
-|-------------------------|-----------------------------|----------|----------------------------------------------------|
-| Dem Matching            | {True, False}               | False    | coregister the image to the DEM                    |
- | Dem Name                | {copernicus, legacy}        | legacy   | copernicus                                         |
- | radiometry              | {gamma0, sigma0}            | gamma0   | backscatter with respect to different radiometry   |
- | resolution              | {10.0, 30.0}                | 30.0     | pixel size of output image in meters               |
- | scale                   | {power, decibel, amplitude} | power    | scale of output beackscatter                       |
- | speckle filter          | {True, False}               | False    | mitigrate the speckle                              |
- | include dem             | {True, False}               | False    | output DEM GeoTIFF in the product                  |
- | include inc map         | {True, False}               | False    | output incidence angle GeoTIFF in the product      |
- | include scattering area | {True, False}               | False    | output local scattering area GeoTIFF in the product |
- |include rgb              | {True, False}               | False    | output rgb GeoTIFF in the product                  |
-
+| Option Name in Vertex        | Option Name in HyP3 API | Value Range                 | Default    | Description                                                                                                                                                                           |
+|------------------------------|-------------------------|-----------------------------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Radiometry                   | radiometry              | {gamma0, sigma0}            | gamma0     | Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area projected into the look direction (gamma0)                                                  |
+| Scale                        | scale                   | {power, decibel, amplitude} | power      | Scale of output backscatter values                                                                                                                                                    |
+| Pixel Spacing                | resolution              | {10.0, 30.0}                | 30.0       | Product pixel spacing in meters                                                                                                                                                       |
+| DEM Name                     | dem_name                | {copernicus, legacy}        | copernicus | Name of the DEM to use for processing. copernicus will use the Copernicus GLO-30 Public DEM, while legacy will use the DEM with the best coverage from ASF's legacy SRTM/NED datasets |
+| Apply DEM Matching           | dem_matching            | {true, false}               | false      | Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files                                                                                                |
+| Apply Speckle Filter         | speckle_filter          | {true, false}               | false      | Apply an Enhanced Lee speckle filter                                                                                                                                                  |
+| Include DEM                  | include_dem             | {true, false}               | false      | Include a copy of the DEM used for RTC processing in the product package                                                                                                              |
+ | Include Incidence Angle Maps | include_inc_map         | {true, false}               | false      | Include the incidence angle maps in the product package                                                                                                                               |
+ | Include Scattering Area      | include_scattering_area | {true, false}               | false      | Include the Scattering Area Map in the product package                                                                                                                                |
+ | Include RGB Decomposition    | include_rgb             | {true, false}               | false      | Include a false-color RGB Decomposition GeoTIFF in the product package                                                                                                                |
+ 
 *Table 2: Processing Options*
 
+### Processing Options
 
+#### DEM Matching
 
-The **Dem Matching** decides whether or not attempt to coregister in the terrain geocoding of SAR images process. The terrain geocoding includes 4 steps. Step 1, calculate the initial lookup table and simulated image with the image processing parameters and DEM. Step 2 (optional), measure initial offset between simulated SAR image and actual SAR image. Step 3 (optional), perform refinement of lookup table by offset measurement with respect to the simulated SAR image. Step 4, produce terrain geocoded SAR image and DEM in SAR range-Doppler coordinates (RDC). Coregister is composed of step 2 and 3. It improves the quality of output images.
+The **DEM Matching** option decides whether or not attempt to coregister in the terrain geocoding of SAR images process. The terrain geocoding includes 4 steps. Step 1, calculate the initial lookup table and simulated image with the image processing parameters and DEM. Step 2 (optional), measure initial offset between simulated SAR image and actual SAR image. Step 3 (optional), perform refinement of lookup table by offset measurement with respect to the simulated SAR image. Step 4, produce terrain geocoded SAR image and DEM in SAR range-Doppler coordinates (RDC). Coregister is composed of step 2 and 3. It improves the quality of output images.
 
 The **Dem Name** is the name of DEM to use for RTC processing. Please refer the "Digital Elevation Models" session for detail.
 
@@ -155,6 +157,10 @@ The **resolution** decides the pixel size of the output images. Producing produc
 The **scale** decides the scale of the output backscatter image(s); `decibel`, `power`, or `amplitude`. 
 
 The **speckle filter** can be chosen (True/False) to mitigate the speckles. If it is True, an enhanced Lee speckle filter is applied. 
+
+### Optional Files
+
+In addition to the processing options, users can choose to add a number of ancillary files to the product package. These files are not included by default, as they increase the size of the product package and may not be of interest to all users. 
 
 The **include dem** decides if the DEM GeoTIFF is included in the product. The default values is False, which means the product does not include the DEM file.
 

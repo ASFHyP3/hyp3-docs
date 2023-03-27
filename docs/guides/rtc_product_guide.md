@@ -117,7 +117,7 @@ It is *much* faster to process and analyze 30-m RTC products, so it's a good ide
 
 Keep in mind that the same DEM is used for processing both the 10-m and 30-m RTC products. By default, the DEM is the Copernicus Global DEM with a pixel spacing of 30 meters. The DEM is resampled to a pixel spacing of 10 meters when used for processing the 10-m RTC products, and the output DEM included in the 10-m RTC product package has a pixel spacing of 10 meters to match the output RTC product. *This does not indicate that the source DEM used for the 10-m products is of higher resolution.*
 
-## Processing Options and Optional Files
+## Processing Options
 
 There are a number of options users can set when ordering RTC On Demand products. Some of these options are applied to the RTC processing, and some of them allow users to add additional files to the product package that are not included by default. Table 2 lists all of the options as displayed in the Vertex user interface and the HyP3 API, and the Processing Options and Optional Files sections provide more information about each option.
 
@@ -138,23 +138,47 @@ There are a number of options users can set when ordering RTC On Demand products
 
 ### Processing Options
 
-#### DEM Matching
+#### Radiometry
 
-The **DEM Matching** option decides whether or not attempt to coregister in the terrain geocoding of SAR images process. The terrain geocoding includes 4 steps. Step 1, calculate the initial lookup table and simulated image with the image processing parameters and DEM. Step 2 (optional), measure initial offset between simulated SAR image and actual SAR image. Step 3 (optional), perform refinement of lookup table by offset measurement with respect to the simulated SAR image. Step 4, produce terrain geocoded SAR image and DEM in SAR range-Doppler coordinates (RDC). Coregister is composed of step 2 and 3. It improves the quality of output images.
-
-The **Dem Name** is the name of DEM to use for RTC processing. Please refer the "Digital Elevation Models" session for detail.
-
-The **radiometry** option allows users to select output backscatter image(s) with respect to different radiometry (`gamma0` or `sigma0`). SAR backscatter radiometry is illustrated in Figure 5.
+The **radiometry** option allows users to set their preferred backscatter coefficient normalization to either gamma-nought (gamma0 or γ<sub>0</sub>) or sigma-nought (sigma0 or σ<sub>0</sub>) radiometry. As illustrated in Figure 5, the scattering coefficient gamma0 is normalized by the illuminated area projected into the look direction (A<sub>γ</sub> - the yellow area with the red outline in the diagram) and the sigma0 is normalized by the ground area (A<sub>σ</sub> - the grey area with the pink outline in the diagram).
 
 ![Figure 5](../images/three_rader_backscatter_convention.jpg "Normalization areas for SAR backscatter")
 
 *Figure 5:  Normalization areas for SAR backscatter, from David Small, 2011, Flattening Gamma: Radiometric Terrain Correction for SAR Imagery, IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 49, NO. 8, AUGUST 2011*
 
-As you can see in the Figure 5, the scattering coefficient gamma0 is with respect to the area A$\gamma$ (red) and the sigma0 is with respect to area A$\sigma$ (pink). Although both sigma0 and gamma0 backscatter include the impact of local topography, the sensitivity of the impact is different. In application which needs to consider the topography, gamma0 image is prioritized choice.  
+Although both sigma0 and gamma0 backscatter include the impact of local topography, the sensitivity of the impact is different. For applications where topographic impacts are an important consideration, gamma0 is generally the preferred choice.
+ 
+#### Scale
 
-The **resolution** decides the pixel size of the output images. Producing product with 10.0 meters resolution takes much longer time than the product with 30.0 meters resolution.   
+The **scale** option allows users to choose the scale of the output backscatter image(s) from the three commonly used scales for calibrated SAR values: decibel, power, or amplitude. Refer to the [SAR Scale](#sar-scales "Jump to SAR Scales section in document") section for more information.
 
-The **scale** decides the scale of the output backscatter image(s); `decibel`, `power`, or `amplitude`. 
+#### Pixel Spacing
+
+The **resolution** parameter sets the pixel spacing of the output images. Users have the option to set a pixel spacing of either 30 meters or 10 meters. The 30-m product has a much smaller file size, and is easier to work with for large areas of interest. The 10-m product provides much more detail of surface features, but is a much larger file. Refer to the [Pixel Spacing](#pixel-spacing "Jump to Pixel Spacing section in document") section for more information. Note that the source Sentinel-1 imagery and the DEM are the same for both of these options.
+
+#### DEM Name
+
+The **Dem Name** parameter sets the DEM to use for RTC processing. By default we use the [Copernicus Global 30-m DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, which will generally provide a superior RTC product, but allow users to select ASF's legacy DEMs if they prefer. Refer to the [Digital Elevation Models](#digital-elevation-models "Jump to DEM section in document") section for more information.
+
+#### DEM Matching
+
+The **DEM Matching** option allows users to either try to coregister the SAR image to the DEM file, or to simply use the Sentinel-1 orbit files for geocoding the RTC products.
+
+The process of terrain corrected geocoding includes 4 steps:
+1. Calculate the initial lookup table and simulated image with the image processing parameters and DEM. 
+2. (Optional) Measure initial offset between simulated SAR image and actual SAR image. 
+3. (Optional) Perform refinement of lookup table by offset measurement with respect to the simulated SAR image. 
+4. Produce terrain geocoded SAR image and DEM in SAR range-Doppler coordinates (RDC). 
+
+When DEM matching is applied, the optional steps 2 and 3 are performed. Using this option can improve the quality of the RTC calculations, as the features in the SAR image are matched to the features in the DEM, minimizing the offsets in geometry during the backscatter normalization calculations.
+
+DEM Matching is not always beneficial, however. If the georeferencing of the DEM doesn't match the georeferencing of the Sentinel-1 imagery, DEM matching can result in image offsets, making it difficult to overlay images for time series analysis. Coregistration also works best when there are distinct topographic features that allow for reliable matching between the SAR image and the DEM. In areas that lack distinctive topographic features, there may also be substantial and inconsistent image offsets.
+
+The orbit files of the Sentinel-1 data are generally quite accurate, and not applying the DEM matching should output files with consistent geolocation. While it may not optimize the RTC calculations, it may be a better option for time series analysis, where having consistent alignment of images from one acquisition to the next is more important than optimizing the backscatter normalization. 
+
+If you are interested in optimizing the RTC calculations, and are less concerned about consistent geolocation through time, the DEM Matching option is likely a good choice. In cases where consistency is more important than accuracy, consider not applying DEM Matching, or at least testing the outputs to make sure they are suitable for your application.
+
+#### Speckle Filter
 
 The **speckle filter** can be chosen (True/False) to mitigate the speckles. If it is True, an enhanced Lee speckle filter is applied. 
 

@@ -121,18 +121,18 @@ Keep in mind that the same DEM is used for processing both the 10-m and 30-m RTC
 
 There are several options users can set when ordering RTC On Demand products. The options are described in the following Table 2:
 
-| Option Name             | Value Range                 | Default  | Description                                        |
-|-------------------------|-----------------------------|----------|----------------------------------------------------|
-| Dem Matching            | {True, False}               | False    | coregister the image to the DEM                    |
- | Dem Name                | {copernicus, legacy}        | legacy   | copernicus                                         |
- | radiometry              | {gamma0, sigma0}            | gamma0   | backscatter with respect to different radiometry   |
- | resolution              | {10.0, 30.0}                | 30.0     | pixel size of output image in meters               |
- | scale                   | {power, decibel, amplitude} | power    | scale of output beackscatter                       |
- | speckle filter          | {True, False}               | False    | mitigrate the speckle                              |
- | include dem             | {True, False}               | False    | output DEM GeoTIFF in the product                  |
- | include inc map         | {True, False}               | False    | output incidence angle GeoTIFF in the product      |
- | include scattering area | {True, False}               | False    | output local scattering area GeoTIFF in the product |
- |include rgb              | {True, False}               | False    | output rgb GeoTIFF in the product                  |
+| Option Name             | Value Range                 | Default    | Description                                        |
+|-------------------------|-----------------------------|------------|----------------------------------------------------|
+| Dem Matching            | {True, False}               | False      | coregister the image to the DEM                    |
+ | Dem Name                | {copernicus, legacy}        | copernicus | copernicus                                         |
+ | radiometry              | {gamma0, sigma0}            | gamma0     | backscatter with respect to different radiometry   |
+ | resolution              | {10.0, 30.0}                | 30.0       | pixel size of output image in meters               |
+ | scale                   | {power, decibel, amplitude} | power      | scale of output beackscatter                       |
+ | speckle filter          | {True, False}               | False      | mitigrate the speckle                              |
+ | include dem             | {True, False}               | False      | output DEM GeoTIFF in the product                  |
+ | include inc map         | {True, False}               | False      | output incidence angle GeoTIFF in the product      |
+ | include scattering area | {True, False}               | False      | output local scattering area GeoTIFF in the product |
+ |include rgb              | {True, False}               | False      | output rgb GeoTIFF in the product                  |
 
 *Table 2: Processing Options*
 

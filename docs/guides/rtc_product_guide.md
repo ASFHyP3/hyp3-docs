@@ -150,19 +150,25 @@ Although both sigma0 and gamma0 backscatter include the impact of local topograp
  
 #### Scale
 
-The **scale** option allows users to choose the scale of the output backscatter image(s) from the three commonly used scales for calibrated SAR values: decibel, power, or amplitude. Refer to the [SAR Scale](#sar-scales "Jump to SAR Scales section in document") section for more information.
+The **scale** option allows users to choose the scale of the output backscatter images from the three commonly used scales for calibrated SAR values: decibel, power, or amplitude. Refer to the [SAR Scale](#sar-scales "Jump to SAR Scales section in document") section for more information.
 
 #### Pixel Spacing
 
-The **resolution** parameter sets the pixel spacing of the output images. Users have the option to set a pixel spacing of either 30 meters or 10 meters. The 30-m product has a much smaller file size, and is easier to work with for large areas of interest. The 10-m product provides much more detail of surface features, but is a much larger file. Refer to the [Pixel Spacing](#pixel-spacing "Jump to Pixel Spacing section in document") section for more information. Note that the source Sentinel-1 imagery and the DEM are the same for both of these options.
+The **resolution** parameter sets the pixel spacing of the output images. Users have the option to set a pixel spacing of either 30 meters or 10 meters. 
+
+The 30-m product has a much smaller file size, and is easier to work with for large areas of interest. The 10-m product provides much more detail of surface features, but is a much larger file. 
+
+Refer to the [Pixel Spacing](#pixel-spacing "Jump to Pixel Spacing section in document") section for more information. Note that the source Sentinel-1 imagery and the DEM are the same for both of these options.
 
 #### DEM Name
 
-The **Dem Name** parameter sets the DEM to use for RTC processing. By default we use the [Copernicus Global 30-m DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, which will generally provide a superior RTC product, but allow users to select ASF's legacy DEMs if they prefer. Refer to the [Digital Elevation Models](#digital-elevation-models "Jump to DEM section in document") section for more information.
+The **DEM name** parameter selects the DEM to use for RTC processing. By default we use the [Copernicus Global 30-m DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, but allow users to select ASF's legacy DEMs (a combination of NED and SRTM) if desired. 
+
+We recommend using the Copernicus DEM, which has more extensive and consistent coverage and more recent measurements. The main reason to select the legacy option is if a user already has a time series of products generated with the legacy DEM and wants to process new acquisitions using the same DEM. Refer to the [Digital Elevation Models](#digital-elevation-models "Jump to DEM section in document") section for more information.
 
 #### DEM Matching
 
-The **DEM Matching** option allows users to either try to coregister the SAR image to the DEM file, or to simply use the Sentinel-1 orbit files for geocoding the RTC products.
+The **DEM matching** option allows users to either try to coregister the SAR image to the DEM file, or to simply use the Sentinel-1 orbit files for geocoding the RTC products.
 
 The process of terrain corrected geocoding includes 4 steps:
 1. Calculate the initial lookup table and simulated image with the image processing parameters and DEM. 

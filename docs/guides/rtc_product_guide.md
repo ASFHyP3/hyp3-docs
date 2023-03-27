@@ -117,7 +117,7 @@ It is *much* faster to process and analyze 30-m RTC products, so it's a good ide
 
 Keep in mind that the same DEM is used for processing both the 10-m and 30-m RTC products. By default, the DEM is the Copernicus Global DEM with a pixel spacing of 30 meters. The DEM is resampled to a pixel spacing of 10 meters when used for processing the 10-m RTC products, and the output DEM included in the 10-m RTC product package has a pixel spacing of 10 meters to match the output RTC product. *This does not indicate that the source DEM used for the 10-m products is of higher resolution.*
 
-## Processing Options
+## Processing Options and Optional Files
 
 There are a number of options users can set when ordering RTC On Demand products. Some of these options are applied to the RTC processing, and some of them allow users to add additional files to the product package that are not included by default. Table 2 lists all of the options as displayed in the Vertex user interface and the HyP3 API, and the Processing Options and Optional Files sections provide more information about each option.
 
@@ -186,7 +186,15 @@ If you are interested in optimizing the RTC calculations, and are less concerned
 
 #### Speckle Filter
 
-The **speckle filter** can be chosen (True/False) to mitigate the speckles. If it is True, an enhanced Lee speckle filter is applied. 
+When the **speckle filter** option is applied, an Enhanced Lee filter is applied during RTC processing to remove speckle while preserving edges. Speckle occurs due to interference among signal waves, as they interact with different scatterers on the surface of the earth and return to the sensor. It appears as granular noise in the image. 
+
+When applied, the filter is set to a dampening factor of 1, with a box size of 7x7 pixels. The number of looks depends on the multilooking treatment for the RTC processing, and depends on the pixel spacing and the input scene type. Refer to the readme file included with the RTC product to determine the number of looks used for the filter, which is the number of looks taken for RTC processing multiplied by 30.
+
+Applying a speckle filter can smooth the appearance of the image, but it comes at a cost to the resolution of the output RTC product. Keep in mind also that there are other speckle filters that may be better suited to a specific application. We do not currently offer any customization of the type of speckle filter used, or the parameters (window size, multilooking, dampening, etc.) used for the filter.
+
+You may also want to try applying other spatial speckle filters with custom settings, which can be accomplished programmatically or using GIS software. Some temporal analyses may also mitigate the impacts of speckle, such as calculating the median or mean pixel values of multiple images collected over a period of time. In both of these cases, it would be better not to apply a speckle filter during RTC processes.
+
+If you are unsure whether to apply this option, try generating some of your RTC products with and without the speckle filter applied, and check to see which product works best for your particular application. 
 
 ### Optional Files
 

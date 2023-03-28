@@ -186,7 +186,7 @@ If you are interested in optimizing the RTC calculations, and are less concerned
 
 #### Speckle Filter
 
-When the **speckle filter** option is selected, an Enhanced Lee filter is applied during RTC processing to remove speckle while preserving edges. Speckle occurs due to interference among signal waves, as they interact with different scatterers on the surface of the earth and return to the sensor. It appears as granular noise in the image. Refer to the [Speckle section of our Introduction to SAR](../guides/introduction_to_sar.md#speckle "Speckle section of Introduction to SAR" ){target=_blank} document for more information.
+When the **speckle filter** option is selected, an Enhanced Lee filter is applied during RTC processing to remove speckle while preserving edges of features. Speckle occurs due to interference among signal waves, as they interact with different scatterers on the surface of the earth and return to the sensor. It appears as granular noise in the image. Refer to the [Speckle section of our Introduction to SAR](../guides/introduction_to_sar.md#speckle "Speckle section of Introduction to SAR" ){target=_blank} document for more information.
 
 When applied, the filter is set to a dampening factor of 1, with a box size of 7x7 pixels. The number of looks depends on the multilooking treatment for the RTC processing, and is based on the pixel spacing and the input scene type. Refer to the readme file included with the RTC product to determine the number of looks used for the filter, which is the number of looks taken for RTC processing multiplied by 30.
 

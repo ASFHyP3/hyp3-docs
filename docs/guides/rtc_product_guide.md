@@ -214,9 +214,9 @@ The DEM is resampled to match the pixel spacing of the output product, so **the 
 
 Set the **include_inc_map** parameter to true to include the local incidence angle map in the product package. The cell values in this raster indicate the angle between the incident radar beam and the direction perpendicular to the ground surface, expressed in radians.
 
-#### Scattering Area
+#### Scattering Area Map
 
-Set the **include_scattering_area** parameter to true to include the scattering area map in the product package. This map records the local scattering area for each pixel in the RTC image. The scattering area is calculated based on the effectively illuminated gamma-0 terrain surface using a digital elevation model, expressed in square meters.
+Set the **include_scattering_area** parameter to true to include the scattering area map in the product package. This map expresses the scattering area for each pixel in the RTC image in square meters. The values are calculated based on the effectively illuminated gamma-0 terrain surface using a digital elevation model, the local incidence angle map, and the layover-shadow map.
 
 This layer can be used to generate composites using the Local Resolution Weighting method, as described in the article [Wide-Area Analysis-Ready Radar Backscatter Composites](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9352976 "Wide-Area Analysis-Ready Radar Backscatter Composites" ){target=_blank}, David Small _et al_, 2022.
 

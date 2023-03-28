@@ -171,7 +171,8 @@ We recommend using the Copernicus DEM, which has more extensive and consistent c
 The **dem_matching** option allows users to either try to coregister the SAR image to the DEM file, or simply use the Sentinel-1 orbit files for geocoding the RTC products.
 
 The process of terrain corrected geocoding includes 4 steps:
-1. Calculate the initial lookup table and simulated image with the image processing parameters and DEM. 
+
+1. Calculate the initial lookup table and simulated image with the image processing parameters and DEM.
 2. (Optional) Measure initial offset between simulated SAR image and actual SAR image. 
 3. (Optional) Perform refinement of lookup table by offset measurement with respect to the simulated SAR image. 
 4. Produce terrain geocoded SAR image and DEM in SAR range-Doppler coordinates (RDC). 

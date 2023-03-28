@@ -176,7 +176,7 @@ The process of terrain corrected geocoding includes 4 steps:
 3. (Optional) Perform refinement of lookup table by offset measurement with respect to the simulated SAR image. 
 4. Produce terrain geocoded SAR image and DEM in SAR range-Doppler coordinates (RDC). 
 
-When DEM matching is applied, the optional steps 2 and 3 are performed. Using this option can improve the quality of the RTC calculations, as the features in the SAR image are matched to the features in the DEM, minimizing the offsets in geometry during the backscatter normalization calculations.
+When DEM matching is applied, the optional steps 2 and 3 are performed. Using this option can improve the quality of the RTC calculations, as the features in the SAR image are matched to the features in the DEM, minimizing the offsets in geometry during the backscatter normalization calculations. Refer to the [Terrain Correction](#terrain-correction "Jump to the Terrain Correction section of document") section for more information.
 
 DEM Matching is not always beneficial, however. If the georeferencing of the DEM doesn't match the georeferencing of the Sentinel-1 imagery, DEM matching can result in image offsets, making it difficult to overlay images for time series analysis. Coregistration also works best when there are distinct topographic features that allow for reliable matching between the SAR image and the DEM. In areas that lack distinctive topographic features, there may also be substantial and inconsistent image offsets.
 
@@ -200,13 +200,33 @@ If you are unsure whether to apply this option, try generating some of your RTC 
 
 In addition to the processing options, users can choose to add a number of ancillary files to the product package. These files are not included by default, as they increase the size of the product package and may not be of interest to all users. 
 
-The **include dem** decides if the DEM GeoTIFF is included in the product. The default values is False, which means the product does not include the DEM file.
+In Vertex, check the box in the "Include" section of the options to add these optional files to the product package. In the API, set the parameter to true.
 
-The **include inc map** is either True or False. It decides if the output product include the incidence angle GeoTIFF file. The default value is False. 
+#### DEM
 
-The **include scattering area** has boolean value (True/False). It decides if the product includes the local scattering area GeoTIFF file or not. The default is False which indicates the local scattering area file is not included in the product.
+Set the **include_dem** parameter to true to include a copy of the DEM file used for RTC processing. This DEM is *not* generated from the Sentinel-1 data, but is the reference DEM used for the RTC calculations. Refer to the [Digital Elevation Models](#digital-elevation-models "Jump to DEM section in document") section for more information on the DEMs we use for RTC processing.
 
-The **include rgb** is either True or False. The product includes the rgb file if the value of the option is True. This setting is ignored when processing a single-polarization product. The default value is False, meaning no rgb file is included in the product.
+This DEM file is intended as a quick reference to aid in interpretation of the RTC image, and should not be used as a stand-alone DEM product. The DEM used for RTC processing has a geoid correction applied before it is used for RTC, so elevation values in this file will differ from the source DEM. 
+
+The DEM is resampled to match the pixel spacing of the output product, so **the pixel spacing of this file is not a reflection of the resolution of the source DEM.** Refer to the readme file included in the RTC product package for details on the pixel spacing of the included DEM file.
+
+#### Incidence Angle Map
+
+Set the **include_inc_map** parameter to true to include the local incidence angle map in the product package. The cell values in this raster indicate the angle between the incident radar beam and the direction perpendicular to the ground surface, expressed in radians.
+
+#### Scattering Area
+
+Set the **include scattering area** to true to include the scattering area map in the product package. This map records the local scattering area for each pixel in the RTC image. The scattering area is calculated based on the effectively illuminated gamma-0 terrain surface using a digital elevation model, expressed in square meters.
+
+This layer can be used to generate composites using the Local Resolution Weighting method, as described in the article [Wide-Area Analysis-Ready Radar Backscatter Composites](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9352976 "Wide-Area Analysis-Ready Radar Backscatter Composites" ){target=_blank}, David Small _et al_, 2022.
+
+#### RGB Decomposition
+
+Set the **include rgb** to true to include a full-resolution GeoTIFF of a false-color RGB Decomposition of the co- and cross-polarized RTC values. A low-resolution false-color browse image in PNG format is included in the product package by default, but selecting this option includes the RGB Decomposition image as a GeoTIFF with the same pixel spacing as the RTC images. 
+
+This option is only available for dual-polarization products, as it uses both the co- and cross-polarized RTC values to determine the RGB values. A full description of the approach ASF uses for generating RGB Decomposition products is available [here](https://github.com/ASFHyP3/hyp3-lib/blob/develop/docs/rgb_decomposition.md "RGB Decomposition from ASF" ){target=_blank}.
+
+In general, blue indicates areas with low backscatter in both co- and cross-polarizations (calm water, dry sand, frozen ground), green indicates high cross-pol values (vegetation or other volume scatterers), and red indicates areas with low cross-pol but relatively high co-pol values (urban areas or sparsely vegetated landscapes). 
 
 ## Radiometric Terrain Correction Workflow
 
@@ -220,7 +240,9 @@ The terrain correction is performed in slant range geometry. A look-up table is 
 
 By default, images are not coregistered to the DEM. While RTC results can be improved by matching imagery to a high-quality DEM, different acquisitions over the same area may not always be matched to the DEM in the same way, due in part to the presence of speckle. This can introduce spatial inconsistencies to the dataset, especially when viewing a time-series of RTC images. For consistency, we use the geolocation from the Sentinel-1 state vectors rather than matching the geolocation based on DEM features.
 
-When custom-ordering imagery, however, the DEM Matching option is available for selection. In this case, the first step is the co-registration of the SAR image with a simulated SAR image derived from the DEM. An initial offset is first attempted as a single match; if it fails, a larger number of image chips are used to determine an average offset in azimuth and range direction. This initial offset is then refined using strict matching criteria. Matching may fail for three different reasons: (1) no match can be found, (2) the magnitude of the residual offset errors is greater than 2 pixels, or (3) the maximum calculated offset is greater than 50 m. In any of these cases, the _dead reckoning_ approach is taken when matching fails. This approach solely relies on the geolocations calculated from state vectors (the same approach used when DEM matching is not selected as an option) - no geolocation refinement is applied.
+When custom-ordering imagery, however, the DEM Matching option is available for selection. In this case, the first step is the co-registration of the SAR image with a simulated SAR image derived from the DEM. An initial offset is first attempted as a single match; if it fails, a larger number of image chips are used to determine an average offset in azimuth and range direction. This initial offset is then refined using strict matching criteria. 
+
+Matching may fail for three different reasons: (1) no match can be found, (2) the magnitude of the residual offset errors is greater than 2 pixels, or (3) the maximum calculated offset is greater than 50 m. In any of these cases, the _dead reckoning_ approach is taken when matching fails. This approach solely relies on the geolocations calculated from state vectors (the same approach used when DEM matching is _not_ selected as an option) - no geolocation refinement is applied.
 
 ### Radiometric Correction
 

@@ -219,7 +219,7 @@ Set the **include_inc_map** parameter to true to include the local incidence ang
 
 Set the **include_scattering_area** parameter to true to include the scattering area map in the product package. This map expresses the scattering area for each pixel in the RTC image in square meters. The values are calculated based on the effectively illuminated gamma-0 terrain surface using a digital elevation model, the local incidence angle map, and the layover-shadow map.
 
-This layer can be used to generate composites using the Local Resolution Weighting method, as described in the article [Wide-Area Analysis-Ready Radar Backscatter Composites](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9352976 "Wide-Area Analysis-Ready Radar Backscatter Composites" ){target=__blank} by David Small _et al._, 2022.
+This layer can be used to generate composites using the Local Resolution Weighting method, as described in the article [Wide-Area Analysis-Ready Radar Backscatter Composites](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9352976 "Wide-Area Analysis-Ready Radar Backscatter Composites" ){target=_blank} by David Small et al., 2022.
 
 #### RGB Decomposition
 

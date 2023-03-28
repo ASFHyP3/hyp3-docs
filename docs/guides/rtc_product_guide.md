@@ -200,7 +200,7 @@ If you are unsure whether to apply this option, try generating some of your RTC 
 
 In addition to the processing options, users can choose to add a number of ancillary files to the product package. These files are not included by default, as they increase the size of the product package and may not be of interest to all users. 
 
-In Vertex, check the box in the "Include" section of the options to add these optional files to the product package. In the API, set the parameter to true.
+In Vertex, check the box in the "Include" section of the options to add these optional files to the product package. When using the HyP3 API or SDK, set the parameter to true.
 
 #### DEM
 

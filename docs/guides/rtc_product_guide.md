@@ -162,7 +162,7 @@ Refer to the [Pixel Spacing](#pixel-spacing "Jump to Pixel Spacing section in do
 
 #### DEM Name
 
-The **DEM name** parameter selects the DEM to use for RTC processing. By default we use the [Copernicus Global 30-m DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, but allow users to select ASF's legacy DEMs (a combination of NED and SRTM) if desired. 
+The **DEM name** parameter selects the DEM to use for RTC processing. By default, we use the [Copernicus Global 30-m DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, but allow users to select ASF's legacy DEMs (a combination of NED and SRTM) if desired. 
 
 We recommend using the Copernicus DEM, which has more extensive and consistent coverage and more recent measurements. The main reason to select the legacy option is if a user already has a time series of products generated with the legacy DEM and wants to process new acquisitions using the same DEM. Refer to the [Digital Elevation Models](#digital-elevation-models "Jump to DEM section in document") section for more information.
 
@@ -216,13 +216,13 @@ Set the **include_inc_map** parameter to true to include the local incidence ang
 
 #### Scattering Area
 
-Set the **include scattering area** to true to include the scattering area map in the product package. This map records the local scattering area for each pixel in the RTC image. The scattering area is calculated based on the effectively illuminated gamma-0 terrain surface using a digital elevation model, expressed in square meters.
+Set the **include_scattering_area** to true to include the scattering area map in the product package. This map records the local scattering area for each pixel in the RTC image. The scattering area is calculated based on the effectively illuminated gamma-0 terrain surface using a digital elevation model, expressed in square meters.
 
 This layer can be used to generate composites using the Local Resolution Weighting method, as described in the article [Wide-Area Analysis-Ready Radar Backscatter Composites](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9352976 "Wide-Area Analysis-Ready Radar Backscatter Composites" ){target=_blank}, David Small _et al_, 2022.
 
 #### RGB Decomposition
 
-Set the **include rgb** to true to include a full-resolution GeoTIFF of a false-color RGB Decomposition of the co- and cross-polarized RTC values. A low-resolution false-color browse image in PNG format is included in the product package by default, but selecting this option includes the RGB Decomposition image as a GeoTIFF with the same pixel spacing as the RTC images. 
+Set the **include_rgb** to true to include a full-resolution GeoTIFF of a false-color RGB Decomposition of the co- and cross-polarized RTC values. A low-resolution false-color browse image in PNG format is included in the product package by default, but selecting this option includes the RGB Decomposition image as a GeoTIFF with the same pixel spacing as the RTC images. 
 
 This option is only available for dual-polarization products, as it uses both the co- and cross-polarized RTC values to determine the RGB values. A full description of the approach ASF uses for generating RGB Decomposition products is available [here](https://github.com/ASFHyP3/hyp3-lib/blob/develop/docs/rgb_decomposition.md "RGB Decomposition from ASF" ){target=_blank}.
 

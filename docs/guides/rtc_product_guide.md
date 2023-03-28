@@ -162,13 +162,13 @@ Refer to the [Pixel Spacing](#pixel-spacing "Jump to Pixel Spacing section in do
 
 #### DEM Name
 
-The **DEM name** parameter selects the DEM to use for RTC processing. By default, we use the [Copernicus Global 30-m DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, but allow users to select ASF's legacy DEMs (a combination of NED and SRTM) if desired. 
+The **dem_name** parameter selects the DEM to use for RTC processing. By default, we use the [Copernicus Global 30-m DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, but allow users to select ASF's legacy DEMs (a combination of NED and SRTM) if desired. 
 
 We recommend using the Copernicus DEM, which has more extensive and consistent coverage and more recent measurements. The main reason to select the legacy option is if a user already has a time series of products generated with the legacy DEM and wants to process new acquisitions using the same DEM. Refer to the [Digital Elevation Models](#digital-elevation-models "Jump to DEM section in document") section for more information.
 
 #### DEM Matching
 
-The **DEM matching** option allows users to either try to coregister the SAR image to the DEM file, or simply use the Sentinel-1 orbit files for geocoding the RTC products.
+The **dem_matching** option allows users to either try to coregister the SAR image to the DEM file, or simply use the Sentinel-1 orbit files for geocoding the RTC products.
 
 The process of terrain corrected geocoding includes 4 steps:
 1. Calculate the initial lookup table and simulated image with the image processing parameters and DEM. 
@@ -186,7 +186,7 @@ If you are interested in optimizing the RTC calculations, and are less concerned
 
 #### Speckle Filter
 
-When the **speckle filter** option is selected, an Enhanced Lee filter is applied during RTC processing to remove speckle while preserving edges of features. Speckle occurs due to interference among signal waves, as they interact with different scatterers on the surface of the earth and return to the sensor. It appears as granular noise in the image. Refer to the [Speckle section of our Introduction to SAR](../guides/introduction_to_sar.md#speckle "Speckle section of Introduction to SAR" ){target=_blank} document for more information.
+When the **speckle_filter** option is selected, an Enhanced Lee filter is applied during RTC processing to remove speckle while preserving edges of features. Speckle occurs due to interference among signal waves, as they interact with different scatterers on the surface of the earth and return to the sensor. It appears as granular noise in the image. Refer to the [Speckle section of our Introduction to SAR](../guides/introduction_to_sar.md#speckle "Speckle section of Introduction to SAR" ){target=_blank} document for more information.
 
 When applied, the filter is set to a dampening factor of 1, with a box size of 7x7 pixels. The number of looks depends on the multilooking treatment for the RTC processing, and is based on the pixel spacing and the input scene type. Refer to the readme file included with the RTC product to determine the number of looks used for the filter, which is the number of looks taken for RTC processing multiplied by 30.
 

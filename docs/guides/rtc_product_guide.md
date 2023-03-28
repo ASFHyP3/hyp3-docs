@@ -168,7 +168,7 @@ We recommend using the Copernicus DEM, which has more extensive and consistent c
 
 #### DEM Matching
 
-The **DEM matching** option allows users to either try to coregister the SAR image to the DEM file, or to simply use the Sentinel-1 orbit files for geocoding the RTC products.
+The **DEM matching** option allows users to either try to coregister the SAR image to the DEM file, or simply use the Sentinel-1 orbit files for geocoding the RTC products.
 
 The process of terrain corrected geocoding includes 4 steps:
 1. Calculate the initial lookup table and simulated image with the image processing parameters and DEM. 

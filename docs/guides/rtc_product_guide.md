@@ -192,7 +192,7 @@ When applied, the filter is set to a dampening factor of 1, with a box size of 7
 
 Applying a speckle filter can smooth the appearance of the image, but it comes at a cost to the resolution of the output RTC product. Keep in mind also that there are other speckle filters that may be better suited to a specific application. We do not currently offer any customization of the type of speckle filter used, or the parameters (window size, multilooking, dampening, etc.) used for the filter.
 
-You may also want to try applying other spatial speckle filters with custom settings, which can be accomplished programmatically or using GIS software. Some temporal analyses may also mitigate the impacts of speckle, such as calculating the median or mean pixel values of multiple images collected over a period of time. In both of these cases, it would be better not to apply a speckle filter during RTC processes.
+You may also want to try applying other spatial speckle filters with custom settings, which can be accomplished programmatically or using GIS software. Some temporal analyses may also mitigate the impacts of speckle, such as calculating the median or mean pixel values of multiple images collected over a period of time. In both cases, it may be better not to apply a speckle filter during RTC processing.
 
 If you are unsure whether to apply this option, try generating some of your RTC products with and without the speckle filter applied, and check to see which product works best for your particular application. 
 

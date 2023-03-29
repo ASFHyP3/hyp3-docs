@@ -119,7 +119,9 @@ Keep in mind that the same DEM is used for processing both the 10-m and 30-m RTC
 
 ## Processing Options and Optional Files
 
-There are a number of options users can set when ordering RTC On Demand products. Some of these options are applied to the RTC processing, and some of them allow users to add additional files to the product package that are not included by default. Table 2 lists all of the options as displayed in the Vertex user interface and the HyP3 API, and the [Processing Options](#processing-options "Jump to Processing Options section in document") and [Optional Files](#optional-files "Jump to Optional Files section in document") sections provide more information about each option.
+There are a number of options users can set when ordering RTC On Demand products. Some of these options are applied to the RTC processing, and some of them allow users to add additional files to the product package that are not included by default. 
+
+Table 2 lists all of the options as displayed in the Vertex user interface and the HyP3 API, and the [Processing Options](#processing-options "Jump to Processing Options section in document") and [Optional Files](#optional-files "Jump to Optional Files section in document") sections provide more information about each option.
 
 | Option Name in Vertex       | Option Name in HyP3 API | Value Range                 | Default    | Description                                                                                                                                                                           |
 |-----------------------------|-------------------------|-----------------------------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

@@ -68,7 +68,7 @@ Table 1 summarizes ASF's DEM sources. Note that in each case, the DEM is resampl
 
 *Table 1: DEMs used for RTC processing. Note that the Copernicus 30 m DEM is the default, while the other four DEMs are only used if the legacy option is invoked.*
 
-When ordering On-Demand RTC products, you can choose to include a copy of the DEM used for RTC processing in the RTC product package. This DEM copy is converted to 16-bit signed integer format, but is otherwise the same as the DEM used in the RTC process. Note that the height values will differ from the original source DEM in all cases, due to the geoid correction applied to prepare the DEM for use in RTC processing.
+When ordering On-Demand RTC products, you can choose to [include a copy of the DEM used for RTC processing](#dem "Jump to Optional Files - DEM section in document") in the RTC product package. This DEM copy is converted to 16-bit signed integer format, but is otherwise the same as the DEM used in the RTC process. Note that the height values will differ from the original source DEM in all cases, due to the geoid correction applied to prepare the DEM for use in RTC processing.
 
 ### Copernicus DEM
 

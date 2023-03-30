@@ -385,7 +385,7 @@ This scale is not always the best choice for general visualization of RTC produc
 
 ## RTC Use Examples
 
-The RTC products are presented as Cloud-Optimized GeoTIFFs (COGs), a user-friendly format that is GIS compatible. The products include pre-generated overviews, so users will not need to generate pyramids to display the images efficiently in a GIS environment.
+The RTC products are presented as Cloud-Optimized GeoTIFFs (COGs), a user-friendly format that is compatible with GIS software. The products include pre-generated overviews, so users will not need to generate pyramids to display the images efficiently in a GIS or web-mapping environment.
 
 The following sections present examples of how one might use RTC datasets to identify areas of change and integrate RTC datasets into other datasets for enhanced results. We also present a bibliography of some of the scientific literature making use of Sentinel-1 RTC datasets.
 

@@ -119,22 +119,22 @@ Keep in mind that the same DEM is used for processing both the 10-m and 30-m RTC
 
 ## Processing Options and Optional Files
 
-There are a number of options users can set when ordering RTC On Demand products. Some of these options are applied to the RTC processing, and some of them allow users to add additional files to the product package that are not included by default. 
+There are a number of options users can set when ordering RTC On Demand products. Some of these options set parameters used in the RTC processing workflow, others allow users to add additional files to the product package that are not included by default. 
 
 Table 2 lists all of the options as displayed in the Vertex user interface and the HyP3 API, and the [Processing Options](#processing-options "Jump to Processing Options section in document") and [Optional Files](#optional-files "Jump to Optional Files section in document") sections provide more information about each option.
 
-| Option Name in Vertex       | Option Name in HyP3 API | Value Range                 | Default    | Description                                                                                                                                                                           |
-|-----------------------------|-------------------------|-----------------------------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Radiometry                  | radiometry              | {gamma0, sigma0}            | gamma0     | Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area projected into the look direction (gamma0)                                                  |
-| Scale                       | scale                   | {power, decibel, amplitude} | power      | Scale of output backscatter values                                                                                                                                                    |
-| Pixel Spacing               | resolution              | {10.0, 30.0}                | 30.0       | Product pixel spacing in meters                                                                                                                                                       |
-| DEM Name                    | dem_name                | {copernicus, legacy}        | copernicus | Name of the DEM to use for processing. copernicus will use the Copernicus GLO-30 Public DEM, while legacy will use the DEM with the best coverage from ASF's legacy SRTM/NED datasets |
-| Apply DEM Matching          | dem_matching            | {true, false}               | false      | Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files                                                                                                |
-| Apply Speckle Filter        | speckle_filter          | {true, false}               | false      | Apply an Enhanced Lee speckle filter                                                                                                                                                  |
-| Include DEM                 | include_dem             | {true, false}               | false      | Include a copy of the DEM used for RTC processing in the product package                                                                                                              |
- | Include Incidence Angle Map | include_inc_map         | {true, false}               | false      | Include the local incidence angle map in the product package                                                                                                                          |
- | Include Scattering Area     | include_scattering_area | {true, false}               | false      | Include the Scattering Area Map in the product package                                                                                                                                |
- | Include RGB Decomposition   | include_rgb             | {true, false}               | false      | Include a false-color RGB Decomposition GeoTIFF in the product package                                                                                                                |
+| Option Name in Vertex       | Option Name in HyP3 API/SDK | Value Range                 | Default    | Description                                                                                                                                                                         |
+|-----------------------------|-----------------------------|-----------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Radiometry                  | radiometry                  | {gamma0, sigma0}            | gamma0     | Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area projected into the look direction (gamma0)                                                |
+| Scale                       | scale                       | {power, decibel, amplitude} | power      | Scale of output backscatter values                                                                                                                                                  |
+| Pixel Spacing               | resolution                  | {10.0, 30.0}                | 30.0       | Product pixel spacing in meters                                                                                                                                                     |
+| DEM Name                    | dem_name                    | {copernicus, legacy}        | copernicus | Name of the DEM to use for processing: _copernicus_ will use the Copernicus GLO-30 Public DEM, _legacy_ will use the DEM with the best coverage from ASF's legacy SRTM/NED datasets |
+| Apply DEM Matching          | dem_matching                | {true, false}               | false      | Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files                                                                                              |
+| Apply Speckle Filter        | speckle_filter              | {true, false}               | false      | Apply an Enhanced Lee speckle filter                                                                                                                                                |
+| Include DEM                 | include_dem                 | {true, false}               | false      | Include a copy of the DEM used for RTC processing in the product package                                                                                                            |
+ | Include Incidence Angle Map | include_inc_map             | {true, false}               | false      | Include the local incidence angle map in the product package                                                                                                                        |
+ | Include Scattering Area Map | include_scattering_area     | {true, false}               | false      | Include the scattering area map in the product package                                                                                                                              |
+ | Include RGB Decomposition   | include_rgb                 | {true, false}               | false      | Include a false-color RGB decomposition GeoTIFF in the product package                                                                                                              |
  
 *Table 2: Processing Options*
 
@@ -142,7 +142,7 @@ Table 2 lists all of the options as displayed in the Vertex user interface and t
 
 #### Radiometry
 
-The **radiometry** option allows users to set their preferred backscatter coefficient normalization to either gamma-nought (gamma0 or γ<sub>0</sub>) or sigma-nought (sigma0 or σ<sub>0</sub>) radiometry. As illustrated in Figure 5, the scattering coefficient gamma0 is normalized by the illuminated area projected into the look direction (A<sub>γ</sub> - the yellow area with the red outline in the diagram) and the sigma0 is normalized by the ground area (A<sub>σ</sub> - the grey area with the pink outline in the diagram).
+The **radiometry** option allows users to set their preferred backscatter coefficient normalization to either gamma-nought (gamma0 or γ<sub>0</sub>) or sigma-nought (sigma0 or σ<sub>0</sub>) radiometry. As illustrated in Figure 5, the scattering coefficient gamma0 is normalized by the illuminated area projected into the look direction (A<sub>γ</sub> - the yellow area with the red outline in the diagram) and the sigma0 is normalized by the ground area (A<sub>σ</sub> - the grey area with the purple outline in the diagram).
 
 ![Figure 5](../images/three_rader_backscatter_convention.jpg "Normalization areas for SAR backscatter")
 
@@ -152,7 +152,7 @@ Although both sigma0 and gamma0 backscatter include the impact of local topograp
  
 #### Scale
 
-The **scale** option allows users to choose the scale of the output backscatter images from the three commonly used scales for calibrated SAR values: decibel, power, or amplitude. Refer to the [SAR Scale](#sar-scales "Jump to SAR Scales section in document") section for more information.
+The **scale** option allows users to choose the scale of the output backscatter images from the three commonly used scales for calibrated SAR values: power, amplitude, or decibel (dB). Refer to the [SAR Scale](#sar-scales "Jump to SAR Scales section in document") section for more information.
 
 #### Pixel Spacing
 
@@ -181,7 +181,7 @@ The process of terrain corrected geocoding includes 4 steps:
 
 When DEM matching is applied, the optional steps 2 and 3 are performed. Using this option can improve the quality of the RTC calculations, as the features in the SAR image are matched to the features in the DEM, minimizing the offsets in geometry during the backscatter normalization calculations. Refer to the [Terrain Correction](#terrain-correction "Jump to the Terrain Correction section of document") section for more information.
 
-DEM Matching is not always beneficial, however. If the georeferencing of the DEM doesn't match the georeferencing of the Sentinel-1 imagery, DEM matching can result in image offsets, making it difficult to overlay images for time series analysis. Coregistration also works best when there are distinct topographic features that allow for reliable matching between the SAR image and the DEM. In areas that lack distinctive topographic features, there may also be substantial and inconsistent image offsets.
+DEM Matching is not always beneficial, however. If the georeferencing of the DEM doesn't match the georeferencing of the Sentinel-1 imagery, DEM matching can result in variable offsets in the output images from one Sentinel-1 acquisition to the next, making it difficult to overlay images for time series analysis. Coregistration also works best when there are distinct topographic features that allow for reliable matching between the SAR image and the DEM. In areas that lack distinctive topographic features, there may also be substantial and inconsistent image offsets.
 
 The orbit files of the Sentinel-1 data are generally quite accurate, and not applying the DEM matching should output files with consistent geolocation. While it may not optimize the RTC calculations, it may be a better option for time series analysis, where having consistent alignment of images from one acquisition to the next is more important than optimizing the backscatter normalization. 
 

@@ -371,7 +371,9 @@ In some cases, it may be desirable to convert the actual pixel values to a diffe
 
 ### Amplitude Scale
 
-Amplitude scale is the square root of the power scale values. This brightens the darker pixels and darkens the brighter pixels, narrowing the dynamic range of the image. In many cases, amplitude scale presents a pleasing grayscale display of RTC images. Amplitude scale works well for calculating log difference ratios, as described in the [Change Detection Using RTC Data](#change-detection-using-rtc-data "Jump to Change Detection Using RTC Data section in document") use case example.
+Values in the amplitude scale are the square root of the power scale values. This brightens the darker pixels (values <1) and darkens the brighter pixels (values >1), narrowing the dynamic range of the image. 
+
+In many cases, amplitude scale presents a pleasing grayscale display of RTC images. Amplitude scale works well for calculating log difference ratios, as described in the [Change Detection Using RTC Data](#change-detection-using-rtc-data "Jump to Change Detection Using RTC Data section in document") use case example.
 
 ### Decibel (dB) Scale
 
@@ -379,7 +381,7 @@ The decibel (dB) scale is calculated by multiplying 10 times the Log10 of the po
 
 This is often a good scale to use for identifying water on the landscape; the water pixels generally remain very dark compared to the much brighter pixels of the surrounding landscape. Refer to the [Identifying Surface Water](#identifying-surface-water "Jump to Identifying Surface Water section in document") use case example for more information.
 
-This scale is not always the best choice for general visualization of RTC products, as it can give a washed-out appearance to terrestrial features. In addition, because it is a logarithmic scale, dB pixel values are not appropriate for some types of statistical analyses.
+This scale is not always the best choice for general visualization of RTC products, as it can give a washed-out appearance to terrain features. In addition, because it is a logarithmic scale, dB pixel values are not appropriate for some types of statistical analyses.
 
 ## RTC Use Examples
 

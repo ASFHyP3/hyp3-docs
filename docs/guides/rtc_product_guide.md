@@ -292,7 +292,7 @@ Example: S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A
 
 ### Image Files
 
-All files are stored in a folder named using the above convention, and the base name for each file matches the folder name. Multiple types of image files are present in this folder, and some of the files are optional. Users can choose to exclude the RGB Decomposition GeoTIFF, scattering area map, DEM, and incidence angle map rasters when ordering On-Demand RTC products.
+All files are stored in a folder named using the above convention, and the base name for each file matches the folder name. Multiple types of image files are present in this folder, and some of the files are optional. Users can choose to include the RGB Decomposition GeoTIFF, scattering area map, DEM, and incidence angle map rasters when ordering On-Demand RTC products.
 
 | Extension                          | Description                                                                                          | Example                                                    |
 |------------------------------------|------------------------------------------------------------------------------------------------------|------------------------------------------------------------|

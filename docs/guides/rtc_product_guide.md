@@ -11,7 +11,7 @@ For a step-by-step tutorial on ordering On-Demand RTC Products using Vertex, vis
 
 !!! important "New RTC Processing Options Available"
 
-    On Demand Sentinel-1 RTC products can now be processed at [10-m pixel spacing](#pixel-spacing "RTC Pixel Spacing Documentation" ){target=_blank}, and can be output in [decibel (dB) scale](#sar-scales "SAR Scales Documentation" ){target=_blank}. 
+    On Demand Sentinel-1 RTC products can now be processed at [10-m pixel spacing](#pixel-spacing "RTC Pixel Spacing Documentation" ){target=_blank}, and can be output in [decibel (dB) scale](#sar-scales "SAR Scales Documentation" ){target=_blank}. Refer to the [Processing Options](#processing-options "Jump to Processing Options section in document") section for more information.
 
 ## Introduction
 
@@ -68,7 +68,7 @@ Table 1 summarizes ASF's DEM sources. Note that in each case, the DEM is resampl
 
 *Table 1: DEMs used for RTC processing. Note that the Copernicus 30 m DEM is the default, while the other four DEMs are only used if the legacy option is invoked.*
 
-When ordering On-Demand RTC products, you can choose to include a copy of the DEM used for RTC processing in the RTC product package. This DEM copy is converted to 16-bit signed integer format, but is otherwise the same as the DEM used in the RTC process. Note that the height values will differ from the original source DEM in all cases, due to the geoid correction applied to prepare the DEM for use in RTC processing.
+When ordering On-Demand RTC products, you can choose to [include a copy of the DEM used for RTC processing](#dem "Jump to Optional Files - DEM section in document") in the RTC product package. This DEM copy is converted to 16-bit signed integer format, but is otherwise the same as the DEM used in the RTC process. Note that the height values will differ from the original source DEM in all cases, due to the geoid correction applied to prepare the DEM for use in RTC processing.
 
 ### Copernicus DEM
 
@@ -117,6 +117,120 @@ It is *much* faster to process and analyze 30-m RTC products, so it's a good ide
 
 Keep in mind that the same DEM is used for processing both the 10-m and 30-m RTC products. By default, the DEM is the Copernicus Global DEM with a pixel spacing of 30 meters. The DEM is resampled to a pixel spacing of 10 meters when used for processing the 10-m RTC products, and the output DEM included in the 10-m RTC product package has a pixel spacing of 10 meters to match the output RTC product. *This does not indicate that the source DEM used for the 10-m products is of higher resolution.*
 
+## Processing Options and Optional Files
+
+There are a number of options users can set when ordering RTC On Demand products. Some of these options set parameters used in the RTC processing workflow, others allow users to add additional files to the product package that are not included by default. 
+
+Table 2 lists all of the options as displayed in the Vertex user interface and the HyP3 API, and the [Processing Options](#processing-options "Jump to Processing Options section in document") and [Optional Files](#optional-files "Jump to Optional Files section in document") sections provide more information about each option.
+
+| Option Name in Vertex       | Option Name in HyP3 API/SDK | Possible Values                 | Default    | Description                                                                                                                                                                         |
+|-----------------------------|-----------------------------|-----------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Radiometry                  | radiometry                  | (gamma0, sigma0)            | gamma0     | Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area projected into the look direction (gamma0)                                                |
+| Scale                       | scale                       | (power, decibel, amplitude) | power      | Scale of output backscatter values                                                                                                                                                  |
+| Pixel Spacing               | resolution                  | (10.0, 30.0)                | 30.0       | Product pixel spacing in meters                                                                                                                                                     |
+| DEM Name                    | dem_name                    | (copernicus, legacy)        | copernicus | Name of the DEM to use for processing: _copernicus_ will use the Copernicus GLO-30 Public DEM, _legacy_ will use the DEM with the best coverage from ASF's legacy SRTM/NED datasets |
+| Apply DEM Matching          | dem_matching                | (true, false)               | false      | Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files                                                                                              |
+| Apply Speckle Filter        | speckle_filter              | (true, false)               | false      | Apply an Enhanced Lee speckle filter                                                                                                                                                |
+| Include DEM                 | include_dem                 | (true, false)               | false      | Include a copy of the DEM used for RTC processing in the product package                                                                                                            |
+ | Include Incidence Angle Map | include_inc_map             | (true, false)               | false      | Include the local incidence angle map in the product package                                                                                                                        |
+ | Include Scattering Area Map | include_scattering_area     | (true, false)               | false      | Include the scattering area map in the product package                                                                                                                              |
+ | Include RGB Decomposition   | include_rgb                 | (true, false)               | false      | Include a false-color RGB decomposition GeoTIFF in the product package                                                                                                              |
+ 
+*Table 2: Processing Options*
+
+### Processing Options
+
+#### Radiometry
+
+The **radiometry** option allows users to set their preferred backscatter coefficient normalization to either gamma-nought (gamma0 or γ<sub>0</sub>) or sigma-nought (sigma0 or σ<sub>0</sub>) radiometry. As illustrated in Figure 5, the scattering coefficient gamma0 is normalized by the illuminated area projected into the look direction (A<sub>γ</sub> - the yellow area with the red outline in the diagram) and the sigma0 is normalized by the ground area (A<sub>σ</sub> - the grey area with the purple outline in the diagram).
+
+![Figure 5](../images/three_rader_backscatter_convention.jpg "Normalization areas for SAR backscatter")
+
+*Figure 5:  Normalization areas for SAR backscatter, from David Small, 2011, Flattening Gamma: Radiometric Terrain Correction for SAR Imagery, IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 49, NO. 8, AUGUST 2011*
+
+Although both sigma0 and gamma0 backscatter include the impact of local topography, the sensitivity of the impact is different. For applications where topographic impacts are an important consideration, gamma0 is generally the preferred choice.
+ 
+#### Scale
+
+The **scale** option allows users to choose the scale of the output backscatter images from the three commonly used scales for calibrated SAR values: power, amplitude, or decibel (dB). Refer to the [SAR Scale](#sar-scales "Jump to SAR Scales section in document") section for more information.
+
+#### Pixel Spacing
+
+The **resolution** parameter sets the pixel spacing of the output images. Users have the option to set a pixel spacing of either 30 meters or 10 meters. 
+
+The 30-m product has a much smaller file size, and is easier to work with for large areas of interest. The 10-m product provides much more detail of surface features, but is a much larger file. 
+
+Refer to the [Pixel Spacing](#pixel-spacing "Jump to Pixel Spacing section in document") section for more information. Note that the source Sentinel-1 imagery and the DEM are the same for both of these options.
+
+#### DEM Name
+
+The **dem_name** parameter selects the DEM to use for RTC processing. By default, we use the [Copernicus Global 30-m DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, but allow users to select ASF's legacy DEMs (a combination of NED and SRTM) if desired. 
+
+We recommend using the Copernicus DEM, which has more extensive and consistent coverage and more recent measurements. The main reason to select the legacy option is if a user already has a time series of products generated with the legacy DEM and wants to process new acquisitions using the same DEM. Refer to the [Digital Elevation Models](#digital-elevation-models "Jump to DEM section in document") section for more information.
+
+#### DEM Matching
+
+The **dem_matching** option allows users to either try to coregister the SAR image to the DEM file, or simply use the Sentinel-1 orbit files for geocoding the RTC products.
+
+The process of terrain corrected geocoding includes 4 steps:
+
+1. Calculate the initial lookup table and simulated image with the image processing parameters and DEM.
+2. (Optional) Measure initial offset between simulated SAR image and actual SAR image. 
+3. (Optional) Perform refinement of lookup table by offset measurement with respect to the simulated SAR image. 
+4. Produce terrain geocoded SAR image and DEM in SAR range-Doppler coordinates (RDC). 
+
+When DEM matching is applied, the optional steps 2 and 3 are performed. Using this option can improve the quality of the RTC calculations, as the features in the SAR image are matched to the features in the DEM, minimizing the offsets in geometry during the backscatter normalization calculations. Refer to the [Terrain Correction](#terrain-correction "Jump to the Terrain Correction section of document") section for more information.
+
+DEM Matching is not always beneficial, however. If the georeferencing of the DEM doesn't match the georeferencing of the Sentinel-1 imagery, DEM matching can result in variable offsets in the output images from one Sentinel-1 acquisition to the next, making it difficult to overlay images for time series analysis. Coregistration also works best when there are distinct topographic features that allow for reliable matching between the SAR image and the DEM. In areas that lack distinctive topographic features, there may also be substantial and inconsistent image offsets.
+
+The orbit files of the Sentinel-1 data are generally quite accurate, and not applying the DEM matching should output files with consistent geolocation. While it may not optimize the RTC calculations, it may be a better option for time series analysis, where having consistent alignment of images from one acquisition to the next is more important than optimizing the backscatter normalization. 
+
+If you are interested in optimizing the RTC calculations, and are less concerned about consistent geolocation through time, the DEM Matching option is likely a good choice. In cases where consistency is more important than accuracy, consider not applying DEM Matching, or at least testing the outputs to make sure they are suitable for your application.
+
+#### Speckle Filter
+
+When the **speckle_filter** option is selected, an Enhanced Lee filter is applied during RTC processing to remove speckle while preserving edges of features. Speckle occurs due to interference among signal waves, as they interact with different scatterers on the surface of the earth and return to the sensor. It appears as granular noise in the image. Refer to the [Speckle section of our Introduction to SAR](../guides/introduction_to_sar.md#speckle "Speckle section of Introduction to SAR" ){target=_blank} document for more information.
+
+When applied, the filter is set to a dampening factor of 1, with a box size of 7x7 pixels. The number of looks depends on the multilooking treatment for the RTC processing, and is based on the pixel spacing and the input scene type. Refer to the readme file included with the RTC product to determine the number of looks used for the filter, which is the number of looks taken for RTC processing multiplied by 30.
+
+Applying a speckle filter can smooth the appearance of the image, but it comes at a cost to the resolution of the output RTC product. Keep in mind also that there are other speckle filters that may be better suited to a specific application. We do not currently offer any customization of the type of speckle filter used, or the parameters (window size, multilooking, dampening, etc.) used for the filter.
+
+You may also want to try applying other spatial speckle filters with custom settings, which can be accomplished programmatically or using GIS software. Some temporal analyses may also mitigate the impacts of speckle, such as calculating the median or mean pixel values of multiple images collected over a period of time. In both cases, it may be better not to apply a speckle filter during RTC processing.
+
+If you are unsure whether to apply this option, try generating some of your RTC products with and without the speckle filter applied, and check to see which product works best for your particular application. 
+
+### Optional Files
+
+In addition to the processing options, users can choose to add a number of ancillary files to the product package. These files are not included by default, as they increase the size of the product package and may not be of interest to all users. 
+
+In Vertex, check the box in the "Include" section of the options to add these optional files to the product package. When using the HyP3 API or SDK, set the parameter to true.
+
+#### DEM
+
+Set the **include_dem** parameter to true to include a copy of the DEM file used for RTC processing. This DEM is *not* generated from the Sentinel-1 data, but is the reference DEM used for the RTC calculations. Refer to the [Digital Elevation Models](#digital-elevation-models "Jump to DEM section in document") section for more information on the DEMs we use for RTC processing.
+
+This DEM file is intended as a quick reference to aid in interpretation of the RTC image, and should not be used as a stand-alone DEM product. The DEM used for RTC processing has a geoid correction applied before it is used for RTC, so elevation values in this file will differ from the source DEM. 
+
+The DEM is resampled to match the pixel spacing of the output product, so **the pixel spacing of this file is not a reflection of the resolution of the source DEM.** Refer to the readme file included in the RTC product package for details on the pixel spacing of the included DEM file.
+
+#### Incidence Angle Map
+
+Set the **include_inc_map** parameter to true to include the local incidence angle map in the product package. The cell values in this raster indicate the angle between the incident radar beam and the direction perpendicular to the ground surface, expressed in radians.
+
+#### Scattering Area Map
+
+Set the **include_scattering_area** parameter to true to include the scattering area map in the product package. This map expresses the scattering area for each pixel in the RTC image in square meters. The values are calculated based on the effectively illuminated gamma-0 terrain surface using a digital elevation model, the local incidence angle map, and the layover-shadow map.
+
+This layer can be used to generate composites using the Local Resolution Weighting method, as described in the article [Wide-Area Analysis-Ready Radar Backscatter Composites](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9352976 "Wide-Area Analysis-Ready Radar Backscatter Composites" ){target=_blank} by David Small et al., 2022.
+
+#### RGB Decomposition
+
+Set the **include_rgb** parameter to true to include a full-resolution GeoTIFF of a false-color RGB Decomposition of the co- and cross-polarized RTC values. A low-resolution false-color browse image in PNG format is included in the product package by default, but selecting this option includes the RGB Decomposition image as a GeoTIFF with the same pixel spacing as the RTC images. 
+
+This option is only available for dual-polarization products, as it uses both the co- and cross-polarized RTC values to determine the RGB values. A full description of the approach ASF uses for generating RGB Decomposition products is available [here](https://github.com/ASFHyP3/hyp3-lib/blob/develop/docs/rgb_decomposition.md "RGB Decomposition from ASF" ){target=_blank}.
+
+In general, blue indicates areas with low backscatter in both co- and cross-polarizations (calm water, dry sand, frozen ground), green indicates high cross-pol values (vegetation or other volume scatterers), and red indicates areas with low cross-pol but relatively high co-pol values (urban areas or sparsely vegetated landscapes). 
+
 ## Radiometric Terrain Correction Workflow
 
 ### Pre-processing
@@ -125,11 +239,13 @@ The first step of pre-processing is the selection of the best DEM for the terrai
 
 ### Terrain Correction
 
-The terrain correction is performed in slant range geometry. A mapping function is created, mapping from DEM space into SAR space. The actual mapping of the initial image into projected space is only applied once to mitigate the propagation of any resampling errors. All intermediate steps only update the look-up table used for the mapping.
+The terrain correction is performed in slant range geometry. A look-up table is created to map between DEM space and SAR space. The actual mapping of the initial image into projected space is only applied once to mitigate the propagation of any resampling errors. All intermediate steps only update the look-up table used for the mapping.
 
-By default, images are not coregistered to the DEM. While RTC results can be improved by matching imagery to a high-quality DEM, different acquisitions over the same area may not always be matched to the DEM in the same way, due in part to the presence of speckle. This can introduce spatial inconsistencies to the dataset, especially when viewing a time-series of RTC images. For consistency, we use the geolocation from the Sentinel-1 state vectors rather than matching the geolocation based on DEM features.
+By default, images are not coregistered to the DEM. While RTC results can be improved by matching imagery to a high-quality DEM, different acquisitions over the same area may not always be matched to the DEM in the same way, due in part to the presence of speckle. This can introduce spatial inconsistencies to the dataset, especially when viewing a time-series of RTC images. For consistency, we use the geolocation from the Sentinel-1 state vectors by default rather than matching the geolocation based on DEM features.
 
-When custom-ordering imagery, however, the DEM Matching option is available for selection. In this case, the first step is the co-registration of the SAR image with a simulated SAR image derived from the DEM. An initial offset is first attempted as a single match; if it fails, a larger number of image chips are used to determine an average offset in azimuth and range direction. This initial offset is then refined using strict matching criteria. Matching may fail for three different reasons: (1) no match can be found, (2) the magnitude of the residual offset errors is greater than 2 pixels, or (3) the maximum calculated offset is greater than 50 m. In any of these cases, the _dead reckoning_ approach is taken when matching fails. This approach solely relies on the geolocations calculated from state vectors (the same approach used when DEM matching is not selected as an option) - no geolocation refinement is applied.
+When ordering products On Demand, the [DEM Matching option](#dem-matching "Jump to Processing Options - DEM Matching section in document") is available for selection. When this option is applied, the first step is the co-registration of the SAR image with a simulated SAR image derived from the DEM. An initial offset is first attempted as a single match; if it fails, a larger number of image chips are used to determine an average offset in azimuth and range direction. This initial offset is then refined using strict matching criteria. 
+
+Matching may fail for three different reasons: (1) no match can be found, (2) the magnitude of the residual offset errors is greater than 2 pixels, or (3) the maximum calculated offset is greater than 50 m. In any of these cases, the _dead reckoning_ approach is taken when matching fails. This approach solely relies on the geolocations calculated from state vectors (the same approach used when DEM matching is _not_ selected as an option) - no geolocation refinement is applied.
 
 ### Radiometric Correction
 
@@ -137,11 +253,11 @@ During processing, a surface scattering area image for the scene is calculated a
 
 ### Geocoding
 
-In a final step, the RTC product is geocoded into map-projected space. Thus, radiometric terrain correction results in a geocoded radiometrically calibrated multi-looked image with gamma-nought (γ<sub>0</sub>) power scale values by default, though there are options to process to sigma-nought (σ<sub>0</sub>) radiometry and amplitude or decibel (dB) scale.
+In a final step, the RTC product is geocoded into map-projected space. Thus, radiometric terrain correction results in a geocoded radiometrically calibrated multi-looked image with gamma-nought (γ<sub>0</sub>) power scale values by default, though there are options to process to sigma-nought (σ<sub>0</sub>) [radiometry](#radiometry "Jump to Processing Options - Radiometry section in document") and amplitude or decibel (dB) [scale](#scale "Jump to Processing Options - Scale section in document").
 
 ### Post-Processing
 
-After the terrain correction is completed, the RTC products are exported to GeoTIFF format. If the scene being processed is dual polarization, users have the option to add a full-resolution RGB Decomposition GeoTIFF to the RTC product package.  Side products including the DEM, layover shadow map, scattering area map, and incidence angle map are converted into GeoTIFF format. In addition, a README text file, browse images, item-specific ArcGIS-compatible XML metadata files, a log file, and a shapefile indicating the data extent are generated for the product.
+After the terrain correction is completed, the RTC products are exported to GeoTIFF format. If the scene being processed is dual polarization, users have the option to [add a full-resolution RGB Decomposition GeoTIFF](#rgb-decomposition "Jump to Optional Files - RGB Decomposition section in document") to the RTC product package.  Side products including the [DEM](#dem "Jump to Optional Files - DEM section in document"), layover-shadow map (always included), [scattering area map](#scattering-area-map "Jump to Optional Files - Scattering Area Map section in document"), and [incidence angle map](#incidence-angle-map "Jump to Optional Files - Incidence Angle Map section in document") are converted into GeoTIFF format. In addition, a README text file, browse images, item-specific ArcGIS-compatible XML metadata files, a log file, and a shapefile indicating the data extent are generated for the product.
 
 ## Product Packaging
 
@@ -171,27 +287,12 @@ Example: S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A
 | m        | Dead Reckoning (d) or DEM Matching (m)                                       | d        |
 | ssss     | Product ID                                                                   | FD6A     |
 
-*Table 2: Naming convention for RTC products*
+*Table 3: Naming convention for RTC products*
 
-### Default Settings
-
-The default settings for RTC products are as follows:
-
-| Setting        | Default                                 |
-|----------------|-----------------------------------------|
-| Pixel Spacing  | 30                                      |
-| Radiometry     | Gamma-0 (g)                             |
-| Scale          | Power (p)                               |
-| Water Mask     | No water mask applied (u)               |
-| Speckle Filter | Not filtered (n)                        |
-| Clipping       | Entire extent of input granule (e)      |
-| DEM Matching   | No matching; dead reckoning is used (d) |
-
-*Table 3: Default settings for RTC products*
 
 ### Image Files
 
-All files are stored in a folder named using the above convention, and the base name for each file matches the folder name. Multiple types of image files are present in this folder, and some of the files are optional. Users can choose to exclude the RGB Decomposition GeoTIFF, scattering area map, DEM, and incidence angle map rasters when ordering On-Demand RTC products.
+All files are stored in a folder named using the above convention, and the base name for each file matches the folder name. Multiple types of image files are present in this folder, and some of the files are optional. Users can choose to include the RGB Decomposition GeoTIFF, scattering area map, DEM, and incidence angle map rasters when ordering On-Demand RTC products.
 
 | Extension                          | Description                                                                                          | Example                                                    |
 |------------------------------------|------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
@@ -270,17 +371,21 @@ In some cases, it may be desirable to convert the actual pixel values to a diffe
 
 ### Amplitude Scale
 
-Amplitude scale is the square root of the power scale values. This brightens the darker pixels and darkens the brighter pixels, narrowing the dynamic range of the image. In many cases, amplitude scale presents a pleasing grayscale display of RTC images. Amplitude scale works well for calculating log difference ratios (see [Change Detection Using RTC Data](#change-detection-using-rtc-data "Jump to Change Detection Using RTC Data section in document")).
+Values in the amplitude scale are the square root of the power scale values. This brightens the darker pixels (values <1) and darkens the brighter pixels (values >1), narrowing the dynamic range of the image. 
+
+In many cases, amplitude scale presents a pleasing grayscale display of RTC images. Amplitude scale works well for calculating log difference ratios, as described in the [Change Detection Using RTC Data](#change-detection-using-rtc-data "Jump to Change Detection Using RTC Data section in document") use case example.
 
 ### Decibel (dB) Scale
 
-The decibel (dB) scale is calculated by multiplying 10 times the Log10 of the power scale values. This scale brightens the pixels, allowing for better differentiation among very dark pixels. When identifying water on the landscape, this is often a good scale to use; the water pixels generally remain very dark, while the terrestrial pixels are even brighter (see [Identifying Surface Water](#identifying-surface-water "Jump to Identifying Surface Water section in document")).
+The decibel (dB) scale is calculated by multiplying 10 times the Log10 of the power scale values. This scale allows for better differentiation among very dark pixels. 
 
-This scale is not always the best choice for general visualization of RTC products, as it can give a washed-out appearance, and because it is in a log scale, it is not appropriate for all types of statistical analyses.
+This is often a good scale to use for identifying water on the landscape; the water pixels generally remain very dark compared to the much brighter pixels of the surrounding landscape. Refer to the [Identifying Surface Water](#identifying-surface-water "Jump to Identifying Surface Water section in document") use case example for more information.
+
+This scale is not always the best choice for general visualization of RTC products, as it can give a washed-out appearance to terrain features. In addition, because it is a logarithmic scale, dB pixel values are not appropriate for some types of statistical analyses.
 
 ## RTC Use Examples
 
-The RTC products are presented as Cloud-Optimized GeoTIFFs (COGs), a user-friendly format that is GIS compatible. The products include pre-generated overviews, so users will not need to generate pyramids to display the images efficiently in a GIS environment.
+The RTC products are presented as Cloud-Optimized GeoTIFFs (COGs), a user-friendly format that is compatible with GIS software. The products include pre-generated overviews, so users will not need to generate pyramids to display the images efficiently in a GIS or web-mapping environment.
 
 The following sections present examples of how one might use RTC datasets to identify areas of change and integrate RTC datasets into other datasets for enhanced results. We also present a bibliography of some of the scientific literature making use of Sentinel-1 RTC datasets.
 
@@ -290,59 +395,59 @@ There are a number of ways that SAR data sets can be used to identify areas of c
 
 #### Seasonal Change
 
-Stacking RTC images into a multiband image (Figure 5) allows the user to display different times of year at the same time, using the color bands to highlight areas that differ in radar backscatter values from one month to the next.
+Stacking RTC images into a multiband image (Figure 6) allows the user to display different times of year at the same time, using the color bands to highlight areas that differ in radar backscatter values from one month to the next.
 
 To generate this type of image, choose three images that capture different seasons or months of interest. These can either be individual RTC images from different times of the year, or rasters displaying the monthly median calculated from multiple RTC images collected in the same month.
 
 Combine the three images into a multiband raster and assign each to a different color band. The resulting RGB image highlights areas where there are distinctive differences among the three source image values.
 
-![Figure 5](../images/seasonal-change-example.jpg "Monthly median VH gamma-0 power values for May, July and September, displayed as a multiband RGB (May, July, Sept) image")
+![Figure 6](../images/seasonal-change-example.jpg "Monthly median VH gamma-0 power values for May, July and September, displayed as a multiband RGB (May, July, Sept) image")
 
-*Figure 5: Monthly median VH gamma-0 power values for May, July and September, displayed as a multiband RGB (May, July, Sept) image. Contains modified Copernicus Sentinel data 2017, processed by ESA.*
+*Figure 6: Monthly median VH gamma-0 power values for May, July and September, displayed as a multiband RGB (May, July, Sept) image. Contains modified Copernicus Sentinel data 2017, processed by ESA.*
 
 #### Quantifying Change over Time
 
 A simple and informative approach to change detection is the calculation of the log difference between two RTC datasets from different dates. By calculating Log10(date2/date1) and applying a classified symbology, it is easy to identify areas where change occurred, as well as the direction of the change. Negative values indicate a decrease in radar backscatter over time, while positive values indicate an increase in backscatter.
 
-In the example below (Figure 6), RTC images from before and after heavy rains caused a dam breach. The area where the reservoir was located displays a significant increase in backscatter (symbolized in red). This positive change is driven by land that was once covered by standing water, which generally has very low backscatter, now being exposed saturated soil, which generally returns very high backscatter values. In surrounding areas, decreases in radar backscatter (symbolized by blue), are possibly the result of agricultural fields undergoing desiccation/hardening of the surface soil following the heavy rainfall and standing water. Areas with little change in backscatter are displayed in yellow.
+In the example below (Figure 7), RTC images from before and after heavy rains caused a dam breach. The area where the reservoir was located displays a significant increase in backscatter (symbolized in red). This positive change is driven by land that was once covered by standing water, which generally has very low backscatter, now being exposed saturated soil, which generally returns very high backscatter values. In surrounding areas, decreases in radar backscatter (symbolized by blue), are possibly the result of agricultural fields undergoing desiccation/hardening of the surface soil following the heavy rainfall and standing water. Areas with little change in backscatter are displayed in yellow.
 
-![Figure 6](../images/log-difference-raster.png "Log Difference Raster with Classified Symbology")
+![Figure 7](../images/log-difference-raster.png "Log Difference Raster with Classified Symbology")
 
-*Figure 6: Log Difference Raster with Classified Symbology. Contains modified Copernicus Sentinel data 2020, processed by ESA.*
+*Figure 7: Log Difference Raster with Classified Symbology. Contains modified Copernicus Sentinel data 2020, processed by ESA.*
 
 ### Identifying Surface Water
 
 Calm surface water has a very low radar cross section. Most of the signal is reflected off the smooth surface, due to the high dielectric constant of freshwater, so little to none of the signal is returned as backscatter. Because of this, it is often easy to delineate surface water using a simple threshold value, where all pixels below the threshold are assumed to be water.
 
-You can easily visualize the water extent using various thresholds by applying a classified symbology with two classes. It is often best to use dB scale datasets for identifying surface water. In many cases, there will be a bimodal distribution of values in an RTC image containing surface water, with the first peak comprised mostly of water values, and the second peak containing all the remaining values. A good first step is to select a break point between those two peaks, then adjust the value as needed to generate a good water mask (Figure 7).
+You can easily visualize the water extent using various thresholds by applying a classified symbology with two classes. It is often best to use dB scale datasets for identifying surface water. In many cases, there will be a bimodal distribution of values in an RTC image containing surface water, with the first peak comprised mostly of water values, and the second peak containing all the remaining values. A good first step is to select a break point between those two peaks, then adjust the value as needed to generate a good water mask (Figure 8).
 
-![Figure 7](../images/water-histogram.png "Setting the break point to fall between the two peaks of the histogram")
+![Figure 8](../images/water-histogram.png "Setting the break point to fall between the two peaks of the histogram")
 
-*Figure 7: Setting the break point to fall between the two peaks of the histogram*
+*Figure 8: Setting the break point to fall between the two peaks of the histogram*
 
-Once you have determined the appropriate threshold (Figure 8), you can reclassify the RTC image to include only those pixels that fall below the threshold value, providing a water mask that can be used for analysis or to overlay with other imagery to show the water extent.
+Once you have determined the appropriate threshold (Figure 9), you can reclassify the RTC image to include only those pixels that fall below the threshold value, providing a water mask that can be used for analysis or to overlay with other imagery to show the water extent.
 
-![Figure 8](../images/water-mask.png "Water Mask")
+![Figure 9](../images/water-mask.png "Water Mask")
 
-*Figure 8: Water Mask. Contains modified Copernicus Sentinel data 2020, processed by ESA.*
+*Figure 9: Water Mask. Contains modified Copernicus Sentinel data 2020, processed by ESA.*
 
 ### Combination of RTC Image with other Remote Sensing Data
 
-One of the main advantages of using RTC imagery with its all weather and day/night capabilities is the combination with other remote sensing data such as optical data. In the example below, the backscatter information of the Sentinel-1 SAR image (Figure 9) is used to enhance the spectral information of the optical Landsat 8 image (Figure 10) in the urban area of Pavia, Italy. Figure 11 shows the image fusion result of an IHS transformation. In this transformation the color channels red, green and blue (RGB) are first converted into a different color representation: intensity, hue and saturation (IHS). In the second step the optical intensity is replaced by the SAR image, before IHS is transformed back to RGB.
+One of the main advantages of using RTC imagery with its all weather and day/night capabilities is the combination with other remote sensing data such as optical data. In the example below, the backscatter information of the Sentinel-1 SAR image (Figure 10) is used to enhance the spectral information of the optical Landsat 8 image (Figure 11) in the urban area of Pavia, Italy. Figure 12 shows the image fusion result of an IHS transformation. In this transformation the color channels red, green and blue (RGB) are first converted into a different color representation: intensity, hue and saturation (IHS). In the second step the optical intensity is replaced by the SAR image, before IHS is transformed back to RGB.
 
-![Figure 9](../images/sentinel-1-rtc-image.jpg "Sentinel-1 RTC image")
+![Figure 10](../images/sentinel-1-rtc-image.jpg "Sentinel-1 RTC image")
 
-*Figure 9: Sentinel-1 RTC image.*
+*Figure 10: Sentinel-1 RTC image.*
 
-![Figure 10](../images/landsat-false-color-composite.jpg "False color composite (bands 5, 4, 3) of a Landsat 8 image")
+![Figure 11](../images/landsat-false-color-composite.jpg "False color composite (bands 5, 4, 3) of a Landsat 8 image")
 
-*Figure 10: False color composite (bands 5, 4, 3) of a Landsat 8 image*
+*Figure 11: False color composite (bands 5, 4, 3) of a Landsat 8 image*
 
 The color values for the two rivers in the SAR image are far more similar to each other than in the optical image. The vegetated areas (highlighted in red) show up more uniformly in the data fusion result than in the optical false color composite image. Image fusion uses the complementary nature of the different sources to generate an enhanced product.
 
-![Figure 11](../images/sar-optical-fusion.jpg "Image fusion result of SAR and optical imagery")
+![Figure 12](../images/sar-optical-fusion.jpg "Image fusion result of SAR and optical imagery")
 
-*Figure 11: Image fusion result of SAR and optical imagery*
+*Figure 12: Image fusion result of SAR and optical imagery*
 
 ## ArcGIS Toolbox
 

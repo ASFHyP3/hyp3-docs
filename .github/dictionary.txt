@@ -37,6 +37,8 @@ asf_tools
 ASFHyP3
 AutoRIFT
 autoRIFT
+Aγ
+Aσ
 Backscatter
 backscatter
 bandpass
@@ -52,7 +54,9 @@ cookiecutter
 copernicus
 coregister
 coregistered
+Coregisters
 coregisters
+Coregistration
 coregistration
 cross-polarizations
 date1
@@ -98,6 +102,7 @@ geolocation
 Geolocations
 geolocations
 georeferencing
+GEOSCIENCE
 geoscience
 Geospatial
 geospatial
@@ -166,6 +171,7 @@ LVθ
 LVφ
 MapReady
 Markert
+Mathjax
 mathjax              retext-spell
 MCF
 mcf
@@ -314,8 +320,10 @@ zz
 Δω
 Δωref
 Δϒ
+γ0
 θ
 λ
 π
 π/2
+σ0
 φ

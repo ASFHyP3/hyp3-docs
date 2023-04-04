@@ -11,6 +11,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 * Added processing options table and descriptive text to the [RTC Product Guide](docs/guides/rtc_product_guide.md)
 * Added references/links to the processing options section as appropriate throughout the [RTC Product Guide](docs/guides/rtc_product_guide.md)
+* Added [Mathjax](https://www.mathjax.org) as an option for formatting equations
 
 ## [0.3.65]
 

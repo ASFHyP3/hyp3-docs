@@ -9,9 +9,9 @@ A [Digital Elevation Model (DEM)](#digital-elevation-models "Jump to DEM Section
 
 For a step-by-step tutorial on ordering On-Demand RTC Products using Vertex, visit our [RTC On Demand! StoryMap](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand! StoryMap" ){target=_blank}, which also includes links to sample workflows using Sentinel-1 RTC products for GIS applications.
 
-!!! important "New RTC Processing Options Available"
+!!! important "New RTC Pixel Spacing Option Available"
 
-    On Demand Sentinel-1 RTC products can now be processed at [10-m pixel spacing](#pixel-spacing "RTC Pixel Spacing Documentation" ){target=_blank}, and can be output in [decibel (dB) scale](#sar-scales "SAR Scales Documentation" ){target=_blank}. Refer to the [Processing Options](#processing-options "Jump to Processing Options section in document") section for more information.
+    On Demand Sentinel-1 RTC products can now be processed at [20-m pixel spacing](#pixel-spacing "RTC Pixel Spacing Documentation" ){target=_blank}. Refer to the [Processing Options](#processing-options-and-optional-files "Jump to Processing Options section in document") section for more information.
 
 ## Introduction
 

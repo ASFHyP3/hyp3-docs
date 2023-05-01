@@ -156,11 +156,13 @@ The **scale** option allows users to choose the scale of the output backscatter 
 
 #### Pixel Spacing
 
-The **resolution** parameter sets the pixel spacing of the output images. Users have the option to set a pixel spacing of either 30 meters or 10 meters. 
+The **resolution** parameter sets the pixel spacing of the output images. Users have the option to set a pixel spacing of 30, 20, or 10 meters. 
 
-The 30-m product has a much smaller file size, and is easier to work with for large areas of interest. The 10-m product provides much more detail of surface features, but is a much larger file. 
+- The 30-m product has a much smaller file size, and is easier to work with for large areas of interest. It generally aligns with the native resolution of the DEM used for RTC processing. 
+- The 10-m product provides much more detail of surface features, and is closer to the native resolution of the source Sentinel-1 data. The file sizes are also much larger than those of the 30-m products. 
+- The 20-m product may be a good compromise between the native resolution of the source SAR imagery and the source DEM, as well as having a file size intermediate to the 10-m and 30-m products.
 
-Refer to the [Pixel Spacing](#pixel-spacing "Jump to Pixel Spacing section in document") section for more information. Note that the source Sentinel-1 imagery and the DEM are the same for both of these options.
+Refer to the [Pixel Spacing](#pixel-spacing "Jump to Pixel Spacing section in document") section for more information. Note that the source Sentinel-1 imagery and the source DEM used for RTC processing are the same regardless of the option selected for the output pixel spacing.
 
 #### DEM Name
 

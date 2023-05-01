@@ -107,7 +107,7 @@ Figure 4 shows the coverage of the various legacy DEM sources.
 
 ## Pixel Spacing
 
-!!! important "On Demand Sentinel-1 RTC now available at 10-m pixel spacing" 
+!!! important "On Demand Sentinel-1 RTC now available at 10-m and 20-m pixel spacing" 
 
     There are now three pixel spacing options available for On Demand Sentinel-1 RTC products. Users can choose to output the RTC products at a pixel spacing of 30, 20, or 10 meters.
 

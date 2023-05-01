@@ -109,13 +109,13 @@ Figure 4 shows the coverage of the various legacy DEM sources.
 
 !!! important "On Demand Sentinel-1 RTC now available at 10-m pixel spacing" 
 
-    There is now a pixel spacing processing option available for Sentinel-1 RTC products. Users can choose to output the RTC products at a pixel spacing of either 30 meters or 10 meters.
+    There are now three pixel spacing options available for On Demand Sentinel-1 RTC products. Users can choose to output the RTC products at a pixel spacing of 30, 20, or 10 meters.
 
-RTC products can be output either at 30-meter or 10-meter pixel spacing. In most cases, the input SAR image has a higher resolution than either of the RTC outputs. The 10-m RTC product will be closer to the resolution of the source SAR granule, but the 30-m RTC product has a much smaller file size. 
+RTC products can be output at 30-meter, 20-meter, or 10-meter pixel spacing. In most cases, the input SAR image has a resolution closer to the 10-m products, while the Copernicus DEM (used by default for RTC processing) has a pixel spacing of 30 m. The 10-m RTC product will be closer to the resolution of the source SAR granule, but the 30-m RTC product has a much smaller file size. The 20-m product may be a good tradeoff between the two.
 
-It is *much* faster to process and analyze 30-m RTC products, so it's a good idea to start with the coarser resolution option if possible. If the 30-m pixel spacing is not sufficient for your use case, try the larger 10-m RTC products. 
+It is *much* faster to process and analyze 30-m RTC products, so it's a good idea to start with the coarser resolution option if possible. If the 30-m pixel spacing is not sufficient for your use case, try the larger 20-m RTC products. If even more detail is required, the 10-m products may be the best.
 
-Keep in mind that the same DEM is used for processing both the 10-m and 30-m RTC products. By default, the DEM is the Copernicus Global DEM with a pixel spacing of 30 meters. The DEM is resampled to a pixel spacing of 10 meters when used for processing the 10-m RTC products, and the output DEM included in the 10-m RTC product package has a pixel spacing of 10 meters to match the output RTC product. *This does not indicate that the source DEM used for the 10-m products is of higher resolution.*
+Keep in mind that the same DEM is used for processing both the RTC products, regardless of the output pixel spacing. By default, the DEM is the Copernicus Global DEM with a pixel spacing of 30 meters. The DEM is resampled to a pixel spacing of 10 meters when used for processing the 10-m RTC products, and the output DEM included in the 10-m RTC product package has a pixel spacing of 10 meters to match the output RTC product. The same is true for the 20-m products; the DEM is resampled to a pixel spacing of 20 meters, and the resampled version is included in the product package. *This does not indicate that the source DEM used for the 10-m or 20-m products is of higher resolution.*
 
 ## Processing Options and Optional Files
 

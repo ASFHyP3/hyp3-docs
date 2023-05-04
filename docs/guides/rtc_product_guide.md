@@ -9,9 +9,9 @@ A [Digital Elevation Model (DEM)](#digital-elevation-models "Jump to DEM Section
 
 For a step-by-step tutorial on ordering On-Demand RTC Products using Vertex, visit our [RTC On Demand! StoryMap](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand! StoryMap" ){target=_blank}, which also includes links to sample workflows using Sentinel-1 RTC products for GIS applications.
 
-!!! important "New RTC Processing Options Available"
+!!! important "New RTC Pixel Spacing Option Available"
 
-    On Demand Sentinel-1 RTC products can now be processed at [10-m pixel spacing](#pixel-spacing "RTC Pixel Spacing Documentation" ){target=_blank}, and can be output in [decibel (dB) scale](#sar-scales "SAR Scales Documentation" ){target=_blank}. Refer to the [Processing Options](#processing-options "Jump to Processing Options section in document") section for more information.
+    On Demand Sentinel-1 RTC products can now be processed at [20-m pixel spacing](#pixel-spacing "RTC Pixel Spacing Documentation" ){target=_blank}. Refer to the [Processing Options](#processing-options-and-optional-files "Jump to Processing Options section in document") section for more information.
 
 ## Introduction
 
@@ -107,15 +107,15 @@ Figure 4 shows the coverage of the various legacy DEM sources.
 
 ## Pixel Spacing
 
-!!! important "On Demand Sentinel-1 RTC now available at 10-m pixel spacing" 
+!!! important "On Demand Sentinel-1 RTC now available at 10-m and 20-m pixel spacing" 
 
-    There is now a pixel spacing processing option available for Sentinel-1 RTC products. Users can choose to output the RTC products at a pixel spacing of either 30 meters or 10 meters.
+    There are now three pixel spacing options available for On Demand Sentinel-1 RTC products. Users can choose to output the RTC products at a pixel spacing of 30, 20, or 10 meters.
 
-RTC products can be output either at 30-meter or 10-meter pixel spacing. In most cases, the input SAR image has a higher resolution than either of the RTC outputs. The 10-m RTC product will be closer to the resolution of the source SAR granule, but the 30-m RTC product has a much smaller file size. 
+RTC products can be output at 30-meter, 20-meter, or 10-meter pixel spacing. In most cases, the input SAR image has a resolution closer to the 10-m products, while the Copernicus DEM (used by default for RTC processing) has a pixel spacing of 30 m. The 10-m RTC product will be closer to the resolution of the source SAR granule, but the 30-m RTC product has a much smaller file size. The 20-m product may be a good trade-off between the two.
 
-It is *much* faster to process and analyze 30-m RTC products, so it's a good idea to start with the coarser resolution option if possible. If the 30-m pixel spacing is not sufficient for your use case, try the larger 10-m RTC products. 
+It is *much* faster to process and analyze 30-m RTC products, so it's a good idea to start with the coarser resolution option if possible. If the 30-m pixel spacing is not sufficient for your use case, try the larger 20-m RTC products. If even more detail is required, the 10-m products may be the best.
 
-Keep in mind that the same DEM is used for processing both the 10-m and 30-m RTC products. By default, the DEM is the Copernicus Global DEM with a pixel spacing of 30 meters. The DEM is resampled to a pixel spacing of 10 meters when used for processing the 10-m RTC products, and the output DEM included in the 10-m RTC product package has a pixel spacing of 10 meters to match the output RTC product. *This does not indicate that the source DEM used for the 10-m products is of higher resolution.*
+Keep in mind that the same DEM is used for processing both the RTC products, regardless of the output pixel spacing. By default, the DEM is the Copernicus Global DEM with a pixel spacing of 30 meters. The DEM is resampled to a pixel spacing of 10 meters when used for processing the 10-m RTC products, and the output DEM included in the 10-m RTC product package has a pixel spacing of 10 meters to match the output RTC product. The same is true for the 20-m products; the DEM is resampled to a pixel spacing of 20 meters, and the resampled version is included in the product package. *This does not indicate that the source DEM used for the 10-m or 20-m products is of higher resolution.*
 
 ## Processing Options and Optional Files
 
@@ -123,11 +123,11 @@ There are a number of options users can set when ordering RTC On Demand products
 
 Table 2 lists all of the options as displayed in the Vertex user interface and the HyP3 API, and the [Processing Options](#processing-options "Jump to Processing Options section in document") and [Optional Files](#optional-files "Jump to Optional Files section in document") sections provide more information about each option.
 
-| Option Name in Vertex       | Option Name in HyP3 API/SDK | Possible Values                 | Default    | Description                                                                                                                                                                         |
+| Option Name in Vertex       | Option Name in HyP3 API/SDK | Possible Values             | Default    | Description                                                                                                                                                                         |
 |-----------------------------|-----------------------------|-----------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Radiometry                  | radiometry                  | (gamma0, sigma0)            | gamma0     | Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area projected into the look direction (gamma0)                                                |
 | Scale                       | scale                       | (power, decibel, amplitude) | power      | Scale of output backscatter values                                                                                                                                                  |
-| Pixel Spacing               | resolution                  | (10.0, 30.0)                | 30.0       | Product pixel spacing in meters                                                                                                                                                     |
+| Pixel Spacing               | resolution                  | (10.0, 20.0, 30.0)          | 30.0       | Product pixel spacing in meters                                                                                                                                                     |
 | DEM Name                    | dem_name                    | (copernicus, legacy)        | copernicus | Name of the DEM to use for processing: _copernicus_ will use the Copernicus GLO-30 Public DEM, _legacy_ will use the DEM with the best coverage from ASF's legacy SRTM/NED datasets |
 | Apply DEM Matching          | dem_matching                | (true, false)               | false      | Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files                                                                                              |
 | Apply Speckle Filter        | speckle_filter              | (true, false)               | false      | Apply an Enhanced Lee speckle filter                                                                                                                                                |
@@ -156,11 +156,13 @@ The **scale** option allows users to choose the scale of the output backscatter 
 
 #### Pixel Spacing
 
-The **resolution** parameter sets the pixel spacing of the output images. Users have the option to set a pixel spacing of either 30 meters or 10 meters. 
+The **resolution** parameter sets the pixel spacing of the output images. Users have the option to set a pixel spacing of 30, 20, or 10 meters. 
 
-The 30-m product has a much smaller file size, and is easier to work with for large areas of interest. The 10-m product provides much more detail of surface features, but is a much larger file. 
+- The 30-m product has a much smaller file size, and is easier to work with for large areas of interest. It generally aligns with the native resolution of the DEM used for RTC processing. 
+- The 10-m product provides much more detail of surface features, and is closer to the native resolution of the source Sentinel-1 data. The file sizes are also much larger than those of the 30-m products. 
+- The 20-m product may be a good compromise between the native resolution of the source SAR imagery and the source DEM, as well as having a file size intermediate to the 10-m and 30-m products.
 
-Refer to the [Pixel Spacing](#pixel-spacing "Jump to Pixel Spacing section in document") section for more information. Note that the source Sentinel-1 imagery and the DEM are the same for both of these options.
+Refer to the [Pixel Spacing](#pixel-spacing "Jump to Pixel Spacing section in document") section for more information. Note that the source Sentinel-1 imagery and the source DEM used for RTC processing are the same regardless of the option selected for the output pixel spacing.
 
 #### DEM Name
 

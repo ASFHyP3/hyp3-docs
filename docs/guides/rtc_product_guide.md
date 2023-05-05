@@ -13,6 +13,8 @@ For a step-by-step tutorial on ordering On-Demand RTC Products using Vertex, vis
 
     On Demand Sentinel-1 RTC products can now be processed at [20-m pixel spacing](#pixel-spacing "RTC Pixel Spacing Documentation" ){target=_blank}. Refer to the [Processing Options](#processing-options-and-optional-files "Jump to Processing Options section in document") section for more information.
 
+    This option is currently available in the HyP3 API and SDK - coming soon to Vertex!
+
 ## Introduction
 
 ### Sentinel-1 Mission
@@ -110,6 +112,8 @@ Figure 4 shows the coverage of the various legacy DEM sources.
 !!! important "On Demand Sentinel-1 RTC now available at 10-m and 20-m pixel spacing" 
 
     There are now three pixel spacing options available for On Demand Sentinel-1 RTC products. Users can choose to output the RTC products at a pixel spacing of 30, 20, or 10 meters.
+
+    The 20-m pixel spacing option is currently only available through the HyP3 API or SDK, but is coming soon to Vertex!
 
 RTC products can be output at 30-meter, 20-meter, or 10-meter pixel spacing. In most cases, the input SAR image has a resolution closer to the 10-m products, while the Copernicus DEM (used by default for RTC processing) has a pixel spacing of 30 m. The 10-m RTC product will be closer to the resolution of the source SAR granule, but the 30-m RTC product has a much smaller file size. The 20-m product may be a good trade-off between the two.
 

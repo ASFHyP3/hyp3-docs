@@ -182,7 +182,7 @@ The **resolution** parameter sets the pixel spacing of the output images. Users 
 
 - The 30-m product has a much smaller file size, and is easier to work with for large areas of interest. It generally aligns with the native resolution of the DEM used for RTC processing. 
 - The 10-m product provides much more detail of surface features, and is closer to the native resolution of the source Sentinel-1 data. The file sizes are also much larger than those of the 30-m products. 
-- The 20-m product may be a good compromise between the native resolution of the source SAR imagery and the source DEM, as well as having a file size intermediate to the 10-m and 30-m products.
+- The 20-m product may be a good compromise between the native resolution of the source SAR imagery and the source DEM. The level of detail in the image is much closer to the 10-m product than the 30-m product, while the file size is much closer to the 30-m product than the 10-m product.
 
 Refer to the [Pixel Spacing](#pixel-spacing "Jump to Pixel Spacing section in document") section for more information. Note that the source Sentinel-1 imagery and the source DEM used for RTC processing are the same regardless of the option selected for the output pixel spacing.
 

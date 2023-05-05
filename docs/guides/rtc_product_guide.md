@@ -137,7 +137,7 @@ Keep in mind that the same DEM is used for processing the RTC products, regardle
 
 The source DEM is resampled to a pixel spacing of 10 meters when used for processing the 10-m RTC products, and the output DEM optionally included in the 10-m RTC product package has a pixel spacing of 10 meters to match the output RTC product. The same is true for the 20-m products; the DEM is resampled to a pixel spacing of 20 meters, and the resampled version is optionally included in the product package. 
 
-*The pixel spacing of the output DEM file does **not** indicate that the source DEM used for the 10-m or 20-m products is of higher resolution.*
+*The pixel spacing of the output DEM file does __not__ indicate that the source DEM used for the 10-m or 20-m products is of higher resolution.*
 
 ## Processing Options and Optional Files
 

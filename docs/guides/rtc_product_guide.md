@@ -13,7 +13,7 @@ For a step-by-step tutorial on ordering On-Demand RTC Products using Vertex, vis
 
     On Demand Sentinel-1 RTC products can now be processed at [20-m pixel spacing](#pixel-spacing "RTC Pixel Spacing Documentation" ){target=_blank}. Refer to the [Processing Options](#processing-options-and-optional-files "Jump to Processing Options section in document") section for more information.
 
-    This option is currently available in the HyP3 API and SDK - coming soon in Vertex!
+    This option is currently available in the HyP3 API and SDK - coming soon to Vertex!
 
 ## Introduction
 

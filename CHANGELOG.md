@@ -8,6 +8,9 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.3.68]
 
+### Added
+* Illustration for [Pixel spacing description in the RTC Product Guide](docs/guides/rtc_product_guide.md#pixel-spacing)
+
 ### Changed
 * Updated URLs in [Sentinel-1 Mission document](docs/sentinel1.md)
 

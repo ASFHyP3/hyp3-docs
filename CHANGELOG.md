@@ -13,6 +13,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 * Updated URLs in [Sentinel-1 Mission document](docs/sentinel1.md)
+* Announced that the 20-m pixel spacing option for RTC is available in Vertex
 
 ## [0.3.68]
 

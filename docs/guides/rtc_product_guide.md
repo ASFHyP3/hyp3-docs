@@ -465,7 +465,7 @@ One of the main advantages of using RTC imagery is that it aligns geographically
 
 *Figure 12: False color composite (bands 5, 4, 3) of a Landsat 8 image*
 
-Figure 13 shows the image fusion result of an IHS transformation. In this transformation, the color channels red, green and blue (RGB) are first converted into a different color representation: intensity, hue and saturation (IHS). In the second step, the optical intensity is replaced by the SAR image before IHS is transformed back to RGB.
+Figure 13 shows the image fusion result of an IHS transformation. In this transformation, the color channels red, green and blue (RGB) are first converted into a different color representation: intensity, hue and saturation (IHS). In the second step, the optical intensity is replaced by the SAR image values before IHS is transformed back to RGB.
 
 ![Figure 13](../images/sar-optical-fusion.jpg "Image fusion result of SAR and optical imagery")
 

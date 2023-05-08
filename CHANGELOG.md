@@ -10,10 +10,11 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 * Illustration for [Pixel spacing description in the RTC Product Guide](docs/guides/rtc_product_guide.md#pixel-spacing)
+* Additional information about the pixel spacing options
 
 ### Changed
 * Updated URLs in [Sentinel-1 Mission document](docs/sentinel1.md)
-* Announced that the 20-m pixel spacing option for RTC is available in Vertex
+* Removed message that 20-m pixel spacing option for RTC is not yet available in Vertex
 
 ## [0.3.68]
 

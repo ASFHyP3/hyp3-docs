@@ -441,15 +441,17 @@ In the example below (Figure 8), RTC images from before and after heavy rains ca
 
 ### Identifying Surface Water
 
-Calm surface water has a very low radar cross section. Most of the signal is reflected off the smooth surface, due to the high dielectric constant of freshwater, so little to none of the signal is returned as backscatter. Because of this, it is often easy to delineate surface water using a simple threshold value, where all pixels below the threshold are assumed to be water.
+Calm surface water has a very low radar cross section. Because freshwater has a high dielectric constant, most of the signal is reflected off the smooth surface of the water and away from the sensor, resulting in little to no backscatter. As such, surface water can often be delineated using a simple threshold value, where all pixels below the threshold are assumed to be water. It is often best to use datasets in dB scale for this process (refer to the [dB Scale Section](#decibel--db--scale "Jump to dB Scale section in document")).
 
-You can easily visualize the water extent using various thresholds by applying a classified symbology with two classes. It is often best to use dB scale datasets for identifying surface water. In many cases, there will be a bimodal distribution of values in an RTC image containing surface water, with the first peak comprised mostly of water values, and the second peak containing all the remaining values. A good first step is to select a break point between those two peaks, then adjust the value as needed to generate a good water mask (Figure 9).
+When using the threshold approach, surface water can be easily visualized by applying a classified symbology with two classes, using the threshold as the break point between the classes. There is no universal threshold value; it will need to be determined based on the surface water characteristics in the RTC image. 
+
+When an RTC image contains significant surface water coverage, there is often a bimodal distribution of pixel values. The first peak in a histogram of the pixel values for the image can be expected to contain mostly water pixels, while the second peak contains all remaining pixels. A good first step in selecting a threshold value is to set the break point between classes at the lowest point between those two peaks, then adjust the value as needed to generate a good water mask for the image (Figure 9).
 
 ![Figure 9](../images/water-histogram.png "Setting the break point to fall between the two peaks of the histogram")
 
 *Figure 9: Setting the break point to fall between the two peaks of the histogram*
 
-Once you have determined the appropriate threshold (Figure 10), you can reclassify the RTC image to include only those pixels that fall below the threshold value, providing a water mask that can be used for analysis or to overlay with other imagery to show the water extent.
+Once you have determined the appropriate threshold (Figure 10), you can reclassify the RTC image to include only those pixels that fall below the threshold value, providing a water mask that can be used for analysis or to overlay with other imagery to show the water extent. 
 
 ![Figure 10](../images/water-mask.png "Water Mask")
 

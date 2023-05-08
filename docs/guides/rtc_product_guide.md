@@ -164,7 +164,7 @@ Table 2 lists all of the options as displayed in the Vertex user interface and t
 
 #### Radiometry
 
-The **radiometry** option allows users to set their preferred backscatter coefficient normalization to either gamma-nought (gamma0 or γ<sub>0</sub>) or sigma-nought (sigma0 or σ<sub>0</sub>) radiometry. As illustrated in Figure 6, the scattering coefficient gamma0 is normalized by the illuminated area projected into the look direction (A<sub>γ</sub> - the yellow area with the red outline in the diagram) and the sigma0 is normalized by the ground area (A<sub>σ</sub> - the grey area with the purple outline in the diagram).
+The **radiometry** option allows users to set their preferred backscatter coefficient normalization to either gamma-nought (gamma0 or γ<sub>0</sub>) or sigma-nought (sigma0 or σ<sub>0</sub>) radiometry. As illustrated in Figure 6, the scattering coefficient gamma0 is normalized by the illuminated area projected into the look direction (A<sub>γ</sub> - the yellow area with the red outline in the diagram), and the sigma0 is normalized by the ground area (A<sub>σ</sub> - the grey area with the purple outline in the diagram).
 
 ![Figure 6](../images/three_rader_backscatter_convention.jpg "Normalization areas for SAR backscatter")
 

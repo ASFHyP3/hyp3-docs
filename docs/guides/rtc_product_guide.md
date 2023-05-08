@@ -453,7 +453,7 @@ Once you have determined the appropriate threshold (Figure 10), you can reclassi
 
 *Figure 10: Water Mask. Contains modified Copernicus Sentinel data 2020, processed by ESA.*
 
-### Combination of RTC Image with other Remote Sensing Data
+### Combination of RTC Imagery with other Remote Sensing Data
 
 One of the main advantages of using RTC imagery is that it aligns geographically with other geospatial datasets. This makes it possible to combine SAR data with other remote sensing data, such as optical data. In the example below, the backscatter information of the Sentinel-1 SAR image (Figure 11) is used to enhance the spectral information of the optical Landsat 8 image (Figure 12) in the urban area of Pavia, Italy. 
 

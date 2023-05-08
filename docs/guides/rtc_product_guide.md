@@ -419,7 +419,7 @@ There are a number of ways that SAR data sets can be used to identify areas of c
 
 #### Seasonal Change
 
-Stacking RTC images into a multiband image (Figure 7) allows the user to display different times of year at the same time, using the color bands to highlight areas that differ in radar backscatter values from one month to the next.
+Stacking RTC images into a multiband image (Figure 7) allows the user to display different times of the year at the same time, using the color bands to highlight areas that differ in radar backscatter values from one month to the next.
 
 To generate this type of image, choose three images that capture different seasons or months of interest. These can either be individual RTC images from different times of the year, or rasters displaying the monthly median calculated from multiple RTC images collected in the same month.
 

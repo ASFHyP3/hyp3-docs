@@ -13,8 +13,6 @@ For a step-by-step tutorial on ordering On-Demand RTC Products using Vertex, vis
 
     On Demand Sentinel-1 RTC products can now be processed at [20-m pixel spacing](#pixel-spacing "RTC Pixel Spacing Documentation" ){target=_blank}. Refer to the [Processing Options](#processing-options-and-optional-files "Jump to Processing Options section in document") section for more information.
 
-    This option is currently available in the HyP3 API and SDK - coming soon to Vertex!
-
 ## Introduction
 
 ### Sentinel-1 Mission
@@ -113,13 +111,29 @@ Figure 4 shows the coverage of the various legacy DEM sources.
 
     There are now three pixel spacing options available for On Demand Sentinel-1 RTC products. Users can choose to output the RTC products at a pixel spacing of 30, 20, or 10 meters.
 
-    The 20-m pixel spacing option is currently only available through the HyP3 API or SDK, but is coming soon to Vertex!
+RTC products can be output at 30-meter, 20-meter, or 10-meter pixel spacing. In most cases, the input SAR image has a resolution closer to the 10-m products, while the Copernicus DEM (used by default for RTC processing) has a pixel spacing of 30 m. The 10-m RTC product will be closer to the resolution of the source SAR granule, but the 30-m RTC product has a much smaller file size. 
 
-RTC products can be output at 30-meter, 20-meter, or 10-meter pixel spacing. In most cases, the input SAR image has a resolution closer to the 10-m products, while the Copernicus DEM (used by default for RTC processing) has a pixel spacing of 30 m. The 10-m RTC product will be closer to the resolution of the source SAR granule, but the 30-m RTC product has a much smaller file size. The 20-m product may be a good trade-off between the two.
+![Figure 5](../images/pixel-spacing-compare.png "Comparison of RTC products generated with different pixel spacing settings")
+
+*Figure 5: Comparison of RTC products generated with different pixel spacing settings*
 
 It is *much* faster to process, download and analyze 30-m RTC products than 10-m products, so it's a good idea to start with the coarser resolution option if possible. If the 30-m pixel spacing is not sufficient for your use case, try the 20-m RTC products. If even more detail is required, the 10-m products may be the best option.
 
-Keep in mind that the same DEM is used for processing the RTC products, regardless of the output pixel spacing. By default, the DEM is the Copernicus Global DEM with a pixel spacing of 30 meters. The DEM is resampled to a pixel spacing of 10 meters when used for processing the 10-m RTC products, and the output DEM included in the 10-m RTC product package has a pixel spacing of 10 meters to match the output RTC product. The same is true for the 20-m products; the DEM is resampled to a pixel spacing of 20 meters, and the resampled version is included in the product package. *This does not indicate that the source DEM used for the 10-m or 20-m products is of higher resolution.*
+The 20-m product may be a good trade-off between resolution and file size. The amount of detail in the 20-m product is much closer to the 10-m product, but the file size is much closer to the 30-m product. Consider the file sizes for the RTC VV GeoTIFFs displayed in the comparison image:
+
+| Pixel Spacing | File Size |
+|---------------|-----------|
+| 30 m          | 267 MB    |
+| 20 m          | 600 MB    |
+| 10 m          | 2350 MB   |
+
+### DEM Resolution
+
+Keep in mind that the same DEM is used for processing the RTC products, regardless of the output pixel spacing. By default, the DEM is the Copernicus Global DEM, which has a pixel spacing of 30 meters. 
+
+When processing 10-m RTC products, the source DEM is resampled to a pixel spacing of 10 meters. This resampled DEM can optionally be included in the product package, and the pixel spacing will align with the output RTC product. The same is true for the 20-m products; the DEM is resampled to a pixel spacing of 20 meters, and the resampled version is optionally included in the product package. 
+
+*The pixel spacing of the output DEM file does __not__ indicate that the source DEM used for the 10-m or 20-m products is of higher resolution.*
 
 ## Processing Options and Optional Files
 
@@ -146,11 +160,11 @@ Table 2 lists all of the options as displayed in the Vertex user interface and t
 
 #### Radiometry
 
-The **radiometry** option allows users to set their preferred backscatter coefficient normalization to either gamma-nought (gamma0 or γ<sub>0</sub>) or sigma-nought (sigma0 or σ<sub>0</sub>) radiometry. As illustrated in Figure 5, the scattering coefficient gamma0 is normalized by the illuminated area projected into the look direction (A<sub>γ</sub> - the yellow area with the red outline in the diagram) and the sigma0 is normalized by the ground area (A<sub>σ</sub> - the grey area with the purple outline in the diagram).
+The **radiometry** option allows users to set their preferred backscatter coefficient normalization to either gamma-nought (gamma0 or γ<sub>0</sub>) or sigma-nought (sigma0 or σ<sub>0</sub>) radiometry. As illustrated in Figure 6, the scattering coefficient gamma0 is normalized by the illuminated area projected into the look direction (A<sub>γ</sub> - the yellow area with the red outline in the diagram), and the sigma0 is normalized by the ground area (A<sub>σ</sub> - the grey area with the purple outline in the diagram).
 
-![Figure 5](../images/three_rader_backscatter_convention.jpg "Normalization areas for SAR backscatter")
+![Figure 6](../images/three_rader_backscatter_convention.jpg "Normalization areas for SAR backscatter")
 
-*Figure 5:  Normalization areas for SAR backscatter, from David Small, 2011, Flattening Gamma: Radiometric Terrain Correction for SAR Imagery, IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 49, NO. 8, AUGUST 2011*
+*Figure 6:  Normalization areas for SAR backscatter, from David Small, 2011, Flattening Gamma: Radiometric Terrain Correction for SAR Imagery, IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 49, NO. 8, AUGUST 2011*
 
 Although both sigma0 and gamma0 backscatter include the impact of local topography, the sensitivity of the impact is different. For applications where topographic impacts are an important consideration, gamma0 is generally the preferred choice.
  
@@ -164,7 +178,7 @@ The **resolution** parameter sets the pixel spacing of the output images. Users 
 
 - The 30-m product has a much smaller file size, and is easier to work with for large areas of interest. It generally aligns with the native resolution of the DEM used for RTC processing. 
 - The 10-m product provides much more detail of surface features, and is closer to the native resolution of the source Sentinel-1 data. The file sizes are also much larger than those of the 30-m products. 
-- The 20-m product may be a good compromise between the native resolution of the source SAR imagery and the source DEM, as well as having a file size intermediate to the 10-m and 30-m products.
+- The 20-m product may be a good compromise between the native resolution of the source SAR imagery and the source DEM. The level of detail in the image is much closer to the 10-m product than the 30-m product, while the file size is much closer to the 30-m product than the 10-m product.
 
 Refer to the [Pixel Spacing](#pixel-spacing "Jump to Pixel Spacing section in document") section for more information. Note that the source Sentinel-1 imagery and the source DEM used for RTC processing are the same regardless of the option selected for the output pixel spacing.
 
@@ -401,59 +415,63 @@ There are a number of ways that SAR data sets can be used to identify areas of c
 
 #### Seasonal Change
 
-Stacking RTC images into a multiband image (Figure 6) allows the user to display different times of year at the same time, using the color bands to highlight areas that differ in radar backscatter values from one month to the next.
+Stacking RTC images into a multiband image (Figure 7) allows the user to display different times of the year at the same time, using the color bands to highlight areas that differ in radar backscatter values from one month to the next.
 
 To generate this type of image, choose three images that capture different seasons or months of interest. These can either be individual RTC images from different times of the year, or rasters displaying the monthly median calculated from multiple RTC images collected in the same month.
 
 Combine the three images into a multiband raster and assign each to a different color band. The resulting RGB image highlights areas where there are distinctive differences among the three source image values.
 
-![Figure 6](../images/seasonal-change-example.jpg "Monthly median VH gamma-0 power values for May, July and September, displayed as a multiband RGB (May, July, Sept) image")
+![Figure 7](../images/seasonal-change-example.jpg "Monthly median VH gamma-0 power values for May, July and September, displayed as a multiband RGB (May, July, Sept) image")
 
-*Figure 6: Monthly median VH gamma-0 power values for May, July and September, displayed as a multiband RGB (May, July, Sept) image. Contains modified Copernicus Sentinel data 2017, processed by ESA.*
+*Figure 7: Monthly median VH gamma-0 power values for May, July and September, displayed as a multiband RGB (May, July, Sept) image. Contains modified Copernicus Sentinel data 2017, processed by ESA.*
 
 #### Quantifying Change over Time
 
 A simple and informative approach to change detection is the calculation of the log difference between two RTC datasets from different dates. By calculating Log10(date2/date1) and applying a classified symbology, it is easy to identify areas where change occurred, as well as the direction of the change. Negative values indicate a decrease in radar backscatter over time, while positive values indicate an increase in backscatter.
 
-In the example below (Figure 7), RTC images from before and after heavy rains caused a dam breach. The area where the reservoir was located displays a significant increase in backscatter (symbolized in red). This positive change is driven by land that was once covered by standing water, which generally has very low backscatter, now being exposed saturated soil, which generally returns very high backscatter values. In surrounding areas, decreases in radar backscatter (symbolized by blue), are possibly the result of agricultural fields undergoing desiccation/hardening of the surface soil following the heavy rainfall and standing water. Areas with little change in backscatter are displayed in yellow.
+In the example below (Figure 8), RTC images from before and after heavy rains caused a dam breach. The area where the reservoir was located displays a significant increase in backscatter (symbolized in red). This positive change is driven by land that was once covered by standing water, which generally has very low backscatter, now being exposed saturated soil, which generally returns very high backscatter values. In surrounding areas, decreases in radar backscatter (symbolized by blue) are possibly the result of agricultural fields undergoing desiccation/hardening of the surface soil following the heavy rainfall and standing water. Areas with little change in backscatter are displayed in yellow.
 
-![Figure 7](../images/log-difference-raster.png "Log Difference Raster with Classified Symbology")
+![Figure 8](../images/log-difference-raster.png "Log Difference Raster with Classified Symbology")
 
-*Figure 7: Log Difference Raster with Classified Symbology. Contains modified Copernicus Sentinel data 2020, processed by ESA.*
+*Figure 8: Log Difference Raster with Classified Symbology. Contains modified Copernicus Sentinel data 2020, processed by ESA.*
 
 ### Identifying Surface Water
 
-Calm surface water has a very low radar cross section. Most of the signal is reflected off the smooth surface, due to the high dielectric constant of freshwater, so little to none of the signal is returned as backscatter. Because of this, it is often easy to delineate surface water using a simple threshold value, where all pixels below the threshold are assumed to be water.
+Calm surface water has a very low radar cross section. Because freshwater has a high dielectric constant, most of the signal is reflected off the smooth surface of the water and away from the sensor, resulting in little to no backscatter. As such, surface water can often be delineated using a simple threshold value, where all pixels below the threshold are assumed to be water. It is often best to use datasets in dB scale for this process (refer to the [dB Scale Section](#decibel--db--scale "Jump to dB Scale section in document")).
 
-You can easily visualize the water extent using various thresholds by applying a classified symbology with two classes. It is often best to use dB scale datasets for identifying surface water. In many cases, there will be a bimodal distribution of values in an RTC image containing surface water, with the first peak comprised mostly of water values, and the second peak containing all the remaining values. A good first step is to select a break point between those two peaks, then adjust the value as needed to generate a good water mask (Figure 8).
+When using the threshold approach, surface water can be easily visualized by applying a classified symbology with two classes, using the threshold as the break point between the classes. There is no universal threshold value; it will need to be determined based on the surface water characteristics in the RTC image. 
 
-![Figure 8](../images/water-histogram.png "Setting the break point to fall between the two peaks of the histogram")
+When an RTC image contains significant surface water coverage, there is often a bimodal distribution of pixel values. The first peak in a histogram of the pixel values for the image can be expected to contain mostly water pixels, while the second peak contains all remaining pixels. A good first step in selecting a threshold value is to set the break point between classes at the lowest point between those two peaks, then adjust the value as needed to generate a good water mask for the image (Figure 9).
 
-*Figure 8: Setting the break point to fall between the two peaks of the histogram*
+![Figure 9](../images/water-histogram.png "Setting the break point to fall between the two peaks of the histogram")
 
-Once you have determined the appropriate threshold (Figure 9), you can reclassify the RTC image to include only those pixels that fall below the threshold value, providing a water mask that can be used for analysis or to overlay with other imagery to show the water extent.
+*Figure 9: Setting the break point to fall between the two peaks of the histogram*
 
-![Figure 9](../images/water-mask.png "Water Mask")
+Once you have determined the appropriate threshold (Figure 10), you can reclassify the RTC image to include only those pixels that fall below the threshold value, providing a water mask that can be used for analysis or to overlay with other imagery to show the water extent. 
 
-*Figure 9: Water Mask. Contains modified Copernicus Sentinel data 2020, processed by ESA.*
+![Figure 10](../images/water-mask.png "Water Mask")
 
-### Combination of RTC Image with other Remote Sensing Data
+*Figure 10: Water Mask. Contains modified Copernicus Sentinel data 2020, processed by ESA.*
 
-One of the main advantages of using RTC imagery with its all weather and day/night capabilities is the combination with other remote sensing data such as optical data. In the example below, the backscatter information of the Sentinel-1 SAR image (Figure 10) is used to enhance the spectral information of the optical Landsat 8 image (Figure 11) in the urban area of Pavia, Italy. Figure 12 shows the image fusion result of an IHS transformation. In this transformation the color channels red, green and blue (RGB) are first converted into a different color representation: intensity, hue and saturation (IHS). In the second step the optical intensity is replaced by the SAR image, before IHS is transformed back to RGB.
+### Combination of RTC Imagery with other Remote Sensing Data
 
-![Figure 10](../images/sentinel-1-rtc-image.jpg "Sentinel-1 RTC image")
+One of the main advantages of using RTC imagery is that it aligns geographically with other geospatial datasets. This makes it possible to combine SAR data with other remote sensing data, such as optical data. In the example below, the backscatter information of the Sentinel-1 SAR image (Figure 11) is used to enhance the spectral information of the optical Landsat 8 image (Figure 12) in the urban area of Pavia, Italy. 
 
-*Figure 10: Sentinel-1 RTC image.*
+![Figure 11](../images/sentinel-1-rtc-image.jpg "Sentinel-1 RTC image")
 
-![Figure 11](../images/landsat-false-color-composite.jpg "False color composite (bands 5, 4, 3) of a Landsat 8 image")
+*Figure 11: Sentinel-1 RTC image.*
 
-*Figure 11: False color composite (bands 5, 4, 3) of a Landsat 8 image*
+![Figure 12](../images/landsat-false-color-composite.jpg "False color composite (bands 5, 4, 3) of a Landsat 8 image")
+
+*Figure 12: False color composite (bands 5, 4, 3) of a Landsat 8 image*
+
+Figure 13 shows the image fusion result of an IHS transformation. In this transformation, the color channels red, green and blue (RGB) are first converted into a different color representation: intensity, hue and saturation (IHS). In the second step, the optical intensity is replaced by the SAR image values before IHS is transformed back to RGB.
+
+![Figure 13](../images/sar-optical-fusion.jpg "Image fusion result of SAR and optical imagery")
+
+*Figure 13: Image fusion result of SAR and optical imagery*
 
 The color values for the two rivers in the SAR image are far more similar to each other than in the optical image. The vegetated areas (highlighted in red) show up more uniformly in the data fusion result than in the optical false color composite image. Image fusion uses the complementary nature of the different sources to generate an enhanced product.
-
-![Figure 12](../images/sar-optical-fusion.jpg "Image fusion result of SAR and optical imagery")
-
-*Figure 12: Image fusion result of SAR and optical imagery*
 
 ## ArcGIS Toolbox
 

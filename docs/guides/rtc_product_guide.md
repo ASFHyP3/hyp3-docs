@@ -455,7 +455,7 @@ Once you have determined the appropriate threshold (Figure 10), you can reclassi
 
 ### Combination of RTC Image with other Remote Sensing Data
 
-One of the main advantages of using RTC imagery with its all weather and day/night capabilities is the combination with other remote sensing data such as optical data. In the example below, the backscatter information of the Sentinel-1 SAR image (Figure 11) is used to enhance the spectral information of the optical Landsat 8 image (Figure 12) in the urban area of Pavia, Italy. 
+One of the main advantages of using RTC imagery with its all-weather and day/night capabilities is the combination with other remote sensing data, such as optical data. In the example below, the backscatter information of the Sentinel-1 SAR image (Figure 11) is used to enhance the spectral information of the optical Landsat 8 image (Figure 12) in the urban area of Pavia, Italy. Figure 13 shows the image fusion result of an IHS transformation. In this transformation, the color channels red, green and blue (RGB) are first converted into a different color representation: intensity, hue and saturation (IHS). In the second step, the optical intensity is replaced by the SAR image before IHS is transformed back to RGB.
 
 ![Figure 11](../images/sentinel-1-rtc-image.jpg "Sentinel-1 RTC image")
 

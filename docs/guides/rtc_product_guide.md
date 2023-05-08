@@ -455,7 +455,7 @@ Once you have determined the appropriate threshold (Figure 10), you can reclassi
 
 ### Combination of RTC Image with other Remote Sensing Data
 
-One of the main advantages of using RTC imagery with its all weather and day/night capabilities is the combination with other remote sensing data such as optical data. In the example below, the backscatter information of the Sentinel-1 SAR image (Figure 11) is used to enhance the spectral information of the optical Landsat 8 image (Figure 12) in the urban area of Pavia, Italy. Figure 13 shows the image fusion result of an IHS transformation. In this transformation the color channels red, green and blue (RGB) are first converted into a different color representation: intensity, hue and saturation (IHS). In the second step the optical intensity is replaced by the SAR image, before IHS is transformed back to RGB.
+One of the main advantages of using RTC imagery with its all weather and day/night capabilities is the combination with other remote sensing data such as optical data. In the example below, the backscatter information of the Sentinel-1 SAR image (Figure 11) is used to enhance the spectral information of the optical Landsat 8 image (Figure 12) in the urban area of Pavia, Italy. 
 
 ![Figure 11](../images/sentinel-1-rtc-image.jpg "Sentinel-1 RTC image")
 
@@ -465,11 +465,13 @@ One of the main advantages of using RTC imagery with its all weather and day/nig
 
 *Figure 12: False color composite (bands 5, 4, 3) of a Landsat 8 image*
 
-The color values for the two rivers in the SAR image are far more similar to each other than in the optical image. The vegetated areas (highlighted in red) show up more uniformly in the data fusion result than in the optical false color composite image. Image fusion uses the complementary nature of the different sources to generate an enhanced product.
+Figure 13 shows the image fusion result of an IHS transformation. In this transformation the color channels red, green and blue (RGB) are first converted into a different color representation: intensity, hue and saturation (IHS). In the second step the optical intensity is replaced by the SAR image, before IHS is transformed back to RGB.
 
 ![Figure 13](../images/sar-optical-fusion.jpg "Image fusion result of SAR and optical imagery")
 
 *Figure 13: Image fusion result of SAR and optical imagery*
+
+The color values for the two rivers in the SAR image are far more similar to each other than in the optical image. The vegetated areas (highlighted in red) show up more uniformly in the data fusion result than in the optical false color composite image. Image fusion uses the complementary nature of the different sources to generate an enhanced product.
 
 ## ArcGIS Toolbox
 

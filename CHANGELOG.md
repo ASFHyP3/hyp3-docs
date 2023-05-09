@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/) 
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.69]
+
+### Added
+* Illustration for [Pixel spacing description in the RTC Product Guide](docs/guides/rtc_product_guide.md#pixel-spacing)
+* Additional information about the pixel spacing options
+
+### Changed
+* Updated URLs in [Sentinel-1 Mission document](docs/sentinel1.md)
+* Removed message that 20-m pixel spacing option for RTC is not yet available in Vertex
+
 ## [0.3.68]
 
 ### Changed

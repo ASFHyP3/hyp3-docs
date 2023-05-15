@@ -6,6 +6,8 @@ We provide step-by-step tutorials for using HyP3 programmatically via Jupyter No
 
 * [Using the HyP3 Python SDK](https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb "Using the HyP3 SDK Tutorial" ){target=_blank}
   -- This notebook walks through ordering and accessing RTC, InSAR, and autoRIFT products in Python using the HyP3 SDK.
+* [Using the HyP3 SDK to search for jobs run by another user](https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb "Using the HyP3 SDK to search for jobs run by another user" ){target=_blank}
+  -- This notebook walks through using the HyP3 SDK to search for jobs run by another user.
 * [Time series analysis with HyP3 and MintPy](https://nbviewer.org/github/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb "Time series analysis with HyP3 and MintPy Tutorial" ){target=_blank}
   -- This notebook walks through performing a time-series analysis of the 2019 
   Ridgecrest, CA earthquake with HyP3 On Demand InSAR products and MintPy.

@@ -10,6 +10,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 * Documented public visibility of jobs in the Using HyP3 section.
+* Added link to tutorial on searching for other users' jobs.
 
 ## [0.3.69]
 

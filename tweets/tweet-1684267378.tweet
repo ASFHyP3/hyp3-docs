@@ -1,0 +1,3 @@
+HyP3 SDK v2.1.1### Fixed
+* The `user_id` parameter has been moved to the end of the `HyP3.find_jobs` parameter list, to avoid
+  introducing breaking changes for users who rely on the order of the parameters.

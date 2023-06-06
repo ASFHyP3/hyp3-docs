@@ -8,7 +8,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.3.72]
 
-### Changed
+### Fixed
 * Corrected error in [DEM raster type description in the RTC Product Guide](docs/guides/rtc_product_guide.md#image-files)
 
 ## [0.3.71]

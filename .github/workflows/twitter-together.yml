@@ -31,7 +31,7 @@ jobs:
       name: twitter
       url: https://twitter.com/ASFHyP3
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Tweet
         uses: gr2m/twitter-together@v1.x

@@ -56,7 +56,7 @@ In the past, ASF maintained a collection of DEMs that were pre-processed as appr
 
     Users still have the option to use the legacy DEMs when processing RTC jobs [On Demand in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=_blank} and when using the [API](https://hyp3-docs.asf.alaska.edu/using/api/ "HyP3 API Documentation" ){target=_blank} or [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "HyP3 Python SDK Documentation" ){target=_blank}, but we recommend using the Copernicus DEM whenever possible.
 
-Table 1 summarizes ASF's DEM sources. Cell values of the DEMs indicate the elevation in meters. Note that in each case, the DEM is resampled to RTC spacing and reprojected to a UTM Zone (WGS84), and a geoid correction is applied before being used for RTC processing.
+Table 1 summarizes ASF's DEM sources. Note that in each case, the DEM is resampled to RTC spacing and reprojected to a UTM Zone (WGS84), and a geoid correction is applied before being used for RTC processing.
 
 | Resolution | DEM     | Vertical Datum | Area                           | Posting         | Priority |
 |------------|---------|----------------|--------------------------------|-----------------|----------|
@@ -68,7 +68,7 @@ Table 1 summarizes ASF's DEM sources. Cell values of the DEMs indicate the eleva
 
 *Table 1: DEMs used for RTC processing. Note that the Copernicus 30 m DEM is the default, while the other four DEMs are only used if the legacy option is invoked.*
 
-When ordering On-Demand RTC products, you can choose to [include a copy of the DEM used for RTC processing](#dem "Jump to Optional Files - DEM section in document") in the RTC product package. This DEM copy is converted to 16-bit signed integer format, but is otherwise the same as the DEM used in the RTC process. Note that the height values will differ from the original source DEM in all cases, due to the geoid correction applied to prepare the DEM for use in RTC processing.
+When ordering On-Demand RTC products, you can choose to [include a copy of the DEM used for RTC processing](#dem "Jump to Optional Files - DEM section in document") in the RTC product package. This DEM copy is converted to 16-bit signed integer format, but is otherwise the same as the DEM used in the RTC process. Pixel values indicate the elevation in meters. Note that the elevation values will differ from the original source DEM in all cases, due to the geoid correction applied to prepare the DEM for use in RTC processing.
 
 ### Copernicus DEM
 

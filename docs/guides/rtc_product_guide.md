@@ -227,7 +227,7 @@ In Vertex, check the box in the "Include" section of the options to add these op
 
 #### DEM
 
-Set the **include_dem** parameter to true to include a copy of the DEM file used for RTC processing. This DEM is *not* generated from the Sentinel-1 data, but is the reference DEM used for the RTC calculations. Refer to the [Digital Elevation Models](#digital-elevation-models "Jump to DEM section in document") section for more information on the DEMs we use for RTC processing.
+Set the **include_dem** parameter to true to include a copy of the DEM file used for RTC processing. This DEM is *not* generated from the Sentinel-1 data, but is the reference DEM used for the RTC calculations. Pixel values indicate the elevation in meters. Refer to the [Digital Elevation Models](#digital-elevation-models "Jump to DEM section in document") section for more information on the DEMs we use for RTC processing.
 
 This DEM file is intended as a quick reference to aid in interpretation of the RTC image, and should not be used as a stand-alone DEM product. The DEM used for RTC processing has a geoid correction applied before it is used for RTC, so elevation values in this file will differ from the source DEM. 
 

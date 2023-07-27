@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.3.74]
 
 ### Added
-* DEM unit in meters in the [DEM raster type description in the RTC Product Guide](docs/guides/rtc_product_guide.md#image-files)
+* References to the DEM pixel value unit (meters) in the [RTC Product Guide](docs/guides/rtc_product_guide.md#image-files) and [InSAR Product Guide](docs/guides/insar_product_guide.md#processing-options)
 
 ## [0.3.73]
 

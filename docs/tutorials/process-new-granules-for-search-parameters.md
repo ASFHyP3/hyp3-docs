@@ -12,6 +12,8 @@ As such, we have deprecated this feature in favor of a more flexible approach.
 The following Jupyter notebooks demonstrate how to achieve subscription-like functionality.
 They can be run as needed, so that you do not have to worry about your products expiring
 before you are ready to download them.
+This workflow is particularly useful for ongoing monitoring of a geographic area of interest.
+
 The first notebook demonstrates how to submit RTC jobs using this method,
 while the second notebook demonstrates how to submit InSAR jobs.
 These tutorials can easily be adapted to support other job types.

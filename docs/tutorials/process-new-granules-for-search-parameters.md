@@ -10,7 +10,7 @@ As such, we have deprecated this feature in favor of a more flexible approach.
 <!-- TODO: change "deprecated" to "removed" per https://asfdaac.atlassian.net/browse/TOOL-2086 -->
 
 The following Jupyter notebooks demonstrate how to achieve subscription-like functionality.
-They can be run as needed, so that you do not have to worry about your products expiring
+They can be run as needed so that you do not have to worry about your products expiring
 before you are ready to download them.
 This workflow is particularly useful for ongoing monitoring of a geographic area of interest.
 

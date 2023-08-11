@@ -1,5 +1,9 @@
 name: Check links
-on: push
+
+# TODO: switch back to the push trigger if/when this workflow gets fixed; see https://github.com/ASFHyP3/hyp3-docs/issues/340
+# on: push
+on:
+  workflow_dispatch:
 
 jobs:
   linkChecker:

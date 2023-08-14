@@ -13,7 +13,7 @@ to achieve subscription-like functionality using Jupyter notebooks.
 
 All **subscription metadata** (job type, start and end date, area of interest, etc.)
 will be **deleted** when the Subscriptions feature is removed.
-Before **Tuesday September 5**, please use either of the following methods
+Before **Tuesday, September 5**, please use either of the following methods
 to save any subscription metadata that is important to you:
 
 * If you only want to save a few metadata items from your subscriptions,

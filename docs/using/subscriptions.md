@@ -8,7 +8,7 @@ to achieve subscription-like functionality using Jupyter notebooks.
 <!-- TODO: remove everything below this line, per https://asfdaac.atlassian.net/browse/TOOL-2086 -->
 
 !!! warning
-    The Subscriptions feature has been deprecated and will be **removed** as early as **Tuesday September 5**.
+    The Subscriptions feature has been deprecated and will be **removed** as early as **Tuesday, September 5**.
     Please read this page carefully and take the recommended actions to avoid data loss.
 
 All **subscription metadata** (job type, start and end date, area of interest, etc.)

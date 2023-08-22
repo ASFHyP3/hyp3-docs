@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.5.1]
 
 ### Changed
-* Changed the hyp3_insar_stack_for_ts_analysis.jpynb to make it work with newest MintPy 
+* Changed the hyp3_insar_stack_for_ts_analysis.jpynb to make it work with MintPy v1.5.2
 
 ## [0.5.0]
 

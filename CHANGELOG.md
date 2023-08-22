@@ -8,8 +8,9 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.5.1]
 
-### Changed
+### Changed and Added
 * Changed the hyp3_insar_stack_for_ts_analysis.jpynb to make it work with MintPy v1.5.2
+* Added the hyp3_isce2_burst_stack_for_ts_analysis.jpynb to make the hyp3-isce2 burst insar work with MintPy
 
 ## [0.5.0]
 

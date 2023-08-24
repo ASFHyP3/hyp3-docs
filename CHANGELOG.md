@@ -27,7 +27,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 * Replaced the Subscriptions documentation with a link to the new tutorials.
-* Upgraded the Conda environment to Python 3.9.
+* Upgraded the conda environment to Python 3.9.
 
 ## [0.3.74]
 

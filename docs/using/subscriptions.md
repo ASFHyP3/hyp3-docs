@@ -1,6 +1,7 @@
 # Subscriptions in HyP3
 
-<!-- TODO: change "deprecated" to "removed" per https://asfdaac.atlassian.net/browse/TOOL-2086 -->
+<!-- TODO: revise to make it clear that Subscriptions feature was removed, per https://asfdaac.atlassian.net/browse/TOOL-2086 -->
+
 The Subscriptions feature of the HyP3 service
 (known as On Demand within [Vertex](https://search.asf.alaska.edu/))
 has been deprecated in favor of a more flexible approach.

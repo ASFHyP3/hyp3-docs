@@ -1,7 +1,5 @@
 # Subscriptions in HyP3
 
-<!-- TODO: revise to make it clear that Subscriptions feature was removed, per https://asfdaac.atlassian.net/browse/TOOL-2086 -->
-
 The Subscriptions feature of the HyP3 service
 (known as On Demand within [Vertex](https://search.asf.alaska.edu/))
 has been deprecated in favor of a more flexible approach.
@@ -10,8 +8,6 @@ If you have never used the Subscriptions feature, then you can ignore this annou
 
 You can follow [these tutorials](../tutorials/process-new-granules-for-search-parameters.md)
 to achieve subscription-like functionality using Jupyter notebooks.
-
-<!-- TODO: remove everything below this line, per https://asfdaac.atlassian.net/browse/TOOL-2086 -->
 
 !!! warning
     The Subscriptions feature has been deprecated and will be **removed** as early as **Tuesday, September 5.**

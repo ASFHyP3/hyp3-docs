@@ -1,0 +1,2 @@
+HyP3 SDK v3.0.0### Removed
+* Removed the `Job.subscription_id` attribute in response to the Subscriptions feature being removed from HyP3.

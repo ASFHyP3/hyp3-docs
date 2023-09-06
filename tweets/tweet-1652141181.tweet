@@ -1,6 +1,0 @@
-📢 HyP3 SDK v1.5.0 Released!
-
-We've removed `hyp3_sdk.asf_search` in favor of the `asf_search` python package which provides a more comprehensive ASF search experience. Find it on conda-forge and PyPI!
-
-Check out the full release notes:
-https://github.com/ASFHyP3/hyp3-sdk/releases/tag/v1.5.0

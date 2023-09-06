@@ -1,6 +1,0 @@
-📢 HyP3 SDK v1.2.0 Released!
-
-We rounded out the Batch() class container methods, fixed ImportErrors when running in a Jupyter Kernel without having ipywidgets installed, and more.
-
-Check out the full release notes:
-https://github.com/ASFHyP3/hyp3-sdk/releases/tag/v1.2.0

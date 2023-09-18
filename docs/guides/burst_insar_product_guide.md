@@ -1,7 +1,28 @@
 {% extends "guides/insar_product_guide_template.md" %}
 
-{% block header %}TODO header{% endblock %}
+{% block header %}
+# Sentinel-1 Burst InSAR Product Guide
 
-{% block workflow %}TODO workflow{% endblock %}
+TODO
+{% endblock %}
 
-{% block packaging %}TODO packaging{% endblock %}
+{% block workflow %}
+## InSAR Workflow
+TODO
+
+{% endblock %}
+
+{% block packaging %}
+## Product Packaging
+TODO
+
+### Naming Convention
+TODO
+
+### Image Files
+TODO
+
+### Metadata Files
+TODO
+
+{% endblock %}

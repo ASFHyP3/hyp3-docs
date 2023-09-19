@@ -10,6 +10,28 @@ TODO
 ## InSAR Workflow
 TODO
 
+### Pre-Processing
+
+#### Download SLC Data
+TODO
+
+#### Prepare the DEM File
+TODO
+
+#### Download Orbit and Auxiliary Data Files
+TODO
+
+### InSAR Processing
+TODO
+
+### Post-Processing
+
+#### Apply Water Mask
+TODO
+
+#### Product Creation
+TODO
+
 {% endblock %}
 
 {% block packaging %}

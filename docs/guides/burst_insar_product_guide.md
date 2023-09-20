@@ -52,21 +52,12 @@ There are several options users can set when ordering Burst InSAR On Demand prod
 
     The default is 20x4 looks.
 
-2. There is an option to apply a **water mask**.
+2. There is an option to apply a **water mask** after phase unwrapping.
    This mask includes coastal waters and large inland waterbodies.
-   Masking waterbodies can have a significant impact during the phase unwrapping,
-   as water can sometimes exhibit enough coherence between acquisitions
-   to allow for unwrapping to occur over waterbodies, which is invalid.
    A GeoTIFF of the water mask is always included with the InSAR product package,
-   but when this option is selected,
-   the conditional water mask will be applied along with coherence and intensity thresholds
-   during the phase unwrapping process.
+   but when this option is selected, the water mask will be applied to
+   the wrapped interferogram, the unwrapped interferogram, and the browse image.
    Water masking is turned off by default.
-   Visit our
-   [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank}
-   for more information.
-
-TODO: does the water masking bullet point above (copied from the original product guide) need to be adapted for our burst workflow?
 
 {% endblock %}
 

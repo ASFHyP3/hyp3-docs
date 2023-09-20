@@ -48,7 +48,8 @@ lead to unexpected deformation signals or phase jumps in the unwrapped outputs, 
 does not correct for these impacts.
 
 #### Product Creation
-TODO
+Image files are exported into the widely-used GeoTIFF format in a UTM projection. Supporting metadata files are created,
+as well as a quick-look browse image.
 
 {% endblock %}
 

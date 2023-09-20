@@ -18,7 +18,10 @@ TODO
 
 ### Pre-Processing
 
-TODO
+Pre-processing steps prepare the SAR images to be used in interferometry.
+The pre-processing steps include downloading the burst granules,
+downloading the DEM file,
+and downloading the orbit and auxiliary data files.
 
 #### Download Bursts
 

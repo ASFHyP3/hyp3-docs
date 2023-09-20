@@ -71,8 +71,11 @@ lead to unexpected deformation signals or phase jumps in the unwrapped outputs, 
 does not correct for these impacts.
 
 #### Product Creation
-Image files are exported into the widely-used GeoTIFF format in a UTM projection. Supporting metadata files are created,
-as well as a quick-look browse image.
+Image files are exported into the widely-used GeoTIFF format in a Universal Transverse Mercator (UTM) projection. Images
+are resampled to a pixel size that reflects the resolution of output image based on the requested number of looks: 80m
+pixel size for 20x4 looks, 40m for 10x2 looks, and 20m for 5x1 looks.
+
+Supporting metadata files are created, as well as a quick-look browse image.
 
 {% endblock %}
 

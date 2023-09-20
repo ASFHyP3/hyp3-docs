@@ -27,7 +27,18 @@ TODO
 ### Post-Processing
 
 #### Apply Water Mask
-TODO
+A water mask identifying coastal waters and major inland waterbodies is generated using the Global Self-consistent,
+Hierarchical, High-resolution Geography Database (GSHHG) dataset (https://www.ngdc.noaa.gov/mgg/shorelines).
+
+Users can optionally choose to apply the water mask to output products, which affects the wrapped interferogram,
+the unwrapped interferogram, and the browse image. Areas covered by the water mask in these output images are set to
+NoData.
+
+Applying a water mask to an interferogram is only supported *after* phase unwrapping. Note that
+applying the mask after phase unwrapping does not prevent unwrapping errors caused by the inclusion of water pixels
+as valid data during the phase unwrapping process. When phase unwrapping occurs over large expanses of water, it can
+lead to unexpected deformation signals or phase jumps in the unwrapped outputs, and the current masking approach
+does not correct for these impacts.
 
 #### Product Creation
 TODO

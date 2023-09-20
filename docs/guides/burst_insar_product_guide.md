@@ -6,6 +6,12 @@
 TODO
 {% endblock %}
 
+{% block processing_options %}
+### Processing Options
+TODO
+
+{% endblock %}
+
 {% block workflow %}
 ## InSAR Workflow
 TODO

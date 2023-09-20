@@ -23,13 +23,11 @@ Refer to the [Sentinel-1 Bursts tutorial](https://storymaps.arcgis.com/stories/8
 
 The Sentinel-1 Burst InSAR products are generated using [ISCE2 software](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2" ){target=_blank}. ASF is committed to transparency in product development, and we are pleased to be able to offer an InSAR product that leverages open-source software for processing. 
 
-For those who would prefer to work at the scale of a full SLC, our original [On Demand InSAR](insar_product_guide.md) products are still available. These products have a larger footprint, and are generated using GAMMA software.     
+For those who would prefer to work at the scale of a full SLC, our original [On Demand InSAR](insar_product_guide.md) products are still available. These products have a larger footprint, and are generated using [GAMMA software](https://www.gamma-rs.ch/software){target=_blank}.
 
 ### Using Sentinel-1 Burst InSAR
 
 Users can request Sentinel-1 Burst InSAR products [On Demand](https://search.asf.alaska.edu/#/?topic=onDemand "https://search.asf.alaska.edu/#/?topic=onDemand" ){target=_blank} in ASF's [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} data portal, or make use of our HyP3 [Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank} or [API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank}. Input pair selection in Vertex uses either the [Baseline Tool](https://docs.asf.alaska.edu/vertex/baseline/ "https://docs.asf.alaska.edu/vertex/baseline/" ){target=_blank} or the [SBAS Tool](https://docs.asf.alaska.edu/vertex/sbas/ "https://docs.asf.alaska.edu/vertex/sbas" ){target=_blank} search interfaces. 
-
-For a step-by-step tutorial on ordering On-Demand Sentinel-1 Burst InSAR Products using Vertex, visit our [Burst InSAR On Demand! StoryMap](#TODO "Burst InSAR On Demand!" ){target=_blank}.
 
 Users are cautioned to read the sections on [limitations](#limitations "Jump to the Limitations section of this document") and [error sources](#error-sources "Jump to the Error Sources section of this document") in InSAR products before attempting to use InSAR data. For a more complete description of the properties of SAR, see our [Introduction to SAR](../guides/introduction_to_sar.md "https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar" ){target=_blank} guide. 
 
@@ -122,7 +120,48 @@ The calibration auxiliary data files are downloaded from the
 TODO: add more detail? i.e. what the files are and what they're used for
 
 ### InSAR Processing
-TODO
+
+The ISCE2 InSAR processing this product uses includes the following ISCE2 topsApp steps:
+
+- startup 
+- preprocess
+- computeBaselines
+- verifyDEM
+- topo
+- subsetoverlaps
+- coarseoffsets
+- coarseresamp
+- overlapifg
+- prepesd
+- esd
+- rangecoreg
+- fineoffsets
+- fineresamp
+- ion
+- burstifg
+- mergebursts
+- filter
+- unwrap
+- unwrap2stage
+- geocode
+
+These steps are run using these calls within hyp3-isce2:
+
+- topsapp.run_topsapp_burst(start='startup', end='preprocess', config_xml=config_path): Extract the orbits,
+        IPF (Instrument Processing Facility) version, burst data, and antenna pattern if it is necessary
+- topsapp.swap_burst_vrts(): Switch the reference and secondary bursts to use the burst data download from ASF
+- topsapp.run_topsapp_burst(start='computeBaselines', end='unwrap2stage', config_xml=config_path):
+    Run the remaining processing steps including:
+    - Calculate the perpendicular and parallel baselines
+    - Verify the DEM file to make sure it covers the bursts
+    - Map DEM into the radar coordinates of the reference image. This generates the longitude,
+            latitude, height and LOS angles on a pixel by pixel grid for each burst.
+    - Estimate the azimuth offsets between the input SLC bursts (The Enhanced Spectral Diversity (ESD) method is NOT used)
+    - Estimate the range offsets between the input SLC bursts
+    - Coregister the secondary SLC burst by applying the estimated range and azimuth offsets
+    - Produce the wrapped phase interferogram
+    - Unwrap the wrapped phase interferogram using SNAPHU to produce the wrapped phase interferogram
+- topsapp.run_topsapp_burst(start='geocode', end='geocode', config_xml=config_path): Geocode the output products
 
 ### Post-Processing
 

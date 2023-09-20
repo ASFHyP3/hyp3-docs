@@ -12,8 +12,15 @@ TODO
 
 ### Pre-Processing
 
-#### Download SLC Data
 TODO
+
+#### Download Bursts
+
+The burst InSAR workflow accepts as input two
+[Interferometric Wide swath Single Look Complex](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath "https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath" ){target=_blank}
+(IW SLC) burst granules with the same burst ID.
+The bursts are downloaded using ASF's
+[Sentinel-1 Burst Extractor](https://sentinel1-burst-documentation.asf.alaska.edu/ "https://sentinel1-burst-documentation.asf.alaska.edu/" ){target=_blank}.
 
 #### Prepare the DEM File
 TODO

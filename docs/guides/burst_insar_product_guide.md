@@ -23,7 +23,7 @@ Refer to the [Sentinel-1 Bursts tutorial](https://storymaps.arcgis.com/stories/8
 
 The Sentinel-1 Burst InSAR products are generated using [ISCE2 software](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2" ){target=_blank}. ASF is committed to transparency in product development, and we are pleased to be able to offer an InSAR product that leverages open-source software for processing. 
 
-For those who would prefer to work at the scale of a full SLC, our original [On Demand InSAR](insar_product_guide.md) products are still available. These products have a larger footprint, and are generated using GAMMA software.     
+For those who would prefer to work at the scale of a full SLC, our original [On Demand InSAR](insar_product_guide.md) products are still available. These products have a larger footprint, and are generated using [GAMMA software](https://www.gamma-rs.ch/software){target=_blank}.
 
 ### Using Sentinel-1 Burst InSAR
 

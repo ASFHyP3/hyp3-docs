@@ -22,8 +22,25 @@ The burst InSAR workflow accepts as input two
 The bursts are downloaded using ASF's
 [Sentinel-1 Burst Extractor](https://sentinel1-burst-documentation.asf.alaska.edu/ "https://sentinel1-burst-documentation.asf.alaska.edu/" ){target=_blank}.
 
-#### Prepare the DEM File
-TODO
+#### Download the DEM File
+
+In order to create differential InSAR products that show motion on the ground,
+one must subtract the topographic phase from the interferogram.
+The topographic phase, in this case, is replicated by using an
+[existing DEM](../dems.md "HyP3 DEM Documentation" ){target=_blank}
+to calculate the actual topographic phase.
+This phase is then removed from the interferogram leaving just the motion or deformation signal
+(plus atmospheric delays and noise).
+
+The DEM that is used for HyP3 InSAR processing is the
+[2021 Release of the Copernicus GLO-30 Public DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}
+dataset
+[publicly available on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank},
+which provides global coverage at 30-m pixel spacing.
+For more information about the 2021 updates, see the 'Releases' section of
+[this article](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}.
+
+The portion of the DEM that covers the input bursts is downloaded.
 
 #### Download Orbit and Auxiliary Data Files
 TODO

@@ -23,7 +23,7 @@ Refer to the [Sentinel-1 Bursts tutorial](https://storymaps.arcgis.com/stories/8
 
 The Sentinel-1 Burst InSAR products are generated using [ISCE2 software](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2" ){target=_blank}. ASF is committed to transparency in product development, and we are pleased to be able to offer an InSAR product that leverages open-source software for processing. 
 
-For those who would prefer to work at the scale of a full SLC, our original [On Demand InSAR](insar_product_guide.md) products are still available. These products have a larger footprint, and are generated using GAMMA software.     
+For those who would prefer to work at the scale of a full SLC, our original [On Demand InSAR](insar_product_guide.md) products are still available. These products have a larger footprint, and are generated using [GAMMA software](https://www.gamma-rs.ch/software){target=_blank}.
 
 ### Using Sentinel-1 Burst InSAR
 
@@ -35,7 +35,38 @@ Users are cautioned to read the sections on [limitations](#limitations "Jump to 
 
 {% block processing_options %}
 ### Processing Options
-TODO
+
+There are several options users can set when ordering Burst InSAR On Demand products:
+
+1. The **number of looks** drives the resolution and pixel spacing of the output products:
+
+    | Looks | Resolution | Pixel Spacing |
+    |-------|------------|---------------|
+    | 20x4  | 160 m      | 80 m          |
+    | 10x2  | 80 m       | 40 m          |
+    | 5x1   | 40 m       | 20 m          |
+
+    Products generated with 10x2 looks have a file size roughly 4 times that of 20x4-look products.
+    Similarly, 5x1-look products have a file size roughly 4 times that of 10x2-look products
+    (or 16 times that of 20x4-look products).
+
+    The default is 20x4 looks.
+
+2. There is an option to apply a **water mask**.
+   This mask includes coastal waters and large inland waterbodies.
+   Masking waterbodies can have a significant impact during the phase unwrapping,
+   as water can sometimes exhibit enough coherence between acquisitions
+   to allow for unwrapping to occur over waterbodies, which is invalid.
+   A GeoTIFF of the water mask is always included with the InSAR product package,
+   but when this option is selected,
+   the conditional water mask will be applied along with coherence and intensity thresholds
+   during the phase unwrapping process.
+   Water masking is turned off by default.
+   Visit our
+   [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank}
+   for more information.
+
+TODO: does the water masking bullet point above (copied from the original product guide) need to be adapted for our burst workflow?
 
 {% endblock %}
 

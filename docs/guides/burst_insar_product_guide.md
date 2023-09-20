@@ -29,8 +29,6 @@ For those who would prefer to work at the scale of a full SLC, our original [On 
 
 Users can request Sentinel-1 Burst InSAR products [On Demand](https://search.asf.alaska.edu/#/?topic=onDemand "https://search.asf.alaska.edu/#/?topic=onDemand" ){target=_blank} in ASF's [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} data portal, or make use of our HyP3 [Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank} or [API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank}. Input pair selection in Vertex uses either the [Baseline Tool](https://docs.asf.alaska.edu/vertex/baseline/ "https://docs.asf.alaska.edu/vertex/baseline/" ){target=_blank} or the [SBAS Tool](https://docs.asf.alaska.edu/vertex/sbas/ "https://docs.asf.alaska.edu/vertex/sbas" ){target=_blank} search interfaces. 
 
-For a step-by-step tutorial on ordering On-Demand Sentinel-1 Burst InSAR Products using Vertex, visit our [Burst InSAR On Demand! StoryMap](#TODO "Burst InSAR On Demand!" ){target=_blank}.
-
 Users are cautioned to read the sections on [limitations](#limitations "Jump to the Limitations section of this document") and [error sources](#error-sources "Jump to the Error Sources section of this document") in InSAR products before attempting to use InSAR data. For a more complete description of the properties of SAR, see our [Introduction to SAR](../guides/introduction_to_sar.md "https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar" ){target=_blank} guide. 
 
 {% endblock %}

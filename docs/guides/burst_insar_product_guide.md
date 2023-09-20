@@ -57,7 +57,7 @@ There are several options users can set when ordering Burst InSAR On Demand prod
    A GeoTIFF of the water mask is always included with the InSAR product package,
    but when this option is selected, the water mask will be applied to
    the wrapped interferogram, the unwrapped interferogram, and the browse image.
-   Water masking is turned off by default.
+   Water masking is turned off by default. Refer to the [Apply Water Mask section](#apply-water-mask) for more information about the water mask and how it is used.
 
 {% endblock %}
 

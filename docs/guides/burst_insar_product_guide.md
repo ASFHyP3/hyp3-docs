@@ -196,7 +196,7 @@ The Burst InSAR product names are packed with information pertaining to the proc
 - The filename ends with the ASF product ID, a 4 digit hexadecimal number
 
 # TODO: Make a new version of this figure for burst insar products.
-![Figure 4](../images/asf_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
+![Figure 4](../images/asf_burst_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
 
 *Figure 4: Breakdown of ASF Burst InSAR naming scheme.*
 

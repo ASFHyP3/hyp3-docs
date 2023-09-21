@@ -7,7 +7,7 @@ This document is a guide for users of Sentinel-1 Burst Interferometric Synthetic
 
 ### Sentinel-1 Bursts
 
-Data from the Sentinel-1 mission that is suitable for use in interferometry has historically been packaged into Single Look Complex (SLC) products. These SLCs include three subswaths, each containing many individual bursts. The framing of the SLCs is not consistent through time, so when using SLCs as the basis for InSAR, scene pairs do not always fully overlap. 
+Single Look Complex (SLC) data from the Sentinel-1 mission that is suitable for use in interferometry has historically been packaged into Interferometric Wide (IW) SLC products. These IW SLC products include three subswaths, each containing many individual burst SLCs. The framing of the IW SLCs is not consistent through time, so when using IW SLCs as the basis for InSAR, scene pairs do not always fully overlap. 
 
 In contrast, working at the burst level of the Sentinel-1 data provides a couple key benefits: 
 

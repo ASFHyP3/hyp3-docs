@@ -200,7 +200,7 @@ The Burst InSAR product names are packed with information pertaining to the proc
 *Figure 4: Breakdown of ASF Burst InSAR naming scheme.*
 
 ### Image Files
-
+# TODO: New Story Map
 All of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs. To learn more about the rasters included in the product package, refer to the [Exploring Sentinel-1 InSAR StoryMap](https://storymaps.arcgis.com/stories/8be186e4125741518118d0102e6835e5 "Exploring Sentinel-1 InSAR StoryMap https://arcg.is/11DaW90" ){target=_blank} tutorial.
 
 - The *coherence* file pixel values range from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent. 

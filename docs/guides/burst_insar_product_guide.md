@@ -63,7 +63,7 @@ There are several options users can set when ordering Burst InSAR On Demand prod
 
 {% block workflow %}
 ## InSAR Workflow
-TODO
+The Burst InSAR workflow used in HyP3 was developed by ASF using ISCE2 software. The steps include pre-processing, interferogram preparation, and product creation. Once these steps are performed, an output product package is created. See [product packaging](#product-packaging "Jump to Product Packaging section of this document") for details on the individual files included in the package.
 
 ### Pre-Processing
 

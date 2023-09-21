@@ -207,6 +207,7 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 - The *coherence* file pixel values range from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent. 
 - The *unwrapped phase* file shows the results of the phase unwrapping process. Negative values indicate movement towards the sensor, and positive values indicate movement away from the sensor. This is the main interferogram output.
 - The *wrapped phase* file indicates the interferogram phase after applying the adaptive filter immediately before unwrapping. Values range from negative pi to positive pi.
+- The *connected components* file delineates regions unwrapped as contiguous units by the SNAPHU unwrapping algorithm. In general, products with fewer and larger regions will have higher quality phase unwrapping results than products with many small regions. This file is used by post-processors such as MintPy to correct unwrapping errors.
 - The *look vectors* theta (θ) and phi (φ) describe the elevation and orientation angles of the sensor's look direction.
 - The *DEM* file gives the local terrain heights in meters, with a geoid correction applied.
 - The *water mask* file indicates coastal waters and large inland waterbodies. Pixel values of 1 indicate land and 0 indicate water. This file is in 8-bit unsigned integer format.

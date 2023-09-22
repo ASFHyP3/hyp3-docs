@@ -290,3 +290,19 @@ When looking at a single interferogram, the deformation measurements in the line
 A single interferogram cannot be used to determine the relative contributions of vertical and horizontal movement to the line-of-sight displacement measurement. To determine how much of the signal is driven by vertical vs. horizontal movement, you must either use a time series of interferograms, or use reference measurements with known vertical and horizontal components (such as GNSS measurements from the region of deformation) to deconstruct the line-of-sight displacement.
 
 {% endblock %}
+
+{% block reference_point %}
+### Phase Unwrapping Reference Point
+The reference point for phase unwrapping is set automatically by the topsApp.py script. It may not be an ideal location to use as a reference point for phase unwrapping. If it is located in an area undergoing deformation, or in an area with low coherence, the unwrapping may be of lower quality than if the reference point was in a more suitable location.
+
+Even when there are not phase unwrapping errors introduced by phase discontinuities, it is important to be aware that unwrapped phase differences are calculated relative to the reference point.[(TODO: check if this is the same with ISCE2:) The phase difference value of the reference point is set to 0 during phase unwrapping, so any displacement values will be relative to that benchmark.] 
+
+If you are interested in the amount of displacement in a particular area, you may wish to choose your own reference point. The ideal reference point would be in an area of high coherence beyond where deformation has occurred. The unwrapped phase measurements can be adjusted to be relative to this new reference point. To adjust the values in the unwrapped phase GeoTIFF, simply select a reference point that is optimal for your use case and subtract the unwrapped phase value of that reference point from each pixel in the unwrapped phase raster:
+
+**ΔΨ<sup>&ast;</sup>** = **ΔΨ** - Δψ<sub>ref</sub>
+
+where **ΔΨ<sup>&ast;</sup>** is the adjusted unwrapped phase, **ΔΨ** is the original unwrapped phase, and Δψ<sub>ref</sub> is the unwrapped phase value at the new reference point.
+
+#### Displacement Values from a Single Interferogram
+In general, calculating displacement values from a single interferogram is not recommended. It will be more robust to use a time series approach to more accurately determine the pattern of movement. When using SAR time-series software such as [MintPy](https://mintpy.readthedocs.io/en/latest/ "https://mintpy.readthedocs.io/en/latest" ){target=_blank}, you have the option to select a specific reference point, and the values of the input rasters will be adjusted accordingly.
+{% endblock %}

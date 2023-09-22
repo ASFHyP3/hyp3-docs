@@ -282,3 +282,11 @@ The text file with extension .txt includes processing parameters used to generat
 *Table 4: List of InSAR parameters included in the parameter text file*
 
 {% endblock %}
+
+{% block line_of_sight %}
+### Line-of-Sight Measurements
+When looking at a single interferogram, the deformation measurements in the line-of-sight orientation of the sensor indicate relative motion towards or away from the sensor. InSAR is not sensitive to motion in the azimuth direction of the satellite, so motion that occurs in the same direction as the satellite's direction of travel will not be detected.
+
+A single interferogram cannot be used to determine the relative contributions of vertical and horizontal movement to the line-of-sight displacement measurement. To determine how much of the signal is driven by vertical vs. horizontal movement, you must either use a time series of interferograms, or use reference measurements with known vertical and horizontal components (such as GNSS measurements from the region of deformation) to deconstruct the line-of-sight displacement.
+
+{% endblock %}

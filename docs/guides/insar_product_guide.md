@@ -285,3 +285,12 @@ Those not using ArcGIS will still find the contents of these XML files useful, b
 #### Auxiliary Geolocation Files
 Geolocation XML files (aux files) are included for each of the PNG browse images to allow for proper display in GIS platforms.
 {% endblock %}
+
+{% block line_of_sight %}
+### Line-of-Sight Measurements
+When looking at a single interferogram, the deformation measurements in the line-of-sight orientation of the sensor indicate relative motion towards or away from the sensor. InSAR is not sensitive to motion in the azimuth direction of the satellite, so motion that occurs in the same direction as the satellite's direction of travel will not be detected.
+
+A single interferogram cannot be used to determine the relative contributions of vertical and horizontal movement to the line-of-sight displacement measurement. The vertical displacement map is generated based on the assumption that the movement is entirely in the vertical direction, which may not be realistic for some processes. To determine how much of the signal is driven by vertical vs. horizontal movement, you must either use a time series of interferograms, or use reference measurements with known vertical and horizontal components (such as GNSS measurements from the region of deformation) to deconstruct the line-of-sight displacement.
+
+All displacement values are calculated relative to a [reference point](#phase-unwrapping-reference-point "Jump to Phase Unwrapping Reference Point part of Limitations section in this document"), which may or may not be an appropriate benchmark for measuring particular areas of displacement within the interferogram.
+{% endblock %}

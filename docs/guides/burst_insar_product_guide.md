@@ -15,15 +15,15 @@ In contrast, working at the burst level of the Sentinel-1 SLC data provides a co
 The coverage of a burst is the same for every orbit of the satellite, so you can be confident that every burst with the same [Full Burst ID](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8#ref-n-VYIiUe "Sentinel-1 Burst Overview https://arcg.is/zSafi0" ){target=_blank} in a stack of acquisitions will cover the same geographic location. 
 
 **2. Bursts cover a smaller geographic area**  
-SLC products are extremely large, and in many cases, only a small portion of the image is of interest. You can process only the bursts that cover your specific area of interest, which significantly decreases the time and cost required to generate InSAR products.
+IW SLC products are extremely large, and in many cases, only a small portion of the image is of interest. You can process only the bursts that cover your specific area of interest, which significantly decreases the time and cost required to generate InSAR products.
 
 Refer to the [Sentinel-1 Bursts tutorial](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8 "Sentinel-1 Bursts Tutorial https://arcg.is/zSafi0" ){target=_blank} to learn more about how [ASF extracts burst-level products](https://sentinel1-burst-documentation.asf.alaska.edu/ "ASF Sentinel-1 Burst Documentation" ){target=_blank} from Sentinel-1 IW/EW SLCs.
 
 ### Burst InSAR Processing
 
-The Sentinel-1 Burst InSAR products are generated using [ISCE2 software](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2" ){target=_blank}. ASF is committed to transparency in product development, and we are pleased to be able to offer an InSAR product that leverages open-source software for processing. 
+The Sentinel-1 Burst InSAR products are generated using the Jet Propulsion Laboratory's [ISCE2 software](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2" ){target=_blank}. ASF is committed to transparency in product development, and we are pleased to be able to offer an InSAR product that leverages open-source software for processing. 
 
-For those who would prefer to work at the scale of a full SLC, our original [On Demand InSAR](insar_product_guide.md) products are still available. These products have a larger footprint, and are generated using [GAMMA software](https://www.gamma-rs.ch/software){target=_blank}.
+For those who would prefer to work at the scale of a full IW SLC, our original [On Demand InSAR](insar_product_guide.md) products are still available. These products have a larger footprint, and are generated using [GAMMA software](https://www.gamma-rs.ch/software){target=_blank}.
 
 ### Using Sentinel-1 Burst InSAR
 
@@ -178,8 +178,8 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 - The *wrapped phase* file indicates the interferogram phase after applying the adaptive filter immediately before unwrapping. Values range from negative pi to positive pi.
 - The *connected components* file delineates regions unwrapped as contiguous units by the SNAPHU unwrapping algorithm.
 - The *look vectors* theta (θ) and phi (φ) describe the elevation and orientation angles of the look vector in radians. The look vectors refer to the look direction back towards the sensor. 
-    - The *lv_theta* (θ) file indicates the SAR look vector elevation angle at each pixel, ranging from -π/2 (down) to π/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface. 
-    - The *lv_phi* (φ) file indicates the SAR look vector orientation angle at each pixel. The look vector orientation angle is defined as the angle between the East direction and the projection of the look vector on the horizontal surface plane. The orientation angle increases towards north, with the North direction corresponding to π/2 (and south to -π/2). The orientation angle range is -π to π.
+    - The *lv_theta* (θ) file indicates the SAR look vector elevation angle (in radians) at each pixel, ranging from -π/2 (down) to π/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface. 
+    - The *lv_phi* (φ) file indicates the SAR look vector orientation angle (in radians) at each pixel. The look vector orientation angle is defined as the angle between the East direction and the projection of the look vector on the horizontal surface plane. The orientation angle increases towards north, with the North direction corresponding to π/2 (and south to -π/2). The orientation angle range is -π to π.
 - The *DEM* file gives the local terrain heights in meters, with a geoid correction applied.
 - The *water mask* file indicates coastal waters and large inland waterbodies. Pixel values of 1 indicate land and 0 indicate water. This file is in 8-bit unsigned integer format.
 
@@ -211,7 +211,7 @@ The product package also includes a number of metadata files.
 
 | Extension      | Description                                     | Example                                 |
 |----------------|-------------------------------------------------|-----------------------------------------|
-| .README.md.txt | Main README file for Burst InSAR                 | {{ base_name }}.README.md.txt           |
+| .README.md.txt | Main README file for Burst InSAR products       | {{ base_name }}.README.md.txt           |
 | .txt           | Parameters and metadata for the InSAR pair      | {{ base_name }}.txt                     |
 
 *Table 3: Metadata files in product package*
@@ -265,7 +265,7 @@ A single interferogram cannot be used to determine the relative contributions of
 ### Phase Unwrapping Reference Point
 The reference point for phase unwrapping is set automatically by the topsApp.py script. It may not be an ideal location to use as a reference point for phase unwrapping. If it is located in an area undergoing deformation, or in an area with low coherence, the unwrapping may be of lower quality than if the reference point was in a more suitable location.
 
-Even when there are no phase unwrapping errors introduced by phase discontinuities, it is important to be aware that unwrapped phase differences are calculated relative to the reference point. The phase difference value of the reference point is set to 0 during phase unwrapping, so the other phase difference values will be relative to that benchmark.
+Even when there are no phase unwrapping errors introduced by phase discontinuities, it is important to be aware that unwrapped phase differences are calculated relative to the reference point. The phase difference value of the reference point is set to 0 during phase unwrapping, so any displacement values will be relative to that benchmark.
 
 If you are interested in the amount of displacement in a particular area, you may wish to choose your own reference point. The ideal reference point would be in an area of high coherence beyond where deformation has occurred. The unwrapped phase measurements can be adjusted to be relative to this new reference point. To adjust the values in the unwrapped phase GeoTIFF, simply select a reference point that is optimal for your use case and subtract the unwrapped phase value of that reference point from each pixel in the unwrapped phase raster:
 

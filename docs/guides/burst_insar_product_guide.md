@@ -113,47 +113,18 @@ TODO: add more detail? i.e. what the files are and what they're used for
 
 ### InSAR Processing
 
-The ISCE2 InSAR processing this product uses includes the following ISCE2 topsApp steps:
+The ISCE2 InSAR processing this product uses follows the workflow in [topsApp.py](https://github.com/isce-framework/isce2/blob/main/applications/topsApp.py#L982) from steps `startup` through `geocode`. These steps perform the following processing:
 
-- startup 
-- preprocess
-- computeBaselines
-- verifyDEM
-- topo
-- subsetoverlaps
-- coarseoffsets
-- coarseresamp
-- overlapifg
-- prepesd
-- esd
-- rangecoreg
-- fineoffsets
-- fineresamp
-- ion
-- burstifg
-- mergebursts
-- filter
-- unwrap
-- unwrap2stage
-- geocode
-
-These steps are run using these calls within hyp3-isce2:
-
-- topsapp.run_topsapp_burst(start='startup', end='preprocess', config_xml=config_path): Extract the orbits,
-        IPF (Instrument Processing Facility) version, burst data, and antenna pattern if it is necessary
-- topsapp.swap_burst_vrts(): Switch the reference and secondary bursts to use the burst data download from ASF
-- topsapp.run_topsapp_burst(start='computeBaselines', end='unwrap2stage', config_xml=config_path):
-    Run the remaining processing steps including:
-    - Calculate the perpendicular and parallel baselines
-    - Verify the DEM file to make sure it covers the bursts
-    - Map DEM into the radar coordinates of the reference image. This generates the longitude,
-            latitude, height and LOS angles on a pixel by pixel grid for each burst.
-    - Estimate the azimuth offsets between the input SLC bursts (The Enhanced Spectral Diversity (ESD) method is NOT used)
-    - Estimate the range offsets between the input SLC bursts
-    - Coregister the secondary SLC burst by applying the estimated range and azimuth offsets
-    - Produce the wrapped phase interferogram
-    - Unwrap the wrapped phase interferogram using SNAPHU to produce the wrapped phase interferogram
-- topsapp.run_topsapp_burst(start='geocode', end='geocode', config_xml=config_path): Geocode the output products
+1. Extract the orbits, Instrument Processing Facility (IPF) version, burst data, and antenna pattern if it is necessary.
+1. Calculate the perpendicular and parallel baselines.
+1. Map the DEM into the radar coordinates of the reference image. This generates the longitude, latitude, height and LOS angles on a pixel by pixel grid for each burst.
+1. Estimate the azimuth offsets between the input SLC bursts. The Enhanced Spectral Diversity (ESD) method is *not* used.
+1. Estimate the range offsets between the input SLC bursts.
+1. Coregister the secondary SLC burst by applying the estimated range and azimuth offsets.
+1. Produce the wrapped phase interferogram.
+1. Apply the [Goldstein-Werner](https://doi.org/10.1029/1998GL900033) power spectral filter with a dampening factor of 0.5.
+1. Unwrap the wrapped phase interferogram using [SNAPHU](http://web.stanford.edu/group/radar/softwareandlinks/sw/snaphu/)'s minimum cost flow (MCF) unwrapping algorithm to produce the wrapped phase interferogram.
+1. Geocode the output products.
 
 ### Post-Processing
 

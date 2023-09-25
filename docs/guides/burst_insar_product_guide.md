@@ -190,6 +190,8 @@ The Burst InSAR product names are packed with information pertaining to the proc
 
 - The platform names, either Sentinel-1A or Sentinel-1B, are abbreviated "A" or "B", indicating the reference and secondary granule's imaging platform
 - Relative burst ID values assigned by ESA. Each value identifies a consistent burst footprint; relative burst ID values differ from one subswath to the next.
+- The imaging mode, currently only IW is supported.
+- The swath number, either 1, 2, or 3, indicating which swath the burst is located in.
 - The reference start date and time and the secondary start dates, t.
 - The polarizations for the pair, either HH or VV.
 - The product type (always INT for InSAR) and the pixel spacing, which will be either 80 or 40, based upon the number of looks selected when the job was submitted for processing
@@ -200,8 +202,8 @@ The Burst InSAR product names are packed with information pertaining to the proc
 *Figure 4: Breakdown of ASF Burst InSAR naming scheme.*
 
 ### Image Files
-# TODO: New Story Map
-All of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs. To learn more about the rasters included in the product package, refer to the [Exploring Sentinel-1 InSAR StoryMap](https://storymaps.arcgis.com/stories/8be186e4125741518118d0102e6835e5 "Exploring Sentinel-1 InSAR StoryMap https://arcg.is/11DaW90" ){target=_blank} tutorial.
+
+All of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs.
 
 - The *coherence* file pixel values range from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent. 
 - The *unwrapped phase* file shows the results of the phase unwrapping process. Negative values indicate movement towards the sensor, and positive values indicate movement away from the sensor. This is the main interferogram output.

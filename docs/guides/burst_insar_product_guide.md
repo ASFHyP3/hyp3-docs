@@ -7,17 +7,17 @@ This document is a guide for users of Sentinel-1 Burst Interferometric Synthetic
 
 ### Sentinel-1 Bursts
 
-Data from the Sentinel-1 mission that is suitable for use in interferometry has historically been packaged into Single Look Complex (SLC) products. These SLCs include three subswaths, each containing many individual bursts. The framing of the SLCs is not consistent through time, so when using SLCs as the basis for InSAR, scene pairs do not always fully overlap. 
+Single Look Complex (SLC) data from the Sentinel-1 mission that is suitable for use in interferometry has historically been packaged into Interferometric Wide (IW) SLC products. These IW SLC products include three subswaths, each containing many individual burst SLCs. The framing of the IW SLCs is not consistent through time, so when using IW SLCs as the basis for InSAR, scene pairs do not always fully overlap. 
 
-In contrast, working at the burst level of the Sentinel-1 data provides a couple key benefits: 
+In contrast, working at the burst level of the Sentinel-1 SLC data provides a couple key benefits: 
 
 **1. Bursts are consistently geolocated through time**  
-The coverage of a burst ID is the same for every orbit of the satellite, so you can be confident that every burst in a stack of acquisitions will cover the same geographic location. 
+The coverage of a burst is the same for every orbit of the satellite, so you can be confident that every burst with the same [Full Burst ID](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8#ref-n-VYIiUe "Sentinel-1 Burst Overview https://arcg.is/zSafi0" ){target=_blank} in a stack of acquisitions will cover the same geographic location. 
 
 **2. Bursts cover a smaller geographic area**  
 SLC products are extremely large, and in many cases, only a small portion of the image is of interest. You can process only the bursts that cover your specific area of interest, which significantly decreases the time and cost required to generate InSAR products.
 
-Refer to the [Sentinel-1 Bursts tutorial](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8) to learn more about how ASF extracts burst-level products from Sentinel-1 SLCs.
+Refer to the [Sentinel-1 Bursts tutorial](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8 "Sentinel-1 Bursts Tutorial https://arcg.is/zSafi0" ){target=_blank} to learn more about how [ASF extracts burst-level products](https://sentinel1-burst-documentation.asf.alaska.edu/ "ASF Sentinel-1 Burst Documentation" ){target=_blank} from Sentinel-1 IW/EW SLCs.
 
 ### Burst InSAR Processing
 
@@ -62,8 +62,9 @@ There are several options users can set when ordering Burst InSAR On Demand prod
 {% endblock %}
 
 {% block workflow %}
-## InSAR Workflow
-TODO
+## Burst InSAR Workflow
+
+The Burst InSAR workflow used in HyP3 was developed by ASF using ISCE2 software. The steps include pre-processing, interferogram preparation, and product creation. Once these steps are performed, an output product package is created. See [product packaging](#product-packaging "Jump to Product Packaging section of this document") for details on the individual files included in the package.
 
 ### Pre-Processing
 
@@ -182,19 +183,19 @@ Supporting metadata files are created, as well as a quick-look browse image.
 {% block packaging %}
 ## Product Packaging
 
-HyP3 Burst InSAR output is a zip file containing various files, including GeoTIFFs, PNG browse images with geolocation information, Google Earth KMZ files, a metadata file, and a README file.
+HyP3 Burst InSAR output is a zip file containing various files, including GeoTIFFs, a PNG browse image, a metadata file, and a README file.
 
 ### Naming Convention
 
 The Burst InSAR product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 4. 
 
-- The platform names, either Sentinel-1A or Sentinel-1B, are abbreviated "A" or "B", indicating the reference and secondary granule's imaging platform
+- The imaging platform name, always S1 for Sentinel-1.
 - Relative burst ID values assigned by ESA. Each value identifies a consistent burst footprint; relative burst ID values differ from one subswath to the next.
 - The imaging mode, currently only IW is supported.
 - The swath number, either 1, 2, or 3, indicating which swath the burst is located in.
-- The reference start date and time and the secondary start dates, t.
+- The acquisition dates of the reference (older) scene and the secondary (newer) scene
 - The polarizations for the pair, either HH or VV.
-- The product type (always INT for InSAR) and the pixel spacing, which will be either 80 or 40, based upon the number of looks selected when the job was submitted for processing
+- The product type (always INT for InSAR) and the pixel spacing, which will be either 80, 40, or 20, based upon the number of looks selected when the job was submitted for processing
 - The filename ends with the ASF product ID, a 4 digit hexadecimal number
 
 ![Figure 4](../images/asf_burst_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
@@ -207,14 +208,16 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 
 - The *coherence* file pixel values range from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent. 
 - The *unwrapped phase* file shows the results of the phase unwrapping process. Negative values indicate movement towards the sensor, and positive values indicate movement away from the sensor. This is the main interferogram output.
-- The *wrapped phase* file indicates the interferogram phase after applying the adaptive filter immediately before unwrapping. Values range from negative pi to positive pi. *(optional)*
-- The *look vectors* theta (θ) and phi (φ) describe the elevation and orientation angles of the sensor's look direction. *(optional)*
-- The *DEM* file gives the local terrain heights in meters, with a geoid correction applied. *(optional)*
+- The *wrapped phase* file indicates the interferogram phase after applying the adaptive filter immediately before unwrapping. Values range from negative pi to positive pi.
+- The *look vectors* theta (θ) and phi (φ) describe the elevation and orientation angles of the look vector in radians. The look vectors refer to the look direction back towards the sensor. 
+    - The *lv_theta* (θ) file indicates the SAR look vector elevation angle at each pixel, ranging from -π/2 (down) to π/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface. 
+    - The *lv_phi* (φ) file indicates the SAR look vector orientation angle at each pixel. The look vector orientation angle is defined as the angle between the East direction and the projection of the look vector on the horizontal surface plane. The orientation angle increases towards north, with the North direction corresponding to π/2 (and south to -π/2). The orientation angle range is -π to π.
+- The *DEM* file gives the local terrain heights in meters, with a geoid correction applied.
 - The *water mask* file indicates coastal waters and large inland waterbodies. Pixel values of 1 indicate land and 0 indicate water. This file is in 8-bit unsigned integer format.
 
 If the **water mask** option is selected, the water mask is applied *after* phase unwrapping to exclude water pixels from the output. The water mask is generated using the [GSHHG](http://www.soest.hawaii.edu/wessel/gshhg "http://www.soest.hawaii.edu/wessel/gshhg/land" ){target=_blank} dataset. To compile the reference shapefile, the full-resolution L1 dataset (boundary between land and ocean) and L5 dataset (boundary between Antarctic ice and ocean) were combined. The L3 dataset (boundary between islands and the lakes they are within) was removed from the L2 dataset (boundary between lakes and land), and this combined dataset was removed from the combined L1/L5 dataset. The GSHHG dataset was last updated in 2017, so there may be discrepancies where shorelines have changed.
 
-A **browse image** is included for the unwrapped (unw_phase) phase file, which is in PNG format and is 2048 pixels wide. The browse image is displayed using a cyclic color ramp to generate fringes. Each fringe in the browse image represents a phase difference of 6 pi. Because each 2-pi difference is equivalent to half the wavelength of the sensor, each 6-pi fringe represents about 8.3 cm of line-of-sight displacement for these Sentinel-1 products.
+A **browse image** is included for the unwrapped (unw_phase) phase file, which is in PNG format and is 2048 pixels wide.
 
 The tags and extensions used and example file names for each raster are listed in Table 2 below. 
 
@@ -253,8 +256,8 @@ The text file with extension .txt includes processing parameters used to generat
 
 | Name                                                      | Description                                                                                                 | Possible Value                                                                                              |
 |-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
-| Reference Granule                                         | ESA granule name for reference scene (of the two scenes in the pair, the dataset with the oldest timestamp) | S1A<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20200116T032559<wbr>_20200116T032627<wbr>_030820<wbr>_038928<wbr>_F5DC |
-| Secondary Granule                                         | ESA granule name for secondary scene (of the two scenes in the pair, the dataset with the newest timestamp) | S1B<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20200128T032559<wbr>_20200128T032627<wbr>_030995<wbr>_038F51<wbr>_7D4F |
+| Reference Granule                                         | Granule name for reference burst (of the two scenes in the pair, the dataset with the oldest timestamp) | S1<wbr>_136231<wbr>_IW2<wbr>_20200604T022312<wbr>_VV<wbr>_7C85-BURST |
+| Secondary Granule                                         | Granule name for secondary burst (of the two scenes in the pair, the dataset with the newest timestamp) | S1<wbr>_136231<wbr>_IW2<wbr>_20200616T022313<wbr>_VV<wbr>_5D11-BURST |
 | Reference Pass Direction                                  | Orbit direction of the reference scene                                                                      | DESCENDING                                                                                                  |
 | Reference Orbit Number                                    | Absolute orbit number of the reference scene                                                                | 30741                                                                                                       |
 | Secondary Pass Direction                                  | Orbit direction of the reference scene                                                                      | DESCENDING                                                                                                  |
@@ -269,24 +272,39 @@ The text file with extension .txt includes processing parameters used to generat
 | Slant range far                                           | Distance in meters from satellite to farthest point imaged                                                  | 960070.8469                                                                                                 |
 | Range looks                                               | Number of looks taken in the range direction                                                                | 20                                                                                                          | 
 | Azimuth looks                                             | Number of looks taken in the azimuth direction                                                              | 4                                                                                                           |
-| InSAR phase filter                                        | Name of the phase filter used                                                                               | adf                                                                                                         | 
-| Phase filter parameter                                    | Dampening factor                                                                                            | 0.6                                                                                                         |
-| Resolution of output (m)                                  | Pixel spacing in meters for output products                                                                 | 80                                                                                                          | 
+| InSAR phase filter                                        | Name of the phase filter used                                                                               | yes                                                                                                         | 
+| Phase filter parameter                                    | Dampening factor                                                                                            | 0.5                                                                                                         |
 | Range bandpass filter                                     | Range bandpass filter applied                                                                               | no                                                                                                          |
 | Azimuth bandpass filter                                   | Azimuth bandpass filter applied                                                                             | no                                                                                                          |
 | DEM source                                                | DEM used in processing                                                                                      | GLO-30                                                                                                      |
-| DEM resolution                                            | Pixel spacing in meters for DEM used to process this scene                                                  | 160                                                                                                         |
-| Unwrapping type                                           | Phase unwrapping algorithm used                                                                             | mcf                                                                                                         |
-| Phase at Reference Point                                  | Original unwrapped phase value at the reference point (set to 0 in output unwrapped phase raster)           | -4.21967                                                                                                    |
-| Azimuth line of the reference point in SAR space          | Row number (in SAR space) of the reference point                                                            | 2737.0                                                                                                      |
-| Range pixel of the reference point in SAR space           | Column number (in SAR space) of the reference point                                                         | 739.0                                                                                                       |
-| Y coordinate of the reference point in the map projection | Latitude of the reference point in projected coordinates (UTM Zone - meters)                                | 4112453.3223                                                                                                |
-| X coordinate of the reference point in the map projection | Longitude of the reference point in projected coordinates (UTM Zone - meters)                               | 589307.6248                                                                                                 |
-| Latitude of the reference point (WGS84)                   | Latitude of the reference point in WGS84 Geographic Coordinate System (degrees)                             | 37.1542125                                                                                                  |
-| Longitude of the reference point (WGS84)                  | Longitude of the reference point in WGS84 Geographic Coordinate System (degrees)                            | 40.00574707                                                                                                 |
-| Unwrapping threshold                                      | Minimum coherence required to unwrap a given pixel                                                          | none                                                                                                        |
-| Speckle filter                                            | Speckle filter applied                                                                                      | no                                                                                                          |
+| DEM resolution                                            | Pixel spacing in meters for DEM used to process this scene                                                  | 30                                                                                                          |
+| Unwrapping type                                           | Phase unwrapping algorithm used                                                                             | snaphu_mcf                                                                                                  |
+| Speckle filter                                            | Speckle filter applied                                                                                      | yes                                                                                                         |
 
 *Table 4: List of InSAR parameters included in the parameter text file*
 
+{% endblock %}
+
+{% block line_of_sight %}
+### Line-of-Sight Measurements
+When looking at a single interferogram, the deformation measurements in the line-of-sight orientation of the sensor indicate relative motion towards or away from the sensor. InSAR is not sensitive to motion in the azimuth direction of the satellite, so motion that occurs in the same direction as the satellite's direction of travel will not be detected.
+
+A single interferogram cannot be used to determine the relative contributions of vertical and horizontal movement to the line-of-sight displacement measurement. To determine how much of the signal is driven by vertical vs. horizontal movement, you must either use a time series of interferograms, or use reference measurements with known vertical and horizontal components (such as GNSS measurements from the region of deformation) to deconstruct the line-of-sight displacement.
+
+{% endblock %}
+
+{% block reference_point %}
+### Phase Unwrapping Reference Point
+The reference point for phase unwrapping is set automatically by the topsApp.py script. It may not be an ideal location to use as a reference point for phase unwrapping. If it is located in an area undergoing deformation, or in an area with low coherence, the unwrapping may be of lower quality than if the reference point was in a more suitable location.
+
+Even when there are not phase unwrapping errors introduced by phase discontinuities, it is important to be aware that unwrapped phase differences are calculated relative to the reference point.[(TODO: check if this is the same with ISCE2:) The phase difference value of the reference point is set to 0 during phase unwrapping, so any displacement values will be relative to that benchmark.] 
+
+If you are interested in the amount of displacement in a particular area, you may wish to choose your own reference point. The ideal reference point would be in an area of high coherence beyond where deformation has occurred. The unwrapped phase measurements can be adjusted to be relative to this new reference point. To adjust the values in the unwrapped phase GeoTIFF, simply select a reference point that is optimal for your use case and subtract the unwrapped phase value of that reference point from each pixel in the unwrapped phase raster:
+
+**ΔΨ<sup>&ast;</sup>** = **ΔΨ** - Δψ<sub>ref</sub>
+
+where **ΔΨ<sup>&ast;</sup>** is the adjusted unwrapped phase, **ΔΨ** is the original unwrapped phase, and Δψ<sub>ref</sub> is the unwrapped phase value at the new reference point.
+
+#### Displacement Values from a Single Interferogram
+In general, calculating displacement values from a single interferogram is not recommended. It will be more robust to use a time series approach to more accurately determine the pattern of movement. When using SAR time-series software such as [MintPy](https://mintpy.readthedocs.io/en/latest/ "https://mintpy.readthedocs.io/en/latest" ){target=_blank}, you have the option to select a specific reference point, and the values of the input rasters will be adjusted accordingly.
 {% endblock %}

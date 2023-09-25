@@ -64,7 +64,7 @@ For deformation mapping, it is best to minimize the perpendicular baseline whene
 All of ASF's On Demand InSAR products are generated using ASF's HyP3 platform. Jobs can be submitted for processing using the [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} data portal, the [HyP3 Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank} or the [HyP3 API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank}.
 
 ### Vertex
-InSAR pairs are selected in [Vertex](https://search.asf.alaska.edu/#/ "https://search.asf.alaska.edu" ){target=_blank} using either the [Baseline Search](https://docs.asf.alaska.edu/vertex/baseline/ "https://docs.asf.alaska.edu/vertex/baseline" ){target=_blank} or the [SBAS Search](https://docs.asf.alaska.edu/vertex/sbas/ "https://docs.asf.alaska.edu/vertex/sbas" ){target=_blank} interface. The process of selecting pairs is the same for both SLCs and bursts, but you will need to select the appropriate dataset when searching for content. As illustrated below, select the **Sentinel-1** option in the Dataset menu to search for SLCs, and select the **S1 Bursts** option to search for bursts. 
+InSAR pairs are selected in [Vertex](https://search.asf.alaska.edu/#/ "https://search.asf.alaska.edu" ){target=_blank} using either the [Baseline Search](https://docs.asf.alaska.edu/vertex/baseline/ "https://docs.asf.alaska.edu/vertex/baseline" ){target=_blank} or the [SBAS Search](https://docs.asf.alaska.edu/vertex/sbas/ "https://docs.asf.alaska.edu/vertex/sbas" ){target=_blank} interface. The process of selecting pairs is the same for both IW SLC products and individual SLC bursts, but you will need to select the appropriate dataset when searching for content. As illustrated below, select the **Sentinel-1** option in the Dataset menu to search for IW SLC products, and select the **S1 Bursts** option to search for individual SLC bursts. 
 
 ![Vertex Dataset Selection](../images/vertex-dataset-selection.png)
 
@@ -109,56 +109,9 @@ The phase measurements in the two images used in InSAR must be coherent in order
 
 Consider seasonality when selecting image pairs. Decorrelation can be particularly high when comparing phase from different seasons. Changes in the condition of vegetation (especially deciduous canopies), snow, moisture, or freeze/thaw state can impact phase measurements. In cases where a temporal baseline is required that spans seasons, it may be better to use an annual interferogram if possible so that the images are more comparable in terms of seasonality.
 
-### Line-of-Sight Measurements
-When looking at a single interferogram, the deformation measurements in the line-of-sight orientation of the sensor indicate relative motion towards or away from the sensor. InSAR is not sensitive to motion in the azimuth direction of the satellite, so motion that occurs in the same direction as the satellite's direction of travel will not be detected.
+{% block line_of_sight %}{% endblock %}
 
-A single interferogram cannot be used to determine the relative contributions of vertical and horizontal movement to the line-of-sight displacement measurement. The vertical displacement map is generated based on the assumption that the movement is entirely in the vertical direction, which may not be realistic for some processes. To determine how much of the signal is driven by vertical vs. horizontal movement, you must either use a time series of interferograms, or use reference measurements with known vertical and horizontal components (such as GNSS measurements from the region of deformation) to deconstruct the line-of-sight displacement.
-
-All displacement values are calculated relative to a [reference point](#phase-unwrapping-reference-point "Jump to Phase Unwrapping Reference Point part of Limitations section in this document"), which may or may not be an appropriate benchmark for measuring particular areas of displacement within the interferogram.
-
-### Phase Unwrapping Reference Point
-The reference point for phase unwrapping is set to be the location of the pixel with the highest coherence value. As described in the [phase unwrapping section](#reference-point "Jump to Reference Point section of this document"), this may not always be an ideal location to use as a reference point. If it is located in an area undergoing deformation, or in a patch of coherent pixels that is separated from the area undergoing deformation by a gap of incoherent pixels, the unwrapping may be of lower quality than if the reference point was in a more suitable location.
-
-Even when there are not phase unwrapping errors introduced by phase discontinuities, it is important to be aware that unwrapped phase differences and displacement values are all calculated relative to the reference point. The phase difference value of the reference point is set to 0 during phase unwrapping, so any displacement values will be relative to that benchmark. If the location of the default reference point is in the middle of an area that underwent deformation, displacement values may be different than expected.
-
-If you are interested in the amount of displacement in a particular area, you may wish to choose your own reference point. The ideal reference point would be in an area of high coherence beyond where deformation has occurred. The unwrapped phase measurements can be adjusted to be relative to this new reference point, and displacement values can be recalculated accordingly. To adjust the values in the unwrapped phase GeoTIFF, simply select a reference point that is optimal for your use case and subtract the unwrapped phase value of that reference point from each pixel in the unwrapped phase raster:
-
-**ΔΨ<sup>&ast;</sup>** = **ΔΨ** - Δψ<sub>ref</sub>
-
-where **ΔΨ<sup>&ast;</sup>** is the adjusted unwrapped phase, **ΔΨ** is the original unwrapped phase, and Δψ<sub>ref</sub> is the unwrapped phase value at the new reference point.
-
-#### Impacts on Displacement Measurements
-The measurements in the displacement maps are calculated from the unwrapped phase values, so will similarly be impacted by the location of the reference point. You may wish to recalculate the displacement values relative to a new reference point. The approach for correcting the displacement maps will be different for the line-of-sight and vertical measurements.
-
-##### Correcting Line-of-Sight Displacement Maps
-If you have already corrected the unwrapped phase raster, you can calculate a new line-of-sight (LOS) displacement map by applying the following calculation on a pixel-by-pixel basis using the unwrapped phase GeoTIFF:
-
-**ΔΩ<sup>&ast;</sup>** = - **ΔΨ<sup>&ast;</sup>** λ / 4π
-
-where **ΔΩ<sup>&ast;</sup>** is the adjusted line-of-sight displacement in meters, **ΔΨ<sup>&ast;</sup>** is the [adjusted unwrapped phase](#phase-unwrapping-reference-point "Jump to Phase Unwrapping Reference Point part of Limitations section in this document"), and λ is the wavelength of the sensor in meters (0.055465763 for Sentinel-1).
-
-Setting the **ΔΨ<sup>&ast;</sup>** value to be negative reverses the sign so that the difference is relative to the earth rather than the sensor. A positive phase difference value indicates subsidence, which is unintuitive when thinking about movement on the earth's surface. Applying the negative will return positive displacement values for uplift and negative values for subsidence.
-
-If you are not interested in adjusted unwrapped phase values, you can also directly correct the LOS Displacement map included optionally in the InSAR product package:
-
-**ΔΩ<sup>&ast;</sup>** = **ΔΩ** - Δω<sub>ref</sub>
-
-where **ΔΩ<sup>&ast;</sup>** is the adjusted line-of-sight displacement in meters, **ΔΩ** is the original line-of-sight displacement in meters, and Δω<sub>ref</sub> is the line-of-sight displacement value at the new reference point.
-
-##### Correcting Vertical Displacement Maps
-Vertical displacement maps cannot be adjusted directly, and must be recalculated from the adjusted unwrapped phase image. You will also need the θ look vector map (lv_theta GeoTIFF) for this calculation. The look vector maps are not included in the InSAR product package by default; the option to Include Look Vectors must be selected when ordering the product.
-
-To calculate an adjusted vertical displacement raster, calculate the [adjusted unwrapped phase](#phase-unwrapping-reference-point "Jump to Phase Unwrapping Reference Point part of Limitations section in this document"), then apply the following:
-
-**Δϒ<sup>&ast;</sup>** = - **ΔΨ<sup>&ast;</sup>** λ cos(½π - ***LV*<sub>θ</sub>**) / 4π
-
-where **Δϒ<sup>&ast;</sup>** is the adjusted vertical displacement in meters, **ΔΨ<sup>&ast;</sup>** is the adjusted unwrapped phase, λ is the wavelength of the sensor in meters (0.055465763 for Sentinel-1), and ***LV*<sub>θ</sub>** is the theta look vector (from the lv_theta GeoTIFF).
-
-As with the LOS Displacement maps, setting the **ΔΨ<sup>&ast;</sup>** value to be negative reverses the sign so that the difference is relative to the earth rather than the sensor. Applying the negative will return positive displacement values for uplift and negative values for subsidence.
-
-#### Displacement Values from a Single Interferogram
-
-In general, calculating displacement values from a single interferogram is not recommended. While the displacement rasters provided with ASF's On Demand InSAR products can be helpful in visualizing changes, we do not recommend that you rely on a single interferogram when coming to conclusions about surface displacement, even if you apply a correction based on a manually selected reference point. It will be more robust to use a time series approach to more accurately determine the pattern of movement. When using SAR time-series software such as [MintPy](https://mintpy.readthedocs.io/en/latest/ "https://mintpy.readthedocs.io/en/latest" ){target=_blank}, you have the option to select a specific reference point, and the values of the input rasters will be adjusted accordingly.
+{% block reference_point %}{% endblock %}
 
 ## Error Sources
 On Demand InSAR products do not currently correct for some common sources of error in interferometry, such as atmospheric effects. Further processing or time series analysis can be performed by the user to identify or reduce the impact of some of these errors when using On Demand InSAR products for analysis.

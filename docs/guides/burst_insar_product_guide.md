@@ -298,7 +298,7 @@ A single interferogram cannot be used to determine the relative contributions of
 ### Phase Unwrapping Reference Point
 The reference point for phase unwrapping is set automatically by the topsApp.py script. It may not be an ideal location to use as a reference point for phase unwrapping. If it is located in an area undergoing deformation, or in an area with low coherence, the unwrapping may be of lower quality than if the reference point was in a more suitable location.
 
-Even when there are not phase unwrapping errors introduced by phase discontinuities, it is important to be aware that unwrapped phase differences are calculated relative to the reference point.[(TODO: check if this is the same with ISCE2:) The phase difference value of the reference point is set to 0 during phase unwrapping, so any displacement values will be relative to that benchmark.] 
+Even when there are no phase unwrapping errors introduced by phase discontinuities, it is important to be aware that unwrapped phase differences are calculated relative to the reference point. The phase difference value of the reference point is set to 0 during phase unwrapping, so the other phase difference values will be relative to that benchmark.
 
 If you are interested in the amount of displacement in a particular area, you may wish to choose your own reference point. The ideal reference point would be in an area of high coherence beyond where deformation has occurred. The unwrapped phase measurements can be adjusted to be relative to this new reference point. To adjust the values in the unwrapped phase GeoTIFF, simply select a reference point that is optimal for your use case and subtract the unwrapped phase value of that reference point from each pixel in the unwrapped phase raster:
 

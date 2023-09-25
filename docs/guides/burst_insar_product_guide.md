@@ -15,15 +15,15 @@ In contrast, working at the burst level of the Sentinel-1 SLC data provides a co
 The coverage of a burst is the same for every orbit of the satellite, so you can be confident that every burst with the same [Full Burst ID](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8#ref-n-VYIiUe "Sentinel-1 Burst Overview https://arcg.is/zSafi0" ){target=_blank} in a stack of acquisitions will cover the same geographic location. 
 
 **2. Bursts cover a smaller geographic area**  
-SLC products are extremely large, and in many cases, only a small portion of the image is of interest. You can process only the bursts that cover your specific area of interest, which significantly decreases the time and cost required to generate InSAR products.
+IW SLC products are extremely large, and in many cases, only a small portion of the image is of interest. You can process only the bursts that cover your specific area of interest, which significantly decreases the time and cost required to generate InSAR products.
 
 Refer to the [Sentinel-1 Bursts tutorial](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8 "Sentinel-1 Bursts Tutorial https://arcg.is/zSafi0" ){target=_blank} to learn more about how [ASF extracts burst-level products](https://sentinel1-burst-documentation.asf.alaska.edu/ "ASF Sentinel-1 Burst Documentation" ){target=_blank} from Sentinel-1 IW/EW SLCs.
 
 ### Burst InSAR Processing
 
-The Sentinel-1 Burst InSAR products are generated using [ISCE2 software](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2" ){target=_blank}. ASF is committed to transparency in product development, and we are pleased to be able to offer an InSAR product that leverages open-source software for processing. 
+The Sentinel-1 Burst InSAR products are generated using the Jet Propulsion Laboratory's [ISCE2 software](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2" ){target=_blank}. ASF is committed to transparency in product development, and we are pleased to be able to offer an InSAR product that leverages open-source software for processing. 
 
-For those who would prefer to work at the scale of a full SLC, our original [On Demand InSAR](insar_product_guide.md) products are still available. These products have a larger footprint, and are generated using [GAMMA software](https://www.gamma-rs.ch/software){target=_blank}.
+For those who would prefer to work at the scale of a full IW SLC, our original [On Demand InSAR](insar_product_guide.md) products are still available. These products have a larger footprint, and are generated using [GAMMA software](https://www.gamma-rs.ch/software){target=_blank}.
 
 ### Using Sentinel-1 Burst InSAR
 

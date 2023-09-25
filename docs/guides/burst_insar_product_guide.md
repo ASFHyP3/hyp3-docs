@@ -158,8 +158,8 @@ These steps are run using these calls within hyp3-isce2:
 ### Post-Processing
 
 #### Apply Water Mask
-A water mask identifying coastal waters and major inland waterbodies is generated using the Global Self-consistent,
-Hierarchical, High-resolution Geography Database (GSHHG) dataset (https://www.ngdc.noaa.gov/mgg/shorelines). This water mask raster is always included with the Burst InSAR products for reference, but is not applied to the interferometry products by default.
+A water mask identifying coastal waters and major inland waterbodies is generated using the [Global Self-consistent,
+Hierarchical, High-resolution Geography Database (GSHHG)](http://www.soest.hawaii.edu/wessel/gshhg "http://www.soest.hawaii.edu/wessel/gshhg" ){target=_blank} dataset. This water mask raster is always included with the Burst InSAR products for reference, but is not applied to the interferometry products by default.
 
 Users can optionally choose to apply the water mask to output products, which affects the wrapped interferogram,
 the unwrapped interferogram, and the browse image. Areas covered by the water mask in these output images are set to

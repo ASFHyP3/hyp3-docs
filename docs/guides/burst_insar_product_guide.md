@@ -203,7 +203,7 @@ The Burst InSAR product names are packed with information pertaining to the proc
 
 ### Image Files
 
-All of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs.
+All of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs. The exceptions to this are the connected components and the water mask, which are both 8-bit unsigned-integer single-band GeoTiffs.
 
 - The *coherence* file pixel values range from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent. 
 - The *unwrapped phase* file shows the results of the phase unwrapping process. Negative values indicate movement towards the sensor, and positive values indicate movement away from the sensor. This is the main interferogram output.

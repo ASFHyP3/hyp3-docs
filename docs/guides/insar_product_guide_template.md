@@ -123,6 +123,8 @@ In some cases, atmospheric errors can be corrected by using an atmospheric model
 
 ***Always doubt your interferogram first!*** View the interferogram critically, and consider if fringe patterns could potentially be driven by atmospheric effects. In general, it is best to avoid drawing conclusions from the outcome of a single interferogram.
 
+Tropospheric phase may be less impactful when considering small-scale deformation. As such, ASF's [Sentinel-1 Burst InSAR products](burst_insar_product_guide.md "Sentinel-1 Burst InSAR Product Guide" ){target=_blank} may not be as sensitive to atmospheric delay as InSAR products generated using the entire Sentinel-1 IW SLC as input, but atmospheric delay should always be considered as a possible source of error.
+
 #### Turbulent Delay
 These delays are generally caused by differences in water vapor distribution from one image to the next. They often manifest as wobbly or sausage-shaped fringes, and can potentially mask the signal of a small earthquake.
 

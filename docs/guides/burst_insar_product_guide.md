@@ -103,13 +103,9 @@ The portion of the DEM that covers the input bursts is downloaded.
 
 #### Download Orbit Files and Calibration Auxiliary Data Files
 
-The orbit files are downloaded from the
-[Copernicus Sentinels POD Data Hub](https://scihub.copernicus.eu/gnss/#/home "Copernicus Sentinels POD Data Hub" ){target=_blank}.
-
-The calibration auxiliary data files are downloaded from the
+For Sentinel-1 InSAR processing, ISCE2 requires additional satellite orbit and calibration metadata files. The orbit files are downloaded from the
+[Copernicus Sentinels POD Data Hub](https://scihub.copernicus.eu/gnss/#/home "Copernicus Sentinels POD Data Hub" ){target=_blank}. The calibration auxiliary data files are downloaded from the
 [Sentinel-1 Mission Performance Center](https://sar-mpc.eu/ "Sentinel-1 Mission Performance Center" ){target=_blank}.
-
-TODO: add more detail? i.e. what the files are and what they're used for
 
 ### InSAR Processing
 

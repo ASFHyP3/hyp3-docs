@@ -7,17 +7,17 @@ This document is a guide for users of Sentinel-1 Burst Interferometric Synthetic
 
 ### Sentinel-1 Bursts
 
-Single Look Complex (SLC) data from the Sentinel-1 mission that is suitable for use in interferometry has historically been packaged into Interferometric Wide (IW) SLC products. These IW SLC products include three subswaths, each containing many individual burst SLCs. The framing of the IW SLCs is not consistent through time, so when using IW SLCs as the basis for InSAR, scene pairs do not always fully overlap. 
+Single Look Complex (SLC) data from the Sentinel-1 mission that is suitable for use in interferometry has historically been packaged into Interferometric Wide (IW) SLC products. These IW SLC products include three sub-swaths, each containing many individual burst SLCs. The framing of the IW SLCs is not consistent through time, so when using IW SLCs as the basis for InSAR, scene pairs do not always fully overlap. 
 
 In contrast, working at the burst level of the Sentinel-1 SLC data provides a couple key benefits: 
 
-**1. Bursts are consistently geolocated through time**  
+**1. Bursts are consistently geo-located through time**  
 The coverage of a burst is the same for every orbit of the satellite, so you can be confident that every burst with the same [Full Burst ID](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8#ref-n-VYIiUe "Sentinel-1 Burst Overview https://arcg.is/zSafi0" ){target=_blank} in a stack of acquisitions will cover the same geographic location. 
 
 **2. Bursts cover a smaller geographic area**  
 IW SLC products are extremely large, and in many cases, only a small portion of the image is of interest. You can process only the bursts that cover your specific area of interest, which significantly decreases the time and cost required to generate InSAR products.
 
-Refer to the [Sentinel-1 Bursts tutorial](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8 "Sentinel-1 Bursts Tutorial https://arcg.is/zSafi0" ){target=_blank} to learn more about how [ASF extracts burst-level products](https://sentinel1-burst-documentation.asf.alaska.edu/ "ASF Sentinel-1 Burst Documentation" ){target=_blank} from Sentinel-1 IW/EW SLCs.
+Refer to the [Sentinel-1 Bursts tutorial](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8 "Sentinel-1 Bursts Tutorial https://arcg.is/zSafi0" ){target=_blank} to learn more about how [ASF extracts burst-level products](https://sentinel1-burst-documentation.asf.alaska.edu/ "ASF Sentinel-1 Burst Documentation" ){target=_blank} from Sentinel-1 IW and EW SLCs.
 
 ### Burst InSAR Processing
 
@@ -116,7 +116,7 @@ The ISCE2 InSAR processing this product uses follows the workflow in [topsApp.py
 1. Map the DEM into the radar coordinates of the reference image. This generates the longitude, latitude, height and LOS angles on a pixel by pixel grid for each burst.
 1. Estimate the azimuth offsets between the input SLC bursts. The Enhanced Spectral Diversity (ESD) method is *not* used.
 1. Estimate the range offsets between the input SLC bursts.
-1. Coregister the secondary SLC burst by applying the estimated range and azimuth offsets.
+1. Co-register the secondary SLC burst by applying the estimated range and azimuth offsets.
 1. Produce the wrapped phase interferogram.
 1. Apply the [Goldstein-Werner](https://doi.org/10.1029/1998GL900033) power spectral filter with a dampening factor of 0.5.
 1. Unwrap the wrapped phase interferogram using [SNAPHU](http://web.stanford.edu/group/radar/softwareandlinks/sw/snaphu/)'s minimum cost flow (MCF) unwrapping algorithm to produce the wrapped phase interferogram.
@@ -140,8 +140,8 @@ does not correct for these impacts.
 
 #### Product Creation
 Image files are exported into the widely-used GeoTIFF format in a Universal Transverse Mercator (UTM) projection. Images
-are resampled to a pixel size that reflects the resolution of output image based on the requested number of looks: 80m
-pixel size for 20x4 looks, 40m for 10x2 looks, and 20m for 5x1 looks.
+are resampled to a pixel size that reflects the resolution of output image based on the requested number of looks: 80 meters
+for 20x4 looks, 40 meters for 10x2 looks, and 20 meters for 5x1 looks.
 
 Supporting metadata files are created, as well as a quick-look browse image.
 
@@ -157,9 +157,9 @@ HyP3 Burst InSAR output is a zip file containing various files, including GeoTIF
 The Burst InSAR product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 3. 
 
 - The imaging platform name, always S1 for Sentinel-1.
-- Relative burst ID values assigned by ESA. Each value identifies a consistent burst footprint; relative burst ID values differ from one subswath to the next.
+- Relative burst ID values assigned by ESA. Each value identifies a consistent burst footprint; relative burst ID values differ from one sub-swath to the next.
 - The imaging mode, currently only IW is supported.
-- The swath number, either 1, 2, or 3, indicating which swath the burst is located in.
+- The swath number, either 1, 2, or 3, indicating which sub-swath the burst is located in.
 - The acquisition dates of the reference (older) scene and the secondary (newer) scene
 - The polarizations for the pair, either HH or VV.
 - The product type (always INT for InSAR) and the pixel spacing, which will be either 80, 40, or 20, based upon the number of looks selected when the job was submitted for processing
@@ -171,7 +171,7 @@ The Burst InSAR product names are packed with information pertaining to the proc
 
 ### Image Files
 
-All of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs. The exceptions to this are the connected components and the water mask, which are both 8-bit unsigned-integer single-band GeoTiffs.
+All of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs. The exceptions to this are the connected components and the water mask, which are both 8-bit unsigned-integer single-band GeoTIFFs.
 
 - The *coherence* file pixel values range from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent. 
 - The *unwrapped phase* file shows the results of the phase unwrapping process. Negative values indicate movement towards the sensor, and positive values indicate movement away from the sensor. This is the main interferogram output.

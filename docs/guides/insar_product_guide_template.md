@@ -64,7 +64,7 @@ For deformation mapping, it is best to minimize the perpendicular baseline whene
 All of ASF's On Demand InSAR products are generated using ASF's HyP3 platform. Jobs can be submitted for processing using the [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} data portal, the [HyP3 Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank} or the [HyP3 API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank}.
 
 ### Vertex
-InSAR pairs are selected in [Vertex](https://search.asf.alaska.edu/#/ "https://search.asf.alaska.edu" ){target=_blank} using either the [Baseline Search](https://docs.asf.alaska.edu/vertex/baseline/ "https://docs.asf.alaska.edu/vertex/baseline" ){target=_blank} or the [SBAS Search](https://docs.asf.alaska.edu/vertex/sbas/ "https://docs.asf.alaska.edu/vertex/sbas" ){target=_blank} interface. The process of selecting pairs is the same for both IW SLC products and individual SLC bursts, but you will need to select the appropriate dataset when searching for content. As illustrated below, select the **Sentinel-1** option in the Dataset menu to search for IW SLC products, and select the **S1 Bursts** option to search for individual SLC bursts. 
+InSAR pairs are selected in [Vertex](https://search.asf.alaska.edu/#/ "https://search.asf.alaska.edu" ){target=_blank} using either the [Baseline Search](https://docs.asf.alaska.edu/vertex/baseline/ "https://docs.asf.alaska.edu/vertex/baseline" ){target=_blank} or the [SBAS Search](https://docs.asf.alaska.edu/vertex/sbas/ "https://docs.asf.alaska.edu/vertex/sbas" ){target=_blank} interface.
 
 ![Vertex Dataset Selection](../images/vertex-dataset-selection.png)
 
@@ -122,8 +122,6 @@ While SAR signals can penetrate clouds, atmospheric conditions can delay the tra
 In some cases, atmospheric errors can be corrected by using an atmospheric model to remove the impacts of the turbulent delay from the interferogram. Another approach is to use time series analysis to identify outliers.
 
 ***Always doubt your interferogram first!*** View the interferogram critically, and consider if fringe patterns could potentially be driven by atmospheric effects. In general, it is best to avoid drawing conclusions from the outcome of a single interferogram.
-
-Tropospheric phase may be less impactful when considering small-scale deformation. As such, if you are using ASF's [Sentinel-1 Burst InSAR products](burst_insar_product_guide.md "Sentinel-1 Burst InSAR Product Guide" ){target=_blank} to look at deformation signals that are smaller than 1 km&sup2; you should consider using methods other than the typical atmospheric model based corrections to remove the effects of atmospheric delay.
 
 #### Turbulent Delay
 These delays are generally caused by differences in water vapor distribution from one image to the next. They often manifest as wobbly or sausage-shaped fringes, and can potentially mask the signal of a small earthquake.

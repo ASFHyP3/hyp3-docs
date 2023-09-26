@@ -92,6 +92,7 @@ ESA
 ESD
 ESRI
 et
+EW
 FD6A
 front-end
 full-fledged
@@ -139,6 +140,7 @@ hyp3_sdk
 IaC
 Iain
 IHS
+impactful
 inc_map.tif
 include_dem
 include_rgb
@@ -281,7 +283,7 @@ Sinergise
 SLC
 SLCs
 SNAPHU
-SNAPHU’s
+SNAPHU's
 snaphu_mcf
 socio-economic
 Specular

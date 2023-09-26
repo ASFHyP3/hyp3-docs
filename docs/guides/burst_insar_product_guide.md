@@ -11,7 +11,7 @@ Single Look Complex (SLC) data from the Sentinel-1 mission that is suitable for 
 
 In contrast, working at the burst level of the Sentinel-1 SLC data provides a couple key benefits: 
 
-**1. Bursts are consistently geo-located through time**  
+**1. Bursts are consistently geolocated through time**  
 The coverage of a burst is the same for every orbit of the satellite, so you can be confident that every burst with the same [Full Burst ID](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8#ref-n-VYIiUe "Sentinel-1 Burst Overview https://arcg.is/zSafi0" ){target=_blank} in a stack of acquisitions will cover the same geographic location. 
 
 **2. Bursts cover a smaller geographic area**  

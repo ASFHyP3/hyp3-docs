@@ -154,7 +154,7 @@ HyP3 Burst InSAR output is a zip file containing various files, including GeoTIF
 
 ### Naming Convention
 
-The Burst InSAR product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 4. 
+The Burst InSAR product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 3. 
 
 - The imaging platform name, always S1 for Sentinel-1.
 - Relative burst ID values assigned by ESA. Each value identifies a consistent burst footprint; relative burst ID values differ from one subswath to the next.
@@ -165,9 +165,9 @@ The Burst InSAR product names are packed with information pertaining to the proc
 - The product type (always INT for InSAR) and the pixel spacing, which will be either 80, 40, or 20, based upon the number of looks selected when the job was submitted for processing
 - The filename ends with the ASF product ID, a 4 digit hexadecimal number
 
-![Figure 4](../images/asf_burst_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
+![Figure 3](../images/asf_burst_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
 
-*Figure 4: Breakdown of ASF Burst InSAR naming scheme.*
+*Figure 3: Breakdown of ASF Burst InSAR naming scheme.*
 
 ### Image Files
 

@@ -8,8 +8,12 @@
 .tif.xml
 .txt
 .xml
+5x1
+5x1-look
 10x2
+10x2-look
 20x4
+20x4-look
 2π
 4π
 5x1
@@ -94,6 +98,7 @@ full-fledged
 Galápagos
 gamma-nought
 gamma0
+Geocode
 geocoded
 Geocoding
 geocoding
@@ -117,6 +122,7 @@ Gitter
 GL1
 GLO-30
 GNSS
+Goldstein-Werner
 Grayscale
 grayscale
 GRD-H
@@ -145,6 +151,7 @@ Interferometric
 interferometric
 Interferometry
 interferometry
+ISCE2
 iteratively
 IW
 Jinja2
@@ -154,6 +161,7 @@ JSON
 Jupyter
 KMZ
 kmz
+km²
 Kuenzer
 L1
 L1/L5
@@ -241,6 +249,9 @@ rgb.tif
 Ridgecrest
 RTC
 Rüetschi
+S1
+S1_136231_IW2_20200604T022312_VV_7C85-BURST
+S1_136231_IW2_20200616T022313_VV_5D11-BURST
 S1A
 S1A_IW_SLC__1SDV_20200116T032559_20200116T032627_030820_038928_F5DC
 S1B
@@ -269,6 +280,9 @@ sigma0
 Sinergise
 SLC
 SLCs
+SNAPHU
+SNAPHU’s
+snaphu_mcf
 socio-economic
 Specular
 specular
@@ -286,6 +300,7 @@ TBD
 TODO
 tradeoffs
 TRE
+Tropospheric
 Twele
 UAF
 UI

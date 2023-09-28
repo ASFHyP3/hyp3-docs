@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/) 
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.4]
+
+### Added
+* Unpublished Sentinel-1 Burst InSAR Product Guide
+
+### Fixed
+* Clarified the range of possible pixel values for the lv_phi.tif file in the InSAR Product Guide.
+  Fixes [#334](https://github.com/ASFHyP3/hyp3-docs/issues/334).
+
+### Removed
+* `propose-tweet` GitHub action workflow. Closes [#288](https://github.com/ASFHyP3/hyp3-docs/issues/288). 
+
 ## [0.5.3]
 
 ### Changed

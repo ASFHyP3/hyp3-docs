@@ -10,6 +10,7 @@ theme:
     repo: fontawesome/brands/github-alt
   features:
     - navigation.instant
+    - navigation.footer
 
 repo_url: https://github.com/ASFHyP3
 repo_name: ASF HyP3

@@ -31,15 +31,15 @@ Note that the height values will differ from the original source DEM in all case
 
 ## Copernicus DEM
 
-The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} provides global coverage (with the current exception of an area covering Armenia and Azerbaijan, see Figure 2) at 30-m pixel spacing. When an On Demand job is requested, we download the required DEM tiles from the Copernicus Digital Elevation Model (DEM) GLO-30 Public dataset available in the [Registry of Open Data on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank}, managed by [Sinergise](https://www.sinergise.com/ "https://www.sinergise.com" ){target=_blank}. We mosaic the tiles and reproject them to the appropriate UTM Zone for the location of the SAR granule to be processed, resampling them as required for processing. A geoid correction is applied before it is used for On Demand processing.
+The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} provides global coverage at 30-m pixel spacing (with the current exception of an area covering Armenia and Azerbaijan, see Figure 2, which only has coverage at 90-m pixel spacing). When an On Demand job is requested, we download the required DEM tiles from the Copernicus Digital Elevation Model (DEM) GLO-30 Public dataset available in the [Registry of Open Data on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank}, managed by [Sinergise](https://www.sinergise.com/ "https://www.sinergise.com" ){target=_blank}. We mosaic the tiles and reproject them to the appropriate UTM Zone for the location of the SAR granule to be processed, resampling them as required for processing. A geoid correction is applied before it is used for On Demand processing.
 
-Figure 1 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and Figure 2 details the land area currently not covered.
+Figure 1 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and Figure 2 details the land area currently only covered at 90-m pixel spacing.
 
 ![Figure 1](images/cop-coverage-map.png "Copernicus DEM GLO-30 coverage map")
 
 *Figure 1: Copernicus DEM GLO-30 coverage map*
 
-![Figure 2](images/cop-missing-100.png "Detail of area currently not covered by Copernicus DEM GLO-30")
+![Figure 2](images/cop-missing-100.png "Detail of area currently not covered by Copernicus DEM GLO-30. Jobs over this area will be filled with GLO-90.")
 
 *Figure 2: Detail of area currently not covered by Copernicus DEM GLO-30*
 

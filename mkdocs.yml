@@ -18,14 +18,6 @@ edit_uri: ''
 
 extra:
   social:
-    - icon: fontawesome/brands/facebook-f
-      link: https://www.facebook.com/AKSatellite
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/Ak_Satellite
-    - icon: fontawesome/brands/youtube
-      link: https://www.youtube.com/channel/UChCfI0oVWw4qDwEidnDskJQ
-    # TODO: remove the above items after we get them to load from mkdocs-asf-theme
-
     - icon: fontawesome/brands/gitter
       link: https://gitter.im/ASFHyP3/community
 

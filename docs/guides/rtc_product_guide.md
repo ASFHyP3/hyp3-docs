@@ -94,7 +94,7 @@ When an On Demand RTC job is requested, we download the required DEM tiles from 
 
 For the area that does not have coverage with the GLO-30 DEM, we use the Copernicus DEM GLO-90 dataset, which provides elevation data at 90-meter pixel spacing. Users ordering products over this area should be aware that a lower-resolution DEM is used for processing.
 
-Figure 2 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and Figure 3 details the land area currently only covered by the GLO-30 DEM at 90-m pixel spacing.
+Figure 2 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and Figure 3 details the land area currently only covered by the GLO-90 DEM at 90-m pixel spacing.
 
 ![Figure 2](../images/cop-coverage-map.png "Copernicus DEM GLO-30 coverage map")
 

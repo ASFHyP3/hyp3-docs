@@ -123,6 +123,7 @@ GitOps
 Gitter
 GL1
 GLO-30
+GLO-90
 GNSS
 Goldstein-Werner
 Grayscale

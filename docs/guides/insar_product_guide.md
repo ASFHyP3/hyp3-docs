@@ -8,6 +8,14 @@ This process requires [Sentinel-1 IW SLC products](https://sentinels.copernicus.
 
 For a step-by-step tutorial on ordering On-Demand InSAR Products using Vertex, visit our [InSAR On Demand! StoryMap](https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3 "InSAR On Demand! https://arcg.is/eiP8G0" ){target=_blank}. To learn more about the files included in the On Demand InSAR product packages and how to work with them, refer to our [Exploring Sentinel-1 InSAR StoryMap](https://storymaps.arcgis.com/stories/8be186e4125741518118d0102e6835e5 "Exploring Sentinel-1 InSAR https://arcg.is/11DaW90" ){target=_blank}.
 
+InSAR processing requires a Digital Elevation Model (DEM) for the removal of topographic phase. We use the [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} when processing our On Demand InSAR products. Refer to the [Digital Elevation Model section](#prepare-the-dem-file "Jump to the Prepare the DEM File Section of this document" ) for more information. 
+
+!!! important "Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90" 
+
+    The Copernicus DEM GLO-30 dataset does not provide coverage over Armenia and Azerbaijan. In the past, we have not supported InSAR product generation over those areas, due to the lack of DEM coverage. We now use the Copernicus DEM GLO-90 to fill those gaps. 
+
+    The GLO-90 dataset has a pixel spacing of 90 meters, which is not as detailed as the 30-m pixel spacing in the GLO-30 DEM, but it does allow us to provide InSAR products in these regions, where they were previously unavailable. 
+
 Users are cautioned to read the sections on [limitations](#limitations "Jump to the Limitations section of this document") and [error sources](#error-sources "Jump to the Error Sources section of this document") in InSAR products before attempting to use InSAR data. For a more complete description of the properties of SAR, see our [Introduction to SAR](../guides/introduction_to_sar.md "https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar" ){target=_blank} guide. 
 {% endblock %}
 

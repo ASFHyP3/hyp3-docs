@@ -57,6 +57,12 @@ Figure 1 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and Fig
 
 ## Legacy DEMs
 
+!!! important "Deprecation of Legacy DEMs for RTC Processing"
+
+    We are considering eliminating the option to use our legacy DEM dataset (NED/SRTM) as a HyP3 processing option for RTC. We would value your feedback as we decide if we will make this change. How would you be impacted if the NED/SRTM DEM option was no longer available? Would it affect your current workflows? 
+
+    Please send your feedback to [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu).
+
 The legacy DEMs were pre-processed by ASF to a consistent raster format (GeoTIFF) from the original source formats: height (\*.hgt), ESRI ArcGrid (\*.adf), etc. Many of the NASA-provided DEMs were provided as orthometric heights with EGM96 vertical datum. These were converted by ASF to ellipsoid heights using the ASF [MapReady](https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready "https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready" ){target=_blank} tool named *geoid_adjust*. The pixel reference varied from the center (pixel as point) to a corner (pixel as area). The GAMMA software, used to generate the terrain corrected products, uses pixel as area and adjusts DEM coordinates as needed. 
 
 These processed DEM collections are stored by ASF in AWS. When an On Demand job is requested, the best-available DEM covering the SAR granule is selected, and the necessary tiles are reprojected to a mosaic in the UTM Zone appropriate for the granule location.

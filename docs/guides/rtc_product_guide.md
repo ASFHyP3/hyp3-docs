@@ -5,7 +5,7 @@ SAR datasets inherently contain [geometric and radiometric distortions](#sar-dis
 
 ASF's [Sentinel-1 On-Demand RTC](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Tutorial" ){target=_blank} products are generated using [GAMMA Software](https://gamma-rs.ch/ "https://gamma-rs.ch" ){target=_blank}. Products are distributed as GeoTIFFs (one for each available polarization) projected to the appropriate UTM Zone for the location of the scene.
 
-A [Digital Elevation Model (DEM)](#digital-elevation-models "Jump to DEM Section of document") is required for processing RTC. ASF uses the best publicly-available DEM with full coverage of the processing area. The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} is the default DEM used for processing RTC On Demand products.
+A Digital Elevation Model (DEM) is required for processing RTC. The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} is the default DEM used for processing RTC On Demand products. Refer to the [Digital Elevation Model section](#digital-elevation-models "Jump to the DEM Section of this document" ) for more information. 
 
 !!! important "Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90" 
 

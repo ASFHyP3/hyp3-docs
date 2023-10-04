@@ -64,7 +64,7 @@ Users still have the option to use the legacy DEMs when processing RTC jobs [On 
 
     Please send your feedback to [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu).
 
-We use the most recent Copernicus DEM release [available on AWS](https://registry.opendata.aws/copernicus-dem/). For more information, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}.
+We use the [2021 Release of the Copernicus GLO-30 Public DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, [available on AWS](https://registry.opendata.aws/copernicus-dem/ "Registry of Open Data on AWS - Copernicus DEM" ){target=_blank}. For more information, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}.
 
 !!! important "Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90" 
 

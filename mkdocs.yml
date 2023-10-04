@@ -89,7 +89,7 @@ nav:
   - Contact Us: contact.md
 
 plugins:
-  - material/search
+  - search
   - section-index
   - macros:
       module_name: macros

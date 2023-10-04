@@ -5,7 +5,13 @@ SAR datasets inherently contain [geometric and radiometric distortions](#sar-dis
 
 ASF's [Sentinel-1 On-Demand RTC](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Tutorial" ){target=_blank} products are generated using [GAMMA Software](https://gamma-rs.ch/ "https://gamma-rs.ch" ){target=_blank}. Products are distributed as GeoTIFFs (one for each available polarization) projected to the appropriate UTM Zone for the location of the scene.
 
-A [Digital Elevation Model (DEM)](#digital-elevation-models "Jump to DEM Section of document") is required for processing RTC. ASF uses the best publicly-available DEM with full coverage of the processing area. 
+A [Digital Elevation Model (DEM)](#digital-elevation-models "Jump to DEM Section of document") is required for processing RTC. ASF uses the best publicly-available DEM with full coverage of the processing area. The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} is the default DEM used for processing RTC On Demand products.
+
+!!! important "Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90" 
+
+    The Copernicus DEM GLO-30 dataset does not provide coverage over Armenia and Azerbaijan. In the past, we have not supported On Demand product generation over those areas, due to the lack of DEM coverage. We now use the Copernicus DEM GLO-90 to fill those gaps. 
+
+    The GLO-90 dataset has a pixel spacing of 90 meters, which is not as detailed as the 30-m pixel spacing in the GLO-30 DEM, but it does allow us to provide On Demand products in these regions, where they were previously unavailable.
 
 For a step-by-step tutorial on ordering On-Demand RTC Products using Vertex, visit our [RTC On Demand! StoryMap](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand! StoryMap" ){target=_blank}, which also includes links to sample workflows using Sentinel-1 RTC products for GIS applications.
 

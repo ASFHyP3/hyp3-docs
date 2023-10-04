@@ -6,7 +6,7 @@ dependencies:
   - python=3.9
   - pip
   # For documentation
-  - mkdocs>1.2.3
+  - mkdocs==1.5.3
   - mkdocs-material=9.4.2
   - hyp3_sdk=3.0.0  # also pinned in docs/using/sdk.md
   - asf_tools=0.5.2  # also pinned in docs/tools/asf_tools.md

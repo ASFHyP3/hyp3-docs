@@ -5,7 +5,13 @@ SAR datasets inherently contain [geometric and radiometric distortions](#sar-dis
 
 ASF's [Sentinel-1 On-Demand RTC](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Tutorial" ){target=_blank} products are generated using [GAMMA Software](https://gamma-rs.ch/ "https://gamma-rs.ch" ){target=_blank}. Products are distributed as GeoTIFFs (one for each available polarization) projected to the appropriate UTM Zone for the location of the scene.
 
-A [Digital Elevation Model (DEM)](#digital-elevation-models "Jump to DEM Section of document") is required for processing RTC. ASF uses the best publicly-available DEM with full coverage of the processing area. 
+A Digital Elevation Model (DEM) is required for radiometric terrain correction. The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} is the default DEM used for processing RTC On Demand products. Refer to the [Digital Elevation Model section](#digital-elevation-models "Jump to the DEM Section of this document" ) for more information. 
+
+!!! important "Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90" 
+
+    The Copernicus DEM GLO-30 dataset does not provide coverage over Armenia and Azerbaijan. In the past, we have not supported On Demand product generation over those areas using the Copernicus DEM option. We now use the Copernicus DEM GLO-90 to fill those gaps. 
+
+    Users should be aware that the GLO-90 dataset has a pixel spacing of 90 meters, which is not as detailed as the 30-m pixel spacing in the GLO-30 DEM. 
 
 For a step-by-step tutorial on ordering On-Demand RTC Products using Vertex, visit our [RTC On Demand! StoryMap](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand! StoryMap" ){target=_blank}, which also includes links to sample workflows using Sentinel-1 RTC products for GIS applications.
 
@@ -46,15 +52,25 @@ The RTC product package includes a Layover-Shadow mask (see [Image Files section
 
 ## Digital Elevation Models
 
-The quality of the terrain corrections are directly related to the quality of the digital elevation models (DEMs) used in the process of geometrically and radiometrically correcting the SAR imagery. We use DEMs that are publicly available and have wide-ranging coverage. 
+The quality of the terrain corrections are related to the quality of the digital elevation models (DEMs) used in the process of geometrically and radiometrically correcting the SAR imagery. We use DEMs that are publicly available and have wide-ranging coverage. 
 
-In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. With the public release of the [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, we have changed our default DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. This is now the default DEM for processing RTC products.
+In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. With the public release of the [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, we have changed our default DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. This is now the default DEM for processing RTC products, and the only option available for processing [InSAR products](insar_product_guide.md "Sentinel-1 InSAR On Demand Product Guide" ){target=_blank}.
 
-!!! important "Copernicus DEM GLO-30 Updated" 
+Users still have the option to use the legacy DEMs when processing RTC jobs [On Demand in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=_blank} and when using the [API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank} or [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank}, but we recommend using the Copernicus DEM whenever possible.
 
-    We use the Copernicus DEM GLO-30 Public dataset as our default DEM for RTC and InSAR processing. We have now updated to the most recent release [available on AWS](https://registry.opendata.aws/copernicus-dem/), which improves coverage over Norway, and includes 5 additional tiles. For more information, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}.
+!!! important "Deprecation of Legacy DEMs for RTC Processing"
 
-    Users still have the option to use the legacy DEMs when processing RTC jobs [On Demand in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=_blank} and when using the [API](https://hyp3-docs.asf.alaska.edu/using/api/ "HyP3 API Documentation" ){target=_blank} or [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "HyP3 Python SDK Documentation" ){target=_blank}, but we recommend using the Copernicus DEM whenever possible.
+    We are considering eliminating the option to use our legacy DEM dataset (NED/SRTM) as a HyP3 processing option for RTC. We would value your feedback as we decide if we will make this change. How would you be impacted if the NED/SRTM DEM option was no longer available? Would it affect your current workflows? 
+
+    Please send your feedback to [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu).
+
+We use the 2022 Release of the [Copernicus GLO-30 Public DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, [available on AWS](https://registry.opendata.aws/copernicus-dem/ "Registry of Open Data on AWS - Copernicus DEM" ){target=_blank}. For more information, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}.
+
+!!! important "Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90" 
+
+    The Copernicus DEM GLO-30 dataset does not provide coverage over Armenia and Azerbaijan. In the past, we have not supported On Demand product generation over those areas using the Copernicus DEM option. We now use the Copernicus DEM GLO-90 to fill those gaps. 
+
+    Users should be aware that the GLO-90 dataset has a pixel spacing of 90 meters, which is not as detailed as the 30-m pixel spacing in the GLO-30 DEM. 
 
 Table 1 summarizes ASF's DEM sources. Note that in each case, the DEM is resampled to RTC spacing and reprojected to a UTM Zone (WGS84), and a geoid correction is applied before being used for RTC processing.
 
@@ -72,19 +88,29 @@ When ordering On-Demand RTC products, you can choose to [include a copy of the D
 
 ### Copernicus DEM
 
-The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} provides global coverage (with the current exception of an area covering Armenia and Azerbaijan, see Figure 3) at 30-m pixel spacing. When an RTC job is requested, we download the required DEM tiles from the Copernicus Digital Elevation Model (DEM) GLO-30 Public dataset available in the [Registry of Open Data on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank}, managed by [Sinergise](https://www.sinergise.com/ "https://www.sinergise.com" ){target=_blank}. We mosaic the tiles and reproject them to the appropriate UTM Zone for the location of the SAR granule to be processed, resampling them to match the pixel spacing and alignment of the RTC product. A geoid correction is applied before it is used for RTC processing.
+The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} provides global coverage at 30-m pixel spacing (with the current exception of an area covering Armenia and Azerbaijan, see Figure 3). 
 
-Figure 2 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and Figure 3 details the land area currently not covered.
+When an On Demand RTC job is requested, we download the required DEM tiles from the Copernicus Digital Elevation Model (DEM) GLO-30 Public dataset available in the [Registry of Open Data on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank}, managed by [Sinergise](https://www.sinergise.com/ "https://www.sinergise.com" ){target=_blank}. We mosaic the tiles and reproject them to the appropriate UTM Zone for the location of the SAR granule to be processed, resampling them to match the pixel spacing and alignment of the RTC product. A geoid correction is applied before it is used for RTC processing.
+
+For the area that does not have coverage with the GLO-30 DEM, we use the Copernicus DEM GLO-90 dataset, which provides elevation data at 90-meter pixel spacing. Users ordering products over this area should be aware that a lower-resolution DEM is used for processing.
+
+Figure 2 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and Figure 3 details the land area currently only covered by the GLO-90 DEM at 90-m pixel spacing.
 
 ![Figure 2](../images/cop-coverage-map.png "Copernicus DEM GLO-30 coverage map")
 
 *Figure 2: Copernicus DEM GLO-30 coverage map*
 
-![Figure 3](../images/cop-missing-100.png "Detail of area currently not covered by Copernicus DEM GLO-30")
+![Figure 3](../images/cop-missing-100.png "Detail of area currently not covered by Copernicus DEM GLO-30. Jobs over this area will be filled with GLO-90 tiles.")
 
-*Figure 3: Detail of area currently not covered by Copernicus DEM GLO-30*
+*Figure 3: Detail of area currently not covered by Copernicus DEM GLO-30. On Demand jobs requested over this area will use the Copernicus DEM GLO-90.*
 
 ### Legacy DEMs
+
+!!! important "Deprecation of Legacy DEMs for RTC Processing"
+
+    We are considering eliminating the option to use our legacy DEM dataset (NED/SRTM) as a HyP3 processing option for RTC. We would value your feedback as we decide if we will make this change. How would you be impacted if the NED/SRTM DEM option was no longer available? Would it affect your current workflows? 
+
+    Please send your feedback to [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu).
 
 The legacy DEMs were pre-processed by ASF to a consistent raster format (GeoTIFF) from the original source formats: height (\*.hgt), ESRI ArcGrid (\*.adf), etc. Many of the NASA-provided DEMs were provided as orthometric heights with EGM96 vertical datum. These were converted by ASF to ellipsoid heights using the ASF [MapReady](https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready "https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready" ){target=_blank} tool named *geoid_adjust*. The pixel reference varied from the center (pixel as point) to a corner (pixel as area). The GAMMA software used to generate the RTC products uses pixel as area and adjusts DEM coordinates as needed. 
 

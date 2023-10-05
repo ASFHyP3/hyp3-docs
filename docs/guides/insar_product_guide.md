@@ -8,6 +8,14 @@ This process requires [Sentinel-1 IW SLC products](https://sentinels.copernicus.
 
 For a step-by-step tutorial on ordering On-Demand InSAR Products using Vertex, visit our [InSAR On Demand! StoryMap](https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3 "InSAR On Demand! https://arcg.is/eiP8G0" ){target=_blank}. To learn more about the files included in the On Demand InSAR product packages and how to work with them, refer to our [Exploring Sentinel-1 InSAR StoryMap](https://storymaps.arcgis.com/stories/8be186e4125741518118d0102e6835e5 "Exploring Sentinel-1 InSAR https://arcg.is/11DaW90" ){target=_blank}.
 
+InSAR processing requires a Digital Elevation Model (DEM) for the removal of topographic phase. We use the [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} when processing our On Demand InSAR products. Refer to the [Prepare the DEM File section](#prepare-the-dem-file "Jump to the Prepare the DEM File Section of this document") for more information. 
+
+!!! important "Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90" 
+
+    The Copernicus DEM GLO-30 dataset does not provide coverage over Armenia and Azerbaijan. In the past, we have not supported InSAR product generation over those areas, due to the lack of DEM coverage. We now use the Copernicus DEM GLO-90 to fill those gaps. 
+
+    The GLO-90 dataset has a pixel spacing of 90 meters, which is not as detailed as the 30-m pixel spacing in the GLO-30 DEM, but it does allow us to provide InSAR products in these regions, where they were previously unavailable. 
+
 Users are cautioned to read the sections on [limitations](#limitations "Jump to the Limitations section of this document") and [error sources](#error-sources "Jump to the Error Sources section of this document") in InSAR products before attempting to use InSAR data. For a more complete description of the properties of SAR, see our [Introduction to SAR](../guides/introduction_to_sar.md "https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar" ){target=_blank} guide. 
 {% endblock %}
 
@@ -71,7 +79,9 @@ Immediately after ingesting the SLC, the state vectors are updated to use the be
 
 In order to create differential InSAR products that show motion on the ground, one must subtract the topographic phase from the interferogram. The topographic phase, in this case, is replicated by using an [existing DEM](../dems.md "HyP3 DEM Documentation" ){target=_blank} to calculate the actual topographic phase. This phase is then removed from the interferogram leaving just the motion or deformation signal (plus atmospheric delays and noise).
 
-The DEM that is used for HyP3 InSAR processing is the [2021 Release of the Copernicus GLO-30 Public DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} dataset [publicly available on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank}. This DEM provides global coverage at 30-m pixel spacing, and provides higher-quality products over a wider area than the older DEMs (SRTM and NED) previously used to generate ASF's On Demand products. For more information about the 2021 updates, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}.
+The DEM that is used for HyP3 InSAR processing is the 2022 Release of the [Copernicus GLO-30 Public DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} dataset [publicly available on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank}. For more information about the 2022 updates, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}.
+
+The [Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} provides higher-quality products over a wider area than the older DEMs (SRTM and NED) previously used to generate ASF's On Demand products. Refer to our [Digital Elevation Model Documentation](../dems.md "HyP3 DEM Documentation" ){target=_blank} for more information. The Copernicus DEM provides global coverage at 30-m pixel spacing, except for [areas over Armenia and Azerbaijan](../dems.md#copernicus-dem "HyP3 Copernicus DEM Documentation" ){target=_blank}. These gaps in coverage are filled with the Copernicus GLO-90 Public DEM, which has 90-m pixel spacing. 
 
 The DEM tiles necessary to cover the input granules for the InSAR product are downloaded. A geoid correction is applied to the DEM, and it is resampled to match the [output resolution](#processing-options "Jump to Processing Options section of this document") of the InSAR product (160 m for 20x4 products, 80 m for 10x2 products) and projected to the appropriate UTM Zone for the granule location.
 

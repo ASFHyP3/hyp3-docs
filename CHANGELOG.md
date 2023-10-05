@@ -8,6 +8,9 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.6.0]
 
+## Added
+* Added notes indicating that GLO-90 tiles will fill missing GLO-30 tiles over Armenia and Azerbaijan.
+
 ### Changed
 * Upgraded to `mkdocs-asf-theme==0.3.0`.
 

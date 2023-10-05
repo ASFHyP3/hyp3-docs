@@ -16,8 +16,8 @@ dependencies:
 
       # TODO uncomment the release version and delete the github pin
       #- mkdocs-asf-theme==0.3.0
-      #- git+https://github.com/ASFHyP3/mkdocs-asf-theme.git@develop
-      - git+https://github.com/ASFHyP3/mkdocs-asf-theme.git@upgrade-mkdocs-material
+      - git+https://github.com/ASFHyP3/mkdocs-asf-theme.git@develop
+      #- git+https://github.com/ASFHyP3/mkdocs-asf-theme.git@upgrade-mkdocs-material
 
       - mkdocs-redirects
       - mkdocs-section-index

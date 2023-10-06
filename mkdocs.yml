@@ -9,7 +9,7 @@ theme:
   icon:
     repo: fontawesome/brands/github-alt
   features:
-    - navigation.instant
+    # - navigation.instant  # This doesn't work with the NASA Earthdata tophat; see ASFHyP3/hyp3-docs#371
     - navigation.footer
 
 repo_url: https://github.com/ASFHyP3

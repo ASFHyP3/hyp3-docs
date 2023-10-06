@@ -13,6 +13,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 * Upgraded to `mkdocs-asf-theme==0.3.0`.
+* Google Analytics is set up directly in [mkdocs.yml](mkdocs.yml) as it's no longer set by default in the theme.
 
 ## [0.5.4]
 

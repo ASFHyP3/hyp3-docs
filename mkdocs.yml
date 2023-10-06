@@ -3,6 +3,11 @@ site_url: https://hyp3-docs.asf.alaska.edu/
 site_author: ASF APD/Tools Team
 site_description: The Alaska Satellite Facility's Hybrid Pluggable Processing Pipeline
 
+# ASF's Google Analytics
+google_analytics:
+  - UA-991100-5
+  - search.asf.alaska.edu
+
 theme:
   name: asf-theme
   logo: images/HyP3-graphic-only.png

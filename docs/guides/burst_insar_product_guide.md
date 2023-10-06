@@ -95,7 +95,7 @@ The DEM that is used for HyP3 InSAR processing is the
 [2021 Release of the Copernicus GLO-30 Public DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}
 dataset
 [publicly available on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank},
-which provides global coverage at 30-m pixel spacing.
+which provides global coverage at 30-m pixel spacing (except for an area over Armenia and Azerbaijan, which only has 90-m coverage).
 For more information about the 2021 updates, see the 'Releases' section of
 [this article](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}.
 

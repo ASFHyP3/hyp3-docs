@@ -13,12 +13,7 @@ dependencies:
   - requests
   - pip:
       # For documentation
-
-      # TODO uncomment the release version and delete the github pin
-      #- mkdocs-asf-theme==0.3.0
-      - git+https://github.com/ASFHyP3/mkdocs-asf-theme.git@develop
-      #- git+https://github.com/ASFHyP3/mkdocs-asf-theme.git@upgrade-mkdocs-material
-
+      - mkdocs-asf-theme==0.3.0
       - mkdocs-redirects
       - mkdocs-section-index
       - mkdocstrings

@@ -10,7 +10,7 @@ For a step-by-step tutorial on ordering On-Demand InSAR Products using Vertex, v
 
 InSAR processing requires a Digital Elevation Model (DEM) for the removal of topographic phase. We use the [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} when processing our On Demand InSAR products. Refer to the [Prepare the DEM File section](#prepare-the-dem-file "Jump to the Prepare the DEM File Section of this document") for more information. 
 
-!!! important "Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90" 
+!!! tip "Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90" 
 
     The Copernicus DEM GLO-30 dataset does not provide coverage over Armenia and Azerbaijan. In the past, we have not supported InSAR product generation over those areas, due to the lack of DEM coverage. We now use the Copernicus DEM GLO-90 to fill those gaps. 
 
@@ -22,13 +22,13 @@ Users are cautioned to read the sections on [limitations](#limitations "Jump to 
 {% block processing_options %}
 ### Processing Options
 
-!!! important "New Water Masking Approach"
+!!! tip "New Water Masking Approach"
 
     InSAR products can be phase unwrapped using a water mask. The option to "Apply water mask" sets pixels over coastal waters and large inland waterbodies as invalid for phase unwrapping. This reduces phase unwrapping errors and outputs a less noisy unwrapped interferogram.
 
     As of September 27, 2022, the water mask used for this option is no longer buffered. The original water mask had a 3 km buffer on coastlines and a 5 km buffer on the shorelines of inland waterbodies. This was to reduce the chance that valid land pixels would be excluded from phase unwrapping, but it appears that the inclusion of more water pixels is more detrimental to phase unwrapping than the exclusion of some land pixels. Visit our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information.
 
-!!! important "Change in Displacement Map Options"
+!!! tip "Change in Displacement Map Options"
 
     There is now a single option for including displacement maps. Both line-of-sight and vertical displacement maps will only be added to the product package if the option to "Include Displacement Maps" is selected when submitting On-Demand InSAR jobs. Use caution when referencing the values included in the displacement maps, as the values are calculated relative to an arbitrary reference point. Refer to the [Phase Unwrapping Reference Point](#phase-unwrapping-reference-point "Jump to Phase Unwrapping Reference Point part of the Limitations section in this document") section for more information. 
 
@@ -127,7 +127,7 @@ Another step before unwrapping is to create a validity mask to guide the phase u
 
 Coherence is estimated from the normalized interferogram. The pixel values in this file range from 0.0 (total decorrelation) to 1.0 (perfectly coherent). Any input pixel with a coherence value less than 0.1 is given a validity mask value of zero and not used during unwrapping.
 
-!!! important "Change to Validity Mask Thresholds"
+!!! tip "Change to Validity Mask Thresholds"
 
     In the past, we also used an amplitude threshold of 0.2 (in power scale) when generating the validity mask. While this approach tends to mask out inland waters, providing a less noisy interferogram in some cases, it also masks arid regions that have low amplitude values but reasonably high coherence. As of March 2022, we have set the amplitude threshold to 0.0, so that coherence is the only driver of the validity mask.
 

@@ -7,7 +7,7 @@ ASF's [Sentinel-1 On-Demand RTC](https://search.asf.alaska.edu/#/?topic=onDemand
 
 A Digital Elevation Model (DEM) is required for radiometric terrain correction. The [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} is the default DEM used for processing RTC On Demand products. Refer to the [Digital Elevation Model section](#digital-elevation-models "Jump to the DEM Section of this document" ) for more information. 
 
-!!! important "Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90" 
+!!! tip "Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90" 
 
     The Copernicus DEM GLO-30 dataset does not provide coverage over Armenia and Azerbaijan. In the past, we have not supported On Demand product generation over those areas using the Copernicus DEM option. We now use the Copernicus DEM GLO-90 to fill those gaps. 
 
@@ -15,7 +15,7 @@ A Digital Elevation Model (DEM) is required for radiometric terrain correction. 
 
 For a step-by-step tutorial on ordering On-Demand RTC Products using Vertex, visit our [RTC On Demand! StoryMap](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand! StoryMap" ){target=_blank}, which also includes links to sample workflows using Sentinel-1 RTC products for GIS applications.
 
-!!! important "New RTC Pixel Spacing Option Available"
+!!! tip "New RTC Pixel Spacing Option Available"
 
     On Demand Sentinel-1 RTC products can now be processed at [20-m pixel spacing](#pixel-spacing "RTC Pixel Spacing Documentation" ){target=_blank}. Refer to the [Processing Options](#processing-options-and-optional-files "Jump to Processing Options section in document") section for more information.
 
@@ -58,7 +58,7 @@ In the past, ASF maintained a collection of DEMs that were pre-processed as appr
 
 Users still have the option to use the legacy DEMs when processing RTC jobs [On Demand in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=_blank} and when using the [API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank} or [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank}, but we recommend using the Copernicus DEM whenever possible.
 
-!!! important "Deprecation of Legacy DEMs for RTC Processing"
+!!! tip "Deprecation of Legacy DEMs for RTC Processing"
 
     We are considering eliminating the option to use our legacy DEM dataset (NED/SRTM) as a HyP3 processing option for RTC. We would value your feedback as we decide if we will make this change. How would you be impacted if the NED/SRTM DEM option was no longer available? Would it affect your current workflows? 
 
@@ -66,7 +66,7 @@ Users still have the option to use the legacy DEMs when processing RTC jobs [On 
 
 We use the 2022 Release of the [Copernicus GLO-30 Public DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, [available on AWS](https://registry.opendata.aws/copernicus-dem/ "Registry of Open Data on AWS - Copernicus DEM" ){target=_blank}. For more information, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}.
 
-!!! important "Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90" 
+!!! tip "Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90" 
 
     The Copernicus DEM GLO-30 dataset does not provide coverage over Armenia and Azerbaijan. In the past, we have not supported On Demand product generation over those areas using the Copernicus DEM option. We now use the Copernicus DEM GLO-90 to fill those gaps. 
 
@@ -106,7 +106,7 @@ Figure 2 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and Fig
 
 ### Legacy DEMs
 
-!!! important "Deprecation of Legacy DEMs for RTC Processing"
+!!! tip "Deprecation of Legacy DEMs for RTC Processing"
 
     We are considering eliminating the option to use our legacy DEM dataset (NED/SRTM) as a HyP3 processing option for RTC. We would value your feedback as we decide if we will make this change. How would you be impacted if the NED/SRTM DEM option was no longer available? Would it affect your current workflows? 
 
@@ -133,7 +133,7 @@ Figure 4 shows the coverage of the various legacy DEM sources.
 
 ## Pixel Spacing
 
-!!! important "On Demand Sentinel-1 RTC now available at 10-m and 20-m pixel spacing" 
+!!! tip "On Demand Sentinel-1 RTC now available at 10-m and 20-m pixel spacing" 
 
     There are now three pixel spacing options available for On Demand Sentinel-1 RTC products. Users can choose to output the RTC products at a pixel spacing of 30, 20, or 10 meters.
 
@@ -403,7 +403,7 @@ A shapefile indicating the extent of the RTC data coverage is included in the pa
 
 ## SAR Scales
 
-!!! important "On Demand Sentinel-1 RTC Products now available in dB scale"
+!!! tip "On Demand Sentinel-1 RTC Products now available in dB scale"
 
     Users can now choose to output Sentinel-1 RTC products in decibel (dB) scale. Previously, the only choices for output scale were power and amplitude. The default scale continues to be power.
 

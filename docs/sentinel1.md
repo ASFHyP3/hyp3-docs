@@ -12,7 +12,7 @@ While both satellites were actively imaging, most global landmasses were imaged 
 
 ### Mission Ends for Sentinel-1B
 
-!!! important "Sentinel-1B no longer acquiring data"
+!!! tip "Sentinel-1B no longer acquiring data"
 
     **As of December 23, 2021, Sentinel-1B is no longer able to acquire data.** An anomaly related to the power supply cannot be repaired, and the satellite will be decommissioned. Refer to [ESA's documentation of the end of the Sentinel-1B mission](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite "Mission Ends for Copernicus Sentinel-1B Satellite" ){target=_blank} for more information.
 

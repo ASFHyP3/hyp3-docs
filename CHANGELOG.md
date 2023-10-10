@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.6.1]
 
 ### Fixed
-* Updated admonition types to those that are currently supported by `mkdocs-material`.
+* Updated admonition types to those that are supported by `mkdocs-material` v9.4.2+.
 
 ## [0.6.0]
 

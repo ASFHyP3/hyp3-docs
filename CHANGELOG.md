@@ -6,10 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/) 
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.5.5]
+## [0.6.1]
+
+### Fixed
+* Updated admonition types to those that are supported by `mkdocs-material` v9.4.2+.
+
+## [0.6.0]
 
 ## Added
 * Added notes indicating that GLO-90 tiles will fill missing GLO-30 tiles over Armenia and Azerbaijan.
+
+### Changed
+* Upgraded to `mkdocs-asf-theme==0.3.0`.
+* Google Analytics is set up directly in [mkdocs.yml](mkdocs.yml) as it's no longer set by default in the theme.
 
 ## [0.5.4]
 

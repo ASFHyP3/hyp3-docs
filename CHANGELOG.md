@@ -10,7 +10,10 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.6.2]
 
 ### Added
-* Added documentation to [InSAR Product Guide](docs/guides/insar_product_guide.md#adaptive-phase-filter) for the adaptive phase filter parameter option
+* Added documentation to [InSAR Product Guide](docs/guides/insar_product_guide.md#adaptive-phase-filter) for the adaptive phase filter parameter option.
+
+### Changed
+* Restructured the Processing Options section of the [InSAR Product Guide](docs/guides/insar_product_guide.md#processing-options-and-optional-files)
 
 ## [0.6.1]
 

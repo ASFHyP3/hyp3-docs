@@ -21,6 +21,7 @@
 a-
 aaaaaaaa
 acknowledgement
+adaptively
 adf
 AOI
 APD
@@ -64,6 +65,7 @@ coregisters
 Coregistration
 coregistration
 cross-polarizations
+customizable
 date1
 date2
 Decorrelation
@@ -125,6 +127,7 @@ GL1
 GLO-30
 GLO-90
 GNSS
+Goldstein
 Goldstein-Werner
 Grayscale
 grayscale
@@ -324,6 +327,7 @@ waterbodies
 waterbody
 Watermap
 webpage
+Werner
 WGS84
 whitespace
 Woodhouse

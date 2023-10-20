@@ -57,7 +57,7 @@ Figure 1 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and Fig
 
 ## Legacy DEMs
 
-!!! important "Deprecation of Legacy DEMs for RTC Processing"
+!!! tip "Deprecation of Legacy DEMs for RTC Processing"
 
     We are considering eliminating the option to use our legacy DEM dataset (NED/SRTM) as a HyP3 processing option for RTC. We would value your feedback as we decide if we will make this change. How would you be impacted if the NED/SRTM DEM option was no longer available? Would it affect your current workflows? 
 

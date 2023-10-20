@@ -24,7 +24,7 @@ Users are cautioned to read the sections on [limitations](#limitations "Jump to 
 
 There are several options users can set when ordering InSAR On Demand products, including setting some processing parameters and selecting additional files to include in the output product package.
 
-!!! tip "New: Adaptive Phase Filter parameter settings are now customizable!"
+!!! tip "New: Adaptive Phase Filter parameter is now customizable!"
 
     There is now an option to adjust the adaptive phase filter parameter value when submitting On Demand InSAR jobs. This option is currently only available in the API, but is coming soon to both the SDK and Vertex! Refer to the [Adaptive Phase Filter section](#adaptive-phase-filter) for more information.
 

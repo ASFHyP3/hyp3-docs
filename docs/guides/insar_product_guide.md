@@ -22,17 +22,11 @@ Users are cautioned to read the sections on [limitations](#limitations "Jump to 
 {% block processing_options %}
 ### Processing Options and Optional Files
 
-There are several options users can set when ordering InSAR On Demand products, including setting some processing parameters and selecting additional files to include in the output product package. 
+There are several options users can set when ordering InSAR On Demand products, including setting some processing parameters and selecting additional files to include in the output product package.
 
-!!! tip "New Water Masking Approach"
+!!! tip "New: Adaptive Phase Filter parameter settings are now customizable!"
 
-    InSAR products can be phase unwrapped using a water mask. The option to "Apply water mask" sets pixels over coastal waters and large inland waterbodies as invalid for phase unwrapping. This reduces phase unwrapping errors and outputs a less noisy unwrapped interferogram.
-
-    As of September 27, 2022, the water mask used for this option is no longer buffered. The original water mask had a 3 km buffer on coastlines and a 5 km buffer on the shorelines of inland waterbodies. This was to reduce the chance that valid land pixels would be excluded from phase unwrapping, but it appears that the inclusion of more water pixels is more detrimental to phase unwrapping than the exclusion of some land pixels. Visit our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information.
-
-!!! tip "Change in Displacement Map Options"
-
-    There is now a single option for including displacement maps. Both line-of-sight and vertical displacement maps will only be added to the product package if the option to "Include Displacement Maps" is selected when submitting On-Demand InSAR jobs. Use caution when referencing the values included in the displacement maps, as the values are calculated relative to an arbitrary reference point. Refer to the [Phase Unwrapping Reference Point](#phase-unwrapping-reference-point "Jump to Phase Unwrapping Reference Point part of the Limitations section in this document") section for more information. 
+    There is now an option to adjust the adaptive phase filter parameter value when submitting On Demand InSAR jobs. This option is currently only available in the API, but is coming soon to both the SDK and Vertex! Refer to the [Adaptive Phase Filter section](#adaptive-phase-filter) for more information.
 
 #### Processing Options
 
@@ -48,13 +42,19 @@ When ordering InSAR On Demand products, users can choose to set a custom value f
 
 Users can set the adaptive phase filter parameter (𝛼) value within the range of 0 to 1, with 0 indicating that no filtering occurs, and 1 indicating the strongest level of filtering. The default value is 0.6. The value should generally be greater than 0.2, and interferograms with very low coherence will benefit from higher values (closer to 1). Setting this value to 0 will result in no filter being applied.
 
-
-
 The filter is applied adaptively, meaning that regions with high coherence (where fringe patterns are easily discernible) will have more smoothing applied, while regions with low coherence will undergo less smoothing, so as not to remove residues that may represent actual deformation signals. Using this filter approach allows more of the interferogram to be unwrapped. For more information, refer to Goldstein and Werner's 1998 paper, [Radar interferogram filtering for geophysical applications](https://doi.org/10.1029/1998GL900033 "https://doi.org/10.1029/1998GL900033" ){target=_blank}.
 
 ##### Apply Water Mask
 
-There is an option to apply a **water mask**. This mask includes coastal waters and large inland waterbodies. Masking waterbodies can have a significant impact during the phase unwrapping, as water can sometimes exhibit enough coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid. A GeoTIFF of the water mask is always included with the InSAR product package, but when this option is selected, the conditional water mask will be applied along with coherence and intensity thresholds during the phase unwrapping process. Water masking is turned off by default. Visit our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information.
+There is an option to apply a **water mask**. This mask includes coastal waters and large inland waterbodies. Masking waterbodies can have a significant impact during the phase unwrapping, as water can sometimes exhibit enough coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid. 
+
+A GeoTIFF of the water mask is always included with the InSAR product package, but when this option is selected, the conditional water mask will be applied along with coherence and intensity thresholds during the phase unwrapping process. Water masking is turned off by default. 
+
+The water mask is generated using the [GSHHG](http://www.soest.hawaii.edu/wessel/gshhg "http://www.soest.hawaii.edu/wessel/gshhg/land" ){target=_blank} dataset. To compile the reference shapefile, the full-resolution L1 dataset (boundary between land and ocean) and L5 dataset (boundary between Antarctic ice and ocean) were combined. The L3 dataset (boundary between islands and the lakes they are within) was removed from the L2 dataset (boundary between lakes and land), and this combined dataset was removed from the combined L1/L5 dataset. The GSHHG dataset was last updated in 2017, so there may be discrepancies where shorelines have changed.
+
+We originally applied a 3 km buffer on coastlines and a 5 km buffer on the shorelines of inland waterbodies in the GSHHG dataset before using it to mask the interferograms, in an effort to reduce the chance that valid land pixels would be excluded from phase unwrapping. It appears, however, that the inclusion of more water pixels is more detrimental to phase unwrapping than the exclusion of some land pixels, so as of September 27, 2022, the water mask used for this option is no longer buffered. 
+
+Visit our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information about how different water masking approaches can impact the quality of an interferogram.
 
 #### Optional Files
 

@@ -328,6 +328,7 @@ waterbody
 Watermap
 webpage
 Werner
+Werner's
 WGS84
 whitespace
 Woodhouse

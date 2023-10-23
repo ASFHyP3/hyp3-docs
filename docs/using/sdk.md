@@ -1,1 +1,1 @@
-{{ get_content('https://raw.githubusercontent.com/ASFHyP3/hyp3-sdk/v3.0.0/README.md') }}
+{{ get_content('https://raw.githubusercontent.com/ASFHyP3/hyp3-sdk/v3.1.0/README.md') }}

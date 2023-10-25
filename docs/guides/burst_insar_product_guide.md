@@ -52,12 +52,7 @@ There are several options users can set when ordering Burst InSAR On Demand prod
 
     The default is 20x4 looks.
 
-2. There is an option to apply a **water mask** after phase unwrapping.
-   This mask includes coastal waters and large inland waterbodies.
-   A GeoTIFF of the water mask is always included with the InSAR product package,
-   but when this option is selected, the water mask will be applied to
-   the wrapped interferogram, the unwrapped interferogram, and the browse image.
-   Water masking is turned off by default. Refer to the [Apply Water Mask section](#apply-water-mask) for more information about the water mask and how it is used.
+2. There is an option to apply a **water mask**. This mask includes coastal waters and large inland waterbodies. Masking waterbodies can have a significant impact during phase unwrapping, as water can sometimes exhibit enough coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid. A GeoTIFF of the water mask is always included with the InSAR product package, but when this option is selected, the conditional water mask will be applied before the phase unwrapping process. Water masking is turned off by default. Visit our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information.
 
 {% endblock %}
 
@@ -128,15 +123,7 @@ The ISCE2 InSAR processing this product uses follows the workflow in [topsApp.py
 A water mask identifying coastal waters and major inland waterbodies is generated using the [Global Self-consistent,
 Hierarchical, High-resolution Geography Database (GSHHG)](http://www.soest.hawaii.edu/wessel/gshhg "http://www.soest.hawaii.edu/wessel/gshhg" ){target=_blank} dataset. This water mask raster is always included with the Burst InSAR products for reference, but is not applied to the interferometry products by default.
 
-Users can optionally choose to apply the water mask to output products, which affects the wrapped interferogram,
-the unwrapped interferogram, and the browse image. Areas covered by the water mask in these output images are set to
-NoData.
-
-Applying a water mask to an interferogram is only supported *after* phase unwrapping. Note that
-applying the mask after phase unwrapping does not prevent unwrapping errors caused by the inclusion of water pixels
-as valid data during the phase unwrapping process. When phase unwrapping occurs over large expanses of water, it can
-lead to unexpected deformation signals or phase jumps in the unwrapped outputs, and the current masking approach
-does not correct for these impacts.
+Users can optionally choose to apply the water mask before phase unwrapping. When processing scenes with extensive coverage by coastal waters or large inland waterbodies, there can be erroneous deformation signals or phase jumps introduced if unwrapping proceeds over water as if it were land. In such cases, choosing the option to apply the water mask can improve the results. Visit our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information.
 
 #### Product Creation
 Image files are exported into the widely-used GeoTIFF format in a Universal Transverse Mercator (UTM) projection. Images
@@ -183,7 +170,7 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 - The *DEM* file gives the local terrain heights in meters, with a geoid correction applied.
 - The *water mask* file indicates coastal waters and large inland waterbodies. Pixel values of 1 indicate land and 0 indicate water. This file is in 8-bit unsigned integer format.
 
-If the **water mask** option is selected, the water mask is applied *after* phase unwrapping to exclude water pixels from the output. The water mask is generated using the [GSHHG](http://www.soest.hawaii.edu/wessel/gshhg "http://www.soest.hawaii.edu/wessel/gshhg" ){target=_blank} dataset. To compile the reference shapefile, the full-resolution L1 dataset (boundary between land and ocean) and L5 dataset (boundary between Antarctic ice and ocean) were combined. The L3 dataset (boundary between islands and the lakes they are within) was removed from the L2 dataset (boundary between lakes and land), and this combined dataset was removed from the combined L1/L5 dataset. The GSHHG dataset was last updated in 2017, so there may be discrepancies where shorelines have changed.
+If the **water mask** option is selected, the water mask is applied before phase unwrapping to exclude potentially invalid pixels from the unwrapping process. The water mask is generated using the [GSHHG](http://www.soest.hawaii.edu/wessel/gshhg "http://www.soest.hawaii.edu/wessel/gshhg" ){target=_blank} dataset. To compile the reference shapefile, the full-resolution L1 dataset (boundary between land and ocean) and L5 dataset (boundary between Antarctic ice and ocean) were combined. The L3 dataset (boundary between islands and the lakes they are within) was removed from the L2 dataset (boundary between lakes and land), and this combined dataset was removed from the combined L1/L5 dataset. The GSHHG dataset was last updated in 2017, so there may be discrepancies where shorelines have changed.
 
 A **browse image** is included for the unwrapped (unw_phase) phase file, which is in PNG format and is 2048 pixels wide.
 

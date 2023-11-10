@@ -26,7 +26,7 @@ There are several options users can set when ordering InSAR On Demand products, 
 
 !!! tip "New: Adaptive Phase Filter parameter is now customizable!"
 
-    There is now an option to adjust the adaptive phase filter parameter value when submitting On Demand InSAR jobs. This option is currently available in the API and Python SDK, and is coming soon to Vertex! Refer to the [Adaptive Phase Filter section](#adaptive-phase-filter) for more information.
+    There is now an option to adjust the adaptive phase filter parameter value when submitting On Demand InSAR jobs. This option is available in [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu/" ){target=_blank}, as well as in the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}! Refer to the [Adaptive Phase Filter section](#adaptive-phase-filter) for more information.
 
 #### Processing Options
 

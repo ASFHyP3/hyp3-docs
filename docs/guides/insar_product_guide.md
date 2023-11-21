@@ -8,39 +8,72 @@ This process requires [Sentinel-1 IW SLC products](https://sentinels.copernicus.
 
 For a step-by-step tutorial on ordering On-Demand InSAR Products using Vertex, visit our [InSAR On Demand! StoryMap](https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3 "InSAR On Demand! https://arcg.is/eiP8G0" ){target=_blank}. To learn more about the files included in the On Demand InSAR product packages and how to work with them, refer to our [Exploring Sentinel-1 InSAR StoryMap](https://storymaps.arcgis.com/stories/8be186e4125741518118d0102e6835e5 "Exploring Sentinel-1 InSAR https://arcg.is/11DaW90" ){target=_blank}.
 
+InSAR processing requires a Digital Elevation Model (DEM) for the removal of topographic phase. We use the [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} when processing our On Demand InSAR products. Refer to the [Prepare the DEM File section](#prepare-the-dem-file "Jump to the Prepare the DEM File Section of this document") for more information. 
+
+!!! tip "Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90" 
+
+    The Copernicus DEM GLO-30 dataset does not provide coverage over Armenia and Azerbaijan. In the past, we have not supported InSAR product generation over those areas, due to the lack of DEM coverage. We now use the Copernicus DEM GLO-90 to fill those gaps. 
+
+    The GLO-90 dataset has a pixel spacing of 90 meters, which is not as detailed as the 30-m pixel spacing in the GLO-30 DEM, but it does allow us to provide InSAR products in these regions, where they were previously unavailable. 
+
 ASF also offers burst-based Sentinel-1 InSAR products. This on-demand processing option allows users to submit InSAR jobs for [individual SLC bursts](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8 "Sentinel-1 Bursts Tutorial https://arcg.is/zSafi0" ){target=_blank} rather than the full [Sentinel-1 IW SLC products](https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1/single-look-complex/interferometric-wide-swath "https://sentinels.copernicus.eu" ){target=_blank}. Refer to our [Sentinel-1 Burst InSAR Product Guide](burst_insar_product_guide.md) for more information on this option.
 
 Users are cautioned to read the sections on [limitations](#limitations "Jump to the Limitations section of this document") and [error sources](#error-sources "Jump to the Error Sources section of this document") in InSAR products before attempting to use InSAR data. For a more complete description of the properties of SAR, see our [Introduction to SAR](../guides/introduction_to_sar.md "https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar" ){target=_blank} guide. 
 {% endblock %}
 
 {% block processing_options %}
-### Processing Options
+### Processing Options and Optional Files
 
-!!! important "New Water Masking Approach"
+There are several options users can set when ordering InSAR On Demand products, including setting some processing parameters and selecting additional files to include in the output product package.
 
-    InSAR products can be phase unwrapped using a water mask. The option to "Apply water mask" sets pixels over coastal waters and large inland waterbodies as invalid for phase unwrapping. This reduces phase unwrapping errors and outputs a less noisy unwrapped interferogram.
+!!! tip "New: Adaptive Phase Filter parameter is now customizable!"
 
-    As of September 27, 2022, the water mask used for this option is no longer buffered. The original water mask had a 3 km buffer on coastlines and a 5 km buffer on the shorelines of inland waterbodies. This was to reduce the chance that valid land pixels would be excluded from phase unwrapping, but it appears that the inclusion of more water pixels is more detrimental to phase unwrapping than the exclusion of some land pixels. Visit our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information.
+    There is now an option to adjust the adaptive phase filter parameter value when submitting On Demand InSAR jobs. This option is available in [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu/" ){target=_blank}, as well as in the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}! Refer to the [Adaptive Phase Filter section](#adaptive-phase-filter) for more information.
 
-!!! important "Change in Displacement Map Options"
+#### Processing Options
 
-    There is now a single option for including displacement maps. Both line-of-sight and vertical displacement maps will only be added to the product package if the option to "Include Displacement Maps" is selected when submitting On-Demand InSAR jobs. Use caution when referencing the values included in the displacement maps, as the values are calculated relative to an arbitrary reference point. Refer to the [Phase Unwrapping Reference Point](#phase-unwrapping-reference-point "Jump to Phase Unwrapping Reference Point part of the Limitations section in this document") section for more information. 
+When submitting jobs for processing, there are a number of parameters that can be set by the user.
 
-There are several options users can set when ordering InSAR On Demand products. Currently, users can choose the number of looks to take (which drives the resolution and pixel spacing of the products), and which optional products to include in the output package. The options are described below:
+##### Number of Looks
 
-1. The **number of looks** drives the resolution and pixel spacing of the output products. Selecting 10x2 looks will yield larger products with 80 m resolution and pixel spacing of 40 m. Selecting 20x4 looks reduces the resolution to 160 m and reduces the size of the products (roughly 1/4 the size of 10x2 look products), with a pixel spacing of 80 m. The default is 20x4 looks.
+The **number of looks** drives the resolution and pixel spacing of the output products. Selecting 10x2 looks will yield larger products with 80 m resolution and pixel spacing of 40 m. Selecting 20x4 looks reduces the resolution to 160 m and reduces the size of the products (roughly 1/4 the size of 10x2 look products), with a pixel spacing of 80 m. The default is 20x4 looks.
 
-2. The **look vectors** are stored in two files. The look vector refers the look direction back towards the sensor. The lv_theta (θ) indicates the SAR look vector elevation angle at each pixel, ranging from -π/2 (down) to π/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface. The lv_phi (φ) map indicates the SAR look vector orientation angle at each pixel, ranging from -π (west) to π (west). The look vector orientation angle is defined as the angle between the East direction and the projection of the look vector on the horizontal surface plane. The orientation angle increases towards north, with the North direction corresponding to π/2 (and south to -π/2). Both angles are expressed in radians. The default is to not include these files in the output product bundle.
+##### Adaptive Phase Filter
 
-3. The **displacement maps** convert the phase difference values from the unwrapped interferogram into measurements of ground displacement in meters. The line-of-sight displacement map indicates the amount of movement away from or towards the sensor. The vertical displacement calculates the vertical component of the line-of-sight displacement, using the assumption that all deformation is in the vertical direction. These files are excluded from the product package by default.
+When ordering InSAR On Demand products, users can choose to set a custom value for the Goldstein-Werner **adaptive phase filter** (adf). This filter improves fringe visibility and reduces phase noise in interferograms, particularly for InSAR pairs with low coherence. The filter impacts both wrapped and unwrapped interferograms, as well as the optional displacement maps generated from the unwrapped interferogram.
 
-4. The **wrapped phase GeoTIFF** can be included in the output package. The browse version of this GeoTIFF (_color_phase.png) is always included, but the GeoTIFF version is not included by default. The specific color ramp displayed in the png is most valuable for many users, but some may wish to work with the actual wrapped phase values.
+Users can set the adaptive phase filter parameter (𝛼) value within the range of 0 to 1, with 0 indicating that no filtering occurs, and 1 indicating the strongest level of filtering. The default value is 0.6. The value should generally be greater than 0.2, and interferograms with very low coherence will benefit from higher values (closer to 1). Setting this value to 0 will result in no filter being applied.
 
-5. The **incidence angle maps** indicate the angle of the radar signal. The local incidence angle is defined as the angle between the incident radar signal and the local surface normal, expressed in radians, while the ellipsoid incidence angle indicates the angle between the incident radar beam and the direction perpendicular to the WGS84 ellipsoid model. These files are excluded from the product package by default.
+The filter is applied adaptively, meaning that regions with high coherence (where fringe patterns are easily discernible) will have more smoothing applied, while regions with low coherence will undergo less smoothing, so as not to remove residues that may represent actual deformation signals. Using this filter approach allows more of the interferogram to be unwrapped. For more information, refer to Goldstein and Werner's 1998 paper, [Radar interferogram filtering for geophysical applications](https://doi.org/10.1029/1998GL900033 "https://doi.org/10.1029/1998GL900033" ){target=_blank}.
 
-6. A copy of the **DEM** used for processing can optionally be included in the product package. The file has been projected to a UTM Zone coordinate system, and pixel values indicate the elevation in meters. The elevation values will differ from the original [Copernicus DEM GLO-30](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} dataset, as a geoid correction has been applied. The source DEM is also downsampled to twice the pixel spacing of the output product to smooth it for use in processing, then resampled again to match the pixel spacing of the InSAR product. The DEM is excluded by default.
+##### Apply Water Mask
 
-7. There is an option to apply a **water mask**. This mask includes coastal waters and large inland waterbodies. Masking waterbodies can have a significant impact during the phase unwrapping, as water can sometimes exhibit enough coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid. A GeoTIFF of the water mask is always included with the InSAR product package, but when this option is selected, the conditional water mask will be applied along with coherence and intensity thresholds during the phase unwrapping process. Water masking is turned off by default. Visit our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information.
+There is an option to apply a **water mask**. This mask includes coastal waters and large inland waterbodies. Masking waterbodies can have a significant impact during the phase unwrapping, as water can sometimes exhibit enough coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid. 
+
+A GeoTIFF of the water mask is always included with the InSAR product package, but when this option is selected, the conditional water mask will be applied along with coherence and intensity thresholds during the phase unwrapping process. Water masking is turned off by default. 
+
+The water mask is generated using the [GSHHG](http://www.soest.hawaii.edu/wessel/gshhg "http://www.soest.hawaii.edu/wessel/gshhg/land" ){target=_blank} dataset. To compile the reference shapefile, the full-resolution L1 dataset (boundary between land and ocean) and L5 dataset (boundary between Antarctic ice and ocean) were combined. The L3 dataset (boundary between islands and the lakes they are within) was removed from the L2 dataset (boundary between lakes and land), and this combined dataset was removed from the combined L1/L5 dataset. The GSHHG dataset was last updated in 2017, so there may be discrepancies where shorelines have changed.
+
+We originally applied a 3 km buffer on coastlines and a 5 km buffer on the shorelines of inland waterbodies in the GSHHG dataset before using it to mask the interferograms, in an effort to reduce the chance that valid land pixels would be excluded from phase unwrapping. It appears, however, that the inclusion of more water pixels is more detrimental to phase unwrapping than the exclusion of some land pixels, so as of September 27, 2022, the water mask used for this option is no longer buffered. 
+
+Visit our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information about how different water masking approaches can impact the quality of an interferogram.
+
+#### Optional Files
+
+In addition to the processing options, users can choose to add a number of ancillary files to the product package. These files are not included by default, as they increase the size of the product package and may not be of interest to all users.
+
+In Vertex, check the box in the "Include" section of the options to add these optional files to the product package. When using the HyP3 API or SDK, set the parameter to true.
+
+1. The **look vectors** are stored in two files. The look vector refers the look direction back towards the sensor. The lv_theta (θ) indicates the SAR look vector elevation angle at each pixel, ranging from -π/2 (down) to π/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface. The lv_phi (φ) map indicates the SAR look vector orientation angle at each pixel, ranging from -π (west) to π (west). The look vector orientation angle is defined as the angle between the East direction and the projection of the look vector on the horizontal surface plane. The orientation angle increases towards north, with the North direction corresponding to π/2 (and south to -π/2). Both angles are expressed in radians. The default is to not include these files in the output product bundle.
+
+2. The **displacement maps** convert the phase difference values from the unwrapped interferogram into measurements of ground displacement in meters. The line-of-sight displacement map indicates the amount of movement away from or towards the sensor. The vertical displacement calculates the vertical component of the line-of-sight displacement, using the assumption that all deformation is in the vertical direction. These files are excluded from the product package by default.
+
+3. The **wrapped phase GeoTIFF** can be included in the output package. The browse version of this GeoTIFF (_color_phase.png) is always included, but the GeoTIFF version is not included by default. The specific color ramp displayed in the png is most valuable for many users, but some may wish to work with the actual wrapped phase values.
+
+4. The **incidence angle maps** indicate the angle of the radar signal. The local incidence angle is defined as the angle between the incident radar signal and the local surface normal, expressed in radians, while the ellipsoid incidence angle indicates the angle between the incident radar beam and the direction perpendicular to the WGS84 ellipsoid model. These files are excluded from the product package by default.
+
+5. A copy of the **DEM** used for processing can optionally be included in the product package. The file has been projected to a UTM Zone coordinate system, and pixel values indicate the elevation in meters. The elevation values will differ from the original [Copernicus DEM GLO-30](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} dataset, as a geoid correction has been applied. The source DEM is also downsampled to twice the pixel spacing of the output product to smooth it for use in processing, then resampled again to match the pixel spacing of the InSAR product. The DEM is excluded by default.
+
 {% endblock %}
 
 {% block workflow %}
@@ -73,7 +106,9 @@ Immediately after ingesting the SLC, the state vectors are updated to use the be
 
 In order to create differential InSAR products that show motion on the ground, one must subtract the topographic phase from the interferogram. The topographic phase, in this case, is replicated by using an [existing DEM](../dems.md "HyP3 DEM Documentation" ){target=_blank} to calculate the actual topographic phase. This phase is then removed from the interferogram leaving just the motion or deformation signal (plus atmospheric delays and noise).
 
-The DEM that is used for HyP3 InSAR processing is the [2021 Release of the Copernicus GLO-30 Public DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} dataset [publicly available on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank}. This DEM provides global coverage at 30-m pixel spacing, and provides higher-quality products over a wider area than the older DEMs (SRTM and NED) previously used to generate ASF's On Demand products. For more information about the 2021 updates, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}.
+The DEM that is used for HyP3 InSAR processing is the 2022 Release of the [Copernicus GLO-30 Public DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} dataset [publicly available on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank}. For more information about the 2022 updates, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}.
+
+The [Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank} provides higher-quality products over a wider area than the older DEMs (SRTM and NED) previously used to generate ASF's On Demand products. Refer to our [Digital Elevation Model Documentation](../dems.md "HyP3 DEM Documentation" ){target=_blank} for more information. The Copernicus DEM provides global coverage at 30-m pixel spacing, except for [areas over Armenia and Azerbaijan](../dems.md#copernicus-dem "HyP3 Copernicus DEM Documentation" ){target=_blank}. These gaps in coverage are filled with the Copernicus GLO-90 Public DEM, which has 90-m pixel spacing. 
 
 The DEM tiles necessary to cover the input granules for the InSAR product are downloaded. A geoid correction is applied to the DEM, and it is resampled to match the [output resolution](#processing-options "Jump to Processing Options section of this document") of the InSAR product (160 m for 20x4 products, 80 m for 10x2 products) and projected to the appropriate UTM Zone for the granule location.
 
@@ -119,7 +154,7 @@ Another step before unwrapping is to create a validity mask to guide the phase u
 
 Coherence is estimated from the normalized interferogram. The pixel values in this file range from 0.0 (total decorrelation) to 1.0 (perfectly coherent). Any input pixel with a coherence value less than 0.1 is given a validity mask value of zero and not used during unwrapping.
 
-!!! important "Change to Validity Mask Thresholds"
+!!! tip "Change to Validity Mask Thresholds"
 
     In the past, we also used an amplitude threshold of 0.2 (in power scale) when generating the validity mask. While this approach tends to mask out inland waters, providing a less noisy interferogram in some cases, it also masks arid regions that have low amplitude values but reasonably high coherence. As of March 2022, we have set the amplitude threshold to 0.0, so that coherence is the only driver of the validity mask.
 
@@ -187,7 +222,7 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 - The *DEM* file gives the local terrain heights in meters, with a geoid correction applied. *(optional)*
 - The *water mask* file indicates coastal waters and large inland waterbodies. Pixel values of 1 indicate land and 0 indicate water. This file is in 8-bit unsigned integer format.
 
-If the **water mask** option is selected, the water mask is applied prior to phase unwrapping to exclude water pixels from the process. The water mask is generated using the [GSHHG](http://www.soest.hawaii.edu/wessel/gshhg "http://www.soest.hawaii.edu/wessel/gshhg/land" ){target=_blank} dataset. To compile the reference shapefile, the full-resolution L1 dataset (boundary between land and ocean) and L5 dataset (boundary between Antarctic ice and ocean) were combined. The L3 dataset (boundary between islands and the lakes they are within) was removed from the L2 dataset (boundary between lakes and land), and this combined dataset was removed from the combined L1/L5 dataset. The portion of the shapefile covering the scene is converted to a raster for inclusion in the phase unwrapping mask during InSAR processing. The GSHHG dataset was last updated in 2017, so there may be discrepancies where shorelines have changed. Visit our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information about water masking.
+If the **water mask** option is selected, the water mask is applied prior to phase unwrapping to exclude water pixels from the process. The water mask is generated using the [GSHHG](http://www.soest.hawaii.edu/wessel/gshhg "http://www.soest.hawaii.edu/wessel/gshhg/land" ){target=_blank} dataset. Refer to the [Water Masking Processing Option section](#apply-water-mask) and our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information about water masking.
 
 **Browse images** are included for the wrapped (color_phase) and unwrapped (unw_phase) phase files, which are in PNG format and are each 2048 pixels wide. The browse images are displayed using a cyclic color ramp to generate fringes. 
 

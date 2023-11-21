@@ -1,6 +1,6 @@
 # Monthly Processing Quota
 
-!!! attention
+!!! warning "Attention"
     Due to the increasing popularity of On Demand processing, and in order to
     continue providing this service at no cost to users, **beginning February 2022,
     processing quotas will be set to 1000 jobs per user per month.**

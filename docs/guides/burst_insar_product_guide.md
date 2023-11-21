@@ -15,7 +15,7 @@ In contrast, working at the burst level of the Sentinel-1 SLC data provides a co
 The coverage of a burst is the same for every orbit of the satellite, so you can be confident that every burst with the same [Full Burst ID](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8#ref-n-VYIiUe "Sentinel-1 Burst Overview https://arcg.is/zSafi0" ){target=_blank} in a stack of acquisitions will cover the same geographic location. 
 
 **2. Bursts cover a smaller geographic area**  
-IW SLC products are extremely large, and in many cases, only a small portion of the image is of interest. You can process only the bursts that cover your specific area of interest, which significantly decreases the time and cost required to generate InSAR products.
+IW SLC products are extremely large, and, in many cases, only a small portion of the image is of interest. You can process only the bursts that cover your specific area of interest, which significantly decreases the time and cost required to generate InSAR products.
 
 Refer to the [Sentinel-1 Bursts tutorial](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8 "Sentinel-1 Bursts Tutorial https://arcg.is/zSafi0" ){target=_blank} to learn more about how [ASF extracts burst-level products](https://sentinel1-burst-documentation.asf.alaska.edu/ "ASF Sentinel-1 Burst Documentation" ){target=_blank} from Sentinel-1 IW and EW SLCs.
 

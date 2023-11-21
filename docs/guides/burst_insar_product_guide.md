@@ -93,11 +93,11 @@ This phase is then removed from the interferogram leaving just the motion or def
 (plus atmospheric delays and noise).
 
 The DEM that is used for HyP3 InSAR processing is the
-[2021 Release of the Copernicus GLO-30 Public DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}
+[2022 Release of the Copernicus GLO-30 Public DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}
 dataset
 [publicly available on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank},
 which provides global coverage at 30-m pixel spacing (except for an area over Armenia and Azerbaijan, which only has 90-m coverage).
-For more information about the 2021 updates, see the 'Releases' section of
+For more information about the 2022 updates, see the 'Releases' section of
 [this article](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}.
 
 The portion of the DEM that covers the input bursts is downloaded.

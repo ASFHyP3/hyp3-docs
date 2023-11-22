@@ -7,7 +7,7 @@ This document is a guide for users of Sentinel-1 Burst Interferometric Synthetic
 
 !!! tip "Burst-based InSAR available for Sentinel-1 using HyP3 API and SDK"
 
-    Users are now able to process burst-based Sentinel-1 InSAR products!  
+    Users are now able to process burst-based Sentinel-1 InSAR products using ISCE2 software!  
 
     This functionality is currently only available through the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}, but is coming soon to [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu/" )!
 

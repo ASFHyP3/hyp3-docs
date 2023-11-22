@@ -6,15 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/) 
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.7]
+
+### Changed
+* Updated HyP3 SDK to [v4.0.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#400)
 
 ## [0.6.6]
 
-## Changed
+### Changed
 * Updated documentation to [InSAR Product Guide](docs/guides/insar_product_guide.md#adaptive-phase-filter) to announce that the feature is available in Vertex
 
 ## [0.6.5]
 
-## Changed
+### Changed
 * Updated ASF Tools for Python to [v0.6.0](https://github.com/ASFHyP3/asf-tools/blob/main/CHANGELOG.md#060)
 
 ## [0.6.4]

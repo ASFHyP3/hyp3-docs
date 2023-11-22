@@ -9,7 +9,7 @@ This document is a guide for users of Sentinel-1 Burst Interferometric Synthetic
 
 !!! tip "Sentinel-1 bursts are not available for all SLC granules"
 
-    **Burst products are available for Sentinel-1 granules collected after June 9th, 2023.** 
+    **Burst products only are available for Sentinel-1 granules collected after June 9th, 2023.** 
 
     ASF is currently only forward-populating burst products, which means that burst products are only available for Sentinel-1 granules collected after June 9th, 2023. If this affects your ability to utilize burst products to perform your analyses, please [Email ASF User Services](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu"), and we will try to populate burst products for your region and time period of interest.
 

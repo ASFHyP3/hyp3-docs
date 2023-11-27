@@ -138,7 +138,7 @@ Hierarchical, High-resolution Geography Database (GSHHG)](http://www.soest.hawai
 Users can optionally choose to apply the water mask before phase unwrapping. When processing scenes with extensive coverage by coastal waters or large inland waterbodies, there can be erroneous deformation signals or phase jumps introduced if unwrapping proceeds over water as if it were land. In such cases, choosing the option to apply the water mask can improve the results. Visit our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information.
 
 #### Product Creation
-Image files are exported into the widely-used GeoTIFF format in a Universal Transverse Mercator (UTM) projection. Images
+Image files are exported into the widely-used GeoTIFF format in a Universal Transverse Mercator (UTM) Zone projection. Images
 are resampled to a pixel size that reflects the resolution of output image based on the requested number of looks: 80 meters
 for 20x4 looks, 40 meters for 10x2 looks, and 20 meters for 5x1 looks.
 

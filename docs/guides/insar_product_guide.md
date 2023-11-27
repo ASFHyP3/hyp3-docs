@@ -16,6 +16,8 @@ InSAR processing requires a Digital Elevation Model (DEM) for the removal of top
 
     The GLO-90 dataset has a pixel spacing of 90 meters, which is not as detailed as the 30-m pixel spacing in the GLO-30 DEM, but it does allow us to provide InSAR products in these regions, where they were previously unavailable. 
 
+ASF also offers burst-based Sentinel-1 InSAR products. This on-demand processing option allows users to submit InSAR jobs for [individual SLC bursts](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8 "Sentinel-1 Bursts Tutorial https://arcg.is/zSafi0" ){target=_blank} rather than the full [Sentinel-1 IW SLC products](https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1/single-look-complex/interferometric-wide-swath "https://sentinels.copernicus.eu" ){target=_blank}. Refer to our [Sentinel-1 Burst InSAR Product Guide](burst_insar_product_guide.md) for more information on this option.
+
 Users are cautioned to read the sections on [limitations](#limitations "Jump to the Limitations section of this document") and [error sources](#error-sources "Jump to the Error Sources section of this document") in InSAR products before attempting to use InSAR data. For a more complete description of the properties of SAR, see our [Introduction to SAR](../guides/introduction_to_sar.md "https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar" ){target=_blank} guide. 
 {% endblock %}
 

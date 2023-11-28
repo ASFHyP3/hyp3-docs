@@ -6,8 +6,7 @@ A user could create a subscription with a particular set of search parameters
 and new Sentinel-1 acquisitions that met these criteria would be automatically submitted for processing.
 However, this feature was only accessed by a very small minority of HyP3 users,
 and most users did not regularly check their subscriptions and download the generated products before they expired.
-As such, we have deprecated this feature in favor of a more flexible approach.
-<!-- TODO: change "deprecated" to "removed" per https://asfdaac.atlassian.net/browse/TOOL-2086 -->
+As such, we have removed this feature in favor of a more flexible approach.
 
 The following Jupyter notebooks demonstrate how to achieve subscription-like functionality.
 They can be run as needed so that you do not have to worry about your products expiring

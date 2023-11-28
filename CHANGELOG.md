@@ -6,7 +6,81 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/) 
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.0]
+
+### Added
+* Published Sentinel-1 Burst InSAR Guide
+
+## [0.6.7]
+
+### Changed
+* Updated HyP3 SDK to [v4.0.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#400)
+
+## [0.6.6]
+
+### Changed
+* Updated documentation to [InSAR Product Guide](docs/guides/insar_product_guide.md#adaptive-phase-filter) to announce that the feature is available in Vertex
+
+## [0.6.5]
+
+### Changed
+* Updated ASF Tools for Python to [v0.6.0](https://github.com/ASFHyP3/asf-tools/blob/main/CHANGELOG.md#060)
+
+## [0.6.4]
+
+### Changed
+* Updated the Burst Guide to reflect that water masking is now done before phase unwrapping.
+
+## [0.6.3]
+
+### Changed
+* Updated HyP3 SDK to [v3.1.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#310)
+
+## [0.6.2]
+
+### Added
+* Added documentation to [InSAR Product Guide](docs/guides/insar_product_guide.md#adaptive-phase-filter) for the adaptive phase filter parameter option.
+
+### Changed
+* Restructured the Processing Options section of the [InSAR Product Guide](docs/guides/insar_product_guide.md#processing-options-and-optional-files)
+
 ## [0.6.1]
+
+### Fixed
+* Updated admonition types to those that are supported by `mkdocs-material` v9.4.2+.
+
+## [0.6.0]
+
+## Added
+* Added notes indicating that GLO-90 tiles will fill missing GLO-30 tiles over Armenia and Azerbaijan.
+
+### Changed
+* Upgraded to `mkdocs-asf-theme==0.3.0`.
+* Google Analytics is set up directly in [mkdocs.yml](mkdocs.yml) as it's no longer set by default in the theme.
+
+## [0.5.4]
+
+### Added
+* Unpublished Sentinel-1 Burst InSAR Product Guide
+
+### Fixed
+* Clarified the range of possible pixel values for the lv_phi.tif file in the InSAR Product Guide.
+  Fixes [#334](https://github.com/ASFHyP3/hyp3-docs/issues/334).
+
+### Removed
+* `propose-tweet` GitHub action workflow. Closes [#288](https://github.com/ASFHyP3/hyp3-docs/issues/288). 
+
+## [0.5.3]
+
+### Changed
+* Updated HyP3 SDK to [v3.0.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#300)
+
+## [0.5.2]
+
+### Changed
+* Updated docs after removing the Subscriptions feature.
+
+## [0.5.1]
 
 ### Changed
 * Revised the Subscriptions deprecation announcement to make it more clear that HyP3 itself is not being retired.

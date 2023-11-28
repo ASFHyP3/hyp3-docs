@@ -3,13 +3,19 @@ site_url: https://hyp3-docs.asf.alaska.edu/
 site_author: ASF APD/Tools Team
 site_description: The Alaska Satellite Facility's Hybrid Pluggable Processing Pipeline
 
+# ASF's Google Analytics
+google_analytics:
+  - UA-991100-5
+  - search.asf.alaska.edu
+
 theme:
   name: asf-theme
   logo: images/HyP3-graphic-only.png
   icon:
     repo: fontawesome/brands/github-alt
   features:
-    - navigation.instant
+    # - navigation.instant  # This doesn't work with the NASA Earthdata tophat; see ASFHyP3/hyp3-docs#371
+    - navigation.footer
 
 repo_url: https://github.com/ASFHyP3
 repo_name: ASF HyP3
@@ -59,6 +65,9 @@ nav:
       - guides/insar_product_guide.md
       - Product Guide: guides/insar_product_guide.md
       - StoryMap: https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank
+    - Burst InSAR:
+      - guides/burst_insar_product_guide.md
+      - Product Guide: guides/burst_insar_product_guide.md
     - AutoRIFT: https://its-live.jpl.nasa.gov/" target="_blank
     - Usage Guidelines: usage_guidelines.md
     - Sentinel-1 Mission: sentinel1.md

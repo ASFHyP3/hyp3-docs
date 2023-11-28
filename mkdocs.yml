@@ -65,6 +65,9 @@ nav:
       - guides/insar_product_guide.md
       - Product Guide: guides/insar_product_guide.md
       - StoryMap: https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank
+    - Burst InSAR:
+      - guides/burst_insar_product_guide.md
+      - Product Guide: guides/burst_insar_product_guide.md
     - AutoRIFT: https://its-live.jpl.nasa.gov/" target="_blank
     - Usage Guidelines: usage_guidelines.md
     - Sentinel-1 Mission: sentinel1.md

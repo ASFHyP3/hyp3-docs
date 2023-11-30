@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/) 
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.0]
+
+### Added
+* Added `hyp3_isce2_burst_stack_for_ts_analysis.ipynb` to make the `hyp3-isce2` burst InSAR work with MintPy
+
+### Changed
+* Changed `hyp3_insar_stack_for_ts_analysis.ipynb` to make it work with MintPy v1.5.2
+
+## [0.7.1]
+
+### Added
+* Announce Burst InSAR availability in Vertex
+
 ## [0.7.0]
 
 ### Added
@@ -85,14 +98,6 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 * Revised the Subscriptions deprecation announcement to make it more clear that HyP3 itself is not being retired.
 
-## [0.6.0]
-
-### Added
-* Added `hyp3_isce2_burst_stack_for_ts_analysis.ipynb` to make the `hyp3-isce2` burst InSAR work with MintPy
-
-### Changed
-* Changed `hyp3_insar_stack_for_ts_analysis.ipynb` to make it work with MintPy v1.5.2
-
 ## [0.5.0]
 
 ### Added
@@ -106,7 +111,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 * Replaced the Subscriptions documentation with a link to the new tutorials.
-* Upgraded the conda environment to Python 3.9.
+* Upgraded the Conda environment to Python 3.9.
 
 ## [0.3.74]
 

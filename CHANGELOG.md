@@ -91,14 +91,6 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 * Revised the Subscriptions deprecation announcement to make it more clear that HyP3 itself is not being retired.
 
-## [0.6.0]
-
-### Added
-* Added `hyp3_isce2_burst_stack_for_ts_analysis.ipynb` to make the `hyp3-isce2` burst InSAR work with MintPy
-
-### Changed
-* Changed `hyp3_insar_stack_for_ts_analysis.ipynb` to make it work with MintPy v1.5.2
-
 ## [0.5.0]
 
 ### Added

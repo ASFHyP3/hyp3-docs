@@ -9,7 +9,7 @@ This document is a guide for users of Sentinel-1 Burst Interferometric Synthetic
 
     Users are now able to process burst-based Sentinel-1 InSAR products on demand using ISCE2 software!  
 
-    This functionality is available on [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu/" ){target=_blank} as well as through the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}!
+    This functionality is available on [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu/" ){target=_blank} as well as through the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}.
 
 ### Sentinel-1 Bursts
 

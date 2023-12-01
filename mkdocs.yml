@@ -82,6 +82,7 @@ nav:
     - Search another user's jobs: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb" target="_blank
     - Process new granules for search parameters: tutorials/process-new-granules-for-search-parameters.md
     - InSAR time series with MintPy: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank
+    - InSAR burst time series with MintPy: https://nbviewer.org/github/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_isce2_burst_stack_for_ts_analysis.ipynb" target="_blank
     - StoryMap Tutorials: https://asf-daac.maps.arcgis.com/home/index.html" target="_blank
   - Other Tools:
     - ArcGIS Toolbox: tools/arcgis_toolbox.md

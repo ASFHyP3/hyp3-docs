@@ -54,15 +54,13 @@ The RTC product package includes a Layover-Shadow mask (see [Image Files section
 
 The quality of the terrain corrections are related to the quality of the digital elevation models (DEMs) used in the process of geometrically and radiometrically correcting the SAR imagery. We use DEMs that are publicly available and have wide-ranging coverage. 
 
-In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. With the public release of the [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, we have changed our default DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. This is now the default DEM for processing RTC products, and the only option available for processing [InSAR products](insar_product_guide.md "Sentinel-1 InSAR On Demand Product Guide" ){target=_blank}.
+In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. With the public release of the [GLO-30 Copernicus DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, we have changed our DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. This is now the only DEM for processing RTC and [InSAR products](insar_product_guide.md "Sentinel-1 InSAR On Demand Product Guide" ){target=_blank}.
 
-Users still have the option to use the legacy DEMs when processing RTC jobs [On Demand in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=_blank} and when using the [API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank} or [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank}, but we recommend using the Copernicus DEM whenever possible.
+Now, users do not have the option to use the legacy DEMs anymore when processing RTC jobs [On Demand in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=_blank} and when using the [API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank} or [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank}, but we recommend using the Copernicus DEM whenever possible.
 
-!!! tip "Deprecation of Legacy DEMs for RTC Processing"
+!!! tip "Deprecation of Legacy DEMs for RTC Procession"
 
-    We are considering eliminating the option to use our legacy DEM dataset (NED/SRTM) as a HyP3 processing option for RTC. We would value your feedback as we decide if we will make this change. How would you be impacted if the NED/SRTM DEM option was no longer available? Would it affect your current workflows? 
-
-    Please send your feedback to [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu).
+    The legacy DEM option as a HyP3 processing option for RTC used to be avaiable. Now it is eliminated.
 
 We use the 2022 Release of the [Copernicus GLO-30 Public DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, [available on AWS](https://registry.opendata.aws/copernicus-dem/ "Registry of Open Data on AWS - Copernicus DEM" ){target=_blank}. For more information, see the 'Releases' section of [this article](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}.
 
@@ -108,9 +106,7 @@ Figure 2 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and Fig
 
 !!! tip "Deprecation of Legacy DEMs for RTC Processing"
 
-    We are considering eliminating the option to use our legacy DEM dataset (NED/SRTM) as a HyP3 processing option for RTC. We would value your feedback as we decide if we will make this change. How would you be impacted if the NED/SRTM DEM option was no longer available? Would it affect your current workflows? 
-
-    Please send your feedback to [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu).
+    The legacy DEM option as a HyP3 processing option for RTC used to be avaiable. Now it is eliminated.
 
 The legacy DEMs were pre-processed by ASF to a consistent raster format (GeoTIFF) from the original source formats: height (\*.hgt), ESRI ArcGrid (\*.adf), etc. Many of the NASA-provided DEMs were provided as orthometric heights with EGM96 vertical datum. These were converted by ASF to ellipsoid heights using the ASF [MapReady](https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready "https://asf.alaska.edu/how-to/data-tools/data-tools/#mapready" ){target=_blank} tool named *geoid_adjust*. The pixel reference varied from the center (pixel as point) to a corner (pixel as area). The GAMMA software used to generate the RTC products uses pixel as area and adjusts DEM coordinates as needed. 
 
@@ -167,18 +163,18 @@ There are a number of options users can set when ordering RTC On Demand products
 
 Table 2 lists all of the options as displayed in the Vertex user interface and the HyP3 API, and the [Processing Options](#processing-options "Jump to Processing Options section in document") and [Optional Files](#optional-files "Jump to Optional Files section in document") sections provide more information about each option.
 
-| Option Name in Vertex       | Option Name in HyP3 API/SDK | Possible Values             | Default    | Description                                                                                                                                                                         |
-|-----------------------------|-----------------------------|-----------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Radiometry                  | radiometry                  | (gamma0, sigma0)            | gamma0     | Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area projected into the look direction (gamma0)                                                |
-| Scale                       | scale                       | (power, decibel, amplitude) | power      | Scale of output backscatter values                                                                                                                                                  |
-| Pixel Spacing               | resolution                  | (10.0, 20.0, 30.0)          | 30.0       | Product pixel spacing in meters                                                                                                                                                     |
-| DEM Name                    | dem_name                    | (copernicus, legacy)        | copernicus | Name of the DEM to use for processing: _copernicus_ will use the Copernicus GLO-30 Public DEM, _legacy_ will use the DEM with the best coverage from ASF's legacy SRTM/NED datasets |
-| Apply DEM Matching          | dem_matching                | (true, false)               | false      | Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files                                                                                              |
-| Apply Speckle Filter        | speckle_filter              | (true, false)               | false      | Apply an Enhanced Lee speckle filter                                                                                                                                                |
-| Include DEM                 | include_dem                 | (true, false)               | false      | Include a copy of the DEM used for RTC processing in the product package                                                                                                            |
- | Include Incidence Angle Map | include_inc_map             | (true, false)               | false      | Include the local incidence angle map in the product package                                                                                                                        |
- | Include Scattering Area Map | include_scattering_area     | (true, false)               | false      | Include the scattering area map in the product package                                                                                                                              |
- | Include RGB Decomposition   | include_rgb                 | (true, false)               | false      | Include a false-color RGB decomposition GeoTIFF in the product package                                                                                                              |
+| Option Name in Vertex       | Option Name in HyP3 API/SDK   | Possible Values             | Default    | Description                                                                                                                          |
+|-----------------------------|-------------------------------|-----------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| Radiometry                  | radiometry                    | (gamma0, sigma0)            | gamma0     | Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area projected into the look direction (gamma0) |
+| Scale                       | scale                         | (power, decibel, amplitude) | power      | Scale of output backscatter values                                                                                                   |
+| Pixel Spacing               | resolution                    | (10.0, 20.0, 30.0)          | 30.0       | Product pixel spacing in meters                                                                                                      |
+| DEM Name                    | dem_name                      | (copernicus)                | copernicus | Name of the DEM to use for processing: _copernicus_ will use the Copernicus GLO-30 Public DEM                                        |
+| Apply DEM Matching          | dem_matching                  | (true, false)               | false      | Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files                                               |
+| Apply Speckle Filter        | speckle_filter                | (true, false)               | false      | Apply an Enhanced Lee speckle filter                                                                                                 |
+| Include DEM                 | include_dem                   | (true, false)               | false      | Include a copy of the DEM used for RTC processing in the product package                                                             |
+| Include Incidence Angle Map | include_inc_map               | (true, false)               | false      | Include the local incidence angle map in the product package                                                                         |
+| Include Scattering Area Map | include_scattering_area       | (true, false)               | false      | Include the scattering area map in the product package                                                                               |
+| Include RGB Decomposition   | include_rgb                   | (true, false)               | false      | Include a false-color RGB decomposition GeoTIFF in the product package                                                               |
  
 *Table 2: Processing Options*
 
@@ -210,9 +206,7 @@ Refer to the [Pixel Spacing](#pixel-spacing "Jump to Pixel Spacing section in do
 
 #### DEM Name
 
-The **dem_name** parameter selects the DEM to use for RTC processing. By default, we use the [Copernicus Global 30-m DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}, but allow users to select ASF's legacy DEMs (a combination of NED and SRTM) if desired. 
-
-We recommend using the Copernicus DEM, which has more extensive and consistent coverage and more recent measurements. The main reason to select the legacy option is if a user already has a time series of products generated with the legacy DEM and wants to process new acquisitions using the same DEM. Refer to the [Digital Elevation Models](#digital-elevation-models "Jump to DEM section in document") section for more information.
+The **dem_name** parameter selects the DEM to use for RTC processing. By default, we use the [Copernicus Global 30-m DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}. 
 
 #### DEM Matching
 

@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.8.2]
 
 ### Modified
-* the dems.md and rtc_product_guide.md to remove the legacy DEM option in the HyP3 processing for RTC
+* the DEM description and RTC product guide to inform users that the legacy DEM options are no longer available
 
 ## [0.8.1]
 

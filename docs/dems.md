@@ -15,7 +15,7 @@ We use the 2022 Release of the [Copernicus GLO-30 Public DEM](https://spacedata.
 
     The GLO-90 dataset has a pixel spacing of 90 meters, which is not as detailed as the 30-m pixel spacing in the GLO-30 DEM, but it does allow us to provide On Demand products in these regions, where they were previously unavailable. 
 
-Table 1 summarizes ASF's DEM source. Note that the DEM is reprojected to the UTM Zone (WGS84) appropriate for the granule location, and a geoid correction is applied before being used for processing. The Copernicus GLO-30 DEM is now the only option available for both RTC and InSAR processing. For RTC processing, the DEM is resampled to the pixel spacing of the output product. For InSAR processing, the DEM is resampled to twice the pixel spacing of the output InSAR product (160 m for 20x4 looks, 80 m for 10x2 looks).
+Table 1 summarizes ASF's source DEM. The Copernicus GLO-30 DEM is now the only option available for both RTC and InSAR processing. Note that the DEM is reprojected to the UTM Zone (WGS84) appropriate for the granule location, and a geoid correction is applied before being used for processing. For RTC processing, the DEM is resampled to the pixel spacing of the output product. For InSAR processing, the DEM is resampled to twice the pixel spacing of the output InSAR product (160 m for 20x4 looks, 80 m for 10x2 looks).
 
 | Resolution | DEM     | Vertical Datum | Area                           | Posting         | Priority |
 |------------|---------|----------------|--------------------------------|-----------------|----------|

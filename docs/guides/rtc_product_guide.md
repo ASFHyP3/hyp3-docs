@@ -72,7 +72,7 @@ We use the 2022 Release of the [Copernicus GLO-30 Public DEM](https://spacedata.
 
     Users should be aware that the GLO-90 dataset has a pixel spacing of 90 meters, which is not as detailed as the 30-m pixel spacing in the GLO-30 DEM. 
 
-Table 1 summarizes ASF's DEM source. Note that in each case, the DEM is resampled to RTC spacing and reprojected to a UTM Zone (WGS84), and a geoid correction is applied before being used for RTC processing.
+Table 1 summarizes ASF's DEM sources. Note that we currently only support using the Copernicus 30-m DEM for processing. The source DEM is resampled to RTC spacing and reprojected to a UTM Zone (WGS84), and a geoid correction is applied before being used for RTC processing.
 
 | Resolution | DEM     | Vertical Datum | Area                           | Posting         | Priority |
 |------------|---------|----------------|--------------------------------|-----------------|----------|

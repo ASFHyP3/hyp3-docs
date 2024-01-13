@@ -14,6 +14,9 @@ We provide step-by-step tutorials for using HyP3 programmatically via Jupyter No
 * [Time series analysis with HyP3 and MintPy](https://nbviewer.org/github/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb "Time series analysis with HyP3 and MintPy Tutorial" ){target=_blank}
   -- This notebook walks through performing a time-series analysis of the 2019 
   Ridgecrest, CA earthquake with HyP3 On Demand InSAR products and MintPy.
+* [Time series analysis with HyP3 ISCE2 burst InSAR products and MintPy](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_isce2_burst_stack_for_ts_analysis.ipynb "Time series analysis with HyP3 ISCE2 burst InSAR products and MintPy Tutorial" ){target=_blank}
+  -- This notebook walks through performing a time-series analysis of the 2019 
+  Ridgecrest, CA earthquake with HyP3 On Demand Burst InSAR products and MintPy.
 
 
 ## StoryMaps

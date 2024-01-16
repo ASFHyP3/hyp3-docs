@@ -1,5 +1,0 @@
-.*gitleaks.toml$
-.*/vertex.md$
-docs/ViewerJS/.*
-docs/v2-transition.md
-docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb

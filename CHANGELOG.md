@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.8.4]
 
 ### Changed
-* Included 20m pixel spacing option for RTC products in product summary page.
+* Included 20 meter pixel spacing option for RTC products in product summary page.
 
 ## [0.8.3]
 

@@ -254,14 +254,16 @@ The text file with extension .txt includes processing parameters used to generat
 
 ### Merge Sentinel-1 Burst InSAR Products
 
-Burst InSAR products created using the insar_tops_burst workflow can be merged together using the merge_tops_burst workflow. This can be useful when the deformation signal you'd like to observe spans multiple bursts. It can be called using the following syntax:
+Burst InSAR products created using the insar_tops_burst workflow can be merged together using the merge_tops_burst workflow. This can be useful when the deformation signal you'd like to observe spans multiple bursts. Suppose users have already installed the [hyp3-isce2 plugin]( https://github.com/ASFHyP3/hyp3-isce2 "HyP3-ISCE2 Plugin" ){target=_blank} on their local machine, merge can be done using the following syntax:
 
 python -m hyp3_isce2 ++process merge_tops_bursts PATH_TO_UNZIPPED_PRODUCTS --apply-water-mask True
 
 Where PATH_TO_UNZIPPED_PRODUCTS is the path to a directory containing unzipped burst InSAR products. For example:
 
 PATH_TO_UNZIPPED_PRODUCTS
+
 ├─ S1_136232_IW2_20200604_20200616_VV_INT80_663F
+
 ├─ S1_136231_IW2_20200604_20200616_VV_INT80_529D
 
 In order to be merging eligible, all burst products must:

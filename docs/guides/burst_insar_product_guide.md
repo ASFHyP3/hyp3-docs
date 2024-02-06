@@ -41,6 +41,8 @@ For those who would prefer to work at the scale of a full IW SLC, our original [
 
 Users can request Sentinel-1 Burst InSAR products [On Demand](https://search.asf.alaska.edu/#/?topic=onDemand "https://search.asf.alaska.edu/#/?topic=onDemand" ){target=_blank} in ASF's [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} data portal, or make use of our HyP3 [Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank} or [API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank}. Input pair selection in Vertex uses either the [Baseline Tool](https://docs.asf.alaska.edu/vertex/baseline/ "https://docs.asf.alaska.edu/vertex/baseline/" ){target=_blank} or the [SBAS Tool](https://docs.asf.alaska.edu/vertex/sbas/ "https://docs.asf.alaska.edu/vertex/sbas" ){target=_blank} search interfaces. 
 
+Users can merge multiple Sentinel-1 Burst InSAR products for their application. Please read the section on [Merge Sentinel-1 Burst InSAR Products](#merge-sentinel-1-burst-insar-products "Jump to the merge section of this document"). 
+
 Users are cautioned to read the sections on [limitations](#limitations "Jump to the Limitations section of this document") and [error sources](#error-sources "Jump to the Error Sources section of this document") in InSAR products before attempting to use InSAR data. For a more complete description of the properties of SAR, see our [Introduction to SAR](../guides/introduction_to_sar.md "https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar" ){target=_blank} guide. 
 
 {% endblock %}
@@ -249,6 +251,45 @@ The text file with extension .txt includes processing parameters used to generat
 | Speckle filter                                            | Speckle filter applied                                                                                      | yes                                                                                                         |
 
 *Table 4: List of InSAR parameters included in the parameter text file*
+
+### Merge Sentinel-1 Burst InSAR Products
+
+Burst InSAR products created using the insar_tops_burst workflow can be merged together using the merge_tops_burst workflow. This can be useful when the deformation signal you'd like to observe spans multiple bursts. It can be called using the following syntax:
+
+python -m hyp3_isce2 ++process merge_tops_bursts PATH_TO_UNZIPPED_PRODUCTS --apply-water-mask True
+
+Where PATH_TO_UNZIPPED_PRODUCTS is the path to a directory containing unzipped burst InSAR products. For example:
+
+PATH_TO_UNZIPPED_PRODUCTS
+├─ S1_136232_IW2_20200604_20200616_VV_INT80_663F
+├─ S1_136231_IW2_20200604_20200616_VV_INT80_529D
+
+In order to be merging eligible, all burst products must:
+
+Have the same reference and secondary dates
+Have the same polarization
+Have the same multilooking
+Be from the same relative orbit
+Be contiguous
+
+The workflow should through an error if any of these conditions are not met.
+
+Merging burst InSAR products requires extra data that is not contained in the production HyP3 Burst InSAR products. For the time being, to be merging eligible burst products must be created locally using your own installation of hyp3-isce2 from the merge_bursts branch of this repository!
+
+As mentioned above this feature is under active development, so we welcome any feedback you have!
+
+Options
+To learn about the arguments for each workflow, look at the help documentation (python -m hyp3_isce2 ++process [WORKFLOW_NAME] --help).
+
+Looks Option
+When ordering Sentinel-1 Burst InSAR On Demand products, users can choose the number of looks (--looks) to use in processing, which drives the resolution and pixel spacing of the output products. The available options are 20x4, 10x2, or 5x1. The first number indicates the number of looks in range, the second is the number of looks in azimuth.
+
+The output product pixel spacing depends on the number of looks in azimuth: pixel spacing = 20 * azimuth looks
+
+Products with 20x4 looks have a pixel spacing of 80 m, those with 10x2 looks have a pixel spacing of 40 m, and those with 5x1 looks have a pixel spacing of 20 m.
+
+Water Mask Option
+There is always a water mask geotiff file included in the product package, but setting the apply-water-mask (--apply-water-mask) option to True will apply the mask to the wrapped interferogram prior to phase unwrapping.
 
 {% endblock %}
 

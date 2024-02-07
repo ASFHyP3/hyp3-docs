@@ -258,7 +258,7 @@ Burst InSAR products created using the insar_tops_burst workflow can be merged t
 
 python -m hyp3_isce2 ++process merge_tops_bursts PATH_TO_UNZIPPED_PRODUCTS --apply-water-mask True
 
-Where PATH_TO_UNZIPPED_PRODUCTS is the path to a directory containing unzipped burst InSAR products. For example:
+Where $PATH_TO_UNZIPPED_PRODUCTS is the path to a directory containing unzipped Burst InSAR products. For example:
 
 PATH_TO_UNZIPPED_PRODUCTS
 
@@ -268,30 +268,32 @@ PATH_TO_UNZIPPED_PRODUCTS
 
 In order to be merging eligible, all burst products must:
 
-Have the same reference and secondary dates
-Have the same polarization
-Have the same multilooking
-Be from the same relative orbit
-Be contiguous
+- Have the same reference and secondary dates
+- Have the same polarization
+- Have the same multilooking
+- Be from the same relative orbit
+- Be contiguous
 
-The workflow should through an error if any of these conditions are not met.
+The workflow should throw an error if any of these conditions are not met.
 
 Merging burst InSAR products requires extra data that is not contained in the production HyP3 Burst InSAR products. For the time being, to be merging eligible burst products must be created locally using your own installation of hyp3-isce2 from the merge_bursts branch of this repository!
 
-As mentioned above this feature is under active development, so we welcome any feedback you have!
 
 Options
+
 To learn about the arguments for each workflow, look at the help documentation (python -m hyp3_isce2 ++process [WORKFLOW_NAME] --help).
 
 Looks Option
-When ordering Sentinel-1 Burst InSAR On Demand products, users can choose the number of looks (--looks) to use in processing, which drives the resolution and pixel spacing of the output products. The available options are 20x4, 10x2, or 5x1. The first number indicates the number of looks in range, the second is the number of looks in azimuth.
+
+When ordering Sentinel-1 Burst InSAR On Demand products, users can choose the number of looks (`--looks`) to use in processing, which drives the resolution and pixel spacing of the output products. The available options are `20x4`, `10x2`, or `5x1`. The default value is `20x4`. The first number indicates the number of looks in range, the second is the number of looks in azimuth.
 
 The output product pixel spacing depends on the number of looks in azimuth: pixel spacing = 20 * azimuth looks
 
-Products with 20x4 looks have a pixel spacing of 80 m, those with 10x2 looks have a pixel spacing of 40 m, and those with 5x1 looks have a pixel spacing of 20 m.
+Products with `20x4` looks have a pixel spacing of 80 m, those with `10x2` looks have a pixel spacing of 40 m, and those with `5x1` looks have a pixel spacing of 20 m.
 
 Water Mask Option
-There is always a water mask geotiff file included in the product package, but setting the apply-water-mask (--apply-water-mask) option to True will apply the mask to the wrapped interferogram prior to phase unwrapping.
+
+Each Burst InSAR product package includes a water mask geotiff file but setting the apply-water-mask (--apply-water-mask) option to True will apply the mask to the wrapped interferogram prior to phase unwrapping.
 
 {% endblock %}
 

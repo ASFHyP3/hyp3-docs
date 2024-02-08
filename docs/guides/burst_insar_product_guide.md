@@ -256,7 +256,9 @@ The text file with extension .txt includes processing parameters used to generat
 
 Burst InSAR products created using the insar_tops_burst workflow can be merged together using the merge_tops_burst workflow. This can be useful when the deformation signal you'd like to observe spans multiple bursts. Assuming that you have already installed the [hyp3-isce2 plugin]( https://github.com/ASFHyP3/hyp3-isce2 "HyP3-ISCE2 Plugin" ){target=_blank} on your local machine, merging can be performed using the following syntax:
 
+```
 python -m hyp3_isce2 ++process merge_tops_bursts PATH_TO_UNZIPPED_PRODUCTS --apply-water-mask True
+```
 
 Where $PATH_TO_UNZIPPED_PRODUCTS is the path to a directory containing unzipped Burst InSAR products. For example:
 

@@ -312,11 +312,17 @@ As mentioned above, this workflow uses underlying ISCE2 functionality to perform
 
 #### Merge Processing Options
 
-The processing options available for the merging are the same as those available for standard Burst InSAR products. Check out the [Processing Options](#processing-options "Jump to the merge section of this document") section for more details.
+The processing options available for the merging are the same as those available for standard Burst InSAR products. Check out the [Processing Options](#processing-options "Jump to the Processing Options section of this document") section for more details.
 
 To learn about the command line argument syntax for this workflow, look at the help documentation using:
 ```bash
 python -m hyp3_isce2 ++process merge_tops_bursts --help
+```
+
+#### Product Packaging
+The product packaging of merged burst InSAR products follows the same conventions outlined in [Product Packaging](#product-packaging "Jump to the Product Packaging section of this document") section above with two exceptions. First, the four range-doppler images are not included since the products have already been merged. Second, the product is modified slightly; the Burst ID is swapped for the zero-padded relative orbit number, and the swath number are removed. The resulting format is:
+```
+S1_rrr__yyymmdd_yyymmdd_pp_INTn_uuuu
 ```
 
 {% endblock %}

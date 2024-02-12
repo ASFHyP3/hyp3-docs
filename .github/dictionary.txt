@@ -160,6 +160,7 @@ interferometric
 Interferometry
 interferometry
 ISCE2
+ISCE2's
 iteratively
 IW
 Jinja2
@@ -190,7 +191,7 @@ LVφ
 MapReady
 Markert
 Mathjax
-mathjax              retext-spell
+mathjax
 MCF
 mcf
 Menz
@@ -200,6 +201,7 @@ mintpy
 MkDocs
 MTI
 multiband
+Multilook
 multilooking
 Multitemporal
 Muro
@@ -210,6 +212,7 @@ NED13
 NED2
 netCDF
 NoData
+non-geocoded
 NoSQL
 OpenAPI
 orthometric
@@ -229,6 +232,7 @@ polarization
 Polarizations
 polarizations
 PR
+pre-
 pre-generated
 pre-processed
 Pre-Processing
@@ -239,6 +243,7 @@ PRs
 Radiometrically
 radiometrically
 rainforest
+range-doppler
 raster
 rasters
 README

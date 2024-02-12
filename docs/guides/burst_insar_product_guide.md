@@ -320,7 +320,7 @@ python -m hyp3_isce2 ++process merge_tops_bursts --help
 ```
 
 #### Product Packaging
-The product packaging of merged burst InSAR products follows the same conventions outlined in [Product Packaging](#product-packaging "Jump to the Product Packaging section of this document") section above with two exceptions. First, the four range-doppler images are not included since the products have already been merged. Second, the product is modified slightly; the Burst ID is swapped for the zero-padded relative orbit number, and the swath number are removed. The resulting format is:
+The product packaging of merged burst InSAR products follows the same conventions outlined in [Product Packaging](#product-packaging "Jump to the Product Packaging section of this document") section above with two exceptions. First, the four range-doppler images are not included since the products have already been merged. Second, the product is modified slightly; the Burst ID is swapped for the zero-padded relative orbit number, and the swath number is removed. The resulting format is:
 ```
 S1_rrr__yyymmdd_yyymmdd_pp_INTn_uuuu
 ```

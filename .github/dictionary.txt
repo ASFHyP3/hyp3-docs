@@ -142,6 +142,7 @@ HyP3
 hyp3
 hyp3-docs
 hyp3-gamma
+HyP3-ISCE2
 hyp3_sdk
 IaC
 Iain

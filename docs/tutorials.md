@@ -17,6 +17,8 @@ We provide step-by-step tutorials for using HyP3 programmatically via Jupyter No
 * [Time series analysis with HyP3 ISCE2 burst InSAR products and MintPy](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_isce2_burst_stack_for_ts_analysis.ipynb "Time series analysis with HyP3 ISCE2 burst InSAR products and MintPy Tutorial" ){target=_blank}
   -- This notebook walks through performing a time-series analysis of the 2019 
   Ridgecrest, CA earthquake with HyP3 On Demand Burst InSAR products and MintPy.
+* [Merging of burst InSAR products with HyP3 ISCE2](https://github.com/ASFHyP3/hyp3-docs/blob/develop/docs/tutorials/hyp3_isce2_burst_merge.ipynb "Merging of burst InSAR products with HyP3 ISCE2 Tutorial" ){target=_blank}
+  -- This notebook walks through merging a pair of burst InSAR products with HyP3 ISCE2, using the deformation signal related to a 2020 Iranian earthquake as an example.
 
 
 ## StoryMaps

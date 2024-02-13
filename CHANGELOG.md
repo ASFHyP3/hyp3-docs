@@ -9,7 +9,9 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.8.5]
 
 ### Added
-*Tutorial notebook demonstrating how to merge two burst InSAR products
+* Tutorial notebook demonstrating how to merge two burst InSAR products.
+* merge sentinel-1 burst InSAR products section on burst_insar_product_guide.
+
 
 ## [0.8.4]
 

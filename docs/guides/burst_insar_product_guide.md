@@ -41,6 +41,8 @@ For those who would prefer to work at the scale of a full IW SLC, our original [
 
 Users can request Sentinel-1 Burst InSAR products [On Demand](https://search.asf.alaska.edu/#/?topic=onDemand "https://search.asf.alaska.edu/#/?topic=onDemand" ){target=_blank} in ASF's [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} data portal, or make use of our HyP3 [Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank} or [API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank}. Input pair selection in Vertex uses either the [Baseline Tool](https://docs.asf.alaska.edu/vertex/baseline/ "https://docs.asf.alaska.edu/vertex/baseline/" ){target=_blank} or the [SBAS Tool](https://docs.asf.alaska.edu/vertex/sbas/ "https://docs.asf.alaska.edu/vertex/sbas" ){target=_blank} search interfaces. 
 
+Users can also merge multiple Sentinel-1 Burst InSAR products together if their area of interest covers more than one burst. Please read the section on [Merge Sentinel-1 Burst InSAR Products](#merge-sentinel-1-burst-insar-products "Jump to the merge section of this document") for more information. 
+
 Users are cautioned to read the sections on [limitations](#limitations "Jump to the Limitations section of this document") and [error sources](#error-sources "Jump to the Error Sources section of this document") in InSAR products before attempting to use InSAR data. For a more complete description of the properties of SAR, see our [Introduction to SAR](../guides/introduction_to_sar.md "https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar" ){target=_blank} guide. 
 
 {% endblock %}
@@ -184,23 +186,29 @@ All of the main InSAR product files are 32-bit floating-point single-band GeoTIF
 
 If the **water mask** option is selected, the water mask is applied before phase unwrapping to exclude potentially invalid pixels from the unwrapping process. The water mask is generated using the [GSHHG](http://www.soest.hawaii.edu/wessel/gshhg "http://www.soest.hawaii.edu/wessel/gshhg" ){target=_blank} dataset. To compile the reference shapefile, the full-resolution L1 dataset (boundary between land and ocean) and L5 dataset (boundary between Antarctic ice and ocean) were combined. The L3 dataset (boundary between islands and the lakes they are within) was removed from the L2 dataset (boundary between lakes and land), and this combined dataset was removed from the combined L1/L5 dataset. The GSHHG dataset was last updated in 2017, so there may be discrepancies where shorelines have changed.
 
+There are also four non-geocoded images that remain in their native range-doppler coordinates. These four images compose the image data needed to merge burst InSAR products together. These images include a range-doppler version of the wrapped interferogram, a two-band range-doppler look vector image in the native ISCE2 format, and latitude/longitude images that provide the information necessary to map range-doppler images into the geocoded domain.
+
 A **browse image** is included for the unwrapped (unw_phase) phase file, which is in PNG format and is 2048 pixels wide.
 
 The tags and extensions used and example file names for each raster are listed in Table 2 below. 
 
 {% set base_name = 'S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>' %}
 
-| Extension          | Description                      | Example                           |
-|--------------------|----------------------------------|-----------------------------------|
-| _conncomp.tif      | Connected Components             | {{ base_name }}_conncomp.tif      |
-| _corr.tif          | Normalized coherence file         | {{ base_name }}_corr.tif          |
-| _unw_phase.tif     | Unwrapped geocoded interferogram | {{ base_name }}_unw_phase.tif     |
-| _wrapped_phase.tif | Wrapped geocoded interferogram   | {{ base_name }}_wrapped_phase.tif |
-| _lv_phi.tif        | Look vector φ (orientation)      | {{ base_name }}_lv_phi.tif        |
-| _lv_theta.tif      | Look vector θ (elevation)        | {{ base_name }}_lv_theta.tif      |
-| _dem.tif           | Digital elevation model          | {{ base_name }}_dem.tif           |
-| _water_mask.tif    | Water mask                       | {{ base_name }}_water_mask.tif    |
-| _unw_phase.png     | Unwrapped phase browse image     | {{ base_name }}_unw_phase.png     |
+| Extension              | Description                         | Example                               |
+|------------------------|-------------------------------------|---------------------------------------|
+| _conncomp.tif          | Connected Components                | {{ base_name }}_conncomp.tif          |
+| _corr.tif              | Normalized coherence file           | {{ base_name }}_corr.tif              |
+| _unw_phase.tif         | Unwrapped geocoded interferogram    | {{ base_name }}_unw_phase.tif         |
+| _wrapped_phase.tif     | Wrapped geocoded interferogram      | {{ base_name }}_wrapped_phase.tif     |
+| _lv_phi.tif            | Look vector φ (orientation)         | {{ base_name }}_lv_phi.tif            |
+| _lv_theta.tif          | Look vector θ (elevation)           | {{ base_name }}_lv_theta.tif          |
+| _dem.tif               | Digital elevation model             | {{ base_name }}_dem.tif               |
+| _water_mask.tif        | Water mask                          | {{ base_name }}_water_mask.tif        |
+| _lat_rdr.tif           | Range-Doppler latitude coordinates  | {{ base_name }}_lat_rdr.tif           |
+| _lon_rdr.tif           | Range-Doppler longitude coordinates | {{ base_name }}_lon_rdr.tif           |
+| _los_rdr.tif           | Range-Doppler look vectors          | {{ base_name }}_los_rdr.tif           |
+| _wrapped_phase_rdr.tif | Wrapped Range-Doppler interferogram | {{ base_name }}_wrapped_phase_rdr.tif |
+| _unw_phase.png         | Unwrapped phase browse image        | {{ base_name }}_unw_phase.png         |
 
 *Table 2: Image files in product package*
 
@@ -221,34 +229,101 @@ The text file with extension .README.md.txt explains the files included in the f
 #### InSAR Parameter File
 The text file with extension .txt includes processing parameters used to generate the InSAR product as well as metadata attributes for the InSAR pair.  These are detailed in Table 4.  
 
-| Name                                                      | Description                                                                                                 | Possible Value                                                                                              |
-|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
-| Reference Granule                                         | Granule name for reference burst (of the two scenes in the pair, the dataset with the oldest timestamp) | S1<wbr>_136231<wbr>_IW2<wbr>_20200604T022312<wbr>_VV<wbr>_7C85-BURST |
-| Secondary Granule                                         | Granule name for secondary burst (of the two scenes in the pair, the dataset with the newest timestamp) | S1<wbr>_136231<wbr>_IW2<wbr>_20200616T022313<wbr>_VV<wbr>_5D11-BURST |
-| Reference Pass Direction                                  | Orbit direction of the reference scene                                                                      | DESCENDING                                                                                                  |
-| Reference Orbit Number                                    | Absolute orbit number of the reference scene                                                                | 30741                                                                                                       |
-| Secondary Pass Direction                                  | Orbit direction of the reference scene                                                                      | DESCENDING                                                                                                  |
-| Secondary Orbit Number                                    | Absolute orbit number of the secondary scene                                                                | 31091                                                                                                       |
-| Baseline                                                  | Perpendicular baseline in meters                                                                            | 58.3898                                                                                                     | 
-| UTCTime                                                   | Time in the UTC time zone in seconds                                                                        | 12360.691361                                                                                                |
-| Heading                                                   | Spacecraft heading measured in degrees clockwise from north                                                 | 193.2939317                                                                                                 |
-| Spacecraft height                                         | Height in meters of the spacecraft above nadir point                                                        | 700618.6318999995                                                                                           | 
-| Earth radius at nadir                                     | Ellipsoidal earth radius in meters at the point directly below the satellite                                | 6370250.0667                                                                                                |
-| Slant range near                                          | Distance in meters from satellite to nearest point imaged                                                   | 799517.4338                                                                                                 | 
-| Slant range center                                        | Distance in meters from satellite to the center point imaged                                                | 879794.1404                                                                                                 | 
-| Slant range far                                           | Distance in meters from satellite to farthest point imaged                                                  | 960070.8469                                                                                                 |
-| Range looks                                               | Number of looks taken in the range direction                                                                | 20                                                                                                          | 
-| Azimuth looks                                             | Number of looks taken in the azimuth direction                                                              | 4                                                                                                           |
-| InSAR phase filter                                        | Was an InSAR phase filter used                                                                               | yes                                                                                                         | 
-| Phase filter parameter                                    | Dampening factor                                                                                            | 0.5                                                                                                         |
-| Range bandpass filter                                     | Range bandpass filter applied                                                                               | no                                                                                                          |
-| Azimuth bandpass filter                                   | Azimuth bandpass filter applied                                                                             | no                                                                                                          |
-| DEM source                                                | DEM used in processing                                                                                      | GLO-30                                                                                                      |
-| DEM resolution                                            | Pixel spacing in meters for DEM used to process this scene                                                  | 30                                                                                                          |
-| Unwrapping type                                           | Phase unwrapping algorithm used                                                                             | snaphu_mcf                                                                                                  |
-| Speckle filter                                            | Speckle filter applied                                                                                      | yes                                                                                                         |
+| Name                             | Description                                                                                             | Possible Value                                                       |
+|----------------------------------|---------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| Reference Granule                | Granule name for reference burst (of the two scenes in the pair, the dataset with the oldest timestamp) | S1<wbr>_136231<wbr>_IW2<wbr>_20200604T022312<wbr>_VV<wbr>_7C85-BURST |
+| Secondary Granule                | Granule name for secondary burst (of the two scenes in the pair, the dataset with the newest timestamp) | S1<wbr>_136231<wbr>_IW2<wbr>_20200616T022313<wbr>_VV<wbr>_5D11-BURST |
+| Reference Pass Direction         | Orbit direction of the reference scene                                                                  | DESCENDING                                                           |
+| Reference Orbit Number           | Absolute orbit number of the reference scene                                                            | 30741                                                                |
+| Secondary Pass Direction         | Orbit direction of the reference scene                                                                  | DESCENDING                                                           |
+| Secondary Orbit Number           | Absolute orbit number of the secondary scene                                                            | 31091                                                                |
+| Baseline                         | Perpendicular baseline in meters                                                                        | 58.3898                                                              | 
+| UTCTime                          | Time in the UTC time zone in seconds                                                                    | 12360.691361                                                         |
+| Heading                          | Spacecraft heading measured in degrees clockwise from north                                             | 193.2939317                                                          |
+| Spacecraft height                | Height in meters of the spacecraft above nadir point                                                    | 700618.6318999995                                                    | 
+| Earth radius at nadir            | Ellipsoidal earth radius in meters at the point directly below the satellite                            | 6370250.0667                                                         |
+| Slant range near                 | Distance in meters from satellite to nearest point imaged                                               | 799517.4338                                                          | 
+| Slant range center               | Distance in meters from satellite to the center point imaged                                            | 879794.1404                                                          | 
+| Slant range far                  | Distance in meters from satellite to farthest point imaged                                              | 960070.8469                                                          |
+| Range looks                      | Number of looks taken in the range direction                                                            | 20                                                                   | 
+| Azimuth looks                    | Number of looks taken in the azimuth direction                                                          | 4                                                                    |
+| InSAR phase filter               | Was an InSAR phase filter used                                                                          | yes                                                                  | 
+| Phase filter parameter           | Dampening factor                                                                                        | 0.5                                                                  |
+| Range bandpass filter            | Range bandpass filter applied                                                                           | no                                                                   |
+| Azimuth bandpass filter          | Azimuth bandpass filter applied                                                                         | no                                                                   |
+| DEM source                       | DEM used in processing                                                                                  | GLO-30                                                               |
+| DEM resolution                   | Pixel spacing in meters for DEM used to process this scene                                              | 30                                                                   |
+| Unwrapping type                  | Phase unwrapping algorithm used                                                                         | snaphu_mcf                                                           |
+| Speckle filter                   | Speckle filter applied                                                                                  | yes                                                                  |
+| Water mask                       | Was a water mask used                                                                                   | yes                                                                  |
+| Radar n lines                    | Number of lines (y coordinate) in range-doppler                                                         | 377                                                                  |
+| Radar n samples                  | Number of samples (x coordinate) in range-doppler                                                       | 1272                                                                 |
+| Radar first valid line           | First line in range-doppler SLC containing valid data                                                   | 8                                                                    |
+| Radar n valid lines              | Number of lines in range-doppler SLC containing valid data                                              | 363                                                                  |
+| Radar first valid sample         | First samples in range-doppler SLC containing valid data                                                | 9                                                                    |
+| Radar n valid samples            | Number of samples in range-doppler SLC containing valid data                                            | 1220                                                                 |
+| Multilook Azimuth Time Interval  | Time-based spacing of range-doppler SLC lines after multilooking in seconds                             | 0.0082222252                                                         |
+| Multilook Range Pixel Size       | Distance-based spacing of range-doppler SLC samples after multilooking in meters                        | 46.59124229430646                                                    |
+| Radar sensing stop               | Last date and time for data collection                                                                  | 2020-06-04T02:23:16.030988                                           |
+
 
 *Table 4: List of InSAR parameters included in the parameter text file*
+
+### Merge Sentinel-1 Burst InSAR Products
+
+Burst InSAR products created using the `insar_tops_burst` workflow can be merged together using the `merge_tops_burst` workflow. This can be useful when the area of interest you'd like to observe spans multiple bursts. Merging is done using underlying ISCE2 functionality, and steps 8-10 of InSAR processing (filtering, unwrapping, and geocoding) found in the [InSAR Processing](#insar-processing "Jump to the InSAR Processing section of this document") section are repeated for the merged products to ensure consistent results. Check out the [Merge Processing](#merge-processing "Jump to the Merge Processing section of this document") section below for more details. Assuming that you have already installed the [HyP3-ISCE2 plugin]( https://github.com/ASFHyP3/hyp3-isce2 "HyP3-ISCE2 Plugin" ){target=_blank} on your local machine, merging can be performed using the following syntax:
+
+```bash
+python -m hyp3_isce2 ++process merge_tops_bursts PATH_TO_UNZIPPED_PRODUCTS
+```
+
+Where `$PATH_TO_UNZIPPED_PRODUCTS` is the path to a directory containing **unzipped** Burst InSAR products. For example:
+
+```
+PATH_TO_UNZIPPED_PRODUCTS
+├─ S1_136232_IW2_20200604_20200616_VV_INT80_663F
+├─ S1_136231_IW2_20200604_20200616_VV_INT80_529D
+```
+
+In order to be merging eligible, all burst products must:
+
+- Have the same reference and secondary dates
+- Have the same polarization
+- Have the same multilooking
+- Be from the same relative orbit
+- Be contiguous
+
+The workflow should throw an error if any of these conditions are not met.
+
+#### Merge Processing
+During normal ISCE2 InSAR processing, initial interferograms are formed on a burst-by-burst basis. These range-doppler burst interferograms are combined during an ISCE2 step called `merge_bursts`, then the remaining steps (filtering, unwrapping and geocoding) are conducted on the merged results.
+
+By including select range-doppler data (unwrapped interferogram, geolocation information, and line-of-sight information) as well as select metadata in our standard Burst InSAR products, we are able to restart ISCE2 processing from the `merge_burst` step, then proceed with the following steps as if it were a standard ISCE2 InSAR processing run.
+
+The steps of the workflow are as follows:
+
+1.	Recreate a pre-`merge_bursts` ISCE2 InSAR processing state using the input Burst InSAR products.
+2.	Run a modified version of ISCE2’s `merge_burst` step.
+3.	Apply the Goldstein-Werner power spectral filter with a dampening factor of 0.5.
+4.	Unwrap the wrapped phase interferogram using [SNAPHU](http://web.stanford.edu/group/radar/softwareandlinks/sw/snaphu/){target=_blank}'s minimum cost flow (MCF) unwrapping algorithm to produce the unwrapped phase interferogram.
+5.	Geocode the output products.
+
+As mentioned above, this workflow uses underlying ISCE2 functionality to perform these steps so the results of this workflow should be identical to the results obtained by performing a standard multi-burst ISCE2 InSAR run (assuming that the Enhanced Spectral Diversity technique is not used for co-registration).
+
+#### Merge Processing Options
+
+The processing options available for the merging are the same as those available for standard Burst InSAR products. Check out the [Processing Options](#processing-options "Jump to the Processing Options section of this document") section for more details.
+
+To learn about the command line argument syntax for this workflow, look at the help documentation using:
+```bash
+python -m hyp3_isce2 ++process merge_tops_bursts --help
+```
+
+#### Product Packaging
+The product packaging of merged burst InSAR products follows the same conventions outlined in [Product Packaging](#product-packaging "Jump to the Product Packaging section of this document") section above with two exceptions. First, the four range-doppler images are not included since the products have already been merged. Second, the product is modified slightly; the Burst ID is swapped for the zero-padded relative orbit number, and the swath number is removed. The resulting format is:
+```
+S1_rrr__yyymmdd_yyymmdd_pp_INTn_uuuu
+```
 
 {% endblock %}
 

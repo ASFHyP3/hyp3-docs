@@ -19,7 +19,7 @@ jobs:
           plugins: "spell repeated-words syntax-mentions syntax-urls frontmatter"
       - name: Report
         if: ${{ failure() }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: report
           path: report.json

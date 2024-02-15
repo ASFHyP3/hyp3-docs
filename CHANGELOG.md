@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.8.6]
 
 ### Modified
-* The description of Water mask option in the insar_product_guide.md.
+* The description of water mask option in the insar_product_guide.md.
 
 ## [0.8.5]
 

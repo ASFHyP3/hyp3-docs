@@ -216,6 +216,7 @@ NoData
 non-geocoded
 NoSQL
 OpenAPI
+OpenStreetMaps
 orthometric
 Ottinger
 par_s1_slc
@@ -339,6 +340,7 @@ Werner's
 WGS84
 whitespace
 Woodhouse
+WorldCover
 XML
 xx
 Yukon-Kuskokwim

@@ -7,6 +7,11 @@ and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.8.6]
+
+### Changed
+* Updated water mask language to reflect switch to OpenStreetMaps/ESA WorldCover based water map.
+
 ## [0.8.5]
 
 ### Added

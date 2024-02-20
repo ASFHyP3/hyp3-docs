@@ -10,8 +10,8 @@ these distortions and creates analysis-ready data suitable for use in GIS applic
 RTC processing is a required first step for many amplitude-based SAR applications.
 
 Sentinel-1 RTC products are generated leveraging GAMMA Software. Products are distributed as
-UTM-projected GeoTIFFs with a pixel spacing of either 
-[10 or 30 meters](guides/rtc_product_guide.md#pixel-spacing "RTC Pixel Spacing Documentation" ){target=_blank}. 
+UTM-projected GeoTIFFs with a pixel spacing of
+[10, 20, or 30 meters](guides/rtc_product_guide.md#pixel-spacing "RTC Pixel Spacing Documentation" ){target=_blank}.
 To learn more, refer to our [ASF Sentinel-1 RTC Product Guide](guides/rtc_product_guide.md 
 "ASF Sentinel-1 RTC Product Guide" ){target=_blank}.
 

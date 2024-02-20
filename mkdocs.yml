@@ -16,6 +16,7 @@ theme:
   features:
     # - navigation.instant  # This doesn't work with the NASA Earthdata tophat; see ASFHyP3/hyp3-docs#371
     - navigation.footer
+    - announce.dismiss
 
 repo_url: https://github.com/ASFHyP3
 repo_name: ASF HyP3

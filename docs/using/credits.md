@@ -33,7 +33,7 @@ TODO:
 | [**Burst InSAR**](/guides/burst_insar_product_guide/)                         |               1 |                     10,000 |
 
 In general, the credit cost of a given job is roughly proportional to the computational resources required to process the job.
-Transitioning to a credits system will allow us to distribute our resources more equitably amongst our users.
+Transitioning to a credits system will allow us to distribute our resources more equitably.
 This change supports our mission of [making remote-sensing data accessible](https://asf.alaska.edu/about-asf/),
 with the goal of providing valuable products to the widest breadth of users possible.
 

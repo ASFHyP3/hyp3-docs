@@ -36,8 +36,8 @@ in a single month if you spent your entire monthly credit allotment on jobs of t
 | [**AutoRIFT**](https://its-live.jpl.nasa.gov/){target=_blank}                 |              25 |                    400 |
 | [**Burst InSAR**](/guides/burst_insar_product_guide/)                         |               1 |                 10,000 |
 
-In general, the credit cost of a given job is roughly proportional to the computational resources required to process the job.
-Transitioning to a credits system will allow us to distribute our resources more equitably.
+The credit cost of a given job is roughly proportional to the computational resources required to process the job.
+Transitioning to a credits system allows us to distribute our resources more equitably.
 This change supports our mission of [making remote-sensing data accessible](https://asf.alaska.edu/about-asf/),
 with the goal of providing valuable products to the widest breadth of users possible.
 

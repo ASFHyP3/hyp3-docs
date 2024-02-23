@@ -9,6 +9,9 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.8.7]
 
+### Added
+* Credits system announcement.
+
 ### Changed
 * Updated water mask descriptions.
 

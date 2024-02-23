@@ -13,7 +13,7 @@ dependencies:
   - requests
   - pip:
       # For documentation
-      - mkdocs-asf-theme==0.3.0
+      - mkdocs-asf-theme==0.3.2
       - mkdocs-redirects
       - mkdocs-section-index
       - mkdocstrings

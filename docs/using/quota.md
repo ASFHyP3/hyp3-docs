@@ -3,7 +3,7 @@
 !!! warning "Attention"
     Beginning **April 1st**, ASF On Demand's Monthly Processing Quota
     will be replaced by a new **credits system**.
-    Read the full announcement [here](/credits).
+    Read the full announcement [here](/using/credits).
 
 
 In order to provide On Demand products across the community, and to support our mission of

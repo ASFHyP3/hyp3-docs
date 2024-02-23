@@ -1,12 +1,9 @@
 # Monthly Processing Quota
 
 !!! warning "Attention"
-    Due to the increasing popularity of On Demand processing, and in order to
-    continue providing this service at no cost to users, **beginning February 2022,
-    processing quotas will be set to 1000 jobs per user per month.**
-
-    If this change impacts your current workflows, or doesn't meet your needs,
-    please let us know!
+    Beginning **April 1st**, ASF On Demand's Monthly Processing Quota
+    will be replaced by a new **credits system**.
+    Read the full announcement [here](/credits).
 
 
 In order to provide On Demand products across the community, and to support our mission of

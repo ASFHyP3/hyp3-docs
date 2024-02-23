@@ -13,9 +13,7 @@ dependencies:
   - requests
   - pip:
       # For documentation
-      # TODO pin to latest prod version of asf theme
-      #- mkdocs-asf-theme==0.3.0
-      - mkdocs-asf-theme @ git+https://github.com/ASFHyP3/mkdocs-asf-theme@announcement-tweaks
+      - mkdocs-asf-theme==0.3.2
       - mkdocs-redirects
       - mkdocs-section-index
       - mkdocstrings

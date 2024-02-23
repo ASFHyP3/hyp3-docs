@@ -1,10 +1,5 @@
 # Credits
 
-<!--
-TODO:
-* double-check all values
--->
-
 !!! warning "Attention"
     Beginning **April 1st**, ASF's On Demand [Monthly Processing Quota](/using/quota)
     will be replaced by a new **credits system**.

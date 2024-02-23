@@ -10,10 +10,16 @@
 .xml
 5x1
 5x1-look
+10x
 10x2
 10x2-look
 20x4
 20x4-look
+160m
+80m
+30m
+20m
+10m
 2π
 4π
 5x1

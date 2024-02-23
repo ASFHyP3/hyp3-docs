@@ -2,7 +2,6 @@
 
 <!--
 TODO:
-* improve formatting for the table footnote
 * double-check all values
 -->
 

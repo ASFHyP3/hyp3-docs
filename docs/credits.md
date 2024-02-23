@@ -7,7 +7,7 @@ TODO:
 
 !!! warning "Attention"
     Beginning **April 1, 2024**, HyP3's [Monthly Processing Quota](./using/quota.md)
-    will be replaced by a new **credits system.**
+    will be replaced by a new **credits system**.
     You will be given an allotment of **10,000 credits per month**,
     and each type of job will cost a different number of credits,
     as shown in the table below.

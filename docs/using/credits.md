@@ -6,7 +6,7 @@ TODO:
 -->
 
 !!! warning "Attention"
-    Beginning **April 1st**, ASF On Demand's [Monthly Processing Quota](./using/quota.md)
+    Beginning **April 1st**, ASF's On Demand [Monthly Processing Quota](./using/quota.md)
     will be replaced by a new **credits system**.
     You will be given an allotment of **10,000 credits per month**,
     and each type of job will cost a different number of credits,

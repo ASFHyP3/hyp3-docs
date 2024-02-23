@@ -1,7 +1,7 @@
 # Monthly Processing Quota
 
 !!! warning "Attention"
-    Beginning **April 1st**, ASF On Demand's Monthly Processing Quota
+    Beginning **April 1st**, ASF's On Demand Monthly Processing Quota
     will be replaced by a new **credits system**.
     Read the full announcement [here](/using/credits).
 

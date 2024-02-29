@@ -8,7 +8,7 @@ dependencies:
   # For documentation
   - mkdocs=1.5.3
   - mkdocs-material=9.4.2
-  - hyp3_sdk=6.0.0  # also pinned in docs/using/sdk.md
+  - hyp3_sdk=6.1.0  # also pinned in docs/using/sdk.md
   - asf_tools=0.6.0  # also pinned in docs/tools/asf_tools.md
   - requests
   - pip:

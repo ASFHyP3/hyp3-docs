@@ -10,12 +10,14 @@ google_analytics:
 
 theme:
   name: asf-theme
+  custom_dir: overrides
   logo: images/HyP3-graphic-only.png
   icon:
     repo: fontawesome/brands/github-alt
   features:
     # - navigation.instant  # This doesn't work with the NASA Earthdata tophat; see ASFHyP3/hyp3-docs#371
     - navigation.footer
+    - announce.dismiss
 
 repo_url: https://github.com/ASFHyP3
 repo_name: ASF HyP3
@@ -52,6 +54,7 @@ nav:
       - Example Notebook: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
       - API Reference: using/sdk_api.md
     - API: using/api.md
+    - Credits: using/credits.md
     - Processing Quota: using/quota.md
     - Subscriptions: using/subscriptions.md
   - Products:

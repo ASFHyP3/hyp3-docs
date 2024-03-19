@@ -78,6 +78,7 @@ nav:
     - guides/introduction_to_sar.md
     - Introduction to SAR: guides/introduction_to_sar.md
     - Digital Elevation Models: dems.md
+    - Water Masking: water_masking.md
     - SAR FAQ: https://asf.alaska.edu/information/sar-information/what-is-sar/#sar_faq" target="_blank
   - Tutorials:
     - tutorials.md

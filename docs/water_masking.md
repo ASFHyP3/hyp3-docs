@@ -14,7 +14,7 @@ The code used to generate this global water mask is available as part of the [as
 
 ### Source Data
 
-ASF's water mask uses data from both [OpenStreetMap](https://www.openstreetmap.org/about "openstreetmap.org/about" ){target=_blank} and [ESA WorldCover](https://esa-worldcover.org/en/about/about "esa-worldcover.org/en/about" ){target=_blank}. Areas within Canada, Alaska, and Russia are primarily covered by ESA WorldCover data, while the rest of the world is covered by OpenStreetMaps data. 
+ASF's water mask uses data from both [OpenStreetMap](https://www.openstreetmap.org/about "openstreetmap.org/about" ){target=_blank} and [ESA WorldCover](https://esa-worldcover.org/en/about/about "esa-worldcover.org/en/about" ){target=_blank}. Areas within Canada, Alaska, and Russia are primarily covered by ESA WorldCover data, while the rest of the world is covered by OpenStreetMap data. 
 
 The water mask identifies coastal waters and most inland waterbodies. All remaining pixels (land, islands in large lakes, very small inland waterbodies, and landfast Antarctic ice) are considered to be not water. 
 

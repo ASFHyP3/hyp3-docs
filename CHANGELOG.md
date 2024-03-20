@@ -31,7 +31,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.8.6]
 
 ### Changed
-* Updated water mask language to reflect switch to OpenStreetMaps/ESA WorldCover based water map.
+* Updated water mask language to reflect switch to OpenStreetMap/ESA WorldCover based water map.
 
 ## [0.8.5]
 

@@ -222,7 +222,7 @@ NoData
 non-geocoded
 NoSQL
 OpenAPI
-OpenStreetMaps
+OpenStreetMap
 orthometric
 Ottinger
 par_s1_slc

@@ -1,22 +1,22 @@
 # Water Mask
 
-ASF maintains a global water mask dataset to use during InSAR processing. 
+ASF maintains a global water mask dataset for use during InSAR processing. 
 
-Unwrapping phase differences over waterbodies can introduce unwrapping errors, resulting in misleading deformation signals. Applying a water mask to the data *before* phase unwrapping can significantly improve the quality of the unwrapped interferogram, as illustrated in this [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb 'InSAR Water Masking StoryMap' ){target=_blank}. 
+Unwrapping phase differences over waterbodies can introduce unwrapping errors, resulting in misleading deformation signals. Applying a water mask to the interferogram *before* phase unwrapping can significantly improve the quality of the unwrapped interferogram, as illustrated in this [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb 'InSAR Water Masking StoryMap' ){target=_blank}. 
 
-When ordering InSAR products On Demand from ASF, users can choose the [option to apply the water mask](https://hyp3-docs.asf.alaska.edu/guides/insar_product_guide/#apply-water-mask 'InSAR Product Guide - Processing Options - Apply Water Mask' ){target=_blank} prior to phase unwrapping. Even if users do not choose to apply this option, there is always a copy of the water mask included in the InSAR product package for reference. 
+When ordering [On-Demand InSAR products from ASF](https://hyp3-docs.asf.alaska.edu/guides/insar_product_guide 'ASF Sentinel-1 InSAR Product Guide' ){target=_blank}, users can choose the [option to apply the water mask](https://hyp3-docs.asf.alaska.edu/guides/insar_product_guide/#apply-water-mask 'InSAR Product Guide - Processing Options - Apply Water Mask' ){target=_blank} prior to phase unwrapping. Even if users choose *not* to apply the water mask to the interferogram, a copy of the water mask is always included in the InSAR product package for reference. 
 
 ## Water Mask Dataset
 
 ASF implemented the use of a new water mask for InSAR processing on February 15, 2024. The surface water extent data available from OpenStreetMap and ESA WorldCover were a significant improvement over the outdated version of the [Global Self-consistent, Hierarchical, High-resolution Geography](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb#ref-n-pezhKQ 'InSAR Water Masking Tutorial - GSSICB' ){target=_blank} dataset that we were using prior to this change. The data is more recent, more detailed, and has fewer geolocation artifacts. 
+
+The code used to generate this global water mask is available as part of the [asf_tools python library](https://github.com/ASFHyP3/asf-tools 'github.com/ASFHyP3/asf-tools' ){target=_blank}. More information on generating your own water mask using the same approach is available in the [asf_tools github repository](https://github.com/ASFHyP3/asf-tools/tree/develop/src/asf_tools/watermasking 'asf_tools GitHub repo water masking readme' ){target=_blank}.
 
 ### Source Data
 
 ASF's water mask uses data from both [OpenStreetMap](https://www.openstreetmap.org/about 'openstreetmap.org/about' ){target=_blank} and [ESA WorldCover](https://esa-worldcover.org/en/about/about 'esa-worldcover.org/en/about/about' ){target=_blank}. Areas within Canada, Alaska, and Russia are primarily covered by ESA WorldCover data, while the rest of the world is covered by OpenStreetMaps data. 
 
 The water mask identifies coastal waters and most inland waterbodies. All remaining pixels (land, islands in large lakes, very small inland waterbodies, and landfast Antarctic ice) are considered to be not water. Source data for the water mask is only available from 85°S to 85°N. Areas north of 85°N are all treated as water, and areas south of 85°S are all treated as not water.
-
-The code used to generate this global water mask is available as part of the [asf_tools python library](https://github.com/ASFHyP3/asf-tools 'github.com/ASFHyP3/asf-tools' ){target=_blank}. More information on generating your own water mask using the same approach is available in the [asf_tools github repository](https://github.com/ASFHyP3/asf-tools/tree/develop/src/asf_tools/watermasking 'asf_tools GitHub repo water masking readme' ){target=_blank}.
 
 #### OpenStreetMap (OSM)
 

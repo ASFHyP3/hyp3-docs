@@ -43,6 +43,7 @@ area.tif
 ASF
 ASF's
 ASF-specific
+asf-tools
 asf_search
 asf_tools
 ASFHyP3
@@ -88,6 +89,7 @@ DockerizedTopsApp
 docstring
 DOI
 DOIs
+Downloader
 downsampled
 DV
 DynamoDB
@@ -188,6 +190,8 @@ L5
 L7
 L8
 L9
+landfast
+landuse
 lifecycle
 Log10
 ls_map.tif
@@ -206,6 +210,8 @@ Miniconda
 MintPy
 mintpy
 MkDocs
+mosaicked
+mosaicking
 MTI
 multiband
 Multilook
@@ -224,6 +230,7 @@ NoSQL
 OpenAPI
 OpenStreetMap
 orthometric
+OSM
 Ottinger
 par_s1_slc
 Pavia
@@ -340,6 +347,7 @@ VV
 waterbodies
 waterbody
 Watermap
+watermasking
 webpage
 Werner
 Werner's
@@ -347,6 +355,7 @@ WGS84
 whitespace
 Woodhouse
 WorldCover
+wr
 XML
 xx
 Yukon-Kuskokwim

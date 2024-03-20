@@ -55,7 +55,7 @@ In the reference raster dataset hosted in AWS, pixels with surface water are ass
 
 ***Note that the pixel values used in the reference water mask are opposite to the pixel values used for the water masks included in the InSAR product packages. Refer to the [Applying the Water Mask section](#applying-the-water-mask-during-insar-processing "Jump to Applying the Water Mask during InSAR Processing section") for more information on how the reference water mask is transformed during InSAR processing.***
 
-### Acknowledgements
+### Acknowledgments
 
 #### OpenStreetMap
 OpenStreetMap® is open data, licensed under the [Open Data Commons Open Database License](https://opendatacommons.org/licenses/odbl/ "opendatacommons.org/licenses/odbl" ){target=_blank} (ODbL) by the [OpenStreetMap Foundation](https://osmfoundation.org/ "osmfoundation.org" ){target=_blank} (OSMF).

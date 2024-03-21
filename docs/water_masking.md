@@ -1,4 +1,4 @@
-# Water Mask
+# Water Masking
 
 ASF maintains a global water mask dataset for use during InSAR processing. 
 

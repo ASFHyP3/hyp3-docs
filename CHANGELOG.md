@@ -7,6 +7,14 @@ and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.8.9]
+
+### Added
+* [Water Mask page](docs/water_masking.md) describing the water mask used for InSAR processing, and linking to code and resources for accessing and generating the new reference water mask
+
+### Changed
+* Updated ASF Tools for Python to [v0.7.2](https://github.com/ASFHyP3/asf-tools/blob/main/CHANGELOG.md#072)
+
 ## [0.8.8]
 
 ### Changed
@@ -23,7 +31,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.8.6]
 
 ### Changed
-* Updated water mask language to reflect switch to OpenStreetMaps/ESA WorldCover based water map.
+* Updated water mask language to reflect switch to OpenStreetMap/ESA WorldCover based water map.
 
 ## [0.8.5]
 

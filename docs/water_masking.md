@@ -65,7 +65,7 @@ OpenStreetMap® is open data, licensed under the [Open Data Commons Open Databas
 
 ## Applying the Water Mask during InSAR Processing
 
-When an InSAR job is submitted for [ASF's On Demand processing](https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3 "InSAR On Demand Tutorial" ){target=_blank}, the coordinates of the four corners of the input Sentinel-1 scene are used to find the water mask tile(s) that cover the scene. If the scene crosses multiple tiles, the necessary tiles are mosaicked together. The water mask is then clipped to match the spatial extent of the input Sentinel-1 scene.
+When an InSAR job is submitted for [ASF's On Demand processing](https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3 "InSAR On Demand Tutorial" ){target=_blank}, the coordinates of the four corners of the input Sentinel-1 scene are used to find the water mask tile(s) that cover the scene. If the scene crosses multiple tiles, the necessary tiles are mosaicked together. The water mask is then clipped to match the spatial extent of the input Sentinel-1 scene pair.
 
 The pixel values of the mosaicked and clipped water mask are changed to meet the requirements of the InSAR processing software. **Water pixels are assigned a value of 0, and all remaining pixels are assigned a value of 1.** *Note that these pixel values differ from the reference water mask, where water pixels have a value of 1 and all other pixels have a value of 0.*
 

@@ -10,7 +10,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.9.0]
 
 ### Changed
-* Credits page and banner now use past or present tense where appropriate.
+* Updated language to reflect release of the full credit system to production HyP3.
 * [Vertex Page](using/vertex.md) now references credits.
 
 ### Removed

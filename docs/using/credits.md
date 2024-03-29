@@ -9,8 +9,8 @@
     a 10x increase!
 
     This change affects all ASF On Demand users,
-    whether you are accessing our service via [Vertex](/using/vertex){target=_blank},
-    the [HyP3 SDK](/using/sdk){target=_blank}, or the [HyP3 API](/using/api){target=_blank}.
+    whether you are accessing our service via [Vertex](/using/vertex),
+    the [HyP3 SDK](/using/sdk), or the [HyP3 API](/using/api).
 
     If this change adversely impacts your current workflows, or doesn't meet your needs,
     please [let us know!](/contact)

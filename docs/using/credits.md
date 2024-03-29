@@ -1,9 +1,9 @@
 # Credits
 
 !!! warning "Attention"
-    Beginning **April 1st**, ASF's On Demand [Monthly Processing Quota](/using/quota)
-    will be replaced by a new **credits system**.
-    You will be given an allotment of **10,000 credits per month**,
+    ON **April 1st**, ASF's On Demand Monthly Processing Quota
+    was replaced by a new **credits system**.
+    Now, you are given an allotment of **10,000 credits per month**,
     and each type of job will cost a different number of credits,
     as shown in the table below.
     Notably, you will now be able to run up to 10,000 Burst InSAR jobs per month—a 10x increase!

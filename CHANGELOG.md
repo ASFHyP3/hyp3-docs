@@ -7,6 +7,15 @@ and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.9.0]
+
+### Changed
+* Updated credit system announcement and info block to be in past tense.
+* The removed page now redirects to the [`Credits Page`](using/credits.md).
+
+### Removed
+* Quota Page in favor of [`Credits Page`](using/credits.md).
+
 ## [0.8.9]
 
 ### Added

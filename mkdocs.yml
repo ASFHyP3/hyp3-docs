@@ -55,7 +55,6 @@ nav:
       - API Reference: using/sdk_api.md
     - API: using/api.md
     - Credits: using/credits.md
-    - Processing Quota: using/quota.md
     - Subscriptions: using/subscriptions.md
   - Products:
     - products.md
@@ -119,3 +118,4 @@ plugins:
         #    See: https://github.com/datarobot/mkdocs-redirects/issues/16
         getting_started.md: 'https://hyp3-docs.asf.alaska.edu/#getting-started'
         tutorials/mintpy.md: 'https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb'
+        using/quota.md: 'using/credits.md'

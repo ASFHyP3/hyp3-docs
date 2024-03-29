@@ -1,12 +1,12 @@
 # Credits
 
 !!! warning "Attention"
-    On **April 1st**, ASF's On Demand Monthly Processing Quota
-    was replaced by a new **credits system**.
-    Now, you are given an allotment of **10,000 credits per month**,
-    and each type of job costs a different number of credits,
-    as shown in the table below.
-    Notably, you can now run up to 10,000 Burst InSAR jobs per month—a 10x increase!
+    On **April 1st 2024**, ASF's On Demand Monthly Processing Quota (1000 jobs per 
+    month) was replaced by a new **credit system**.
+    You are now given an allotment of **10,000 credits per month**,
+    and each type of job costs a [different number of credits to process](#credit-cost-table). 
+    Notably, you can now run up to 10,000 Burst InSAR jobs per month — 
+    a 10x increase!
 
     This change affects all ASF On Demand users,
     whether you are accessing our service via [Vertex](/using/vertex),
@@ -15,10 +15,14 @@
     If this change adversely impacts your current workflows, or doesn't meet your needs,
     please [let us know!](/contact)
 
-The table below displays the credit cost for each type of job.
-The "Maximum Jobs Per Month" column displays the maximum number of jobs that you would be able to run
-in a single month if you spent your entire monthly credit allotment on jobs of the given type.
+On Demand users are given an allotment of **10,000 credits per month** to use for 
+processing jobs, and each type of job costs a different number of credits, as shown in the [Credit Cost Table](#credit-cost-table).
 
+The "Maximum Jobs Per Month" column displays the maximum number of jobs that you 
+would be able to run in a single month if you spent your entire monthly credit 
+allotment on jobs of that particular type.
+
+## Credit Cost Table
 | Job Type                                                                        |  Cost (credits) | Maximum Jobs Per Month |
 |---------------------------------------------------------------------------------|----------------:|-----------------------:|
 | [**InSAR**](/guides/insar_product_guide/)                                       |                 |                        |

@@ -11,10 +11,11 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 * Updated credit system announcement and info block to be in past tense.
-* The removed page now redirects to the [`Credits Page`](using/credits.md).
+* The removed page now redirects to the [Credits Page](using/credits.md).
+* Quota language on [Vertex Page](using/credits.md) to reference credits instead.
 
 ### Removed
-* Quota Page in favor of [`Credits Page`](using/credits.md).
+* Quota Page in favor of [Credits Page](using/credits.md).
 
 ## [0.8.9]
 

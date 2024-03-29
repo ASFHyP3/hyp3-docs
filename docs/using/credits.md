@@ -23,17 +23,17 @@ would be able to run in a single month if you spent your entire monthly credit
 allotment on jobs of that particular type.
 
 ## Credit Cost Table
-| Job Type                                                                        |  Cost (credits) | Maximum Jobs Per Month |
-|---------------------------------------------------------------------------------|----------------:|-----------------------:|
-| [**InSAR**](/guides/insar_product_guide/)                                       |                 |                        |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 80m pixel spacing (20x4 looks) |              10 |                  1,000 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 40m pixel spacing (10x2 looks) |              15 |                    666 |
-| [**RTC**](/guides/rtc_product_guide/)                                           |                 |                        |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30m pixel spacing              |               5 |                  2,000 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20m pixel spacing              |              15 |                    666 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10m pixel spacing              |              60 |                    166 |
-| [**AutoRIFT**](https://its-live.jpl.nasa.gov/){target=_blank}                   |              25 |                    400 |
-| [**Burst InSAR**](/guides/burst_insar_product_guide/)                           |               1 |                 10,000 |
+| Job Type                                                                         |  Cost (credits) | Maximum Jobs Per Month |
+|----------------------------------------------------------------------------------|----------------:|-----------------------:|
+| [**InSAR**](/guides/insar_product_guide/)                                        |                 |                        |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 80-m pixel spacing (20x4 looks) |              10 |                  1,000 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 40-m pixel spacing (10x2 looks) |              15 |                    666 |
+| [**RTC**](/guides/rtc_product_guide/)                                            |                 |                        |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 30-m pixel spacing              |               5 |                  2,000 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 20-m pixel spacing              |              15 |                    666 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10-m pixel spacing              |              60 |                    166 |
+| [**AutoRIFT**](https://its-live.jpl.nasa.gov/){target=_blank}                    |              25 |                    400 |
+| [**Burst InSAR**](/guides/burst_insar_product_guide/)                            |               1 |                 10,000 |
 
 The credit cost of a given job is roughly proportional to the computational resources required to process the job.
 Transitioning to a credits system allows us to distribute our resources more equitably.

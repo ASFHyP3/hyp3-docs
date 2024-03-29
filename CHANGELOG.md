@@ -13,7 +13,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 * Updated language to reflect release of the full credit system to production HyP3.
 
 ### Removed
-* Quota page now redirects to [Credits Page](using/credits.md).
+* Quota page now redirects to [Credits](using/credits.md) page.
 
 ## [0.8.9]
 

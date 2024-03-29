@@ -4,11 +4,11 @@
     On **April 1st**, ASF's On Demand Monthly Processing Quota
     was replaced by a new **credits system**.
     Now, you are given an allotment of **10,000 credits per month**,
-    and each type of job will cost a different number of credits,
+    and each type of job costs a different number of credits,
     as shown in the table below.
-    Notably, you will now be able to run up to 10,000 Burst InSAR jobs per month—a 10x increase!
+    Notably, you can now run up to 10,000 Burst InSAR jobs per month—a 10x increase!
 
-    This change will affect all ASF On Demand users,
+    This change affects all ASF On Demand users,
     whether you are accessing our service via [Vertex](/using/vertex),
     the [HyP3 SDK](/using/sdk), or the [HyP3 API](/using/api).
 
@@ -38,7 +38,7 @@ with the goal of providing valuable products to the widest breadth of users poss
 
 If your monthly credit allotment doesn't meet your needs,
 please contact us and let us know how you would like to use our service.
-We have several options available for increased processing.
+We may be able to support increased processing, depending on your requirements.
 All requests will be balanced against our mission: to make remote-sensing data accessible to the community.
 
 ## Contact Us

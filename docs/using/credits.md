@@ -2,7 +2,7 @@
 
 !!! warning "Attention"
     On **April 1st**, ASF's On Demand Monthly Processing Quota
-    was replaced by a new **credits system**.
+    was replaced by a new **credit system**.
     Now, you are given an allotment of **10,000 credits per month**,
     and each type of job costs a different number of credits,
     as shown in the table below.
@@ -32,7 +32,7 @@ in a single month if you spent your entire monthly credit allotment on jobs of t
 | [**Burst InSAR**](/guides/burst_insar_product_guide/)                         |               1 |                 10,000 |
 
 The credit cost of a given job is roughly proportional to the computational resources required to process the job.
-Transitioning to a credits system allows us to distribute our resources more equitably.
+Transitioning to a credit system allows us to distribute our resources more equitably.
 This change supports our mission of [making remote-sensing data accessible](https://asf.alaska.edu/about-asf/),
 with the goal of providing valuable products to the widest breadth of users possible.
 

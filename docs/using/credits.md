@@ -9,8 +9,8 @@
     a 10x increase!
 
     This change affects all ASF On Demand users,
-    whether you are accessing our service via [Vertex](/using/vertex),
-    the [HyP3 SDK](/using/sdk), or the [HyP3 API](/using/api).
+    whether you are accessing our service via [Vertex](/using/vertex){target=_blank},
+    the [HyP3 SDK](/using/sdk){target=_blank}, or the [HyP3 API](/using/api){target=_blank}.
 
     If this change adversely impacts your current workflows, or doesn't meet your needs,
     please [let us know!](/contact)
@@ -37,7 +37,7 @@ allotment on jobs of that particular type.
 
 The credit cost of a given job is roughly proportional to the computational resources required to process the job.
 Transitioning to a credits system allows us to distribute our resources more equitably.
-This change supports our mission of [making remote-sensing data accessible](https://asf.alaska.edu/about-asf/),
+This change supports our mission of [making remote-sensing data accessible](https://asf.alaska.edu/about-asf/ 'asf.alaska.edu/about-asf' ){target=_blank},
 with the goal of providing valuable products to the widest breadth of users possible.
 
 If your monthly credit allotment doesn't meet your needs,

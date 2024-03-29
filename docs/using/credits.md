@@ -1,7 +1,7 @@
 # Credits
 
 !!! warning "Attention"
-    ON **April 1st**, ASF's On Demand Monthly Processing Quota
+    On **April 1st**, ASF's On Demand Monthly Processing Quota
     was replaced by a new **credits system**.
     Now, you are given an allotment of **10,000 credits per month**,
     and each type of job will cost a different number of credits,

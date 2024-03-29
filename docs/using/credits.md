@@ -1,7 +1,7 @@
 # Credits
 
 !!! warning "Attention"
-    On **April 1st 2024**, ASF's On Demand Monthly Processing Quota (1000 jobs per 
+    On **April 1st 2024**, ASF's On Demand Monthly Processing Quota (1,000 jobs per 
     month) was replaced by a new **credit system**.
     You are now given an allotment of **10,000 credits per month**,
     and each type of job costs a [different number of credits to process](#credit-cost-table). 

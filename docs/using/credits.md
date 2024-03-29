@@ -36,7 +36,7 @@ allotment on jobs of that particular type.
 | [**Burst InSAR**](/guides/burst_insar_product_guide/)                            |               1 |                 10,000 |
 
 The credit cost of a given job is roughly proportional to the computational resources required to process the job.
-Transitioning to a credits system allows us to distribute our resources more equitably.
+Transitioning to a credit system allows us to distribute our resources more equitably.
 This change supports our mission of [making remote-sensing data accessible](https://asf.alaska.edu/about-asf/ 'asf.alaska.edu/about-asf' ){target=_blank},
 with the goal of providing valuable products to the widest breadth of users possible.
 

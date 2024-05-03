@@ -3,9 +3,17 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/) 
+and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+## [0.9.1]
+
+### Fixes
+* The [MintPy tutorial](docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb) so that it correctly specifies `asf_search` parameters.
+
+### Changed
+* To the use of a descending track in the [MintPy tutorial](docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb) so that all interferograms have full coverage of the observed event.
 
 ## [0.9.0]
 
@@ -145,7 +153,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   Fixes [#334](https://github.com/ASFHyP3/hyp3-docs/issues/334).
 
 ### Removed
-* `propose-tweet` GitHub action workflow. Closes [#288](https://github.com/ASFHyP3/hyp3-docs/issues/288). 
+* `propose-tweet` GitHub action workflow. Closes [#288](https://github.com/ASFHyP3/hyp3-docs/issues/288).
 
 ## [0.5.3]
 
@@ -326,7 +334,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.3.49]
 
 ### Changed
-* Updated API Use Guide to only use the ESA S2 naming convention. 
+* Updated API Use Guide to only use the ESA S2 naming convention.
 
 ## [0.3.48]
 
@@ -387,7 +395,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 * Added information and reference links to the [InSAR Product Guide](docs/guides/insar_product_guide.md) for the [Minimum Cost Flow](https://www.gamma-rs.ch/uploads/media/2002-5_TR_Phase_Unwrapping.pdf) phase unwrapping algorithm used for On Demand InSAR products
 * Added clarification to the [InSAR Product Guide](docs/guides/insar_product_guide.md) that the sign convention used for unwrapped phase is opposite to that used for displacement maps.
-* Added landing page for [Using HyP3](docs/using.md) section 
+* Added landing page for [Using HyP3](docs/using.md) section
 * Added references to hyp3-docs repo citation
 
 ### Changed
@@ -496,7 +504,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.3.20](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.19...v0.3.20)
 
 ### Changed
-* Updated the [InSAR Product Guide](docs/guides/insar_product_guide.md) to reflect the change in the location of the phase unwrapping reference point (formerly the (0,0) location of the combined image pair, now the location of the pixel with the highest coherence value) 
+* Updated the [InSAR Product Guide](docs/guides/insar_product_guide.md) to reflect the change in the location of the phase unwrapping reference point (formerly the (0,0) location of the combined image pair, now the location of the pixel with the highest coherence value)
 * Updated the [InSAR Product Guide](docs/guides/insar_product_guide.md) to adjust the list of parameters included in the parameter file
 
 ## [0.3.19](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.18...v0.3.19)
@@ -566,7 +574,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.3.7](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.6...v0.3.7)
 
-### Added 
+### Added
 * A [What's New](docs/whats_new.md) page which displays [@ASFHyP3's](https://twitter.com/ASFHyP3) twitter feed
 
 ## [0.3.6](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.5...v0.3.6)
@@ -584,7 +592,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.3.4](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.3...v0.3.4)
 
 ### Changed
-* Updated availability of InSAR options in [InSAR Product Guide](docs/guides/insar_product_guide.md) 
+* Updated availability of InSAR options in [InSAR Product Guide](docs/guides/insar_product_guide.md)
 
 ## [0.3.3](https://github.com/ASFHyP3/hyp3-docs/compare/v0.3.2...v0.3.3)
 

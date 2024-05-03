@@ -48,6 +48,7 @@ nav:
   - Home: index.md
   - Using HyP3:
     - using.md
+    - Requesting Access: using/request_access.md
     - Vertex: using/vertex.md
     - SDK:
       - using/sdk.md

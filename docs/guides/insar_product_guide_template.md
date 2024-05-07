@@ -26,9 +26,11 @@ For slower processes that require a longer time interval to detect movement, lon
 ### Polarizations
 Polarization refers to the direction of travel of an electromagnetic wave.  A horizontal wave is transmitted so that it oscillates in a plane parallel to the surface imaged, while a vertical wave oscillates in a plane perpendicular to the surface imaged.
 
-Most modern SAR systems can transmit chirps with either a horizontal or vertical polarization. In addition, some of these sensors can listen for either horizontal or vertical backscatter. This gives rise to 4 different types of returns: HH, HV, VV, and VH, with the first letter indicating the transmission method and the second the receive method. For example, VH is a vertically polarized transmit signal with horizontally polarized echoes recorded.
+Most modern SAR systems can transmit chirps with either a horizontal or vertical polarization. In addition, some of these sensors can listen for either horizontal or vertical backscatter. This results in the potential for 4 different types of returns: HH, HV, VV, and VH, with the first letter indicating the transmission method and the second the receive method. For example, VH is a vertically polarized transmit signal with horizontally polarized echoes recorded.
 
-For InSAR applications, processing is generally performed on the co-pol (VV or HH) data and not on the cross-pol (VH or HV) data. Also, each image used in an InSAR pair is required to be the same polarization - two HH images of the same area could form a valid pair, while a single HH with a single VV of the same area would not.
+For InSAR applications, processing is generally performed on the co-pol (VV or HH) data and not on the cross-pol (VH or HV) data. Each image used in an InSAR pair must be the same polarization - two HH acquisitions of the same area could form a valid pair, and two VV acquisitions of the same area could form a valid pair, but you cannot pair an HH acquisition with a VV acquisition to generate an interferogram.
+
+On Demand InSAR products only include co-polarized interferograms. Cross-polarized interferograms are not available using this service.
 
 ### Baselines
 #### Perpendicular Baseline

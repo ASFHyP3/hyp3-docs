@@ -43,6 +43,8 @@ Users can request Sentinel-1 Burst InSAR products [On Demand](https://search.asf
 
 Users can also merge multiple Sentinel-1 Burst InSAR products together if their area of interest covers more than one burst. Please read the section on [Merging Sentinel-1 Burst InSAR Products](#merging-sentinel-1-burst-insar-products "Jump to the merge section of this document") for more information. 
 
+On Demand InSAR products only include co-polarized interferograms (VV or HH). Cross-polarized interferograms (VH or HV) are not available using this service.
+
 Users are cautioned to read the sections on [limitations](#limitations "Jump to the Limitations section of this document") and [error sources](#error-sources "Jump to the Error Sources section of this document") in InSAR products before attempting to use InSAR data. For a more complete description of the properties of SAR, see our [Introduction to SAR](../guides/introduction_to_sar.md "https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar" ){target=_blank} guide. 
 
 {% endblock %}

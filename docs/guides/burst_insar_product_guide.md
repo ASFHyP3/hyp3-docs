@@ -13,7 +13,9 @@ This document is a guide for users of Sentinel-1 Burst Interferometric Synthetic
 
 ## Sentinel-1 Bursts
 
-Single Look Complex (SLC) data is required to generate interferograms from Sentinel-1 data. The European Space Agency (ESA) packages this data into Interferometric Wide (IW) SLC products, which ASF then makes available to the public. These IW SLC products include three sub-swaths, each containing many individual burst SLCs. Historically, most InSAR processing has been performed using the full IW SLC scene, but ASF has developed a method of extracting the individual SLC bursts from IW SLC products, which facilitates burst-based processing workflows.
+[Single Look Complex](https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1-algorithms/single-look-complex 'https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1-algorithms/single-look-complex' ){target=_blank} (SLC) data is required to generate interferograms from Sentinel-1 data. The European Space Agency (ESA) packages this type of data into Interferometric Wide (IW) SLC products, which are available for download from ASF. These IW SLC products include three sub-swaths, each containing many individual burst SLCs. 
+
+Historically, most InSAR processing has been performed using the full IW SLC scene, but ASF has developed a method of [extracting the individual SLC bursts](https://sentinel1-burst-documentation.asf.alaska.edu/ 'https://sentinel1-burst-documentation.asf.alaska.edu/' ){target=_blank} from IW SLC products, which facilitates burst-based processing workflows.
 
 Working at the burst level of the Sentinel-1 SLC data provides a couple key benefits: 
 

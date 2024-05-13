@@ -2,6 +2,7 @@
 .github
 .kmz
 .lycheeignore
+.md-button
 .png
 .png.aux.xml
 .png.xml
@@ -310,6 +311,7 @@ sigma0
 Sinergise
 SLC
 SLCs
+SLCs.
 SNAPHU
 SNAPHU's
 snaphu_mcf

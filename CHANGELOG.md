@@ -7,6 +7,15 @@ and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.9.2]
+
+### Added
+* [Requesting Access page](docs/using/request_access.md) and references to requesting access in the [Using HyP3](docs/using-snippet.md) documentation
+
+### Changed
+* Updated language in InSAR product guides to clarify that only co-pol interferograms are available
+* Updated status of burst back-population
+
 ## [0.9.1]
 
 ### Fixes
@@ -21,7 +30,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 * Updated language to reflect release of the full credit system to production HyP3.
 
 ### Removed
-* Quota page now redirects to [Credits](using/credits.md) page.
+* Quota page now redirects to [Credits](docs/using/credits.md) page.
 
 ## [0.8.9]
 

@@ -95,6 +95,7 @@ downsampled
 DV
 DynamoDB
 Earthdata
+EDL
 EGM2008
 EGM96
 electro-magnetic

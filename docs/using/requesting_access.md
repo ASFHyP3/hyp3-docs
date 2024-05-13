@@ -10,4 +10,7 @@ You will receive an email with your approval status within two business days. If
 
 Once your access request has been approved, you can submit jobs for On Demand processing using your EDL credentials. *You only need to complete this approval process once.* 
 
+!!! tip "Existing HyP3 users do not need to request access" 
+
+    Existing On Demand users will *not* need to undergo this process unless they have been identified as having multiple HyP3 accounts. If you are an existing user who is no longer able to process On Demand jobs, you can either submit an [access request form](#TODO: add link to request form) or email uso@asf.alaska.edu for more information.
 Email ASF User Services at [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu") with any questions regarding access to HyP3. 

@@ -12,5 +12,5 @@ Once your access request has been approved, you can submit jobs for On Demand pr
 
 !!! tip "Existing HyP3 users do not need to request access" 
 
-    Existing On Demand users (i.e., users who signed up before April 2024) will *not* need to undergo this process. If you are no longer able to process On Demand jobs and you believe you should still have access, you can either submit an [access request form](#TODO: add link to request form) or email uso@asf.alaska.edu for more information.
+    Existing On Demand users (i.e. users who signed up before May 2024) will *not* need to undergo this process. If you are no longer able to process On Demand jobs and you believe you should still have access, you can either submit an [access request form](#TODO: add link to request form) or email uso@asf.alaska.edu for more information.
 Email ASF User Services at [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu") with any questions regarding access to HyP3. 

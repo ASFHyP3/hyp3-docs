@@ -9,7 +9,8 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.9.2]
 
 ### Added
-* [Requesting Access page](docs/using/request_access.md) and references to requesting access in the [Using HyP3](docs/using-snippet.md) documentation
+* Added [Requesting Access page](docs/using/request_access.md), not yet listed in the site index
+* Added references to requesting access in the [Using HyP3](docs/using-snippet.md) documentation, commented out until new users must apply for access
 
 ### Changed
 * Updated language in InSAR product guides to clarify that only co-pol interferograms are available

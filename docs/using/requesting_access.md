@@ -3,6 +3,7 @@
 You must request access before submitting jobs for On Demand processing using the HyP3 platform. HyP3 accounts are 
 limited to one per person.
 
+<!-- TODO TOOL-2787: add button link: -->
 [Request Access](#){ .md-button .md-button--primary .middle }
 
 You will need an [Earthdata Login](https://urs.earthdata.nasa.gov/ 'https://urs.earthdata.nasa.gov/' ){target=_blank} 
@@ -19,7 +20,7 @@ Once your access request has been approved, you can submit jobs for On Demand pr
 
     Existing On Demand users (i.e. users who signed up before May 2024) will *not* need to undergo this process. 
     If you are no longer able to process On Demand jobs and you believe you should still have access, you can either 
-    submit an [access request form](#TODO: add link to request form) or email uso@asf.alaska.edu for more information.
+    submit an [access request form](#TODO TOOL-2787: add link to request form) or email uso@asf.alaska.edu for more information.
 
 Email ASF User Services at [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu") with any questions 
 regarding access to HyP3. 

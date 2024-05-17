@@ -6,23 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-
 ## [0.9.2]
 
 ### Added
-* [Requesting Access page](docs/using/request_access.md) and references to requesting access in the [Using HyP3](docs/using-snippet.md) documentation
+* Added [Requesting Access page](docs/using/request_access.md), not yet listed in the site index
+* Added references to requesting access in the [Using HyP3](docs/using-snippet.md) documentation, commented out until new users must apply for access
 
 ### Changed
 * Updated language in InSAR product guides to clarify that only co-pol interferograms are available
 * Updated status of burst back-population
+* Switched to the use of a descending track in the [MintPy tutorial](docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb) so that all interferograms have full coverage of the observed event.
+
+### Fixed
+* The [MintPy tutorial](docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb) so that it correctly specifies `asf_search` parameters.
 
 ## [0.9.1]
 
-### Fixes
-* The [MintPy tutorial](docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb) so that it correctly specifies `asf_search` parameters.
-
 ### Changed
-* To the use of a descending track in the [MintPy tutorial](docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb) so that all interferograms have full coverage of the observed event.
+* Updated HyP3 SDK to [v6.2.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#620)
 
 ## [0.9.0]
 

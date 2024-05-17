@@ -7,7 +7,7 @@ and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
-## [0.9.2]
+## [0.9.1]
 
 ### Added
 * [Requesting Access page](docs/using/request_access.md) and references to requesting access in the [Using HyP3](docs/using-snippet.md) documentation
@@ -15,14 +15,10 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 * Updated language in InSAR product guides to clarify that only co-pol interferograms are available
 * Updated status of burst back-population
+* Switched to the use of a descending track in the [MintPy tutorial](docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb) so that all interferograms have full coverage of the observed event.
 
-## [0.9.1]
-
-### Fixes
+### Fixed
 * The [MintPy tutorial](docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb) so that it correctly specifies `asf_search` parameters.
-
-### Changed
-* To the use of a descending track in the [MintPy tutorial](docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb) so that all interferograms have full coverage of the observed event.
 
 ## [0.9.0]
 

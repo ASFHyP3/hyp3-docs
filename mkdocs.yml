@@ -48,6 +48,8 @@ nav:
   - Home: index.md
   - Using HyP3:
     - using.md
+    #TODO: Uncomment Requesting Access section when ready to release documentation
+    #- Requesting Access: using/requesting_access.md
     - Vertex: using/vertex.md
     - SDK:
       - using/sdk.md

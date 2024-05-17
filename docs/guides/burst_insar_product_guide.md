@@ -11,25 +11,28 @@ This document is a guide for users of Sentinel-1 Burst Interferometric Synthetic
 
     This functionality is available on [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu/" ){target=_blank} as well as through the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}.
 
-### Sentinel-1 Bursts
+## Sentinel-1 Bursts
 
-!!! tip "Sentinel-1 bursts are not available for all SLC granules"
+[Single Look Complex](https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1-algorithms/single-look-complex 'https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1-algorithms/single-look-complex' ){target=_blank} (SLC) data is required to generate interferograms from Sentinel-1 data. The European Space Agency (ESA) packages this type of data into Interferometric Wide (IW) SLC products, which are available for download from ASF. These IW SLC products include three sub-swaths, each containing many individual burst SLCs. 
 
-    **Burst products only are available for Sentinel-1 granules collected after June 9th, 2023.** 
+Historically, most InSAR processing has been performed using the full IW SLC scene, but ASF has developed a method of [extracting the individual SLC bursts](https://sentinel1-burst-documentation.asf.alaska.edu/ 'https://sentinel1-burst-documentation.asf.alaska.edu/' ){target=_blank} from IW SLC products, which facilitates burst-based processing workflows.
 
-    ASF is currently only forward-populating burst products, which means that burst products are only available for Sentinel-1 granules collected after June 9th, 2023. If this affects your ability to utilize burst products to perform your analyses, please [Email ASF User Services](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu"), and we will try to populate burst products for your region and time period of interest.
-
-Single Look Complex (SLC) data from the Sentinel-1 mission that is suitable for use in interferometry has historically been packaged into Interferometric Wide (IW) SLC products. These IW SLC products include three sub-swaths, each containing many individual burst SLCs. The framing of the IW SLCs is not consistent through time, so when using IW SLCs as the basis for InSAR, scene pairs do not always fully overlap. 
-
-In contrast, working at the burst level of the Sentinel-1 SLC data provides a couple key benefits: 
+Working at the burst level of the Sentinel-1 SLC data provides a couple key benefits: 
 
 **1. Bursts are consistently geolocated through time**  
-The coverage of a burst is the same for every orbit of the satellite, so you can be confident that every burst with the same [Full Burst ID](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8#ref-n-VYIiUe "Sentinel-1 Burst Overview https://arcg.is/zSafi0" ){target=_blank} in a stack of acquisitions will cover the same geographic location. 
+The coverage of a burst is the same for every orbit of the satellite, so you can be confident that every burst with the same [Full Burst ID](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8#ref-n-VYIiUe "Sentinel-1 Burst Overview https://arcg.is/zSafi0" ){target=_blank} in a stack of acquisitions will cover the same geographic location. In contrast, the framing of the IW SLCs is not consistent through time, so when using IW SLCs as the basis for InSAR, scene pairs do not always fully overlap. 
 
 **2. Bursts cover a smaller geographic area**  
 IW SLC products are extremely large, and, in many cases, only a small portion of the image is of interest. You can process only the bursts that cover your specific area of interest, which significantly decreases the time and cost required to generate InSAR products.
 
 Refer to the [Sentinel-1 Bursts tutorial](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8 "Sentinel-1 Bursts Tutorial https://arcg.is/zSafi0" ){target=_blank} to learn more about how [ASF extracts burst-level products](https://sentinel1-burst-documentation.asf.alaska.edu/ "ASF Sentinel-1 Burst Documentation" ){target=_blank} from Sentinel-1 IW and EW SLCs.
+
+!!! warning "Sentinel-1 bursts are not available for all SLC granules"
+
+    ASF is in the process of back-populating Sentinel-1 bursts, so some acquistions may not yet be available. Burst products are available globally for Sentinel-1 granules collected after June 9th, 2023, but back-population of all acquisitions prior to that date is not yet complete. 
+
+    Acquisitions over North America are fully back-populated, and more burst products from other areas are being added every day. If a lack of burst availability is impacting your ability to analyze data, please [Email ASF User Services](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu"), and we will do our best to prioritize back-population of burst products for your region and time period of interest.
+
 
 ### Burst InSAR Processing
 
@@ -42,6 +45,8 @@ For those who would prefer to work at the scale of a full IW SLC, our original [
 Users can request Sentinel-1 Burst InSAR products [On Demand](https://search.asf.alaska.edu/#/?topic=onDemand "https://search.asf.alaska.edu/#/?topic=onDemand" ){target=_blank} in ASF's [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} data portal, or make use of our HyP3 [Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank} or [API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank}. Input pair selection in Vertex uses either the [Baseline Tool](https://docs.asf.alaska.edu/vertex/baseline/ "https://docs.asf.alaska.edu/vertex/baseline/" ){target=_blank} or the [SBAS Tool](https://docs.asf.alaska.edu/vertex/sbas/ "https://docs.asf.alaska.edu/vertex/sbas" ){target=_blank} search interfaces. 
 
 Users can also merge multiple Sentinel-1 Burst InSAR products together if their area of interest covers more than one burst. Please read the section on [Merging Sentinel-1 Burst InSAR Products](#merging-sentinel-1-burst-insar-products "Jump to the merge section of this document") for more information. 
+
+On Demand InSAR products only include co-polarized interferograms (VV or HH). Cross-polarized interferograms (VH or HV) are not available using this service.
 
 Users are cautioned to read the sections on [limitations](#limitations "Jump to the Limitations section of this document") and [error sources](#error-sources "Jump to the Error Sources section of this document") in InSAR products before attempting to use InSAR data. For a more complete description of the properties of SAR, see our [Introduction to SAR](../guides/introduction_to_sar.md "https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar" ){target=_blank} guide. 
 

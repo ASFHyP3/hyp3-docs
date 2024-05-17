@@ -1,9 +1,11 @@
 On Demand products processed by HyP3 can be requested quickly and easily, either by
 using a web interface or programmatically. These services are currently only available for [Sentinel-1 datasets](sentinel1.md "Sentinel-1 Mission" ){target=_blank}.
 
+<!-- TODO TOOL-2787: uncomment this block:
 !!! warning "New On Demand users must request HyP3 access" 
 
     To ensure responsible use of ASF's On Demand resources, new users must submit an [access request form](#TODO: add link to access request form). Requests will be processed within 48 hours (#TODO: adjust this limit as necessary), and the user will receive an email indicating if their request has been approved. Users must be approved before they can submit jobs for On Demand processing. Refer to the [Requesting Access](using/request_access.md) page for more information.
+-->
 
 On Demand services are provided at no cost to the user, and anyone can request access to this service. To ensure that the processing is equitably distributed throughout the user community, we have implemented a number of policies: 
 

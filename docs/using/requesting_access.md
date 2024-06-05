@@ -31,8 +31,7 @@ Once your access request has been approved, you can submit jobs for On Demand pr
 
 If you are leading a workshop or tutorial and your participants will require access to HyP3, 
 we can provide you with a unique access code to streamline the access request process. Your participants can enter 
-this code in the access request form to receive automatic approval of their account without having to wait for the 
-usual approval process. 
+this code in the access request form to receive immediate, automatic approval.
 
 If you would like to request a unique access code, please email 
 [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu") with a description of your workshop or tutorial.

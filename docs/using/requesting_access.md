@@ -21,11 +21,13 @@ using a different Earthdata Login account.
 Once your access request has been approved, you can submit jobs for On Demand processing using your EDL credentials. 
 *You only need to complete this approval process once.* 
 
-!!! tip "Existing HyP3 users do not need to request access" 
+<!-- TODO TOOL-2787: uncomment this block: -->
+<!-- !!! tip "Existing HyP3 users do not need to request access"
 
     Existing On Demand users (i.e. users who signed up before June 17, 2024) do *not* need to undergo this process.
     If you are no longer able to process On Demand jobs and you believe you should still have access, you can either 
     submit an access request or email [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu") for more information.
+-->
 
 ## Workshops and Tutorials
 

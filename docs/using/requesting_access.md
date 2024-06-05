@@ -1,10 +1,10 @@
 # Requesting Access
 
 <!-- TODO TOOL-2787: update this language after the feature has been released -->
-Starting on **June 17, 2024,** new users will be required to request access
+Starting on **June 17, 2024**, new users will be required to request access
 before submitting jobs for On Demand processing using the HyP3 platform.
 HyP3 accounts are limited to one per person.
-If you have used HyP3 in the past, then you will be able to continue using our service without requesting access.
+If you have used HyP3 for On Demand processing in the past, you will be able to continue using our service without requesting access.
 
 <!-- TODO TOOL-2787: uncomment the following line and add button link: -->
 <!-- [Request Access](#){ .md-button .md-button--primary .middle } -->
@@ -23,17 +23,18 @@ Once your access request has been approved, you can submit jobs for On Demand pr
 
 !!! tip "Existing HyP3 users do not need to request access" 
 
-    Existing On Demand users (i.e. users who signed up before June 17, 2024) will *not* need to undergo this process.
+    Existing On Demand users (i.e. users who signed up before June 17, 2024) do *not* need to undergo this process.
     If you are no longer able to process On Demand jobs and you believe you should still have access, you can either 
     submit an access request or email [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu") for more information.
 
 ## Workshops and Tutorials
 
-If you are leading a workshop or tutorial and your participants will require access to HyP3,
-we can provide you with a unique access code that you can give to your participants
-that will grant them automatic approval if they include it with their access request.
-Please email [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu")
-to describe the details of your workshop or tutorial and let us know if you would like a unique access code.
+If you are leading a workshop or tutorial and your participants will require access to HyP3, 
+we can provide you with a unique access code to streamline the access request process. Your participants can enter 
+this code in the access request form to receive immediate, automatic approval.
+
+If you would like to request a unique access code, please email 
+[uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu") with a description of your workshop or tutorial.
 
 ## Contact Us
 

@@ -1,5 +1,6 @@
 # Requesting Access
 
+<!-- TODO TOOL-2787: update this language after the feature has been released -->
 Starting on **June 17, 2024,** new users will be required to request access
 before submitting jobs for On Demand processing using the HyP3 platform.
 HyP3 accounts are limited to one per person.

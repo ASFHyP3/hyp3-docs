@@ -93,7 +93,7 @@ When the announcement is no longer needed, restore the file to the placeholder t
 
 If you are [building and viewing the site locally](#build-and-view-the-documentation-site),
 you will need to exit with `ctrl+c` and then re-run `mkdocs serve`
-in order to re-render any changes you make to [`overrides/main.html`](overrides/main.html).
+in order to re-render any changes you make to this file.
 
 ## Markdown formatting
 

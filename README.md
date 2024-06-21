@@ -55,6 +55,46 @@ There is also a test site deployed to <https://hyp3-docs.asf.alaska.edu/hyp3-doc
 tracks the `develop` branch of this repo and is served out of the `gh-pages` branch
 of this repo.
 
+### Enable or disable the announcement banner
+
+We can display a site-wide banner for important announcements.
+The content of this banner is specified in [`overrides/main.html`](overrides/main.html),
+which should contain the following placeholder text when the banner is not in use:
+
+```html
+{% extends "partials/main.html" %}
+
+{# Uncomment this block to enable the announcement banner:
+{% block announce %}
+<div id="announcement-content">
+    ⚠️ TODO: Your announcement here.<br />
+    <a class="announcement-link" href="TODO">Read the full announcement.</a>
+</div>
+{% endblock %}
+#}
+```
+
+In order to enable the banner, uncomment the `announce` block and fill in the `TODO`s.
+Below is an example of an enabled announcement banner
+(taken from [here](https://github.com/ASFHyP3/hyp3-docs/blob/99c0d2294f1be1249e23880b7a849f13fa99a021/overrides/main.html)):
+
+```html
+{% extends "partials/main.html" %}
+
+{% block announce %}
+<div id="announcement-content">
+    ⚠️ Monthly processing quotas were replaced by a credit system on April 1st.<br />
+    <a class="announcement-link" href="/using/credits">Read the full announcement.</a>
+</div>
+{% endblock %}
+```
+
+When the announcement is no longer needed, restore the file to the placeholder text in order to disable the banner.
+
+If you are [building and viewing the site locally](#build-and-view-the-documentation-site),
+you will need to exit with `ctrl+c` and then re-run `mkdocs serve`
+in order to re-render any changes you make to this file.
+
 ## Markdown formatting
 
 The way MkDocs and GitHub parse the markdown documents are slightly different. Some compatibility tips:

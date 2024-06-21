@@ -58,8 +58,8 @@ of this repo.
 ### Enable or disable the announcement banner
 
 We can display a site-wide banner for important announcements.
-The content of this banner is specified in [`overrides/main.html`](overrides/main.html).
-This file should contain the following placeholder text when the banner is not in use:
+The content of this banner is specified in [`overrides/main.html`](overrides/main.html),
+which should contain the following placeholder text when the banner is not in use:
 
 ```html
 {% extends "partials/main.html" %}

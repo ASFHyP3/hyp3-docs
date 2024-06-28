@@ -1,4 +1,4 @@
-# `hyp3_sdk` *v6.2.0* API Reference
+# `hyp3_sdk` *v7.0.0* API Reference
 
 ::: hyp3_sdk
     options:

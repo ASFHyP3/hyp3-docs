@@ -10,6 +10,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 * Updated HyP3 SDK to [v7.0.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#700)
+* Upgrade to Python 3.10.
 
 ## [0.9.4]
 

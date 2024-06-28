@@ -16,7 +16,7 @@ jobs:
       - uses: conda-incubator/setup-miniconda@v3
         with:
           auto-update-conda: true
-          python-version: 3.9
+          python-version: 3.10
           activate-environment: hyp3-docs
           environment-file: environment.yml
 

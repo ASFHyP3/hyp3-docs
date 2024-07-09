@@ -27,13 +27,6 @@ IW SLC products are extremely large, and, in many cases, only a small portion of
 
 Refer to the [Sentinel-1 Bursts tutorial](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8 "Sentinel-1 Bursts Tutorial https://arcg.is/zSafi0" ){target=_blank} to learn more about how [ASF extracts burst-level products](https://sentinel1-burst-documentation.asf.alaska.edu/ "ASF Sentinel-1 Burst Documentation" ){target=_blank} from Sentinel-1 IW and EW SLCs.
 
-!!! warning "Sentinel-1 bursts are not available for all SLC granules"
-
-    ASF is in the process of back-populating Sentinel-1 bursts, so some acquistions may not yet be available. Burst products are available globally for Sentinel-1 granules collected after June 9th, 2023, but back-population of all acquisitions prior to that date is not yet complete. 
-
-    Acquisitions over North America are fully back-populated, and more burst products from other areas are being added every day. If a lack of burst availability is impacting your ability to analyze data, please [Email ASF User Services](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu"), and we will do our best to prioritize back-population of burst products for your region and time period of interest.
-
-
 ### Burst InSAR Processing
 
 The Sentinel-1 Burst InSAR products are generated using the Jet Propulsion Laboratory's [ISCE2 software](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2" ){target=_blank}. ASF is committed to transparency in product development, and we are pleased to be able to offer an InSAR product that leverages open-source software for processing. 

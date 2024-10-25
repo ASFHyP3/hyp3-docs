@@ -60,6 +60,7 @@ bbbbbb
 Bekaert
 Changelog
 Clauss
+CLI
 CloudFormation
 CNAME
 conda

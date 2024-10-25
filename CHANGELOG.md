@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.9.10]
 
 ### Fixed
-- The [`update_asf_tools_version`](.github/workflows/update_asf_tools_version.yml) [`update_sdk_version`](.github/workflows/update_sdk_version.yml)and  now uses the `gh` CLI instead of the archived `repo-sync/pull-request` action.
+- The [`update_asf_tools_version`](.github/workflows/update_asf_tools_version.yml) and [`update_sdk_version`](.github/workflows/update_sdk_version.yml) GitHub Actions workflows now uses the `gh` CLI instead of the archived `repo-sync/pull-request` action.
 
 ## [0.9.9]
 

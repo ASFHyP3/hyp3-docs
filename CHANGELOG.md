@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.9.11]
 
 ### Added
-- Social Media accounts for Bluesky and Mastadon to `whats_new.md`
+- Social Media accounts for Bluesky and Mastodon to `whats_new.md`
 
 ## [0.9.10]
 

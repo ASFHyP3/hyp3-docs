@@ -23,7 +23,7 @@ clicks away.
 ## What's New
 
 Follow @ASFHyP3 on [Bluesky](https://bsky.app/profile/asfhyp3.bsky.social "https://bsky.app/profile/asfhyp3.bsky.social" ){target=_blank} 
-and [Mastadon](https://mastodon.social/@ASFHyP3 "https://mastodon.social/@ASFHyP3" ){target=_blank}
+and [Mastodon](https://mastodon.social/@ASFHyP3 "https://mastodon.social/@ASFHyP3" ){target=_blank}
 to keep up to date on all things HyP3!
 
 ## Contact Us

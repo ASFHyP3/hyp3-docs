@@ -206,7 +206,7 @@ LVθ
 LVφ
 MapReady
 Markert
-Mastadon
+Mastodon
 Mathjax
 mathjax
 MCF

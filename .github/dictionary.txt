@@ -58,6 +58,7 @@ backscatter
 bandpass
 bbbbbb
 Bekaert
+Bluesky
 Changelog
 Clauss
 CLI
@@ -205,6 +206,7 @@ LVθ
 LVφ
 MapReady
 Markert
+Mastadon
 Mathjax
 mathjax
 MCF

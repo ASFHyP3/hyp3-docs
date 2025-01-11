@@ -191,6 +191,9 @@ By default, ASF's On Demand InSAR products use the location of the pixel with th
 
 This may be an appropriate reference point location in many cases, as it meets the criteria of having high coherence, and stable areas have higher coherence than areas undergoing significant deformation. If a user wants to set a different location as the phase unwrapping reference point, however, a correction can be applied to the unwrapped interferogram.
 
+The location of the reference point is included in the product readme file, as well as the parameter metadata text file, 
+both of which are included in the product package by default.
+
 For more information on the impact of the phase unwrapping reference point location on unwrapped phase and displacement measurements, refer to the [Limitations](#phase-unwrapping-reference-point "Jump to Phase Unwrapping Reference Point part of the Limitations section in this document") section of this document, which also includes instructions for applying a correction based on a custom reference point. 
 
 ### Geocoding and Product Creation

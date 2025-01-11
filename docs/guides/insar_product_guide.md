@@ -167,6 +167,8 @@ All of the phase differences in wrapped interferograms lie between -π and π. P
 
 The phase unwrapping algorithm used for these products is Minimum Cost Flow (MCF) and Triangulation. Refer to this [Technical Report from GAMMA Remote Sensing](https://www.gamma-rs.ch/uploads/media/2002-5_TR_Phase_Unwrapping.pdf "https://www.gamma-rs.ch/uploads/media/2002-5_TR_Phase_Unwrapping.pdf" ){target=_blank} for more information on the MCF phase unwrapping approach.
 
+Note that the MCF algorithm does not generate a connected components file. If you require this file, consider using ASF's [Burst InSAR On Demand](insar_product_guide.md) option, which includes a connected components file in each output product package.
+
 #### Filtering
 Before the interferogram can be unwrapped, it must be filtered to remove noise. This is accomplished using an adaptive spectral filtering algorithm. This adaptive interferogram filtering aims to reduce phase noise, increase the accuracy of the interferometric phase, and reduce the number of interferogram residues as an aid to phase unwrapping. In this case, residues are points in the interferogram where the sum of the phase differences between pixels around a closed path is not 0.0, which indicates a jump in phase.
 

@@ -30,6 +30,21 @@ There are several options users can set when ordering InSAR On Demand products, 
 
     There is now an option to adjust the adaptive phase filter parameter value when submitting On Demand InSAR jobs. This option is available in [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu/" ){target=_blank}, as well as in the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}! Refer to the [Adaptive Phase Filter section](#adaptive-phase-filter) for more information.
 
+!!! warning "Connected Components file not available for GAMMA-generated InSAR products from ASF" 
+
+    ASF uses GAMMA software to generate full-scene Sentinel-1 InSAR products. This workflow does not generate a 
+    connected components file, such as what is generated when using SNAPHU for phase unwrapping.
+
+    The location of the reference point is included in the product readme file, as well as the parameter metadata 
+    text file, both of which are included in the product package by default. Refer to the 
+    [Reference Point](#reference-point "Jump to Reference Point section of this document") section of this document 
+    for more information.
+
+    If you require connected components files for your analysis, consider using 
+    ASF's [Burst InSAR On Demand](burst_insar_product_guide.md) option, which uses
+    the ISCE2 software package to process individual Sentinel-1 SLC bursts to InSAR products. This workflow includes
+    a connected components file in the output product package.
+
 #### Processing Options
 
 When submitting jobs for processing, there are a number of parameters that can be set by the user.

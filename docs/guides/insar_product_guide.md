@@ -28,7 +28,23 @@ There are several options users can set when ordering InSAR On Demand products, 
 
 !!! tip "New: Adaptive Phase Filter parameter is now customizable!"
 
-    There is now an option to adjust the adaptive phase filter parameter value when submitting On Demand InSAR jobs. This option is available in [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu/" ){target=_blank}, as well as in the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}! Refer to the [Adaptive Phase Filter section](#adaptive-phase-filter) for more information.
+    There is now an option to adjust the adaptive phase filter parameter value when submitting On Demand InSAR jobs.
+    This option is available in 
+    [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu/" ){target=_blank}, 
+    as well as in the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}! 
+    Refer to the [Adaptive Phase Filter section](#adaptive-phase-filter) for more information.
+
+!!! warning "Connected Components file not available for GAMMA-generated InSAR products from ASF" 
+
+    ASF uses GAMMA software's [Minimum Cost Flow (MCF) algorithm](#phase-unwrapping) to phase unwrap full-scene 
+    Sentinel-1 InSAR products. This workflow does not generate a connected components file, such as what is generated 
+    when using [SNAPHU](https://web.stanford.edu/group/radar/softwareandlinks/sw/snaphu/ 
+    "https://web.stanford.edu/group/radar/softwareandlinks/sw/snaphu/" ){target=_blank} for phase unwrapping.
+
+    If you require connected components files for your analysis, consider using ASF's 
+    [Burst InSAR On Demand](burst_insar_product_guide.md) option, which uses the ISCE2 software package 
+    to process individual Sentinel-1 SLC bursts to InSAR products. The 
+    [Burst InSAR product package](burst_insar_product_guide.md#image-files) contains a connected components file.
 
 #### Processing Options
 
@@ -151,6 +167,8 @@ All of the phase differences in wrapped interferograms lie between -π and π. P
 
 The phase unwrapping algorithm used for these products is Minimum Cost Flow (MCF) and Triangulation. Refer to this [Technical Report from GAMMA Remote Sensing](https://www.gamma-rs.ch/uploads/media/2002-5_TR_Phase_Unwrapping.pdf "https://www.gamma-rs.ch/uploads/media/2002-5_TR_Phase_Unwrapping.pdf" ){target=_blank} for more information on the MCF phase unwrapping approach.
 
+Note that the MCF algorithm does not generate a connected components file. If you require this file, consider using ASF's [Burst InSAR On Demand](insar_product_guide.md) option, which includes a connected components file in each output product package.
+
 #### Filtering
 Before the interferogram can be unwrapped, it must be filtered to remove noise. This is accomplished using an adaptive spectral filtering algorithm. This adaptive interferogram filtering aims to reduce phase noise, increase the accuracy of the interferometric phase, and reduce the number of interferogram residues as an aid to phase unwrapping. In this case, residues are points in the interferogram where the sum of the phase differences between pixels around a closed path is not 0.0, which indicates a jump in phase.
 
@@ -175,6 +193,9 @@ Ideally, the reference point for phase unwrapping would be located in an area wi
 By default, ASF's On Demand InSAR products use the location of the pixel with the highest coherence value as the reference point. The coherence map is examined to determine the maximum value, and all pixels with this value are examined using a 9-pixel window. The pixel with the highest sum of values within its 9-pixel window is selected as the reference point. If more than one pixel has the same 9-pixel sum, the pixel closest to the origin pixel (bottom left corner for ascending scenes, top right corner for descending scenes) is selected.
 
 This may be an appropriate reference point location in many cases, as it meets the criteria of having high coherence, and stable areas have higher coherence than areas undergoing significant deformation. If a user wants to set a different location as the phase unwrapping reference point, however, a correction can be applied to the unwrapped interferogram.
+
+The location of the reference point is included in the product readme file, as well as the parameter metadata text file, 
+both of which are included in the product package by default.
 
 For more information on the impact of the phase unwrapping reference point location on unwrapped phase and displacement measurements, refer to the [Limitations](#phase-unwrapping-reference-point "Jump to Phase Unwrapping Reference Point part of the Limitations section in this document") section of this document, which also includes instructions for applying a correction based on a custom reference point. 
 

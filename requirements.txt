@@ -1,0 +1,12 @@
+mkdocs==1.5.3
+mkdocs-material==9.4.2
+mkdocs-asf-theme==0.3.2
+mkdocs-redirects
+mkdocs-section-index
+
+# FIXME: create issue for the failing build
+mkdocstrings==0.27.0
+
+mkdocstrings-python
+mkdocs-macros-plugin
+requests

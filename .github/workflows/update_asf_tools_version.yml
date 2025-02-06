@@ -40,7 +40,6 @@ jobs:
         run: |
           gh pr create --title "${PR_TITLE}" \
                       --body "${PR_BODY}" \
-                      --assignee ASFHyP3/tools \
                       --label tools-bot \
                       --head ${{ steps.patch.outputs.branch }} \
                       --base main

@@ -5,17 +5,7 @@ channels:
 dependencies:
   - 'python=3.10'
   - pip
-  # For documentation
-  - mkdocs=1.5.3
-  - mkdocs-material=9.4.2
   - hyp3_sdk=7.0.3  # also pinned in docs/using/sdk.md
   - asf_tools=0.8.3  # also pinned in docs/tools/asf_tools.md
-  - requests
   - pip:
-      # For documentation
-      - mkdocs-asf-theme==0.3.2
-      - mkdocs-redirects
-      - mkdocs-section-index
-      - mkdocstrings
-      - mkdocstrings-python
-      - mkdocs-macros-plugin
+    - -r requirements.txt

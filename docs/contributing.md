@@ -6,7 +6,7 @@ We're excited you would like to contribute to HyP3! Whether you're finding bugs,
 adding new features, fixing anything broken, or improving documentation, get 
 started by submitting an issue or pull request!
 
-Please read our [Code of Conduct](CODE_OF_CONDUCT.md "HyP3 Code of Conduct" ){target=_blank} before contributing.
+Please read our [Code of Conduct](https://github.com/ASFHyP3/.github/blob/main/CODE_OF_CONDUCT.md "HyP3 Code of Conduct" ){target=_blank} before contributing.
 
 ## Issues and Pull Requests are welcome
 

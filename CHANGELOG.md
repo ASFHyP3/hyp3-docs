@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.9.14]
 
 ### Changed
-* Link to the [organization Code of Conduct](https://github.com/ASFHyP3/.github/blob/main/CODE_OF_CONDUCT.md) from the Code of Conduct page.
+* Replace Code of Conduct with links to the [organization Code of Conduct](https://github.com/ASFHyP3/.github/blob/main/CODE_OF_CONDUCT.md).
 
 ## [0.9.13]
 

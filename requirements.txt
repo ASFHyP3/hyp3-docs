@@ -3,7 +3,7 @@ mkdocs-material==9.4.2
 mkdocs-asf-theme==0.3.2
 mkdocs-redirects
 mkdocs-section-index
-mkdocstrings==0.27.0 # FIXME: https://github.com/ASFHyP3/hyp3-docs/issues/498
+mkdocstrings==0.28.1 # FIXME: https://github.com/ASFHyP3/hyp3-docs/issues/498
 mkdocstrings-python
 mkdocs-macros-plugin
 requests

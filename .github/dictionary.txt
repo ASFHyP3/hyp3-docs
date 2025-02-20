@@ -115,6 +115,7 @@ Galápagos
 gamma-nought
 gamma0
 Geocode
+Geocoded
 geocoded
 Geocoding
 geocoding
@@ -148,6 +149,7 @@ GRD-H
 grey
 Gruber
 GSHHG
+GUNW
 HH
 HV
 HyP3

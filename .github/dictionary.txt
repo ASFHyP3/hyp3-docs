@@ -344,6 +344,7 @@ subpackage
 superpixel
 TBD
 TODO
+TopsApp
 tradeoffs
 TRE
 Tropospheric

@@ -206,6 +206,7 @@ landfast
 landuse
 lifecycle
 Log10
+lon
 ls_map.tif
 lv_phi
 lv_theta
@@ -236,6 +237,7 @@ NED1
 NED13
 NED2
 netCDF
+NISAR
 NOAA
 NoData
 non-geocoded
@@ -275,6 +277,7 @@ rainforest
 range-doppler
 raster
 rasters
+Raytracing
 README
 readme
 repo

@@ -9,14 +9,14 @@ This document is a guide for users of Sentinel-1 Geocoded Unwrapped (GUNW) Inter
 * Initially developed as part of the Getting Ready for NISAR 
 * Generated using JPL's TopsAPP
   * ISCE2 InSAR workflow for S1 SLCs corresponding to a repeat-pass date
-* Output L2 standard displacement product in netcdf format
+* Output L2 standard displacement product in netCDF format
   * 
 
 ### Acquiring products
 
-#### Archive on EarthdataSearch
-* GUNW products are available on [EarthDataSearch](https://search.earthdata.nasa.gov/search){target=_blank} and [Vertex](https://search.asf.alaska.edu/#/?dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA)){target=_blank}
-* EarthDataSearch requires NASA Earthdata user login. (See ["What do I need to know about Earthdata login?"](https://urs.earthdata.nasa.gov/documentation/what_do_i_need_to_know#:~:text=Simply%2C%20go%20to%20http%3A%2F%2F,of%20data%20user%20you%20are){target=_blank}
+#### Archive on Earthdata Search
+* GUNW products are available on [Earthdata Search](https://search.earthdata.nasa.gov/search){target=_blank} and [Vertex](https://search.asf.alaska.edu/#/?dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA)){target=_blank}
+* Earthdata Search requires NASA Earthdata user login. (See ["What do I need to know about Earthdata login?"](https://urs.earthdata.nasa.gov/documentation/what_do_i_need_to_know#:~:text=Simply%2C%20go%20to%20http%3A%2F%2F,of%20data%20user%20you%20are){target=_blank}
 * Search the ARIA S1 Geocoded Unwrapped Interferograms collection
   * Can be refined with search parameters for date, etc
 * If your desired GUNW does not exist, you can submit to HyP3
@@ -48,7 +48,7 @@ All standard products have the following layers:
 * Correction Layers
 * Ionosphere (0.00916 deg or ~1 km at the equator) 
 * Solid earth tide (.1 deg or ~11 km at the equator) 
-* Tropo correction layers if HRRR available 
+* Tropospheric correction layers if HRRR available 
 * Geometry Layers (.1 deg or ~11 km)
 * Incidence angle
 * Azimuth angle

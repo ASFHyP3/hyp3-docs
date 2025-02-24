@@ -3,25 +3,26 @@
 {% block header %}
 # Sentinel-1 GUNW Product Guide
 
-This document is a guide for users of Sentinel-1 Geocoded Unwrapped (GUNW) Interferometric Synthetic Aperture Radar (InSAR) products.  High-level GUNW interferograms are produced as a part of the [Jet Propolsion Lab (JPL)'s Advanced Rapid Imaging and Analysis (ARIA) Project](https://aria.jpl.nasa.gov/){target=_blank}. 
+This document is a guide for users of Sentinel-1 Geocoded Unwrapped (GUNW) Interferometric Synthetic Aperture Radar (InSAR) products.  High-level GUNW interferograms are produced as a part of the [Jet Propulsion Lab (JPL)'s Advanced Rapid Imaging and Analysis (ARIA) Project](https://aria.jpl.nasa.gov/){target=_blank}. 
 * Analysis ready products including an geocoded unwrapped interferogram
 * ARIA-S1-GUNW is an official NASA product
 * Initially developed as part of the Getting Ready for NISAR 
 * Generated using JPL's TopsAPP
   * ISCE2 InSAR workflow for S1 SLCs corresponding to a repeat-pass date
-* Output product netcdf 
+* Output L2 standard displacement product in netcdf format
+  * 
 
 ### Acquiring products
 
 #### Archive on EarthdataSearch
 * GUNW products are available on EarthDataSearch and Vertex
-* EarthDataSearch requires NASA Earthdata URS user login
+* EarthDataSearch requires NASA Earthdata user login
 * Search the ARIA S1 Geocoded Unwrapped Interferograms collection
   * Can be refined with search parameters for date, etc
 * If your desired GUNW does not exist, you can submit to HyP3
 
 #### Submitting GUNWs using HyP3
-* hyp3 accepts ARIA_S1_GUNW jobs
+* hyp3 accepts ARIA-S1-GUNW jobs
 * required parameters are reference and secondary granules and a frame_id
 * Interfaces to be further developed to aid in the search for appropriate frame_ids and granules
 * An example job would be ...
@@ -41,7 +42,7 @@ All standard products have the following layers:
 * Data Layers (0.00083333333 deg or ~90 m at the equator)
 * Unwrapped phase
 * Coherence
-* Connected compenents
+* Connected components
 * Unfiltered coherence 
 * InSAR amplitude
 * Correction Layers
@@ -56,7 +57,7 @@ All standard products have the following layers:
 * Lat/lon grids
 
 ### Algorithm
-* Dockerized TopsApp
+* DockerizedTopsApp
 
 #### Weather model
 * built-in support for different weather models. 

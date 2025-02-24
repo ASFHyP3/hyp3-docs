@@ -42,6 +42,7 @@ ArcGIS-compliant
 ArcGrid
 ArcMap
 area.tif
+ARIA-S1-GUNW
 ASF
 ASF's
 ASF-specific
@@ -121,6 +122,7 @@ Geocoding
 geocoding
 geoid
 geoid_adjust
+geojson
 geolocated
 Geolocation
 geolocation
@@ -150,7 +152,9 @@ grey
 Gruber
 GSHHG
 GUNW
+GUNWs
 HH
+HRRR
 HV
 HyP3
 hyp3
@@ -180,6 +184,8 @@ iteratively
 IW
 Jinja2
 JOSS
+JPL
+JPL's
 JS
 JSON
 Jupyter
@@ -230,6 +236,7 @@ NED1
 NED13
 NED2
 netCDF
+NOAA
 NoData
 non-geocoded
 NoSQL

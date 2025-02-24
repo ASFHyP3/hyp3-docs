@@ -3,7 +3,10 @@
 {% block header %}
 # Sentinel-1 GUNW Product Guide
 
-This document is a guide for users of Sentinel-1 Geocoded Unwrapped (GUNW) Interferometric Synthetic Aperture Radar (InSAR) products.  High-level GUNW interferograms are produced as a part of the [Jet Propulsion Lab (JPL)'s Advanced Rapid Imaging and Analysis (ARIA) Project](https://aria.jpl.nasa.gov/){target=_blank}. 
+This document is a guide for users of Sentinel-1 Geocoded Unwrapped (GUNW) Interferometric Synthetic Aperture Radar (InSAR) products.  
+
+### ARIA Sentinel-1 GUNWs
+High-level GUNW interferograms are produced as a part of the [Jet Propulsion Lab (JPL)'s Advanced Rapid Imaging and Analysis (ARIA) Project](https://aria.jpl.nasa.gov/){target=_blank}. 
 * Analysis ready products including an geocoded unwrapped interferogram
 * ARIA-S1-GUNW is an official NASA product
 * Initially developed as part of the Getting Ready for NISAR 
@@ -11,14 +14,20 @@ This document is a guide for users of Sentinel-1 Geocoded Unwrapped (GUNW) Inter
   * ISCE2 InSAR workflow for S1 SLCs corresponding to a repeat-pass date
 * Output L2 standard displacement product in netCDF format
   * 
+{% endblock %}
 
+{% block acquiring_products %}
 ### Acquiring products
+* GUNW products are available on [Earthdata Search](https://search.earthdata.nasa.gov/search){target=_blank} and [Vertex](https://search.asf.alaska.edu/#/?dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA)){target=_blank}
+* If your desired GUNW does not exist, products can be acquired using HyP3
 
 #### Archive on Earthdata Search
 * GUNW products are available on [Earthdata Search](https://search.earthdata.nasa.gov/search){target=_blank} and [Vertex](https://search.asf.alaska.edu/#/?dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA)){target=_blank}
-* Earthdata Search requires NASA Earthdata user login. (See ["What do I need to know about Earthdata login?"](https://urs.earthdata.nasa.gov/documentation/what_do_i_need_to_know#:~:text=Simply%2C%20go%20to%20http%3A%2F%2F,of%20data%20user%20you%20are){target=_blank}
+* * Earthdata Search requires NASA Earthdata user login. (See ["What do I need to know about Earthdata login?"](https://urs.earthdata.nasa.gov/documentation/what_do_i_need_to_know#:~:text=Simply%2C%20go%20to%20http%3A%2F%2F,of%20data%20user%20you%20are){target=_blank}
 * Search the ARIA S1 Geocoded Unwrapped Interferograms collection
   * Can be refined with search parameters for date, etc
+
+#### Searching using Vertex
 * If your desired GUNW does not exist, you can submit to HyP3
 
 #### Submitting GUNWs using HyP3
@@ -34,6 +43,13 @@ This document is a guide for users of Sentinel-1 Geocoded Unwrapped (GUNW) Inter
   * Done to ensure down-stream analysis is consistent and reproducible
 * Restricts the resulting product to be within this frame
 * geojson with S1 Frames is available in the [DockerizedTopsApp GitHub Repository](https://github.com/ACCESS-Cloud-Based-InSAR/DockerizedTopsApp/blob/dev/isce2_topsapp/data/s1_frames_latitude_aligned.geojson.zip){target=_blank}
+
+#### Processing Options
+
+
+{% endblock %}
+
+{% block standard_products %}
 
 ### Output of standard product
 L2 GUNW product 
@@ -56,6 +72,10 @@ All standard products have the following layers:
 * Perpendicular baseline
 * Lat/lon grids
 
+{% endblock %}
+
+{% block algorithm %}
+
 ### Algorithm
 * Standard products are produced using [DockerizedTopsApp](https://github.com/ACCESS-Cloud-Based-InSAR/DockerizedTopsApp){target=_blank}
 * Tropospheric corrections for RADAR are calculated using the [Raytracing Atmospheric Delay Estimation for RADAR (RAiDER)](https://github.com/dbekaert/RAiDER){target=_blank} package. 
@@ -69,3 +89,5 @@ All standard products have the following layers:
 
 #### Metrics around Accuracy
 * @Forrest did you have thoughts of what should go here? 
+
+{% endblock %}

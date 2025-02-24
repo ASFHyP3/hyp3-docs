@@ -7,7 +7,7 @@ This document is a guide for users of Sentinel-1 Geocoded Unwrapped (GUNW) Inter
 * Analysis ready products including an geocoded unwrapped interferogram
 * ARIA-S1-GUNW is an official NASA product
 * Initially developed as part of the Getting Ready for NISAR 
-* Generated using JPL's TopsAPP
+* Generated using JPL's TopsApp
   * ISCE2 InSAR workflow for S1 SLCs corresponding to a repeat-pass date
 * Output L2 standard displacement product in netCDF format
   * 

@@ -70,6 +70,7 @@ CNAME
 conda
 Conda
 conda-forge
+connectedComponents
 CONUS
 cookiecutter
 copernicus
@@ -167,7 +168,9 @@ HyP3-ISCE2
 hyp3_sdk
 IaC
 Iain
+IFG
 IHS
+imagingGeometry
 impactful
 inc_map.tif
 incidenceAngle
@@ -242,6 +245,7 @@ NED1
 NED13
 NED2
 netCDF
+NetCDF4
 NISAR
 NOAA
 NoData
@@ -360,7 +364,10 @@ UAF
 UI
 unbuffered
 uncomment
+unfilteredCoherence
 unintuitive
+unitless
+unwrappedPhase
 upsampled
 URL
 USGS

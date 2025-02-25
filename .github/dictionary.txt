@@ -46,6 +46,7 @@ ArcGrid
 ArcMap
 area.tif
 ARIA-S1-GUNW
+ARIA_S1_GUNW
 ASF
 ASF's
 ASF-specific

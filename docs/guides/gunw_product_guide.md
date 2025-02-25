@@ -7,13 +7,13 @@ This document is a guide for users of Sentinel-1 Geocoded Unwrapped (GUNW) Inter
 
 ### ARIA Sentinel-1 GUNWs
 High-level GUNW interferograms are produced as a part of the [Jet Propulsion Lab (JPL)'s Advanced Rapid Imaging and Analysis (ARIA) Project](https://aria.jpl.nasa.gov/){target=_blank}. 
-* Analysis ready products including an geocoded unwrapped interferogram
+* Analysis ready products including a geocoded unwrapped interferogram
 * ARIA-S1-GUNW is an official NASA product
 * Initially developed as part of the Getting Ready for NISAR 
-* Generated using JPL's TopsApp
-  * ISCE2 InSAR workflow for S1 SLCs corresponding to a repeat-pass date
-* Output L2 standard displacement product in netCDF format
-* 
+* Generated using an ISCE2 InSAR workflow [TopsApp](https://github.com/isce-framework/isce2-docs/blob/master/Notebooks/UNAVCO_2020/TOPS/topsApp.ipynb){target=_blank} 
+  * [ISCE2](https://github.com/isce-framework/isce2){target=_blank} InSAR workflow for S1 SLCs corresponding to a repeat-pass date
+* Output L2 standard displacement product in NetCDF4 format
+
 {% endblock %}
 
 {% block acquiring_products %}
@@ -34,8 +34,7 @@ High-level GUNW interferograms are produced as a part of the [Jet Propulsion Lab
 * HyP3 accepts ARIA-S1-GUNW jobs
 * required parameters are reference granules, secondary granules and a frame_id
 * Interfaces to be further developed to aid in the search for appropriate frame_ids and granules on Vertex
-* An example job would be ...
-
+* An example job would be ... # TODO : find an example job? 
 
 #### Frame IDs vs Granules
 * In addition to reference and secondary scenes, a frame-id must be provided
@@ -43,8 +42,8 @@ High-level GUNW interferograms are produced as a part of the [Jet Propulsion Lab
   * Done to ensure down-stream analysis is consistent and reproducible
 * Restricts the resulting product to be within this frame
 * geojson with S1 Frames is available in the [DockerizedTopsApp GitHub Repository](https://github.com/ACCESS-Cloud-Based-InSAR/DockerizedTopsApp/blob/dev/isce2_topsapp/data/s1_frames_latitude_aligned.geojson.zip){target=_blank}
-
-#### Processing Options
+* Note that it can be tricky to find an appropriate frame-id for granule selection
+  * Future work will be done to aid this process
 
 
 {% endblock %}

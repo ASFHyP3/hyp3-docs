@@ -13,7 +13,7 @@ High-level GUNW interferograms are produced as a part of the [Jet Propulsion Lab
 * Generated using JPL's TopsApp
   * ISCE2 InSAR workflow for S1 SLCs corresponding to a repeat-pass date
 * Output L2 standard displacement product in netCDF format
-  * 
+* 
 {% endblock %}
 
 {% block acquiring_products %}
@@ -52,25 +52,28 @@ High-level GUNW interferograms are produced as a part of the [Jet Propulsion Lab
 {% block standard_products %}
 
 ### Output of standard product
-L2 GUNW product 
-All standard products have the following layers:
+L2 ARIA-S1-GUNW standard product is packaged as a NetCDF4 file. 
 
-* Data Layers (0.00083333333 deg or ~90 m at the equator)
-* Unwrapped phase
-* Coherence
-* Connected components
-* Unfiltered coherence 
-* InSAR amplitude
-* Correction Layers
-* Ionosphere (0.00916 deg or ~1 km at the equator) 
-* Solid earth tide (.1 deg or ~11 km at the equator) 
-* Tropospheric correction layers if HRRR available 
-* Geometry Layers (.1 deg or ~11 km)
-* Incidence angle
-* Azimuth angle
-* Parallel baseline
-* Perpendicular baseline
-* Lat/lon grids
+The output netCDF file will include the layers listed in Table 2 below.
+
+| Group           | Dataset Name             | Description                                  | Units    |
+|-----------------|--------------------------|----------------------------------------------|----------|
+| data            | amplitude                | 2D Amplitude of IFG                          | watt     |
+|                 | coherence                | 2D Coherence [0-1] from filtered IFG         | unitless |
+|                 | connectedComponents      | 2D Connected component file                  | unitless |
+|                 | unfilteredCoherence      | 2D Coherence [0-1] from unfiltered IFG       | unitless |
+|                 | unwrappedPhase           | 2D Filtered unwrapped IFG geocoded           | rad      |
+| corrections     | ionosphere               | 2D Split spectrum ionospheric delay          | rad      |
+|                 | ionosphereBurstRamps     | Digital elevation model                      | rad      |
+|                 | reference/solidEarthTide | 2D/3D solid earth tide for reference granule | rad      |
+|                 | secondary/solidEarthTide | 2D/3D solid earth tide for secondary granule | rad      |
+| imagingGeometry | azimuthAngle             | 3D azimuth angle grid                        | degree   |
+|                 | incidenceAngle           | 3D Incidence angle grid                      | degree   |
+|                 | lookAngle                | 3D look angle grid                           | degree   |
+|                 | parallelBaseline         | 3D parallel baseline grid                    | meter    |
+|                 | perpendicularBaseline    | 3D perpendicular baseline grid               | meter    |
+
+*Table 2: Layers in standard ARIA-S1-GUNW netCDF file. *
 
 {% endblock %}
 

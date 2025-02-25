@@ -6,20 +6,23 @@
 This document is a guide for users of Sentinel-1 Geocoded Unwrapped (GUNW) Interferometric Synthetic Aperture Radar (InSAR) products.  
 
 ### ARIA Sentinel-1 GUNWs
-High-level GUNW interferograms are produced as a part of the [Jet Propulsion Lab (JPL)'s Advanced Rapid Imaging and Analysis (ARIA) Project](https://aria.jpl.nasa.gov/){target=_blank}. 
-* Analysis ready products including a geocoded unwrapped interferogram
-* ARIA-S1-GUNW is an official NASA product
-* Initially developed as part of the Getting Ready for NISAR 
-* Generated using an ISCE2 InSAR workflow [TopsApp](https://github.com/isce-framework/isce2-docs/blob/master/Notebooks/UNAVCO_2020/TOPS/topsApp.ipynb){target=_blank} 
-  * [ISCE2](https://github.com/isce-framework/isce2){target=_blank} InSAR workflow for S1 SLCs corresponding to a repeat-pass date
-* Output L2 standard displacement product in NetCDF4 format
+The ARIA Sentinel-1 Geocoded Unwrapped Phase (ARIA-S1-GUNW) product is a standardized InSAR dataset that enables rapid analysis of surface deformation using Sentinel-1 SAR data. Produced by [NASA’s ARIA](https://aria.jpl.nasa.gov/){target=_blank} project and hosted at the Alaska Satellite Facility (ASF) DAAC, it provides 90-meter resolution, CF-compliant NetCDF files containing unwrapped interferometric phase, imaging geometry, tropospheric delay estimates, and metadata. With over 1.1 million (and growing!) freely available products covering major fault systems, volcanic regions, and coastal zones, ARIA-S1-GUNW facilitates scientific research and disaster response by simplifying access to centimeter-scale ground displacement measurements. Generated through an open-source, cloud-based [ISCE2 TopsApp processing pipeline](https://github.com/isce-framework/isce2-docs/blob/master/Notebooks/UNAVCO_2020/TOPS/topsApp.ipynb){target=_blank}, these products support applications such as earthquake impact assessment, volcanic monitoring, and long-term land motion studies, with ongoing improvements enhancing their accuracy and usability.
 
 {% endblock %}
 
-{% block acquiring_products %}
-### Acquiring products
-* GUNW products are available on [Earthdata Search](https://search.earthdata.nasa.gov/search){target=_blank} and [Vertex](https://search.asf.alaska.edu/#/?dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA)){target=_blank}
-* If your desired GUNW does not exist, products can be acquired using HyP3
+{% block accessing_products %}
+### Accessing Products
+
+You can download ARIA-S1-GUNW products from the Alaska Satellite Facility’s (ASF) [Vertex](https://search.asf.alaska.edu/#/?dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA)){target=_blank} search portal by following these steps: 
+1. **Access Vertex** – Go to the ASF Vertex website: https://search.asf.alaska.edu.
+2. **Search for ARIA-S1-GUNW Products** – In the dataset selector, click on “ARIA S1 GUNW” to filter for these specific products. You can refine results by specifying a geographic region, date range, or other criteria using the search filters in the “filters” panel.
+![Vertex ARIA S1 GUNW Dataset Selection](../images/vertex-GUNW-dataset-selection.png)
+3. **Preview and Select Products** – Click on individual results to view metadata, including coverage area and acquisition details.
+4. **Download Data** – To download, first add ARIA S1 GUNW products to your download queue using the shopping cart icon next to each product, then download your select products using the “download” panel.
+
+You can also use the Vertex SBAS tool to download networks of interferograms for a specific location. See [this guide](https://docs.asf.alaska.edu/vertex/sbas/){target=_blank} for more information.
+
+**NOTE: ARIA S1 GUNW products are not produced globally! If you cannot find ARIA S1 GUNW for your area of interest, see the On-Demand section below.**
 
 #### Archive on Earthdata Search
 * GUNW products are available on [Earthdata Search](https://search.earthdata.nasa.gov/search){target=_blank} and [Vertex](https://search.asf.alaska.edu/#/?dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA)){target=_blank}

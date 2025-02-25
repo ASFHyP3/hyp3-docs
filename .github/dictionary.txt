@@ -27,6 +27,7 @@
 5x1
 7x7
 2D
+2D/3D
 3D
 a-
 aaaaaaaa
@@ -185,6 +186,7 @@ Interferometric
 interferometric
 Interferometry
 interferometry
+ionosphereBurstRamps
 ISCE2
 ISCE2's
 iteratively
@@ -341,6 +343,7 @@ SNAPHU
 SNAPHU's
 snaphu_mcf
 socio-economic
+solidEarthTide
 Specular
 specular
 SRTM

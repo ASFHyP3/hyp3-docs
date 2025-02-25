@@ -45,7 +45,6 @@ High-level GUNW interferograms are produced as a part of the [Jet Propulsion Lab
 * Note that it can be tricky to find an appropriate frame-id for granule selection
   * Future work will be done to aid this process
 
-
 {% endblock %}
 
 {% block standard_products %}

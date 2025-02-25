@@ -26,6 +26,8 @@
 4π
 5x1
 7x7
+2D
+3D
 a-
 aaaaaaaa
 acknowledgement
@@ -52,6 +54,7 @@ asf_tools
 ASFHyP3
 AutoRIFT
 autoRIFT
+azimuthAngle
 Aγ
 Aσ
 Backscatter
@@ -167,6 +170,7 @@ Iain
 IHS
 impactful
 inc_map.tif
+incidenceAngle
 include_dem
 include_rgb
 InSAR
@@ -207,6 +211,7 @@ landuse
 lifecycle
 Log10
 lon
+lookAngle
 ls_map.tif
 lv_phi
 lv_theta
@@ -248,8 +253,10 @@ orthometric
 OSM
 Ottinger
 par_s1_slc
+parallelBaseline
 Pavia
 PEP8
+perpendicularBaseline
 phenology
 pip
 Pluggable

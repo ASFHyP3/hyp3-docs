@@ -24,29 +24,30 @@ You can also use the Vertex SBAS tool to download networks of interferograms for
 
 **NOTE: ARIA S1 GUNW products are not produced globally! If you cannot find ARIA S1 GUNW for your area of interest, see the On-Demand section below.**
 
-#### Archive on Earthdata Search
-* GUNW products are available on [Earthdata Search](https://search.earthdata.nasa.gov/search){target=_blank} and [Vertex](https://search.asf.alaska.edu/#/?dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA)){target=_blank}
-* * Earthdata Search requires NASA Earthdata user login. (See ["What do I need to know about Earthdata login?"](https://urs.earthdata.nasa.gov/documentation/what_do_i_need_to_know#:~:text=Simply%2C%20go%20to%20http%3A%2F%2F,of%20data%20user%20you%20are){target=_blank}
-* Search the ARIA S1 Geocoded Unwrapped Interferograms collection
-  * Can be refined with search parameters for date, etc
+### Creating ARIA S1 GUNWs using HyP3
+If ARIA S1 GUNWs are not available for your area or reference/secondary date combination of interest, you can create new ARIA S1 GUNWs using the HyP3 on-demand system.
 
-#### Searching using Vertex
-* If your desired GUNW does not exist, you can submit to HyP3
+**Note: The lists of reference and secondary granules and the ARIA frame ID must be carefully selected to result in a valid ARIA product. See the [framing](#aria-frame-ids "Jump to framing section of this document") section for more details.**
 
-#### Submitting GUNWs using HyP3
-* HyP3 accepts ARIA-S1-GUNW jobs
-* required parameters are reference granules, secondary granules and a frame_id
-* Interfaces to be further developed to aid in the search for appropriate frame_ids and granules on Vertex
-* An example job would be ... # TODO : find an example job? 
+#### On-Demand via the HyP3 SDK
+ARIA S1 GUNW products can be generated using the Python-based HyP3 SDK via the submit_aria_s1_gunw_job function. These function takes four arguments:
+- List of reference granules
+- List of secondary granules
+- ARIA frame ID
+- (Optional) HyP3 job name
 
-#### Frame IDs vs Granules
-* In addition to reference and secondary scenes, a frame-id must be provided
-* This is what makes the ARIA-S1-GUNW product "standard"
-  * Done to ensure down-stream analysis is consistent and reproducible
-* Restricts the resulting product to be within this frame
-* geojson with S1 Frames is available in the [DockerizedTopsApp GitHub Repository](https://github.com/ACCESS-Cloud-Based-InSAR/DockerizedTopsApp/blob/dev/isce2_topsapp/data/s1_frames_latitude_aligned.geojson.zip){target=_blank}
-* Note that it can be tricky to find an appropriate frame-id for granule selection
-  * Future work will be done to aid this process
+#### On-Demand via Vertex
+On-demand ARIA S1 GUNW generation via Vertex is not currently available, but we plan to make this available in the future. We expect to have this available in the second half of 2025.
+
+
+#### ARIA Frame IDs
+Sentinel-1 SLC products are not created in a way that ensures that granules for the same relative orbit and location but different dates always fully overlap. This results in a frame “jitter” that can make it difficult to create long time series of Sentinel-1 InSAR products.
+
+To address this issue, the ARIA team defined a standard set geographic footprints (i.e., frames) that set the geographic extent for each ARIA-S1-GUNW products. This is possible because while the Sentinel-1 SLC products exhibit jitter along the orbit, the smaller burst SLCs that each Sentinel-1 SLC product is composed of do a have fixed footprint (e.g., the bursts contained within a given Sentinel-1 SLC product changes based on the acquisition). Thus ARIA-S1-GUNW frames are defined via the specific bursts that each ARIA-S1-GUNW product contains. **ARIA-S1-GUNWs containing the same bursts, and thus sharing same geographic footprint, are said to have the same ARIA Frame ID.**
+
+To ensure that ARIA-S1-GUNW products are always created using the standard footprints, the ARIA Frame ID along with the reference and secondary granules that intersect this footprint for a given date need to be provided in order to create a new ARIA-S1-GUNW product.
+
+It can be tricky to find the appropriate granules for a given ARIA Frame ID, and in the future we plan to create utilities to simplify this process. For the meantime, a geojson detailing the ascending ARIA Frame IDs can be downloaded [here](https://d3g9emy65n853h.cloudfront.net/ARIA_S1_GUNW/ascending.geojson){target=_blank} and a geojson detailing the descending ARIA Frame IDs can be downloaded [here](https://d3g9emy65n853h.cloudfront.net/ARIA_S1_GUNW/descending.geojson){target=_blank}.
 
 {% endblock %}
 

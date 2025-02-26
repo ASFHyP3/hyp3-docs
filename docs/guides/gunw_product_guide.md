@@ -72,7 +72,7 @@ GUNW naming convention includes:
 \- Acquisition mode   
 \- Reference and secondary acquisition dates (YYYYMMDD)  
 \- Center time of product in UTC (HHMMSS)  
-\- Decimal latitude of the western edge of the south and northmost IFG corners (5-digit number with 3 significant digits)  
+\- Decimal latitude of the western edge of the south and northernmost IFG corners (5-digit number with 3 significant digits)  
 \- Precise (P) or restituted (R) orbit precision for reference and secondary acquisition, respectively  
 \- data system tag (unique hash for each product)  
 \- standard product version tag

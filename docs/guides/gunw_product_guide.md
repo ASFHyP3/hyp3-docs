@@ -77,7 +77,7 @@ GUNW naming convention includes:
 \- data system tag (unique hash for each product)  
 \- standard product version tag
 
-[Figure](../images/asf_gunw_names.png "Breakdown of ARIA-S1-GUNW Naming Scheme")
+![GUNW naming scheme](../images/asf_gunw_names.png "Breakdown of ARIA-S1-GUNW Naming Scheme")
 
 
 ### Product Elements 

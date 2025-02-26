@@ -30,31 +30,58 @@ If ARIA S1 GUNWs are not available for your area or reference/secondary date com
 **Note: The lists of reference and secondary granules and the ARIA frame ID must be carefully selected to result in a valid ARIA product. See the [framing](#aria-frame-ids "Jump to framing section of this document") section for more details.**
 
 #### On-Demand via the HyP3 SDK
-ARIA S1 GUNW products can be generated using the Python-based HyP3 SDK via the submit_aria_s1_gunw_job function. These function takes four arguments:
-- List of reference granules
-- List of secondary granules
-- ARIA frame ID
+ARIA-S1-GUNW products can be generated using the Python-based HyP3 SDK via the `submit_aria_s1_gunw_job` function. This function takes four arguments:
+
+- List of reference granules  
+- List of secondary granules  
+- ARIA frame ID  
 - (Optional) HyP3 job name
+
+**Note that reference granules must be acquired at a later date than secondary granules for ARIA S1 GUNW jobs.** 
 
 #### On-Demand via Vertex
 On-demand ARIA S1 GUNW generation via Vertex is not currently available, but we plan to make this available in the future. We expect to have this available in the second half of 2025.
 
 
 #### ARIA Frame IDs
-Sentinel-1 SLC products are not created in a way that ensures that granules for the same relative orbit and location but different dates always fully overlap. This results in a frame “jitter” that can make it difficult to create long time series of Sentinel-1 InSAR products.
+Sentinel-1 SLC products are not created in a way that ensures that granules for the same relative orbit and location but different dates always fully overlap. This results in a frame “jitter” that can make it difficult to create longer series of Sentinel-1 InSAR products.
 
-To address this issue, the ARIA team defined a standard set geographic footprints (i.e., frames) that set the geographic extent for each ARIA-S1-GUNW products. This is possible because while the Sentinel-1 SLC products exhibit jitter along the orbit, the smaller burst SLCs that each Sentinel-1 SLC product is composed of do a have fixed footprint (e.g., the bursts contained within a given Sentinel-1 SLC product changes based on the acquisition). Thus ARIA-S1-GUNW frames are defined via the specific bursts that each ARIA-S1-GUNW product contains. **ARIA-S1-GUNWs containing the same bursts, and thus sharing same geographic footprint, are said to have the same ARIA Frame ID.**
+To address this issue, the ARIA team defined a standard set of geographic footprints (i.e., frames) that set the geographic extent for each ARIA-S1-GUNW product. This is possible because while the Sentinel-1 SLC products exhibit jitter along the orbit, the smaller burst SLCs that each Sentinel-1 SLC product is composed of do have a fixed footprint (e.g., the bursts contained within a given Sentinel-1 SLC product changes based on the acquisition). Thus ARIA-S1-GUNW frames are defined via the specific bursts that each ARIA-S1-GUNW product contains. **ARIA-S1-GUNWs containing the same bursts, and thus sharing the same geographic footprint, are said to have the same ARIA Frame ID.**
 
 To ensure that ARIA-S1-GUNW products are always created using the standard footprints, the ARIA Frame ID along with the reference and secondary granules that intersect this footprint for a given date need to be provided in order to create a new ARIA-S1-GUNW product.
 
-It can be tricky to find the appropriate granules for a given ARIA Frame ID, and in the future we plan to create utilities to simplify this process. For the meantime, a geojson detailing the ascending ARIA Frame IDs can be downloaded [here](https://d3g9emy65n853h.cloudfront.net/ARIA_S1_GUNW/ascending.geojson){target=_blank} and a geojson detailing the descending ARIA Frame IDs can be downloaded [here](https://d3g9emy65n853h.cloudfront.net/ARIA_S1_GUNW/descending.geojson){target=_blank}.
+It can be tricky to find the appropriate granules for a given ARIA Frame ID, and in the future, we plan to create utilities to simplify this process. For the meantime, a geojson detailing the *ascending* ARIA Frame IDs can be downloaded [here](https://d3g9emy65n853h.cloudfront.net/ARIA_S1_GUNW/ascending.geojson){target=_blank} and a geojson detailing the *descending* ARIA Frame IDs can be downloaded [here](https://d3g9emy65n853h.cloudfront.net/ARIA_S1_GUNW/descending.geojson){target=_blank}.
 
 {% endblock %}
 
-{% block standard_products %}
+{% block product_packaging %}
+## Product Packaging
 
-### Output of standard product
-L2 ARIA-S1-GUNW standard product is packaged as a NetCDF4 file. 
+ARIA-S1-GUNW standard products are packaged as NetCDF4 files.
+
+### Naming convention
+
+The ARIA-S1-GUNW product names contain detailed information about their acquisition and processing, as illustrated in Figure 2\.
+
+GUNW naming convention includes:   
+\- The imaging platform name, which is always S1 for Sentinel-1.  
+\- Dataset name of the product (GUNW)  
+\- Satellite orientation. A for ascending or D for descending  
+\- Satellite look direction. L for left-looking or R for right-looking  
+\- Satellite track (3-digit number)  
+\- Acquisition mode   
+\- Reference and secondary acquisition dates (YYYYMMDD)  
+\- Center time of product in UTC (HHMMSS)  
+\- Decimal latitude of the western edge of the south and northmost IFG corners (5-digit number with 3 significant digits)  
+\- Precise (P) or restituted (R) orbit precision for reference and secondary acquisition, respectively  
+\- data system tag (unique hash for each product)  
+\- standard product version tag
+
+\!\[Figure 2\](../images/asf\_gunw\_names.png "Breakdown of ARIA-S1-GUNW Naming Scheme")
+
+### Product Elements 
+
+The product is packaged as a NetCDF4 file, with its top-level group named "science." Within the science group, there is a "grids" group, which is further divided into three subgroups: "data," "imagingGeometry," and "corrections." The "data" group contains 2D datasets at a resolution of 3 arc-seconds (\~90m) and the "imagingGeometry" group includes 3D datasets posted laterally at 0.1-degree intervals (\~11km). The "corrections" group provides ionospheric, tropospheric, and solid Earth corrections, and if a weather model is available, the corresponding weather model file will be included here. All 2D and 3D datasets are in the EPSG:4326 projection.
 
 The output netCDF file will include the layers listed in Table 2 below.
 
@@ -75,7 +102,21 @@ The output netCDF file will include the layers listed in Table 2 below.
 |                 | parallelBaseline         | 3D parallel baseline grid                    | meter    |
 |                 | perpendicularBaseline    | 3D perpendicular baseline grid               | meter    |
 
-*Table 2: Layers in standard ARIA-S1-GUNW netCDF file. *
+*Table 1: Layers in standard ARIA-S1-GUNW netCDF file. *
+
+### Ionospheric Correction Layers
+
+Although the ionospheric effects for C-band SAR are only about one-sixteenth of those at L-band, the measurement accuracy of Sentinel-1 C-band SAR data can still be degraded by long-wavelength ionospheric signals. Utilizing the [range-split spectrum methodology](https://doi.org/10.1109/TGRS.2019.2908494){target=_blank} available within ISCE2, ARIA-S1-GUNW products include ionospheric correction layers for both the reference and secondary input data.
+
+### Solid Earth Tides Correction Layers
+
+[Solid Earth tides](https://doi.org/10.1109/TGRS.2022.3168509){target=_blank} (SET) are periodic deformations of the Earth's crust caused by gravitational forces from the Moon and Sun, resulting in surface displacements of up to several centimeters. Correcting for SET in InSAR is crucial to prevent these predictable, cyclic motions from being misinterpreted as real ground deformation, ensuring accurate long-term displacement measurements. ARIA-S1-GUNW products include an SET correction layer for both the reference and secondary input data that are created using the [PySolid](https://github.com/insarlab/PySolid?tab=readme-ov-file){target=_blank} python package.
+
+### Tropospheric Delay Correction Layers
+
+Tropospheric delay correction is essential for many InSAR applications because atmospheric variations in temperature, pressure, and humidity can distort phase measurements, mimicking ground deformation and reducing accuracy. ARIA-S1-GUNW products for both the continental U.S. and Alaska also contain a tropospheric delay correction layer that is produced via the Raytracing Atmospheric Delay Estimation for RADAR ([RAiDER](https://github.com/dbekaert/RAiDER){target=_blank}) Python package. 
+
+RAiDER uses the NOAA High-Resolution Rapid Refresh []((https://rapidrefresh.noaa.gov/hrrr/)){target=\_blank} weather model to calculate the tropospheric delay correction at a spatial resolution of approximately 3 km. If the HRRR weather model is not available for a location of interest, (e.g. outside of the continental U.S. and Alaska) the tropospheric delay correction layer will not be included in the ARIA-S1-GUNW product. The wet and hydrostatic tropospheric delay correction are provided for both the reference and secondary input data.
 
 {% endblock %}
 
@@ -83,14 +124,7 @@ The output netCDF file will include the layers listed in Table 2 below.
 
 ### Algorithm
 * Standard products are produced using [DockerizedTopsApp](https://github.com/ACCESS-Cloud-Based-InSAR/DockerizedTopsApp){target=_blank}
-* Tropospheric corrections for RADAR are calculated using the [Raytracing Atmospheric Delay Estimation for RADAR (RAiDER)](https://github.com/dbekaert/RAiDER){target=_blank} package. 
-
-#### Weather model
-* built-in support for different weather models through RAiDER
-* [High-resolution rapid refresh (HRRR)](https://rapidrefresh.noaa.gov/hrrr/){target=_blank} weather model generated by NOAA for continental US
-* Available for continental US and Alaska
-* Spatial resolution of about 3 km
-* If there is no weather data available for AOI, no weather model will be applied
+* Tropospheric corrections for RADAR are calculated using the [Raytracing Atmospheric Delay Estimation for RADAR (RAiDER)](https://github.com/dbekaert/RAiDER){target=_blank} package.
 
 #### Metrics around Accuracy
 * @Forrest did you have thoughts of what should go here? 

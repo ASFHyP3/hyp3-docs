@@ -61,7 +61,7 @@ ARIA-S1-GUNW standard products are packaged as NetCDF4 files.
 
 ### Naming convention
 
-The ARIA-S1-GUNW product names contain detailed information about their acquisition and processing, as illustrated in Figure 2\.
+The ARIA-S1-GUNW product names contain detailed information about their acquisition and processing, as illustrated in the figure below\.
 
 GUNW naming convention includes:   
 \- The imaging platform name, which is always S1 for Sentinel-1.  
@@ -77,7 +77,8 @@ GUNW naming convention includes:
 \- data system tag (unique hash for each product)  
 \- standard product version tag
 
-\!\[Figure 2\](../images/asf\_gunw\_names.png "Breakdown of ARIA-S1-GUNW Naming Scheme")
+[Figure](../images/asf_gunw_names.png "Breakdown of ARIA-S1-GUNW Naming Scheme")
+
 
 ### Product Elements 
 

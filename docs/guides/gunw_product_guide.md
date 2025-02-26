@@ -120,13 +120,13 @@ RAiDER uses the NOAA High-Resolution Rapid Refresh []((https://rapidrefresh.noaa
 
 {% endblock %}
 
-{% block algorithm %}
+{% block references%}
 
-### Algorithm
-* Standard products are produced using [DockerizedTopsApp](https://github.com/ACCESS-Cloud-Based-InSAR/DockerizedTopsApp){target=_blank}
-* Tropospheric corrections for RADAR are calculated using the [Raytracing Atmospheric Delay Estimation for RADAR (RAiDER)](https://github.com/dbekaert/RAiDER){target=_blank} package.
+References
+Bekaert, David, et al. "The Aria-S1-Gunw: The ARIA Sentinel-1 Geocoded Unwrapped Phase Product for Open Insar Science and Disaster Response." IGARSS 2023-2023 IEEE International Geoscience and Remote Sensing Symposium. IEEE, 2023\.
 
-#### Metrics around Accuracy
-* @Forrest did you have thoughts of what should go here? 
+Liang, Cunren, et al. "Ionospheric correction of InSAR time series analysis of C-band Sentinel-1 TOPS data." IEEE Transactions on Geoscience and Remote Sensing 57.9 (2019): 6755-6773.
+
+Yunjun, Zhang, et al. "Range geolocation accuracy of C-/L-band SAR and its implications for operational stack coregistration." IEEE Transactions on Geoscience and Remote Sensing 60 (2022): 1-19.
 
 {% endblock %}

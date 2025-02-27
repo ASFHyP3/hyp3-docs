@@ -119,7 +119,9 @@ ESD
 ESRI
 et
 EW
+existingproducts
 FD6A
+framingtip
 front-end
 full-fledged
 Galápagos
@@ -264,6 +266,7 @@ NOAA
 NoData
 non-geocoded
 NoSQL
+novertex
 OpenAPI
 OpenStreetMap
 orthometric

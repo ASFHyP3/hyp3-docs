@@ -48,6 +48,8 @@ Sentinel-1 SLC products are not created in a way that ensures that granules for 
 
 To address this issue, the ARIA team defined a standard set of geographic footprints (i.e., frames) that set the geographic extent for each ARIA-S1-GUNW product. This is possible because while the Sentinel-1 SLC products exhibit jitter along the orbit, the smaller burst SLCs that each Sentinel-1 SLC product is composed of do have a fixed footprint (e.g., the bursts contained within a given Sentinel-1 SLC product changes based on the acquisition). Thus ARIA-S1-GUNW frames are defined via the specific bursts that each ARIA-S1-GUNW product contains. **ARIA-S1-GUNWs containing the same bursts, and thus sharing the same geographic footprint, are said to have the same ARIA Frame ID.**
 
+![Frame vs granule geographic footprint](../images/frame_granule_overlap.png "Example of a frame that spans three granules.")
+
 To ensure that ARIA-S1-GUNW products are always created using the standard footprints, the ARIA Frame ID along with the reference and secondary granules that intersect this footprint for a given date need to be provided in order to create a new ARIA-S1-GUNW product.
 
 It can be tricky to find the appropriate granules for a given ARIA Frame ID, and in the future, we plan to create utilities to simplify this process. For the meantime, a geojson detailing the *ascending* ARIA Frame IDs can be downloaded [here](https://d3g9emy65n853h.cloudfront.net/ARIA_S1_GUNW/ascending.geojson){target=_blank} and a geojson detailing the *descending* ARIA Frame IDs can be downloaded [here](https://d3g9emy65n853h.cloudfront.net/ARIA_S1_GUNW/descending.geojson){target=_blank}.

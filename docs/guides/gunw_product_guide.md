@@ -64,6 +64,7 @@ It can be tricky to find the appropriate granules for a given ARIA Frame ID, and
 The ARIA-S1-GUNW product names contain detailed information about their acquisition and processing, as illustrated in the figure below.
 
 GUNW naming convention includes:
+
 - The imaging platform name, which is always S1 for Sentinel-1.
 - Dataset name of the product (GUNW)
 - Satellite orientation. A for ascending or D for descending
@@ -74,8 +75,8 @@ GUNW naming convention includes:
 - Center time of product in UTC (HHMMSS)
 - Decimal latitude of the western edge of the south and northernmost IFG corners (5-digit number with 3 significant digits)
 - Precise (P) or restituted (R) orbit precision for reference and secondary acquisition, respectively
-- data system tag (unique hash for each product)
-- standard product version tag
+- Data system tag (unique hash for each product)
+- Standard product version tag
 
 ![GUNW naming scheme](../images/asf_gunw_names.png "Breakdown of ARIA-S1-GUNW Naming Scheme")
 

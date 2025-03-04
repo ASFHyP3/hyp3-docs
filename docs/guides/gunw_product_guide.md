@@ -99,8 +99,8 @@ There are a number of conditions that must be met when selecting suitable sets o
 
 Based on your search results, create a list of the reference and secondary Sentinel-1 IW SLCs that intersect with the ARIA Frame ID extent. 
     
-    Example:
-    ```
+  Example:
+
      "reference": [
           "S1A_IW_SLC__1SDV_20250127T010136_20250127T010203_057623_07199D_4B63",
           "S1A_IW_SLC__1SDV_20250127T010111_20250127T010138_057623_07199D_4E88",
@@ -111,7 +111,6 @@ Based on your search results, create a list of the reference and secondary Senti
           "S1A_IW_SLC__1SDV_20250103T010113_20250103T010140_057273_070BB6_1133",
           "S1A_IW_SLC__1SDV_20250103T010047_20250103T010115_057273_070BB6_99C5"
      ],
-    ```
 
 ### Submit On-Demand ARIA-S1-GUNW Jobs
 

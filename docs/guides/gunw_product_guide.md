@@ -33,7 +33,8 @@ You can also use the Vertex SBAS tool to download networks of interferograms for
 {% block novertex %}
 !!! warning "On Demand Vertex support not currently available for ARIA-S1-GUNW products"
 
-    On-demand ARIA S1 GUNW generation via Vertex is not currently available, but we plan to make this feature available in the second half of 2025.
+    On-demand ARIA S1 GUNW products cannot currently be submitted directly from Vertex, but we plan to make this feature available in the second half of 2025. Vertex is still very useful for selecting Sentinel-1 SLC pairs to submit for processing, but once you identify scene pairs, you will need to submit them using the HyP3 SDK. 
+
 {% endblock %}
 
 

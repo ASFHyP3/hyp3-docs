@@ -132,7 +132,7 @@ You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://s
 ```
 
 ## Submitting ARIA-S1-GUNW jobs
-The ARIA-S1-GUNW job type takes a reference [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/naming-conventions){target=_blank} set, a secondary ESA granule ID set, and an ARIA-S1-GUNW Frame ID as input. See the [ARIA-S1-GUNW Product Guide Frame ID section](/guides/gunw_product_guide/#aria-frame-ids){target=_blank} for more details on these inputs.
+The ARIA-S1-GUNW job type takes a reference [ESA granule ID](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/naming-conventions){target=_blank} set, a secondary ESA granule ID set, and an ARIA-S1-GUNW Frame ID as input. See the [ARIA-S1-GUNW Product Guide Frame ID section](/guides/gunw_product_guide/#aria-frame-ids){target=_blank} for more details on these inputs.
 ```json
     {
       "job_type": "ARIA_S1_GUNW",

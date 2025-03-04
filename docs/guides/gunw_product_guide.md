@@ -53,17 +53,46 @@ There are different ARIA Frame ID maps for the ascending and descending orbit di
 
 ### Search for Sentinel-1 SLCs for an ARIA Frame ID
 
-1. Search for Sentinel-1 SLC IW products in your area of interest in [Vertex](https://search.asf.alaska.edu/#/){target=_blank} using a Geographic Search and setting the Area of Interest to the desired ARIA Frame ID, as delineated in the [ARIA Frame ID maps](#aria-frame-id-maps). You may want to apply a search filter for the orbit direction that matches the ARIA Frame ID extent that you are using. 
+Use a [Geographic Search]() for Sentinel-1 SLC IW products in your area of interest in [Vertex](https://search.asf.alaska.edu/#/){target=_blank}, setting the Area of Interest to the desired ARIA Frame ID, as delineated in the [ARIA Frame ID maps](#aria-frame-id-maps). You may want to apply a search filter for the orbit direction that matches the ARIA Frame ID extent that you are using.
 
-2. For each footprint that intersects the ARIA Frame ID, use the [SBAS](https://docs.asf.alaska.edu/vertex/sbas/){target=_blank} or [Baseline](https://docs.asf.alaska.edu/vertex/baseline/){target=_blank} tool in Vertex to find other acquisitions to pair with the reference acquisition.
+For each footprint that intersects the ARIA Frame ID, use the [SBAS](https://docs.asf.alaska.edu/vertex/sbas/){target=_blank} or [Baseline](https://docs.asf.alaska.edu/vertex/baseline/){target=_blank} tool in Vertex to find other acquisitions to pair with the reference acquisition.
 
     - You will need to repeat the process of finding pairs for each footprint that intersects the ARIA Frame ID extent
 
-3. Create a list of the primary and secondary Sentinel-1 IW SLCs that intersect with the ARIA Frame ID extent. 
+There are a number of conditions that must be met when selecting suitable sets of Sentinel-1 IW SLCs for processing to ARIA-S1-GUNW: 
+
+   - All scenes (reference and secondary) must be from the same relative orbit 
+     - they must all have the same path number 
+     - the ARIA frames are all constrained to a single path
+   - All scenes must have the same orbit direction (ascending/descending)
+     - the orbit direction must match the orbit direction of the ARIA Frame ID you are using
+   - All reference scenes must be from the absolute orbit
+     - they must all be from the same pass of the satellite
+     - acquisitions from different dates cannot be combined
+   - All secondary scenes must be from the same absolute orbit
+     - they must all be from the same pass of the satellite
+     - acquisitions from different dates cannot be combined
+   - Reference scenes must be acquired after the secondary scenes
+     - the list of reference scenes are from the most recent pass, and the secondary scenes are from the earlier pass that will be compared to the reference scenes
+   - Reference and secondary scenes should overlap the frame geometry
+     - all of the scenes listed must overlap the ARIA Frame ID extent
+     - do not include any acquisitions where valid pixel data is wholly outside the extent of the ARIA frame, even if the no-data padding around the edges overlaps the frame extent
+
+
+Create a list of the reference and secondary Sentinel-1 IW SLCs that intersect with the ARIA Frame ID extent. 
     
     Example:
     ```
-    ##TODO: Example list of input granules [primary1, primary2, primary3] [second1, second2, second3]
+   "reference": [
+          "S1A_IW_SLC__1SDV_20250127T010136_20250127T010203_057623_07199D_4B63",
+          "S1A_IW_SLC__1SDV_20250127T010111_20250127T010138_057623_07199D_4E88",
+          "S1A_IW_SLC__1SDV_20250127T010045_20250127T010113_057623_07199D_4D3B"
+   ],
+   "secondary": [
+          "S1A_IW_SLC__1SDV_20250103T010137_20250103T010204_057273_070BB6_CD45",
+          "S1A_IW_SLC__1SDV_20250103T010113_20250103T010140_057273_070BB6_1133",
+          "S1A_IW_SLC__1SDV_20250103T010047_20250103T010115_057273_070BB6_99C5"
+   ],
     ```
 
 ### Submit On-Demand ARIA-S1-GUNW Jobs

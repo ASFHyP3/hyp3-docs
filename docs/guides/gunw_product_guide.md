@@ -59,6 +59,8 @@ For each footprint that intersects the ARIA Frame ID, use the [SBAS](https://doc
 
   - You will need to repeat the process of finding pairs for each footprint along the Sentinel-1 orbit path that intersects the ARIA Frame ID extent.
 
+#### Sentinel-1 SLC Selection Constraints
+
 There are a number of conditions that must be met when selecting suitable sets of Sentinel-1 IW SLCs for processing to ARIA-S1-GUNW: 
 
    1. All scenes (reference and secondary) must be from the same relative orbit 

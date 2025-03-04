@@ -3,7 +3,7 @@
 {% block header %}
 # Sentinel-1 GUNW Product Guide
 
-This document is a guide for users of Sentinel-1 Geocoded Unwrapped (GUNW) Interferometric Synthetic Aperture Radar (InSAR) products.
+This document is a guide for users of [Sentinel-1 Geocoded Unwrapped (GUNW)](https://www.earthdata.nasa.gov/data/catalog/asf-aria-s1-gunw-1){target=_blank} Interferometric Synthetic Aperture Radar (InSAR) products.
 
 The ARIA Sentinel-1 Geocoded Unwrapped Phase (ARIA-S1-GUNW) product is a standardized InSAR dataset that enables rapid analysis of surface deformation using Sentinel-1 SAR data. Produced by [JPL’s ARIA](https://aria.jpl.nasa.gov/){target=_blank} project and hosted at the [Alaska Satellite Facility (ASF) DAAC](https://www.earthdata.nasa.gov/centers/asf-daac){target=_blank}, it provides 90-meter resolution, CF-compliant NetCDF files containing unwrapped interferometric phase, imaging geometry, various correction layers, and metadata. 
 

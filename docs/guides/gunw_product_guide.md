@@ -63,7 +63,7 @@ There are different ARIA Frame ID maps for the ascending and descending orbit di
     
     Example:
     ```
-    #TODO: Example ist of input granules [primary1, primary2, primary3] [second1, second2, second3]
+    ##TODO: Example list of input granules [primary1, primary2, primary3] [second1, second2, second3]
     ```
 
 ### Submit On-Demand ARIA-S1-GUNW Jobs

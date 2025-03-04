@@ -72,7 +72,7 @@ There are different ARIA Frame ID maps for the ascending and descending orbit di
 
     On-demand ARIA S1 GUNW products cannot currently be submitted directly from Vertex, but we plan to make this feature available in the second half of 2025. Vertex is still very useful for selecting Sentinel-1 SLC pairs to submit for processing, but once you identify scene pairs, you will need to submit them using the [HyP3 Python SDK](../using/sdk.md){target=_blank} or [HyP3 API](../using/api.md){target=_blank}.
 
-#TODO: outline use of SDK and API for submitting jobs. 
+  ##TODO: outline use of SDK and API for submitting jobs. 
 
 ## Product Packaging
 

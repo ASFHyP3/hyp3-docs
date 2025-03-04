@@ -57,7 +57,7 @@ Use a [Geographic Search](https://docs.asf.alaska.edu/vertex/manual/#geographic-
 
 For each footprint that intersects the ARIA Frame ID, use the [SBAS](https://docs.asf.alaska.edu/vertex/sbas/){target=_blank} or [Baseline](https://docs.asf.alaska.edu/vertex/baseline/){target=_blank} tool in Vertex to find other acquisitions to pair with the reference acquisition.
 
-    - You will need to repeat the process of finding pairs for each footprint that intersects the ARIA Frame ID extent.
+  - You will need to repeat the process of finding pairs for each footprint that intersects the ARIA Frame ID extent.
 
 There are a number of conditions that must be met when selecting suitable sets of Sentinel-1 IW SLCs for processing to ARIA-S1-GUNW: 
 

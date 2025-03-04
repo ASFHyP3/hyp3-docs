@@ -42,7 +42,7 @@ To ensure that ARIA-S1-GUNW products are always created using standard footprint
 
 ![Frame vs granule geographic footprint](../images/frame_granule_overlap.png "Example of a frame that spans three granules.")
 
-#### Aria Frame ID Maps
+#### ARIA Frame ID Maps
 
 It can be tricky to find all of the appropriate granules for a given ARIA Frame ID for both the primary and secondary acquisition dates. In the future, ASF plans to create utilities to simplify this process. In the meantime, there are geojson files indicating the extent of each ARIA Frame ID that can be downloaded and used for reference.
 

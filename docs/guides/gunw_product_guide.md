@@ -74,7 +74,7 @@ There are different ARIA Frame ID maps for the ascending and descending orbit di
 
 On-Demand ARIA-S1-GUNW jobs can be submitted via the `ARIA_S1_GUNW` job type via the [HyP3 API](/using/api/#submitting-aria-s1-gunw-jobs){target=_blank}, or via the [HyP3 Python SDK](../using/sdk.md){target=_blank} using the `submit_aria_s1_gunw_job` method of the `HyP3` class.
 
-Unlink our other On-Demand InSAR workflows, customizable processing options (e.g., multilook, filter strength, etc.) are not available for ARIA-S1-GUNW jobs.
+Unlike our other On-Demand InSAR workflows, customizable processing options (multilooking, filter strength, etc.) are not available for ARIA-S1-GUNW jobs.
 
 ## Product Packaging
 

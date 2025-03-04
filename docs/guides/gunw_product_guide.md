@@ -48,7 +48,7 @@ To ensure that ARIA-S1-GUNW products are always created using standard footprint
 
 #### ARIA Frame ID Maps
 
-It can be tricky to find all of the appropriate granules for a given ARIA Frame ID for both the primary and secondary acquisition dates. In the future, ASF plans to create utilities to simplify this process. In the meantime, there are geojson files indicating the extent of each ARIA Frame ID that can be downloaded and used for reference.
+It can be tricky to find all of the appropriate granules for a given ARIA Frame ID for both the reference and secondary acquisition dates. In the future, ASF plans to create utilities to simplify this process. In the meantime, there are geojson files indicating the extent of each ARIA Frame ID that can be downloaded and used for reference.
 
 There are different ARIA Frame ID maps for the ascending and descending orbit directions. Make sure that you are using the appropriate geojson file. 
 

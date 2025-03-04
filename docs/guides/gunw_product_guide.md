@@ -11,7 +11,7 @@ With over 1.1 million (and growing!) freely available products covering major fa
 
 !!! warning "ARIA-S1-GUNW products are not produced globally"
 
-    ARIA-S1-GUNW products are only produced by the ARIA team for key locations, so the ASF archive may not contain products in your area of interest. See the [Ordering On Demand InSAR Products section](#ordering-on-demand-insar-products "Jump to Ordering On Demand InSAR Products section of this document") for information on ordering ARIA-S1-GUNW products for your area of interest.
+    ARIA-S1-GUNW products are routinely produced only for specific locations, so the ASF archive may not contain products in your area of interest. See the [Ordering On Demand InSAR Products section](#ordering-on-demand-insar-products "Jump to Ordering On Demand InSAR Products section of this document") for information on ordering ARIA-S1-GUNW products for your area of interest.
 
 {% endblock %}
 

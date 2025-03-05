@@ -6,6 +6,8 @@ The ARIA Sentinel-1 Geocoded Unwrapped Phase (ARIA-S1-GUNW) product is a standar
 
 With over 1.1 million (and growing!) freely available products covering major fault systems, volcanic regions, and coastal zones, ARIA-S1-GUNW products facilitate scientific research and disaster response by simplifying access to centimeter-scale ground displacement measurements. Generated through an open-source, cloud-based <a href="https://github.com/parosen/Geo-SInC/blob/main/EarthScope2024/2.2_TOPS_Data_Processing/topsApp.ipynb" target="_blank">ISCE2 TopsApp processing pipeline</a>, these products support applications such as earthquake impact assessment, volcanic monitoring, and long-term land motion studies, with ongoing improvements enhancing their accuracy and usability.
 
+The ARIA project also maintains the <a href="https://doi.org/10.1029/2020GL090013" target="_blank">ARIA-tools</a> software, which is a suite of open-source tools which automates the seamless download, post-processing manipulation, aggregation, and management of ARIA-S1-GUNW products. Users may refer to the dedicated a href="https://github.com/aria-tools/ARIA-tools" target="_blank">github</a> page for a more exhaustive overview and installation instructions, and <a href="https://www.youtube.com/watch?v=_a9T59VTz7Q&t=12734s" target="_blank">EarthScope Consortium led tutorials</a> which demonstrate practical applications.
+
 <div style="padding: 10px; background-color: #fff3cd; border-left: 5px solid #ffa502;">
   <strong>⚠️ Warning:</strong> ARIA-S1-GUNW products are not produced globally.
   <p>ARIA-S1-GUNW products are routinely produced only for specific locations, so the ASF archive may not contain products in your area of interest.</p>

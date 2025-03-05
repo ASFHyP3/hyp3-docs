@@ -153,26 +153,30 @@ GUNW naming convention includes:
 
 ### Product Elements
 
-The product is packaged as a NetCDF4 file, with its top-level group named "science." Within the science group, there is a "grids" group, which is further divided into three subgroups: "data," "imagingGeometry," and "corrections." The "data" group contains 2D datasets at a resolution of 3 arc-seconds (~90 m) and the "imagingGeometry" group includes 3D datasets posted laterally at 0.1-degree intervals (~11 km). The "corrections" group provides ionospheric, tropospheric, and solid Earth corrections, and if a weather model is available, the corresponding weather model file will be included here. All 2D and 3D datasets are in the EPSG:4326 projection.
+The product is packaged as a NetCDF4 file, with its top-level group named "science." Within the science group, there is a "grids" group, which is further divided into three subgroups: "data," "imagingGeometry," and "corrections." The "data" group contains 2D datasets at a resolution of 3 arc-seconds (~90 m) and the "imagingGeometry" group includes 3D datasets posted laterally at 0.1-degree intervals (~11 km). The "corrections" group provides ionospheric and solid Earth corrections, and if a weather model is available, the corresponding tropospheric correction layer will be included here (e.g. `HRRR/reference/troposphereWet`). All 2D and 3D datasets are in the EPSG:4326 projection.
 
 The output netCDF file will include the layers listed in the table below.
 
-| Group           | Dataset Name             | Description                                  | Units    |
-|-----------------|--------------------------|----------------------------------------------|----------|
-| data            | amplitude                | 2D Amplitude of IFG                          | watt     |
-|                 | coherence                | 2D Coherence [0-1] from filtered IFG         | unitless |
-|                 | connectedComponents      | 2D Connected component file                  | unitless |
-|                 | unfilteredCoherence      | 2D Coherence [0-1] from unfiltered IFG       | unitless |
-|                 | unwrappedPhase           | 2D Filtered unwrapped IFG geocoded           | rad      |
-| corrections     | ionosphere               | 2D Split spectrum ionospheric delay          | rad      |
-|                 | ionosphereBurstRamps     | Digital elevation model                      | rad      |
-|                 | reference/solidEarthTide | 2D/3D solid earth tide for reference granule | rad      |
-|                 | secondary/solidEarthTide | 2D/3D solid earth tide for secondary granule | rad      |
-| imagingGeometry | azimuthAngle             | 3D azimuth angle grid                        | degree   |
-|                 | incidenceAngle           | 3D Incidence angle grid                      | degree   |
-|                 | lookAngle                | 3D look angle grid                           | degree   |
-|                 | parallelBaseline         | 3D parallel baseline grid                    | meter    |
-|                 | perpendicularBaseline    | 3D perpendicular baseline grid               | meter    |
+| Group           | Dataset Name                          | Description                                          | Units    |
+|-----------------|---------------------------------------|------------------------------------------------------|----------|
+| data            | amplitude                             | 2D Amplitude of IFG                                  | watt     |
+|                 | coherence                             | 2D Coherence [0-1] from filtered IFG                 | unitless |
+|                 | connectedComponents                   | 2D Connected component file                          | unitless |
+|                 | unfilteredCoherence                   | 2D Coherence [0-1] from unfiltered IFG               | unitless |
+|                 | unwrappedPhase                        | 2D Filtered unwrapped IFG geocoded                   | rad      |
+| corrections     | ionosphere                            | 2D Split spectrum ionospheric delay                  | rad      |
+|                 | ionosphereBurstRamps                  | Digital elevation model                              | rad      |
+|                 | reference/solidEarthTide              | 2D/3D solid earth tide for reference granule         | rad      |
+|                 | secondary/solidEarthTide              | 2D/3D solid earth tide for secondary granule         | rad      |
+|                 | HRRR/reference/troposphereWet         | 2D/3D wet troposphere for reference granule          | rad      |
+|                 | HRRR/secondary/troposphereWet         | 2D/3D wet troposphere for secondary granule          | rad      |
+|                 | HRRR/reference/troposphereHydrostatic | 2D/3D hydrostatic troposphere for reference granule  | rad      |
+|                 | HRRR/secondary/troposphereHydrostatic | 2D/3D hydrostatic troposphere for secondary granule  | rad      |
+| imagingGeometry | azimuthAngle                          | 3D azimuth angle grid                                | degree   |
+|                 | incidenceAngle                        | 3D Incidence angle grid                              | degree   |
+|                 | lookAngle                             | 3D look angle grid                                   | degree   |
+|                 | parallelBaseline                      | 3D parallel baseline grid                            | meter    |
+|                 | perpendicularBaseline                 | 3D perpendicular baseline grid                       | meter    |
 
 ### Ionospheric Correction Layers
 

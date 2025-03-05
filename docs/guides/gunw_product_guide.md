@@ -118,7 +118,8 @@ Based on your search results, create a list of the reference and secondary Senti
 
 ### Submit On-Demand ARIA-S1-GUNW Jobs
 
-!!! warning "On Demand support not currently available in Vertex for ARIA-S1-GUNW products"
+> ⚠️ **Warning**  
+> On Demand support not currently available in Vertex for ARIA-S1-GUNW products
 
     On-demand ARIA S1 GUNW products cannot currently be submitted directly from Vertex, but we plan to make this feature available in the second half of 2025. Vertex is still very useful for selecting Sentinel-1 SLC pairs to submit for processing, but once you identify scene pairs, you will need to submit them using the [HyP3 Python SDK](../using/sdk.md) or [HyP3 API](../using/api.md).
 

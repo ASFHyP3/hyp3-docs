@@ -6,10 +6,11 @@ The ARIA Sentinel-1 Geocoded Unwrapped Phase (ARIA-S1-GUNW) product is a standar
 
 With over 1.1 million (and growing!) freely available products covering major fault systems, volcanic regions, and coastal zones, ARIA-S1-GUNW products facilitate scientific research and disaster response by simplifying access to centimeter-scale ground displacement measurements. Generated through an open-source, cloud-based <a href="https://github.com/parosen/Geo-SInC/blob/main/EarthScope2024/2.2_TOPS_Data_Processing/topsApp.ipynb" target="_blank">ISCE2 TopsApp processing pipeline</a>, these products support applications such as earthquake impact assessment, volcanic monitoring, and long-term land motion studies, with ongoing improvements enhancing their accuracy and usability.
 
-> ⚠️ **Warning**  
-> ARIA-S1-GUNW products are not produced globally.
-
-ARIA-S1-GUNW products are routinely produced only for specific locations, so the ASF archive may not contain products in your area of interest. See the [Ordering On Demand Products section](#ordering-on-demand-products "Jump to Ordering On Demand Products section of this document") for information on ordering ARIA-S1-GUNW products for specific Sentinel-1 acquisitions.
+<div style="padding: 10px; background-color: #fff3cd; border-left: 5px solid #ffa502;">
+  <strong>⚠️ Warning:</strong> ARIA-S1-GUNW products are not produced globally.
+  <p>ARIA-S1-GUNW products are routinely produced only for specific locations, so the ASF archive may not contain products in your area of interest.</p>
+  <p>See the <a href="#ordering-on-demand-products" title="Jump to Ordering On Demand Products section of this document">Ordering On Demand Products section</a> for information on ordering ARIA-S1-GUNW products for specific Sentinel-1 acquisitions.</p>
+</div>
 
 ## Archived and On-Demand Products
 
@@ -117,10 +118,11 @@ Based on your search results, create a list of the reference and secondary Senti
 
 ### Submit On-Demand ARIA-S1-GUNW Jobs
 
-> ⚠️ **Warning**  
-> On Demand support not currently available in Vertex for ARIA-S1-GUNW products
-
-    On-demand ARIA S1 GUNW products cannot currently be submitted directly from Vertex, but we plan to make this feature available in the second half of 2025. Vertex is still very useful for selecting Sentinel-1 SLC pairs to submit for processing, but once you identify scene pairs, you will need to submit them using the <a href="../using/sdk.md" target="_blank">HyP3 Python SDK</a> or <a href="../using/api.md" target="_blank">HyP3 API</a>.
+<div style="padding: 10px; background-color: #fff3cd; border-left: 5px solid #ffa502;">
+  <strong>⚠️ Warning:</strong> On Demand support not currently available in Vertex for ARIA-S1-GUNW products
+  <p>On-demand ARIA S1 GUNW products cannot currently be submitted directly from Vertex, but we plan to make this feature available in the second half of 2025.</p>
+  <p>Vertex is still very useful for selecting Sentinel-1 SLC pairs to submit for processing, but once you identify scene pairs, you will need to submit them using the <a href="../using/sdk.md" target="_blank">HyP3 Python SDK</a> or <a href="../using/api.md" target="_blank">HyP3 API</a>.</p>
+</div>
 
 On-Demand ARIA-S1-GUNW jobs can be submitted using the `ARIA_S1_GUNW` job type via the [HyP3 API](/using/api/#submitting-aria-s1-gunw-jobs), or via the <a href="../using/sdk.md" target="_blank">HyP3 Python SDK</a> using the `submit_aria_s1_gunw_job` method of the `HyP3` class.
 

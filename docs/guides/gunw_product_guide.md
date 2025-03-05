@@ -6,7 +6,7 @@ The ARIA Sentinel-1 Geocoded Unwrapped Phase (ARIA-S1-GUNW) product is a standar
 
 With over 1.1 million (and growing!) freely available products covering major fault systems, volcanic regions, and coastal zones, ARIA-S1-GUNW products facilitate scientific research and disaster response by simplifying access to centimeter-scale ground displacement measurements. Generated through an open-source, cloud-based <a href="https://github.com/parosen/Geo-SInC/blob/main/EarthScope2024/2.2_TOPS_Data_Processing/topsApp.ipynb" target="_blank">ISCE2 TopsApp processing pipeline</a>, these products support applications such as earthquake impact assessment, volcanic monitoring, and long-term land motion studies, with ongoing improvements enhancing their accuracy and usability.
 
-The ARIA project also maintains the <a href="https://doi.org/10.1029/2020GL090013" target="_blank">ARIA-tools</a> software, which is a suite of open-source tools which automates the seamless download, post-processing manipulation, aggregation, and management of ARIA-S1-GUNW products. Users may refer to the dedicated a href="https://github.com/aria-tools/ARIA-tools" target="_blank">github</a> page for a more exhaustive overview and installation instructions, and <a href="https://www.youtube.com/watch?v=_a9T59VTz7Q&t=12734s" target="_blank">EarthScope Consortium led tutorials</a> which demonstrate practical applications.
+The ARIA project also maintains the <a href="https://doi.org/10.1029/2020GL090013" target="_blank">ARIA-tools</a> software, which is a suite of open-source tools which automates the seamless download, post-processing manipulation, aggregation, and management of ARIA-S1-GUNW products. Users may refer to the dedicated <a href="https://github.com/aria-tools/ARIA-tools" target="_blank">github</a> page for a more exhaustive overview and installation instructions, and <a href="https://www.youtube.com/watch?v=_a9T59VTz7Q&t=12734s" target="_blank">EarthScope Consortium led tutorials</a> which demonstrate practical applications.
 
 <div style="padding: 10px; background-color: #fff3cd; border-left: 5px solid #ffa502;">
   <strong>⚠️ Warning:</strong> ARIA-S1-GUNW products are not produced globally.
@@ -196,7 +196,9 @@ Tropospheric delay correction is essential for many InSAR applications because a
 RAiDER uses the <a href="https://rapidrefresh.noaa.gov/hrrr/" target="_blank">NOAA High-Resolution Rapid Refresh</a> weather model to calculate the tropospheric delay correction at a spatial resolution of approximately 3 km. If the HRRR weather model is not available for a location of interest, (e.g. outside of the continental U.S. and Alaska) the tropospheric delay correction layer will not be included in the ARIA-S1-GUNW product. The wet and hydrostatic tropospheric delay correction are provided for both the reference and secondary input data.
 
 ### References
-Bekaert, David, et al. "The ARIA-S1-GUNW: The ARIA Sentinel-1 Geocoded Unwrapped Phase Product for Open InSAR Science and Disaster Response." IGARSS 2023-2023 IEEE International Geoscience and Remote Sensing Symposium. IEEE, 2023\.
+Bekaert, David, et al. "The ARIA-S1-GUNW: The ARIA Sentinel-1 Geocoded Unwrapped Phase Product for Open InSAR Science and Disaster Response." IGARSS 2023-2023 IEEE International Geoscience and Remote Sensing Symposium. IEEE (2023).
+
+Buzzanga, Brett, et al. "Toward sustained monitoring of subsidence at the coast using InSAR and GPS: An application in Hampton Roads, Virginia." Geophysical Research Letters 47.18 (2020): e2020GL090013.
 
 Liang, Cunren, et al. "Ionospheric correction of InSAR time series analysis of C-band Sentinel-1 TOPS data." IEEE Transactions on Geoscience and Remote Sensing 57.9 (2019): 6755-6773.
 

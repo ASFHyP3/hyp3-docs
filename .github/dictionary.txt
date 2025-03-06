@@ -66,6 +66,7 @@ backscatter
 bandpass
 bbbbbb
 Bekaert
+Buzzanga
 Changelog
 Clauss
 CLI
@@ -107,6 +108,7 @@ downsampled
 DV
 DynamoDB
 Earthdata
+EarthScope
 EDL
 EGM2008
 EGM96
@@ -379,6 +381,8 @@ tradeoffs
 TRE
 tropospheric
 Tropospheric
+troposphereHydrostatic
+troposphereWet
 Twele
 UAF
 UI

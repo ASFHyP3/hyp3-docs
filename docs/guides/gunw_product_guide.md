@@ -152,7 +152,7 @@ GUNW naming convention includes:
 
 ### Product Elements
 
-The product is packaged as a NetCDF4 file, with its top-level group named "science." Within the science group, there is a "grids" group, which is further divided into three subgroups: "data," "imagingGeometry," and "corrections." The "data" group contains 2D datasets at a resolution of 3 arc-seconds (~90 m) and the "imagingGeometry" group includes 3D datasets posted laterally at 0.1-degree intervals (~11 km). The "corrections" group provides ionospheric, tropospheric, and solid Earth corrections, and if a weather model is available, the corresponding weather model file will be included here. All 2D and 3D datasets are in the EPSG:4326 projection.
+The product is packaged as a NetCDF4 file, with its top-level group named `science`. Within the science group, there is a `grids` group, which is further divided into three subgroups: `data`, `imagingGeometry`, and `corrections`. The `data` group contains 2D datasets at a resolution of 3 arc-seconds (~90 m) and the `imagingGeometry` group includes 3D datasets posted laterally at 0.1-degree intervals (~11 km). The `corrections` group provides ionospheric and solid Earth corrections, and if a weather model is available, the corresponding tropospheric correction layer (`HRRR/reference/troposphereWet`) will be included here. All 2D and 3D datasets are in the EPSG:4326 projection.
 
 The output netCDF file will include the layers listed in the table below.
 

@@ -134,18 +134,14 @@ The ARIA-S1-GUNW product names contain detailed information about their acquisit
 
 GUNW naming convention includes:
 
-- The imaging platform name, which is always S1 for Sentinel-1.
-- Dataset name of the product (GUNW)
 - Satellite orientation. A for ascending or D for descending
 - Satellite look direction. L for left-looking or R for right-looking
-- Satellite track (3-digit number)
-- Acquisition mode
+- Satellite track number (3-digit number)
 - Reference and secondary acquisition dates (YYYYMMDD)
-- Center time of product in UTC (HHMMSS)
-- Decimal latitude of the western edge of the south and northernmost IFG corners (5-digit number with 3 significant digits)
-- Precise (P) or restituted (R) orbit precision for reference and secondary acquisition, respectively
-- Data system tag (unique hash for each product)
-- Standard product version tag
+- Center time of reference scene(s) in UTC (HHMMSS)
+- Longitude and latitude in whole degrees
+- Unique product hash
+- Standard product version
 
 ![GUNW naming scheme](../images/asf_gunw_names.png "Breakdown of ARIA-S1-GUNW Naming Scheme")
 

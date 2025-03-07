@@ -39,7 +39,7 @@ If you get a `Code 200` you should see a JSON dictionary of your user informatio
 Jobs are submitted through the API by providing a JSON payload with a list of job
 definitions.
 
-Sentinel-1 jobs are submitted using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/naming-conventions){target=_blank}.
+Sentinel-1 jobs are submitted using [ESA granule IDs](https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention){target=_blank}.
 A minimal job list for a single Sentinel-1 RTC job would look like:
 
 ```json
@@ -100,7 +100,7 @@ The job list may contain up to 200 job definitions. You can also provide custom 
 
 ## Submitting Sentinel-1 InSAR jobs
 
-You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/naming-conventions){target=_blank}.
+You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention){target=_blank}.
 ```json
 {
   "jobs": [
@@ -132,11 +132,11 @@ You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://s
 ```
 
 ## Submitting ARIA-S1-GUNW jobs
-The ARIA-S1-GUNW job type takes a reference [ESA granule ID](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/naming-conventions){target=_blank} set, a secondary ESA granule ID set, and an ARIA-S1-GUNW Frame ID as input. See the [ARIA-S1-GUNW Product Guide Frame ID section](/guides/gunw_product_guide/#aria-frame-ids){target=_blank} for more details on these inputs.
+The ARIA-S1-GUNW job type takes a reference [ESA granule ID](https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention){target=_blank} set, a secondary ESA granule ID set, and an ARIA-S1-GUNW Frame ID as input. See the [ARIA-S1-GUNW Product Guide Frame ID section](/guides/gunw_product_guide/#aria-frame-ids){target=_blank} for more details on these inputs.
 ```json
     {
       "job_type": "ARIA_S1_GUNW",
-      "name": "Job Name",
+      "name": "gunw-example",
       "job_parameters": {
         "reference": [
           "S1A_IW_SLC__1SDV_20250127T010136_20250127T010203_057623_07199D_4B63",
@@ -157,7 +157,7 @@ The ARIA-S1-GUNW job type takes a reference [ESA granule ID](https://sentinel.es
 
 AutoRIFT supports processing Sentinel-1, Sentinel-2, or Landsat-8 Collection 2 pairs.
 
-* Sentinel-1 jobs are submitted using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/naming-conventions){target=_blank}
+* Sentinel-1 jobs are submitted using [ESA granule IDs](https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention){target=_blank}
 * Sentinel-2 jobs are submitted using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-2-msi/naming-convention){target=_blank}
 * Landsat-8 Collection 2 jobs are submitted using [USGS scene IDs](https://www.usgs.gov/faqs/what-naming-convention-landsat-collection-2-level-1-and-level-2-scenes?qt-news_science_products=0#qt-news_science_products){target=_blank}
 

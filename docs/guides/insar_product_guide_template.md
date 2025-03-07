@@ -66,10 +66,7 @@ For deformation mapping, it is best to minimize the perpendicular baseline whene
 
 All of ASF's On Demand InSAR products are generated using ASF's HyP3 platform. Jobs can be submitted for processing using the [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} data portal, the [HyP3 Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank} or the [HyP3 API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank}.
 
-{% block existingproducts %}{% endblock %}
-
 ### Vertex
-{% block novertex %}{% endblock %}
 InSAR pairs are selected in [Vertex](https://search.asf.alaska.edu/#/ "https://search.asf.alaska.edu" ){target=_blank} using either the [Baseline Search](https://docs.asf.alaska.edu/vertex/baseline/ "https://docs.asf.alaska.edu/vertex/baseline" ){target=_blank} or the [SBAS Search](https://docs.asf.alaska.edu/vertex/sbas/ "https://docs.asf.alaska.edu/vertex/sbas" ){target=_blank} interface. The process of selecting pairs is the same for both IW SLC products and individual SLC bursts, but you will need to select the appropriate dataset when searching for content. As illustrated below, select the **Sentinel-1** option in the Dataset menu to search for IW SLC products, and select the **S1 Bursts** option to search for individual SLC bursts.
 
 ![Vertex Dataset Selection](../images/vertex-dataset-selection.png)
@@ -80,8 +77,6 @@ The [SBAS](https://docs.asf.alaska.edu/vertex/sbas/ "https://docs.asf.alaska.edu
 
 ### HyP3 SDK and API
 The [HyP3 SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank} and [API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank} provide support for creating interferograms based on a pair of selected granules. To identify granules you'd like to process, we suggest using the Geographic, Baseline and SBAS search tools in [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank}. If you'd prefer to request interferogram processing programmatically, we suggest using Vertex's companion Python package: [`asf_search`](https://docs.asf.alaska.edu/asf_search/basics/ "https://docs.asf.alaska.edu/asf_search/basics" ){target=_blank}. [This HyP3 SDK Jupyter Notebook](https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb#Submitting-Sentinel-1-InSAR-jobs "https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb#Submitting-Sentinel-1-InSAR-jobs" ){target=_blank} provides you with an example of how you can use the `asf_search` and `hyp3_sdk` packages together to identify and create stacks of InSAR products.
-
-{% block framingtip %}{% endblock %}
 
 ### Considerations for Selecting an InSAR Pair
 When selecting an InSAR pair, observe the following required conditions:
@@ -99,9 +94,6 @@ In addition, the following suggestions may be helpful:
 3. For topographic mapping: limited time separation between images (small temporal baseline)
 
 To analyze deformation caused by a single discrete event, such as an earthquake, select images that bracket the event as closely in time as possible. Keeping the window narrowly focused on the time of the event will reduce the impacts of other processes that may mask the signal of the event of interest.
-
-
-{% block framing %}{% endblock %}
 
 {% block processing_options %}{% endblock %}
 
@@ -145,5 +137,3 @@ A DEM is used to remove topographic phase impacts, but if there are inaccuracies
 
 ### Orbit Uncertainties
 This is generally not an issue for Sentinel-1 data, as the orbits are very precise and generally reliable. On Demand InSAR products are only processed once [restituted or precise orbits](#baseline-calculation "Jump to Baseline Calculation section of this document") are available. Orbit uncertainties are more problematic when working with datasets from older missions.
-
-{% block references %}{% endblock %}

@@ -34,6 +34,7 @@ allotment on jobs of that particular type.
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10-m pixel spacing              |              60 |                    166 |
 | [**AutoRIFT**](https://its-live.jpl.nasa.gov/){target=_blank}                    |              25 |                    400 |
 | [**Burst InSAR**](/guides/burst_insar_product_guide/)                            |               1 |                 10,000 |
+| [**ARIA S1 GUNW**](/guides/gunw_product_guide/)                                  |              60 |                    166 |
 
 The credit cost of a given job is roughly proportional to the computational resources required to process the job.
 Transitioning to a credit system allows us to distribute our resources more equitably.

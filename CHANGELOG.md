@@ -14,6 +14,11 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Removed
 * Removed the year-old credits system announcement from the [credits](docs/using/credits.md) page.
 
+## [0.9.17]
+
+### Changed
+* Updated HyP3 SDK to [v7.2.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#720)
+
 ## [0.9.16]
 
 ### Added

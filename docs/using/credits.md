@@ -10,14 +10,14 @@ allotment on jobs of that particular type.
 ## Credit Cost Table
 | Job Type                                                      | Cost (credits) |        Maximum Jobs Per Month |
 |---------------------------------------------------------------|---------------:|------------------------------:|
-| [**InSAR**](/guides/insar_product_guide/)                     |                |                               |
-| {{ table_indent() }} 80-m pixel spacing (20x4 looks)          |             10 |  {{ max_jobs_per_month(10) }} |
-| {{ table_indent() }} 40-m pixel spacing (10x2 looks)          |             15 |  {{ max_jobs_per_month(15) }} |
 | [**RTC**](/guides/rtc_product_guide/)                         |                |                               |
 | {{ table_indent() }} 30-m pixel spacing                       |              5 |   {{ max_jobs_per_month(5) }} |
 | {{ table_indent() }} 20-m pixel spacing                       |             15 |  {{ max_jobs_per_month(15) }} |
 | {{ table_indent() }} 10-m pixel spacing                       |             60 |  {{ max_jobs_per_month(60) }} |
-| [**AutoRIFT**](https://its-live.jpl.nasa.gov/){target=_blank} |             25 |  {{ max_jobs_per_month(25) }} |
+| [**InSAR**](/guides/insar_product_guide/)                     |                |                               |
+| {{ table_indent() }} 80-m pixel spacing (20x4 looks)          |             10 |  {{ max_jobs_per_month(10) }} |
+| {{ table_indent() }} 40-m pixel spacing (10x2 looks)          |             15 |  {{ max_jobs_per_month(15) }} |
+| [**ARIA S1 GUNW**](/guides/gunw_product_guide/)               |             60 |  {{ max_jobs_per_month(60) }} |
 | [**Burst InSAR**](/guides/burst_insar_product_guide/)         |                |                               |
 | {{ table_indent() }} 80-m pixel spacing (20x4 looks)          |                |                               |
 | {{ table_indent(count=2) }} 1 pair                            |              1 |   {{ max_jobs_per_month(1) }} |
@@ -67,7 +67,7 @@ allotment on jobs of that particular type.
 | {{ table_indent(count=2) }} 13 pairs                          |            100 | {{ max_jobs_per_month(100) }} |
 | {{ table_indent(count=2) }} 14 pairs                          |            105 | {{ max_jobs_per_month(105) }} |
 | {{ table_indent(count=2) }} 15 pairs                          |            110 | {{ max_jobs_per_month(110) }} |
-| [**ARIA S1 GUNW**](/guides/gunw_product_guide/)               |             60 |  {{ max_jobs_per_month(60) }} |
+| [**AutoRIFT**](https://its-live.jpl.nasa.gov/){target=_blank} |             25 |  {{ max_jobs_per_month(25) }} |
 
 The credit cost of a given job is roughly proportional to the computational resources required to process the job.
 Transitioning to a credit system allows us to distribute our resources more equitably.

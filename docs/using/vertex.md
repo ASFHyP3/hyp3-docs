@@ -15,7 +15,7 @@ To request On Demand products, visit [ASF Data Search - Vertex](https://search.a
 
 1. **Select your scenes** - RTC processing is available for Sentinel-1 GRD-H and SLC scenes with a beam mode of IW. InSAR processing requires pairs of IW SLC scenes. Use the Geographic Search in Vertex to find individual scenes to submit for RTC processing, or reference scenes to use for generating InSAR pairs. For InSAR, once you find a reference scene, use either the [Baseline](https://docs.asf.alaska.edu/vertex/baseline/ "Vertex Baseline Documentation" ){target=_blank} or [SBAS](https://docs.asf.alaska.edu/vertex/sbas/ "Vertex SBAS Documentation" ){target=_blank} Search to find scene pairs to submit for processing. 
 
-2. **Submit your request** - After selecting your scenes, access the  *On Demand* <img width="30" src="https://user-images.githubusercontent.com/17994518/95892024-588b9280-0d32-11eb-8734-f1a54a9d2a20.png" /> queue to submit your processing request. You may process jobs worth up to a total of 10,000 credits per month. See our [Credits](./credits.md) page for more details.
+2. **Submit your request** - After selecting your scenes, access the  *On Demand* <img width="30" src="https://user-images.githubusercontent.com/17994518/95892024-588b9280-0d32-11eb-8734-f1a54a9d2a20.png" /> queue to submit your processing request. You may process jobs worth up to a total of {{ CREDITS_PER_MONTH }} credits per month. See our [Credits](./credits.md) page for more details.
 
 3. **Monitor your request** - The *On Demand Products* search type displays your running and completed requests. New requests are typically available for download within an hour, but wait time will depend on processing load.
 

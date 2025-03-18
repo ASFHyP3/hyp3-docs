@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.0]
+
+### Added
+* The [credits](docs/using/credits.md) page now displays the credit costs for multi-burst InSAR jobs.
+
+### Removed
+* Removed the year-old credits system announcement from the [credits](docs/using/credits.md) page.
+
 ## [0.9.17]
 
 ### Changed

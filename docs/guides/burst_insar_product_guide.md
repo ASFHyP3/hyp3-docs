@@ -57,7 +57,7 @@ Users can request Sentinel-1 Burst InSAR products [On Demand](https://search.asf
 
 !!! warning "Only the INSAR_ISCE_BURST job type is supported in Vertex"
 
-    We are currently transitiong from `INSAR_ISCE_BURST` to the `INSAR_ISCE_MULTI_BURST` HyP3 job type to support multi-burst AOIs. Unfortunately, `INSAR_ISCE_MULTI_BURST` job support is currently only available via our API and Python SDK, so Vertex users will need to continue using `INSAR_ISCE_BURST` for the immediate future. We plan to add Vertex support for `INSAR_ISCE_MULTI_BURST` jobs in the coming months.
+    We are currently transitiong from `INSAR_ISCE_BURST` to the `INSAR_ISCE_MULTI_BURST` HyP3 job type to support multi-burst AOIs. `INSAR_ISCE_MULTI_BURST` job support is currently only available via our API and Python SDK, so Vertex users will need to continue using `INSAR_ISCE_BURST` for the immediate future. We plan to add Vertex support for `INSAR_ISCE_MULTI_BURST` jobs in the coming months.
 
 On Demand InSAR products only include co-polarized interferograms (VV or HH). Cross-polarized interferograms (VH or HV) are not available using this service.
 

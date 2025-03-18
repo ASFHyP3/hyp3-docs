@@ -17,7 +17,8 @@ allotment on jobs of that particular type.
 | [**InSAR**](/guides/insar_product_guide/)                     |                |                               |
 | {{ table_indent() }} 80-m pixel spacing (20x4 looks)          |             10 |  {{ max_jobs_per_month(10) }} |
 | {{ table_indent() }} 40-m pixel spacing (10x2 looks)          |             15 |  {{ max_jobs_per_month(15) }} |
-| [**ARIA S1 GUNW**](/guides/gunw_product_guide/)               |             60 |  {{ max_jobs_per_month(60) }} |
+| [**ARIA S1 GUNW**](/guides/gunw_product_guide/)               |                |                               |
+| {{ table_indent() }} All jobs                                 |             60 |  {{ max_jobs_per_month(60) }} |
 | [**Burst InSAR**](/guides/burst_insar_product_guide/)         |                |                               |
 | {{ table_indent() }} 80-m pixel spacing (20x4 looks)          |                |                               |
 | {{ table_indent(count=2) }} 1–4 pairs                         |              1 |   {{ max_jobs_per_month(1) }} |
@@ -42,8 +43,10 @@ allotment on jobs of that particular type.
 | {{ table_indent(count=2) }} 13 pairs                          |            100 | {{ max_jobs_per_month(100) }} |
 | {{ table_indent(count=2) }} 14 pairs                          |            105 | {{ max_jobs_per_month(105) }} |
 | {{ table_indent(count=2) }} 15 pairs                          |            110 | {{ max_jobs_per_month(110) }} |
-| [**AutoRIFT**](https://its-live.jpl.nasa.gov/){target=_blank} |             25 |  {{ max_jobs_per_month(25) }} |
+| [**AutoRIFT**](https://its-live.jpl.nasa.gov/){target=_blank} |                |                               |
+| {{ table_indent() }} All jobs                                 |             25 |  {{ max_jobs_per_month(25) }} |
 
+<!-- TODO: update language now that transition is complete -->
 The credit cost of a given job is roughly proportional to the computational resources required to process the job.
 Transitioning to a credit system allows us to distribute our resources more equitably.
 This change supports our mission of [making remote-sensing data accessible](https://asf.alaska.edu/about-asf/ 'asf.alaska.edu/about-asf' ){target=_blank},

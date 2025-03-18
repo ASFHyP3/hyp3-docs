@@ -20,37 +20,12 @@ allotment on jobs of that particular type.
 | [**ARIA S1 GUNW**](/guides/gunw_product_guide/)               |             60 |  {{ max_jobs_per_month(60) }} |
 | [**Burst InSAR**](/guides/burst_insar_product_guide/)         |                |                               |
 | {{ table_indent() }} 80-m pixel spacing (20x4 looks)          |                |                               |
-| {{ table_indent(count=2) }} 1 pair                            |              1 |   {{ max_jobs_per_month(1) }} |
-| {{ table_indent(count=2) }} 2 pairs                           |              1 |   {{ max_jobs_per_month(1) }} |
-| {{ table_indent(count=2) }} 3 pairs                           |              1 |   {{ max_jobs_per_month(1) }} |
-| {{ table_indent(count=2) }} 4 pairs                           |              1 |   {{ max_jobs_per_month(1) }} |
-| {{ table_indent(count=2) }} 5 pairs                           |              5 |   {{ max_jobs_per_month(5) }} |
-| {{ table_indent(count=2) }} 6 pairs                           |              5 |   {{ max_jobs_per_month(5) }} |
-| {{ table_indent(count=2) }} 7 pairs                           |              5 |   {{ max_jobs_per_month(5) }} |
-| {{ table_indent(count=2) }} 8 pairs                           |              5 |   {{ max_jobs_per_month(5) }} |
-| {{ table_indent(count=2) }} 9 pairs                           |              5 |   {{ max_jobs_per_month(5) }} |
-| {{ table_indent(count=2) }} 10 pairs                          |              5 |   {{ max_jobs_per_month(5) }} |
-| {{ table_indent(count=2) }} 11 pairs                          |              5 |   {{ max_jobs_per_month(5) }} |
-| {{ table_indent(count=2) }} 12 pairs                          |              5 |   {{ max_jobs_per_month(5) }} |
-| {{ table_indent(count=2) }} 13 pairs                          |              5 |   {{ max_jobs_per_month(5) }} |
-| {{ table_indent(count=2) }} 14 pairs                          |              5 |   {{ max_jobs_per_month(5) }} |
-| {{ table_indent(count=2) }} 15 pairs                          |              5 |   {{ max_jobs_per_month(5) }} |
+| {{ table_indent(count=2) }} 1–4 pairs                         |              1 |   {{ max_jobs_per_month(1) }} |
+| {{ table_indent(count=2) }} 5–15 pairs                        |              5 |   {{ max_jobs_per_month(5) }} |
 | {{ table_indent() }} 40-m pixel spacing (10x2 looks)          |                |                               |
-| {{ table_indent(count=2) }} 1 pair                            |              1 |   {{ max_jobs_per_month(1) }} |
-| {{ table_indent(count=2) }} 2 pairs                           |              1 |   {{ max_jobs_per_month(1) }} |
-| {{ table_indent(count=2) }} 3 pairs                           |              1 |   {{ max_jobs_per_month(1) }} |
-| {{ table_indent(count=2) }} 4 pairs                           |              5 |   {{ max_jobs_per_month(5) }} |
-| {{ table_indent(count=2) }} 5 pairs                           |              5 |   {{ max_jobs_per_month(5) }} |
-| {{ table_indent(count=2) }} 6 pairs                           |              5 |   {{ max_jobs_per_month(5) }} |
-| {{ table_indent(count=2) }} 7 pairs                           |              5 |   {{ max_jobs_per_month(5) }} |
-| {{ table_indent(count=2) }} 8 pairs                           |              5 |   {{ max_jobs_per_month(5) }} |
-| {{ table_indent(count=2) }} 9 pairs                           |              5 |   {{ max_jobs_per_month(5) }} |
-| {{ table_indent(count=2) }} 10 pairs                          |             10 |  {{ max_jobs_per_month(10) }} |
-| {{ table_indent(count=2) }} 11 pairs                          |             10 |  {{ max_jobs_per_month(10) }} |
-| {{ table_indent(count=2) }} 12 pairs                          |             10 |  {{ max_jobs_per_month(10) }} |
-| {{ table_indent(count=2) }} 13 pairs                          |             10 |  {{ max_jobs_per_month(10) }} |
-| {{ table_indent(count=2) }} 14 pairs                          |             10 |  {{ max_jobs_per_month(10) }} |
-| {{ table_indent(count=2) }} 15 pairs                          |             10 |  {{ max_jobs_per_month(10) }} |
+| {{ table_indent(count=2) }} 1–3 pairs                         |              1 |   {{ max_jobs_per_month(1) }} |
+| {{ table_indent(count=2) }} 4–9 pairs                         |              5 |   {{ max_jobs_per_month(5) }} |
+| {{ table_indent(count=2) }} 10–15 pairs                       |             10 |  {{ max_jobs_per_month(10) }} |
 | {{ table_indent() }} 20-m pixel spacing (5x1 looks)           |                |                               |
 | {{ table_indent(count=2) }} 1 pair                            |              1 |   {{ max_jobs_per_month(1) }} |
 | {{ table_indent(count=2) }} 2 pairs                           |              5 |   {{ max_jobs_per_month(5) }} |

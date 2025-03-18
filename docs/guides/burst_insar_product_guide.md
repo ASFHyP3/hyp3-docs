@@ -12,7 +12,7 @@ InSAR jobs can be processed on the basis of individual [radar bursts](#sentinel-
 There are currently two different [burst-based](#sentinel-1-bursts "Jump to the Sentinel-1 Bursts section of this document") InSAR jobs available. 
 
 ### Single-Burst InSAR
-The original job type, INSAR_ISCE_BURST, only accepts a single pair of SLC bursts. This job type is supported in [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} as well as the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}.
+The original burst-based InSAR job type, INSAR_ISCE_BURST, only accepts a single pair of SLC bursts. This job type is supported in [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} as well as the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}.
 
 !!! tip "Deprecation of the INSAR_ISCE_BURST job type"
 

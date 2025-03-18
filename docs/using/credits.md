@@ -1,7 +1,7 @@
 # Credits
 
-On Demand users are given an allotment of **{{ CREDITS_PER_MONTH }} credits per month** to use for
-processing jobs, and each type of job costs a different number of credits, as shown in the [Credit Cost Table](#credit-cost-table).
+On Demand users are given an allotment of **{{ CREDITS_PER_MONTH }} credits per month** to use for processing jobs,
+and each type of job costs a different number of credits, as shown in the [Credit Cost Table](#credit-cost-table).
 
 The "Maximum Jobs Per Month" column displays the maximum number of jobs that you 
 would be able to run in a single month if you spent your entire monthly credit 
@@ -46,10 +46,10 @@ allotment on jobs of that particular type.
 | [**AutoRIFT**](https://its-live.jpl.nasa.gov/){target=_blank} |                |                               |
 | {{ table_indent() }} All jobs                                 |             25 |  {{ max_jobs_per_month(25) }} |
 
-<!-- TODO: update language now that transition is complete -->
-The credit cost of a given job is roughly proportional to the computational resources required to process the job.
-Transitioning to a credit system allows us to distribute our resources more equitably.
-This change supports our mission of [making remote-sensing data accessible](https://asf.alaska.edu/about-asf/ 'asf.alaska.edu/about-asf' ){target=_blank},
+The credit cost of a given job is roughly proportional to the computational resources required to process the job,
+allowing us to distribute our resources more equitably.
+This supports our mission of
+[making remote-sensing data accessible](https://asf.alaska.edu/about-asf/ 'asf.alaska.edu/about-asf' ){target=_blank},
 with the goal of providing valuable products to the widest breadth of users possible.
 
 If your monthly credit allotment doesn't meet your needs,

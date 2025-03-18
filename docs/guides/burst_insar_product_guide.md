@@ -9,14 +9,14 @@ InSAR jobs can be processed on the basis of individual [radar bursts](#sentinel-
 
 ## Burst InSAR Job Types
 
-There are currently two different burst-based InSAR jobs available. 
+There are currently two different [burst-based](#sentinel-1-bursts "Jump to the Sentinel-1 Bursts section of this document") InSAR jobs available. 
 
 ### Single-Burst InSAR
-The original job type, INSAR_ISCE_BURST, only accepts a single pair of SLC bursts. This job type is supported in Vertex as well as the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}.
+The original job type, INSAR_ISCE_BURST, only accepts a single pair of SLC bursts. This job type is supported in [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} as well as the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}.
 
 !!! tip "Deprecation of the INSAR_ISCE_BURST job type"
 
-    The original INSAR_ISCE_BURST job type will be deprecated once support for INSAR_ISCE_MULTI_BURST jobs is available in Vertex. For now, only single-burst interferograms are available through the Vertex interface, but support for multi-burst interferograms is coming soon!
+    The original INSAR_ISCE_BURST job type will be deprecated once support for INSAR_ISCE_MULTI_BURST jobs is available in [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank}. For now, only single-burst interferograms are available through the [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} interface, but support for multi-burst interferograms is coming soon!
 
 ### Multi-Burst InSAR
 The INSAR_ISCE_MULTI_BURST job type accepts lists of SLC bursts, and mosaics them together before generating the interferogram. This job type is not yet supported in Vertex, but can be submitted using the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}. 

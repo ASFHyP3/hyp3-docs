@@ -17,6 +17,8 @@ The original job type, INSAR_ISCE_BURST, only accepts a single pair of SLC burst
 ### Multi-Burst InSAR
 The INSAR_ISCE_MULTI_BURST job type accepts lists of SLC bursts, and mosaics them together before generating the interferogram. This job type is not yet supported in Vertex, but can be submitted using the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}. 
 
+This job type supports pairings of 1 to 15 contiguous along-track bursts. 
+
 ### Burst InSAR Roadmap
 Once support for multi-burst InSAR is available in Vertex, we plan to deprecate the single-burst job type. The multi-burst job type supports single-burst products, so users will still be able to process single-burst pairs if desired.
 

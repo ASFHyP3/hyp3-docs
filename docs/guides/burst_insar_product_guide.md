@@ -7,44 +7,46 @@ This document is a guide for users of Sentinel-1 Burst Interferometric Synthetic
 
 !!! tip "Burst-based InSAR available for Sentinel-1"
 
-    Users are now able to process burst-based Sentinel-1 InSAR products on demand using ISCE2 software!  
+    Users are now able to process burst-based Sentinel-1 InSAR products on demand using ISCE2 software!
 
     This functionality is available on [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu/" ){target=_blank} as well as through the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}.
 
 ## Sentinel-1 Bursts
 
-[Single Look Complex](https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1-algorithms/single-look-complex 'https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1-algorithms/single-look-complex' ){target=_blank} (SLC) data is required to generate interferograms from Sentinel-1 data. The European Space Agency (ESA) packages this type of data into Interferometric Wide (IW) SLC products, which are available for download from ASF. These IW SLC products include three sub-swaths, each containing many individual burst SLCs. 
+[Single Look Complex](https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1-algorithms/single-look-complex 'https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1-algorithms/single-look-complex' ){target=_blank} (SLC) data is required to generate interferograms from Sentinel-1 data. The European Space Agency (ESA) packages this type of data into Interferometric Wide (IW) SLC products, which are available for download from ASF. These IW SLC products include three sub-swaths, each containing many individual burst SLCs.
 
 Historically, most InSAR processing has been performed using the full IW SLC scene, but ASF has developed a method of [extracting the individual SLC bursts](https://sentinel1-burst-documentation.asf.alaska.edu/ 'https://sentinel1-burst-documentation.asf.alaska.edu/' ){target=_blank} from IW SLC products, which facilitates burst-based processing workflows.
 
-Working at the burst level of the Sentinel-1 SLC data provides a couple key benefits: 
+Working at the burst level of the Sentinel-1 SLC data provides a couple key benefits:
 
-**1. Bursts are consistently geolocated through time**  
-The coverage of a burst is the same for every orbit of the satellite, so you can be confident that every burst with the same [Full Burst ID](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8#ref-n-VYIiUe "Sentinel-1 Burst Overview https://arcg.is/zSafi0" ){target=_blank} in a stack of acquisitions will cover the same geographic location. In contrast, the framing of the IW SLCs is not consistent through time, so when using IW SLCs as the basis for InSAR, scene pairs do not always fully overlap. 
+**1. Bursts are consistently geolocated through time**
+The coverage of a burst is the same for every orbit of the satellite, so you can be confident that every burst with the same [Full Burst ID](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8#ref-n-VYIiUe "Sentinel-1 Burst Overview https://arcg.is/zSafi0" ){target=_blank} in a stack of acquisitions will cover the same geographic location. In contrast, the framing of the IW SLCs is not consistent through time, so when using IW SLCs as the basis for InSAR, scene pairs do not always fully overlap.
 
-**2. Bursts cover a smaller geographic area**  
+**2. Bursts cover a smaller geographic area**
 IW SLC products are extremely large, and, in many cases, only a small portion of the image is of interest. You can process only the bursts that cover your specific area of interest, which significantly decreases the time and cost required to generate InSAR products.
 
 Refer to the [Sentinel-1 Bursts tutorial](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8 "Sentinel-1 Bursts Tutorial https://arcg.is/zSafi0" ){target=_blank} to learn more about how [ASF extracts burst-level products](https://sentinel1-burst-documentation.asf.alaska.edu/ "ASF Sentinel-1 Burst Documentation" ){target=_blank} from Sentinel-1 IW and EW SLCs.
 
-**3. Bursts allow more AOI customization**
-When using the `INSAR_ISCE_MULTI_BURST` job type, you can select multiple reference and secondary bursts from the same track to compose a custom area of interest (AOI). This allows 
+**3. Bursts provide AOI customization**
+When using the `INSAR_ISCE_MULTI_BURST` job type, you can select multiple reference and secondary bursts from the same track. This allows you to compose a custom area of interest (AOI) and create InSAR product that span IW SLC boundaries. Currently we support InSAR jobs that span 1-15 burst footprints.
 
 ### Burst InSAR Processing
 
-The Sentinel-1 Burst InSAR products are generated using the Jet Propulsion Laboratory's [ISCE2 software](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2" ){target=_blank}. ASF is committed to transparency in product development, and we are pleased to be able to offer an InSAR product that leverages open-source software for processing. 
+The Sentinel-1 Burst InSAR products are generated using the Jet Propulsion Laboratory's [ISCE2 software](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2" ){target=_blank}. ASF is committed to transparency in product development, and we are pleased to be able to offer an InSAR product that leverages open-source software for processing.
 
 For those who would prefer to work at the scale of a full IW SLC, our original [On Demand InSAR](insar_product_guide.md){target=_blank} products are still available. These products have a larger footprint, and are generated using [GAMMA software](https://www.gamma-rs.ch/software){target=_blank}.
 
 ### Using Sentinel-1 Burst InSAR
 
-Users can request Sentinel-1 Burst InSAR products [On Demand](https://search.asf.alaska.edu/#/?topic=onDemand "https://search.asf.alaska.edu/#/?topic=onDemand" ){target=_blank} in ASF's [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} data portal, or make use of our HyP3 [Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank} or [API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank}. Input pair selection in Vertex uses either the [Baseline Tool](https://docs.asf.alaska.edu/vertex/baseline/ "https://docs.asf.alaska.edu/vertex/baseline/" ){target=_blank} or the [SBAS Tool](https://docs.asf.alaska.edu/vertex/sbas/ "https://docs.asf.alaska.edu/vertex/sbas" ){target=_blank} search interfaces. 
+Users can request Sentinel-1 Burst InSAR products [On Demand](https://search.asf.alaska.edu/#/?topic=onDemand "https://search.asf.alaska.edu/#/?topic=onDemand" ){target=_blank} in ASF's [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} data portal, or make use of our HyP3 [Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank} or [API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank}. Input pair selection in Vertex uses either the [Baseline Tool](https://docs.asf.alaska.edu/vertex/baseline/ "https://docs.asf.alaska.edu/vertex/baseline/" ){target=_blank} or the [SBAS Tool](https://docs.asf.alaska.edu/vertex/sbas/ "https://docs.asf.alaska.edu/vertex/sbas" ){target=_blank} search interfaces.
 
-Users can also merge multiple Sentinel-1 Burst InSAR products together if their area of interest covers more than one burst. Please read the section on [Merging Sentinel-1 Burst InSAR Products](#merging-sentinel-1-burst-insar-products "Jump to the merge section of this document") for more information. 
+!!! warning "Only the INSAR_ISCE_BURST job type is supported in Vertex"
+
+    We are currently transitiong from `INSAR_ISCE_BURST` to the `INSAR_ISCE_MULTI_BURST` HyP3 job type to support multi-burst AOIs. Unfortunately, `INSAR_ISCE_MULTI_BURST` job support is currently only available via our API and Python SDK, so Vertex users will need to continue using `INSAR_ISCE_BURST` for the immediate future. We plan to add Vertex support for `INSAR_ISCE_MULTI_BURST` jobs in the coming months.
 
 On Demand InSAR products only include co-polarized interferograms (VV or HH). Cross-polarized interferograms (VH or HV) are not available using this service.
 
-Users are cautioned to read the sections on [limitations](#limitations "Jump to the Limitations section of this document") and [error sources](#error-sources "Jump to the Error Sources section of this document") in InSAR products before attempting to use InSAR data. For a more complete description of the properties of SAR, see our [Introduction to SAR](../guides/introduction_to_sar.md "https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar" ){target=_blank} guide. 
+Users are cautioned to read the sections on [limitations](#limitations "Jump to the Limitations section of this document") and [error sources](#error-sources "Jump to the Error Sources section of this document") in InSAR products before attempting to use InSAR data. For a more complete description of the properties of SAR, see our [Introduction to SAR](../guides/introduction_to_sar.md "https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar" ){target=_blank} guide.
 
 {% endblock %}
 
@@ -79,17 +81,16 @@ The Burst InSAR workflow used in HyP3 was developed by ASF using ISCE2 software.
 ### Pre-Processing
 
 Pre-processing steps prepare the SAR images to be used in interferometry.
-The pre-processing steps include downloading the burst granules,
+The pre-processing steps include downloading the burst SLC data and repacking it in the SAFE format,
 downloading the DEM file,
 and downloading the orbit and auxiliary data files.
 
-#### Download Bursts
+#### Download Burst Data
 
-The Burst InSAR workflow accepts as input two
+The Burst InSAR workflow accepts as input a reference and secondary set of
 [Interferometric Wide swath Single Look Complex](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath "https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath" ){target=_blank}
-(IW SLC) burst granules with the same burst ID.
-The bursts are downloaded using ASF's
-[Sentinel-1 Burst Extractor](https://sentinel1-burst-documentation.asf.alaska.edu/ "https://sentinel1-burst-documentation.asf.alaska.edu/" ){target=_blank}.
+(IW SLC) burst granules. Internally, each set of bursts must be collected within the same orbit, share a single polarization, and be contiguous within a single Sentinel-1 track. The reference and secondary sets must contain the same burst ID/polarization combinations. The bursts are downloaded using ASF's
+[Sentinel-1 Burst Extractor](https://sentinel1-burst-documentation.asf.alaska.edu/ "https://sentinel1-burst-documentation.asf.alaska.edu/" ){target=_blank}, and are then repackaged into a reference and secondary [ESA SAFE](link) file using the [`burst2safe`](link) package. Repackaging the burst SLC data into two ESA SAFE files allows us to process burst with ISCE2 as if it were downloaded directly from ESA.
 
 #### Download the DEM File
 
@@ -134,18 +135,18 @@ The ISCE2 InSAR processing this product uses follows the workflow in [topsApp.py
 1. Geocode the output products.
 
 #### Apply Water Mask
-There is an option to apply a **water mask**. This mask includes coastal waters and most inland waterbodies. Masking waterbodies can have a significant impact during phase unwrapping, as water can sometimes exhibit enough coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid. 
+There is an option to apply a **water mask**. This mask includes coastal waters and most inland waterbodies. Masking waterbodies can have a significant impact during phase unwrapping, as water can sometimes exhibit enough coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid.
 
-A GeoTIFF of the water mask is always included with the InSAR product package, but when this option is selected, the conditional water mask will be applied along with coherence and intensity thresholds during the phase unwrapping process. Water masking is turned off by default. 
+A GeoTIFF of the water mask is always included with the InSAR product package, but when this option is selected, the conditional water mask will be applied along with coherence and intensity thresholds during the phase unwrapping process. Water masking is turned off by default.
 
 The water mask is generated by ASF using data from [OpenStreetMap](https://www.openstreetmap.org/about){target=_blank} and/or [ESA WorldCover](https://esa-worldcover.org/en/about/about){target=_blank} depending on location. Areas within Canada, Alaska, and Russia are primarily covered by ESA WorldCover data, while the rest of the world is covered by OpenStreetMap data. Refer to the [Water Masking](../water_masking.md "Water Masking Documentation" ){target=_blank} documentation page for more details.
 
 This water mask is available for all longitudes, but data is only available from -85 to 85 degrees latitude. All areas between 85 and 90 degrees north latitude are treated as water, and all areas between 85 and 90 degrees south latitude are treated as land for the purposes of the water mask.
 
 Water masks were previously generated from the [Global Self-consistent,
-Hierarchical, High-resolution Geography Database (GSHHG)](http://www.soest.hawaii.edu/wessel/gshhg "http://www.soest.hawaii.edu/wessel/gshhg" ){target=_blank} dataset, but we transitioned to using the OpenStreetMap/ESA WorldCover datasets in February 2024 to improve performance. In addition to being a more recent and accurate dataset, this also allows us to mask most inland waterbodies. When using the GSHHG dataset, we only masked large inland waterbodies; with the new mask, all but the smallest inland waterbodies are masked. 
+Hierarchical, High-resolution Geography Database (GSHHG)](http://www.soest.hawaii.edu/wessel/gshhg "http://www.soest.hawaii.edu/wessel/gshhg" ){target=_blank} dataset, but we transitioned to using the OpenStreetMap/ESA WorldCover datasets in February 2024 to improve performance. In addition to being a more recent and accurate dataset, this also allows us to mask most inland waterbodies. When using the GSHHG dataset, we only masked large inland waterbodies; with the new mask, all but the smallest inland waterbodies are masked.
 
-We originally applied a 3 km buffer on coastlines and a 5 km buffer on the shorelines of inland waterbodies in the water mask dataset before using it to mask the interferograms, in an effort to reduce the chance that valid land pixels would be excluded from phase unwrapping. It appears, however, that the inclusion of more water pixels is more detrimental to phase unwrapping than the exclusion of some land pixels, so as of September 27, 2022, the water mask used for this option is no longer buffered. 
+We originally applied a 3 km buffer on coastlines and a 5 km buffer on the shorelines of inland waterbodies in the water mask dataset before using it to mask the interferograms, in an effort to reduce the chance that valid land pixels would be excluded from phase unwrapping. It appears, however, that the inclusion of more water pixels is more detrimental to phase unwrapping than the exclusion of some land pixels, so as of September 27, 2022, the water mask used for this option is no longer buffered.
 
 Visit our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information about how different water masking approaches can impact the quality of an interferogram.
 
@@ -167,7 +168,7 @@ HyP3 Burst InSAR output is a zip file containing various files, including GeoTIF
 
 ### Naming Convention
 
-The Burst InSAR product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 3. 
+The Burst InSAR product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 3.
 
 - The imaging platform name, always S1 for Sentinel-1.
 - Relative burst ID values assigned by ESA. Each value identifies a consistent burst footprint; relative burst ID values differ from one sub-swath to the next.
@@ -184,23 +185,23 @@ The Burst InSAR product names are packed with information pertaining to the proc
 
 ### Image Files
 
-All of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs. The exceptions to this are the connected components and the water mask files, which are both 8-bit unsigned-integer single-band GeoTIFFs. 
+All of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs. The exceptions to this are the connected components and the water mask files, which are both 8-bit unsigned-integer single-band GeoTIFFs.
 
 The following image files are geocoded to the appropriate UTM Zone map projection, based on the location of the output product:
 
-- The *normalized coherence* file contains pixel values that range from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent. 
+- The *normalized coherence* file contains pixel values that range from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent.
 - The *unwrapped geocoded interferogram* file shows the results of the phase unwrapping process. Negative values indicate movement towards the sensor, and positive values indicate movement away from the sensor. This is the main interferogram output.
 - The *wrapped geocoded interferogram* file indicates the interferogram phase after applying the adaptive filter immediately before unwrapping. Values range from negative pi to positive pi.
 - The *connected components* file delineates regions unwrapped as contiguous units by the SNAPHU unwrapping algorithm.
-- The *look vectors* theta (θ) and phi (φ) describe the elevation and orientation angles of the look vector in radians. The look vectors refer to the look direction back towards the sensor. 
-    - The *lv_theta* (θ) file indicates the SAR look vector elevation angle (in radians) at each pixel, ranging from -π/2 (down) to π/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface. 
+- The *look vectors* theta (θ) and phi (φ) describe the elevation and orientation angles of the look vector in radians. The look vectors refer to the look direction back towards the sensor.
+    - The *lv_theta* (θ) file indicates the SAR look vector elevation angle (in radians) at each pixel, ranging from -π/2 (down) to π/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface.
     - The *lv_phi* (φ) file indicates the SAR look vector orientation angle (in radians) at each pixel. The look vector orientation angle is defined as the angle between the East direction and the projection of the look vector on the horizontal surface plane. The orientation angle increases towards north, with the North direction corresponding to π/2 (and south to -π/2). The orientation angle range is -π to π.
 - The *DEM* file gives the local terrain heights in meters, with a geoid correction applied.
 - The *water mask* file indicates coastal waters and large inland waterbodies. Pixel values of 1 indicate land and 0 indicate water. This file is in 8-bit unsigned integer format.
 
 If the **water mask** option is selected, the water mask is applied prior to phase unwrapping to exclude water pixels from the process. The water mask is generated using the [OpenStreetMap](https://www.openstreetmap.org/about){target=_blank} and [ESA WorldCover](https://esa-worldcover.org/en/about/about){target=_blank} datasets. Refer to the [Water Masking Processing Option](#apply-water-mask) section and our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information about water masking.
 
-There are also four non-geocoded images that remain in their native range-doppler coordinates. These four images comprise the image data required to merge Burst InSAR products together, and include: 
+There are also four non-geocoded images that remain in their native range-doppler coordinates. These four images comprise the image data required to merge Burst InSAR products together, and include:
 
 - a *wrapped Range-Doppler interferogram*, which is a Range-Doppler version of the wrapped interferogram
 - a two-band *Range-Doppler look vectors* image in the native ISCE2 format
@@ -208,7 +209,7 @@ There are also four non-geocoded images that remain in their native range-dopple
 
 An *unwrapped phase browse image* is included for the unwrapped (unw_phase) phase file, which is in PNG format and is 2048 pixels wide.
 
-The tags and extensions used and example file names for each raster are listed in Table 2 below. 
+The tags and extensions used and example file names for each raster are listed in Table 2 below.
 
 {% set base_name = 'S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>' %}
 
@@ -245,7 +246,7 @@ The product package also includes a number of metadata files.
 The text file with extension .README.md.txt explains the files included in the folder, and is customized to reflect that particular product. Users unfamiliar with InSAR products should start by reading this README file, which will give some background on each of the files included in the product folder.
 
 #### InSAR Parameter File
-The text file with extension .txt includes processing parameters used to generate the InSAR product as well as metadata attributes for the InSAR pair.  These are detailed in Table 4.  
+The text file with extension .txt includes processing parameters used to generate the InSAR product as well as metadata attributes for the InSAR pair.  These are detailed in Table 4.
 
 | Name                             | Description                                                                                             | Possible Value                                                       |
 |----------------------------------|---------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
@@ -255,17 +256,17 @@ The text file with extension .txt includes processing parameters used to generat
 | Reference Orbit Number           | Absolute orbit number of the reference scene                                                            | 30741                                                                |
 | Secondary Pass Direction         | Orbit direction of the reference scene                                                                  | DESCENDING                                                           |
 | Secondary Orbit Number           | Absolute orbit number of the secondary scene                                                            | 31091                                                                |
-| Baseline                         | Perpendicular baseline in meters                                                                        | 58.3898                                                              | 
+| Baseline                         | Perpendicular baseline in meters                                                                        | 58.3898                                                              |
 | UTCTime                          | Time in the UTC time zone in seconds                                                                    | 12360.691361                                                         |
 | Heading                          | Spacecraft heading measured in degrees clockwise from north                                             | 193.2939317                                                          |
-| Spacecraft height                | Height in meters of the spacecraft above nadir point                                                    | 700618.6318999995                                                    | 
+| Spacecraft height                | Height in meters of the spacecraft above nadir point                                                    | 700618.6318999995                                                    |
 | Earth radius at nadir            | Ellipsoidal earth radius in meters at the point directly below the satellite                            | 6370250.0667                                                         |
-| Slant range near                 | Distance in meters from satellite to nearest point imaged                                               | 799517.4338                                                          | 
-| Slant range center               | Distance in meters from satellite to the center point imaged                                            | 879794.1404                                                          | 
+| Slant range near                 | Distance in meters from satellite to nearest point imaged                                               | 799517.4338                                                          |
+| Slant range center               | Distance in meters from satellite to the center point imaged                                            | 879794.1404                                                          |
 | Slant range far                  | Distance in meters from satellite to farthest point imaged                                              | 960070.8469                                                          |
-| Range looks                      | Number of looks taken in the range direction                                                            | 20                                                                   | 
+| Range looks                      | Number of looks taken in the range direction                                                            | 20                                                                   |
 | Azimuth looks                    | Number of looks taken in the azimuth direction                                                          | 4                                                                    |
-| InSAR phase filter               | Was an InSAR phase filter used                                                                          | yes                                                                  | 
+| InSAR phase filter               | Was an InSAR phase filter used                                                                          | yes                                                                  |
 | Phase filter parameter           | Dampening factor                                                                                        | 0.5                                                                  |
 | Range bandpass filter            | Range bandpass filter applied                                                                           | no                                                                   |
 | Azimuth bandpass filter          | Azimuth bandpass filter applied                                                                         | no                                                                   |

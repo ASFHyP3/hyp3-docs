@@ -14,17 +14,14 @@ There are currently two different burst-based InSAR jobs available.
 ### Single-Burst InSAR
 The original job type, INSAR_ISCE_BURST, only accepts a single pair of SLC bursts. This job type is supported in Vertex as well as the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}.
 
+!!! tip "Deprecation of the INSAR_ISCE_BURST job type"
+
+    The original INSAR_ISCE_BURST job type will be deprecated once support for INSAR_ISCE_MULTI_BURST jobs is available in Vertex. For now, only single-burst interferograms are available through the Vertex interface, but support for multi-burst interferograms is coming soon!
+
 ### Multi-Burst InSAR
 The INSAR_ISCE_MULTI_BURST job type accepts lists of SLC bursts, and mosaics them together before generating the interferogram. This job type is not yet supported in Vertex, but can be submitted using the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}. 
 
 This job type supports pairings of 1 to 15 contiguous along-track bursts. 
-
-### Burst InSAR Roadmap
-Once support for multi-burst InSAR is available in Vertex, we plan to deprecate the single-burst job type. The multi-burst job type supports single-burst products, so users will still be able to process single-burst pairs if desired.
-
-!!! tip "Deprecation of the INSAR_ISCE_BURST job type"
-
-    The original INSAR_ISCE_BURST job type will be deprecated once support for INSAR_ISCE_MULTI_BURST jobs is available in Vertex. For now, only single-burst interferograms are available through the Vertex interface, but support for multi-burst interferograms is coming soon!
 
 ## Sentinel-1 Bursts
 

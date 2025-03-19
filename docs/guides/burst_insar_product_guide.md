@@ -114,7 +114,7 @@ The Burst InSAR workflow accepts as input a reference and secondary set of
 (IW SLC) burst granules. Internally, each set of bursts must be collected within the same orbit, share a single polarization, and be contiguous within a single Sentinel-1 track. The reference and secondary sets must contain the same burst ID/polarization combinations. 
 
 The bursts are downloaded using ASF's
-[Sentinel-1 Burst Extractor](https://sentinel1-burst-documentation.asf.alaska.edu/ "https://sentinel1-burst-documentation.asf.alaska.edu/" ){target=_blank}, and are then repackaged into reference and secondary [ESA SAFE](TODO:link) files using the [`burst2safe`](TODO:link) package. Repackaging the burst SLC data into two ESA SAFE files allows the reference and secondary collections of bursts to be processed with ISCE2 as if they were a pair of full IW SLC file from ESA.
+[Sentinel-1 Burst Extractor](https://sentinel1-burst-documentation.asf.alaska.edu/ "https://sentinel1-burst-documentation.asf.alaska.edu/" ){target=_blank}, and are then repackaged into reference and secondary [ESA SAFE](TODO:link) files using the [`burst2safe`](TODO:link) package. Repackaging the burst SLC data into two ESA SAFE files allows the reference and secondary collections of bursts to be processed with ISCE2 as if they were a pair of full IW SLC files from ESA.
 
 #### Download the DEM File
 
@@ -127,12 +127,10 @@ This phase is then removed from the interferogram leaving just the motion or def
 (plus atmospheric delays and noise).
 
 The DEM that is used for HyP3 InSAR processing is the
-[2022 Release of the Copernicus GLO-30 Public DEM](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}
+[2022 Release of the Copernicus GLO-30 Public DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM "Copernicus DEM" ){target=_blank}
 dataset
 [publicly available on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank},
 which provides global coverage at 30-m pixel spacing (except for an area over Armenia and Azerbaijan, which only has 90-m coverage).
-For more information about the 2022 updates, see the 'Releases' section of
-[this article](https://spacedata.copernicus.eu/collections/copernicus-digital-elevation-model "Copernicus DEM" ){target=_blank}.
 
 The portion of the DEM that covers the input bursts is downloaded.
 

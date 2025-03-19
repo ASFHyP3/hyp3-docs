@@ -29,17 +29,19 @@ This job type supports pairings of 1 to 15 contiguous along-track bursts. The nu
 
 Historically, most InSAR processing has been performed using the full IW SLC scene, but ASF has developed a method of [extracting the individual SLC bursts](https://sentinel1-burst-documentation.asf.alaska.edu/ 'https://sentinel1-burst-documentation.asf.alaska.edu/' ){target=_blank} from IW SLC products, which facilitates burst-based processing workflows.
 
-Working at the burst level of the Sentinel-1 SLC data provides a couple key benefits:
-
-**1. Bursts are consistently geolocated through time**
-The coverage of a burst is the same for every orbit of the satellite, so you can be confident that every burst with the same [Full Burst ID](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8#ref-n-VYIiUe "Sentinel-1 Burst Overview https://arcg.is/zSafi0" ){target=_blank} in a stack of acquisitions will cover the same geographic location. In contrast, the framing of the IW SLCs is not consistent through time, so when using IW SLCs as the basis for InSAR, scene pairs do not always fully overlap.
-
-**2. Bursts cover a smaller geographic area**
-IW SLC products are extremely large, and, in many cases, only a small portion of the image is of interest. You can process only the bursts that cover your specific area of interest, which significantly decreases the time and cost required to generate InSAR products.
-
 Refer to the [Sentinel-1 Bursts tutorial](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8 "Sentinel-1 Bursts Tutorial https://arcg.is/zSafi0" ){target=_blank} to learn more about how [ASF extracts burst-level products](https://sentinel1-burst-documentation.asf.alaska.edu/ "ASF Sentinel-1 Burst Documentation" ){target=_blank} from Sentinel-1 IW and EW SLCs.
 
-**3. Bursts provide AOI customization**
+### Benefits of Bursts
+
+Working at the burst level of the Sentinel-1 SLC data provides some key benefits:
+
+**1. Bursts are consistently geolocated through time.**
+The coverage of a burst is the same for every orbit of the satellite, so you can be confident that every burst with the same [Full Burst ID](https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8#ref-n-VYIiUe "Sentinel-1 Burst Overview https://arcg.is/zSafi0" ){target=_blank} in a stack of acquisitions will cover the same geographic location. In contrast, the framing of the IW SLCs is not consistent through time, so when using IW SLCs as the basis for InSAR, scene pairs do not always fully overlap.
+
+**2. Bursts cover a smaller geographic area.**
+IW SLC products are extremely large. In many cases, only a small portion of the IW footprint is of interest. Burst-based processing allows you to process only the bursts that cover your specific area of interest, which significantly decreases the time and cost required to generate and analyze InSAR products.
+
+**3. Bursts provide AOI customization.**
 When using the `INSAR_ISCE_MULTI_BURST` job type, you can select multiple reference and secondary bursts from the same track. This allows you to compose a custom area of interest (AOI) and create InSAR product that span IW SLC boundaries. Currently we support InSAR jobs that span 1-15 burst footprints.
 
 ### Burst InSAR Processing

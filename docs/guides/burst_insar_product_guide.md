@@ -42,7 +42,7 @@ The coverage of a burst is the same for every orbit of the satellite, so you can
 IW SLC products are extremely large. In many cases, only a small portion of the IW footprint is of interest. Burst-based processing allows you to process only the bursts that cover your specific area of interest, which significantly decreases the time and cost required to generate and analyze InSAR products.
 
 **3. Bursts provide AOI customization.**
-When using the `INSAR_ISCE_MULTI_BURST` job type, you can select multiple reference and secondary bursts from the same track. This allows you to compose a custom area of interest (AOI) and create InSAR product that span IW SLC boundaries. Currently we support InSAR jobs that span 1-15 burst footprints.
+When using the `INSAR_ISCE_MULTI_BURST` job type, you can select multiple reference and secondary bursts from the same track. This allows you to compose a custom area of interest (AOI) and create an InSAR product that spans IW SLC boundaries. We currently support InSAR jobs that include up to 15 burst footprints.
 
 ### Burst InSAR Processing
 

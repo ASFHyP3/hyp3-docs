@@ -316,62 +316,6 @@ The text file with extension .txt includes processing parameters used to generat
 
 *Table 4: List of InSAR parameters included in the parameter text file*
 
-### Merging Sentinel-1 Burst InSAR Products
-
-Burst InSAR products created using the `insar_tops_burst` workflow can be merged together using the `merge_tops_burst` workflow. This can be useful when the area of interest you'd like to observe spans multiple bursts. Merging is done using underlying ISCE2 functionality, and steps 8-10 of InSAR processing (filtering, unwrapping, and geocoding) found in the [InSAR Processing](#insar-processing "Jump to the InSAR Processing section of this document") section are repeated for the merged products to ensure consistent results. Check out the [Merge Processing](#merge-processing "Jump to the Merge Processing section of this document") section below for more details. Assuming that you have already installed the [HyP3-ISCE2 plugin]( https://github.com/ASFHyP3/hyp3-isce2 "HyP3-ISCE2 Plugin" ){target=_blank} on your local machine, merging can be performed using the following syntax:
-
-```bash
-python -m hyp3_isce2 ++process merge_tops_bursts PATH_TO_UNZIPPED_PRODUCTS
-```
-
-Where `PATH_TO_UNZIPPED_PRODUCTS` is the path to a directory containing **unzipped** Burst InSAR products. For example:
-
-```
-PATH_TO_UNZIPPED_PRODUCTS
-├─ S1_136232_IW2_20200604_20200616_VV_INT80_663F
-├─ S1_136231_IW2_20200604_20200616_VV_INT80_529D
-```
-
-In order to be merging eligible, all burst products must:
-
-- Have the same reference and secondary dates
-- Have the same polarization
-- Have the same multilooking
-- Be from the same relative orbit
-- Be contiguous
-
-The workflow should throw an error if any of these conditions are not met.
-
-#### Merge Processing
-During normal ISCE2 InSAR processing, initial interferograms are formed on a burst-by-burst basis. These range-doppler burst interferograms are combined during an ISCE2 step called `mergebursts`, then the remaining steps (filtering, unwrapping and geocoding) are conducted on the merged results.
-
-By including select range-doppler data (wrapped interferogram, geolocation information, and line-of-sight information) as well as select metadata in our standard Burst InSAR products, we are able to restart ISCE2 processing from the `mergebursts` step, then proceed with the following steps as if it were a standard ISCE2 InSAR processing run.
-
-The steps of the workflow are as follows:
-
-1.	Recreate a pre-`mergebursts` ISCE2 InSAR processing state using the input Burst InSAR products.
-2.	Run a modified version of ISCE2’s `mergebursts` step.
-3.	Apply the Goldstein-Werner power spectral filter with a dampening factor of 0.5.
-4.	Unwrap the wrapped phase interferogram using [SNAPHU](http://web.stanford.edu/group/radar/softwareandlinks/sw/snaphu/){target=_blank}'s minimum cost flow (MCF) unwrapping algorithm to produce the unwrapped phase interferogram.
-5.	Geocode the output products.
-
-As mentioned above, this workflow uses underlying ISCE2 functionality to perform these steps so the results of this workflow should be identical to the results obtained by performing a standard multi-burst ISCE2 InSAR run (assuming that the Enhanced Spectral Diversity technique is not used for co-registration).
-
-#### Merge Processing Options
-
-The processing options available for the merging are the same as those available for standard Burst InSAR products. Check out the [Processing Options](#processing-options "Jump to the Processing Options section of this document") section for more details.
-
-To learn about the command line argument syntax for this workflow, look at the help documentation using:
-```bash
-python -m hyp3_isce2 ++process merge_tops_bursts --help
-```
-
-#### Product Packaging
-The product packaging of merged Burst InSAR products follows the same conventions outlined in the [Product Packaging](#product-packaging "Jump to the Product Packaging section of this document") section above with two exceptions. First, the four range-doppler images are not included since the products have already been merged. Second, the product name is slightly modified; the burst ID is swapped for the zero-padded relative orbit number, and the swath number is removed. The resulting format is:
-```
-S1_rrr__yyymmdd_yyymmdd_pp_INTn_uuuu
-```
-
 {% endblock %}
 
 {% block line_of_sight %}

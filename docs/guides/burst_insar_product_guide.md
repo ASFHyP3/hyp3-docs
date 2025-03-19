@@ -42,7 +42,7 @@ The coverage of a burst is the same for every orbit of the satellite, so you can
 IW SLC products are extremely large. In many cases, only a small portion of the IW footprint is of interest. Burst-based processing allows you to process only the bursts that cover your specific area of interest, which significantly decreases the time and cost required to generate and analyze InSAR products.
 
 **3. Bursts provide AOI customization.**
-When using the `INSAR_ISCE_MULTI_BURST` job type, you can select multiple reference and secondary bursts from the same track. This allows you to compose a custom area of interest (AOI) and create an InSAR product that spans IW SLC boundaries. We currently support InSAR jobs that include up to 15 burst footprints.
+When using the `INSAR_ISCE_MULTI_BURST` job type, you can select multiple reference and secondary bursts from the same track. This allows you to compose a custom area of interest (AOI) and create an InSAR product that spans IW SLC boundaries. We currently support InSAR jobs that include up to 15 contiguous burst footprints.
 
 ### Burst InSAR Processing
 
@@ -54,9 +54,17 @@ For those who would prefer to work at the scale of a full IW SLC, our original [
 
 Users can request Sentinel-1 Burst InSAR products [On Demand](https://search.asf.alaska.edu/#/?topic=onDemand "https://search.asf.alaska.edu/#/?topic=onDemand" ){target=_blank} in ASF's [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} data portal, or make use of our HyP3 [Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank} or [API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank}. Input pair selection in Vertex uses either the [Baseline Tool](https://docs.asf.alaska.edu/vertex/baseline/ "https://docs.asf.alaska.edu/vertex/baseline/" ){target=_blank} or the [SBAS Tool](https://docs.asf.alaska.edu/vertex/sbas/ "https://docs.asf.alaska.edu/vertex/sbas" ){target=_blank} search interfaces.
 
-!!! warning "Only the INSAR_ISCE_BURST job type is supported in Vertex"
+!!! warning "Only single-pair Burst InSAR processing is currently supported in Vertex"
 
-    We are currently transitiong from `INSAR_ISCE_BURST` to the `INSAR_ISCE_MULTI_BURST` HyP3 job type to support multi-burst AOIs. `INSAR_ISCE_MULTI_BURST` job support is currently only available via our API and Python SDK, so Vertex users will need to continue using `INSAR_ISCE_BURST` for the immediate future. We plan to add Vertex support for `INSAR_ISCE_MULTI_BURST` jobs in the coming months.
+    We are transitioning from the `INSAR_ISCE_BURST` to the `INSAR_ISCE_MULTI_BURST` 
+    HyP3 job type to support multi-burst AOIs.
+
+    `INSAR_ISCE_MULTI_BURST` job support is currently only available via our API and
+    Python SDK, so [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} users will not be able to submit multi-burst jobs for 
+    processing. 
+
+    Burst InSAR jobs submitted in Vertex are currently limited to single-burst pairs, 
+    but we plan to add Vertex support for `INSAR_ISCE_MULTI_BURST` jobs in the coming months.
 
 On Demand InSAR products only include co-polarized interferograms (VV or HH). Cross-polarized interferograms (VH or HV) are not available using this service.
 

@@ -111,8 +111,10 @@ and downloading the orbit and auxiliary data files.
 
 The Burst InSAR workflow accepts as input a reference and secondary set of
 [Interferometric Wide swath Single Look Complex](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath "https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath" ){target=_blank}
-(IW SLC) burst granules. Internally, each set of bursts must be collected within the same orbit, share a single polarization, and be contiguous within a single Sentinel-1 track. The reference and secondary sets must contain the same burst ID/polarization combinations. The bursts are downloaded using ASF's
-[Sentinel-1 Burst Extractor](https://sentinel1-burst-documentation.asf.alaska.edu/ "https://sentinel1-burst-documentation.asf.alaska.edu/" ){target=_blank}, and are then repackaged into a reference and secondary [ESA SAFE](link) file using the [`burst2safe`](link) package. Repackaging the burst SLC data into two ESA SAFE files allows us to process burst with ISCE2 as if it were downloaded directly from ESA.
+(IW SLC) burst granules. Internally, each set of bursts must be collected within the same orbit, share a single polarization, and be contiguous within a single Sentinel-1 track. The reference and secondary sets must contain the same burst ID/polarization combinations. 
+
+The bursts are downloaded using ASF's
+[Sentinel-1 Burst Extractor](https://sentinel1-burst-documentation.asf.alaska.edu/ "https://sentinel1-burst-documentation.asf.alaska.edu/" ){target=_blank}, and are then repackaged into reference and secondary [ESA SAFE](TODO:link) files using the [`burst2safe`](TODO:link) package. Repackaging the burst SLC data into two ESA SAFE files allows the reference and secondary collections of bursts to be processed with ISCE2 as if they were a pair of full IW SLC file from ESA.
 
 #### Download the DEM File
 

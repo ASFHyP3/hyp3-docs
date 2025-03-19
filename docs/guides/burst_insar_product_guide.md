@@ -186,15 +186,15 @@ Supporting metadata files are created, as well as a quick-look browse image.
 {% block packaging %}
 ## Product Packaging
 
-HyP3 Burst InSAR output is a zip file containing various files, including GeoTIFFs, a PNG browse image, a metadata file, and a README file.
+The Burst InSAR output is a zip file containing various files including GeoTIFFs, a PNG browse image, a metadata file, and a README file.
 
-### Naming Convention
+### Naming Convention: INSAR_ISCE_BURST
 
 The Burst InSAR product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 3.
 
 - The imaging platform name, always S1 for Sentinel-1.
 - Relative burst ID values assigned by ESA. Each value identifies a consistent burst footprint; relative burst ID values differ from one sub-swath to the next.
-- The imaging mode, currently only IW is supported.
+- The imaging mode, currently only IW is supported. (TODO: Verify if it's only possible to extract bursts from IW and not EW SLCs)
 - The swath number, either 1, 2, or 3, indicating which sub-swath the burst is located in.
 - The acquisition dates of the reference (older) scene and the secondary (newer) scene
 - The polarizations for the pair, either HH or VV.
@@ -205,9 +205,13 @@ The Burst InSAR product names are packed with information pertaining to the proc
 
 *Figure 3: Breakdown of ASF Burst InSAR naming scheme.*
 
+### Naming Convention: INSAR_ISCE_MULTI_BURST
+
+(TODO: Add information on the multi-burst naming scheme)
+
 ### Image Files
 
-All of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs. The exceptions to this are the connected components and the water mask files, which are both 8-bit unsigned-integer single-band GeoTIFFs.
+Most of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs. The exceptions to this are the connected components and the water mask files, which are both 8-bit unsigned-integer single-band GeoTIFFs.
 
 The following image files are geocoded to the appropriate UTM Zone map projection, based on the location of the output product:
 
@@ -234,6 +238,8 @@ An *unwrapped phase browse image* is included for the unwrapped (unw_phase) phas
 The tags and extensions used and example file names for each raster are listed in Table 2 below.
 
 {% set base_name = 'S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>' %}
+
+(TODO: Either add a second example base name for a multi-burst job, or replace this with a multi-burst job name)
 
 | Extension              | Description                         | Example                               |
 |------------------------|-------------------------------------|---------------------------------------|
@@ -268,7 +274,7 @@ The product package also includes a number of metadata files.
 The text file with extension .README.md.txt explains the files included in the folder, and is customized to reflect that particular product. Users unfamiliar with InSAR products should start by reading this README file, which will give some background on each of the files included in the product folder.
 
 #### InSAR Parameter File
-The text file with extension .txt includes processing parameters used to generate the InSAR product as well as metadata attributes for the InSAR pair.  These are detailed in Table 4.
+The text file with extension .txt includes processing parameters used to generate the InSAR product as well as metadata attributes for the InSAR pair. These are detailed in Table 4.
 
 | Name                             | Description                                                                                             | Possible Value                                                       |
 |----------------------------------|---------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|

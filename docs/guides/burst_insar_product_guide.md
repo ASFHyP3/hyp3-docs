@@ -21,7 +21,7 @@ The original burst-based InSAR job type, `INSAR_ISCE_BURST`, only accepts a sing
 ### Multi-Burst InSAR
 The `INSAR_ISCE_MULTI_BURST` job type accepts lists of SLC bursts, and mosaics them together before generating the interferogram. This job type is not yet supported in Vertex, but can be submitted using the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}. 
 
-This job type supports pairings of 1 to 15 contiguous along-track bursts. 
+This job type supports pairings of 1 to 15 contiguous along-track bursts. The number of bursts processed impacts the number of credits consumed. Refer to the [Credit Cost Table](../using/credits.md#credit-cost-table "Credit Cost Table" ){target=_blank} for more details.
 
 ## Sentinel-1 Bursts
 

@@ -116,7 +116,7 @@ The Burst InSAR workflow accepts as input a reference and secondary set of
 (IW SLC) burst granules. Internally, each set of bursts must be collected within the same orbit, share a single polarization, and be contiguous within a single Sentinel-1 track. The reference and secondary sets must contain the same burst ID/polarization combinations. 
 
 The bursts are downloaded using ASF's
-[Sentinel-1 Burst Extractor](https://sentinel1-burst-documentation.asf.alaska.edu/ "https://sentinel1-burst-documentation.asf.alaska.edu/" ){target=_blank}, and are then repackaged into reference and secondary [ESA SAFE](TODO:link) files using the [`burst2safe`](TODO:link) package. Repackaging the burst SLC data into two ESA SAFE files allows the reference and secondary collections of bursts to be processed with ISCE2 as if they were a pair of full IW SLC files from ESA.
+[Sentinel-1 Burst Extractor](https://sentinel1-burst-documentation.asf.alaska.edu/ "https://sentinel1-burst-documentation.asf.alaska.edu/" ){target=_blank}, and are then repackaged into reference and secondary [ESA SAFE](https://sentiwiki.copernicus.eu/web/safe-format "SAFE Format" ){target=_blank} files using the [`burst2safe`](https://github.com/ASFHyP3/burst2safe "burst2safe Python package" ){target=_blank} package. Repackaging the burst SLC data into two ESA SAFE files allows the reference and secondary collections of bursts to be processed with ISCE2 as if they were a pair of full IW SLC files from ESA.
 
 #### Download the DEM File
 

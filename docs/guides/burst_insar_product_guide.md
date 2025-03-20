@@ -209,24 +209,32 @@ The Burst InSAR product names are packed with information pertaining to the proc
 
 ### Naming Convention: INSAR_ISCE_MULTI_BURST
 
-There are some differences in the naming scheme for products generated using the `INSAR_ISCE_MULTI_BURST` job type, most notably a reference to the ***relative orbit*** rather than the ***relative burst ID***. 
+The naming scheme for products generated using the `INSAR_ISCE_MULTI_BURST` job type is very different from what was used for `INSAR_ISCE_BURST`.
 
 The basename of the multi-burst InSAR files follows this naming convention: 
 
-**S1_rrr__yyyymmdd_yyyymmdd_pp_INTzz_cccc**
+**S1s_rrr_lonl_f_lal_f_lonu_f_lau_f_yyyymmdd_yyyymmdd_pp_INTzz_cccc**
+
+For example: 
+
+S1A_064_E053_1_N27_3_E054_1_N27_8_20200604_20200616_VV_INT80_7EB5
 
 The following table describes the individual components:
 
-| Component    | Description                                                                                                                                                                                                                                                                                           | Example |
-|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
-| **S1**       | SAR Mission (always Sentinel-1)                                                                                                                                                                                                                                                                       | S1      |
-| **rrr**      | Relative orbit ID values assigned by ESA. Merged burst InSAR products can contain many relative burst IDs, so the relative orbit ID is used in lieu of relative burst IDs for these products.                                                                                                         |         |
-| **yyyymmdd** | Acquisition date of the reference image                                                                                                                                                                                                                                                               |         |
-| **yyyymmdd** | Acquisition date of the secondary image                                                                                                                                                                                                                                                               |         |
-| **pp**       | Two character combination indicating the product polarization. The first character represents the transmit polarization and the second character represents the receive polarization. Note that these products only support co-polarized inputs, so the product polarization will either be VV or HH. | VV      |
-| **INT**      | The product type (always INT for InSAR)                                                                                                                                                                                                                                                               | INT     |
-| **zz**       | The pixel spacing of the output image                                                                                                                                                                                                                                                                 | 80      |
-| **cccc**     | 4-character unique product identifier                                                                                                                                                                                                                                                                 | FD6A    |
+| Component    | Description                                                                                                                                                                                                                                                                                           | Example  |
+|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
+| **S1s**      | SAR Platform. S1 for Sentinel-1, followed by the letter of the sensor that collected the reference image.                                                                                                                                                                                             | S1A      |
+| **rrr**      | Relative orbit ID values assigned by ESA. Merged burst InSAR products can contain many relative burst IDs, so the relative orbit ID is used in lieu of relative burst IDs for these products.                                                                                                         | 064      |
+| **lonl_f**   | Minimum longitude of the output interferogram. Starts with a letter indicating hemisphere (E or W), followed by longitude to one decimal (000.0) with the decimal replaced by an underscore.                                                                                                          | E053_1   |
+| **lal_f**    | Minimum latitude of the output interferogram. Starts with a letter indicating hemisphere (N or S), followed by latitude to one decimal (00.0) with the decimal replaced by an underscore.                                                                                                             | N27_3    |
+| **lonu_f**   | Maximum longitude of the output interferogram. Starts with a letter indicating hemisphere (E or W), followed by longitude to one decimal (000.0) with the decimal replaced by an underscore.                                                                                                          | E054_1   |
+| **lau_f**    | Maximum latitude of the output interferogram. Starts with a letter indicating hemisphere (N or S), followed by latitude to one decimal (00.0) with the decimal replaced by an underscore.                                                                                                             | N27_8    |
+| **yyyymmdd** | Acquisition date of the reference image                                                                                                                                                                                                                                                               | 20200604 |
+| **yyyymmdd** | Acquisition date of the secondary image                                                                                                                                                                                                                                                               | 20200616 |
+| **pp**       | Two character combination indicating the product polarization. The first character represents the transmit polarization and the second character represents the receive polarization. Note that these products only support co-polarized inputs, so the product polarization will either be VV or HH. | VV       |
+| **INT**      | The product type (always INT for InSAR)                                                                                                                                                                                                                                                               | INT      |
+| **zz**       | The pixel spacing of the output image                                                                                                                                                                                                                                                                 | 80       |
+| **cccc**     | 4-character unique product identifier                                                                                                                                                                                                                                                                 | FD6A     |
 
 
 ### Image Files

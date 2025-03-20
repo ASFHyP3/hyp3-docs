@@ -10,7 +10,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 * Added examples for burst and multi-burst InSAR to [API Documentation](docs/using/api.md)
-* Updated HyP3 SDK to v7.2.1
+* Updated HyP3 SDK to [v7.2.1](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#721)
 
 ### Changed
 * Updated [Products](docs/products.md) page to include burst-based InSAR

@@ -209,28 +209,25 @@ The Burst InSAR product names are packed with information pertaining to the proc
 
 ### Naming Convention: INSAR_ISCE_MULTI_BURST
 
-There are some differences in the naming scheme for products generated using the `INSAR_ISCE_MULTI_BURST` job type, most notably a reference to the relative orbit rather than the relative burst ID. 
+There are some differences in the naming scheme for products generated using the `INSAR_ISCE_MULTI_BURST` job type, most notably a reference to the ***relative orbit*** rather than the ***relative burst ID***. 
 
 The basename of the multi-burst InSAR files follows this naming convention: 
 
 **S1_rrr__yyyymmdd_yyyymmdd_pp_INTzz_cccc**
 
-**S1**: Indicates the mission, always Sentinel-1 (S1).
+The following table describes the individual components:
 
-**rrr**: Relative orbit ID values assigned by ESA. Merged burst InSAR products can contain many relative burst IDs, so the relative orbit ID is used in lieu of relative burst IDs for these products.
+| Component    | Description                                                                                                                                                                                                                                                                                           | Example |
+|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
+| **S1**       | SAR Mission (always Sentinel-1)                                                                                                                                                                                                                                                                       | S1      |
+| **rrr**      | Relative orbit ID values assigned by ESA. Merged burst InSAR products can contain many relative burst IDs, so the relative orbit ID is used in lieu of relative burst IDs for these products.                                                                                                         |         |
+| **yyyymmdd** | Acquisition date of the reference image                                                                                                                                                                                                                                                               |         |
+| **yyyymmdd** | Acquisition date of the secondary image                                                                                                                                                                                                                                                               |         |
+| **pp**       | Two character combination indicating the product polarization. The first character represents the transmit polarization and the second character represents the receive polarization. Note that these products only support co-polarized inputs, so the product polarization will either be VV or HH. | VV      |
+| **INT**      | The product type (always INT for InSAR)                                                                                                                                                                                                                                                               | INT     |
+| **zz**       | The pixel spacing of the output image                                                                                                                                                                                                                                                                 | 80      |
+| **cccc**     | 4-character unique product identifier                                                                                                                                                                                                                                                                 | A4CD    |
 
-**yyyymmdd_yyyymmdd**: Acquisition date of the reference and secondary images, respectively.
-
-**pp**: Two character combination indicating the product polarization. The first character represents the transmit polarization and the second character represents the receive polarization. Note that these products only support co-polarized inputs, so the product polarization will be one of these two options:
-
-  - HH: Horizontal Transmit - Horizontal Receive
-  - VV: Vertical Transmit - Vertical Receive
-
-**INT**: The product type (always INT for InSAR).
-
-**zz**: The pixel spacing of the output image.
-
-**cccc**: 4-character unique product identifier.
 
 ### Image Files
 

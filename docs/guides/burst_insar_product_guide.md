@@ -294,10 +294,10 @@ The tags and extensions used and example file names for each raster are listed i
 
 The product package also includes a number of metadata files.
 
-| Extension      | Description                                     | Example                                 |
-|----------------|-------------------------------------------------|-----------------------------------------|
-| .README.md.txt | Main README file for Burst InSAR products       | {{ base_name }}.README.md.txt           |
-| .txt           | Parameters and metadata for the InSAR pair      | {{ base_name }}.txt                     |
+| Extension      | Description                                | Example (single-burst)<br/>⸻<br/>Example (multi-burst)                   |
+|----------------|--------------------------------------------|--------------------------------------------------------------------------|
+| .README.md.txt | Main README file for Burst InSAR products  | {{ base_name }}.README.md.txt<br/>⸻<br/>{{ base_name_mb }}.README.md.txt |
+| .txt           | Parameters and metadata for the InSAR pair | {{ base_name }}.txt<br/>⸻<br/>{{ base_name_mb }}.txt                     |
 
 *Table 3: Metadata files in product package*
 

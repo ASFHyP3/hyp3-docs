@@ -64,6 +64,7 @@ Aσ
 Backscatter
 backscatter
 bandpass
+basename
 bbbbbb
 Bekaert
 Buzzanga
@@ -329,6 +330,7 @@ Rüetschi
 S1
 S1_136231_IW2_20200604T022312_VV_7C85-BURST
 S1_136231_IW2_20200616T022313_VV_5D11-BURST
+S1_rrr__yyyymmdd_yyyymmdd_pp_INTzz_cccc
 S1A
 S1A_IW_SLC__1SDV_20200116T032559_20200116T032627_030820_038928_F5DC
 S1B

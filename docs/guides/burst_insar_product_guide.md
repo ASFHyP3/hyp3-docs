@@ -196,12 +196,12 @@ The Burst InSAR product names are packed with information pertaining to the proc
 
 - The imaging platform name, always S1 for Sentinel-1.
 - Relative burst ID values assigned by ESA. Each value identifies a consistent burst footprint; relative burst ID values differ from one sub-swath to the next.
-- The imaging mode, currently only IW is supported. (TODO: Verify if it's only possible to extract bursts from IW and not EW SLCs)
+- The imaging mode, currently only IW is supported.
 - The swath number, either 1, 2, or 3, indicating which sub-swath the burst is located in.
-- The acquisition dates of the reference (older) scene and the secondary (newer) scene
+- The acquisition dates of the reference (older) scene and the secondary (newer) scene.
 - The polarizations for the pair, either HH or VV.
-- The product type (always INT for InSAR) and the pixel spacing, which will be either 80, 40, or 20, based upon the number of looks selected when the job was submitted for processing
-- The filename ends with the ASF product ID, a 4 digit hexadecimal number
+- The product type (always INT for InSAR) and the pixel spacing, which will be either 80, 40, or 20, based upon the number of looks selected when the job was submitted for processing.
+- The filename ends with the ASF product ID, a 4 digit hexadecimal number.
 
 ![Figure 3](../images/asf_burst_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
 

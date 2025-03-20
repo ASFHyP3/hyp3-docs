@@ -226,7 +226,7 @@ The following table describes the individual components:
 | **pp**       | Two character combination indicating the product polarization. The first character represents the transmit polarization and the second character represents the receive polarization. Note that these products only support co-polarized inputs, so the product polarization will either be VV or HH. | VV      |
 | **INT**      | The product type (always INT for InSAR)                                                                                                                                                                                                                                                               | INT     |
 | **zz**       | The pixel spacing of the output image                                                                                                                                                                                                                                                                 | 80      |
-| **cccc**     | 4-character unique product identifier                                                                                                                                                                                                                                                                 | A4CD    |
+| **cccc**     | 4-character unique product identifier                                                                                                                                                                                                                                                                 | FD6A    |
 
 
 ### Image Files

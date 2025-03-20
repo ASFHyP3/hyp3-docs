@@ -68,6 +68,7 @@ basename
 bbbbbb
 Bekaert
 Buzzanga
+cccc
 Changelog
 Clauss
 CLI
@@ -325,6 +326,7 @@ rgb.kmz
 rgb.png
 rgb.tif
 Ridgecrest
+rrr
 RTC
 Rüetschi
 S1
@@ -423,6 +425,7 @@ xx
 Yukon-Kuskokwim
 Yunjun
 yy
+yyyymmdd
 zz
 ⅓
 ½

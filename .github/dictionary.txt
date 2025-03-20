@@ -190,6 +190,8 @@ incidenceAngle
 include_dem
 include_rgb
 InSAR
+INSAR_ISCE_BURST
+INSAR_ISCE_MULTI_BURST
 Interferogram
 interferogram
 Interferograms

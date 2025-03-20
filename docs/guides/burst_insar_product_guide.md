@@ -259,8 +259,6 @@ The tags and extensions used and example file names for each raster are listed i
 
 {% set base_name = 'S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>' %}
 
-(TODO: Either add a second example base name for a multi-burst job, or replace this with a multi-burst job name)
-
 | Extension              | Description                         | Example                               |
 |------------------------|-------------------------------------|---------------------------------------|
 | _conncomp.tif          | Connected Components                | {{ base_name }}_conncomp.tif          |

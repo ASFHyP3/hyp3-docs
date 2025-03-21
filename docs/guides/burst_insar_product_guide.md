@@ -255,13 +255,13 @@ The following image files are geocoded to the appropriate UTM Zone map projectio
 
 If the **water mask** option is selected, the water mask is applied prior to phase unwrapping to exclude water pixels from the process. The water mask is generated using the [OpenStreetMap](https://www.openstreetmap.org/about){target=_blank} and [ESA WorldCover](https://esa-worldcover.org/en/about/about){target=_blank} datasets. Refer to the [Water Masking Processing Option](#apply-water-mask) section and our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information about water masking.
 
-For jobs processed using `INSAR_ISCE2_BURST`, there are also four non-geocoded images that remain in their native range-doppler coordinates. These four images comprise the image data required if users want to merge output Burst InSAR products together, and include:
+For jobs processed using `INSAR_ISCE_BURST`, there are also four non-geocoded images that remain in their native range-doppler coordinates. These four images comprise the image data required if users want to merge output Burst InSAR products together, and include:
 
 - a *wrapped Range-Doppler interferogram*, which is a Range-Doppler version of the wrapped interferogram
 - a two-band *Range-Doppler look vectors* image in the native ISCE2 format
 - *Range-Doppler latitude coordinates* and *Range-Doppler longitude coordinates* images that provide the information necessary to map Range-Doppler images into the geocoded domain
 
-These range-doppler files are not included in products generated using `INSAR_ISCE2_MULTI_BURST`, 
+These range-doppler files are not included in products generated using `INSAR_ISCE_MULTI_BURST`, 
 as the individual bursts are already merged together.
 
 An *unwrapped phase browse image* is included for the unwrapped (unw_phase) phase file, which is in PNG format and is 2048 pixels wide.

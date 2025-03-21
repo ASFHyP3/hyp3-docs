@@ -8,6 +8,9 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.10.2]
 
+### Added
+* Added examples for burst and multi-burst InSAR to [API Documentation](docs/using/api.md)
+
 ### Changed
 * Updated [Products](docs/products.md) page to include burst-based InSAR
 

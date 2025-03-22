@@ -384,7 +384,8 @@ generate the InSAR product as well as metadata attributes for the InSAR pair. Th
 *Table 5: List of InSAR parameters included in the parameter text file for all Burst InSAR products*
 
 For jobs processed using the `INSAR_ISCE_BURST` job type, the parameter file will also include some additional entries,
-as indicated in Table 6: 
+as indicated in Table 6. These additional entries are not included in the parameter file for `INSAR_ISCE_MULTI_BURST` 
+files. 
 
 | Name                            | Description                                                                                             | Possible Value                                                       |
 |---------------------------------|---------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|

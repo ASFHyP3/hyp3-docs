@@ -180,14 +180,16 @@ For Sentinel-1 InSAR processing, ISCE2 requires additional satellite orbit and c
 
 ### InSAR Processing
 
-The ISCE2 InSAR processing this product uses follows the workflow in [topsApp.py](https://github.com/isce-framework/isce2/blob/main/applications/topsApp.py#L982){target=_blank} from steps `startup` through `geocode`. These steps perform the following processing:
+InSAR processing is performed using the outputs from the processes detailed in the [Pre-Processing](#pre-processing "Jump to the Pre-Processing section of this document") section. In the workflow outlined in this section, the term 'SLC' refers to the output of the burst2safe process, whether it be a single SLC burst or a mosaic of multiple SLC bursts.
 
-1. Extract the orbits, Instrument Processing Facility (IPF) version, burst data, and antenna pattern if it is necessary.
+Burst InSAR follows the ISCE2 InSAR workflow in [topsApp.py](https://github.com/isce-framework/isce2/blob/main/applications/topsApp.py#L982){target=_blank} from steps `startup` through `geocode`. These steps perform the following processes:
+
+1. Extract the orbits, Instrument Processing Facility (IPF) version, SLC data, and antenna pattern if it is necessary.
 1. Calculate the perpendicular and parallel baselines.
-1. Map the DEM into the radar coordinates of the reference image. This generates the longitude, latitude, height and LOS angles on a pixel by pixel grid for each burst.
-1. Estimate the azimuth offsets between the input SLC bursts. The Enhanced Spectral Diversity (ESD) method is *not* used.
-1. Estimate the range offsets between the input SLC bursts.
-1. Co-register the secondary SLC burst by applying the estimated range and azimuth offsets.
+1. Map the DEM into the radar coordinates of the reference image. This generates the longitude, latitude, height and LOS angles on a pixel by pixel grid for each SLC.
+1. Estimate the azimuth offsets between the input SLC. The Enhanced Spectral Diversity (ESD) method is *not* used.
+1. Estimate the range offsets between the input SLCs.
+1. Co-register the secondary SLC by applying the estimated range and azimuth offsets.
 1. Produce the wrapped phase interferogram.
 1. Apply the [Goldstein-Werner](https://doi.org/10.1029/1998GL900033){target=_blank} power spectral filter with a dampening factor of 0.5.
 1. Optionally apply a water mask to the data.

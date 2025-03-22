@@ -97,8 +97,6 @@ There are several options users can set when ordering Burst InSAR On Demand prod
     - When the water mask option is selected, the conditional water mask will be applied before the phase unwrapping process.
     - For `INSAR_ISCE_BURST` jobs, a GeoTIFF of the water mask is always included with the InSAR product package, even if the water mask option was not selected for application.
     - For `INSAR_ISCE_MULTI_BURST` jobs, the GeoTIFF of the water mask is only included if the water mask option is selected. 
-    
-    
 
 {% endblock %}
 
@@ -118,10 +116,43 @@ and downloading the orbit and auxiliary data files.
 
 The Burst InSAR workflow accepts as input a reference and secondary set of
 [Interferometric Wide swath Single Look Complex](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath "https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath" ){target=_blank}
-(IW SLC) burst granules. Internally, each set of bursts must be collected within the same orbit, share a single polarization, and be contiguous within a single Sentinel-1 track. The reference and secondary sets must contain the same burst ID/polarization combinations. 
+(IW SLC) burst granules. Internally, each set of bursts must be collected within the same orbit, share a single polarization, and be contiguous within a single Sentinel-1 track. See [Considerations for Selecting Input Bursts for Multi-Burst Jobs](#considerations-for-selecting-input-bursts-for-multi-burst-jobs "Jump to the Considerations for Selecting Input Bursts for Multi-Burst Jobs section in this document") for more detail on constructing valid sets of bursts.
 
 The bursts are downloaded using ASF's
-[Sentinel-1 Burst Extractor](https://sentinel1-burst-documentation.asf.alaska.edu/ "https://sentinel1-burst-documentation.asf.alaska.edu/" ){target=_blank}, and are then repackaged into reference and secondary [ESA SAFE](https://sentiwiki.copernicus.eu/web/safe-format "SAFE Format" ){target=_blank} files using the [`burst2safe`](https://github.com/ASFHyP3/burst2safe "burst2safe Python package" ){target=_blank} package. Repackaging the burst SLC data into two ESA SAFE files allows the reference and secondary collections of bursts to be processed with ISCE2 as if they were a pair of full IW SLC files from ESA.
+[Sentinel-1 Burst Extractor](https://sentinel1-burst-documentation.asf.alaska.edu/ "https://sentinel1-burst-documentation.asf.alaska.edu/" ){target=_blank}, merged 
+(if the reference and secondary sets contain more than one burst each) and are 
+then repackaged into reference and secondary [ESA SAFE](https://sentiwiki.copernicus.eu/web/safe-format "SAFE Format" ){target=_blank} files using the 
+[`burst2safe`](https://github.com/ASFHyP3/burst2safe "burst2safe Python package" ){target=_blank} package. Repackaging the burst SLC data into two ESA SAFE files 
+allows the sets of reference and secondary bursts to be processed with ISCE2 as if 
+they were a pair of full IW SLC files from ESA.
+
+##### Considerations for Selecting Input Bursts for Multi-Burst Jobs
+
+A number of conditions need to be met when selecting the sets of bursts to use to 
+mosaic into the reference and secondary files: 
+
+- Sets of bursts can contain 1-15 bursts
+- There must be the same number of bursts in the secondary set as there are in the reference set
+- All bursts in both the reference and secondary sets must have the same polarization
+  - Only co-polarized inputs are supported
+  - All bursts must be either VV or HH (not VH or HV)
+- Pairwise bursts in the reference and secondary sets must have the same burst number, swath number, and polarization
+- All reference bursts must have been acquired within two minutes of each other
+- All secondary bursts must have been acquired within two minutes of each other
+- Reference bursts must have been acquired *before* the secondary bursts
+- Bursts crossing the antimeridian are not supported
+
+When selecting input bursts that span across sub-swaths in the same relative path, 
+you must also take care not to leave gaps. The bursts in neighboring swaths can 
+only be offset along the path by one burst. 
+
+For example, the grouping of bursts shown in the image on the left in Figure 4 can 
+be submitted for processing, while the grouping in the image on the right would not 
+be valid.
+
+![Figure 4](../images/burst-contiguity.png "Illustration of acceptable offsets for bursts across sub-swaths")
+
+*Figure 4: Illustration of acceptable maximum offsets for bursts across sub-swaths.*
 
 #### Download the DEM File
 

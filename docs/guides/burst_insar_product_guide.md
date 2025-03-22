@@ -217,8 +217,8 @@ Visit our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/48
 ### Post-Processing
 
 #### Product Creation
-Image files are exported into the widely-used GeoTIFF format in a Universal Transverse Mercator (UTM) Zone projection. Images
-are resampled to a pixel size that reflects the resolution of output image based on the requested number of looks: 80 meters
+Image files are exported into the widely-used GeoTIFF format in a Universal Transverse Mercator (UTM) Zone projection. Images 
+are resampled to a pixel size that reflects the resolution of output image based on the requested number of looks: 80 meters 
 for 20x4 looks, 40 meters for 10x2 looks, and 20 meters for 5x1 looks.
 
 Supporting metadata files are created, as well as a quick-look browse image.
@@ -232,7 +232,8 @@ The Burst InSAR output is a zip file containing various files including GeoTIFFs
 
 ### Naming Convention: INSAR_ISCE_BURST
 
-The Burst InSAR product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 3.
+The Burst InSAR product names are packed with information pertaining to the 
+processing of the data, presented in the following order, as illustrated in Figure 3.
 
 - The imaging platform name, always S1 for Sentinel-1.
 - Relative burst ID values assigned by ESA. Each value identifies a consistent burst footprint; relative burst ID values differ from one sub-swath to the next.
@@ -296,7 +297,10 @@ The following image files are geocoded to the appropriate UTM Zone map projectio
 
 If the **water mask** option is selected, the water mask is applied prior to phase unwrapping to exclude water pixels from the process. The water mask is generated using the [OpenStreetMap](https://www.openstreetmap.org/about){target=_blank} and [ESA WorldCover](https://esa-worldcover.org/en/about/about){target=_blank} datasets. Refer to the [Water Masking Processing Option](#apply-water-mask) section and our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information about water masking.
 
-For jobs processed using `INSAR_ISCE_BURST`, there are also four non-geocoded images that remain in their native range-doppler coordinates. These four images comprise the image data required if users want to merge output Burst InSAR products together, and include:
+For jobs processed using `INSAR_ISCE_BURST`, there are also four non-geocoded images 
+that remain in their native range-doppler coordinates. These four images comprise 
+the image data required if users want to merge output Burst InSAR products together, 
+and include:
 
 - a *wrapped Range-Doppler interferogram*, which is a Range-Doppler version of the wrapped interferogram
 - a two-band *Range-Doppler look vectors* image in the native ISCE2 format
@@ -348,42 +352,42 @@ The text file with extension .README.md.txt explains the files included in the f
 #### InSAR Parameter File
 The text file with extension .txt includes processing parameters used to generate the InSAR product as well as metadata attributes for the InSAR pair. These are detailed in Table 5.
 
-| Name                             | Description                                                                                             | Possible Value                                                       |
-|----------------------------------|---------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
-| Reference Granule                | Granule name for reference burst (of the two scenes in the pair, the dataset with the oldest timestamp) | S1<wbr>_136231<wbr>_IW2<wbr>_20200604T022312<wbr>_VV<wbr>_7C85-BURST |
-| Secondary Granule                | Granule name for secondary burst (of the two scenes in the pair, the dataset with the newest timestamp) | S1<wbr>_136231<wbr>_IW2<wbr>_20200616T022313<wbr>_VV<wbr>_5D11-BURST |
-| Reference Pass Direction         | Orbit direction of the reference scene                                                                  | DESCENDING                                                           |
-| Reference Orbit Number           | Absolute orbit number of the reference scene                                                            | 30741                                                                |
-| Secondary Pass Direction         | Orbit direction of the reference scene                                                                  | DESCENDING                                                           |
-| Secondary Orbit Number           | Absolute orbit number of the secondary scene                                                            | 31091                                                                |
-| Baseline                         | Perpendicular baseline in meters                                                                        | 58.3898                                                              |
-| UTCTime                          | Time in the UTC time zone in seconds                                                                    | 12360.691361                                                         |
-| Heading                          | Spacecraft heading measured in degrees clockwise from north                                             | 193.2939317                                                          |
-| Spacecraft height                | Height in meters of the spacecraft above nadir point                                                    | 700618.6318999995                                                    |
-| Earth radius at nadir            | Ellipsoidal earth radius in meters at the point directly below the satellite                            | 6370250.0667                                                         |
-| Slant range near                 | Distance in meters from satellite to nearest point imaged                                               | 799517.4338                                                          |
-| Slant range center               | Distance in meters from satellite to the center point imaged                                            | 879794.1404                                                          |
-| Slant range far                  | Distance in meters from satellite to farthest point imaged                                              | 960070.8469                                                          |
-| Range looks                      | Number of looks taken in the range direction                                                            | 20                                                                   |
-| Azimuth looks                    | Number of looks taken in the azimuth direction                                                          | 4                                                                    |
-| InSAR phase filter               | Was an InSAR phase filter used                                                                          | yes                                                                  |
-| Phase filter parameter           | Dampening factor                                                                                        | 0.5                                                                  |
-| Range bandpass filter            | Range bandpass filter applied                                                                           | no                                                                   |
-| Azimuth bandpass filter          | Azimuth bandpass filter applied                                                                         | no                                                                   |
-| DEM source                       | DEM used in processing                                                                                  | GLO-30                                                               |
-| DEM resolution                   | Pixel spacing in meters for DEM used to process this scene                                              | 30                                                                   |
-| Unwrapping type                  | Phase unwrapping algorithm used                                                                         | snaphu_mcf                                                           |
-| Speckle filter                   | Speckle filter applied                                                                                  | yes                                                                  |
-| Water mask                       | Was a water mask used                                                                                   | yes                                                                  |
-| Radar n lines                    | Number of lines (y coordinate) in range-doppler                                                         | 377                                                                  |
-| Radar n samples                  | Number of samples (x coordinate) in range-doppler                                                       | 1272                                                                 |
-| Radar first valid line           | First line in range-doppler SLC containing valid data                                                   | 8                                                                    |
-| Radar n valid lines              | Number of lines in range-doppler SLC containing valid data                                              | 363                                                                  |
-| Radar first valid sample         | First sample in range-doppler SLC containing valid data                                                | 9                                                                    |
-| Radar n valid samples            | Number of samples in range-doppler SLC containing valid data                                            | 1220                                                                 |
-| Multilook Azimuth Time Interval  | Time-based spacing of range-doppler SLC lines after multilooking in seconds                             | 0.0082222252                                                         |
-| Multilook Range Pixel Size       | Distance-based spacing of range-doppler SLC samples after multilooking in meters                        | 46.59124229430646                                                    |
-| Radar sensing stop               | Last date and time for data collection                                                                  | 2020-06-04T02:23:16.030988                                           |
+| Name                            | Description                                                                                             | Possible Value                                                       |
+|---------------------------------|---------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| Reference Granule               | Granule name for reference burst (of the two scenes in the pair, the dataset with the oldest timestamp) | S1<wbr>_136231<wbr>_IW2<wbr>_20200604T022312<wbr>_VV<wbr>_7C85-BURST |
+| Secondary Granule               | Granule name for secondary burst (of the two scenes in the pair, the dataset with the newest timestamp) | S1<wbr>_136231<wbr>_IW2<wbr>_20200616T022313<wbr>_VV<wbr>_5D11-BURST |
+| Reference Pass Direction        | Orbit direction of the reference scene                                                                  | DESCENDING                                                           |
+| Reference Orbit Number          | Absolute orbit number of the reference scene                                                            | 30741                                                                |
+| Secondary Pass Direction        | Orbit direction of the reference scene                                                                  | DESCENDING                                                           |
+| Secondary Orbit Number          | Absolute orbit number of the secondary scene                                                            | 31091                                                                |
+| Baseline                        | Perpendicular baseline in meters                                                                        | 58.3898                                                              |
+| UTCTime                         | Time in the UTC time zone in seconds                                                                    | 12360.691361                                                         |
+| Heading                         | Spacecraft heading measured in degrees clockwise from north                                             | 193.2939317                                                          |
+| Spacecraft height               | Height in meters of the spacecraft above nadir point                                                    | 700618.6318999995                                                    |
+| Earth radius at nadir           | Ellipsoidal earth radius in meters at the point directly below the satellite                            | 6370250.0667                                                         |
+| Slant range near                | Distance in meters from satellite to nearest point imaged                                               | 799517.4338                                                          |
+| Slant range center              | Distance in meters from satellite to the center point imaged                                            | 879794.1404                                                          |
+| Slant range far                 | Distance in meters from satellite to farthest point imaged                                              | 960070.8469                                                          |
+| Range looks                     | Number of looks taken in the range direction                                                            | 20                                                                   |
+| Azimuth looks                   | Number of looks taken in the azimuth direction                                                          | 4                                                                    |
+| InSAR phase filter              | Was an InSAR phase filter used                                                                          | yes                                                                  |
+| Phase filter parameter          | Dampening factor                                                                                        | 0.5                                                                  |
+| Range bandpass filter           | Range bandpass filter applied                                                                           | no                                                                   |
+| Azimuth bandpass filter         | Azimuth bandpass filter applied                                                                         | no                                                                   |
+| DEM source                      | DEM used in processing                                                                                  | GLO-30                                                               |
+| DEM resolution                  | Pixel spacing in meters for DEM used to process this scene                                              | 30                                                                   |
+| Unwrapping type                 | Phase unwrapping algorithm used                                                                         | snaphu_mcf                                                           |
+| Speckle filter                  | Speckle filter applied                                                                                  | yes                                                                  |
+| Water mask                      | Was a water mask used                                                                                   | yes                                                                  |
+| Radar n lines                   | Number of lines (y coordinate) in range-doppler                                                         | 377                                                                  |
+| Radar n samples                 | Number of samples (x coordinate) in range-doppler                                                       | 1272                                                                 |
+| Radar first valid line          | First line in range-doppler SLC containing valid data                                                   | 8                                                                    |
+| Radar n valid lines             | Number of lines in range-doppler SLC containing valid data                                              | 363                                                                  |
+| Radar first valid sample        | First sample in range-doppler SLC containing valid data                                                 | 9                                                                    |
+| Radar n valid samples           | Number of samples in range-doppler SLC containing valid data                                            | 1220                                                                 |
+| Multilook Azimuth Time Interval | Time-based spacing of range-doppler SLC lines after multilooking in seconds                             | 0.0082222252                                                         |
+| Multilook Range Pixel Size      | Distance-based spacing of range-doppler SLC samples after multilooking in meters                        | 46.59124229430646                                                    |
+| Radar sensing stop              | Last date and time for data collection                                                                  | 2020-06-04T02:23:16.030988                                           |
 
 
 *Table 5: List of InSAR parameters included in the parameter text file*

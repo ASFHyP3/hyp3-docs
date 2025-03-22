@@ -257,7 +257,7 @@ For example:
 
 S1A_064_E053_1_N27_3_E054_1_N27_8_20200604_20200616_VV_INT80_7EB5
 
-The following table describes the individual components:
+Table 2 describes the individual components:
 
 | Component    | Description                                                                                                                                                                                                                                                                                           | Example  |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
@@ -274,6 +274,7 @@ The following table describes the individual components:
 | **zz**       | The pixel spacing of the output image                                                                                                                                                                                                                                                                 | 80       |
 | **cccc**     | 4-character unique product identifier                                                                                                                                                                                                                                                                 | FD6A     |
 
+*Table 2: Naming scheme for multi-burst InSAR products*
 
 ### Image Files
 
@@ -304,7 +305,7 @@ as the individual bursts are already merged together.
 
 An *unwrapped phase browse image* is included for the unwrapped (unw_phase) phase file, which is in PNG format and is 2048 pixels wide.
 
-The tags and extensions used and example file names for each raster are listed in Table 2 below.
+The tags and extensions used and example file names for each raster are listed in Table 3 below.
 
 {% set base_name = 'S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>' %}
 
@@ -326,7 +327,7 @@ The tags and extensions used and example file names for each raster are listed i
 | _wrapped_phase_rdr.tif | Wrapped Range-Doppler interferogram | {{ base_name }}_wrapped_phase_rdr.tif                                            |
 | _unw_phase.png         | Unwrapped phase browse image        | {{ base_name }}_unw_phase.png<br/>⸻<br/>{{ base_name_mb }}_unw_phase.png         |
 
-*Table 2: Image files in product package*
+*Table 3: Image files in product package*
 
 ### Metadata Files
 
@@ -337,13 +338,13 @@ The product package also includes a number of metadata files.
 | .README.md.txt | Main README file for Burst InSAR products  | {{ base_name }}.README.md.txt<br/>⸻<br/>{{ base_name_mb }}.README.md.txt |
 | .txt           | Parameters and metadata for the InSAR pair | {{ base_name }}.txt<br/>⸻<br/>{{ base_name_mb }}.txt                     |
 
-*Table 3: Metadata files in product package*
+*Table 4: Metadata files in product package*
 
 #### README File
 The text file with extension .README.md.txt explains the files included in the folder, and is customized to reflect that particular product. Users unfamiliar with InSAR products should start by reading this README file, which will give some background on each of the files included in the product folder.
 
 #### InSAR Parameter File
-The text file with extension .txt includes processing parameters used to generate the InSAR product as well as metadata attributes for the InSAR pair. These are detailed in Table 4.
+The text file with extension .txt includes processing parameters used to generate the InSAR product as well as metadata attributes for the InSAR pair. These are detailed in Table 5.
 
 | Name                             | Description                                                                                             | Possible Value                                                       |
 |----------------------------------|---------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
@@ -383,7 +384,7 @@ The text file with extension .txt includes processing parameters used to generat
 | Radar sensing stop               | Last date and time for data collection                                                                  | 2020-06-04T02:23:16.030988                                           |
 
 
-*Table 4: List of InSAR parameters included in the parameter text file*
+*Table 5: List of InSAR parameters included in the parameter text file*
 
 {% endblock %}
 

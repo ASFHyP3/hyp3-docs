@@ -350,7 +350,8 @@ The product package also includes a number of metadata files.
 The text file with extension .README.md.txt explains the files included in the folder, and is customized to reflect that particular product. Users unfamiliar with InSAR products should start by reading this README file, which will give some background on each of the files included in the product folder.
 
 #### InSAR Parameter File
-The text file with extension .txt includes processing parameters used to generate the InSAR product as well as metadata attributes for the InSAR pair. These are detailed in Table 5.
+The text file with the base filename followed directly by a .txt extension includes processing parameters used to 
+generate the InSAR product as well as metadata attributes for the InSAR pair. These are detailed in Table 5.
 
 | Name                            | Description                                                                                             | Possible Value                                                       |
 |---------------------------------|---------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
@@ -379,6 +380,14 @@ The text file with extension .txt includes processing parameters used to generat
 | Unwrapping type                 | Phase unwrapping algorithm used                                                                         | snaphu_mcf                                                           |
 | Speckle filter                  | Speckle filter applied                                                                                  | yes                                                                  |
 | Water mask                      | Was a water mask used                                                                                   | yes                                                                  |
+
+*Table 5: List of InSAR parameters included in the parameter text file for all Burst InSAR products*
+
+For jobs processed using the `INSAR_ISCE_BURST` job type, the parameter file will also include some additional entries,
+as indicated in Table 6: 
+
+| Name                            | Description                                                                                             | Possible Value                                                       |
+|---------------------------------|---------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
 | Radar n lines                   | Number of lines (y coordinate) in range-doppler                                                         | 377                                                                  |
 | Radar n samples                 | Number of samples (x coordinate) in range-doppler                                                       | 1272                                                                 |
 | Radar first valid line          | First line in range-doppler SLC containing valid data                                                   | 8                                                                    |
@@ -389,8 +398,7 @@ The text file with extension .txt includes processing parameters used to generat
 | Multilook Range Pixel Size      | Distance-based spacing of range-doppler SLC samples after multilooking in meters                        | 46.59124229430646                                                    |
 | Radar sensing stop              | Last date and time for data collection                                                                  | 2020-06-04T02:23:16.030988                                           |
 
-
-*Table 5: List of InSAR parameters included in the parameter text file*
+*Table 6: List of additional InSAR parameters included in the parameter text file `INSAR_ISCE_BURST` job types.*
 
 {% endblock %}
 

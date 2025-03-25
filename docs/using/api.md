@@ -131,6 +131,41 @@ You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://s
 }
 ```
 
+## Submitting Sentinel-1 Burst InSAR jobs
+You can submit InSAR jobs using the `INSAR_ISCE_BURST` job type, which takes a single pair of [ESA granule burst IDs](https://sentiwiki.copernicus.eu/web/s1-products#S1Products-BurstIDMapsS1-Products-Burst-ID-Maps){target=_blank}, or use the `INSAR_ISCE_MULTI_BURST` job type, which accepts lists of up to 15 contiguous along-track burst IDs that will be merged together to produce reference and secondary files.
+```json
+{
+  "jobs": [
+    {
+      "job_type": "INSAR_ISCE_BURST",
+      "name": "single-burst-example",
+      "job_parameters": {
+        "granules": [
+          "S1_136231_IW2_20200604T022312_VV_7C85-BURST",
+          "S1_136231_IW2_20200616T022313_VV_5D11-BURST"
+        ]
+      }
+    },
+    {
+      "job_type": "INSAR_ISCE_MULTI_BURST",
+      "name": "multi-burst-example",
+      "job_parameters": {
+        "reference": [
+          "S1_136231_IW2_20200604T022312_VV_7C85-BURST",
+          "S1_136232_IW2_20200604T022315_VV_7C85-BURST"
+        ],
+        "secondary": [
+          "S1_136231_IW2_20200616T022313_VV_5D11-BURST",
+          "S1_136232_IW2_20200616T022316_VV_5D11-BURST"
+        ],
+        "apply_water_mask": true,
+        "looks": "5x1"
+      }
+    }
+  ]
+}
+```
+
 ## Submitting ARIA-S1-GUNW jobs
 The ARIA-S1-GUNW job type takes a reference [ESA granule ID](https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention){target=_blank} set, a secondary ESA granule ID set, and an ARIA-S1-GUNW Frame ID as input. See the [ARIA-S1-GUNW Product Guide Frame ID section](/guides/gunw_product_guide/#aria-frame-ids){target=_blank} for more details on these inputs.
 ```json

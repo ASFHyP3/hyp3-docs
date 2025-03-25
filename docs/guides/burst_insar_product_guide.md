@@ -7,21 +7,33 @@ This document is a guide for users of Sentinel-1 Burst Interferometric Synthetic
 
 InSAR jobs can be processed on the basis of individual [radar bursts](#sentinel-1-bursts "Jump to the Sentinel-1 Bursts section of this document") that comprise the Sentinel-1 SLC products, and users can select up to fifteen contiguous along-path bursts to merge together into a single interferogram.
 
+## Burst InSAR Software
+
+The Sentinel-1 Burst InSAR products are generated using the Jet Propulsion Laboratory's [ISCE2 software](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2" ){target=_blank}. ASF is committed to transparency in product development, and we are pleased to be able to offer an InSAR product that leverages open-source software for processing.
+
+For those who would prefer to work at the scale of a full IW SLC, our original [On Demand InSAR](insar_product_guide.md){target=_blank} products are still available. These products have a larger footprint, and are generated using [GAMMA software](https://www.gamma-rs.ch/software){target=_blank}.
+
 ## Burst InSAR Job Types
 
-There are currently two different [burst-based](#sentinel-1-bursts "Jump to the Sentinel-1 Bursts section of this document") InSAR jobs available. 
+There are currently two different [burst-based](#sentinel-1-bursts "Jump to the Sentinel-1 Bursts section of this document") 
+InSAR jobs available. The ISCE2 InSAR workflow processes input SLC data on a burst-by-burst basis to generate wrapped 
+interferograms, regardless of how many bursts are included in the reference and secondary input files. If there are 
+multiple bursts included in the input files, the wrapped interferograms are then merged together for the final 
+processing steps, so the output is a single interferogram regardless of the number of bursts included in the input files.
 
 ### Single-Burst InSAR
-The original burst-based InSAR job type, `INSAR_ISCE_BURST`, only accepts a single pair of SLC bursts. This job type is supported in [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} as well as the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}.
+ASF's original burst-based InSAR job type, `INSAR_ISCE_BURST`, only accepts a single pair of SLC bursts. This job type is supported in [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} as well as the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}.
 
 !!! tip "Deprecation of the INSAR_ISCE_BURST job type"
 
     The original `INSAR_ISCE_BURST` job type will be deprecated once support for `INSAR_ISCE_MULTI_BURST` jobs is available in [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank}. For now, only single-burst interferograms are available through the [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} interface, but support for multi-burst interferograms is coming soon!
 
 ### Multi-Burst InSAR
-The `INSAR_ISCE_MULTI_BURST` job type accepts lists of SLC bursts, and mosaics them together before generating the interferogram. This job type is not yet supported in Vertex, but can be submitted using the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}. 
+The `INSAR_ISCE_MULTI_BURST` job type accepts sets of SLC bursts. The output is a single merged interferogram over the 
+full extent of the input bursts. This job type is not yet supported in Vertex, but can be submitted using the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}. 
 
-This job type supports pairings of 1 to 15 contiguous along-track bursts. The number of bursts processed impacts the number of credits consumed. Refer to the [Credit Cost Table](../using/credits.md#credit-cost-table "Credit Cost Table" ){target=_blank} for more details.
+This job type supports pairings of 1 to 15 contiguous along-track bursts (refer to the 
+[Considerations for Selecting Input Bursts](#considerations-for-selecting-input-bursts "Jump to the Considerations for Selecting Input Bursts section of this document") for details). The number of bursts processed impacts the number of credits consumed. Refer to the [Credit Cost Table](../using/credits.md#credit-cost-table "Credit Cost Table" ){target=_blank} for more details.
 
 ## Sentinel-1 Bursts
 
@@ -43,12 +55,6 @@ IW SLC products are extremely large. In many cases, only a small portion of the 
 
 **3. Bursts provide AOI customization.**
 When using the `INSAR_ISCE_MULTI_BURST` job type, you can select multiple reference and secondary bursts from along an orbit path. This allows you to compose a custom area of interest (AOI) and create an InSAR product that spans IW SLC boundaries. We currently support InSAR jobs that include up to 15 contiguous burst footprints.
-
-### Burst InSAR Processing
-
-The Sentinel-1 Burst InSAR products are generated using the Jet Propulsion Laboratory's [ISCE2 software](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2" ){target=_blank}. ASF is committed to transparency in product development, and we are pleased to be able to offer an InSAR product that leverages open-source software for processing.
-
-For those who would prefer to work at the scale of a full IW SLC, our original [On Demand InSAR](insar_product_guide.md){target=_blank} products are still available. These products have a larger footprint, and are generated using [GAMMA software](https://www.gamma-rs.ch/software){target=_blank}.
 
 ### Using Sentinel-1 Burst InSAR
 

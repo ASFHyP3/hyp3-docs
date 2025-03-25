@@ -42,7 +42,7 @@ The coverage of a burst is the same for every orbit of the satellite, so you can
 IW SLC products are extremely large. In many cases, only a small portion of the IW footprint is of interest. Burst-based processing allows you to process only the bursts that cover your specific area of interest, which significantly decreases the time and cost required to generate and analyze InSAR products.
 
 **3. Bursts provide AOI customization.**
-When using the `INSAR_ISCE_MULTI_BURST` job type, you can select multiple reference and secondary bursts from the same track. This allows you to compose a custom area of interest (AOI) and create an InSAR product that spans IW SLC boundaries. We currently support InSAR jobs that include up to 15 contiguous burst footprints.
+When using the `INSAR_ISCE_MULTI_BURST` job type, you can select multiple reference and secondary bursts from along an orbit path. This allows you to compose a custom area of interest (AOI) and create an InSAR product that spans IW SLC boundaries. We currently support InSAR jobs that include up to 15 contiguous burst footprints.
 
 ### Burst InSAR Processing
 
@@ -116,20 +116,18 @@ and downloading the orbit and auxiliary data files.
 
 The Burst InSAR workflow accepts as input a reference and secondary set of
 [Interferometric Wide swath Single Look Complex](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath "https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath" ){target=_blank}
-(IW SLC) burst granules. Internally, each set of bursts must be collected within the same orbit, share a single polarization, and be contiguous within a single Sentinel-1 track. See [Considerations for Selecting Input Bursts for Multi-Burst Jobs](#considerations-for-selecting-input-bursts-for-multi-burst-jobs "Jump to the Considerations for Selecting Input Bursts for Multi-Burst Jobs section in this document") for more detail on constructing valid sets of bursts.
+(IW SLC) burst granules. Internally, each set of bursts must be collected within the same orbit, share a single polarization, and be contiguous within a single Sentinel-1 track. See [Considerations for Selecting Input Bursts](#considerations-for-selecting-input-bursts "Jump to the Considerations for Selecting Input Bursts section in this document") for more guidance on constructing valid sets of bursts.
 
 The bursts are downloaded using ASF's
-[Sentinel-1 Burst Extractor](https://sentinel1-burst-documentation.asf.alaska.edu/ "https://sentinel1-burst-documentation.asf.alaska.edu/" ){target=_blank}, merged 
-(if the reference and secondary sets contain more than one burst each) and are 
-then repackaged into reference and secondary [ESA SAFE](https://sentiwiki.copernicus.eu/web/safe-format "SAFE Format" ){target=_blank} files using the 
+[Sentinel-1 Burst Extractor](https://sentinel1-burst-documentation.asf.alaska.edu/ "https://sentinel1-burst-documentation.asf.alaska.edu/" ){target=_blank}, and then repackaged into reference and secondary [ESA SAFE](https://sentiwiki.copernicus.eu/web/safe-format "SAFE Format" ){target=_blank} files using the 
 [`burst2safe`](https://github.com/ASFHyP3/burst2safe "burst2safe Python package" ){target=_blank} package. Repackaging the burst SLC data into two ESA SAFE files 
 allows the sets of reference and secondary bursts to be processed with ISCE2 as if 
 they were a pair of full IW SLC files from ESA.
 
-##### Considerations for Selecting Input Bursts for Multi-Burst Jobs
+##### Considerations for Selecting Input Bursts
 
-A number of conditions need to be met when selecting the sets of bursts to use to 
-mosaic into the reference and secondary files: 
+A number of conditions need to be met when selecting the sets of bursts to package into the 
+reference and secondary files: 
 
 - Sets of bursts can contain 1-15 bursts
 - There must be the same number of bursts in the secondary set as there are in the reference set
@@ -170,7 +168,8 @@ dataset
 [publicly available on AWS](https://registry.opendata.aws/copernicus-dem/ "https://registry.opendata.aws/copernicus-dem" ){target=_blank},
 which provides global coverage at 30-m pixel spacing (except for an area over Armenia and Azerbaijan, which only has 90-m coverage).
 
-The portion of the DEM that covers the input bursts is downloaded.
+The portion of the DEM that covers the extent of the input bursts is downloaded and resampled if necessary 
+(for products output at 20-m pixel spacing). An ellipsoid correction is applied. 
 
 #### Download Orbit Files and Calibration Auxiliary Data Files
 
@@ -178,41 +177,73 @@ For Sentinel-1 InSAR processing, ISCE2 requires additional satellite orbit and c
 [Copernicus Data Space Ecosystem](https://documentation.dataspace.copernicus.eu/Data/Sentinel1.html#sentinel-1-precise-orbit-determination-pod-products "Copernicus Data Space Ecosystem" ){target=_blank}. The calibration auxiliary data files are downloaded from the
 [Sentinel-1 Mission Performance Center](https://sar-mpc.eu/ "Sentinel-1 Mission Performance Center" ){target=_blank}.
 
-### InSAR Processing
+### Burst InSAR Processing
 
-InSAR processing is performed using the outputs from the processes detailed in the [Pre-Processing](#pre-processing "Jump to the Pre-Processing section of this document") section. In the workflow outlined in this section, the term 'SLC' refers to the output of the burst2safe process, whether it be a single SLC burst or a mosaic of multiple SLC bursts.
+Burst InSAR processing is performed using the outputs from the processes detailed in the [Pre-Processing](#pre-processing "Jump to the Pre-Processing section of this document") section. 
 
-Burst InSAR follows the ISCE2 InSAR workflow in [topsApp.py](https://github.com/isce-framework/isce2/blob/main/applications/topsApp.py#L982){target=_blank} from steps `startup` through `geocode`. These steps perform the following processes:
+The Burst InSAR processing code is contained in the 
+[`insar_tops_burst.py`](https://github.com/ASFHyP3/hyp3-isce2/blob/main/src/hyp3_isce2/insar_tops_burst.py ){target=_blank} 
+script. This script follows the ISCE2 InSAR workflow in 
+[topsApp.py](https://github.com/isce-framework/isce2/blob/main/applications/topsApp.py#L982){target=_blank} for the 
+steps `startup` through `geocode`. 
 
-1. Extract the orbits, Instrument Processing Facility (IPF) version, SLC data, and antenna pattern if it is necessary.
+If the reference and secondary SAFE files include multiple bursts, processing is 
+performed on a burst-by-burst basis for the first seven steps. The resulting burst-based wrapped interferograms are 
+then merged together before the remaining functions are applied. 
+
+The`topsApp` steps perform the following processes:
+
+1. Extract the orbits, Instrument Processing Facility (IPF) version, burst data, and antenna pattern if it is necessary.
 1. Calculate the perpendicular and parallel baselines.
-1. Map the DEM into the radar coordinates of the reference image. This generates the longitude, latitude, height and LOS angles on a pixel by pixel grid for each SLC.
-1. Estimate the azimuth offsets between the input SLC. The Enhanced Spectral Diversity (ESD) method is *not* used.
-1. Estimate the range offsets between the input SLCs.
-1. Co-register the secondary SLC by applying the estimated range and azimuth offsets.
-1. Produce the wrapped phase interferogram.
+1. Map the DEM into the radar coordinates of the reference image. This generates the longitude, latitude, height and LOS angles on a pixel by pixel grid for each burst.
+1. Estimate the azimuth offsets between the input SLC bursts. The Enhanced Spectral Diversity (ESD) method is *not* used.
+1. Estimate the range offsets between the input SLC bursts.
+1. Co-register the secondary SLC burst by applying the estimated range and azimuth offsets.
+1. Produce the wrapped phase interferogram. 
+1. If the reference and secondary files contain more than one burst, the burst-based interferograms are then merged together into one output.
 1. Apply the [Goldstein-Werner](https://doi.org/10.1029/1998GL900033){target=_blank} power spectral filter with a dampening factor of 0.5.
 1. Optionally apply a water mask to the data.
 1. Unwrap the wrapped phase interferogram using [SNAPHU](http://web.stanford.edu/group/radar/softwareandlinks/sw/snaphu/){target=_blank}'s minimum cost flow (MCF) unwrapping algorithm to produce the unwrapped phase interferogram.
 1. Geocode the output products.
 
-#### Apply Water Mask
-There is an option to apply a **water mask**. This mask includes coastal waters and most inland waterbodies. Masking waterbodies can have a significant impact during phase unwrapping, as water can sometimes exhibit enough coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid.
+#### Applying a Water Mask
+There is the option to apply a **water mask** to the interferogram. This mask includes coastal waters and most 
+inland waterbodies. Masking waterbodies can have a significant impact during phase unwrapping, as water can sometimes 
+exhibit enough coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid.
 
-Water masking is turned off by default. When this option is selected, the conditional water mask will be applied along with coherence and intensity thresholds during the phase unwrapping process. 
+Water masking is turned off by default. When this option is selected, the conditional water mask will be applied 
+along with coherence and intensity thresholds during the phase unwrapping process. 
 
-For `INSAR_ISCE_BURST` jobs, a GeoTIFF of the water mask is always included with the InSAR product package, even when the water masking option is not applied to the interferogram. For `INSAR_ISCE_MULTI_BURST` jobs, the GeoTIFF of the water mask is only included in the product package when the water masking option is applied.
+For `INSAR_ISCE_BURST` jobs, a GeoTIFF of the water mask is always included with the InSAR product package, even 
+when the water masking option is not applied to the interferogram. For `INSAR_ISCE_MULTI_BURST` jobs, the GeoTIFF of 
+the water mask is only included in the product package when the water masking option is applied.
 
-The water mask is generated by ASF using data from [OpenStreetMap](https://www.openstreetmap.org/about){target=_blank} and/or [ESA WorldCover](https://esa-worldcover.org/en/about/about){target=_blank} depending on location. Areas within Canada, Alaska, and Russia are primarily covered by ESA WorldCover data, while the rest of the world is covered by OpenStreetMap data. Refer to the [Water Masking](../water_masking.md "Water Masking Documentation" ){target=_blank} documentation page for more details.
+The water mask is generated by ASF using data from 
+[OpenStreetMap](https://www.openstreetmap.org/about){target=_blank} and/or 
+[ESA WorldCover](https://esa-worldcover.org/en/about/about){target=_blank} depending on location. Areas within 
+Canada, Alaska, and Russia are primarily covered by ESA WorldCover data, while the rest of the world is covered by 
+OpenStreetMap data. Refer to the [Water Masking](../water_masking.md "Water Masking Documentation" ){target=_blank} 
+documentation page for more details.
 
-This water mask is available for all longitudes, but data is only available from -85 to 85 degrees latitude. All areas between 85 and 90 degrees north latitude are treated as water, and all areas between 85 and 90 degrees south latitude are treated as land for the purposes of the water mask.
+This water mask is available for all longitudes, but data is only available from -85 to 85 degrees latitude. 
+All areas between 85 and 90 degrees north latitude are treated as water, and all areas between 85 and 90 degrees 
+south latitude are treated as land for the purposes of the water mask.
 
 Water masks were previously generated from the [Global Self-consistent,
-Hierarchical, High-resolution Geography Database (GSHHG)](http://www.soest.hawaii.edu/wessel/gshhg "http://www.soest.hawaii.edu/wessel/gshhg" ){target=_blank} dataset, but we transitioned to using the OpenStreetMap/ESA WorldCover datasets in February 2024 to improve performance. In addition to being a more recent and accurate dataset, this also allows us to mask most inland waterbodies. When using the GSHHG dataset, we only masked large inland waterbodies; with the new mask, all but the smallest inland waterbodies are masked.
+Hierarchical, High-resolution Geography Database (GSHHG)](http://www.soest.hawaii.edu/wessel/gshhg "http://www.soest.hawaii.edu/wessel/gshhg" ){target=_blank} 
+dataset, but we transitioned to using the OpenStreetMap/ESA WorldCover datasets in February 2024 to improve 
+performance. In addition to being a more recent and accurate dataset, this also allows us to mask most 
+inland waterbodies. When using the GSHHG dataset, we only masked large inland waterbodies; with the new mask, all 
+but the smallest inland waterbodies are masked.
 
-We originally applied a 3 km buffer on coastlines and a 5 km buffer on the shorelines of inland waterbodies in the water mask dataset before using it to mask the interferograms, in an effort to reduce the chance that valid land pixels would be excluded from phase unwrapping. It appears, however, that the inclusion of more water pixels is more detrimental to phase unwrapping than the exclusion of some land pixels, so as of September 27, 2022, the water mask used for this option is no longer buffered.
+We originally applied a 3 km buffer on coastlines and a 5 km buffer on the shorelines of inland waterbodies in the 
+water mask dataset before using it to mask the interferograms, in an effort to reduce the chance that valid land 
+pixels would be excluded from phase unwrapping. It appears, however, that the inclusion of more water pixels is more 
+detrimental to phase unwrapping than the exclusion of some land pixels, so as of September 27, 2022, 
+the water mask used for this option is no longer buffered.
 
-Visit our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information about how different water masking approaches can impact the quality of an interferogram.
+Visit our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} 
+for more information about how different water masking approaches can impact the quality of an interferogram.
 
 ### Post-Processing
 
@@ -295,12 +326,17 @@ The following image files are geocoded to the appropriate UTM Zone map projectio
 - The *DEM* file gives the local terrain heights in meters, with a geoid correction applied.
 - The *water mask* file indicates coastal waters and large inland waterbodies. Pixel values of 1 indicate land and 0 indicate water. This file is in 8-bit unsigned integer format.
 
-If the **water mask** option is selected, the water mask is applied prior to phase unwrapping to exclude water pixels from the process. The water mask is generated using the [OpenStreetMap](https://www.openstreetmap.org/about){target=_blank} and [ESA WorldCover](https://esa-worldcover.org/en/about/about){target=_blank} datasets. Refer to the [Water Masking Processing Option](#apply-water-mask) section and our [InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} for more information about water masking.
+If the **water mask** option is selected, the water mask is applied prior to phase unwrapping to exclude 
+water pixels from the process. The water mask is generated using the 
+[OpenStreetMap](https://www.openstreetmap.org/about){target=_blank} and 
+[ESA WorldCover](https://esa-worldcover.org/en/about/about){target=_blank} datasets. 
+Refer to the [Water Masking Processing Option](#applying-a-water-mask) section and our 
+[InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} 
+for more information about water masking.
 
-For jobs processed using `INSAR_ISCE_BURST`, there are also four non-geocoded images 
-that remain in their native range-doppler coordinates. These four images comprise 
-the image data required if users want to merge output Burst InSAR products together, 
-and include:
+For jobs processed using `INSAR_ISCE_BURST`, there are also four non-geocoded images that remain in their native 
+range-doppler coordinates. These four images comprise the image data required if users want to merge output 
+Burst InSAR products together, and include:
 
 - a *wrapped Range-Doppler interferogram*, which is a Range-Doppler version of the wrapped interferogram
 - a two-band *Range-Doppler look vectors* image in the native ISCE2 format
@@ -309,7 +345,8 @@ and include:
 These range-doppler files are not included in products generated using `INSAR_ISCE_MULTI_BURST`, 
 as the individual bursts are already merged together.
 
-An *unwrapped phase browse image* is included for the unwrapped (unw_phase) phase file, which is in PNG format and is 2048 pixels wide.
+An *unwrapped phase browse image* is included for the unwrapped (unw_phase) phase file, which is in PNG format 
+and is 2048 pixels wide.
 
 The tags and extensions used and example file names for each raster are listed in Table 3 below.
 
@@ -400,6 +437,94 @@ files.
 | Radar sensing stop              | Last date and time for data collection                                                                  | 2020-06-04T02:23:16.030988                                           |
 
 *Table 6: List of additional InSAR parameters included in the parameter text file `INSAR_ISCE_BURST` job types.*
+
+### Merging Sentinel-1 Single-Burst InSAR Products
+
+Burst InSAR products generated using the `INSAR_ISCE_BURST` job type can be merged together manually using the 
+[`merge_tops_burst`](https://github.com/ASFHyP3/hyp3-isce2/blob/main/src/hyp3_isce2/merge_tops_bursts.py ){target=_blank} 
+workflow. 
+
+!!! warning "This workflow is only for products generated using the `INSAR_ISCE_BURST` job type"
+
+    This functionality is not available for products generated using the 
+    `INSAR_ISCE_MULTI_BURST` job type, even if the products include only one burst. 
+
+Merging is done using underlying ISCE2 functionality, and steps 9-11 of the InSAR processing workflow 
+(filtering, unwrapping, and geocoding) found in the 
+[Burst InSAR Processing](#burst-insar-processing "Jump to the Burst InSAR Processing section of this document") 
+section are repeated to ensure consistent results. 
+You will need to install the 
+[HyP3-ISCE2 plugin]( https://github.com/ASFHyP3/hyp3-isce2 "HyP3-ISCE2 Plugin" ){target=_blank} on your local machine, 
+at which point merging can be performed using the following syntax:
+
+```bash
+python -m hyp3_isce2 ++process merge_tops_bursts PATH_TO_UNZIPPED_PRODUCTS
+```
+
+Where `PATH_TO_UNZIPPED_PRODUCTS` is the path to a directory containing **unzipped** Burst InSAR products generated 
+using the `INSAR_ISCE_BURST` job type. For example:
+
+```
+PATH_TO_UNZIPPED_PRODUCTS
+├─ S1_136232_IW2_20200604_20200616_VV_INT80_663F
+├─ S1_136231_IW2_20200604_20200616_VV_INT80_529D
+```
+
+In order to be merging eligible, all burst products must:
+
+- Have the same reference and secondary dates
+- Have the same polarization
+- Have the same multilooking
+- Be from the same relative orbit
+- Be contiguous
+- Have been generated using the single-burst approach (`INSAR_ISCE_BURST` job type)
+
+The workflow should throw an error if any of these conditions are not met.
+
+#### Merge Processing
+During normal ISCE2 InSAR processing, initial interferograms are formed on a burst-by-burst basis. These range-doppler 
+burst interferograms are combined during an ISCE2 step called `mergebursts`, then the remaining steps 
+(filtering, unwrapping and geocoding) are conducted on the merged results.
+
+By including select range-doppler data (wrapped interferogram, geolocation information, and line-of-sight information) 
+and select metadata in our standard Burst InSAR products, we are able to restart ISCE2 processing from the 
+`mergebursts` step, then proceed with the following steps as if it were a standard ISCE2 InSAR processing run. This is 
+essentially what's happening behind the scenes when multi-burst interferograms are generated using the 
+`INSAR_ISCE_MULTI_BURST` job type.
+
+The steps of the workflow are as follows:
+
+1.	Recreate a pre-`mergebursts` ISCE2 InSAR processing state using the input Burst InSAR products.
+2.	Run a modified version of ISCE2’s `mergebursts` step.
+3.	Apply the Goldstein-Werner power spectral filter with a dampening factor of 0.5.
+4.	Unwrap the wrapped phase interferogram using [SNAPHU](http://web.stanford.edu/group/radar/softwareandlinks/sw/snaphu/){target=_blank}'s minimum cost flow (MCF) unwrapping algorithm to produce the unwrapped phase interferogram.
+5.	Geocode the output products.
+
+As mentioned above, this workflow uses underlying ISCE2 functionality to perform these steps so the results of this 
+workflow should be identical to the results obtained by performing a standard multi-burst ISCE2 InSAR run 
+(assuming that the Enhanced Spectral Diversity technique is not used for co-registration).
+
+#### Merge Processing Options
+
+The processing options available for the merging are the same as those available for standard Burst InSAR products. 
+Check out the [Processing Options](#processing-options "Jump to the Processing Options section of this document") 
+section for more details.
+
+To learn about the command line argument syntax for this workflow, look at the help documentation using:
+```bash
+python -m hyp3_isce2 ++process merge_tops_bursts --help
+```
+
+#### Product Packaging
+The product packaging of merged Burst InSAR products generated using the `merge_tops_bursts.py` script follows the 
+same conventions outlined in the 
+[Product Packaging](#product-packaging "Jump to the Product Packaging section of this document") section above 
+with two exceptions. First, the four range-doppler images are not included since the products have already been merged. 
+Second, the product name is slightly modified; the burst ID is swapped for the zero-padded relative orbit number, 
+and the swath number is removed. The resulting format is:
+```
+S1_rrr__yyymmdd_yyymmdd_pp_INTn_uuuu
+```
 
 {% endblock %}
 

@@ -498,8 +498,9 @@ burst interferograms are combined during an ISCE2 step called `mergebursts`, the
 
 By including select range-doppler data (wrapped interferogram, geolocation information, and line-of-sight information) 
 and select metadata in our standard Burst InSAR products, we are able to restart ISCE2 processing from the 
-`mergebursts` step, then proceed with the following steps as if it were a standard ISCE2 InSAR processing run. This is 
-essentially what's happening behind the scenes when multi-burst interferograms are generated using the 
+`mergebursts` step, then proceed with the following steps as if it were a standard ISCE2 InSAR processing run. 
+
+This is essentially what's happening behind the scenes when multi-burst interferograms are generated using the 
 `INSAR_ISCE_MULTI_BURST` job type.
 
 The steps of the workflow are as follows:

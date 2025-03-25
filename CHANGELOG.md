@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.10.3] 
 
 ### Changed
-* Updated [Burst InSAR Product Guide](docs/guides/burst_insar_product_guide.md) to document multi-burst InSAR (the `INSAR_ISCE_MULTI_BURST` job type)
+* Updated the [Burst InSAR Product Guide](docs/guides/burst_insar_product_guide.md) to document multi-burst InSAR (the `INSAR_ISCE_MULTI_BURST` job type)
 
 ## [0.10.2]
 

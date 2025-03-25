@@ -17,12 +17,16 @@ For those who would prefer to work at the scale of a full IW SLC, our original [
 
 There are currently two different [burst-based](#sentinel-1-bursts "Jump to the Sentinel-1 Bursts section of this document") 
 InSAR jobs available. The ISCE2 InSAR workflow processes input SLC data on a burst-by-burst basis to generate wrapped 
-interferograms, regardless of how many bursts are included in the reference and secondary input files. If there are 
-multiple bursts included in the input files, the wrapped interferograms are then merged together for the final 
-processing steps, so the output is a single interferogram regardless of the number of bursts included in the input files.
+interferograms, regardless of how many bursts are included in the reference and secondary input files. 
+
+If there are multiple bursts included in the input files, the wrapped interferograms are then merged together for the 
+final processing steps, so the output is a single interferogram regardless of the number of bursts included in the 
+input files.
 
 ### Single-Burst InSAR
 ASF's original burst-based InSAR job type, `INSAR_ISCE_BURST`, only accepts a single pair of SLC bursts. This job type is supported in [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} as well as the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}.
+
+All single-burst InSAR jobs cost the same number of [credits](../using/credits.md#credit-cost-table "Credit Cost Table" ){target=_blank}, regardless of the processing options selected. 
 
 !!! tip "Deprecation of the INSAR_ISCE_BURST job type"
 
@@ -33,7 +37,7 @@ The `INSAR_ISCE_MULTI_BURST` job type accepts sets of SLC bursts. The output is 
 full extent of the input bursts. This job type is not yet supported in Vertex, but can be submitted using the [HyP3 API](../using/api.md ){target=_blank} and [Python SDK](../using/sdk.md ){target=_blank}. 
 
 This job type supports pairings of 1 to 15 contiguous along-track bursts (refer to the 
-[Considerations for Selecting Input Bursts](#considerations-for-selecting-input-bursts "Jump to the Considerations for Selecting Input Bursts section of this document") for details). The number of bursts processed impacts the number of credits consumed. Refer to the [Credit Cost Table](../using/credits.md#credit-cost-table "Credit Cost Table" ){target=_blank} for more details.
+[Considerations for Selecting Input Bursts](#considerations-for-selecting-input-bursts "Jump to the Considerations for Selecting Input Bursts section of this document") section for details). The number of bursts processed impacts the number of credits consumed. Refer to the [Credit Cost Table](../using/credits.md#credit-cost-table "Credit Cost Table" ){target=_blank} for more details.
 
 ## Sentinel-1 Bursts
 

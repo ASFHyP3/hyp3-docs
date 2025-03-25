@@ -529,12 +529,13 @@ python -m hyp3_isce2 ++process merge_tops_bursts --help
 The product packaging of merged Burst InSAR products generated using the `merge_tops_bursts.py` script follows the 
 same conventions used for single-burst products (`INSAR_ISCE_BURST` job type) outlined in the 
 [Product Packaging](#product-packaging "Jump to the Product Packaging section of this document") section 
-with two exceptions. First, the four range-doppler images are not included since the products have already been merged. 
-Second, the product name is slightly modified; the burst ID is swapped for the zero-padded relative orbit number, 
-and the swath number is removed. The resulting format is:
-```
-S1_rrr__yyymmdd_yyymmdd_pp_INTn_uuuu
-```
+with two exceptions:
+
+  - The four range-doppler images are not included since the products have already been merged
+  - The product name is slightly modified
+    - The burst ID is swapped for the zero-padded relative orbit number (`rrr`)
+    - The swath number is removed 
+    - The resulting format is `S1_rrr__yyymmdd_yyymmdd_pp_INTn_uuuu`
 
 {% endblock %}
 

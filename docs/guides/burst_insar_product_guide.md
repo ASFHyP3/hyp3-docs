@@ -448,7 +448,7 @@ files.
 
 *Table 6: List of additional InSAR parameters included in the parameter text file `INSAR_ISCE_BURST` job types.*
 
-### Merging Sentinel-1 Single-Burst InSAR Products
+## Merging Sentinel-1 Single-Burst InSAR Products
 
 Burst InSAR products generated using the `INSAR_ISCE_BURST` job type can be merged together manually using the 
 [`merge_tops_burst`](https://github.com/ASFHyP3/hyp3-isce2/blob/main/src/hyp3_isce2/merge_tops_bursts.py ){target=_blank} 
@@ -491,7 +491,7 @@ In order to be merging eligible, all burst products must:
 
 The workflow should throw an error if any of these conditions are not met.
 
-#### Merge Processing
+### Merge Processing
 During normal ISCE2 InSAR processing, initial interferograms are formed on a burst-by-burst basis. These range-doppler 
 burst interferograms are combined during an ISCE2 step called `mergebursts`, then the remaining steps 
 (filtering, unwrapping and geocoding) are conducted on the merged results.
@@ -533,7 +533,7 @@ with two exceptions:
 
   - The four range-doppler images are not included since the products have already been merged
   - The product name is slightly modified
-    - The burst ID is swapped for the zero-padded relative orbit number (`rrr`)
+    - The burst ID (`bbbbbb`) is swapped for the zero-padded relative orbit number (`rrr`)
     - The swath number is removed 
     - The resulting format is `S1_rrr__yyymmdd_yyymmdd_pp_INTn_uuuu`
 

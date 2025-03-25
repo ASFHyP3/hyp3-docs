@@ -525,7 +525,7 @@ To learn about the command line argument syntax for this workflow, look at the h
 python -m hyp3_isce2 ++process merge_tops_bursts --help
 ```
 
-#### Product Packaging
+#### Merged Product Packaging
 The product packaging of merged Burst InSAR products generated using the `merge_tops_bursts.py` script follows the 
 same conventions outlined in the 
 [Product Packaging](#product-packaging "Jump to the Product Packaging section of this document") section above 

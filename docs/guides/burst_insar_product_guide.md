@@ -520,6 +520,11 @@ Burst InSAR products generated using the `INSAR_ISCE_BURST` job type can be merg
 [`merge_tops_burst`](https://github.com/ASFHyP3/hyp3-isce2/blob/main/src/hyp3_isce2/merge_tops_bursts.py ){target=_blank} 
 workflow. 
 
+This requires software installation and sufficient compute resources. It is much easier to submit 
+[`INSAR_ISCE_MULTI_BURST`](#multi-burst-insar "Jump to the Multi-Burst InSAR section of this document") 
+jobs, which do the merging for you, but manual merging is an option if you have a specific use case that is not 
+supported by the multi-burst on-demand products.
+
 !!! warning "This workflow is only for products generated using the `INSAR_ISCE_BURST` job type"
 
     This functionality is not available for products generated using the 

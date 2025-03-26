@@ -316,7 +316,7 @@ for more information about how different water masking approaches can impact the
 
 #### Product Creation
 Image files are exported into the widely-used GeoTIFF format in a Universal Transverse Mercator (UTM) Zone projection. 
-Images are resampled to a pixel size that reflects the resolution of output image based on the requested number of 
+Images are resampled to a pixel size that reflects the resolution of the output image based on the requested number of 
 looks: 80 meters for 20x4 looks, 40 meters for 10x2 looks, and 20 meters for 5x1 looks.
 
 Supporting metadata files are created, as well as a quick-look browse image.

@@ -175,8 +175,8 @@ downloading the DEM file, and downloading the orbit and auxiliary data files.
 
 The Burst InSAR workflow accepts as input a reference and secondary set of 
 [Interferometric Wide swath Single Look Complex](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath "https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath" ){target=_blank} 
-(IW SLC) burst granules. Internally, each set of bursts must be collected within the same orbit, share a single 
-polarization, and be contiguous within a single Sentinel-1 track. See 
+(IW SLC) burst granules. Internally, each set of bursts must share the same polarization (VV or HH), and be 
+contiguous along a single Sentinel-1 orbit path. See 
 [Considerations for Selecting Input Bursts](#considerations-for-selecting-input-bursts "Jump to the Considerations for Selecting Input Bursts section in this document") 
 for more guidance on constructing valid sets of bursts.
 
@@ -186,20 +186,20 @@ and then repackaged into reference and secondary
 [ESA SAFE](https://sentiwiki.copernicus.eu/web/safe-format "SAFE Format" ){target=_blank} 
 files using the 
 [`burst2safe`](https://github.com/ASFHyP3/burst2safe "burst2safe Python package" ){target=_blank} package. 
-Repackaging the burst SLC data into two ESA SAFE files allows the sets of reference and secondary bursts to be 
-processed with ISCE2 as if they were a pair of full IW SLC files from ESA.
+This repackaging allows the sets of reference and secondary bursts to be processed with ISCE2 as if they were a 
+pair of full IW SLC files from ESA.
 
 ##### Considerations for Selecting Input Bursts
 
 A number of conditions need to be met when selecting the sets of bursts to package into the 
-reference and secondary files: 
+reference and secondary SAFE files: 
 
 - Sets of bursts can contain 1-15 bursts
 - There must be the same number of bursts in the secondary set as there are in the reference set
 - All bursts in both the reference and secondary sets must have the same polarization
-  - Only co-polarized inputs are supported
-  - All bursts must be either VV or HH (not VH or HV)
-- Pairwise bursts in the reference and secondary sets must have the same burst number, swath number, and polarization
+    - Only co-polarized inputs are supported
+    - All bursts must be either VV or HH (not VH or HV)
+- Pairwise bursts in the reference and secondary sets must have the same burst and relative orbit numbers
 - All reference bursts must have been acquired within two minutes of each other
 - All secondary bursts must have been acquired within two minutes of each other
 - Reference bursts must have been acquired *before* the secondary bursts
@@ -316,7 +316,7 @@ for more information about how different water masking approaches can impact the
 
 #### Product Creation
 Image files are exported into the widely-used GeoTIFF format in a Universal Transverse Mercator (UTM) Zone projection. 
-Images are resampled to a pixel size that reflects the resolution of output image based on the requested number of 
+Images are resampled to a pixel size that reflects the resolution of the output image based on the requested number of 
 looks: 80 meters for 20x4 looks, 40 meters for 10x2 looks, and 20 meters for 5x1 looks.
 
 Supporting metadata files are created, as well as a quick-look browse image.
@@ -335,12 +335,15 @@ The Burst InSAR product names are packed with information pertaining to the proc
 the following order, as illustrated in Figure 3.
 
 - The imaging platform name, always S1 for Sentinel-1.
-- Relative burst ID values assigned by ESA. Each value identifies a consistent burst footprint; relative burst ID values differ from one sub-swath to the next.
+- Relative burst ID values assigned by ESA. Each value identifies a consistent burst footprint; relative burst ID 
+  values differ from one sub-swath to the next.
 - The imaging mode, currently only IW is supported.
 - The swath number, either 1, 2, or 3, indicating which sub-swath the burst is located in.
 - The acquisition dates of the reference (older) scene and the secondary (newer) scene.
-- The polarizations for the pair, either HH or VV.
-- The product type (always INT for InSAR) and the pixel spacing, which will be either 80, 40, or 20, based upon the number of looks selected when the job was submitted for processing.
+- The polarization of the product, either HH or VV.
+- The product type (always INT for InSAR) and the pixel spacing in meters, which will be 80, 40, or 20, based upon the 
+  [number of looks](#product-creation "Jump to the Product Creation section of this document") selected when the job 
+  was submitted for processing.
 - The filename ends with the ASF product ID, a 4 digit hexadecimal number.
 
 ![Figure 3](../images/asf_burst_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
@@ -458,12 +461,12 @@ The product package also includes a number of metadata files.
 *Table 4: Metadata files in product package*
 
 #### README File
-The text file with extension .README.md.txt explains the files included in the folder, and is customized to reflect 
+The text file with extension `.README.md.txt` explains the files included in the folder, and is customized to reflect 
 that particular product. Users unfamiliar with InSAR products should start by reading this README file, which will 
 give some background on each of the files included in the product folder.
 
 #### InSAR Parameter File
-The text file with the base filename followed directly by a .txt extension includes processing parameters used to 
+The text file with the base filename followed directly by a `.txt` extension includes processing parameters used to 
 generate the InSAR product as well as metadata attributes for the InSAR pair. These are detailed in Table 5.
 
 | Name                            | Description                                                                                             | Possible Value                                                       |
@@ -550,11 +553,11 @@ PATH_TO_UNZIPPED_PRODUCTS
 ├─ S1_136231_IW2_20200604_20200616_VV_INT80_529D
 ```
 
-In order to be merging eligible, all burst products must:
+In order to be eligible for merging, all burst products must:
 
 - Have the same reference and secondary dates
 - Have the same polarization
-- Have the same multilooking
+- Have the same multilooking settings (20x4, 10x2 or 5x1)
 - Be from the same relative orbit
 - Be contiguous
 - Have been generated using the single-burst approach (`INSAR_ISCE_BURST` job type)

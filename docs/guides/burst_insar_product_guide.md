@@ -192,7 +192,7 @@ pair of full IW SLC files from ESA.
 ##### Considerations for Selecting Input Bursts
 
 A number of conditions need to be met when selecting the sets of bursts to package into the 
-reference and secondary files: 
+reference and secondary SAFE files: 
 
 - Sets of bursts can contain 1-15 bursts
 - There must be the same number of bursts in the secondary set as there are in the reference set

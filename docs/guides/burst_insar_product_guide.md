@@ -339,7 +339,7 @@ the following order, as illustrated in Figure 3.
 - The imaging mode, currently only IW is supported.
 - The swath number, either 1, 2, or 3, indicating which sub-swath the burst is located in.
 - The acquisition dates of the reference (older) scene and the secondary (newer) scene.
-- The polarizations for the pair, either HH or VV.
+- The polarization of the product, either HH or VV.
 - The product type (always INT for InSAR) and the pixel spacing, which will be either 80, 40, or 20, based upon the number of looks selected when the job was submitted for processing.
 - The filename ends with the ASF product ID, a 4 digit hexadecimal number.
 

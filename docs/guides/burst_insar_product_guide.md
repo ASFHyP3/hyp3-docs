@@ -553,11 +553,11 @@ PATH_TO_UNZIPPED_PRODUCTS
 ├─ S1_136231_IW2_20200604_20200616_VV_INT80_529D
 ```
 
-In order to be merging eligible, all burst products must:
+In order to be eligible for merging, all burst products must:
 
 - Have the same reference and secondary dates
 - Have the same polarization
-- Have the same multilooking
+- Have the same multilooking settings (20x4, 10x2 or 5x1)
 - Be from the same relative orbit
 - Be contiguous
 - Have been generated using the single-burst approach (`INSAR_ISCE_BURST` job type)

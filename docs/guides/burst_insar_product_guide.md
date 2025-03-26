@@ -461,7 +461,7 @@ The product package also includes a number of metadata files.
 *Table 4: Metadata files in product package*
 
 #### README File
-The text file with extension .README.md.txt explains the files included in the folder, and is customized to reflect 
+The text file with extension `.README.md.txt` explains the files included in the folder, and is customized to reflect 
 that particular product. Users unfamiliar with InSAR products should start by reading this README file, which will 
 give some background on each of the files included in the product folder.
 

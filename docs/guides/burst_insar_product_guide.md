@@ -197,8 +197,8 @@ reference and secondary SAFE files:
 - Sets of bursts can contain 1-15 bursts
 - There must be the same number of bursts in the secondary set as there are in the reference set
 - All bursts in both the reference and secondary sets must have the same polarization
-  - Only co-polarized inputs are supported
-  - All bursts must be either VV or HH (not VH or HV)
+    - Only co-polarized inputs are supported
+    - All bursts must be either VV or HH (not VH or HV)
 - Pairwise bursts in the reference and secondary sets must have the same burst number, swath number, and polarization
 - All reference bursts must have been acquired within two minutes of each other
 - All secondary bursts must have been acquired within two minutes of each other

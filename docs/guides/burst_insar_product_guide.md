@@ -466,7 +466,7 @@ that particular product. Users unfamiliar with InSAR products should start by re
 give some background on each of the files included in the product folder.
 
 #### InSAR Parameter File
-The text file with the base filename followed directly by a .txt extension includes processing parameters used to 
+The text file with the base filename followed directly by a `.txt` extension includes processing parameters used to 
 generate the InSAR product as well as metadata attributes for the InSAR pair. These are detailed in Table 5.
 
 | Name                            | Description                                                                                             | Possible Value                                                       |

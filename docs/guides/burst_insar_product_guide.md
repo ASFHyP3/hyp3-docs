@@ -175,8 +175,8 @@ downloading the DEM file, and downloading the orbit and auxiliary data files.
 
 The Burst InSAR workflow accepts as input a reference and secondary set of 
 [Interferometric Wide swath Single Look Complex](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath "https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath" ){target=_blank} 
-(IW SLC) burst granules. Internally, each set of bursts must be collected within the same orbit, share a single 
-polarization, and be contiguous within a single Sentinel-1 track. See 
+(IW SLC) burst granules. Internally, each set of bursts must share the same polarization (VV or VH), and be 
+contiguous along a single Sentinel-1 orbit path. See 
 [Considerations for Selecting Input Bursts](#considerations-for-selecting-input-bursts "Jump to the Considerations for Selecting Input Bursts section in this document") 
 for more guidance on constructing valid sets of bursts.
 

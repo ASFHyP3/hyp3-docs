@@ -186,8 +186,8 @@ and then repackaged into reference and secondary
 [ESA SAFE](https://sentiwiki.copernicus.eu/web/safe-format "SAFE Format" ){target=_blank} 
 files using the 
 [`burst2safe`](https://github.com/ASFHyP3/burst2safe "burst2safe Python package" ){target=_blank} package. 
-Repackaging the burst SLC data into two ESA SAFE files allows the sets of reference and secondary bursts to be 
-processed with ISCE2 as if they were a pair of full IW SLC files from ESA.
+This repackaging allows the sets of reference and secondary bursts to be processed with ISCE2 as if they were a 
+pair of full IW SLC files from ESA.
 
 ##### Considerations for Selecting Input Bursts
 

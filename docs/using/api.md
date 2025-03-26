@@ -132,7 +132,7 @@ You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://s
 ```
 
 ## Submitting Sentinel-1 Burst InSAR jobs
-You can submit InSAR jobs using the `INSAR_ISCE_BURST` job type, which takes a single pair of [ESA granule burst IDs](https://sentiwiki.copernicus.eu/web/s1-products#S1Products-BurstIDMapsS1-Products-Burst-ID-Maps){target=_blank}, or use the `INSAR_ISCE_MULTI_BURST` job type, which accepts lists of up to 15 contiguous along-track burst IDs that will be merged together to produce reference and secondary files.
+You can submit InSAR jobs using the `INSAR_ISCE_BURST` job type, which takes a single pair of [ESA granule burst IDs](https://sentiwiki.copernicus.eu/web/s1-products#S1Products-BurstIDMapsS1-Products-Burst-ID-Maps){target=_blank}, or use the `INSAR_ISCE_MULTI_BURST` job type, which accepts lists of up to 15 contiguous along-track burst IDs that will be merged together to produce reference and secondary input SLCs.
 ```json
 {
   "jobs": [

@@ -89,7 +89,7 @@ nav:
     - tutorials.md
     - Using HyP3 Python SDK: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
     - Search another user's jobs: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb" target="_blank
-    - Updating existing job name: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb" target="_blank
+    - Update existing job name: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb" target="_blank
     - Process new granules for search parameters: tutorials/process-new-granules-for-search-parameters.md
     - InSAR time series with MintPy: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank
     - InSAR burst time series with MintPy: https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_isce2_burst_stack_for_ts_analysis.ipynb" target="_blank

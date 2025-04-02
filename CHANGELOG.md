@@ -10,6 +10,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 * Updated the [Burst InSAR Product Guide](docs/guides/burst_insar_product_guide.md) to document multi-burst InSAR (the `INSAR_ISCE_MULTI_BURST` job type)
+* All NBViewer links have been redirected to the corresponding GitHub link.
 
 ## [0.10.2]
 

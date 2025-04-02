@@ -13,7 +13,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 * Updated HyP3 SDK to [v7.3.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#730)
-* Notebook tutorial links now direct to GitHub rather than nbviewer
+* Notebook tutorial links now direct to GitHub rather than NBViewer
 
 ## [0.10.3] 
 

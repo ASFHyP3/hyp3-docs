@@ -9,10 +9,12 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.10.4]
 
 ### Added
-* Link to [HyP3 SDK job name change notebook](https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb) to the tutorials section.
+* Link to [HyP3 SDK job name change notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb) to the tutorials section.
 
 ### Changed
 * Updated HyP3 SDK to [v7.3.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#730)
+* Notebook tutorial links now direct to GitHub rather than nbviewer
+
 ## [0.10.3] 
 
 ### Changed

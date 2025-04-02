@@ -18,5 +18,5 @@ while the second notebook demonstrates how to submit InSAR jobs.
 These tutorials can easily be adapted to support other job types.
 Please [contact us](../contact.md) if you need help adapting these tutorials for your particular use case.
 
-* [Using the HyP3 SDK to generate RTC products for given search parameters](https://nbviewer.org/github/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/new-rtc-jobs.ipynb "Using the HyP3 SDK to generate RTC products for given search parameters" ){target=_blank}
-* [Using the HyP3 SDK to generate InSAR products for given search parameters](https://nbviewer.org/github/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/new-insar-jobs.ipynb "Using the HyP3 SDK to generate InSAR products for given search parameters" ){target=_blank}
+* [Using the HyP3 SDK to generate RTC products for given search parameters](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/new-rtc-jobs.ipynb "Using the HyP3 SDK to generate RTC products for given search parameters" ){target=_blank}
+* [Using the HyP3 SDK to generate InSAR products for given search parameters](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/new-insar-jobs.ipynb "Using the HyP3 SDK to generate InSAR products for given search parameters" ){target=_blank}

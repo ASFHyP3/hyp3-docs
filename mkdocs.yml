@@ -53,7 +53,7 @@ nav:
     - Vertex: using/vertex.md
     - SDK:
       - using/sdk.md
-      - Example Notebook: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
+      - Example Notebook: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
       - API Reference: using/sdk_api.md
     - API: using/api.md
     - Credits: using/credits.md
@@ -87,11 +87,11 @@ nav:
     - SAR FAQ: https://asf.alaska.edu/information/sar-information/what-is-sar/#sar_faq" target="_blank
   - Tutorials:
     - tutorials.md
-    - Using HyP3 Python SDK: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
-    - Search another user's jobs: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb" target="_blank
-    - Update existing job name: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb" target="_blank
+    - Using HyP3 Python SDK: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
+    - Search another user's jobs: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb" target="_blank
+    - Update existing job name: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb" target="_blank
     - Process new granules for search parameters: tutorials/process-new-granules-for-search-parameters.md
-    - InSAR time series with MintPy: https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank
+    - InSAR time series with MintPy: https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank
     - InSAR burst time series with MintPy: https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_isce2_burst_stack_for_ts_analysis.ipynb" target="_blank
     - Merging burst InSAR products: https://github.com/ASFHyP3/hyp3-docs/blob/develop/docs/tutorials/hyp3_isce2_burst_merge.ipynb" target="_blank
     - StoryMap Tutorials: https://asf-daac.maps.arcgis.com/home/index.html" target="_blank
@@ -124,5 +124,5 @@ plugins:
         # full link to our hosted docs needed b/c mkdocs-redirects doesn't support hash fragments
         #    See: https://github.com/datarobot/mkdocs-redirects/issues/16
         getting_started.md: 'https://hyp3-docs.asf.alaska.edu/#getting-started'
-        tutorials/mintpy.md: 'https://nbviewer.jupyter.org/github/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb'
+        tutorials/mintpy.md: 'https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb'
         using/quota.md: 'using/credits.md'

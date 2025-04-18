@@ -96,6 +96,7 @@ customizable
 DAAC
 date1
 date2
+Decompositions
 Decorrelation
 decorrelation
 DEM
@@ -150,6 +151,8 @@ Geolocation
 geolocation
 Geolocations
 geolocations
+geoprocessing
+georeferenced
 georeferencing
 GEOSCIENCE
 Geoscience
@@ -320,6 +323,7 @@ programmatically
 Programmatically
 PRs
 PySolid
+QGIS
 Radiometrically
 radiometrically
 RAiDER

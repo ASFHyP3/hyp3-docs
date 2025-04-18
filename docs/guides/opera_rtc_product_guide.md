@@ -22,23 +22,29 @@ and provided in Cloud-Optimized GeoTIFF (COG) format.
 The pixel values of the products represent gamma-0 power. The pixel spacing is 30 meters, and no speckle filter has 
 been applied.
 
+RTC products provide users with imagery of the earth's surface regardless of atmospheric conditions. This allows 
+users to monitor surface processes during natural disasters, such as hurricanes or wildfires, or in areas that are 
+prone to frequent cloud cover. Backscatter values can be used to determine surface water extent, soil moisture 
+trends, surface roughness, and vegetation conditions.
+
+#### Digital Elevation Model (DEM)
+
 Radiometric Terrain Correction requires the use of a Digital Elevation Model (DEM) both for 
 [correcting distortions caused by topography](https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b#ref-n-uKhHbd "OPERA Sentinel-1 RTC StoryMap Tutorial" ){target=_blank}
 and for geocoding the output product. The OPERA RTC-S1 products are processed using the 
 [Copernicus GLO-30 DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM "Copernicus DEM" ){target=_blank}.
 
-Most Sentinel-1 acquisitions are collected in two polarizations, and the OPERA project generates RTC-S1 products for 
-all available polarizations. Acquisitions over land generally have a vertical primary polarization, meaning that the 
-SAR signal is sent out in a vertical orientation, but both the co-polarized returns (also vertically polarized) 
-and the cross-polarized returns (horizontally polarized) are measured. This results in both VV and VH RTC-S1 products. 
+#### Polarization
+
+Most Sentinel-1 acquisitions are collected in two 
+[polarizations](introduction_to_sar#polarizations), 
+and the OPERA project generates RTC-S1 products for all available polarizations. Acquisitions over land generally 
+have a vertical primary polarization, meaning that the SAR signal is sent out in a vertical orientation, but both 
+the co-polarized returns (also vertically polarized) and the cross-polarized returns (horizontally polarized) are 
+measured. This results in both VV and VH RTC-S1 products. 
 
 In some areas, particularly remote islands and regions close to the Arctic Ocean, acquisitions are collected with a 
 horizontal primary polarization. This results in HH and HV RTC-S1 products. 
-
-RTC products provide users with imagery of the earth's surface regardless of atmospheric conditions. This allows 
-users to monitor surface processes during natural disasters, such as hurricanes or wildfires, or in areas that are 
-prone to frequent cloud cover. Backscatter values can be used to determine surface water extent, soil moisture 
-trends, surface roughness, and vegetation conditions.
 
 Different polarizations are sensitive to different surface characteristics, with VV being more sensitive to surface 
 roughness, VH or HV being more sensitive to volume scatterers such as vegetation, and HH being more sensitive to 
@@ -74,7 +80,21 @@ using ASF's
 [HyP3](https://hyp3-docs.asf.alaska.edu/){target=_blank} 
 cloud-native processing platform instead of JPL's 
 [OPERA SDS](https://software.nasa.gov/software/NPO-52101-1){target=_blank} 
-processing management software. The products can be used interchangeably in a time series analysis.
+processing management software. 
+
+Archived and On-Demand RTC-S1 products can be used interchangeably in a time series analysis.
+
+## Ordering On-Demand OPERA RTC-S1 Products
+
+
+
+
+
+## Product Packaging
+
+
+
+
 
 ## On-Demand RTC Products from ASF
 
@@ -197,19 +217,6 @@ If you want to generate a full-resolution RGB image from an RTC GAMMA product bu
 to include it in the product package, you can also use the RGB Decomposition Tool in 
 [ASF's ArcGIS Toolbox](https://www.earthdata.nasa.gov/data/tools/asf-arcgis-toolbox){target=_blank}.
 
-
-## Ordering On-Demand OPERA RTC-S1 Products
-
-
-
-
-
-## Product Packaging
-
-
-
-
-
 ## Sentinel-1 Mission
 
 The [Sentinel-1 mission](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1 "https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1" ){target=_blank} 
@@ -223,7 +230,7 @@ Sentinel-1A is still collecting data, but
 [Sentinel-1B ended its mission](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite" ){target=_blank} on December 23, 2021. 
 
 Sentinel-1C is now in position to replace Sentinel-1B in the constellation, returning the Sentinel-1 mission to full 
-capacity. 
+observation capacity. 
 
 The two Sentinel-1 satellites each have a 12-day repeat cycle, but their orbits are offset 180 degrees so that one 
 or the other will pass over the same location on earth every 6 days. When two S1 satellites are in orbit, Europe 

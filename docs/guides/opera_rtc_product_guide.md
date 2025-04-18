@@ -132,6 +132,13 @@ of the
 
 ### RGB Decomposition
 
+It can be helpful to combine co-polarized and cross-polarized RTC values into a false-color image. There are a 
+number of methods for combining VV and VH or HH and HV into the red, green, and blue channels, which is commonly 
+called RGB Decomposition.
+
+The OPERA project uses a simple approach to combining polarizations to generate a color browse image. More here...
+
+These browse images can be downloaded from Vertex by...
 
 
 

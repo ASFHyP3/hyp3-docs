@@ -106,6 +106,18 @@ Advantages of burst-based products:
 
 ### Processing Options
 
+**On-Demand processing of OPERA RTC-S1 products is currently confined to the default settings of the archived 
+products.** OPERA RTC-S1 products are output in gamma-0 power with 30-m pixel spacing. While we expect to offer 
+some customization options in the future, the only method currently available for ordering products with a different 
+radiometry, scale, or pixel spacing is to order ASF's [On-Demand Sentinel-1 RTC products](rtc_product_guide.md) 
+processed using GAMMA software. 
+
+Learn more about the options available for processing full-scene Sentinel-1 RTC GAMMA products and why you might 
+find them useful in the 
+[Processing Options section](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35#ref-n-ycU3H8){target=_blank} 
+of the 
+[RTC On Demand! tutorial](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand!" ){target=_blank}. 
+
 
 ### RGB Decomposition
 

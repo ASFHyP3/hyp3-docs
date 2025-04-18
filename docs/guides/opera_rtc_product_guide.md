@@ -116,6 +116,10 @@ Advantages of burst-based products:
     same frame number will cover the same extent. This is particularly impactful when the area of interest is near 
     the top or bottom of the Sentinel-1 IW Level 1 scene.
 
+If your area of interest is large, and is well-covered by a full Sentinel-1 IW scene (or requires several full 
+scenes to cover the entire area), you may find it easier to work with the full-scene RTC GAMMA products, as there 
+would be fewer individual files to manage. 
+
 ### Processing Options
 
 **On-Demand processing of OPERA RTC-S1 products is currently confined to the default settings of the archived 
@@ -134,13 +138,64 @@ of the
 
 It can be helpful to combine co-polarized and cross-polarized RTC values into a false-color image. There are a 
 number of methods for combining VV and VH or HH and HV into the red, green, and blue channels, which is commonly 
-called RGB Decomposition.
+called RGB Decomposition. 
 
-The OPERA project uses a simple approach to combining polarizations to generate a color browse image. More here...
+The RGB Decomposition approach used by the OPERA team for the RTC-S1 products is very different from the approach 
+ASF uses for the Sentinel-1 RTC On Demand products processed using GAMMA.
 
-These browse images can be downloaded from Vertex by...
+#### OPERA RTC-S1 RGB Decomposition
 
+The OPERA project uses a simple approach to combining polarizations to generate a color browse image, which is 
+displayed in Vertex when you search for OPERA RTC-S1 products. This RGB Decomposition assigns co-pol values
+(VV or HH) to both the red and blue bands, the co-pol values (VH or HV) to the green band, and applies a scalar to 
+balance the color range. 
 
+In these color images, water generally appears black, areas with vegetation appear more green, and other areas 
+appear pink.
+
+You can download these browse images from the Vertex interface by selecting an RTC-S1 product from the list of 
+search results, and clicking the download icon above the image preview in the center panel, as shown in Figure 1. 
+Note that these browse images are not georeferenced, though you can use the individual RTC GeoTIFFs as a 
+reference for manually georeferencing the browse images. 
+
+![Figure 1](../images/opera-browse-download.png "Interface for downloading an OPERA RTC-S1 RGB Decomposition")
+
+This approach is also used to generate the imagery tiles for OPERA RTC-S1 that will be displayed in NASA's 
+[Worldview](https://worldview.earthdata.nasa.gov/ "worldview.earthdata.nasa.gov/" ){target=_blank}
+platform. 
+
+You can also create your own OPERA RTC-S1 RGB Decompositions using GIS software. 
+  - In ArcGIS, use the 
+    [Composite Bands geoprocessing tool](https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/composite-bands.htm){target=_blank} 
+    or 
+    [raster function template](https://pro.arcgis.com/en/pro-app/latest/help/analysis/raster-functions/composite-bands-function.htm){target=_blank} 
+    to assign the VV and VH layers to the desired color channels. 
+  - In QGIS, use the 
+    [Build Virtual Raster](https://docs.qgis.org/3.40/en/docs/training_manual/rasters/data_manipulation.html){target=_blank} 
+    algorithm. 
+
+#### RTC GAMMA RGB Decomposition
+
+The Sentinel-1 RTC On Demand products processed using GAMMA software include a georeferenced RGB Decomposition 
+browse image in the product package. You also have the 
+[option to include a full-resolution RGB Decomposition GeoTIFF](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35#ref-n-AYvRBH "RGB Decomposition Option" ){target=_blank}  
+in the output package when submitting the RTC job for processing. 
+
+The algorithm used to generate the RGB Decomposition images included in the product package is very different from 
+the approach used by the OPERA team. It uses a series of thresholds to determine which values to attribute to the 
+different color bands. Pixels with very low values in both the co- and cross-pol RTC products are assigned to the 
+blue channel. Pixels with high cross-pol values are assigned to the green channel. Pixels with high co-pol values but 
+low cross-pol values are assigned to the red channel. 
+
+In these images, water generally appears blue, vegetated areas look green, and other regions (urban areas, agricultural 
+fields, sparsely vegetated areas) are yellow or orange. 
+
+A full description of the approach ASF uses for generating RGB Decomposition products is available 
+[here](https://github.com/ASFHyP3/hyp3-lib/blob/main/docs/rgb_decomposition.md){target=_blank}.
+
+If you want to generate a full-resolution RGB image from an RTC GAMMA product but neglected to select the option 
+to include it in the product package, you can also use the RGB Decomposition Tool in 
+[ASF's ArcGIS Toolbox](https://www.earthdata.nasa.gov/data/tools/asf-arcgis-toolbox){target=_blank}.
 
 
 ## Ordering On-Demand OPERA RTC-S1 Products
@@ -148,7 +203,11 @@ These browse images can be downloaded from Vertex by...
 
 
 
+
 ## Product Packaging
+
+
+
 
 
 ## Sentinel-1 Mission

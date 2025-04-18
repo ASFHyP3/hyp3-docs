@@ -27,10 +27,22 @@ Radiometric Terrain Correction requires the use of a Digital Elevation Model (DE
 and for geocoding the output product. The OPERA RTC-S1 products are processed using the 
 [Copernicus GLO-30 DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM "Copernicus DEM" ){target=_blank}.
 
+Most Sentinel-1 acquisitions are collected in two polarizations, and the OPERA project generates RTC-S1 products for 
+all available polarizations. Acquisitions over land generally have a vertical primary polarization, meaning that the 
+SAR signal is sent out in a vertical orientation, but both the co-polarized returns (also vertically polarized) 
+and the cross-polarized returns (horizontally polarized) are measured. This results in both VV and VH RTC-S1 products. 
+
+In some areas, particularly remote islands and regions close to the Arctic Ocean, acquisitions are collected with a 
+horizontal primary polarization. This results in HH and HV RTC-S1 products. 
+
 RTC products provide users with imagery of the earth's surface regardless of atmospheric conditions. This allows 
 users to monitor surface processes during natural disasters, such as hurricanes or wildfires, or in areas that are 
 prone to frequent cloud cover. Backscatter values can be used to determine surface water extent, soil moisture 
-trends, surface roughness, and vegetation conditions. 
+trends, surface roughness, and vegetation conditions.
+
+Different polarizations are sensitive to different surface characteristics, with VV being more sensitive to surface 
+roughness, VH or HV being more sensitive to volume scatterers such as vegetation, and HH being more sensitive to 
+double-bounce scattering from objects that stand perpendicular to the ground. 
 
 ### Archived OPERA RTC-S1 Products
 
@@ -117,7 +129,6 @@ find them useful in the
 [Processing Options section](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35#ref-n-ycU3H8){target=_blank} 
 of the 
 [RTC On Demand! tutorial](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand!" ){target=_blank}. 
-
 
 ### RGB Decomposition
 

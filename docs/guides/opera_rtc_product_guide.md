@@ -133,3 +133,30 @@ of the
 ## Product Packaging
 
 
+## Sentinel-1 Mission
+
+The [Sentinel-1 mission](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1 "https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1" ){target=_blank} 
+collects C-band band SAR from a pair of polar-orbiting satellites launched by the European Space Agency (ESA) 
+as part of the 
+[Copernicus program](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions" ){target=_blank}. 
+The Sentinel-1A satellite was launched April 3, 2014, Sentinel-1B was launched April 25, 2016, and Sentinel-1C was 
+launched December 5, 2024. 
+
+Sentinel-1A is still collecting data, but 
+[Sentinel-1B ended its mission](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite" ){target=_blank} on December 23, 2021. 
+
+Sentinel-1C is now in position to replace Sentinel-1B in the constellation, returning the Sentinel-1 mission to full 
+capacity. 
+
+The two Sentinel-1 satellites each have a 12-day repeat cycle, but their orbits are offset 180 degrees so that one 
+or the other will pass over the same location on earth every 6 days. When two S1 satellites are in orbit, Europe 
+and select areas of interest are imaged with a 6-day interval, as described in the 
+[mission observation scenario](https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/observation-scenario "https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/observation-scenario" ){target=_blank}, 
+while most landmasses are imaged on a 12-day repeat cycle.
+
+For the time period between when Sentinel-1B stopped acquiring data and before Sentinel-1C started acquiring data, 
+coverage was more sparse. Some areas did not have any imagery acquired between December 2021 and April 2025. 
+Depending on your area of interest, you may have limited data available during that time. 
+
+Because this is a polar-orbiting satellite constellation, areas near the poles may have overlapping orbits, 
+resulting in more frequent acquisitions than indicated by the observation scenario. 

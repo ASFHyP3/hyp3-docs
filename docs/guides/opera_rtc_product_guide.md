@@ -82,7 +82,7 @@ On-Demand RTC-S1 products are generated using the same code that is used by the 
 using ASF's 
 [HyP3](https://hyp3-docs.asf.alaska.edu/){target=_blank} 
 cloud-native processing platform instead of JPL's 
-[OPERA SDS](https://software.nasa.gov/software/NPO-52101-1){target=_blank} 
+[OPERA Science Data System (SDS)](https://software.nasa.gov/software/NPO-52101-1){target=_blank} 
 processing management software. 
 
 Archived and On-Demand RTC-S1 products can be used interchangeably in a time series analysis.

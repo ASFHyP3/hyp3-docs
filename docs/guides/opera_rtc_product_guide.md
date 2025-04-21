@@ -18,7 +18,9 @@ project at NASA's
 OPERA's [Radiometric Terrain Corrected (RTC) Synthetic Aperture Radar (SAR) Backscatter for Sentinel-1 (S1)](https://www.jpl.nasa.gov/go/opera/products/rtc-product/ "https://www.jpl.nasa.gov/go/opera/products/rtc-product/" ){target=_blank} 
 product consists of radar backscatter normalized with respect to topography. The RTC-S1 Level-2 products are projected 
 into the appropriate UTM Zone or Polar Stereographic coordinate system for the location of each individual product, 
-and provided in Cloud-Optimized GeoTIFF (COG) format.
+and provided in 
+[Cloud-Optimized GeoTIFF (COG)](https://cogeo.org/ "https://cogeo.org/" ){target=_blank} 
+format.
 
 The pixel values of the products represent gamma-0 power. The pixel spacing is 30 meters, and no speckle filter has 
 been applied.

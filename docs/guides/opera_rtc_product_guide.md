@@ -109,8 +109,9 @@ generated using commercial [GAMMA](https://gamma-rs.ch/gamma-software "gamma-rs.
 SAR processing software. 
 
 These products are both high-quality Sentinel-1 RTC options, and you can use either with confidence for any given 
-RTC-based analysis workflow. Because the products do use different algorithms for the RTC processing, however, 
-a time-series analysis will be more consistent if you don't mix and match products generated using GAMMA and ISCE3. 
+RTC-based analysis workflow. However, because ISCE3 and GAMMA use different algorithms for RTC processing, 
+a time-series analysis will be more consistent if you don't mix and match OPERA RTC-S1 products and ASF's RTC GAMMA 
+products. 
 
 There are some key characteristics that differ between the two products, which may help you decide which would be 
 most appropriate for your particular application. 

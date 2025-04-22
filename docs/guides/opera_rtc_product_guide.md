@@ -118,10 +118,6 @@ to access OPERA RTC-S1 products, refer to the
 section of the 
 [OPERA Sentinel-1 RTC StoryMap tutorial](https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b "OPERA Sentinel-1 RTC StoryMap Tutorial" ){target=_blank}.
 
-
-
-
-
 ## Ordering On-Demand OPERA RTC-S1 Products
 
 
@@ -130,7 +126,21 @@ section of the
 
 ## Product Packaging
 
+### L2 Radiometric Terrain Corrected (RTC) Files
+OPERA RTC-S1 products are available as a collection of files associated with a source Sentinel-1 burst. If you search 
+for OPERA-S1 products in Vertex, the results for each Sentinel-1 burst provide access to a number of files. If you 
+click on an item in the left panel of the search results, the associated files are listed in the right panel. 
 
+![Figure 3](../images/opera-rtc-vertex-results.png "OPERA RTC-S1 Search Results")
+
+The files available for download include: 
+- An HDF5 file containing product metadata (no actual RTC data are included in this file) ([#TODO: Add more info])
+- A single-band 32-bit float Cloud-Optimized GeoTIFF (COG) file for each available polarization
+- A Mask GeoTIFF file ([#TODO: Add more info])
+- A Metadata XML file ([#TODO: Add more info])
+- Local Incidence Angle GeoTIFF file ([#TODO: Add more info])
+
+### L2 Radiometric Terrain Corrected Static Layer (RTC-STATIC) Files
 
 
 

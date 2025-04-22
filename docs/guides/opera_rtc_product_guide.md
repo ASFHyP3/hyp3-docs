@@ -92,7 +92,7 @@ Archived and On-Demand RTC-S1 products can be used interchangeably in a time ser
 
 To search for existing OPERA RTC-S1 products in 
 [Vertex](https://search.asf.alaska.edu/#/?dataset=OPERA-S1&productTypes=RTC "search.asf.alaska.edu" ){target=_blank}, 
-select `OPERA-S1` from the `Dataset` dropdown menu. Because 
+select `OPERA-S1` from the `Dataset` drop-down menu. Because 
 the OPERA RTC-S1 footprints are so small, there are millions of files in the archive. It is important to make use 
 of the available filters to find the products you want. 
 

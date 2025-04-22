@@ -88,6 +88,40 @@ processing management software.
 
 Archived and On-Demand RTC-S1 products can be used interchangeably in a time series analysis.
 
+## Searching for Archived OPERA RTC-S1 Products
+
+To search for existing OPERA RTC-S1 products in 
+[Vertex](https://search.asf.alaska.edu/#/?dataset=OPERA-S1&productTypes=RTC "search.asf.alaska.edu" ){target=_blank}, 
+select `OPERA-S1` from the `Dataset` dropdown menu. Because 
+the OPERA RTC-S1 footprints are so small, there are millions of files in the archive. It is important to make use 
+of the available filters to find the products you want. 
+
+![Figure 2](../images/opera-rtc-vertex-search.png "Search for OPERA RTC-S1 Products")
+
+1. Set an Area of Interest
+2. Set a date range
+3. In the Search Filters menu, select the `L2 Radiometric Terrain Corrected (RTC)` File Type
+
+For step-by-step guidance on searching for OPERA RTC-S1 products using 
+[Vertex](https://search.asf.alaska.edu/#/?dataset=OPERA-S1&productTypes=RTC "search.asf.alaska.edu" ){target=_blank} 
+or the 
+[asf_search Python package](https://docs.asf.alaska.edu/asf_search/basics/ "docs.asf.alaska.edu" ){target=_blank}, 
+refer to the 
+[ASF Data Search](https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b#ref-n-r602VT "OPERA Sentinel-1 RTC: ASF Data Search" ){target=_blank} 
+section of the 
+[OPERA Sentinel-1 RTC StoryMap tutorial](https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b "OPERA Sentinel-1 RTC StoryMap Tutorial" ){target=_blank}.
+
+For more information about using 
+[Earthdata Search](https://search.earthdata.nasa.gov/search/granules?p=C2777436413-ASF&q=opera%20rtc&tl=1701400109!3!!&lat=37.29921784409428&long=-123.9521484375&zoom=7 "Earthdata Search for OPERA RTC-S1"){target=-blank} 
+to access OPERA RTC-S1 products, refer to the 
+[Earthdata Search](https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b#ref-n-pe7EfH "OPERA Sentinel-1 RTC: Earthdata Search" ){target=_blank} 
+section of the 
+[OPERA Sentinel-1 RTC StoryMap tutorial](https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b "OPERA Sentinel-1 RTC StoryMap Tutorial" ){target=_blank}.
+
+
+
+
+
 ## Ordering On-Demand OPERA RTC-S1 Products
 
 

@@ -14,6 +14,8 @@
 10x
 10x2
 10x2-look
+20250418T141628Z
+20250419T010229Z
 20x4
 20x4-look
 160m
@@ -35,6 +37,7 @@ acknowledgement
 adaptively
 adf
 al.
+ANF
 antimeridian
 AOI
 APD
@@ -70,7 +73,9 @@ base_name_mb
 basename
 bbbbbb
 Bekaert
+beta0
 burst2safe
+BurstID
 Buzzanga
 cccc
 Changelog
@@ -243,6 +248,7 @@ lal_f
 landfast
 landuse
 lau_f
+LayerName
 Liang
 lifecycle
 Log10
@@ -294,6 +300,7 @@ NoSQL
 novertex
 OpenAPI
 OpenStreetMap
+OPERA_L2_RTC-S1
 OPERA-S1
 orthometric
 OSM
@@ -305,6 +312,7 @@ PEP8
 perpendicularBaseline
 phenology
 pip
+PixelSpacing
 Pluggable
 PNG
 png
@@ -321,6 +329,8 @@ pre-processed
 Pre-Processing
 Pre-processing
 pre-processing
+ProductGenerationDateTime
+ProductVersion
 programmatically
 Programmatically
 PRs
@@ -352,6 +362,7 @@ rrr
 RTC
 RTC-based
 RTC-S1
+RTC-STATIC
 Rüetschi
 S1
 S1_136231_IW2_20200604T022312_VV_7C85-BURST
@@ -401,6 +412,7 @@ SRTM
 SRTMGL1
 ssss
 SSV
+StartDateTime
 Stereographic
 StoryMap
 StoryMaps
@@ -409,7 +421,9 @@ subfolders
 submit_aria_s1_gunw_job
 subpackage
 superpixel
+T115-245714-IW1
 TBD
+tif
 TODO
 TopsApp
 tradeoffs
@@ -434,6 +448,7 @@ UTC
 UTCTime
 UTM
 UTM-projected
+v1.0
 v2
 VH
 VV
@@ -455,6 +470,7 @@ Yukon-Kuskokwim
 Yunjun
 yy
 yyyymmdd
+YYYYMMDDTHHMMSSZ
 zz
 ⅓
 ½

@@ -216,7 +216,7 @@ and the `RTC-STATIC` search results.
 
 The Local Incidence Angle file can be downloaded using either link, but it is the same file. It is always named with 
 the pattern `OPERA_L2_RTC-S1-STATIC_Txxx-xxxxxx-IWx_20140403_S1A_30_v1.0_local_incidence_angle.tif`, and the download 
-url behind the local incidence angle listings in both the `RTC` and `RTC-STATIC` results link to the same source file.
+URL behind the local incidence angle listings in both the `RTC` and `RTC-STATIC` results link to the same source file.
 
 There is a file called `Mask` listed with both the `RTC` and the `RTC-STATIC` search results. Unlike the 
 local incidence angle file, these two mask files are NOT the same. Both are validity masks with the same pixel 

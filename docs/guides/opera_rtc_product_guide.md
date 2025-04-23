@@ -125,21 +125,27 @@ section of the
 
 ## Ordering On-Demand OPERA RTC-S1 Products
 
-[#TODO: Add content]
+<!--[#TODO: Add content]-->
 
 ## Accessing On-Demand OPERA RTC-S1 Products
 
-Currently, On-Demand OPERA RTC-S1 products can be accessed using the 
+On-Demand OPERA RTC-S1 products can be accessed programmatically using the 
 [HyP3 API](../using/api.md "Using HyP3 API") 
 or 
 [Python SDK](../using/sdk.md "Using HyP3 Python SDK").
 
-As with other On-Demand products available from ASF, these products are only available for 14 days once 
-processing is complete, so make sure that you download the files within that two-week window.
+Users can also access the products using the 
+[On Demand Search](https://docs.asf.alaska.edu/vertex/manual/#on-demand-products-search-options "Vertex Manual" ){target=_blank}
+interface in 
+[Vertex](https://search.asf.alaska.edu/#/?maxResults=1000&searchType=On%20Demand "Vertex On Demand Search" ){target=_blank}. 
 
-Development efforts are underway to provide support for accessing On-Demand OPERA RTC-S1 products in Vertex, so 
-stay tuned for that functionality! In addition, we plan to support adding standard OPERA RTC-S1 products generated 
-On Demand to the OPERA_L2_RTC-S1_V1 collection, expanding the archive based on user needs.
+<!--[#TODO: Add Vertex screen shot and any appropriate hints once interface is available]-->
+
+**As with other On-Demand products available from ASF, these products are only available for 14 days once 
+processing is complete, so make sure that you download the files within that two-week window.**
+
+We plan to support adding standard OPERA RTC-S1 products generated On Demand to the OPERA_L2_RTC-S1_V1 collection, 
+expanding the archive based on user needs. Stay tuned for that functionality!
 
 ## Product Packaging
 
@@ -154,7 +160,7 @@ This section will describe the common files first, then the additional files ava
 with products generated On Demand. The naming convention for the common files is the same, regardless of whether 
 the product was produced by the OPERA SDS or ASF's HyP3 platform.
 
-[#TODO: Add any info about some of the info included in metadata files that might indicate the processing source]
+<!--[#TODO: Add any info about some of the info included in metadata files that might indicate the processing source]-->
 
 ### L2 Radiometric Terrain Corrected (RTC) Files
 OPERA RTC-S1 products are available as a collection of files associated with a source Sentinel-1 burst. If you search 
@@ -301,7 +307,7 @@ OPERA_L2_RTC-S1_T069-147170-IW1_20210205T163901Z_20220101T140222Z_S1A_30_v1.0_ma
 
 ### Additional Files included with ASF On Demand OPERA RTC-S1 Products
 
-[#TODO: Populate this section]
+<!--[#TODO: Populate this section]-->
 
 
 

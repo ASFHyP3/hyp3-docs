@@ -89,6 +89,24 @@ processing management software.
 
 Archived and On-Demand RTC-S1 products can be used interchangeably in a time series analysis.
 
+### Adding On-Demand OPERA RTC-S1 Products to the ASF Archive
+
+When users order OPERA RTC-S1 products On Demand from ASF, the completed products will automatically be added to the 
+archived collection of OPERA RTC-S1 products as long as the following conditions are met:
+
+- The product does not already exist in the archive [#TODO: Verify this]
+- The product uses the default processing options (power scale, gamma-0 radiometry, 30-m pixel spacing) of the 
+  archived products
+    - Currently, On-Demand processing only supports the default processing options, so this will only be a factor
+      in the future when customization is available for On-Demand OPERA RTC-S1 products
+- [#TODO: Any other conditions?]
+
+Users can access On-Demand OPERA RTC-S1 products from their 
+[On-Demand Submitted Products](https://docs.asf.alaska.edu/vertex/manual/#on-demand-products-search-options){target=_blank} 
+list for 14 days after processing is complete. They, and any other users, can also access the product in perpetuity 
+simply by 
+[searching for it in the OPERA RTC-S1 collection](#searching-for-archived-opera-rtc-s1-products "Jump to the Searching for Archived OPERA RTC-S1 Products section of this document"). 
+
 ## Searching for Archived OPERA RTC-S1 Products
 
 To search for existing OPERA RTC-S1 products in 

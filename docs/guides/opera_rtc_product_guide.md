@@ -242,13 +242,6 @@ The main difference between the two files is that the data extent matches the ot
 `RTC-STATIC` files have a larger extent than the `RTC` files, as data is included for the full raster footprint, 
 including the NoData pixels that are present around the edges of the RTC data products.
 
-There may, however, also be some differences in the actual validity pixel values when comparing an RTC-STATIC 
-validity mask to the validity mask included with a specific RTC product. Slight differences in the orbit with each 
-acquisition means that the layover or shadow conditions for any given pixel may be different from one pass to another.
-
-For investigating the layover/shadow impacts for a specific RTC product, users will generally be better served by 
-using the validity mask delivered with that product rather than the mask available as a static layer.
-
 ![Figure 5](../images/opera-mask-compare.png "Comparison of the two OPERA RTC-S1 validity masks")
 
 The mask file in the map on the left is the mask linked to the `RTC` search results.
@@ -266,8 +259,12 @@ The mask file in the map on the right is the mask linked to the `RTC-STATIC` sea
 It includes validity mask values for the full extent of the burst footprint, including the NoData padding around the 
 pixels with valid radiometry within the radar burst. All of the static layers include data for this entire area.
 
-The pixel values can differ somewhat between the mask provided in the static layers and the mask generated based on 
-the radiometric extent of the specific Sentinel-1 burst. [#TODO: add discussion/guidance, and maybe an illustration]
+There may, however, also be differences in the actual pixel values when comparing an RTC-STATIC validity mask to 
+the validity mask included with a specific RTC product. Slight differences in the orbit with each acquisition means 
+that the layover or shadow conditions for any given pixel may be different from one pass to another.
+
+For investigating the layover/shadow impacts for a specific RTC product, users will generally be better served by 
+using the validity mask delivered with that product rather than the mask available as a static layer.
 
 ### Naming Convention
 

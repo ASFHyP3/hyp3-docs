@@ -126,7 +126,17 @@ section of the
 
 ## Accessing On-Demand OPERA RTC-S1 Products
 
-[#TODO: Add content - zip file format, 14-days, basic guidance for accessing on demand products in vertex]
+Currently, On-Demand OPERA RTC-S1 products can be accessed using the 
+[HyP3 API](../using/api.md "Using HyP3 API") 
+or 
+[Python SDK](../using/sdk.md "Using HyP3 Python SDK").
+
+As with other On-Demand products available from ASF, these products are only available for 14 days once 
+processing is complete, so make sure that you download the files within that two-week window.
+
+Development efforts are underway to provide support for accessing On-Demand OPERA RTC-S1 products in Vertex, so 
+stay tuned for that functionality! In addition, we plan to support adding standard OPERA RTC-S1 products generated 
+On Demand to the OPERA_L2_RTC-S1_V1 collection, expanding the archive based on user needs.
 
 ## Product Packaging
 

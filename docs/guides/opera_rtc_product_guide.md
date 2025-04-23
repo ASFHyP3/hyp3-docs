@@ -167,11 +167,14 @@ click on an item in the left panel of the search results, the associated files a
 
 The files available for download include: 
 
-- An HDF5 file containing product metadata (no actual RTC data are included in this file) ([#TODO: Add more info])
-- A single-band 32-bit float Cloud-Optimized GeoTIFF (COG) file for each available polarization
-- A Mask GeoTIFF file indicating pixels in the RTC products that contain valid data rather than NoData values
-- A Metadata XML file ([#TODO: Add more info])
-- Local Incidence Angle GeoTIFF file ([#TODO: Add more info])
+- HDF5 file containing product metadata, specifically orbit position and velocity (no actual RTC data are 
+  included in this file)
+- A single-band 32-bit float Cloud-Optimized GeoTIFF (COG) file for each available polarization containing the 
+  RTC values (most commonly VV and VH, but HH and HV in some areas)
+- [Mask](#validity-mask) COG file indicating pixels in the RTC products that contain valid data and indicating 
+  which pixels are impacted by layover and/or shadow
+- Metadata XML file containing information about the product in ISO format
+- [Local Incidence Angle](#local-incidence-angle) COG file 
 
 ### L2 Radiometric Terrain Corrected Static Layer (RTC-STATIC) Files
 There are some ancillary products required for RTC processing that change very little through time. Instead of 
@@ -182,7 +185,7 @@ These `RTC-STATIC` products include the following COG files:
 
 - local incidence angle
 - incidence angle
-- mask
+- mask (layover/shadow validity mask)
 - number of looks
 - RTC Area Normalization Factor (ANF) gamma0 to beta0
 - RTC ANF gamma0 to sigma0
@@ -211,12 +214,16 @@ search results using the OPERA Burst ID.
 
 ### Duplicate layer names
 
-There are **Mask** files and **Local Incidence Angle** files listed in association with both the `RTC` search results 
+There are **Local Incidence Angle** and **Mask** files listed in association with both the `RTC` search results 
 and the `RTC-STATIC` search results. 
+
+#### Local Incidence Angle
 
 The Local Incidence Angle file can be downloaded using either link, but it is the same file. It is always named with 
 the pattern `OPERA_L2_RTC-S1-STATIC_Txxx-xxxxxx-IWx_20140403_S1A_30_v1.0_local_incidence_angle.tif`, and the download 
-URL behind the local incidence angle listings in both the `RTC` and `RTC-STATIC` results link to the same source file.
+URL behind the local incidence angle listings in both the `RTC` and `RTC-STATIC` results reference the same source file.
+
+#### Validity Mask
 
 There is a file called `Mask` listed with both the `RTC` and the `RTC-STATIC` search results. Unlike the 
 local incidence angle file, these two mask files are NOT the same. Both are validity masks with the same pixel 
@@ -237,15 +244,20 @@ rectangular.
 
 ![Figure 5](../images/opera-mask-compare.png "Comparison of the two OPERA RTC-S1 validity masks")
 
-The mask file in the map on the left is the mask linked to the `RTC` search results, 
-(e.g. `OPERA_L2_RTC-S1_T115-245714-IW1_20250418T141628Z_20250419T010229Z_S1A_30_v1.0_mask.tif`). The extent of 
-NoData padding around area that has valid radar data for that particular burst is displayed with a transparent 
-pink color. The mask values are only applied to the pixels with valid radiometry within the radar burst.
+The mask file in the map on the left is the mask linked to the `RTC` search results.
 
-The mask file in the map on the right is the mask linked to the `RTC-STATIC` search results, 
-(e.g. `OPERA_L2_RTC-S1-STATIC_T115-245714-IW1_20140403_S1A_30_v1.0_mask.tif`), includes mask values for the full 
-extent of the burst footprint, including the NoData padding around the pixels with valid radiometry within the 
-radar burst.
+- `OPERA_L2_RTC-S1_T115-245714-IW1_20250418T141628Z_20250419T010229Z_S1A_30_v1.0_mask.tif`
+
+The extent of NoData padding around area that has valid radar data for that particular burst is displayed with a 
+transparent pink color in this illustration, but would normally appear transparent. The mask values are only applied 
+to the pixels with valid radiometry within the radar burst.
+
+The mask file in the map on the right is the mask linked to the `RTC-STATIC` search results.
+
+- `OPERA_L2_RTC-S1-STATIC_T115-245714-IW1_20140403_S1A_30_v1.0_mask.tif`
+
+It includes validity mask values for the full extent of the burst footprint, including the NoData padding around the 
+pixels with valid radiometry within the radar burst. All of the static layers include data for this entire area.
 
 The pixel values can differ somewhat between the mask provided in the static layers and the mask generated based on 
 the radiometric extent of the specific Sentinel-1 burst. [#TODO: add discussion/guidance, and maybe an illustration]
@@ -256,8 +268,7 @@ The file names of OPERA RTC-S1 products are designed to be unique and descriptiv
 
 The following file-naming convention is used:
 
-OPERA_L2_RTC-S1_[BurstID]_[StartDateTime]_[ProductGenerationDateTime]_[Sensor]_[Pix
-elSpacing]_[ProductVersion]{_[LayerName]}.Ext
+`OPERA_L2_RTC-S1_[BurstID]_[StartDateTime]_[ProductGenerationDateTime] _[Sensor]_[PixelSpacing]_[ProductVersion]_[LayerName].Ext`
 
 For example: OPERA_L2_RTC-S1_T115-245714-IW1_20250418T141628Z_20250419T010229Z_S1A_30_v1.0_VV.tif
 
@@ -274,11 +285,16 @@ Table 1 describes the dynamic elements in the naming scheme.
 | LayerName                 | Name of the RTC-S1 product layer, if applicable                                                                                                                               | VV               |
 | Ext                       | File extension: “tif”, “h5”, or “png”                                                                                                                                         | tif              |
 
+[#TODO: check with OPERA team that they're really using GMT and not UTC]
+
 Example file names for each of the files associated with OPERA RTC-S1 products:
 
 OPERA_L2_RTC-S1_T069-147170-IW1_20210205T163901Z_20220101T140222Z_S1A_30_v1.0.h5
+
 OPERA_L2_RTC-S1_T069-147170-IW1_20210205T163901Z_20220101T140222Z_S1A_30_v1.0_VV.tif
+
 OPERA_L2_RTC-S1_T069-147170-IW1_20210205T163901Z_20220101T140222Z_S1A_30_v1.0_VH.tif
+
 OPERA_L2_RTC-S1_T069-147170-IW1_20210205T163901Z_20220101T140222Z_S1A_30_v1.0_mask.tif
 
 ### Additional Files included with ASF On Demand OPERA RTC-S1 Products

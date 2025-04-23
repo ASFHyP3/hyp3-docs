@@ -167,9 +167,9 @@ Sentinel-1 burst ID used for OPERA processing, and archived as `Static Layer` fi
 
 These `RTC-STATIC` products include the following COG files: 
 
-- local incidence angle
+- [local incidence angle](#local-incidence-angle)
 - incidence angle
-- mask (layover/shadow validity mask)
+- [mask](#validity-mask) (layover/shadow validity mask)
 - number of looks
 - RTC Area Normalization Factor (ANF) gamma0 to beta0
 - RTC ANF gamma0 to sigma0
@@ -204,8 +204,11 @@ and the `RTC-STATIC` search results.
 #### Local Incidence Angle
 
 The Local Incidence Angle file can be downloaded using either link, but it is the same file. It is always named with 
-the pattern `OPERA_L2_RTC-S1-STATIC_Txxx-xxxxxx-IWx_20140403_S1A_30_v1.0_local_incidence_angle.tif`, and the download 
-URL behind the local incidence angle listings in both the `RTC` and `RTC-STATIC` results reference the same source file.
+this pattern: 
+`OPERA_L2_RTC-S1-STATIC_Txxx-xxxxxx-IWx_20140403_S1A_30_v1.0_local_incidence_angle.tif`
+
+The download URL behind the local incidence angle listings in both the `RTC` and `RTC-STATIC` results 
+reference the same source file.
 
 #### Validity Mask
 

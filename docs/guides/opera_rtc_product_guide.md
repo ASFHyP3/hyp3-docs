@@ -117,6 +117,9 @@ met the criteria for being added to the archive.
 
 ![Figure 2](../images/opera-rtc-vertex-search.png "Search for OPERA RTC-S1 Products")
 
+Because the OPERA RTC-S1 footprints are so small, there are millions of files in the archive. It is important to 
+make use of the available filters to find the products you want.
+
 1. Set an Area of Interest
 2. Set a date range
 3. In the Search Filters menu, select the `L2 Radiometric Terrain Corrected (RTC)` File Type

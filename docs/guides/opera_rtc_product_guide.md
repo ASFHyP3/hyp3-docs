@@ -12,6 +12,9 @@ project at NASA's
     If OPERA RTC-S1 products are not available for your full time range or area of interest, you can now request 
     that they be generated using ASF's On Demand processing platform!
 
+OPERA RTC-S1 products are archived in the 
+[OPERA_L2_RTC-S1_V1](https://www.earthdata.nasa.gov/data/catalog/asf-opera-l2-rtc-s1-v1-1 "Earthdata Data Catalog" ){target=_blank} 
+collection.
 
 ## OPERA RTC-S1 Products
 

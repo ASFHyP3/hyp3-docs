@@ -27,7 +27,7 @@ For a step-by-step tutorial on ordering On-Demand RTC Products using Vertex, vis
 
 ### Sentinel-1 Mission
 The 
-[Sentinel-1 mission](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1 "https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1" ){target=_blank} 
+[Sentinel-1 mission](https://sentiwiki.copernicus.eu/web/s1-mission "https://sentiwiki.copernicus.eu/web/s1-mission" ){target=_blank} 
 collects C-band band SAR from a pair of polar-orbiting satellites launched by the European Space Agency (ESA) as part 
 of the 
 [Copernicus program](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions" ){target=_blank}. 

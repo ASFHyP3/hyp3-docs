@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.5]
+
+### Added
+* References to Sentinel-1C in the [RTC](docs/guides/rtc_product_guide.md) and [InSAR Product Guides](docs/guides/insar_product_guide.md) and [Sentinel-1 Mission](docs/sentinel1.md) page. 
+
 ## [0.10.4]
 
 ### Added

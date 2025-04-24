@@ -221,7 +221,7 @@ HyP3 InSAR output is a zip file containing various files, including GeoTIFFs, PN
 
 The InSAR product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 4. 
 
-- The platform names, either Sentinel-1A or Sentinel-1B, are abbreviated "A" or "B", indicating the reference and secondary granule's imaging platform
+- The platform names, either Sentinel-1A, Sentinel-1B, or Sentinel-1C, are abbreviated "A", "B", or "C", indicating the reference and secondary granule's imaging platform
 - The reference start date and time and the secondary start date and time, with the date and time separated by the letter T
 - The polarizations for the pair, either HH or VV, the orbit type, and the days of separation for the pair
 - The product type (always INT for InSAR) and the pixel spacing, which will be either 80 or 40, based upon the number of looks selected when the job was submitted for processing
@@ -261,7 +261,7 @@ If the **water mask** option is selected, the water mask is applied prior to pha
 
 The tags and extensions used and example file names for each raster are listed in Table 2 below. 
 
-{% set base_name = 'S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>' %}
+{% set base_name = 'S1ABC<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>' %}
 
 | Extension          | Description                      | Example                           |
 |--------------------|----------------------------------|-----------------------------------|

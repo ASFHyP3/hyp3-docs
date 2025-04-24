@@ -26,11 +26,18 @@ For a step-by-step tutorial on ordering On-Demand RTC Products using Vertex, vis
 ## Introduction
 
 ### Sentinel-1 Mission
-The [Sentinel-1 mission](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1 "https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1" ){target=_blank} collects C-band band SAR from a pair of polar-orbiting satellites launched by the European Space Agency (ESA) as part of the [Copernicus program](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions" ){target=_blank}. The Sentinel-1A satellite was launched April 3, 2014, the Sentinel-1B satellite was launched April 25, 2016, and the Sentinel-1C satellite was launched December 5, 2024. 
+The 
+[Sentinel-1 mission](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1 "https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1" ){target=_blank} 
+collects C-band band SAR from a pair of polar-orbiting satellites launched by the European Space Agency (ESA) as part 
+of the 
+[Copernicus program](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions" ){target=_blank}. 
+The Sentinel-1A satellite was launched April 3, 2014, the Sentinel-1B satellite was launched April 25, 2016, 
+and the Sentinel-1C satellite was launched December 5, 2024. 
 
 Sentinel-1A is still collecting data, but 
-[Sentinel-1B ended its mission](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite" ){target=_blank} on December 23, 2021. Sentinel-1C is now in position to replace Sentinel-1B in the 
-constellation, returning the Sentinel-1 mission to full observation capacity. 
+[Sentinel-1B ended its mission](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite" ){target=_blank} 
+on December 23, 2021. Sentinel-1C is now in position to replace Sentinel-1B in the constellation, returning the 
+Sentinel-1 mission to full observation capacity. 
 
 The two Sentinel-1 satellites each have a 12-day repeat cycle, but their orbits are offset 180 degrees so that one 
 or the other will pass over the same location on earth every 6 days. When two S1 satellites are in orbit, Europe 
@@ -42,9 +49,13 @@ For the time period between when Sentinel-1B stopped acquiring data and before S
 coverage was more sparse. Some areas did not have any imagery acquired between December 2021 and April 2025. 
 Depending on your area of interest, you may have limited data available during that time. 
 
-Because this is a polar-orbiting satellite constellation, areas near the poles may have a number of overlapping paths, resulting in even more frequent acquisitions with similar footprints. 
+Because this is a polar-orbiting satellite constellation, areas near the poles may have a number of overlapping paths, 
+resulting in even more frequent acquisitions with similar footprints. 
 
-The relatively short interval between acquisitions makes this SAR dataset a very useful tool for monitoring rapid or sudden landscape changes. In addition, SAR can image the earth's surface through cloud or smoke cover and does not require sunlight, so valid imagery can be collected on every pass. This is particularly useful for monitoring conditions during natural disasters such as hurricanes or wildfires, or in areas that are prone to frequent cloud cover.
+The relatively short interval between acquisitions makes this SAR dataset a very useful tool for monitoring rapid or 
+sudden landscape changes. In addition, SAR can image the earth's surface through cloud or smoke cover and does not 
+require sunlight, so valid imagery can be collected on every pass. This is particularly useful for monitoring 
+conditions during natural disasters such as hurricanes or wildfires, or in areas that are prone to frequent cloud cover.
 
 ### SAR Distortions
 

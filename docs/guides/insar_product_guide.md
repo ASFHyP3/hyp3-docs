@@ -219,15 +219,23 @@ HyP3 InSAR output is a zip file containing various files, including GeoTIFFs, PN
 
 ### Naming Convention
 
-The InSAR product names are packed with information pertaining to the processing of the data, presented in the following order, as illustrated in Figure 4. 
+The InSAR product names are packed with information pertaining to the processing of the data, presented in the 
+following order, as illustrated in Figure 4. 
 
-- The platform names, either Sentinel-1A, Sentinel-1B, or Sentinel-1C, are abbreviated "A", "B", or "C", indicating the reference and secondary granule's imaging platform
-- The reference start date and time and the secondary start date and time, with the date and time separated by the letter T
+- The platform names, one of Sentinel-1A, Sentinel-1B, or Sentinel-1C, are abbreviated with the letters "A", "B", or "C"
+    - Two of these letters follow the leading `S1`, indicating the platform(s) used to acquire the reference and 
+      secondary images, in that order (`S1AA`, `S1BA`, `S1AC`, etc.)
+- The reference start date and time and the secondary start date and time, with the date and time 
+  separated by the letter T
 - The polarizations for the pair, either HH or VV, the orbit type, and the days of separation for the pair
-- The product type (always INT for InSAR) and the pixel spacing, which will be either 80 or 40, based upon the number of looks selected when the job was submitted for processing
+- The product type (always INT for InSAR) and the pixel spacing, which will be either 80 or 40, based upon the 
+  number of looks selected when the job was submitted for processing
 - The software package used for processing is always GAMMA for GAMMA InSAR products
-- User-defined options are denoted by three characters indicating whether the product is water masked (w) or not (u), the scene is clipped (e for entire area, c for clipped), and whether a single sub-swath was processed or the entire granule (either 1, 2, 3, or F for full swath)
-    - *Currently, only the water masking is available as a user-selected option; the products always include the full granule extent with all three sub-swaths*
+- User-defined options are denoted by three characters indicating whether the product is water masked (w) or not (u), 
+  the scene is clipped (e for entire area, c for clipped), and whether a single sub-swath was processed or the entire 
+  granule (either 1, 2, 3, or F for full swath)
+    - *Currently, only the water masking is available as a user-selected option; the products always include the 
+      full granule extent with all three sub-swaths*
 - The filename ends with the ASF product ID, a 4 digit hexadecimal number
 
 
@@ -261,7 +269,7 @@ If the **water mask** option is selected, the water mask is applied prior to pha
 
 The tags and extensions used and example file names for each raster are listed in Table 2 below. 
 
-{% set base_name = 'S1ABC<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>' %}
+{% set base_name = 'S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>' %}
 
 | Extension          | Description                      | Example                           |
 |--------------------|----------------------------------|-----------------------------------|

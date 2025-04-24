@@ -6,9 +6,9 @@ More information about the mission is available from the [European Space Agency 
 
 ## The Sentinel-1 Constellation
 
-The Sentinel-1A satellite was launched April 3, 2014, and the Sentinel-1B satellite was launched April 25, 2016. The satellites each have a 12-day repeat cycle and use the same orbit pattern, but are offset 180 degrees to allow repeat passes every 6 days. 
+The Sentinel-1A satellite was launched April 3, 2014, the Sentinel-1B satellite was launched April 25, 2016, and the Sentinel-1C satellite was launched December 5, 2024. The satellites each have a 12-day repeat cycle and use the same orbit pattern, but are offset 180 degrees to allow repeat passes every 6 days. 
 
-While both satellites were actively imaging, most global landmasses were imaged every 12 days. Some areas of particular interest to the EC, including Europe and areas undergoing rapid changes due to uplift or subsidence activity, were imaged every 6 days. Refer to the [Sentinel-1 Observation Scenario](https://sentinel.esa.int/web/sentinel/missions/sentinel-1/observation-scenario "https://sentinel.esa.int/web/sentinel/missions/sentinel-1/observation-scenario" ){target=_blank} for more information on the acquisition plan used while both satellites were actively acquiring data.
+While the Sentinel-1A and 1B satellites were actively imaging, most global landmasses were imaged every 12 days. Some areas of particular interest to the EC, including Europe and areas undergoing rapid changes due to uplift or subsidence activity, were imaged every 6 days. Refer to the [Sentinel-1 Observation Scenario](https://sentinel.esa.int/web/sentinel/missions/sentinel-1/observation-scenario "https://sentinel.esa.int/web/sentinel/missions/sentinel-1/observation-scenario" ){target=_blank} for more information on the acquisition plan used while both satellites were actively acquiring data.
 
 ### Mission Ends for Sentinel-1B
 

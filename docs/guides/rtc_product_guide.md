@@ -309,7 +309,7 @@ Example: S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A
 
 | Element  | Definition                                                                   | Example  |
 |----------|------------------------------------------------------------------------------|----------|
-| x        | Mission: A or B                                                              | A        |
+| x        | Sentinel-1 Platform: A, B, or C                                              | A        |
 | yy       | Beam Mode                                                                    | IW       |
 | aaaaaaaa | Start Year-Month-Day                                                         | 20180128 |
 | bbbbbb   | Start Hour-Minute-Second                                                     | 161201   |

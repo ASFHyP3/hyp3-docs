@@ -387,13 +387,9 @@ A shapefile indicating the extent of the RTC data coverage is included in the pa
 
 ## SAR Scales
 
-!!! tip "On Demand Sentinel-1 RTC Products now available in dB scale"
-
-    Users can now choose to output Sentinel-1 RTC products in decibel (dB) scale. Previously, the only choices for output scale were power and amplitude. The default scale continues to be power.
-
 ### Power Scale
 
-Note that the default output of Sentinel-1 RTC products from HyP3 is in power scale. The values in this scale are generally very close to zero, so the dynamic range of the RTC image can be easily skewed by a few bright scatterers in the image. Power scale is appropriate for statistical analysis of the RTC dataset, but may not always be the best option for data visualization.
+The default output of Sentinel-1 RTC products from HyP3 is in power scale. The values in this scale are generally very close to zero, so the dynamic range of the RTC image can be easily skewed by a few bright scatterers in the image. Power scale is appropriate for statistical analysis of the RTC dataset, but may not always be the best option for data visualization.
 
 When viewing an RTC image in power scale in a GIS environment, it may appear mostly or all black, and you may need to adjust the stretch to see features in the image. Often applying a stretch of 2 standard deviations, or setting the Min-Max stretch values to 0 and 0.3, will greatly improve the appearance of the image. You can adjust the stretch as desired to display your image to full advantage. Be aware that this does not change the actual pixel values.
 

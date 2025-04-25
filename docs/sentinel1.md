@@ -26,7 +26,7 @@ for more information on the acquisition plans that have been used by the mission
 
 As of December 23, 2021, Sentinel-1B was no longer able to acquire data. An anomaly related to the power supply 
 could not be repaired, and the satellite has been decommissioned. Refer to 
-[ESA's documentation of the end of the Sentinel-1B mission](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite "Mission Ends for Copernicus Sentinel-1B Satellite" ){target=_blank} 
+[ESA documentation of the end of the Sentinel-1B mission](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite "Mission Ends for Copernicus Sentinel-1B Satellite" ){target=_blank} 
 for more information.
 
 The loss of Sentinel-1B resulted in a significant reduction in the spatial and temporal coverage of the Sentinel-1 

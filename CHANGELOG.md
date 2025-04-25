@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.10.5]
 
 ### Changed
-* Updated documentation to include Sentinel-1C
+* Updated documentation to include information about Sentinel-1C
 
 ## [0.10.4]
 

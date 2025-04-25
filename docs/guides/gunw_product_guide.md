@@ -19,7 +19,7 @@ While there is a large archive of ARIA-S1-GUNW products that have already been g
 !!! warning "ARIA-S1-GUNW On-Demand processing not supported for Alaska"
 
     ARIA-S1-GUNW products rely on RAiDER software for atmospheric delay correction. This software does not currently 
-    support processing acquisitions over Alaska, causing On-Demand ARIA-S1_GUNW jobs submitted over Alaska to fail. 
+    support processing acquisitions over Alaska, causing On-Demand ARIA-S1-GUNW jobs submitted over Alaska to fail. 
 
 The On Demand ARIA-S1-GUNW products are generated using the same code that is used to generate the archived products, so they are fully interoperable.
 

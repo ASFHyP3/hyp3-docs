@@ -6,8 +6,8 @@ Radar (SAR) instruments for global, around-the-clock imagery acquisition, even t
 
 The mission was designed to support surface deformation applications, and the stable orbits and consistent 
 acquisition plans of the Sentinel-1 satellites make it easy to generate high-quality Interferometric SAR (InSAR) 
-products. These products can measure deformation to the centimeter scale, though the relatively short wavelength 
-of C-band SAR limits the viability of InSAR in densely vegetated areas. 
+products. These products can measure deformation to the centimeter scale, though the 5.6-cm wavelength 
+of the C-band SAR sensor limits the viability of InSAR in densely vegetated areas. 
 
 The relatively short interval between acquisitions makes this SAR dataset a very useful tool for monitoring rapid or 
 sudden landscape changes. In addition, SAR can image the earth's surface through cloud or smoke cover and does not 

@@ -30,7 +30,8 @@ Each Sentinel-1 satellite has a 12-day repeat cycle, and they all use the same o
 sensors in the constellation, their orbits are offset 180 degrees to allow repeat passes every 6 days. In this 
 scenario, most global landmasses are imaged every 12 days. However, some areas of particular interest to the EC, 
 including Europe and areas undergoing rapid changes due to uplift or subsidence activity, are imaged every 6 days. 
-Refer to  
+
+Refer to 
 [Sentinel-1's Acquisition Plans](https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/acquisition-plans "https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/acquisition-plans" ){target=_blank} 
 for more information on the acquisition plans that have been used by the mission through time.
 
@@ -61,4 +62,4 @@ results than you would expect, you can
 Now that Sentinel-1C has replaced Sentinel-1B, and Sentinel-1A continues to acquire data, the constellation has 
 returned to the same observation scenario used when both Sentinel-1A and Sentinel-1B were active. The 
 Sentinel-1A platform is approaching the end of its mission, however, and 
-[plans are underway to launch Sentinel-1D to replace it](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Ariane_6_to_take_Sentinel-1D_into_orbit ){target=_blank. 
+[plans are underway to launch Sentinel-1D to replace it](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Ariane_6_to_take_Sentinel-1D_into_orbit ){target=_blank}. 

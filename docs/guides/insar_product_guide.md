@@ -218,8 +218,8 @@ HyP3 InSAR output is a zip file containing various files, including GeoTIFFs, PN
 The InSAR product names are packed with information pertaining to the processing of the data, presented in the 
 following order, as illustrated in Figure 4. 
 
-- The platform names, one of Sentinel-1A, Sentinel-1B, or Sentinel-1C, are abbreviated with the letters "A", "B", or "C"
-    - Two of these letters follow the leading `S1`, indicating the platform(s) used to acquire the reference and 
+- The platform names, one of Sentinel-1A, Sentinel-1B, or Sentinel-1C, are abbreviated with the letters `A`, `B`, or `C`
+    - Two of these letters follow `S1`, indicating the platform(s) used to acquire the reference and 
       secondary images, in that order (`S1AA`, `S1BA`, `S1AC`, etc.)
 - The reference start date and time and the secondary start date and time, with the date and time 
   separated by the letter T

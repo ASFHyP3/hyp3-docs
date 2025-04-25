@@ -32,6 +32,12 @@ You can download existing ARIA-S1-GUNW products from the Alaska Satellite Facili
 
 If the ARIA-S1-GUNW products you need are not available in the archive, you can use ASF's On Demand platform to submit custom ARIA-S1-GUNW jobs for processing. 
 
+!!! warning "Sentinel-1C acquisitions not yet supported" 
+
+    ISCE2 software, which is used for processing ARIA GUNW products, does not currently support processing 
+    SLCs acquired by the newly launched Sentinel-1C platform. Until the software package is updated, users will 
+    not be able to submit ARIA-S1-GUNW jobs that include Sentinel-1C acquisitions for On-Demand processing.
+
 ### ARIA Frame IDs
 
 Sentinel-1 IW SLC products are not created in a way that ensures that granules for the same relative orbit and location always fully overlap over time. This results in inconsistent framing of the Sentinel-1 IW SLCs that can make it difficult to create longer series of Sentinel-1 InSAR products.

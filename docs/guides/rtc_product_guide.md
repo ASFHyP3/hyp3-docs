@@ -36,12 +36,12 @@ and the Sentinel-1C satellite was launched December 5, 2024.
 
 Sentinel-1A is still collecting data, but 
 [Sentinel-1B ended its mission](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite" ){target=_blank} 
-on December 23, 2021. Sentinel-1C is now in position to replace Sentinel-1B in the constellation, returning the 
-Sentinel-1 mission to full observation capacity. 
+on December 23, 2021. Sentinel-1C has now replaced Sentinel-1B in the constellation, returning the Sentinel-1 
+mission to full observation capacity. 
 
-The two Sentinel-1 satellites each have a 12-day repeat cycle, but their orbits are offset 180 degrees so that one 
-or the other will pass over the same location on earth every 6 days. When two S1 satellites are in orbit, Europe 
-and select areas of interest are imaged with a 6-day interval, as described in the 
+The Sentinel-1 satellites each have a 12-day repeat cycle, but when there are two functioning satellites, their orbits 
+are offset 180 degrees so that one or the other will pass over the same location on earth every 6 days. Under this 
+scenario, select areas of interest are imaged with a 6-day interval, as described in the 
 [mission observation scenario](https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/observation-scenario "https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/observation-scenario" ){target=_blank}, 
 while most landmasses are imaged on a 12-day repeat cycle.
 

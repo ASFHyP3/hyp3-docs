@@ -31,9 +31,10 @@ sensors in the constellation, their orbits are offset 180 degrees to allow repea
 scenario, most global landmasses are imaged every 12 days. However, some areas of particular interest to the EC, 
 including Europe and areas undergoing rapid changes due to uplift or subsidence activity, are imaged every 6 days. 
 
-Refer to 
-[Sentinel-1's Acquisition Plans](https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/acquisition-plans "https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/acquisition-plans" ){target=_blank} 
-for more information on the acquisition plans that have been used by the mission through time.
+Refer to the 
+[Sentinel-1 Observation Scenario](https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/observation-scenario "https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/observation-scenario" ){target=_blank} 
+for more information on the acquisition plans that have been used to meet mission goals under different 
+constellation configurations.
 
 ## Transition from Sentinel-1B to Sentinel-1C
 

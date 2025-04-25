@@ -1,6 +1,18 @@
 # Sentinel-1 Mission
 
-The Sentinel-1 satellite constellation is part of the Copernicus Earth Observation program, coordinated by the European Space Agency (ESA) on behalf of the European Commission (EC). Sentinel-1 satellites carry C-band Synthetic Aperture Radar (SAR) instruments for global, around-the-clock imagery acquisition, even through cloud cover. 
+The Sentinel-1 satellite constellation is part of the Copernicus Earth Observation program, coordinated by the European 
+Space Agency (ESA) on behalf of the European Commission (EC). Sentinel-1 satellites carry C-band Synthetic Aperture 
+Radar (SAR) instruments for global, around-the-clock imagery acquisition, even through cloud cover. 
+
+The mission was designed to support surface deformation applications, and the stable orbits and consistent 
+acquisition plans of the Sentinel-1 satellites make it easy to generate high-quality Interferometric SAR (InSAR) 
+products. These products can measure deformation to the centimeter scale, though the relatively short wavelength 
+of C-band SAR limits the viability of InSAR in densely vegetated areas. 
+
+The relatively short interval between acquisitions makes this SAR dataset a very useful tool for monitoring rapid or 
+sudden landscape changes. In addition, SAR can image the earth's surface through cloud or smoke cover and does not 
+require sunlight, so valid imagery can be collected on every pass. This is particularly useful for monitoring 
+conditions during natural disasters such as hurricanes or wildfires, or in areas that are prone to frequent cloud cover.
 
 More information about the mission is available from the [European Space Agency Sentinel-1 Mission website](https://sentiwiki.copernicus.eu/web/s1-mission "Sentinel-1 Mission" ){target=_blank}.
 

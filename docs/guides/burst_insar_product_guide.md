@@ -217,7 +217,7 @@ reference and secondary SAFE files:
 - Bursts crossing the antimeridian are not supported
 
 When selecting input bursts that span across sub-swaths in the same relative path, you must also take care not to 
-leave gaps. The bursts in neighboring swaths can only be offset along the path by one burst. 
+leave gaps. The bursts in neighboring sub-swaths can only be offset along the path by one burst. 
 
 For example, the grouping of bursts shown in the image on the left in Figure 4 can be submitted for processing, 
 while the grouping in the image on the right would not be valid.
@@ -349,7 +349,7 @@ the following order, as illustrated in Figure 3.
 - Relative burst ID values assigned by ESA. Each value identifies a consistent burst footprint; relative burst ID 
   values differ from one sub-swath to the next.
 - The imaging mode, currently only IW is supported.
-- The swath number, either 1, 2, or 3, indicating which sub-swath the burst is located in.
+- The sub-swath number, either 1, 2, or 3, indicating which sub-swath the burst is located in.
 - The acquisition dates of the reference (older) scene and the secondary (newer) scene.
 - The polarization of the product, either HH or VV.
 - The product type (always INT for InSAR) and the pixel spacing in meters, which will be 80, 40, or 20, based upon the 
@@ -619,7 +619,7 @@ with two exceptions:
   - The four range-doppler images are not included since the products have already been merged
   - The product name is slightly modified
     - The burst ID (`bbbbbb`) is swapped for the zero-padded relative orbit number (`rrr`)
-    - The swath number is removed 
+    - The sub-swath number is removed 
     - The resulting format is `S1_rrr__yyymmdd_yyymmdd_pp_INTn_uuuu`
 
 {% endblock %}

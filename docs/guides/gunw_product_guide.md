@@ -39,7 +39,7 @@ If the ARIA-S1-GUNW products you need are not available in the archive, you can 
 
 !!! warning "Sentinel-1C acquisitions not yet supported" 
 
-    ISCE2 software, which is used for processing ARIA GUNW products, does not currently support processing 
+    ISCE2 software, which is used for processing ARIA-S1-GUNW products, does not currently support processing 
     SLCs acquired by the newly launched Sentinel-1C platform. Until the software package is updated, users will 
     not be able to submit ARIA-S1-GUNW jobs that include Sentinel-1C acquisitions for On-Demand processing.
 

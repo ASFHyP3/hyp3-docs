@@ -32,7 +32,7 @@ scenario, select areas of interest are imaged with a 6-day interval, as describe
 [mission observation scenario](https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/observation-scenario "https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/observation-scenario" ){target=_blank}, 
 while most landmasses are imaged on a 12-day repeat cycle.
 
-For the time period between when Sentinel-1B stopped acquiring data and before Sentinel-1C started acquiring data, 
+For the time period between when Sentinel-1B stopped acquiring data and Sentinel-1C started acquiring data, 
 coverage was more sparse. Some areas did not have any imagery acquired between December 2021 and April 2025. 
 Depending on your area of interest, you may have limited data available during that time. For more information, 
 visit our [Sentinel-1 Mission page](../sentinel1.md).

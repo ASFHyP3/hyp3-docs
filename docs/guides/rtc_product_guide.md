@@ -5,34 +5,45 @@ SAR datasets inherently contain [geometric and radiometric distortions](#sar-dis
 
 ASF's [Sentinel-1 On-Demand RTC](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Tutorial" ){target=_blank} products are generated using [GAMMA Software](https://gamma-rs.ch/ "https://gamma-rs.ch" ){target=_blank}. Products are distributed as GeoTIFFs (one for each available polarization) projected to the appropriate UTM Zone for the location of the scene.
 
-A Digital Elevation Model (DEM) is required for radiometric terrain correction. The [GLO-30 Copernicus DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM "Copernicus DEM" ){target=_blank} is used to process all RTC On Demand products. Refer to the [Digital Elevation Model section](#digital-elevation-models "Jump to the DEM Section of this document" ) for more information. 
-
-!!! tip "Removal of option to use Legacy DEMs for RTC Processing"
-
-    Users no longer have the option to use legacy DEMs (SRTM/NED) when processing RTC jobs [On Demand in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=_blank} or when using the [API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank} or [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank}. The [Copernicus GLO-30 DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM "Copernicus DEM" ){target=_blank} is now used for all RTC processing.
-
-!!! tip "Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90" 
-
-    The Copernicus DEM GLO-30 dataset does not provide coverage over Armenia and Azerbaijan. In the past, we have not supported On Demand product generation over those areas using the Copernicus DEM option. We now use the Copernicus DEM GLO-90 to fill those gaps. 
-
-    Users should be aware that the GLO-90 dataset has a pixel spacing of 90 meters, which is not as detailed as the 30-m pixel spacing in the GLO-30 DEM. 
+A Digital Elevation Model (DEM) is required for radiometric terrain correction. The [GLO-30 Copernicus DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM "Copernicus DEM" ){target=_blank} is used to process all RTC On Demand products. Refer to the [Digital Elevation Model section](#digital-elevation-models "Jump to the DEM Section of this document" ) for more information.
 
 For a step-by-step tutorial on ordering On-Demand RTC Products using Vertex, visit our [RTC On Demand! StoryMap](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand! StoryMap" ){target=_blank}, which also includes links to sample workflows using Sentinel-1 RTC products for GIS applications.
-
-!!! tip "New RTC Pixel Spacing Option Available"
-
-    On Demand Sentinel-1 RTC products can now be processed at [20-m pixel spacing](#pixel-spacing "RTC Pixel Spacing Documentation" ){target=_blank}. Refer to the [Processing Options](#processing-options-and-optional-files "Jump to Processing Options section in document") section for more information.
 
 ## Introduction
 
 ### Sentinel-1 Mission
-The [Sentinel-1 mission](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1 "https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1" ){target=_blank} collects C-band band SAR from a pair of polar-orbiting satellites launched by the European Space Agency (ESA) as part of the [Copernicus program](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions" ){target=_blank}. The Sentinel-1A satellite was launched April 3, 2014, and the Sentinel-1B satellite was launched April 25, 2016. The [Sentinel-1B satellite no longer acquires data](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite" ){target=_blank} as of December 23, 2021. 
 
-The two Sentinel-1 satellites each have a 12-day repeat cycle, but their orbits are offset 180 degrees so that one or the other will pass over the same location on earth every 6 days. Most areas of the earth will still only have imagery collected every 12 days at best, but while both S1A and S1B were active, Europe and select areas of interest were imaged with a 6-day interval, as described in the [mission observation scenario](https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1/observation-scenario "https://sentinels.copernicus.eu/web/sentinel/missions/sentinel-1/observation-scenario" ){target=_blank}.
+The 
+[Sentinel-1 mission](https://sentiwiki.copernicus.eu/web/s1-mission "https://sentiwiki.copernicus.eu/web/s1-mission" ){target=_blank} 
+collects C-band band SAR from a pair of polar-orbiting satellites launched by the European Space Agency (ESA) as part 
+of the 
+[Copernicus program](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions" ){target=_blank}. 
+The Sentinel-1A satellite was launched April 3, 2014, the Sentinel-1B satellite was launched April 25, 2016, 
+and the Sentinel-1C satellite was launched December 5, 2024. 
 
-Because this is a polar-orbiting satellite constellation, areas near the poles may have a number of overlapping paths, resulting in even more frequent acquisitions with similar footprints. 
+Sentinel-1A is still collecting data, but 
+[Sentinel-1B ended its mission](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite" ){target=_blank} 
+on December 23, 2021. Sentinel-1C has now replaced Sentinel-1B in the constellation, returning the Sentinel-1 
+mission to full observation capacity [as of March 26, 2025](https://dataspace.copernicus.eu/news/2025-3-25-sentinel-1c-user-data-opening-26th-march "https://dataspace.copernicus.eu/news/2025-3-25-sentinel-1c-user-data-opening-26th-march" ){target=_blank}. 
 
-The relatively short interval between acquisitions makes this SAR dataset a very useful tool for monitoring rapid or sudden landscape changes. In addition, SAR can image the earth's surface through cloud or smoke cover and does not require sunlight, so valid imagery can be collected on every pass. This is particularly useful for monitoring conditions during natural disasters such as hurricanes or wildfires, or in areas that are prone to frequent cloud cover.
+The Sentinel-1 satellites each have a 12-day repeat cycle, but when there are two functioning satellites, their orbits 
+are offset 180 degrees so that one or the other will pass over the same location on earth every 6 days. Under this 
+scenario, select areas of interest are imaged with a 6-day interval, as described in the 
+[mission observation scenario](https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/observation-scenario "https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/observation-scenario" ){target=_blank}, 
+while most landmasses are imaged on a 12-day repeat cycle.
+
+For the time period between when Sentinel-1B stopped acquiring data and Sentinel-1C started acquiring data, 
+coverage was more sparse. Some areas did not have any imagery acquired between December 2021 and April 2025. 
+Depending on your area of interest, you may have limited data available during that time. For more information, 
+visit our [Sentinel-1 Mission page](../sentinel1.md).
+
+Because this is a polar-orbiting satellite constellation, areas near the poles may have a number of overlapping paths, 
+resulting in even more frequent acquisitions with similar footprints. 
+
+The relatively short interval between acquisitions makes this SAR dataset a very useful tool for monitoring rapid or 
+sudden landscape changes. In addition, SAR can image the earth's surface through cloud or smoke cover and does not 
+require sunlight, so valid imagery can be collected on every pass. This is particularly useful for monitoring 
+conditions during natural disasters such as hurricanes or wildfires, or in areas that are prone to frequent cloud cover.
 
 ### SAR Distortions
 
@@ -56,15 +67,11 @@ The RTC product package includes a Layover-Shadow mask (see [Image Files section
 
 ## Digital Elevation Models
 
-The quality of the terrain corrections are related to the quality of the digital elevation models (DEMs) used in the process of geometrically and radiometrically correcting the SAR imagery. We use DEMs that are publicly available and have wide-ranging coverage. 
+The quality of the terrain corrections are related to the quality of the digital elevation models (DEMs) used in the process of geometrically and radiometrically correcting the SAR imagery. 
 
-In the past, ASF maintained a collection of DEMs that were pre-processed as appropriate for SAR workflows, and applied a preference hierarchy so that the best available DEM in any given area would be automatically selected for processing. With the public release of the [GLO-30 Copernicus DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM "Copernicus DEM" ){target=_blank}, we have changed our DEM strategy to leverage a cloud-hosted copy of the global Copernicus DEM. This is now the only DEM available for processing RTC and [InSAR products](insar_product_guide.md "Sentinel-1 InSAR On Demand Product Guide" ){target=_blank}.
-
-!!! tip "Removal of option to use Legacy DEMs for RTC Processing"
-
-    Users no longer have the option to use legacy DEMs (SRTM/NED) when processing RTC jobs [On Demand in Vertex](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=_blank} or when using the [API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank} or [SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank}. The [Copernicus GLO-30 DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM "Copernicus DEM" ){target=_blank} is now used for all RTC processing.
-
-We use the 2022 Release of the [Copernicus GLO-30 Public DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM "Copernicus DEM" ){target=_blank}, [available on AWS](https://registry.opendata.aws/copernicus-dem/ "Registry of Open Data on AWS - Copernicus DEM" ){target=_blank}. 
+We use the 2022 Release of the 
+[Copernicus GLO-30 Public DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM "Copernicus DEM" ){target=_blank}, 
+[available on AWS](https://registry.opendata.aws/copernicus-dem/ "Registry of Open Data on AWS - Copernicus DEM" ){target=_blank}. 
 
 !!! tip "Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90" 
 
@@ -196,9 +203,9 @@ When DEM matching is applied, the optional steps 2 and 3 are performed. Using th
 
 DEM Matching is not always beneficial, however. If the georeferencing of the DEM doesn't match the georeferencing of the Sentinel-1 imagery, DEM matching can result in variable offsets in the output images from one Sentinel-1 acquisition to the next, making it difficult to overlay images for time series analysis. Coregistration also works best when there are distinct topographic features that allow for reliable matching between the SAR image and the DEM. In areas that lack distinctive topographic features, there may also be substantial and inconsistent image offsets.
 
-The orbit files of the Sentinel-1 data are generally quite accurate, and not applying the DEM matching should output files with consistent geolocation. While it may not optimize the RTC calculations, it may be a better option for time series analysis, where having consistent alignment of images from one acquisition to the next is more important than optimizing the backscatter normalization. 
+If you are interested in optimizing the RTC calculations, and are less concerned about consistent geolocation through time, the DEM Matching option is likely a good choice. ***In cases where consistency is more important than accuracy, consider not applying DEM Matching, or at least testing the outputs to make sure they are suitable for your application.***
 
-If you are interested in optimizing the RTC calculations, and are less concerned about consistent geolocation through time, the DEM Matching option is likely a good choice. In cases where consistency is more important than accuracy, consider not applying DEM Matching, or at least testing the outputs to make sure they are suitable for your application.
+The orbit files of the Sentinel-1 data are generally quite accurate, and not applying the DEM matching should output files with consistent geolocation. While it may not optimize the RTC calculations, it may be a better option for time series analysis, where having consistent alignment of images from one acquisition to the next is more important than optimizing the backscatter normalization.
 
 #### Speckle Filter
 
@@ -284,7 +291,7 @@ Example: S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A
 
 | Element  | Definition                                                                   | Example  |
 |----------|------------------------------------------------------------------------------|----------|
-| x        | Mission: A or B                                                              | A        |
+| x        | Sentinel-1 Platform: A, B, or C                                              | A        |
 | yy       | Beam Mode                                                                    | IW       |
 | aaaaaaaa | Start Year-Month-Day                                                         | 20180128 |
 | bbbbbb   | Start Hour-Minute-Second                                                     | 161201   |
@@ -370,13 +377,9 @@ A shapefile indicating the extent of the RTC data coverage is included in the pa
 
 ## SAR Scales
 
-!!! tip "On Demand Sentinel-1 RTC Products now available in dB scale"
-
-    Users can now choose to output Sentinel-1 RTC products in decibel (dB) scale. Previously, the only choices for output scale were power and amplitude. The default scale continues to be power.
-
 ### Power Scale
 
-Note that the default output of Sentinel-1 RTC products from HyP3 is in power scale. The values in this scale are generally very close to zero, so the dynamic range of the RTC image can be easily skewed by a few bright scatterers in the image. Power scale is appropriate for statistical analysis of the RTC dataset, but may not always be the best option for data visualization.
+The default output of Sentinel-1 RTC products from HyP3 is in power scale. The values in this scale are generally very close to zero, so the dynamic range of the RTC image can be easily skewed by a few bright scatterers in the image. Power scale is appropriate for statistical analysis of the RTC dataset, but may not always be the best option for data visualization.
 
 When viewing an RTC image in power scale in a GIS environment, it may appear mostly or all black, and you may need to adjust the stretch to see features in the image. Often applying a stretch of 2 standard deviations, or setting the Min-Max stretch values to 0 and 0.3, will greatly improve the appearance of the image. You can adjust the stretch as desired to display your image to full advantage. Be aware that this does not change the actual pixel values.
 

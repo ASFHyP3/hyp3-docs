@@ -8,13 +8,18 @@ With over 1.1 million (and growing!) freely available products covering major fa
 
 The ARIA project also maintains the [ARIA-tools](https://doi.org/10.1029/2020GL090013){target=_blank} software, which is a suite of open-source tools which automates the seamless download, post-processing manipulation, aggregation, and management of ARIA-S1-GUNW products. Users may refer to the dedicated [GitHub](https://github.com/aria-tools/ARIA-tools){target=_blank} page for a more exhaustive overview and installation instructions, and [EarthScope Consortium led tutorials](https://www.youtube.com/watch?v=_a9T59VTz7Q&t=12734s){target=_blank} which demonstrate practical applications.
 
-!!! warning "ARIA-S1-GUNW products are not produced globally"
+!!! tip "ARIA-S1-GUNW products are not produced globally"
 
     ARIA-S1-GUNW products are routinely produced only for specific locations, so the ASF archive may not contain products in your area of interest. See the [Ordering On Demand Products section](#ordering-on-demand-products "Jump to Ordering On Demand Products section of this document") for information on ordering ARIA-S1-GUNW products for specific Sentinel-1 acquisitions.
 
 ## Archived and On-Demand Products
 
 While there is a large archive of ARIA-S1-GUNW products that have already been generated and are [ready for download](#accessing-existing-products "Jump to Accessing Existing Products section of this document"), they may not cover your area of interest. In addition, the archived products may not include the full range of temporal baseline pairings required for your analysis. If you are interested in ARIA-S1-GUNW products that are not already represented in the archive, ASF provides the ability to [generate these products using specific Sentinel-1 SLC pairings](#ordering-on-demand-products "Jump to Ordering On Demand Products section of this document"). 
+
+!!! warning "ARIA-S1-GUNW On-Demand processing not supported for Alaska"
+
+    ARIA-S1-GUNW products rely on RAiDER software for atmospheric delay correction. This software does not currently 
+    support processing acquisitions over Alaska, causing On-Demand ARIA-S1-GUNW jobs submitted over Alaska to fail. 
 
 The On Demand ARIA-S1-GUNW products are generated using the same code that is used to generate the archived products, so they are fully interoperable.
 
@@ -31,6 +36,12 @@ You can download existing ARIA-S1-GUNW products from the Alaska Satellite Facili
 ## Ordering On-Demand Products
 
 If the ARIA-S1-GUNW products you need are not available in the archive, you can use ASF's On Demand platform to submit custom ARIA-S1-GUNW jobs for processing. 
+
+!!! warning "Sentinel-1C acquisitions not yet supported" 
+
+    ISCE2 software, which is used for processing ARIA-S1-GUNW products, does not currently support processing 
+    SLCs acquired by the newly launched Sentinel-1C platform. Until the software package is updated, users will 
+    not be able to submit ARIA-S1-GUNW jobs that include Sentinel-1C acquisitions for On-Demand processing.
 
 ### ARIA Frame IDs
 

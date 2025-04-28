@@ -12,6 +12,11 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 * [Product Guide for OPERA RTC-S1 products](docs/guides/opera_rtc_product_guide.md)
 * Menu navigation items for OPERA RTC-S1 resources
 
+## [0.10.5]
+
+### Changed
+* Updated documentation to include information about Sentinel-1C
+
 ## [0.10.4]
 
 ### Added

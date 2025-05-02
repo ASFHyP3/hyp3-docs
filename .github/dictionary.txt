@@ -302,6 +302,7 @@ OpenAPI
 OpenStreetMap
 OPERA_L2_RTC-S1
 OPERA_L2_RTC-S1_V1
+OPERA-RTC-S1
 OPERA-S1
 orthometric
 OSM

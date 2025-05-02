@@ -45,10 +45,11 @@ and for geocoding the output product. The OPERA RTC-S1 products are processed us
 
 Most Sentinel-1 acquisitions are collected in two 
 [polarizations](introduction_to_sar#polarizations), 
-and the OPERA project generates RTC-S1 products for all available polarizations. Acquisitions over land generally 
-have a vertical primary polarization, meaning that the SAR signal is sent out in a vertical orientation, but both 
-the co-polarized returns (also vertically polarized) and the cross-polarized returns (horizontally polarized) are 
-measured. This results in both VV and VH RTC-S1 products. 
+and the OPERA project generates RTC-S1 products for all available polarizations. 
+
+Sentinel-1 acquisitions over land generally have a vertical primary polarization, meaning that the SAR signal is sent out in 
+a vertical orientation, but both the co-polarized returns (also vertically polarized) and the cross-polarized returns 
+(horizontally polarized) are measured. This results in both VV and VH RTC-S1 products. 
 
 In some areas, particularly remote islands and regions close to the Arctic Ocean, acquisitions are collected with a 
 horizontal primary polarization. This results in HH and HV RTC-S1 products. 
@@ -79,7 +80,7 @@ For more information on the technical specifications of the OPERA RTC-S1 product
 
 ### OPERA RTC-S1 Products On Demand
 
-You can also order OPERA RTC-S1 products from ASF on demand. This is particularly useful if you need a time 
+You can also order OPERA RTC-S1 products from ASF On Demand. This is particularly useful if you need a time 
 series of RTC-S1 products that extends beyond the start of the archive. On-Demand processing is available for any 
 Sentinel-1 burst with the same burst ID (footprint) as an existing OPERA RTC-S1 product. 
 
@@ -101,7 +102,7 @@ select `OPERA-S1` from the `Dataset` drop-down menu.
 ![Figure 2](../images/opera-rtc-vertex-search.png "Search for OPERA RTC-S1 Products")
 
 Because the OPERA RTC-S1 footprints are so small, there are millions of files in the archive. It is important to 
-make use of the available filters to find the products you want.
+make use of the available search filters to find the products you want.
 
 1. Set an Area of Interest
 2. Set a date range

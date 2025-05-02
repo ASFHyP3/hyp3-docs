@@ -136,14 +136,15 @@ and before January 1, 2022 in the processing area where OPERA RTC-S1 Static Laye
     OPERA RTC-S1 On Demand jobs can be submitted using the [HyP3 Python SDK](../using/sdk.md){target=_blank} 
     or [HyP3 API](../using/api.md){target=_blank}. Support in Vertex is coming soon!
 
-To order an On-Demand OPERA RTC-S1 product, a user must pass a Sentinel-1 burst granule for the co-polarized 
-return (either VV or HH) to either the 
+To order an On-Demand OPERA RTC-S1 product, a user must pass a **Sentinel-1 Burst SLC granule for the co-polarized 
+return** (either VV or HH) as input to either the 
 [HyP3 Python SDK](../using/sdk.md){target=_blank} 
 or 
-[HyP3 API](../using/api.md){target=_blank}. 
+[HyP3 API](../using/api.md){target=_blank}. If a cross-pol burst is passed as input, an error will be returned.
+
 The output product will include RTC-S1 rasters for all available polarizations (generally VV and VH or HH and HV), 
-so requiring users to pass a co-polarized burst ensures that there will not be accidental duplication of products 
-if both the co-pol and cross-pol bursts are submitted for processing. 
+so requiring users to pass a co-polarized burst as input ensures that there will not be accidental duplication of 
+processing effort if both the co-pol and cross-pol inputs for the same Sentinel-1 burst are submitted for processing. 
 
 To ensure successful processing, review the 
 [date range](#date-range-for-on-demand-opera-rtc-s1-products "Jump to Date Range section in this document" ) and 

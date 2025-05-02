@@ -127,7 +127,9 @@ section of the
 ## Ordering On-Demand OPERA RTC-S1 Products
 
 On-Demand OPERA RTC-S1 products can be requested for any Sentinel-1 SLC burst acquired on or after April 14, 2016 
-and before January 1, 2022 in the processing area where OPERA RTC-S1 Static Layers are available in the ASF archive.
+and before January 1, 2022 in the processing area where 
+[OPERA RTC-S1 Static Layer Files](#l2-radiometric-terrain-corrected-static-layer-rtc-static-files "Jump to the Static Layer Files section of this document" ) 
+are available in the ASF archive.
 
 ### Submitting On-Demand OPERA RTC-S1 Jobs
 
@@ -151,19 +153,20 @@ To ensure successful processing, review the
 [spatial coverage](#spatial-coverage-for-on-demand-opera-rtc-s1-products "Jump to Spatial Extent section in this document" ) 
 limitations below. 
 
-### Date Range for On-Demand OPERA RTC-S1 Products
+#### Date Range for On-Demand OPERA RTC-S1 Products
 
 The OPERA RTC-S1 code requires that input Sentinel-1 SLCs were processed using ESA's Sentinel-1 Instrument Processing 
-Facility (IPF) version 2.70, implemented April 13, 2016, or newer. As such, we do not support On-Demand processing 
-for Sentinel-1 acquisitions prior to April 14, 2016. Jobs submitted for earlier bursts will return an error. 
+Facility (IPF) version 2.70, implemented April 13, 2016, or newer. As such, **we do not support On-Demand processing 
+for Sentinel-1 acquisitions prior to April 14, 2016**. Jobs submitted for earlier bursts will return an error. 
 
-All supported Sentinel-1 acquisitions since 2022 have been processed to OPERA RTC-S1 by the OPERA project, and 
-are already available for download from ASF's archive. Any jobs submitted for acquisitions on or after January 1, 
-2022, will also return an error. 
+All supported Sentinel-1 acquisitions since January 1, 2022, have been processed to OPERA RTC-S1 products by the OPERA 
+project, and are already available for download from ASF's archive. Any on-demand jobs submitted for acquisitions on 
+or after that date will also return an error. 
 
-### Spatial Coverage for On-Demand OPERA RTC-S1 Products
+#### Spatial Coverage for On-Demand OPERA RTC-S1 Products
 
-On-Demand OPERA RTC-S1 Products can only be ordered for bursts that have associated OPERA RTC-S1 Static Layers 
+On-Demand OPERA RTC-S1 Products can only be ordered for bursts that have associated 
+[OPERA RTC-S1 Static Layer Files](#l2-radiometric-terrain-corrected-static-layer-rtc-static-files "Jump to the Static Layer Files section of this document" ) 
 available in ASF's archive. The OPERA project supports processing over all global landmasses except for Antarctica. 
 Only bursts from 
 [Sentinel-1 IW SLC](https://sentiwiki.copernicus.eu/web/s1-products "Sentinel-1 Products" ){target=_blank} 

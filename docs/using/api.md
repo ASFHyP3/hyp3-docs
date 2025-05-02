@@ -100,7 +100,19 @@ The job list may contain up to 200 job definitions. You can also provide custom 
 
 ## Submitting OPERA-RTC-S1 jobs
 
-The OPERA-RTC-S1 job takes a single co-pol (VV or HH) [ESA granule burst ID](https://sentiwiki.copernicus.eu/web/s1-products#S1Products-BurstIDMapsS1-Products-Burst-ID-Maps "ESA Burst Id Maps" ){target=_blank}.
+The OPERA-RTC-S1 job takes a single **co-pol (VV or HH)** 
+[ESA granule burst ID](https://sentiwiki.copernicus.eu/web/s1-products#S1Products-BurstIDMapsS1-Products-Burst-ID-Maps "ESA Burst Id Maps" ){target=_blank} 
+from a Sentinel-1 IW SLC acquisition that meets the 
+[date range](../guides/opera_rtc_product_guide.md#date-range-for-on-demand-opera-rtc-s1-products "OPERA RTC-S1 Product Guide" ){target=_blank} 
+and 
+[spatial extent](../guides/opera_rtc_product_guide.md#spatial-coverage-for-on-demand-opera-rtc-s1-products "OPERA RTC-S1 Product Guide" ){target=_blank} 
+constraints for processing.
+
+Sentinel-1 Burst SLCs submitted for processing must have been acquired between April 14, 2016, and December 31, 2021, 
+and must have 
+[OPERA RTC-S1 Static Layer files](../guides/opera_rtc_product_guide.md#l2-radiometric-terrain-corrected-static-layer-rtc-static-files "OPERA RTC-S1 Product Guide" ){target=_blank} 
+associated with that burst ID.
+
 ```json
     {
       "job_type": "OPERA_RTC_S1",

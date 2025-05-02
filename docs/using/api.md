@@ -188,6 +188,19 @@ The ARIA-S1-GUNW job type takes a reference [ESA granule ID](https://sentiwiki.c
     }
 ```
 
+## Submitting OPERA-RTC-S1 jobs
+
+The OPERA-RTC-S1 job takes a single co-pol (VV or HH) [ESA granule burst ID](https://sentiwiki.copernicus.eu/web/s1-products#S1Products-BurstIDMapsS1-Products-Burst-ID-Maps.
+```json
+    {
+      "job_type": "OPERA_RTC_S1",
+      "name": "opera-rtc-s1-example",
+      "job_parameters": {
+        "granules": ["S1_073251_IW2_20200128T020712_VV_2944-BURST"]
+      }
+    }
+```
+
 ## Submitting autoRIFT jobs
 
 AutoRIFT supports processing Sentinel-1, Sentinel-2, or Landsat-8 Collection 2 pairs.

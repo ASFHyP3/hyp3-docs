@@ -460,7 +460,7 @@ You can also create your own OPERA RTC-S1 RGB Decompositions using GIS software.
 
 The Sentinel-1 RTC On Demand products processed using GAMMA software include a georeferenced RGB Decomposition 
 browse image in the product package. You also have the 
-[option to include a full-resolution RGB Decomposition GeoTIFF](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35#ref-n-AYvRBH "RGB Decomposition Option" ){target=_blank}  
+[option to include a full-resolution RGB Decomposition GeoTIFF](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35#ref-n-AYvRBH "RGB Decomposition Option" ){target=_blank} 
 in the output package when submitting the RTC job for processing. 
 
 The algorithm used to generate the RGB Decomposition images included in the product package is very different from 

@@ -15,7 +15,7 @@ allotment on jobs of that particular type.
 | {{ table_indent() }} 20-m pixel spacing                       |             15 |  {{ max_jobs_per_month(15) }} |
 | {{ table_indent() }} 10-m pixel spacing                       |             60 |  {{ max_jobs_per_month(60) }} |
 | [**OPERA RTC-S1**](../guides/opera_rtc_product_guide.md)      |                |                               |
-| {{ table_indent() }} 30-m pixel spacing                       |              1 |   {{ max_jobs_per_month(1) }} |
+| {{ table_indent() }} Standard product (30-m pixel spacing)    |              1 |   {{ max_jobs_per_month(1) }} |
 | [**InSAR**](../guides/insar_product_guide.md)                 |                |                               |
 | {{ table_indent() }} 80-m pixel spacing (20x4 looks)          |             10 |  {{ max_jobs_per_month(10) }} |
 | {{ table_indent() }} 40-m pixel spacing (10x2 looks)          |             15 |  {{ max_jobs_per_month(15) }} |

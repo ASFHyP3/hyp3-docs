@@ -98,6 +98,19 @@ The job list may contain up to 200 job definitions. You can also provide custom 
 }
 ```
 
+## Submitting OPERA-RTC-S1 jobs
+
+The OPERA-RTC-S1 job takes a single co-pol (VV or HH) [ESA granule burst ID](https://sentiwiki.copernicus.eu/web/s1-products#S1Products-BurstIDMapsS1-Products-Burst-ID-Maps "ESA Burst Id Maps" ){target=_blank}.
+```json
+    {
+      "job_type": "OPERA_RTC_S1",
+      "name": "opera-rtc-s1-example",
+      "job_parameters": {
+        "granules": ["S1_073251_IW2_20200128T020712_VV_2944-BURST"]
+      }
+    }
+```
+
 ## Submitting Sentinel-1 InSAR jobs
 
 You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention){target=_blank}.
@@ -184,19 +197,6 @@ The ARIA-S1-GUNW job type takes a reference [ESA granule ID](https://sentiwiki.c
           "S1A_IW_SLC__1SDV_20250103T010047_20250103T010115_057273_070BB6_99C5"
         ],
         "frame_id": 23474
-      }
-    }
-```
-
-## Submitting OPERA-RTC-S1 jobs
-
-The OPERA-RTC-S1 job takes a single co-pol (VV or HH) [ESA granule burst ID](https://sentiwiki.copernicus.eu/web/s1-products#S1Products-BurstIDMapsS1-Products-Burst-ID-Maps.
-```json
-    {
-      "job_type": "OPERA_RTC_S1",
-      "name": "opera-rtc-s1-example",
-      "job_parameters": {
-        "granules": ["S1_073251_IW2_20200128T020712_VV_2944-BURST"]
       }
     }
 ```

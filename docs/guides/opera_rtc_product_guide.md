@@ -182,6 +182,9 @@ will return an error.
     layers are required for processing the OPERA RTC-S1 products. We are working with the OPERA team to add these 
     files to the ASF archive.
 
+    This graphic illustrates the current coverage of OPERA RTC-S1 Static Layers.
+    ![ExtraFigure](../images/opera-rtc-static-layer-coverage.png "Current coverage of OPERA RTC-S1 Static Layers")
+
 ## Accessing On-Demand OPERA RTC-S1 Products
 
 On-Demand OPERA RTC-S1 products can be accessed programmatically using the 

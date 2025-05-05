@@ -439,7 +439,7 @@ In these color images, water generally appears black, areas with vegetation appe
 appear pink.
 
 You can download these browse images from the Vertex interface by selecting an RTC-S1 product from the list of 
-search results, and clicking the download icon above the image preview in the center panel, as shown in Figure 1. 
+search results and clicking the download icon above the image preview in the center panel, as shown in Figure 1. 
 Note that these browse images are not georeferenced, though you can use the individual RTC GeoTIFFs as a 
 reference for manually georeferencing the browse images. 
 

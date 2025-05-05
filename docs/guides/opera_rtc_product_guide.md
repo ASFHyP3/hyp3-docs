@@ -178,7 +178,7 @@ will return an error.
 !!! warning "OPERA RTC-S1 On-Demand coverage not available in some arctic regions"
 
     The static layers used to process acquisitions over some parts of Greenland and Arctic Canada are currently 
-    unavailable in ASF's archive. On Demand jobs submitted for these areas will return an error, as the static 
+    unavailable in ASF's archive. On-Demand jobs submitted for these areas will return an error, as the static 
     layers are required for processing the OPERA RTC-S1 products. We are working with the OPERA team to add these 
     files to the ASF archive.
 

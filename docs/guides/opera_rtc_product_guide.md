@@ -175,7 +175,7 @@ products are supported as input.
 Any jobs submitted where the Sentinel-1 burst is from an EW SLC or does not have associated static layers available 
 will return an error. 
 
-!!! warning "OPERA RTC-S1 On Demand coverage not available in some arctic regions"
+!!! warning "OPERA RTC-S1 On-Demand coverage not available in some arctic regions"
 
     The static layers used to process acquisitions over some parts of Greenland and Arctic Canada are currently 
     unavailable in ASF's archive. On Demand jobs submitted for these areas will return an error, as the static 

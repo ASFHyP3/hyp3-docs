@@ -240,8 +240,10 @@ The files available for download include:
 
 There are some ancillary products required for RTC processing that change very little through time. Instead of 
 re-generating these reference products for each Sentinel-1 burst acquisition, they are generated once for each 
-Sentinel-1 burst ID used for OPERA processing, and archived as `Static Layer` files. Refer to OPERA's 
-[Product Specification Document for the OPERA Radiometric TerrainCorrected SAR Backscatter from Sentinel-1 Static Layers](https://d2pn8kiwq2w21t.cloudfront.net/documents/ProductSpec_RTC-S1-STATIC.pdf "ProductSpec_RTC-S1-STATIC.pdf" ){target=_blank} 
+Sentinel-1 burst ID used for OPERA processing, and archived as `Static Layer` files. 
+
+Refer to OPERA's 
+[Product Specification Document for the OPERA Radiometric Terrain Corrected SAR Backscatter from Sentinel-1 Static Layers](https://d2pn8kiwq2w21t.cloudfront.net/documents/ProductSpec_RTC-S1-STATIC.pdf "ProductSpec_RTC-S1-STATIC.pdf" ){target=_blank} 
 for more information on these files.
 
 These `RTC-STATIC` products include the following COG files: 

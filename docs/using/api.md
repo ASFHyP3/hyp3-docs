@@ -192,7 +192,7 @@ You can submit InSAR jobs using the `INSAR_ISCE_BURST` job type, which takes a s
 ```
 
 ## Submitting ARIA-S1-GUNW jobs
-The ARIA-S1-GUNW job type takes a reference [ESA granule ID](https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention){target=_blank} set, a secondary ESA granule ID set, and an ARIA-S1-GUNW Frame ID as input. See the [ARIA-S1-GUNW Product Guide Frame ID section](/guides/gunw_product_guide/#aria-frame-ids){target=_blank} for more details on these inputs.
+The ARIA-S1-GUNW job type takes a reference [ESA granule ID](https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention){target=_blank} set, a secondary ESA granule ID set, and an ARIA-S1-GUNW Frame ID as input. See the [ARIA-S1-GUNW Product Guide Frame ID section](../guides/gunw_product_guide.md#aria-frame-ids){target=_blank} for more details on these inputs.
 ```json
     {
       "job_type": "ARIA_S1_GUNW",

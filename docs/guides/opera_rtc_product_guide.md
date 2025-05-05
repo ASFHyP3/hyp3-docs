@@ -321,8 +321,8 @@ It includes validity mask values for the full extent of the burst footprint, inc
 pixels with valid radiometry within the radar burst. All of the static layers include data for this entire area.
 
 There may, however, also be differences in the actual pixel values when comparing an RTC-STATIC validity mask to 
-the validity mask included with a specific RTC product. Slight differences in the orbit with each acquisition means 
-that the layover or shadow conditions for any given pixel may be different from one pass to another.
+the validity mask included with a specific RTC product. Because orbits can shift slightly, the layover 
+or shadow conditions for any given pixel may be different from one pass to another.
 
 For investigating the layover/shadow impacts for a specific RTC product, users will generally be better served by 
 using the validity mask delivered with that product rather than the mask available as a static layer.

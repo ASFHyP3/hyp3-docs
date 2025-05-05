@@ -309,7 +309,7 @@ The mask file in the map on the left is the mask linked to the `RTC` search resu
 
 - `OPERA_L2_RTC-S1_T115-245714-IW1_20250418T141628Z_20250419T010229Z_S1A_30_v1.0_mask.tif`
 
-The extent of NoData padding around area that has valid radar data for that particular burst is displayed with a 
+The extent of NoData padding around the area that has valid radar data for that particular burst is displayed with a 
 transparent pink color in this illustration, but would normally appear transparent. The mask values are only applied 
 to the pixels with valid radiometry within the radar burst.
 

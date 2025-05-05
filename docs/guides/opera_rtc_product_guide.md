@@ -44,7 +44,7 @@ and for geocoding the output product. The OPERA RTC-S1 products are processed us
 #### Polarization
 
 Most Sentinel-1 acquisitions are collected in two 
-[polarizations](introduction_to_sar#polarizations), 
+[polarizations](introduction_to_sar.md#polarizations), 
 and the OPERA project generates RTC-S1 products for all available polarizations. 
 
 Sentinel-1 acquisitions over land generally have a vertical primary polarization, meaning that the SAR signal is sent out in 

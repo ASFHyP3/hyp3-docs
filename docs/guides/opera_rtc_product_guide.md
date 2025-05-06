@@ -20,9 +20,8 @@ collection.
 
 OPERA's 
 [Radiometric Terrain Corrected (RTC) Synthetic Aperture Radar (SAR) Backscatter for Sentinel-1 (S1)](https://www.jpl.nasa.gov/go/opera/products/rtc-product/ "https://www.jpl.nasa.gov/go/opera/products/rtc-product/" ){target=_blank} 
-product consists of radar backscatter normalized with respect to topography. 
-
-The RTC algorithm used for the OPERA RTC-S1 products was developed by 
+product consists of radar backscatter normalized with respect to topography. The RTC algorithm used for the 
+OPERA RTC-S1 products was developed by 
 [Gustavo Shiroma and others](https://ntrs.nasa.gov/citations/20220000810 "An Efficient Area-Based Algorithm for SAR Radiometric Terrain Correction and Map Projection" ){target=_blank}, 
 and is available in the 
 [ISCE3 open source software library](https://github.com/isce-framework/isce3 "github.com/isce-framework/isce3" ){target=_blank}.

@@ -126,8 +126,8 @@ section of the
 
 ## Ordering On-Demand OPERA RTC-S1 Products
 
-On-Demand OPERA RTC-S1 products can be requested for any Sentinel-1 SLC burst acquired on or after April 14, 2016 
-and before January 1, 2022 in the processing area where 
+On-Demand OPERA RTC-S1 products can be requested for any Sentinel-1 SLC burst acquired on or after April 14, 2016, 
+and before January 1, 2022, in the processing area where 
 [OPERA RTC-S1 Static Layer Files](#l2-radiometric-terrain-corrected-static-layer-rtc-static-files "Jump to the Static Layer Files section of this document" ) 
 are available in the ASF archive.
 

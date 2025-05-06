@@ -1,10 +1,14 @@
 # Available HyP3 Products
 
-On-demand SAR products generated using HyP3 are currently available for the [Sentinel-1 mission](sentinel1.md "Sentinel-1 Mission" ){target=_blank} only. Unless otherwise noted, 
-on-demand products are available for 14 days after they have been processed.
+On-demand SAR products generated using HyP3 are currently available for the 
+[Sentinel-1 mission](sentinel1.md "Sentinel-1 Mission") 
+only. Unless otherwise noted, on-demand products are available for 14 days after they have been processed.
 
-A Digital Elevation Model (DEM) is required to generate each of the On-Demand products offered by ASF, and we generally use the [GLO-30 Copernicus DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM "Copernicus DEM" ){target=_blank} in our processing workflows. 
-For more information, refer to our [Digital Elevation Models](dems.md "HyP3 DEM Documentation" ){target=_blank} documentation.
+A Digital Elevation Model (DEM) is required to generate each of the On-Demand products offered by ASF, and we generally use the 
+[GLO-30 Copernicus DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM "Copernicus DEM" ){target=_blank} 
+in our processing workflows. For more information, refer to our 
+[Digital Elevation Models](dems.md "HyP3 DEM Documentation") 
+documentation.
 
 ## RTC
 
@@ -15,17 +19,23 @@ RTC processing is a required first step for many amplitude-based SAR application
 
 There are two different processing approaches available for generating On-Demand RTC products from Sentinel-1: 
 
-  - Full-scene processing using GAMMA software 
-  - OPERA RTC-S1 products, processed on the basis of individual SLC bursts
+  - [Full-scene processing using GAMMA software](#full-scene-rtc-gamma) 
+  - [OPERA RTC-S1 products](#opera-rtc-s1), processed on the basis of individual SLC bursts
 
 ### Full-scene RTC (GAMMA)
 
 Sentinel-1 RTC products are generated from Level-1 Sentinel-1 IW acquisitions (either GRD or SLC files), leveraging 
 [GAMMA Software](https://gamma-rs.ch/gamma-software){target=_blank}. 
-Products are distributed as UTM-projected GeoTIFFs with a pixel spacing of 
-[10, 20, or 30 meters](guides/rtc_product_guide.md#pixel-spacing "RTC Pixel Spacing Documentation" ){target=_blank}. 
+Products are distributed as GeoTIFFs projected to a UTM Zone, with a pixel spacing of 
+[10, 20, or 30 meters](guides/rtc_product_guide.md#pixel-spacing "RTC Pixel Spacing Documentation"). 
+Users can choose to output the products in 
+[gamma-0 or sigma-0 radiometry](guides/rtc_product_guide.md#radiometry "RTC Radiometry Documentation"), 
+and in 
+[power, amplitude, or dB scale](guides/rtc_product_guide.md#scale "RTC Scale Documentation"). 
+Users also have the option to 
+[apply a speckle filter](guides/rtc_product_guide.md#speckle-filter "RTC Speckle Filter Documentation"). 
 To learn more, refer to the [Sentinel-1 RTC Product Guide](guides/rtc_product_guide.md 
-"Sentinel-1 RTC Product Guide" ){target=_blank}.
+"Sentinel-1 RTC Product Guide").
 
 For step-by-step instructions on searching for, ordering, downloading and using On-Demand RTC products, visit our 
 [RTC On Demand!](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand! StoryMap" ){target=_blank} 
@@ -35,7 +45,16 @@ tutorial.
 
 The OPERA project at JPL has generated [Radiometric Terrain Corrected Backscatter for Sentinel-1](https://www.jpl.nasa.gov/go/opera/products/rtc-product/ "www.jpl.nasa.gov/go/opera/products/rtc-product" ){target=_blank} 
 (OPERA RTC-S1) products for all Sentinel-1 acquisitions over land (excluding Antarctica) since January 1, 2022. 
-These products are [available from ASF](https://search.asf.alaska.edu/#/?dataset=OPERA-S1&productTypes=RTC "Vertex search for OPERA RTC-S1 Products" ){target=_blank}. 
+These products are archived and 
+[available from ASF](https://search.asf.alaska.edu/#/?dataset=OPERA-S1&productTypes=RTC "Vertex search for OPERA RTC-S1 Products" ){target=_blank}. 
+
+The RTC algorithm used for the OPERA RTC-S1 products was developed by 
+[Gustavo Shiroma and others](https://ntrs.nasa.gov/citations/20220000810 "An Efficient Area-Based Algorithm for SAR Radiometric Terrain Correction and Map Projection" ){target=_blank}, 
+and is available in the 
+[ISCE3 open source software library](https://github.com/isce-framework/isce3 "github.com/isce-framework/isce3" ){target=_blank}. 
+The products are processed on the basis of individual Sentinel-1 SLC bursts, and output as Cloud-Optimized GeoTIFFs
+(COGs) in a UTM Zone or Polar Stereographic projection. The pixel values represent gamma-0 power, and pixel spacing 
+is 30 meters. No speckle filter has been applied.
 
 If the existing archive does not include products for your full time period of interest, you can generate 
 [OPERA RTC-S1 products On Demand](guides/opera_rtc_product_guide.md "OPERA RTC for Sentinel-1 (RTC-S1) Product Guide") 
@@ -59,9 +78,9 @@ deformation or ground movement.
 
 There are three different processing approaches available for generating On-Demand InSAR products from Sentinel-1: 
 
-  - Full-scene processing using GAMMA software 
-  - Burst-based processing using ISCE2 software
-  - ARIA Frame-based processing using ISCE2 software
+  - [Full-scene processing using GAMMA software](#full-scene-insar-gamma) 
+  - [Burst-based processing using ISCE2 software](#burst-based-insar-isce2)
+  - [ARIA Frame-based processing using ISCE2 software](#aria-sentinel-1-gunw-products-isce2)
 
 ### Full-scene InSAR (GAMMA)
 

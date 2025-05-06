@@ -164,7 +164,7 @@ Facility (IPF) version 2.70, implemented April 13, 2016, or newer. As such, **we
 for Sentinel-1 acquisitions prior to April 14, 2016**. Jobs submitted for earlier bursts will return an error. 
 
 All supported Sentinel-1 acquisitions since January 1, 2022, have been processed to OPERA RTC-S1 products by the OPERA 
-project and are already available for download from ASF's archive. Any on-demand jobs submitted for acquisitions on 
+project and are already available for download from ASF's archive. Any On-Demand jobs submitted for acquisitions on 
 or after that date will also return an error. 
 
 #### Spatial Coverage for On-Demand OPERA RTC-S1 Products

@@ -406,7 +406,7 @@ Advantages of burst-based products:
     files are generally upwards of 500 MB for products generated at 30-m pixel spacing, and they can be challenging to 
     download successfully over slower connections.
   - **Footprints are consistent.** The individual Sentinel-1 bursts always have the same extent from one 
-    acquisition to the next, which makes it very easy to generate time series over an area of interest. The framing of
+    acquisition to the next, which makes it very easy to generate a time series over an area of interest. The framing of
     the full Sentinel-1 IW Level 1 products can shift over time, so there is no guarantee the acquisitions with the 
     same frame number will cover the same extent. This is particularly impactful when the area of interest is near 
     the top or bottom of the Sentinel-1 IW Level 1 scene.

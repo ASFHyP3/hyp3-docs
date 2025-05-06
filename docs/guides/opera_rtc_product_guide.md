@@ -442,8 +442,8 @@ ASF uses for the Sentinel-1 RTC On Demand products processed using GAMMA.
 
 The OPERA project uses a simple approach to combining polarizations to generate a color browse image, which is 
 displayed in Vertex when you search for OPERA RTC-S1 products. This RGB Decomposition assigns the co-pol values
-(VV or HH) to both the red and blue bands, the cross-pol values (VH or HV) to the green band, and applies a scalar to 
-balance the color range. 
+(VV or HH) to both the red and blue bands, while the cross-pol values (VH or HV) are assigned to the green band. 
+Scalars are applied to the different bands to balance the color range. 
 
 In these color images, water generally appears black, areas with vegetation appear more green, and other areas 
 appear pink.

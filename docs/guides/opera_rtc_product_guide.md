@@ -5,7 +5,7 @@ This document is a guide for users of the
 products. These products were developed by the 
 [Observational Products for End-Users from Remote Sensing Analysis (OPERA)](https://www.jpl.nasa.gov/go/opera/ "www.jpl.nasa.gov/go/opera" ){target=_blank} 
 project at NASA's 
-[Jet Propulsion Laboratory](https://www.jpl.nasa.gov/ "www.jpl.nasa.gov/" ){target=_blank} (JPL). 
+[Jet Propulsion Laboratory](https://www.jpl.nasa.gov/ "www.jpl.nasa.gov/" ){target=_blank} (JPL).
 
 !!! tip "OPERA RTC-S1 Products Now Available On Demand"
 

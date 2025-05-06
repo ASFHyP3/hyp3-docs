@@ -5,7 +5,7 @@ This document is a guide for users of the
 products. These products were developed by the 
 [Observational Products for End-Users from Remote Sensing Analysis (OPERA)](https://www.jpl.nasa.gov/go/opera/ "www.jpl.nasa.gov/go/opera" ){target=_blank} 
 project at NASA's 
-[Jet Propulsion Laboratory](https://www.jpl.nasa.gov/ "www.jpl.nasa.gov/" ){target=_blank} (JPL).
+[Jet Propulsion Laboratory](https://www.jpl.nasa.gov/ "www.jpl.nasa.gov/" ){target=_blank} (JPL). 
 
 !!! tip "OPERA RTC-S1 Products Now Available On Demand"
 
@@ -20,14 +20,19 @@ collection.
 
 OPERA's 
 [Radiometric Terrain Corrected (RTC) Synthetic Aperture Radar (SAR) Backscatter for Sentinel-1 (S1)](https://www.jpl.nasa.gov/go/opera/products/rtc-product/ "https://www.jpl.nasa.gov/go/opera/products/rtc-product/" ){target=_blank} 
-product consists of radar backscatter normalized with respect to topography. The RTC-S1 Level-2 products are projected 
+product consists of radar backscatter normalized with respect to topography. 
+
+The RTC algorithm used for the OPERA RTC-S1 products was developed by 
+[Gustavo Shiroma and others](https://ntrs.nasa.gov/citations/20220000810 "An Efficient Area-Based Algorithm for SAR Radiometric Terrain Correction and Map Projection" ){target=_blank}, 
+and is available in the 
+[ISCE3 open source software library](https://github.com/isce-framework/isce3 "github.com/isce-framework/isce3" ){target=_blank}.
+
+The RTC-S1 Level-2 products are projected 
 into the appropriate UTM Zone or Polar Stereographic coordinate system for the location of each individual product 
 and provided in 
 [Cloud-Optimized GeoTIFF (COG)](https://cogeo.org/ "https://cogeo.org/" ){target=_blank} 
-format.
-
-The pixel values of the products represent gamma-0 power. The pixel spacing is 30 meters, and no speckle filter has 
-been applied.
+format. The pixel values of the products represent gamma-0 power. The pixel spacing is 30 meters, and no 
+speckle filter has been applied.
 
 RTC products provide users with imagery of the earth's surface regardless of atmospheric conditions. This allows 
 users to monitor surface processes during natural disasters, such as hurricanes or wildfires, or in areas that are 
@@ -368,7 +373,7 @@ OPERA_L2_RTC-S1_T069-147170-IW1_20210205T163901Z_20220101T140222Z_S1A_30_v1.0_ma
 
 ## On-Demand RTC Product Options from ASF
 
-In addition to OPERA RTC-S1 products, which use JPL's open-source 
+In addition to OPERA RTC-S1 products, which uses an RTC algorithm available in JPL's open-source 
 [ISCE3 software](https://github.com/isce-framework/isce3 "github.com/isce-framework/isce3" ){target=_blank} 
 to perform radiometric terrain correction, ASF also offers 
 [On-Demand RTC products](rtc_product_guide.md "Sentinel-1 RTC Product Guide" ){target=_blank} 

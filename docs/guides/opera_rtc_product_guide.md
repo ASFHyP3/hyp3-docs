@@ -401,7 +401,7 @@ Advantages of burst-based products:
     may not need such extensive spatial coverage for your analysis. If you have a fairly small area of interest, 
     you can download and mosaic only the bursts you need.
   - **File sizes are smaller.** This is particularly important for users with limited internet access. Each OPERA 
-    RTC-S1 GeoTIFF file is on the order of 8 MB, and you download each polarization separately. In contrast, ASF's 
+    RTC-S1 GeoTIFF file is on the order of 8 MB, and you can download each polarization separately. In contrast, ASF's 
     RTC GAMMA products are delivered as a zip file, which includes all available polarizations. These zip 
     files are generally upwards of 500 MB for products at 30-m pixel spacing, which can be challenging to download 
     successfully over slower connections.

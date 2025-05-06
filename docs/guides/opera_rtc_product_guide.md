@@ -409,7 +409,7 @@ Advantages of burst-based products:
     acquisition to the next, which makes it very easy to generate a time series over an area of interest. The framing of
     the full Sentinel-1 IW Level 1 products can shift over time, so there is no guarantee that acquisitions with the 
     same frame number will cover the same extent. This is particularly impactful when the area of interest is near 
-    the top or bottom of the Sentinel-1 IW Level 1 scene.
+    the top or bottom of a Sentinel-1 IW Level 1 scene.
 
 If your area of interest is large, and is well-covered by a full Sentinel-1 IW scene (or requires several full 
 scenes to cover the entire area), you may find it easier to work with the full-scene RTC GAMMA products, as there 

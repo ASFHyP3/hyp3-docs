@@ -10,16 +10,18 @@ allotment on jobs of that particular type.
 ## Credit Cost Table
 | Job Type                                                      | Cost (credits) |        Maximum Jobs Per Month |
 |---------------------------------------------------------------|---------------:|------------------------------:|
-| [**RTC**](/guides/rtc_product_guide/)                         |                |                               |
+| [**RTC**](../guides/rtc_product_guide.md)                     |                |                               |
 | {{ table_indent() }} 30-m pixel spacing                       |              5 |   {{ max_jobs_per_month(5) }} |
 | {{ table_indent() }} 20-m pixel spacing                       |             15 |  {{ max_jobs_per_month(15) }} |
 | {{ table_indent() }} 10-m pixel spacing                       |             60 |  {{ max_jobs_per_month(60) }} |
-| [**InSAR**](/guides/insar_product_guide/)                     |                |                               |
+| [**OPERA RTC-S1**](../guides/opera_rtc_product_guide.md)      |                |                               |
+| {{ table_indent() }} Standard product (30-m pixel spacing)    |              1 |   {{ max_jobs_per_month(1) }} |
+| [**InSAR**](../guides/insar_product_guide.md)                 |                |                               |
 | {{ table_indent() }} 80-m pixel spacing (20x4 looks)          |             10 |  {{ max_jobs_per_month(10) }} |
 | {{ table_indent() }} 40-m pixel spacing (10x2 looks)          |             15 |  {{ max_jobs_per_month(15) }} |
-| [**ARIA S1 GUNW**](/guides/gunw_product_guide/)               |                |                               |
+| [**ARIA S1 GUNW**](../guides/gunw_product_guide.md)           |                |                               |
 | {{ table_indent() }} Standard product (90-m pixel spacing)    |             60 |  {{ max_jobs_per_month(60) }} |
-| [**Burst InSAR**](/guides/burst_insar_product_guide/)         |                |                               |
+| [**Burst InSAR**](../guides/burst_insar_product_guide.md)     |                |                               |
 | {{ table_indent() }} 80-m pixel spacing (20x4 looks)          |                |                               |
 | {{ table_indent(count=2) }} 1–4 pairs                         |              1 |   {{ max_jobs_per_month(1) }} |
 | {{ table_indent(count=2) }} 5–15 pairs                        |              5 |   {{ max_jobs_per_month(5) }} |

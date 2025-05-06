@@ -372,7 +372,7 @@ OPERA_L2_RTC-S1_T069-147170-IW1_20210205T163901Z_20220101T140222Z_S1A_30_v1.0_ma
 
 ## On-Demand RTC Product Options from ASF
 
-In addition to OPERA RTC-S1 products, which uses an RTC algorithm available in JPL's open-source 
+In addition to OPERA RTC-S1 products, which use an RTC algorithm available in JPL's open-source 
 [ISCE3 software](https://github.com/isce-framework/isce3 "github.com/isce-framework/isce3" ){target=_blank} 
 to perform radiometric terrain correction, ASF also offers 
 [On-Demand RTC products](rtc_product_guide.md "Sentinel-1 RTC Product Guide" ){target=_blank} 

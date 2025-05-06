@@ -460,6 +460,7 @@ This approach is also used to generate the imagery tiles for OPERA RTC-S1 that w
 platform. 
 
 You can also create your own OPERA RTC-S1 RGB Decompositions using GIS software. 
+
   - In ArcGIS, use the 
     [Composite Bands geoprocessing tool](https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/composite-bands.htm){target=_blank} 
     or 

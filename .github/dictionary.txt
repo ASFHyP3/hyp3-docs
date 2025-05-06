@@ -396,6 +396,7 @@ Sentinel-1D
 Sentinel-2
 Shapefile
 shapefile
+Shiroma
 show_submodules
 sidelobe
 sidelobes

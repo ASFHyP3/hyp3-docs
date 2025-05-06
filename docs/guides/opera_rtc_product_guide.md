@@ -473,21 +473,22 @@ You can also create your own OPERA RTC-S1 RGB Decompositions using GIS software.
 #### RTC GAMMA RGB Decomposition
 
 Sentinel-1 RTC On-Demand products processed using GAMMA software include a georeferenced RGB Decomposition 
-browse image in the product package. You also have the 
+browse image in the product package by default. You also have the 
 [option to include a full-resolution RGB Decomposition GeoTIFF](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35#ref-n-AYvRBH "RGB Decomposition Option" ){target=_blank} 
 in the output package when submitting the RTC job for processing. 
 
-The algorithm used to generate the RGB Decomposition images included in the product package is very different from 
-the approach used by the OPERA team. It uses a series of thresholds to determine which values to attribute to the 
-different color bands. Pixels with very low values in both the co- and cross-pol RTC products are assigned to the 
-blue channel. Pixels with high cross-pol values are assigned to the green channel. Pixels with high co-pol values but 
-low cross-pol values are assigned to the red channel. 
+The 
+[algorithm used to generate the RGB Decomposition images](https://github.com/ASFHyP3/hyp3-lib/blob/main/docs/rgb_decomposition.md "RGB Decomposition" ){target=_blank} 
+included in the product package is very different from the approach used by the OPERA team. It uses a series of 
+thresholds to determine which values to attribute to the different color bands, and applies scalars to each band 
+to generate an intuitive false-color image. 
+
+For pixels with very low values in both the co- and cross-pol RTC products, the co-pol values are assigned 
+to the blue channel. High cross-pol values are assigned to the green channel. For pixels with high co-pol values but 
+low cross-pol values, the co-pol values are assigned to the red channel. 
 
 In these images, water generally appears blue, vegetated areas look green, and other regions (urban areas, agricultural 
-fields, sparsely vegetated areas) are yellow or orange. 
-
-A full description of the approach ASF uses for generating RGB Decomposition products is available 
-[here](https://github.com/ASFHyP3/hyp3-lib/blob/main/docs/rgb_decomposition.md){target=_blank}.
+fields, sparsely vegetated areas) are yellow or orange.
 
 If you want to generate a full-resolution RGB image from an RTC GAMMA product but neglected to select the option 
 to include it in the product package, you can also use the RGB Decomposition Tool in 

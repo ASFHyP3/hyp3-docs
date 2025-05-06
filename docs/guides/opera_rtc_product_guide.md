@@ -231,7 +231,7 @@ click on an item in the left panel of the search results, the associated files a
 
 The files available for download include: 
 
-- HDF5 file containing product metadata, specifically orbit position and velocity (no actual RTC data are 
+- HDF5 file containing product metadata, specifically orbit position and velocity (no actual RTC images are 
   included in this file)
 - A single-band 32-bit float Cloud-Optimized GeoTIFF (COG) file for each available polarization containing the 
   RTC values (most commonly VV and VH, but HH and HV in some areas)

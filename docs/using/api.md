@@ -98,6 +98,31 @@ The job list may contain up to 200 job definitions. You can also provide custom 
 }
 ```
 
+## Submitting OPERA-RTC-S1 jobs
+
+The OPERA-RTC-S1 job takes a single **co-pol (VV or HH)** 
+[ESA granule burst ID](https://sentiwiki.copernicus.eu/web/s1-products#S1Products-BurstIDMapsS1-Products-Burst-ID-Maps "ESA Burst Id Maps" ){target=_blank} 
+from a Sentinel-1 IW SLC acquisition that meets the 
+[date range](../guides/opera_rtc_product_guide.md#date-range-for-on-demand-opera-rtc-s1-products "OPERA RTC-S1 Product Guide" ){target=_blank} 
+and 
+[spatial extent](../guides/opera_rtc_product_guide.md#spatial-coverage-for-on-demand-opera-rtc-s1-products "OPERA RTC-S1 Product Guide" ){target=_blank} 
+constraints for processing.
+
+Sentinel-1 Burst SLCs submitted for processing must have been acquired between April 14, 2016, and December 31, 2021, 
+and must have 
+[OPERA RTC-S1 Static Layer files](../guides/opera_rtc_product_guide.md#l2-radiometric-terrain-corrected-static-layer-rtc-static-files "OPERA RTC-S1 Product Guide" ){target=_blank} 
+associated with that burst ID.
+
+```json
+    {
+      "job_type": "OPERA_RTC_S1",
+      "name": "opera-rtc-s1-example",
+      "job_parameters": {
+        "granules": ["S1_073251_IW2_20200128T020712_VV_2944-BURST"]
+      }
+    }
+```
+
 ## Submitting Sentinel-1 InSAR jobs
 
 You can also submit InSAR jobs for scene pairs using [ESA granule IDs](https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention){target=_blank}.
@@ -167,7 +192,7 @@ You can submit InSAR jobs using the `INSAR_ISCE_BURST` job type, which takes a s
 ```
 
 ## Submitting ARIA-S1-GUNW jobs
-The ARIA-S1-GUNW job type takes a reference [ESA granule ID](https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention){target=_blank} set, a secondary ESA granule ID set, and an ARIA-S1-GUNW Frame ID as input. See the [ARIA-S1-GUNW Product Guide Frame ID section](/guides/gunw_product_guide/#aria-frame-ids){target=_blank} for more details on these inputs.
+The ARIA-S1-GUNW job type takes a reference [ESA granule ID](https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention){target=_blank} set, a secondary ESA granule ID set, and an ARIA-S1-GUNW Frame ID as input. See the [ARIA-S1-GUNW Product Guide Frame ID section](../guides/gunw_product_guide.md#aria-frame-ids){target=_blank} for more details on these inputs.
 ```json
     {
       "job_type": "ARIA_S1_GUNW",

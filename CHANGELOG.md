@@ -6,7 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.10.6]
+## [0.11.1]
+
+### Changed
+* Updated HyP3 SDK to [v7.4.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#740)
+
+## [0.11.0]
 
 ### Added
 * [Product Guide for OPERA RTC-S1 products](docs/guides/opera_rtc_product_guide.md)
@@ -25,7 +30,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 * Updated HyP3 SDK to [v7.3.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#730)
 * Notebook tutorial links now direct to GitHub rather than NBViewer
 
-## [0.10.3] 
+## [0.10.3]
 
 ### Changed
 * Updated the [Burst InSAR Product Guide](docs/guides/burst_insar_product_guide.md) to document multi-burst InSAR (the `INSAR_ISCE_MULTI_BURST` job type)

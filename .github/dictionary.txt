@@ -179,6 +179,7 @@ Goldstein
 Goldstein-Werner
 Grayscale
 grayscale
+GRD
 GRD-H
 grey
 Gruber

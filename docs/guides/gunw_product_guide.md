@@ -16,11 +16,6 @@ The ARIA project also maintains the [ARIA-tools](https://doi.org/10.1029/2020GL0
 
 While there is a large archive of ARIA-S1-GUNW products that have already been generated and are [ready for download](#accessing-existing-products "Jump to Accessing Existing Products section of this document"), they may not cover your area of interest. In addition, the archived products may not include the full range of temporal baseline pairings required for your analysis. If you are interested in ARIA-S1-GUNW products that are not already represented in the archive, ASF provides the ability to [generate these products using specific Sentinel-1 SLC pairings](#ordering-on-demand-products "Jump to Ordering On Demand Products section of this document"). 
 
-!!! warning "ARIA-S1-GUNW On-Demand processing not supported for Alaska"
-
-    ARIA-S1-GUNW products rely on RAiDER software for atmospheric delay correction. This software does not currently 
-    support processing acquisitions over Alaska, causing On-Demand ARIA-S1-GUNW jobs submitted over Alaska to fail. 
-
 The On Demand ARIA-S1-GUNW products are generated using the same code that is used to generate the archived products, so they are fully interoperable.
 
 ## Accessing Existing Products

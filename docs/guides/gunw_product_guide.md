@@ -40,32 +40,51 @@ If the ARIA-S1-GUNW products you need are not available in the archive, you can 
 
 ### ARIA Frame IDs
 
-Sentinel-1 IW SLC products are not created in a way that ensures that granules for the same relative orbit and location always fully overlap over time. This results in inconsistent framing of the Sentinel-1 IW SLCs that can make it difficult to create longer series of Sentinel-1 InSAR products.
+Sentinel-1 IW SLC products are not created in a way that ensures that granules for the same relative orbit and 
+location always fully overlap over time. This results in inconsistent framing of the Sentinel-1 IW SLCs that can 
+make it difficult to create longer series of Sentinel-1 InSAR products.
 
-In the image below, Sentinel-1 footprints acquired over an area of interest are displayed. Over the full period of record of the mission, the SLC framing has shifted considerably, resulting in some acquisitions that hardly overlap at all. 
+In the image below, Sentinel-1 footprints acquired over an area of interest are displayed. Over the full period of 
+record of the mission, the SLC framing has shifted considerably, resulting in some acquisitions that hardly 
+overlap at all. 
 
 ![Shifting of Sentinel-1 SLC frames over time](../images/slc_jitter.png "Illustration of the shifting extent of Sentinel-1 SLC footprints over time.")
 
-To address this issue, the ARIA team defined a standard set of geographic footprints, called frames, that set the geographic extent for each ARIA-S1-GUNW product. This is possible because while the Sentinel-1 IW SLC products are not consistently framed along the orbit path, the smaller burst SLCs that comprise each Sentinel-1 IW SLC product *do* have consistent footprints. 
+To address this issue, the ARIA team defined a standard set of geographic footprints, called frames, that set the 
+geographic extent for each ARIA-S1-GUNW product. This is possible because while the Sentinel-1 IW SLC products are 
+not consistently framed along the orbit path, the smaller burst SLCs that comprise each Sentinel-1 IW SLC product 
+*do* have consistent footprints. 
 
-Each ARIA frame is defined by the extent of a specific collection of these individual burst SLCs. Each ARIA-S1-GUNW product is processed to the extent of one of these frames, which results in output products with consistent footprints through time. **ARIA-S1-GUNW products containing the same bursts, and thus sharing the same geographic footprint, are said to have the same *ARIA Frame ID*.**
+Each ARIA frame is defined by the extent of a specific collection of these individual burst SLCs. Each ARIA-S1-GUNW 
+product is processed to the extent of one of these frames, which results in output products with consistent footprints 
+through time. **ARIA-S1-GUNW products containing the same bursts, and thus sharing the same geographic footprint, are 
+said to have the same *ARIA Frame ID*.**
 
-To ensure that ARIA-S1-GUNW products are always created using standard footprints, the ARIA Frame ID needs to be provided along with the reference and secondary granules that intersect this footprint for a given date in order to create a new ARIA-S1-GUNW product (see figure below).
+To ensure that ARIA-S1-GUNW products are always created using standard footprints, the ARIA processing workflow takes 
+all the reference and secondary granules that intersect an ARIA Frame ID footprint for a given date pair, and 
+extracts the necessary bursts in order to create a new ARIA-S1-GUNW product that fills the ARIA frame extent 
+(see figure below).
 
 ![Frame vs granule geographic footprint](../images/frame_granule_overlap.png "Example of a frame that spans three granules.")
 
 #### ARIA Frame ID Maps
 
-It can be tricky to find all of the appropriate granules for a given ARIA Frame ID for both the reference and secondary acquisition dates. In the future, ASF plans to create utilities to simplify this process. In the meantime, there are geojson files indicating the extent of each ARIA Frame ID that can be downloaded and used for reference.
+There are geojson files that indicate the extent of each ARIA Frame ID. These files can be downloaded and 
+used for reference when determining which Sentinel-1 passes are available as primary and secondary inputs 
+for an interferometric pair.
 
-There are different ARIA Frame ID maps for the ascending and descending orbit directions. Make sure that you are using the appropriate geojson file. 
+There are different ARIA Frame ID maps for the ascending and descending orbit directions. Make sure that you are 
+using the appropriate geojson file. 
 
 - [Ascending ARIA Frame IDs](https://d3g9emy65n853h.cloudfront.net/ARIA_S1_GUNW/ascending.geojson){target=_blank} 
 - [Descending ARIA Frame IDs](https://d3g9emy65n853h.cloudfront.net/ARIA_S1_GUNW/descending.geojson){target=_blank}
 
 ### Search for Sentinel-1 SLCs for an ARIA Frame ID
 
-Use a [Geographic Search](https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options){target=_blank} for Sentinel-1 SLC IW products in your area of interest in [Vertex](https://search.asf.alaska.edu/#/){target=_blank}, setting the Area of Interest to the desired ARIA Frame ID, as delineated in the [ARIA Frame ID maps](#aria-frame-id-maps). You may want to apply a search filter for the orbit direction that matches the ARIA Frame ID extent that you are using.
+The ARIA processing code takes a list of reference and secondary Sentinel-1 IW SLC granules as input, but 
+it can be tricky to find all of the necessary granules for a given ARIA Frame ID. To ensure that there is 
+full coverage over the desired ARIA Frame ID, users will pass just the dates of the primary and secondary 
+acquisitions along with the ARIA Frame ID into the job specification. 
 
 For each footprint that intersects the ARIA Frame ID, use the [SBAS](https://docs.asf.alaska.edu/vertex/sbas/){target=_blank} or [Baseline](https://docs.asf.alaska.edu/vertex/baseline/){target=_blank} tool in Vertex to find other acquisitions to pair with the reference acquisition.
 

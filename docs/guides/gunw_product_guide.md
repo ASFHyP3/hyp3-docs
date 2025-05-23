@@ -189,6 +189,13 @@ On-Demand ARIA-S1-GUNW jobs can be submitted using the `ARIA_S1_GUNW` job type v
 or via the [HyP3 Python SDK](../using/sdk.md){target=_blank} 
 using the `submit_aria_s1_gunw_job` method of the `HyP3` class.
 
+To submit an ARIA_S1_GUNW job, all you need is: 
+
+- the ARIA Frame ID number 
+- a list of the two dates for the reference and secondary passes over that frame
+
+<--[TODO: add guidance about the order of dates once that has been determined]-->
+
 Unlike our other On-Demand InSAR workflows, customizable processing options (multilooking, filter strength, etc.) 
 are not available for ARIA-S1-GUNW jobs.
 

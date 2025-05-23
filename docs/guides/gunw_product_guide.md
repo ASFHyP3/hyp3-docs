@@ -116,35 +116,35 @@ using the appropriate geojson file.
 The ARIA processing code takes a list of reference and secondary Sentinel-1 IW SLC granules as input, but 
 it can be tricky to find all of the necessary granules for a given ARIA Frame ID. To ensure that there is 
 full coverage over the desired ARIA Frame ID, users will pass just the dates of the primary and secondary 
-acquisitions along with the ARIA Frame ID into the job specification. 
+acquisitions along with the ARIA Frame ID into the On-Demand job specification. 
 
-Use a 
+To find suitable primary and secondary acquisition dates to use for a specific ARIA Frame ID, use a 
 [Geographic Search](https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options){target=_blank} 
-for Sentinel-1 SLC IW products in your area of interest in 
+for Sentinel-1 SLC IW products in 
 [Vertex](https://search.asf.alaska.edu/#/){target=_blank}, 
 setting the Area of Interest to the desired ARIA Frame ID, as delineated in the 
 [ARIA Frame ID maps](#aria-frame-id-maps). 
-You may want to apply a search filter for the orbit direction that matches the ARIA Frame ID extent that you are using.
+Apply a search filter for the orbit direction to make sure that results match the ARIA Frame ID extent that you 
+are using. 
+Recall that the [ARIA Frame IDs are specific to orbit direction](#aria-frame-id-maps).
 
-For each footprint that intersects the ARIA Frame ID, use the 
-[SBAS](https://docs.asf.alaska.edu/vertex/sbas/){target=_blank} or 
-[Baseline](https://docs.asf.alaska.edu/vertex/baseline/){target=_blank} 
-tool in Vertex to find other acquisitions to pair with the reference acquisition.
-
-  - You will need to repeat the process of finding pairs for each footprint along the Sentinel-1 orbit path 
-    that intersects the ARIA Frame ID extent.
+Select an acquisition that intersects the ARIA Frame ID for a date you want to include in your InSAR pair, then use the 
+[Baseline](https://docs.asf.alaska.edu/vertex/baseline/){target=_blank} or 
+[SBAS](https://docs.asf.alaska.edu/vertex/sbas/){target=_blank} 
+tool to find an appropriate date to pair with it.
 
 #### Sentinel-1 SLC Selection Constraints
 
 There are a number of conditions that must be met when selecting suitable sets of Sentinel-1 IW SLCs for 
-processing to ARIA-S1-GUNW: 
+processing to ARIA-S1-GUNW. Most of these constraints will be handled by the On-Demand platform, but it is 
+important to be aware of the back-end requirements when you are searching for dates to submit for processing.
 
    ***1. All scenes (reference and secondary) must be from the same relative orbit***
      
   - they must all have the same path number, which matches the path of the extent of the desired ARIA Frame ID
   - note that the ARIA frames are each constrained to a single path
   - consider adding a filter to your geographic search to limit the returns to acquisitions with the same 
-    path number as the ARIA Frame ID
+    path number as the ARIA Frame ID to ensure there are valid acquisitions for the dates you submit for processing
 
    ***2. All scenes must have the same orbit direction (ascending/descending)***
 
@@ -162,16 +162,18 @@ processing to ARIA-S1-GUNW:
   - they must all be from the same pass of the satellite
   - acquisitions from different dates cannot be combined
 
-   ***5. Reference scenes must be acquired after the secondary scenes***
+   ***5. Reference scenes are acquired after the secondary scenes***
 
-  - the list of reference scenes are from the most recent pass, and the secondary scenes are from the 
-    earlier pass that will be compared to the reference scenes
+  - On-Demand jobs will be automatically ordered, but be aware that ARIA S1 GUNW products use the SLCs from the more 
+    recent pass as reference, while secondary scenes are from the earlier pass in the date pair.
 
    ***6. Reference and secondary scenes should overlap the frame geometry***
 
   - all of the scenes listed must overlap the ARIA Frame ID extent
   - do not include any acquisitions where valid pixel data is wholly outside the extent of the ARIA frame, 
     even if the no-data padding around the edges overlaps the frame extent
+    - when searching for appropriate acquisition dates, ensure that you're searching for SLC products from the path  
+      that is associated with the desired ARIA Frame ID
 
 #### Compile a List of Sentinel-1 SLCs
 

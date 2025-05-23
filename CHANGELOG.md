@@ -7,6 +7,8 @@ and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.10.9]
+
+### Changed
 * Update docs to support date-based ARIA S1 GUNW job submissions
 
 ## [0.10.8]

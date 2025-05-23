@@ -175,24 +175,6 @@ important to be aware of the back-end requirements when you are searching for da
     - when searching for appropriate acquisition dates, ensure that you're searching for SLC products from the path  
       that is associated with the desired ARIA Frame ID
 
-#### Compile a List of Sentinel-1 SLCs
-
-Based on your search results, create a list of the reference and secondary Sentinel-1 IW SLCs that intersect 
-with the ARIA Frame ID extent. 
-    
-  Example:
-
-     "reference": [
-          "S1A_IW_SLC__1SDV_20250127T010136_20250127T010203_057623_07199D_4B63",
-          "S1A_IW_SLC__1SDV_20250127T010111_20250127T010138_057623_07199D_4E88",
-          "S1A_IW_SLC__1SDV_20250127T010045_20250127T010113_057623_07199D_4D3B"
-     ],
-     "secondary": [
-          "S1A_IW_SLC__1SDV_20250103T010137_20250103T010204_057273_070BB6_CD45",
-          "S1A_IW_SLC__1SDV_20250103T010113_20250103T010140_057273_070BB6_1133",
-          "S1A_IW_SLC__1SDV_20250103T010047_20250103T010115_057273_070BB6_99C5"
-     ],
-
 ### Submit On-Demand ARIA-S1-GUNW Jobs
 
 !!! warning "On Demand support not currently available in Vertex for ARIA-S1-GUNW products"

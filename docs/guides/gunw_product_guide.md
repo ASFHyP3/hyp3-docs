@@ -194,6 +194,8 @@ To submit an ARIA_S1_GUNW job, all you need is:
 - the ARIA Frame ID number 
 - a list of the two dates for the reference and secondary passes over that frame
 
+The dates must be in YYYY-MM-DD format.
+
 <--[TODO: add guidance about the order of dates once that has been determined]-->
 
 Unlike our other On-Demand InSAR workflows, customizable processing options (multilooking, filter strength, etc.) 

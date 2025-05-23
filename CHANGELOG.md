@@ -12,6 +12,21 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 * Menu navigation to include entries for OPERA RTC-S1 resources
 * [HyP3 Products page](docs/products.md) to include OPERA RTC-S1 
 
+## [0.10.9]
+
+### Changed
+* Updated HyP3 SDK to [v7.5.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#750)
+
+## [0.10.8]
+
+### Changed
+* Removed warning that ARIA GUNW products could not be processed On Demand over Alaska
+
+## [0.10.7]
+
+### Changed
+* Updated HyP3 SDK to [v7.4.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#740)
+
 ## [0.10.6]
 
 ### Added
@@ -31,7 +46,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 * Updated HyP3 SDK to [v7.3.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#730)
 * Notebook tutorial links now direct to GitHub rather than NBViewer
 
-## [0.10.3] 
+## [0.10.3]
 
 ### Changed
 * Updated the [Burst InSAR Product Guide](docs/guides/burst_insar_product_guide.md) to document multi-burst InSAR (the `INSAR_ISCE_MULTI_BURST` job type)

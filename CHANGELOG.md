@@ -10,6 +10,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 * Update docs to support date-based ARIA S1 GUNW job submissions
+* Updated HyP3 SDK to [v7.5.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#750)
 
 ## [0.10.8]
 

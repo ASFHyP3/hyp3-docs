@@ -474,6 +474,7 @@ xx
 Yukon-Kuskokwim
 Yunjun
 yy
+YYYY-MM-DD
 yyyymmdd
 YYYYMMDDTHHMMSSZ
 zz

@@ -111,6 +111,7 @@ dem_matching
 dem_name
 DEMs
 differenced
+dir
 DockerizedTopsApp
 docstring
 DOI

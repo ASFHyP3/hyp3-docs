@@ -112,7 +112,7 @@ using the appropriate geojson file.
 - [Ascending ARIA Frame IDs](https://d3g9emy65n853h.cloudfront.net/ARIA_S1_GUNW/ascending.geojson "ARIA-S1-GUNW Ascending Frame IDs GeoJSON" ){target=_blank} 
 - [Descending ARIA Frame IDs](https://d3g9emy65n853h.cloudfront.net/ARIA_S1_GUNW/descending.geojson "ARIA-S1-GUNW Descending Frame IDs GeoJSON" ){target=_blank}
 
-### Search for Sentinel-1 SLCs for an ARIA Frame ID
+### Search for Sentinel-1 SLC Acquisition Dates for an ARIA Frame ID
 
 The ARIA processing code takes a list of reference and secondary Sentinel-1 IW SLC granules as input, but 
 it can be tricky to find all of the necessary granules for a given ARIA Frame ID. To ensure that there is 

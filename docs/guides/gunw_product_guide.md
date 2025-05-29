@@ -115,8 +115,9 @@ using the appropriate geojson file.
 
 The ARIA processing code takes a list of reference and secondary Sentinel-1 IW SLC granules as input, but 
 it can be tricky to find all of the necessary granules for a given ARIA Frame ID. To ensure that there is 
-full coverage over the desired ARIA Frame ID, users will pass just the dates of the primary and secondary 
-acquisitions along with the ARIA Frame ID into the On-Demand job specification. 
+full coverage over the desired ARIA Frame ID, **users will pass just the dates of the primary and secondary 
+acquisitions along with the ARIA Frame ID into the On-Demand job specification** rather than assembling lists 
+of the necessary granules.
 
 To find suitable primary and secondary acquisition dates to use for a specific ARIA Frame ID, use a 
 [Geographic Search](https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options){target=_blank} 
@@ -124,82 +125,65 @@ for Sentinel-1 SLC IW products in
 [Vertex](https://search.asf.alaska.edu/#/){target=_blank}, 
 setting the Area of Interest to the desired ARIA Frame ID, as delineated in the 
 [ARIA Frame ID maps](#aria-frame-id-maps). 
-Apply a search filter for the orbit direction to make sure that results match the ARIA Frame ID extent that you 
-are using. 
-Recall that the [ARIA Frame IDs are specific to orbit direction](#aria-frame-id-maps).
+
+Applying appropriate filters to the Geographic Search will help ensure that you find results that 
+match the desired ARIA Frame ID:
+
+- Area of Interest: use the extent of the desired ARIA Frame from the reference geojson, or drop a point 
+  in the middle of the ARIA Frame location
+- Start Date / End Date: restrict the date range as desired
+- File type: L1 Single Look Complex (SLC)
+- Beam Mode: IW
+- Polarization: VV+VH,VV
+- Direction: match the orbit direction of the [ARIA Frame ID reference geojson](#aria-frame-id-maps) 
+  used to select the desired ARIA Frame (or reference the *dir* attribute from the ARIA Frame ID geojson file)
+- Path Start / Path End: path of the desired ARIA Frame (*path* attribute from the ARIA Frame ID geojson file)
 
 Select an acquisition that intersects the ARIA Frame ID for a date you want to include in your InSAR pair, then use the 
 [Baseline](https://docs.asf.alaska.edu/vertex/baseline/){target=_blank} or 
 [SBAS](https://docs.asf.alaska.edu/vertex/sbas/){target=_blank} 
 tool to find an appropriate date to pair with it.
 
-#### Sentinel-1 SLC Selection Constraints
-
-There are a number of conditions that must be met when selecting suitable sets of Sentinel-1 IW SLCs for 
-processing to ARIA-S1-GUNW. Most of these constraints will be handled by the On-Demand platform, but it is 
-important to be aware of the back-end requirements when you are searching for dates to submit for processing.
-
-   ***1. All scenes (reference and secondary) must be from the same relative orbit***
-     
-  - they must all have the same path number, which matches the path of the extent of the desired ARIA Frame ID
-  - note that the ARIA frames are each constrained to a single path
-  - consider adding a filter to your geographic search to limit the returns to acquisitions with the same 
-    path number as the ARIA Frame ID to ensure there are valid acquisitions for the dates you submit for processing
-
-   ***2. All scenes must have the same orbit direction (ascending/descending)***
-
-  - the orbit direction must match the orbit direction of the ARIA Frame ID you are using
-  - consider adding a filter to your geographic search to limit the returns to acquisitions with the same orbit 
-    direction as the ARIA Frame ID
-
-   ***3. All reference scenes must be from the same absolute orbit***
-
-  - they must all be from the same pass of the satellite
-  - acquisitions from different dates cannot be combined
-
-   ***4. All secondary scenes must be from the same absolute orbit***
-
-  - they must all be from the same pass of the satellite
-  - acquisitions from different dates cannot be combined
-
-   ***5. Reference scenes are acquired after the secondary scenes***
-
-  - On-Demand jobs will be automatically ordered, but be aware that ARIA S1 GUNW products use the SLCs from the more 
-    recent pass as reference, while secondary scenes are from the earlier pass in the date pair.
-
-   ***6. Reference and secondary scenes should overlap the frame geometry***
-
-  - all of the scenes listed must overlap the ARIA Frame ID extent
-  - do not include any acquisitions where valid pixel data is wholly outside the extent of the ARIA frame, 
-    even if the no-data padding around the edges overlaps the frame extent
-    - when searching for appropriate acquisition dates, ensure that you're searching for SLC products from the path  
-      that is associated with the desired ARIA Frame ID
-
 ### Submit On-Demand ARIA-S1-GUNW Jobs
 
 !!! warning "On Demand support not currently available in Vertex for ARIA-S1-GUNW products"
 
     On-demand ARIA S1 GUNW products cannot currently be submitted directly from Vertex, but we plan to 
-    make this feature available in the second half of 2025. Vertex is still very useful for selecting 
-    Sentinel-1 SLC pairs to submit for processing, but once you identify scene pairs, you will need to submit 
-    them using the [HyP3 Python SDK](../using/sdk.md){target=_blank} or [HyP3 API](../using/api.md){target=_blank}.
+    make this feature available in the second half of 2025. 
+
+    Vertex is still very useful for selecting Sentinel-1 SLC acquisition dates to submit for processing, 
+    but once you identify reference and secondary dates for the desired ARIA Frame ID, you will need to submit 
+    the job for processing using the [HyP3 Python SDK](../using/sdk.md){target=_blank} or 
+    [HyP3 API](../using/api.md){target=_blank}.
 
 On-Demand ARIA-S1-GUNW jobs can be submitted using the `ARIA_S1_GUNW` job type via the 
 [HyP3 API](../using/api.md#submitting-aria-s1-gunw-jobs){target=_blank}, 
 or via the [HyP3 Python SDK](../using/sdk.md){target=_blank} 
 using the `submit_aria_s1_gunw_job` method of the `HyP3` class.
 
+Unlike ASF's other On-Demand InSAR workflows, customizable processing options (multilooking, filter strength, etc.) 
+are not available for ARIA-S1-GUNW jobs.
+
 To submit an ARIA_S1_GUNW job, all you need is: 
 
 - the ARIA Frame ID number 
-- a list of the two dates for the reference and secondary passes over that frame
+- the reference date, which is the more recent pass over the ARIA Frame
+- the secondary date, which is the earlier pass over the ARIA Frame 
 
 The dates must be in YYYY-MM-DD format.
 
-<--[TODO: add guidance about the order of dates once that has been determined]-->
+#### Reference and Secondary Dates
 
-Unlike our other On-Demand InSAR workflows, customizable processing options (multilooking, filter strength, etc.) 
-are not available for ARIA-S1-GUNW jobs.
+ARIA S1 GUNW products use the SLCs from the more recent pass as reference, while secondary scenes are from the 
+earlier pass in the date pair. **When submitting a job using the HyP3 API or SDK, the date passed as the reference 
+date *must* be more recent than the secondary date. If they are in the opposite order, an error will be raised.**
+
+Note that ***this order is opposite of the other On-Demand InSAR products available from ASF***. Both the 
+[InSAR GAMMA](insar_product_guide.md) products and the [Burst InSAR](burst_insar_product_guide.md) products use the 
+earlier acquisition as reference, and the more recent acquisition as secondary. This means that the ARIA unwrapped 
+interferograms have the *opposite* sign from the unwrapped interferograms generated by the other ASF On-Demand InSAR 
+workflows. In the ARIA S1 GUNW products, negative phase differences indicate movement away from the sensor and 
+positive phase differences indicate movement towards the sensor.
 
 ## Product Packaging
 
@@ -220,7 +204,6 @@ GUNW naming convention includes:
 - Standard product version
 
 ![GUNW naming scheme](../images/asf_gunw_names.png "Breakdown of ARIA-S1-GUNW Naming Scheme")
-
 
 ### Product Elements
 
@@ -296,4 +279,3 @@ IEEE Transactions on Geoscience and Remote Sensing 57.9 (2019): 6755-6773.
 
 Yunjun, Zhang, et al. "Range geolocation accuracy of C-/L-band SAR and its implications for operational stack 
 coregistration." IEEE Transactions on Geoscience and Remote Sensing 60 (2022): 1-19.
-

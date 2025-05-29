@@ -136,8 +136,8 @@ match the desired ARIA Frame ID:
 - Beam Mode: `IW`
 - Polarization: Select both `VV+VH` and `VV` (HH ARIA S1 GUNW products are not supported)
 - Direction: match the orbit direction of the [ARIA Frame ID reference geojson](#aria-frame-id-maps) 
-  used to select the desired ARIA Frame (or reference the *dir* attribute from the ARIA Frame ID geojson file)
-- Path Start / Path End: path of the desired ARIA Frame (*path* attribute from the ARIA Frame ID geojson file)
+  used to select the desired ARIA Frame (or reference the `dir` attribute from the ARIA Frame ID geojson file)
+- Path Start / Path End: path of the desired ARIA Frame (`path` attribute from the ARIA Frame ID geojson file)
 
 Select an acquisition that intersects the ARIA Frame ID for a date you want to include in your InSAR pair, then use the 
 [Baseline](https://docs.asf.alaska.edu/vertex/baseline/){target=_blank} or 

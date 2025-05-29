@@ -116,9 +116,9 @@ using the appropriate geojson file.
 
 The ARIA processing code takes a list of reference and secondary Sentinel-1 IW SLC granules as input, but 
 it can be tricky to find all of the necessary granules for a given ARIA Frame ID. To ensure that there is 
-full coverage over the desired ARIA Frame ID, **users will pass just the dates of the primary and secondary 
-acquisitions along with the ARIA Frame ID into the On-Demand job specification** rather than assembling lists 
-of the necessary granules.
+full coverage over the desired ARIA Frame, **users will just pass the ARIA Frame ID and the dates of the 
+desired primary and secondary passes over that frame into the On-Demand job specification** rather than 
+assembling lists of primary and secondary SLCs covering the desired ARIA Frame.
 
 To find suitable primary and secondary acquisition dates to use for a specific ARIA Frame ID, use a 
 [Geographic Search](https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options "Vertex Manual: Geographic Search Options" ){target=_blank} 

@@ -129,15 +129,15 @@ setting the Area of Interest to the desired ARIA Frame ID, as delineated in the
 Applying appropriate filters to the Geographic Search will help ensure that you find results that 
 match the desired ARIA Frame ID:
 
-- Area of Interest: use the extent of the desired ARIA Frame from the reference geojson, or drop a point 
+- **Area of Interest**: use the extent of the desired ARIA Frame from the reference geojson, or drop a point 
   in the middle of the ARIA Frame location
-- Start Date / End Date: restrict the date range as desired
-- File type: `L1 Single Look Complex (SLC)`
-- Beam Mode: `IW`
-- Polarization: Select both `VV+VH` and `VV` (HH ARIA S1 GUNW products are not supported)
-- Direction: match the orbit direction of the [ARIA Frame ID reference geojson](#aria-frame-id-maps) 
+- **Start Date** / **End Date**: restrict the date range as desired
+- **File type**: `L1 Single Look Complex (SLC)`
+- **Beam Mode**: `IW`
+- **Polarization**: Select both `VV+VH` and `VV` (HH ARIA S1 GUNW products are not supported)
+- **Direction**: match the orbit direction of the [ARIA Frame ID reference geojson](#aria-frame-id-maps) 
   used to select the desired ARIA Frame (or reference the `dir` attribute from the ARIA Frame ID geojson file)
-- Path Start / Path End: path of the desired ARIA Frame (`path` attribute from the ARIA Frame ID geojson file)
+- **Path Start** / **Path End**: path of the desired ARIA Frame (`path` attribute from the ARIA Frame ID geojson file)
 
 Select an acquisition that intersects the ARIA Frame ID for a date you want to include in your InSAR pair, then use the 
 [Baseline](https://docs.asf.alaska.edu/vertex/baseline/){target=_blank} or 

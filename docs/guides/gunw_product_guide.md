@@ -16,7 +16,7 @@ The ARIA project also maintains the [ARIA-tools](https://doi.org/10.1029/2020GL0
 
 While there is a large archive of ARIA-S1-GUNW products that have already been generated and are [ready for download](#accessing-existing-products "Jump to Accessing Existing Products section of this document"), they may not cover your area of interest. In addition, the archived products may not include the full range of temporal baseline pairings required for your analysis. If you are interested in ARIA-S1-GUNW products that are not already represented in the archive, ASF provides the ability to [generate these products using specific Sentinel-1 SLC pairings](#ordering-on-demand-products "Jump to Ordering On Demand Products section of this document"). 
 
-The On Demand ARIA-S1-GUNW products are generated using the same code that is used to generate the archived products, so they are fully interoperable.
+The On Demand ARIA-S1-GUNW products are generated using the same code that is used to generate the archived products, so they are fully interoperable. In addition, products generated On Demand are added to the archive.
 
 ## Accessing Existing Products
 
@@ -30,7 +30,13 @@ You can download existing ARIA-S1-GUNW products from the Alaska Satellite Facili
 
 ## Ordering On-Demand Products
 
-If the ARIA-S1-GUNW products you need are not available in the archive, you can use ASF's On Demand platform to submit custom ARIA-S1-GUNW jobs for processing. 
+If the ARIA-S1-GUNW products you need are not available in the archive, you can use ASF's On Demand platform to submit 
+custom ARIA-S1-GUNW jobs for processing. Once processing is complete, there are a couple of different methods to 
+[access ARIA S1 GUNW Products generated On Demand](#accessing-on-demand-aria-s1-gunw-products "Jump to the Accessing On-Demand ARIA S1 GUNW Products section of this document"). 
+You can access them using the On Demand Search, as you would any other On-Demand products from ASF, 
+and the download link provided there will be active for 14 days. The products are also added to the archive, however, 
+so you can also access them using a Geographic Search for ARIA S1 GUNW products in Vertex, or searching for the 
+archived products programmatically. The links to the archived products never expire. 
 
 !!! warning "Sentinel-1C acquisitions not yet supported" 
 
@@ -131,6 +137,10 @@ Based on your search results, create a list of the reference and secondary Senti
 On-Demand ARIA-S1-GUNW jobs can be submitted using the `ARIA_S1_GUNW` job type via the [HyP3 API](../using/api.md#submitting-aria-s1-gunw-jobs){target=_blank}, or via the [HyP3 Python SDK](../using/sdk.md){target=_blank} using the `submit_aria_s1_gunw_job` method of the `HyP3` class.
 
 Unlike our other On-Demand InSAR workflows, customizable processing options (multilooking, filter strength, etc.) are not available for ARIA-S1-GUNW jobs.
+
+### Accessing On-Demand ARIA-S1-GUNW Products
+
+<--[TODO: Add content on different options for accessing On-Demand products]-->
 
 ## Product Packaging
 

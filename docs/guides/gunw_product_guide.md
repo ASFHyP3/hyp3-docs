@@ -136,8 +136,8 @@ to find other acquisitions to pair with the reference acquisition.
   - You will need to repeat the process of finding pairs for each footprint along the Sentinel-1 orbit path 
     that intersects the ARIA Frame ID extent.
 
-There must be at least 90% coverage of the ARIA Frame ID by the collections of reference and secondary scenes
-submitted for the job. If this threshold is not met, the job will fail. 
+Common area covered by the selected reference and secondary scenes must cover at least 90% of the ARIA Frame. Jobs 
+submitted that do not provide sufficient coverage will fail.
 
 #### Sentinel-1 SLC Selection Constraints
 

@@ -44,7 +44,7 @@ temporal baseline pairings required for your analysis. If you are interested in 
 already represented in the archive, ASF provides the ability to 
 [generate these products using specific Sentinel-1 SLC pairings](#ordering-on-demand-products "Jump to Ordering On Demand Products section of this document"). 
 
-The On Demand ARIA-S1-GUNW products are generated using the same code that is used to generate the archived products, 
+On Demand ARIA-S1-GUNW products are generated using the same code used to generate the archived products, 
 so they are fully interoperable.
 
 ## Accessing Existing Products

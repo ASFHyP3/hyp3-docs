@@ -68,14 +68,13 @@ search portal by following these steps:
 ## Ordering On-Demand Products
 
 If the ARIA-S1-GUNW products you need are not available in the archive, you can use ASF's On Demand platform to submit 
-custom ARIA-S1-GUNW jobs for processing. Once processing is complete, there are a couple of different methods to 
-[access ARIA S1 GUNW Products generated On Demand](#accessing-on-demand-aria-s1-gunw-products "Jump to the Accessing On-Demand ARIA S1 GUNW Products section of this document"). 
-You can access them using the On Demand Search, as you would any other On-Demand products from ASF, 
-and the download link provided there will be active for 14 days. 
+custom ARIA-S1-GUNW jobs for processing. Once processing is complete, there are a couple of different approaches for  
+[accessing On Demand GUNW products](#accessing-on-demand-aria-s1-gunw-products "Jump to the Accessing On-Demand ARIA S1 GUNW Products section of this document"). 
+You can access them as you would any other On-Demand products from ASF, and the download links provided will 
+be active for 14 days. 
 
-Products generated On Demand are also added to the archive, however, so you can also access them using a 
-Geographic Search for ARIA S1 GUNW products in Vertex, or searching for the archived products programmatically. 
-The links to the archived products never expire. 
+Products generated On Demand are also added to the archive, however, and can be accessed by searching for 
+ARIA S1 GUNW products in ASF's archive. The links to the archived products never expire. 
 
 !!! warning "Sentinel-1C acquisitions not yet supported" 
 

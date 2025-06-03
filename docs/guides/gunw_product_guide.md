@@ -4,7 +4,7 @@ This document is a guide for users of
 [ARIA Sentinel-1 Geocoded Unwrapped (GUNW) Interferograms](https://www.earthdata.nasa.gov/data/catalog/asf-aria-s1-gunw-1 "ASF-ARIA-S1-GUNW Products" ){target=_blank}.
 
 The 
-[ARIA Sentinel-1 Geocoded Unwrapped Phase (ARIA-S1-GUNW)](https://aria.jpl.nasa.gov/products/standard-displacement-products.html "ARIA Standard Displacement Products" ){target=_blank} 
+[ARIA Sentinel-1 Geocoded Unwrapped Interferograms (ARIA-S1-GUNW)](https://aria.jpl.nasa.gov/products/standard-displacement-products.html "ARIA Standard Displacement Products" ){target=_blank} 
 product is a standardized interferometric SAR (InSAR) dataset that enables rapid analysis of surface deformation 
 using Sentinel-1 SAR data. Produced by 
 [JPL’s ARIA](https://aria.jpl.nasa.gov/ "aria.jpl.nasa.gov" ){target=_blank} 

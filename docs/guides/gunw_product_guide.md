@@ -144,41 +144,46 @@ submitted that do not provide sufficient coverage will fail.
 There are a number of conditions that must be met when selecting suitable sets of Sentinel-1 IW SLCs for 
 processing to ARIA-S1-GUNW: 
 
-   ***1. All scenes (reference and secondary) must be from the same relative orbit***
+   ***1. All scenes must be in VV polarization***
+
+  - ARIA S1 GUNW jobs do not support acquisitions in HH polarization
+  - cross-polarized returns (VH or HV) are not supported
+
+   ***2. All scenes (reference and secondary) must be from the same relative orbit***
      
   - they must all have the same path number, which matches the path of the extent of the desired ARIA Frame ID
   - note that the ARIA frames are each constrained to a single path
   - consider adding a filter to your geographic search to limit the returns to acquisitions with the same path 
     number as the ARIA Frame ID
 
-   ***2. All scenes must have the same orbit direction (ascending/descending)***
+   ***3. All scenes must have the same orbit direction (ascending/descending)***
 
   - the orbit direction must match the orbit direction of the ARIA Frame ID you are using
   - consider adding a filter to your geographic search to limit the returns to acquisitions with the same orbit 
     direction as the ARIA Frame ID
 
-   ***3. All reference scenes must be from the same absolute orbit***
+   ***4. All reference scenes must be from the same absolute orbit***
 
   - they must all be from the same pass of the satellite
   - acquisitions from different dates cannot be combined
 
-   ***4. All secondary scenes must be from the same absolute orbit***
+   ***5. All secondary scenes must be from the same absolute orbit***
 
   - they must all be from the same pass of the satellite
   - acquisitions from different dates cannot be combined
 
-   ***5. Reference scenes must be acquired after the secondary scenes***
+   ***6. Reference scenes must be acquired after the secondary scenes***
 
   - the list of reference scenes are from the most recent pass, and the secondary scenes are from the earlier 
     pass that will be compared to the reference scenes
 
-   ***6. Reference and secondary scenes should overlap the frame geometry***
+   ***7. Reference and secondary scenes should overlap the frame geometry***
 
   - all of the scenes listed must overlap the ARIA Frame ID extent
   - do not include any acquisitions where valid pixel data is wholly outside the extent of the ARIA frame, 
     even if the no-data padding around the edges overlaps the frame extent
 
-   ***7. The lists for reference and secondary scenes must both cover at least 90% of the ARIA frame***
+   ***8. The lists for reference and secondary scenes must both cover at least 90% of the ARIA frame***
 
   - if there is less than 90% spatial coverage for either the reference or secondary scenes, the job will fail
 

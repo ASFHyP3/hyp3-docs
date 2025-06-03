@@ -103,7 +103,7 @@ through time. **ARIA-S1-GUNW products containing the same bursts, and thus shari
 said to have the same *ARIA Frame ID*.**
 
 To ensure that ARIA-S1-GUNW products are always created using standard footprints, the ARIA Frame ID needs to be 
-provided along with the reference and secondary granules that intersect this footprint for a given date in order to 
+provided along with the reference and secondary granules that cover this footprint for a given date in order to 
 create a new ARIA-S1-GUNW product (see figure below).
 
 ![Frame vs granule geographic footprint](../images/frame_granule_overlap.png "Example of a frame that spans three granules.")
@@ -135,6 +135,9 @@ to find other acquisitions to pair with the reference acquisition.
 
   - You will need to repeat the process of finding pairs for each footprint along the Sentinel-1 orbit path 
     that intersects the ARIA Frame ID extent.
+
+There must be at least 90% coverage of the ARIA Frame ID by the collections of reference and secondary scenes
+submitted for the job. If this threshold is not met, the job will fail. 
 
 #### Sentinel-1 SLC Selection Constraints
 
@@ -174,6 +177,10 @@ processing to ARIA-S1-GUNW:
   - all of the scenes listed must overlap the ARIA Frame ID extent
   - do not include any acquisitions where valid pixel data is wholly outside the extent of the ARIA frame, 
     even if the no-data padding around the edges overlaps the frame extent
+
+   ***7. The lists for reference and secondary scenes must both cover at least 90% of the ARIA frame***
+
+  - if there is less than 90% spatial coverage for either the reference or secondary scenes, the job will fail
 
 #### Compile a List of Sentinel-1 SLCs
 

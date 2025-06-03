@@ -25,7 +25,7 @@ which is a suite of open-source tools which automates the seamless download, pos
 aggregation, and management of ARIA-S1-GUNW products. Users may refer to the dedicated 
 [GitHub](https://github.com/aria-tools/ARIA-tools "ARIA-tools GitHub repository" ){target=_blank} 
 page for a more exhaustive overview and installation instructions, and 
-[EarthScope Consortium led tutorials](https://www.youtube.com/watch?v=_a9T59VTz7Q&t=12734s "EarthScope Tutorials on YouTube" ){target=_blank} 
+[tutorials led by EarthScope Consortium](https://www.youtube.com/watch?v=_a9T59VTz7Q&t=12734s "EarthScope Tutorials on YouTube" ){target=_blank}, 
 which demonstrate practical applications.
 
 !!! tip "ARIA-S1-GUNW products are not produced globally"

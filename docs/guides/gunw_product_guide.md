@@ -73,8 +73,8 @@ custom ARIA-S1-GUNW jobs for processing. Once processing is complete, there are 
 You can access them as you would any other On-Demand products from ASF, and the download links provided will 
 be active for 14 days. 
 
-Products generated On Demand are also added to the archive, however, and can be accessed by searching for 
-ARIA S1 GUNW products in ASF's archive. The links to the archived products never expire. 
+Products generated On Demand are also added to the archive once processing is complete, and can be accessed by 
+searching for ARIA S1 GUNW products in ASF's archive. The links to the archived products never expire. 
 
 !!! warning "Sentinel-1C acquisitions not yet supported" 
 

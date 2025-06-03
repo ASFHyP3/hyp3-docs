@@ -183,7 +183,7 @@ processing to ARIA-S1-GUNW:
   - the list of reference scenes are from the most recent pass, and the secondary scenes are from the earlier 
     pass that will be compared to the reference scenes
 
-   ***7. Reference and secondary scenes should overlap the frame geometry***
+   ***7. Reference and secondary scenes must overlap the frame geometry***
 
   - all of the scenes listed must overlap the ARIA Frame ID extent
   - do not include any acquisitions where valid pixel data is wholly outside the extent of the ARIA frame, 

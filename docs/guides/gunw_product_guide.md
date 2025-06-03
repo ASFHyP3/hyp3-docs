@@ -11,7 +11,7 @@ using Sentinel-1 SAR data. Produced by
 project and hosted at the 
 [Alaska Satellite Facility (ASF) DAAC](https://www.earthdata.nasa.gov/centers/asf-daac "www.earthdata.nasa.gov/centers/asf-daac" ){target=_blank}, 
 it provides CF-compliant NetCDF files at 90-m pixel spacing, containing unwrapped interferometric phase measurements, 
-imaging geometry, various correction layers, and metadata. 
+imaging geometry, various correction layers, and metadata. Products are available for VV polarization only.
 
 With over 1.1 million (and growing!) freely available products covering major fault systems, volcanic regions, 
 and coastal zones, ARIA-S1-GUNW products facilitate scientific research and disaster response by simplifying access 

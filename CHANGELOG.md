@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.10.10]
 
 ### Changed
-* Updated [ARIA S1 GUNW Product Guide](https://hyp3-docs.asf.alaska.edu/guides/gunw_product_guide.md) to include information about On-Demand products being ingested to the ARIA-S1-GUNW archive after processing
+* Updated [ARIA S1 GUNW Product Guide](https://hyp3-docs.asf.alaska.edu/guides/gunw_product_guide.md) to include information about coverage thresholds, polarization limitations, and ingesting On-Demand products to the ARIA-S1-GUNW archive after processing
 
 ## [0.10.9]
 

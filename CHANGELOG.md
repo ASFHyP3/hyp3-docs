@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.10.10]
 
 ### Changed
-* Update docs to support date-based ARIA S1 GUNW job submissions
+* Updated [ARIA S1 GUNW Product Guide](https://hyp3-docs.asf.alaska.edu/guides/gunw_product_guide.md) to include information about date-based ARIA S1 GUNW job submissions and supported polarizations
 
 ## [0.10.9]
 

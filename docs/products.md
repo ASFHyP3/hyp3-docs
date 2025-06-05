@@ -86,8 +86,7 @@ There is an extensive archive of
 but they are only generated in specific geographic locations. If the existing archive does not provide the 
 products you need, you can generate ARIA GUNW products on demand. 
 
-ARIA S1 GUNW products are delivered as netCDF files with 90-m pixel spacing. The On-Demand 
-products are generated using the same 
+ARIA S1 GUNW products are delivered as netCDF files with 90-m pixel spacing. Products generated On Demand use the same 
 [ISCE2](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2" ){target=_blank}-based 
 code used to generate the archived products to ensure interoperability.
 

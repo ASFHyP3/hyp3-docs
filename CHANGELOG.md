@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.10.10]
 
 ### Changed
-- * The cost of AUTORIFT jobs has been increased to 50 credits, from 25 credits, on the [credits](docs/using/credits.md) page. 
+* The cost of AUTORIFT jobs has been increased to 50 credits, from 25 credits, on the [credits](docs/using/credits.md) page. 
 
 ## [0.10.9]
 

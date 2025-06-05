@@ -185,10 +185,6 @@ processing to ARIA-S1-GUNW:
   - do not include any acquisitions where valid pixel data is wholly outside the extent of the ARIA frame, 
     even if the no-data padding around the edges overlaps the frame extent
 
-   ***8. The lists for reference and secondary scenes must both cover at least 90% of the ARIA frame***
-
-  - if there is less than 90% spatial coverage for either the reference or secondary scenes, the job will fail
-
 #### Compile a List of Sentinel-1 SLCs
 
 Based on your search results, create a list of the reference and secondary Sentinel-1 IW SLCs that intersect 

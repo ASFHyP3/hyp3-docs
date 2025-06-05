@@ -195,7 +195,7 @@ positive phase differences indicate movement towards the sensor.
 
 ### Accessing On-Demand ARIA-S1-GUNW Products
 
-To access the products you submitted On Demand, use the 
+To access products generated On Demand, use the 
 [On Demand Search Type in Vertex](https://search.asf.alaska.edu/#/?maxResults=1000&searchType=On%20Demand "On Demand Vertex Search" ){target=_blank}. 
 Once processing is complete, the download links available in this interface are active for 14 days.
 

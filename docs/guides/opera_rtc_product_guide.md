@@ -86,7 +86,9 @@ For more information on the technical specifications of the OPERA RTC-S1 product
 
 You can also order OPERA RTC-S1 products from ASF On Demand. This is particularly useful if you need a time 
 series of RTC-S1 products that extends beyond the start of the archive. On-Demand processing is available for any 
-Sentinel-1 burst with the same burst ID (footprint) as an existing OPERA RTC-S1 product. 
+Sentinel-1 burst that has 
+[OPERA RTC-S1 Static Layer File](#l2-radiometric-terrain-corrected-static-layer-rtc-static-files "Jump to the Static Layer Files section of this document" ) 
+coverage available in the ASF archive.
 
 On-Demand RTC-S1 products are generated using the same code that is used by the OPERA project, but are processed 
 using ASF's 

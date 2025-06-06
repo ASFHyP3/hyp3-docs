@@ -9,12 +9,12 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.10.11]
 
 ### Changed
-* Updated [ARIA S1 GUNW Product Guide](https://hyp3-docs.asf.alaska.edu/guides/gunw_product_guide.md) to include information about ingesting On-Demand products to the ARIA-S1-GUNW archive after processing
-* 
+* Updated [ARIA S1 GUNW Product Guide](https://hyp3-docs.asf.alaska.edu/guides/gunw_product_guide.md) to include information about date-based ARIA S1 GUNW job submissions and supported polarizations
+
 ## [0.10.10]
 
 ### Changed
-* Updated [ARIA S1 GUNW Product Guide](https://hyp3-docs.asf.alaska.edu/guides/gunw_product_guide.md) to include information about date-based ARIA S1 GUNW job submissions and supported polarizations
+* The cost of autoRIFT jobs has been increased to 50 credits, from 25 credits, on the [credits](docs/using/credits.md) page. 
 
 ## [0.10.9]
 

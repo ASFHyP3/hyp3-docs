@@ -9,8 +9,13 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.11.0]
 
 ### Changed
-* Menu navigation to include entries for OPERA RTC-S1 resources
-* [HyP3 Products page](docs/products.md) to include OPERA RTC-S1 
+* Menu navigation updated to include entries for OPERA RTC-S1 resources
+* [HyP3 Products page](docs/products.md) updated to include OPERA RTC-S1 
+
+## [0.10.10]
+
+### Changed
+* The cost of autoRIFT jobs has been increased to 50 credits, from 25 credits, on the [credits](docs/using/credits.md) page. 
 
 ## [0.10.9]
 

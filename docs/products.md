@@ -124,12 +124,9 @@ There is an extensive archive of
 but they are only generated in specific geographic locations. If the existing archive does not provide the 
 products you need, you can generate ARIA GUNW products on demand. 
 
-ARIA S1 GUNW products are delivered as netCDF files with 90-m pixel spacing. The On-Demand 
-products are generated using the same 
+ARIA S1 GUNW products are delivered as netCDF files with 90-m pixel spacing. Products generated On Demand use the same 
 [ISCE2](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2" ){target=_blank}-based 
-code used to generate the archived products, and standard ARIA S1 GUNW products 
-generated on demand are automatically added to the archive. This allows all users to access the On-Demand products 
-indefinitely, which is an exception to the 14-day availability period that applies to all other On-Demand products.
+code used to generate the archived products to ensure interoperability.
 
 The ARIA S1 GUNW products use a set [framing system](guides/gunw_product_guide.md#aria-frame-ids "ARIA Sentinel-1 GUNW 
 Product Guide: ARIA Frame IDs") to select consistent bursts from input Sentinel-1 IW SLCs to generate interferograms. 

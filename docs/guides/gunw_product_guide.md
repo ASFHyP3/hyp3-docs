@@ -67,9 +67,17 @@ search portal by following these steps:
 ## Ordering On-Demand Products
 
 If the ARIA-S1-GUNW products you need are not available in the archive, you can use ASF's On Demand platform to submit 
-custom ARIA-S1-GUNW jobs for processing. Once processing is complete, you can access them as you would any other 
-[On-Demand](#accessing-on-demand-aria-s1-gunw-products "Jump to the Accessing On Demand ARIA S1 GUNW Products section of this document" ) 
-products from ASF. The download links provided will be active for 14 days.
+custom ARIA-S1-GUNW jobs for processing. Once processing is complete, there are a couple of different approaches for 
+[accessing On Demand GUNW products](#accessing-on-demand-aria-s1-gunw-products "Jump to the Accessing On-Demand ARIA S1 GUNW Products section of this document"):
+
+- You can access them as you would any other 
+  [On-Demand](#accessing-products-using-on-demand-interfaces "Jump to the On Demand Interfaces section of this document" ) 
+  products from ASF.
+    - The download links provided will be active for 14 days.
+- Products generated On Demand are also added to the archive and can be accessed by 
+  [searching for ARIA S1 GUNW](#accessing-products-in-the-archive "Jump to the Accessing Products in the Archive section of this document" ) 
+  products.
+    - The links to the archived products never expire. 
 
 !!! warning "Sentinel-1C acquisitions not yet supported" 
 
@@ -117,112 +125,104 @@ using the appropriate geojson file.
 - [Ascending ARIA Frame IDs](https://d3g9emy65n853h.cloudfront.net/ARIA_S1_GUNW/ascending.geojson "ARIA-S1-GUNW Ascending Frame IDs GeoJSON" ){target=_blank} 
 - [Descending ARIA Frame IDs](https://d3g9emy65n853h.cloudfront.net/ARIA_S1_GUNW/descending.geojson "ARIA-S1-GUNW Descending Frame IDs GeoJSON" ){target=_blank}
 
-### Search for Sentinel-1 SLCs for an ARIA Frame ID
+### Search for Sentinel-1 SLC Acquisition Dates for an ARIA Frame ID
 
-Use a [Geographic Search](https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options){target=_blank} for 
-Sentinel-1 SLC IW products in your area of interest in [Vertex](https://search.asf.alaska.edu/#/){target=_blank}, 
+The ARIA processing code takes a list of reference and secondary Sentinel-1 IW SLC granules as input, but 
+it can be tricky to find all of the necessary granules for a given ARIA Frame ID. To ensure that there is 
+full coverage over the desired ARIA Frame, **users will just pass the ARIA Frame ID and the dates of the 
+desired primary and secondary passes over that frame into the On-Demand job specification** rather than 
+assembling lists of primary and secondary SLCs.
+
+To find suitable primary and secondary acquisition dates to use for a specific ARIA Frame ID, use a 
+[Geographic Search](https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options "Vertex Manual: Geographic Search Options" ){target=_blank} 
+for Sentinel-1 SLC IW products in 
+[Vertex](https://search.asf.alaska.edu/#/ "search.asf.alaska.edu" ){target=_blank}, 
 setting the Area of Interest to the desired ARIA Frame ID, as delineated in the 
-[ARIA Frame ID maps](#aria-frame-id-maps). You may want to apply a search filter for the orbit direction that 
-matches the ARIA Frame ID extent that you are using.
+[ARIA Frame ID maps](#aria-frame-id-maps). 
 
-For each footprint that intersects the ARIA Frame ID, use the 
-[SBAS](https://docs.asf.alaska.edu/vertex/sbas/){target=_blank} or 
-[Baseline](https://docs.asf.alaska.edu/vertex/baseline/){target=_blank} tool in Vertex 
-to find other acquisitions to pair with the reference acquisition.
+Applying appropriate filters to the 
+[Geographic Search](https://search.asf.alaska.edu/#/ "search.asf.alaska.edu" ){target=_blank} 
+will help ensure that you find results that match the desired [ARIA Frame ID](#aria-frame-id-maps):
 
-  - You will need to repeat the process of finding pairs for each footprint along the Sentinel-1 orbit path 
-    that intersects the ARIA Frame ID extent.
+- **Area of Interest**: use the extent of the desired ARIA Frame from the reference geojson, or drop a point 
+  in the middle of the ARIA Frame location
+- **Start Date** / **End Date**: restrict the date range as desired
+- **File type**: `L1 Single Look Complex (SLC)`
+- **Beam Mode**: `IW`
+- **Polarization**: Select both `VV+VH` and `VV` (HH ARIA S1 GUNW products are not supported)
+- **Direction**: match the orbit direction of the [ARIA Frame ID reference geojson](#aria-frame-id-maps) 
+  used to select the desired ARIA Frame (or reference the `dir` attribute from the ARIA Frame ID geojson file)
+- **Path Start** / **Path End**: path of the desired ARIA Frame (`path` attribute from the ARIA Frame ID geojson file)
 
-#### Sentinel-1 SLC Selection Constraints
-
-There are a number of conditions that must be met when selecting suitable sets of Sentinel-1 IW SLCs for 
-processing to ARIA-S1-GUNW: 
-
-   ***1. All scenes must be in VV polarization***
-
-  - ARIA S1 GUNW jobs do not support acquisitions in HH polarization
-  - cross-polarized returns (VH or HV) are not supported
-
-   ***2. All scenes (reference and secondary) must be from the same relative orbit***
-     
-  - they must all have the same path number, which matches the path of the extent of the desired ARIA Frame ID
-  - note that the ARIA frames are each constrained to a single path
-  - consider adding a filter to your geographic search to limit the returns to acquisitions with the same path 
-    number as the ARIA Frame ID
-
-   ***3. All scenes must have the same orbit direction (ascending/descending)***
-
-  - the orbit direction must match the orbit direction of the ARIA Frame ID you are using
-  - consider adding a filter to your geographic search to limit the returns to acquisitions with the same orbit 
-    direction as the ARIA Frame ID
-
-   ***4. All reference scenes must be from the same absolute orbit***
-
-  - they must all be from the same pass of the satellite
-  - acquisitions from different dates cannot be combined
-
-   ***5. All secondary scenes must be from the same absolute orbit***
-
-  - they must all be from the same pass of the satellite
-  - acquisitions from different dates cannot be combined
-
-   ***6. Reference scenes must be acquired after the secondary scenes***
-
-  - the list of reference scenes are from the most recent pass, and the secondary scenes are from the earlier 
-    pass that will be compared to the reference scenes
-
-   ***7. Reference and secondary scenes must overlap the frame geometry***
-
-  - all of the scenes listed must overlap the ARIA Frame ID extent
-  - do not include any acquisitions where valid pixel data is wholly outside the extent of the ARIA frame, 
-    even if the no-data padding around the edges overlaps the frame extent
-
-#### Compile a List of Sentinel-1 SLCs
-
-Based on your search results, create a list of the reference and secondary Sentinel-1 IW SLCs that intersect 
-with the ARIA Frame ID extent. 
-    
-  Example:
-
-     "reference": [
-          "S1A_IW_SLC__1SDV_20250127T010136_20250127T010203_057623_07199D_4B63",
-          "S1A_IW_SLC__1SDV_20250127T010111_20250127T010138_057623_07199D_4E88",
-          "S1A_IW_SLC__1SDV_20250127T010045_20250127T010113_057623_07199D_4D3B"
-     ],
-     "secondary": [
-          "S1A_IW_SLC__1SDV_20250103T010137_20250103T010204_057273_070BB6_CD45",
-          "S1A_IW_SLC__1SDV_20250103T010113_20250103T010140_057273_070BB6_1133",
-          "S1A_IW_SLC__1SDV_20250103T010047_20250103T010115_057273_070BB6_99C5"
-     ],
+Select an acquisition that intersects the ARIA Frame ID for a date you want to include in your InSAR pair, then use the 
+[Baseline](https://docs.asf.alaska.edu/vertex/baseline/){target=_blank} or 
+[SBAS](https://docs.asf.alaska.edu/vertex/sbas/){target=_blank} 
+tool to find an appropriate date to pair with it.
 
 ### Submit On-Demand ARIA-S1-GUNW Jobs
 
 !!! warning "On Demand support not currently available in Vertex for ARIA-S1-GUNW products"
 
-    On-demand ARIA S1 GUNW products cannot currently be submitted directly from Vertex, but we plan to make 
-    this feature available in the second half of 2025. Vertex is still very useful for selecting Sentinel-1 SLC 
-    pairs to submit for processing, but once you identify scene pairs, you will need to submit them using the 
-    [HyP3 Python SDK](../using/sdk.md){target=_blank} or [HyP3 API](../using/api.md){target=_blank}.
+    On-demand ARIA S1 GUNW products cannot currently be submitted directly from Vertex, but we plan to 
+    make this feature available in the second half of 2025. 
+
+    Vertex is still very useful for selecting Sentinel-1 SLC acquisition dates to submit for processing, 
+    but once you identify reference and secondary dates for the desired ARIA Frame ID, you will need to submit 
+    the job for processing using the [HyP3 Python SDK](../using/sdk.md){target=_blank} or 
+    [HyP3 API](../using/api.md){target=_blank}.
 
 On-Demand ARIA-S1-GUNW jobs can be submitted using the `ARIA_S1_GUNW` job type via the 
-[HyP3 API](../using/api.md#submitting-aria-s1-gunw-jobs){target=_blank}, or via the 
-[HyP3 Python SDK](../using/sdk.md){target=_blank} 
+[HyP3 API](../using/api.md#submitting-aria-s1-gunw-jobs){target=_blank}, 
+or via the [HyP3 Python SDK](../using/sdk.md){target=_blank} 
 using the `submit_aria_s1_gunw_job` method of the `HyP3` class.
 
-Unlike our other On-Demand InSAR workflows, customizable processing options (multilooking, filter strength, etc.) 
+Unlike ASF's other On-Demand InSAR workflows, customizable processing options (multilooking, filter strength, etc.) 
 are not available for ARIA-S1-GUNW jobs.
+
+To submit an ARIA_S1_GUNW job, all you need is: 
+
+- the ARIA Frame ID number 
+- the reference date, which is the more recent pass over the ARIA Frame
+- the secondary date, which is the earlier pass over the ARIA Frame 
+
+The dates must be in YYYY-MM-DD format.
+
+#### Reference and Secondary Dates
+
+ARIA S1 GUNW products use the SLCs from the more recent pass as reference, while secondary scenes are from the 
+earlier pass in the date pair. **When submitting a job using the HyP3 API or SDK, the date passed as the reference 
+date *must* be more recent than the secondary date. If they are in the opposite order, an error will be raised.**
+
+Note that ***this order is opposite of the other On-Demand InSAR products available from ASF***. Both the 
+[InSAR GAMMA](insar_product_guide.md "Jump to InSAR Product Guide") products and the 
+[Burst InSAR](burst_insar_product_guide.md "Jump to Burst InSAR Product Guide" ) products use the 
+earlier acquisition as reference, and the more recent acquisition as secondary. This means that the ARIA unwrapped 
+interferograms have the *opposite* sign from the unwrapped interferograms generated by the other ASF On-Demand InSAR 
+workflows. In the ARIA S1 GUNW products, negative phase differences indicate movement away from the sensor and 
+positive phase differences indicate movement towards the sensor.
 
 ### Accessing On-Demand ARIA-S1-GUNW Products
 
-To access the products you submitted On Demand, use the 
+ARIA S1 GUNW On-Demand products can be accessed like other On-Demand products, or by searching the archive.
+
+#### Accessing Products using On Demand Interfaces
+
+To access products generated On Demand, use the 
 [On Demand Search Type in Vertex](https://search.asf.alaska.edu/#/?maxResults=1000&searchType=On%20Demand "On Demand Vertex Search" ){target=_blank}. 
 Once processing is complete, the download links available in this interface are active for 14 days.
-
 You can also search for your On Demand products programmatically, using the 
 [HyP3 API](https://hyp3-docs.asf.alaska.edu/using/api/#querying-jobs "hyp3-docs.asf.alaska.edu/using/api/#querying-jobs" ){target=_blank}  
 or the 
 [HyP3 Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/#finding-existing-jobs "hyp3-docs.asf.alaska.edu/using/sdk/#finding-existing-jobs" ){target=_blank}.
 
+#### Accessing Products in the Archive
+
+Once the submitted jobs have been processed, they are added to the archive of ARIA-S1-GUNW products. Use the 
+[Geographic Search in Vertex](https://search.asf.alaska.edu/#/?maxResults=1000&dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA) "ASF Search for ARIA S1 GUNW Products" ){target=_blank} 
+to find all of the products (both those generated by the ARIA project and those generated On Demand) available for your 
+area of interest. 
+
+You can also search for all ARIA S1 GUNW products programmatically using the [asf_search Python Package](https://pypi.org/project/asf-search/ "pypi.org/project/asf-search" ){target=_blank}.
 ## Product Packaging
 
 ### Naming convention

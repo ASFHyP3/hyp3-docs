@@ -151,6 +151,9 @@ Select an acquisition that intersects the ARIA Frame ID for a date you want to i
 [SBAS](https://docs.asf.alaska.edu/vertex/sbas/){target=_blank} 
 tool to find an appropriate date to pair with it.
 
+Common area covered by the selected reference and secondary scenes must cover at least 90% of the ARIA Frame. If 
+the SLCs available for the submitted dates do not meet this coverage constraint, the job will fail to process.
+
 ### Submit On-Demand ARIA-S1-GUNW Jobs
 
 !!! warning "On Demand support not currently available in Vertex for ARIA-S1-GUNW products"

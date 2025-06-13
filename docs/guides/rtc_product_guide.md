@@ -381,8 +381,8 @@ Refer to the [Downloads](../using/downloading.md) page for more information on v
 Sentinel-1 RTC On Demand products in Vertex or programmatically.
 
 Step-by-step instructions for finding and downloading RTC On Demand products in Vertex are available in the 
-[Access Products](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35#ref-n-xrlWHw "RTC On Demand StoryMap Tutorial - Data Access"){target=_blank} section of the 
-[RTC On Demand](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand StoryMap Tutorial" ){target=_blank} interactive StoryMap Tutorial.
+[Access Products](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35#ref-n-xrlWHw "RTC On Demand! StoryMap Tutorial - Data Access"){target=_blank} section of the 
+[RTC On Demand!](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand! StoryMap Tutorial" ){target=_blank} interactive StoryMap Tutorial.
 
 ## SAR Scales
 

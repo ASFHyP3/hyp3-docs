@@ -141,11 +141,13 @@ will help ensure that you find results that match the desired [ARIA Frame ID](#a
 - **Start Date** / **End Date**: restrict the date range as desired
 - **File type**: `L1 Single Look Complex (SLC)`
 - **Beam Mode**: `IW`
-- **Polarization**: Select both `VV+VH` and `VV` (HH ARIA S1 GUNW products are not supported)
+- **Polarization**: select both `VV+VH` and `VV` (HH ARIA S1 GUNW products are not supported)
     - Note that only the VV polarization will be processed, but this will include VV SLCs acquired in both 
       dual-pol and single-pol modes in the search results
 - **Direction**: match the orbit direction of the [ARIA Frame ID reference geojson](#aria-frame-id-maps) 
   used to select the desired ARIA Frame (or reference the `dir` attribute from the ARIA Frame ID geojson file)
+- **Subtype**: select both `SA` and `SB` (ARIA S1 GUNW products from Sentinel-1C acquisitions are not currently
+  supported)
 - **Path Start** / **Path End**: path of the desired ARIA Frame (`path` attribute from the ARIA Frame ID geojson file)
 
 Select an acquisition that intersects the ARIA Frame ID for a date you want to include in your InSAR pair, then use the 

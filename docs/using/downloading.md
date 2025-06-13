@@ -63,11 +63,106 @@ capability in Chrome to download several items at a time.
 You can also click the option to **Copy URLs**, which you can then paste into your own download script, 
 if you'd prefer. 
 
-## Using HyP3 API or HyP3 Python SDK
+### Downloading Products Processed by Other Users
 
-<!-- [TODO: Populate this section] -->
+You can search for On Demand products processed under a different username. This is a convenient feature when sharing 
+products across a collaboration. Click the **Filters** button to open the On Demand Search **Filters** window, and use 
+the **User ID** filter to enter the username under which the desired job was submitted. 
 
+![On Demand Filters](../images/on-demand-filters.png)
 
+If the user who submitted the job also provides you with the Project Name, you can apply that search filter, as well. 
+The drop-down list in the Project Name field only displays the list for the user who is logged in, so you 
+will not be able to look up another user's list of Project Names using this interface. 
+
+## Programmatic Access
+
+The HyP3 API and HyP3 Python SDK provide programmatic access to On Demand products. 
+
+The `name` parameter is referred to as "Project Name" in the Vertex interface, but is often referred to as "Job Name" 
+in documentation for programmatic interfaces. This parameter is helpful in grouping together jobs submitted as part of 
+a particular analysis effort. It facilitates management and download of groups of jobs, makes it easier to share 
+products with colleagues, and allows users to access their HyP3-generated products using the notebooks available on 
+ASF's [OpenSARLab](https://opensarlab-docs.asf.alaska.edu/ "opensarlab-docs.asf.alaska.edu" ){target=_blank}.
+
+### Accessing Products Using the HyP3 API
+
+The [HyP3 API](../using/api.md) provides the ability to [Query Submitted Jobs](../using/api.md#querying-jobs). 
+
+Note that the parameter fields in the UI are populated with defaults. You will need to delete or edit any of these 
+default values that do not align with your desired search parameters. 
+
+The returns from your [Get Jobs API request](https://hyp3-api.asf.alaska.edu/ui/#/default/get_jobs ){target=_blank} 
+include download links for the browse images and thumbnails used to display the product contents in Vertex, 
+as well as the link to the complete product package with a `.zip` extension. 
+
+Here is an example response:
+```
+{
+  "jobs": [
+   {
+      "processing_times": [
+        836.557
+      ],
+      "browse_images": [
+        "https://d3gm2hf49xd6jj.cloudfront.net/6f917fec-9c2f-42fb-a55c-3c4fe2e0520b/S1A_IW_20250420T135654_DVP_RTC30_G_gpuned_7959.png",
+        "https://d3gm2hf49xd6jj.cloudfront.net/6f917fec-9c2f-42fb-a55c-3c4fe2e0520b/S1A_IW_20250420T135654_DVP_RTC30_G_gpuned_7959_rgb.png"
+      ],
+      "credit_cost": 5,
+      "priority": 9960,
+      "execution_started": true,
+      "job_id": "6f917fec-9c2f-42fb-a55c-3c4fe2e0520b",
+      "name": "DEVELOP",
+      "thumbnail_images": [
+        "https://d3gm2hf49xd6jj.cloudfront.net/6f917fec-9c2f-42fb-a55c-3c4fe2e0520b/S1A_IW_20250420T135654_DVP_RTC30_G_gpuned_7959_thumb.png",
+        "https://d3gm2hf49xd6jj.cloudfront.net/6f917fec-9c2f-42fb-a55c-3c4fe2e0520b/S1A_IW_20250420T135654_DVP_RTC30_G_gpuned_7959_rgb_thumb.png"
+      ],
+      "request_time": "2025-06-10T07:47:28+00:00",
+      "logs": [],
+      "user_id": "hjkristenson",
+      "status_code": "SUCCEEDED",
+      "job_parameters": {
+        "speckle_filter": false,
+        "include_inc_map": false,
+        "dem_name": "copernicus",
+        "radiometry": "gamma0",
+        "granules": [
+          "S1A_IW_GRDH_1SDV_20250420T135654_20250420T135723_058841_074ABD_E7BB"
+        ],
+        "scale": "power",
+        "dem_matching": false,
+        "resolution": 30,
+        "include_rgb": true,
+        "include_dem": false,
+        "include_scattering_area": false
+      },
+      "files": [
+        {
+          "s3": {
+            "bucket": "hyp3-edc-prod-contentbucket-1fv14ed36ifj6",
+            "key": "6f917fec-9c2f-42fb-a55c-3c4fe2e0520b/S1A_IW_20250420T135654_DVP_RTC30_G_gpuned_7959.zip"
+          },
+          "filename": "S1A_IW_20250420T135654_DVP_RTC30_G_gpuned_7959.zip",
+          "size": 656581903,
+          "url": "https://d3gm2hf49xd6jj.cloudfront.net/6f917fec-9c2f-42fb-a55c-3c4fe2e0520b/S1A_IW_20250420T135654_DVP_RTC30_G_gpuned_7959.zip"
+        }
+      ],
+      "expiration_time": "2025-06-25T00:00:00+00:00",
+      "job_type": "RTC_GAMMA"
+    },
+   ],
+}   
+```
+
+The download URL for the full product package is provided near the end of the response for each job in the `jobs` 
+array of the response JSON. The value is paired with the `url` key in the `files` array. 
+
+You can copy and paste each product URL directly into a browser window, or script a workflow to pull all the 
+product URLs from the response JSON into a bulk download function. <!--[TODO: add any relevant info or tips]-->
+
+### Accessing Products using the HyP3 Python SDK
+
+<!--[TODO: Add Content]-->
 
 
 ## Product Packaging and Extraction

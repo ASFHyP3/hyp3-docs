@@ -146,7 +146,8 @@ will help ensure that you find results that match the desired [ARIA Frame ID](#a
       dual-pol and single-pol modes in the search results
 - **Direction**: match the orbit direction of the [ARIA Frame ID reference geojson](#aria-frame-id-maps) 
   used to select the desired ARIA Frame (or reference the `dir` attribute from the ARIA Frame ID geojson file)
-- **Subtype**: Select both `SA` and `SB` (ARIA S1 GUNW products from Sentinel-1C acquisitions are not supported)
+- **Subtype**: Select both `SA` and `SB` (ARIA S1 GUNW products from Sentinel-1C acquisitions are not currently
+  supported)
 - **Path Start** / **Path End**: path of the desired ARIA Frame (`path` attribute from the ARIA Frame ID geojson file)
 
 Select an acquisition that intersects the ARIA Frame ID for a date you want to include in your InSAR pair, then use the 

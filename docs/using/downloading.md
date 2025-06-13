@@ -208,3 +208,25 @@ Note that the zip archive contains valuable metadata products, including a readm
 about the workflow used to generate the product and the files included in the product package. New users should 
 download the full archive to ensure they have access to this information and can determine what individual products 
 they would require for their application. 
+
+## Downloading Products Submitted by Other Users
+
+You can search for On Demand products processed under a different username. This is a convenient feature when sharing 
+products across a collaboration. 
+
+### Using Vertex to Access Products Submitted by Other Users
+
+Click the **Filters** button to open the On Demand Search **Filters** window, and use 
+the **User ID** filter to enter the username under which the desired job was submitted. 
+
+![On Demand Filters](../images/on-demand-filters.png)
+
+If the user who submitted the job also provides you with the Project Name, you can apply that search filter, as well. 
+The drop-down list in the Project Name field only displays the list for the user who is logged in, so you 
+will not be able to look up another user's list of Project Names using this interface. 
+
+### Using the HyP3 Python SDK to Access Products Submitted by Other Users
+
+The HyP3 Python SDK provides the capability to search for products submitted by other users. Refer to 
+[this sample notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb){target=_blank} 
+to learn how.

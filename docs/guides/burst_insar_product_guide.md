@@ -527,7 +527,16 @@ files.
 | Radar sensing stop              | Last date and time for data collection                                                                  | 2020-06-04T02:23:16.030988                                           |
 
 *Table 6: List of additional InSAR parameters included in the parameter text file `INSAR_ISCE_BURST` job types.*
+{% endblock %}
 
+{% block download_tutorial %}
+Step-by-step instructions for finding and downloading RTC On Demand products in Vertex are available in the 
+[Downloading On Demand Products](https://storymaps.arcgis.com/stories/191bf1b6962c402086807390b3ce63b0#ref-n-4rF6zW "Burst-Based InSAR for Sentinel-1 On Demand StoryMap Tutorial - Downloading On Demand Products"){target=_blank} 
+section of the 
+[Burst-Based InSAR for Sentinel-1 On Demand](https://storymaps.arcgis.com/stories/191bf1b6962c402086807390b3ce63b0 "Burst-Based InSAR for Sentinel-1 On Demand StoryMap Tutorial" ){target=_blank} interactive StoryMap Tutorial.
+{% endblock %}
+
+{% block merging_bursts %}
 ## Merging Sentinel-1 Single-Burst InSAR Products
 
 Burst InSAR products generated using the `INSAR_ISCE_BURST` job type can be merged together manually using the 

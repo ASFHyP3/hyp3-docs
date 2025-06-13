@@ -98,7 +98,7 @@ For example, for the following download URL for an RTC On Demand product:
 simply replace the .zip with the product extension, such as the following for the RTC GeoTIFF in VV polarization: 
 `https://d3gm2hf49xd6jj.cloudfront.net/76b1a849-c826-428a-966c-55f8bb88f814/S1A_IW_20250502T135654_DVP_RTC30_G_gpuned_70DD_VV.tif`
 
-You can then paste that URL into a browser window, or use it in a download script, to access only the designated 
+You can then paste that URL into a browser window, or use it in a download script, to download only the designated 
 product rather than the full zip archive. 
 
 Note that the zip archive contains valuable metadata products, including a readme file that provides information 

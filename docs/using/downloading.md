@@ -21,7 +21,7 @@ for more information.
 
 Click on an item in the search results to view download options. You can add the product to the Download Queue using 
 the **cart icon** in either the Search Result (left) or File (right) pane, or launch a direct download in your 
-browser window by clicking the **cloud download icon** in the file pane. 
+browser window by clicking the **cloud download icon** in the File pane. 
 
 ![Downloading Individual Products](../images/download-vertex-single.png "Download Single On Demand Product")
 

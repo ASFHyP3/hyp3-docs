@@ -295,7 +295,7 @@ HRRR weather model is not available for a location of interest, (i.e. outside of
 tropospheric delay correction layer will not be included in the ARIA-S1-GUNW product. The wet and hydrostatic 
 tropospheric delay correction are provided for both the reference and secondary input data.
 
-### References
+## References
 Bekaert, David, et al. "The ARIA-S1-GUNW: The ARIA Sentinel-1 Geocoded Unwrapped Phase Product for Open InSAR Science 
 and Disaster Response." IGARSS 2023-2023 IEEE International Geoscience and Remote Sensing Symposium. IEEE (2023).
 

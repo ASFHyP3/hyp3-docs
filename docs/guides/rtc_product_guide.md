@@ -375,6 +375,15 @@ A shapefile indicating the extent of the RTC data coverage is included in the pa
 
 *Table 6: Shapefile files and their extensions*
 
+## Data Access
+
+Refer to the [Downloads](../using/downloading.md) page for more information on viewing and downloading 
+Sentinel-1 RTC On Demand products in Vertex or programmatically.
+
+Step-by-step instructions for finding and downloading RTC On Demand products in Vertex are available in the 
+[Access Products](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35#ref-n-xrlWHw "RTC On Demand StoryMap Tutorial - Data Access"){target=_blank} section of the 
+[RTC On Demand](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand StoryMap Tutorial" ){target=_blank} interactive StoryMap Tutorial.
+
 ## SAR Scales
 
 ### Power Scale
@@ -494,15 +503,3 @@ Twele, A., Cao, W., Plank, S. and Martinis, S. 2016. Sentinel-1-based flood mapp
 Muro, J., Canty, M., Conradsen, K., Hüttich, C., Nielsen, A.A., Skriver, H., Remy, F., Strauch, A., Thonfeld, F. and Menz, G. 2016. Short-Term change detection in wetlands using Sentinel-1 time series. *Remote Sensing*, **8**(10):795. DOI: [10.3390/rs8100795](https://doi.org/10.3390/rs8100795 "https://doi.org/10.3390/rs8100795" ){target=_blank}
 
 Rüetschi, M., Schaepman, M.E., Small, D. 2018. Using Multitemporal Sentinel-1 C-band backscatter to monitor phenology and classify deciduous and coniferous forests in Northern Switzerland. *Remote Sensing*, **10**(1):55. DOI: [10.3390/rs10010055](https://doi.org/10.3390/rs10010055 "https://doi.org/10.3390/rs10010055" ){target=_blank}
-
-## Data Access
-
-To view or download Sentinel-1 RTC products, please see the links below:
-
-**Vertex:** [https://search.asf.alaska.edu/](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank}
-
-**API:** [https://asf.alaska.edu/api/](https://asf.alaska.edu/api/ "https://asf.alaska.edu/api" ){target=_blank}
-
-For details on accessing data, including other SAR datasets, see ASF’s Get Started guide: [https://asf.alaska.edu/getstarted/](https://asf.alaska.edu/getstarted/ "https://asf.alaska.edu/getstarted/" ){target=_blank}
-
-To access data recipes, which are step-by-step tutorials for processing and working with SAR data, see ASF’s tutorials page: [https://asf.alaska.edu/how-to/data-recipes/data-recipe-tutorials/](https://asf.alaska.edu/how-to/data-recipes/data-recipe-tutorials/ "https://asf.alaska.edu/how-to/data-recipes/data-recipe-tutorials" ){target=_blank}

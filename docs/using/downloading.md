@@ -95,7 +95,7 @@ The returns from your [Get Jobs API request](https://hyp3-api.asf.alaska.edu/ui/
 include download links for the browse images and thumbnails used to display the product contents in Vertex, 
 as well as the link to the complete product package with a `.zip` extension. 
 
-Here is an example response:
+Here is an example of a response:
 ```
 {
   "jobs": [
@@ -186,14 +186,13 @@ When extracting the contents of a HyP3-generated zip file, you may need to speci
 the extraction of the internal directory to a directory named with the full zip file name. For many of the products, 
 this combination of directories would result in paths that are longer than can be used with Windows operating systems. 
 
-### Accessing Individual Products
+### Downloading Individual Products
 
-On Demand products are delivered as zip files for ease of downloading. Downloading the full zip file ensures that 
-you have all of the data products as well as auxiliary files and relevant metadata. 
+Downloading the full zip file ensures that you have all of the data products as well as auxiliary files and 
+relevant metadata, but some users may not require all of the files included in the product zip archive. 
 
-Some users may not require all of the files included in the product zip archive. The contents of the zip files 
-can all be accessed directly. Simply replace the .zip at the end of the download URL with the tag for the 
-specific file you want to download. 
+The contents of the zip files can all be accessed directly. Simply replace the `.zip` at the end of the download URL 
+with the tag for the specific file you want to download. 
 
 For example, for the following download URL for an RTC On Demand product: 
 `https://d3gm2hf49xd6jj.cloudfront.net/76b1a849-c826-428a-966c-55f8bb88f814/S1A_IW_20250502T135654_DVP_RTC30_G_gpuned_70DD.zip`
@@ -204,17 +203,18 @@ simply replace the .zip with the product extension, such as the following for th
 You can then paste that URL into a browser window, or use it in a download script, to download only the designated 
 product rather than the full zip archive. 
 
-Note that the zip archive contains valuable metadata products, including a readme file that provides information 
-about the workflow used to generate the product and the files included in the product package. New users should 
-download the full archive to ensure they have access to this information and can determine what individual products 
-they would require for their application. 
+*The zip archive contains valuable metadata products, including a readme file that provides information 
+about the workflow used to generate the product and the files included in the product package.* 
+***New users are advised to download the full archive*** *to ensure they have access to this information 
+and can determine what individual products are required for their application.* 
 
 ## Downloading Products Submitted by Other Users
 
-You can search for On Demand products processed under a different username. This is a convenient feature when sharing 
-products across a collaboration. 
+You can search for On Demand products processed under a different username. This functionality is a convenient 
+way to share products when collaborating with others, and can be accessed both in [Vertex](#using-vertex) and the 
+[HyP3 Python SDK](#using-the-hyp3-python-sdk). 
 
-### Using Vertex to Access Products Submitted by Other Users
+### Using Vertex
 
 Click the **Filters** button to open the On Demand Search **Filters** window, and use 
 the **User ID** filter to enter the username under which the desired job was submitted. 
@@ -225,7 +225,7 @@ If the user who submitted the job also provides you with the Project Name, you c
 The drop-down list in the Project Name field only displays the list for the user who is logged in, so you 
 will not be able to look up another user's list of Project Names using this interface. 
 
-### Using the HyP3 Python SDK to Access Products Submitted by Other Users
+### Using the HyP3 Python SDK
 
 The HyP3 Python SDK provides the capability to search for products submitted by other users. Refer to 
 [this sample notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb){target=_blank} 

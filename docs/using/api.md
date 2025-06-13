@@ -192,23 +192,16 @@ You can submit InSAR jobs using the `INSAR_ISCE_BURST` job type, which takes a s
 ```
 
 ## Submitting ARIA-S1-GUNW jobs
-The ARIA-S1-GUNW job type takes a reference [ESA granule ID](https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention){target=_blank} set, a secondary ESA granule ID set, and an ARIA-S1-GUNW Frame ID as input. See the [ARIA-S1-GUNW Product Guide Frame ID section](../guides/gunw_product_guide.md#aria-frame-ids){target=_blank} for more details on these inputs.
+The ARIA-S1-GUNW job type takes a reference date, a secondary date, and an ARIA-S1-GUNW Frame ID as input.
+See the [ARIA-S1-GUNW Product Guide Frame ID section](../guides/gunw_product_guide.md#aria-frame-ids){target=_blank} for more details on these inputs.
 ```json
     {
       "job_type": "ARIA_S1_GUNW",
       "name": "gunw-example",
       "job_parameters": {
-        "reference": [
-          "S1A_IW_SLC__1SDV_20250127T010136_20250127T010203_057623_07199D_4B63",
-          "S1A_IW_SLC__1SDV_20250127T010111_20250127T010138_057623_07199D_4E88",
-          "S1A_IW_SLC__1SDV_20250127T010045_20250127T010113_057623_07199D_4D3B"
-        ],
-        "secondary": [
-          "S1A_IW_SLC__1SDV_20250103T010137_20250103T010204_057273_070BB6_CD45",
-          "S1A_IW_SLC__1SDV_20250103T010113_20250103T010140_057273_070BB6_1133",
-          "S1A_IW_SLC__1SDV_20250103T010047_20250103T010115_057273_070BB6_99C5"
-        ],
-        "frame_id": 23474
+        "reference_date": "2019-12-31",
+        "secondary_date": "2018-12-12",
+        "frame_id": 11040
       }
     }
 ```

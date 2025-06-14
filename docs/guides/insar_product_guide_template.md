@@ -110,7 +110,7 @@ To analyze deformation caused by a single discrete event, such as an earthquake,
 ## Data Access
 
 Refer to the [Downloads](../using/downloading.md) page for more information on viewing and downloading 
-Sentinel-1 RTC On Demand products in Vertex or programmatically.
+On Demand InSAR products in Vertex or programmatically.
 
 {% block download_tutorial %}{% endblock %}
 

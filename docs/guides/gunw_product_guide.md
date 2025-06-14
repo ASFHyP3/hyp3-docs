@@ -287,7 +287,7 @@ tropospheric delay correction are provided for both the reference and secondary 
 ## Data Access
 
 Refer to the [Downloads](../using/downloading.md) page for more information on viewing and downloading 
-Sentinel-1 RTC On Demand products in Vertex or programmatically. Once processing is complete, download links 
+ARIA S1 GUNW On Demand products in Vertex or programmatically. Once processing is complete, download links 
 for On Demand products are valid for 14 days.
 
 ## References

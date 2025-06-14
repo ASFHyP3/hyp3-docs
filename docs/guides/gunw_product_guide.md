@@ -68,7 +68,7 @@ search portal by following these steps:
 
 If the ARIA-S1-GUNW products you need are not available in the archive, you can use ASF's On Demand platform to submit 
 custom ARIA-S1-GUNW jobs for processing. Once processing is complete, you can access them as you would any other 
-[On-Demand](#accessing-on-demand-aria-s1-gunw-products "Jump to the Accessing On Demand ARIA S1 GUNW Products section of this document" ) 
+[On-Demand](#data-access "Jump to the Data Access section of this document") 
 products from ASF. The download links provided will be active for 14 days.
 
 !!! warning "Sentinel-1C acquisitions not yet supported" 
@@ -200,17 +200,6 @@ interferograms have the *opposite* sign from the unwrapped interferograms genera
 workflows. In the ARIA S1 GUNW products, negative phase differences indicate movement away from the sensor and 
 positive phase differences indicate movement towards the sensor.
 
-### Accessing On-Demand ARIA-S1-GUNW Products
-
-To access products generated On Demand, use the 
-[On Demand Search Type in Vertex](https://search.asf.alaska.edu/#/?maxResults=1000&searchType=On%20Demand "On Demand Vertex Search" ){target=_blank}. 
-Once processing is complete, the download links available in this interface are active for 14 days.
-
-You can also search for your On Demand products programmatically, using the 
-[HyP3 API](https://hyp3-docs.asf.alaska.edu/using/api/#querying-jobs "hyp3-docs.asf.alaska.edu/using/api/#querying-jobs" ){target=_blank}  
-or the 
-[HyP3 Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/#finding-existing-jobs "hyp3-docs.asf.alaska.edu/using/sdk/#finding-existing-jobs" ){target=_blank}.
-
 ## Product Packaging
 
 ### Naming convention
@@ -294,6 +283,12 @@ weather model to calculate the tropospheric delay correction at a spatial resolu
 HRRR weather model is not available for a location of interest, (i.e. outside of the continental U.S. and Alaska) the 
 tropospheric delay correction layer will not be included in the ARIA-S1-GUNW product. The wet and hydrostatic 
 tropospheric delay correction are provided for both the reference and secondary input data.
+
+## Data Access
+
+Refer to the [Downloads](../using/downloading.md) page for more information on viewing and downloading 
+Sentinel-1 RTC On Demand products in Vertex or programmatically. Once processing is complete, download links 
+for On Demand products are valid for 14 days.
 
 ## References
 Bekaert, David, et al. "The ARIA-S1-GUNW: The ARIA Sentinel-1 Geocoded Unwrapped Phase Product for Open InSAR Science 

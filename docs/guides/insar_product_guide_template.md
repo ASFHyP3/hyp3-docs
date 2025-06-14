@@ -110,7 +110,8 @@ To analyze deformation caused by a single discrete event, such as an earthquake,
 ## Data Access
 
 Refer to the [Downloads](../using/downloading.md) page for more information on viewing and downloading 
-On Demand InSAR products in Vertex or programmatically.
+On Demand InSAR products in Vertex or programmatically. Once processing is complete, download links 
+for On Demand products are valid for 14 days.
 
 {% block download_tutorial %}{% endblock %}
 

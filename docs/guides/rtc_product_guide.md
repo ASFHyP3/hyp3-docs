@@ -378,7 +378,8 @@ A shapefile indicating the extent of the RTC data coverage is included in the pa
 ## Data Access
 
 Refer to the [Downloads](../using/downloading.md) page for more information on viewing and downloading 
-Sentinel-1 RTC On Demand products in Vertex or programmatically.
+Sentinel-1 RTC On Demand products in Vertex or programmatically. Once processing is complete, download links 
+for On Demand products are valid for 14 days.
 
 Step-by-step instructions for finding and downloading RTC On Demand products in Vertex are available in the 
 [Access Products](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35#ref-n-xrlWHw "RTC On Demand! StoryMap Tutorial - Data Access"){target=_blank} section of the 

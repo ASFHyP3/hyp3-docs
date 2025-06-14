@@ -12,6 +12,14 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 * Menu navigation updated to include entries for OPERA RTC-S1 resources
 * [HyP3 Products page](docs/products.md) updated to include OPERA RTC-S1 
 
+## [0.10.11]
+
+### Changed
+* Updated [ARIA S1 GUNW Product Guide](https://hyp3-docs.asf.alaska.edu/guides/gunw_product_guide.md) to include:
+  * information about date-based ARIA S1 GUNW job submissions
+  * supported polarizations
+  * SLC coverage constraints
+
 ## [0.10.10]
 
 ### Changed

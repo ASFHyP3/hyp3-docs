@@ -57,7 +57,7 @@ The most robust approach for downloading very long lists of products is the
   any products that have already been successfully downloaded and continue with the remaining items. 
 - To use this option, you must have a Python installation available on your computer. 
 
-Chrome users may find the **Download All** option useful. This option takes advantage of the multi-threading  
+Chrome users may find the **Download All** option useful. This option takes advantage of the multi-threading 
 capability in Chrome to download several items at a time.
 
 You can also click the option to **Copy URLs**, which you can then paste into your own download script, 

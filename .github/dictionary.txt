@@ -210,6 +210,7 @@ inc_map.tif
 incidenceAngle
 include_dem
 include_rgb
+initializer
 InSAR
 INSAR_ISCE_BURST
 INSAR_ISCE_MULTI_BURST

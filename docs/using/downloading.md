@@ -25,7 +25,7 @@ browser window by clicking the **cloud download icon** in the File pane.
 
 ![Downloading Individual Products](../images/download-vertex-single.png "Download Single On Demand Product")
 
-To view the download queue, click the **Downloads** icon in the top band of the Vertex web interface. 
+To view the download queue, click the **Downloads** icon in the top right of the Vertex web interface. 
 The Download Queue interface provides options for direct download of individual items along with bulk download options.
 
 ### Downloading Multiple Products
@@ -41,7 +41,7 @@ There are a number of options available for filtering your On Demand products, w
 together that are used for the same project. 
 
 Once you've added products to the Download Queue, either by using the individual cart icons or the bulk Queue 
-button, click the **Downloads** icon in the top band of the Vertex web interface. When you open the Download Queue, 
+button, click the **Downloads** icon in the top right of the Vertex web interface. When you open the Download Queue, 
 you have the option to launch direct downloads of individual items in the list, or you can choose to remove 
 individual items from the queue. 
 

@@ -159,7 +159,6 @@ array of the response JSON. The value is paired with the `url` key in the `files
 You can copy and paste each product URL directly into a browser window, or script a workflow to pull all the 
 product URLs from the response JSON into a bulk download function. It may be more convenient to use the 
 [HyP3 Python SDK](#accessing-products-using-the-hyp3-python-sdk) to script bulk download functionality.
-<!--[TODO: add any relevant info or tips for programmatic approaches to working with the API]-->
 
 ### Accessing Products using the HyP3 Python SDK
 

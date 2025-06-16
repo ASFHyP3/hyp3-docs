@@ -163,7 +163,7 @@ product URLs from the response JSON into a bulk download function. It may be mor
 
 ### Accessing Products using the HyP3 Python SDK
 
-The [HyP3 Python SDK](../using/sdk.md) is a Python wrapper around the HyP3 API, and provides convenient search 
+The [HyP3 Python SDK](../using/sdk.md) is a wrapper around the HyP3 API, and provides convenient search 
 and download functionality for On Demand products (HyP3 jobs). 
 [This sample notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb){target=_blank} 
 demonstrates how to use the SDK for a range of workflows. 

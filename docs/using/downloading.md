@@ -197,7 +197,7 @@ with the tag for the specific file you want to download.
 For example, for the following download URL for an RTC On Demand product: 
 `https://d3gm2hf49xd6jj.cloudfront.net/76b1a849-c826-428a-966c-55f8bb88f814/S1A_IW_20250502T135654_DVP_RTC30_G_gpuned_70DD.zip`
 
-simply replace the .zip with the product extension, such as the following for the RTC GeoTIFF in VV polarization: 
+simply replace the `.zip` with the product extension, such as `_VV.tif` for the RTC GeoTIFF in VV polarization: 
 `https://d3gm2hf49xd6jj.cloudfront.net/76b1a849-c826-428a-966c-55f8bb88f814/S1A_IW_20250502T135654_DVP_RTC30_G_gpuned_70DD_VV.tif`
 
 You can then paste that URL into a browser window, or use it in a download script, to download only the designated 

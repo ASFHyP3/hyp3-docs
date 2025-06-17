@@ -62,8 +62,9 @@ search portal by following these steps:
 ![Vertex ARIA S1 GUNW Dataset Selection](../images/vertex-GUNW-dataset-selection.png)
 3. **Preview and Select Products** – Click on individual results to view metadata, including coverage area and 
    acquisition details.
-4. **Download Data** – To download, first add ARIA-S1-GUNW products to your download queue using the shopping 
-   cart icon next to each product, then download your selected products using the “download” panel.
+4. **Download Data** – To [download](../using/downloading.md "hyp3-docs.asf.alaska.edu/using/downloading"), 
+   first add ARIA-S1-GUNW products to your download queue using the shopping cart icon next to each product, 
+   then download your selected products using the Download Queue.
 
 ## Ordering On-Demand Products
 

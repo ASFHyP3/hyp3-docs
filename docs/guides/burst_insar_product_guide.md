@@ -158,7 +158,7 @@ There are several options users can set when ordering Burst InSAR On Demand prod
 2. There is an option to apply a **water mask**. This mask includes coastal waters and most inland waterbodies. 
 Masking waterbodies can have a significant impact during phase unwrapping, as water can sometimes exhibit enough 
 coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid. Refer to our 
-[InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} 
+[InSAR Water Masking tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} 
 for more information. 
 
     - Water masking is turned off by default.
@@ -320,7 +320,7 @@ detrimental to phase unwrapping than the exclusion of some land pixels, so as of
 the water mask used for this option is no longer buffered.
 
 Visit our 
-[InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} 
+[InSAR Water Masking tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} 
 for more information about how different water masking approaches can impact the quality of an interferogram.
 
 ### Post-Processing
@@ -419,7 +419,7 @@ and
 datasets. Refer to the 
 [Water Masking Processing Option](#applying-a-water-mask) 
 section and our 
-[InSAR Water Masking Tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} 
+[InSAR Water Masking tutorial](https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb "InSAR Water Masking StoryMap" ){target=_blank} 
 for more information about water masking.
 
 For jobs processed using `INSAR_ISCE_BURST`, there are also four non-geocoded images that remain in their native 
@@ -527,7 +527,16 @@ files.
 | Radar sensing stop              | Last date and time for data collection                                                                  | 2020-06-04T02:23:16.030988                                           |
 
 *Table 6: List of additional InSAR parameters included in the parameter text file `INSAR_ISCE_BURST` job types.*
+{% endblock %}
 
+{% block download_tutorial %}
+Step-by-step instructions for finding and downloading RTC On Demand products in Vertex are available in the 
+[Downloading On Demand Products](https://storymaps.arcgis.com/stories/191bf1b6962c402086807390b3ce63b0#ref-n-4rF6zW "Burst-Based InSAR for Sentinel-1 On Demand StoryMap Tutorial - Downloading On Demand Products"){target=_blank} 
+section of the 
+[Burst-Based InSAR for Sentinel-1 On Demand](https://storymaps.arcgis.com/stories/191bf1b6962c402086807390b3ce63b0 "Burst-Based InSAR for Sentinel-1 On Demand StoryMap Tutorial" ){target=_blank} interactive StoryMap tutorial.
+{% endblock %}
+
+{% block merging_bursts %}
 ## Merging Sentinel-1 Single-Burst InSAR Products
 
 Burst InSAR products generated using the `INSAR_ISCE_BURST` job type can be merged together manually using the 

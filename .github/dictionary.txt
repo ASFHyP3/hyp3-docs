@@ -111,6 +111,7 @@ dem_matching
 dem_name
 DEMs
 differenced
+dir
 DockerizedTopsApp
 docstring
 DOI
@@ -195,6 +196,7 @@ HyP3
 hyp3
 hyp3-docs
 hyp3-gamma
+HyP3-generated
 HyP3-ISCE2
 hyp3_sdk
 IaC
@@ -208,6 +210,7 @@ inc_map.tif
 incidenceAngle
 include_dem
 include_rgb
+initializer
 InSAR
 INSAR_ISCE_BURST
 INSAR_ISCE_MULTI_BURST
@@ -301,6 +304,7 @@ non-geocoded
 NoSQL
 novertex
 OpenAPI
+OpenSARLab
 OpenStreetMap
 OPERA_L2_RTC-S1
 OPERA_L2_RTC-S1_V1
@@ -474,6 +478,7 @@ xx
 Yukon-Kuskokwim
 Yunjun
 yy
+YYYY-MM-DD
 yyyymmdd
 YYYYMMDDTHHMMSSZ
 zz

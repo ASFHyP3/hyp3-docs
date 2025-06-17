@@ -172,7 +172,7 @@ Only bursts from
 [Sentinel-1 IW SLC](https://sentiwiki.copernicus.eu/web/s1-products "Sentinel-1 Products" ){target=_blank} 
 products are supported as input. 
 
-Any jobs submitted where the Sentinel-1 burst is from an EW SLC or South of -60° latitude will return an error.
+Any job submitted where the Sentinel-1 burst is from an EW SLC or located south of -60° latitude will return an error. 
 
 ## Product Packaging
 

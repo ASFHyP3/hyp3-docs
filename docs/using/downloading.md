@@ -46,22 +46,27 @@ you have the option to launch direct downloads of individual items in the list, 
 individual items from the queue. 
 
 To download all of the products listed in the Download Queue, click the **Data Download** button at the bottom of 
-the queue window and choose from the available options. 
+the queue window and choose from the available options: 
+
+#### Download Python Script
 
 The most robust approach for downloading very long lists of products is the 
 **Download Python Script** option. This downloads a python script that you can launch on your computer. 
 
-- You will be prompted for your Earthdata Login credentials, then the script will work through the list of 
-  download URLs, downloading them one by one until all of the items have been downloaded. 
+- You will be prompted for your Earthdata Login credentials if necessary, then the script will work through the list 
+  of download URLs, downloading them one by one until all of the items have been downloaded. 
 - If the script is interrupted during the download, you can simply re-run the same script; it will recognize 
   any products that have already been successfully downloaded and continue with the remaining items. 
 - To use this option, you must have a Python installation available on your computer. 
 
+#### Download All
+
 Chrome users may find the **Download All** option useful. This option takes advantage of the multi-threading 
 capability in Chrome to download several items at a time.
 
-You can also click the option to **Copy URLs**, which you can then paste into your own download script, 
-if you'd prefer. 
+#### Copy URLs
+You can also click on **Copy URLs** (located next to the Data Download button) to copy a list of the download URLs 
+for the files in your Download Queue, which you can then paste into your own download script. 
 
 ## Programmatic Access
 

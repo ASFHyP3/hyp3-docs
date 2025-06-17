@@ -22,10 +22,10 @@ motion studies, with ongoing improvements enhancing their accuracy and usability
 
 The ARIA project also maintains the 
 [ARIA-tools](https://doi.org/10.1029/2020GL090013 "Toward Sustained Monitoring of Subsidence at the Coast Using InSAR and GPS" ){target=_blank} 
-software package, which is a suite of open-source tools allowing users to automate the seamless download, 
+software package, which is a suite of open-source tools that allows users to automate the seamless download, 
 post-processing manipulation, aggregation, and management of ARIA-S1-GUNW products. Refer to the 
 [ARIA-tools GitHub page](https://github.com/aria-tools/ARIA-tools "ARIA-tools GitHub repository" ){target=_blank} 
-for a more exhaustive overview and installation instructions, and 
+for a more thorough overview and installation instructions, and 
 [tutorials led by EarthScope Consortium](https://www.youtube.com/watch?v=_a9T59VTz7Q&t=12734s "EarthScope Tutorials on YouTube" ){target=_blank}, 
 which demonstrate practical applications.
 

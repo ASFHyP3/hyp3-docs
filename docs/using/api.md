@@ -109,7 +109,7 @@ and
 constraints for processing.
 
 Sentinel-1 IW Burst SLCs submitted for processing must have been acquired between April 14, 2016, and December 31, 2021, 
-and must be North of -60° latitude.
+and must be north of -60° latitude.
 
 ```json
     {

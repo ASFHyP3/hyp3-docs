@@ -51,9 +51,9 @@ Most Sentinel-1 acquisitions are collected in two
 [polarizations](introduction_to_sar.md#polarizations), 
 and the OPERA project generates RTC-S1 products for all available polarizations. 
 
-Sentinel-1 acquisitions over land generally have a vertical primary polarization, meaning that the SAR signal is sent out in 
-a vertical orientation, but both the co-polarized returns (also vertically polarized) and the cross-polarized returns 
-(horizontally polarized) are measured. This results in both VV and VH RTC-S1 products. 
+Sentinel-1 acquisitions over land generally have a vertical primary polarization, meaning that the SAR signal is sent 
+out in a vertical orientation, but both the co-polarized returns (also vertically polarized) and the cross-polarized 
+returns (horizontally polarized) are measured. This results in both VV and VH RTC-S1 products. 
 
 In some areas, particularly remote islands and regions close to the Arctic Ocean, acquisitions are collected with a 
 horizontal primary polarization. This results in HH and HV RTC-S1 products. 
@@ -131,7 +131,7 @@ section of the
 ## Ordering On-Demand OPERA RTC-S1 Products
 
 On-Demand OPERA RTC-S1 products can be requested for any Sentinel-1 IW SLC burst acquired on or after April 14, 2016, 
-and before January 1, 2022, for locations north of -60° latitude (i.e., all global landmasses except for Antarctica).
+and before January 1, 2022, for locations north of -60° latitude (i.e. all global landmasses except for Antarctica).
 
 ### Submitting On-Demand OPERA RTC-S1 Jobs
 
@@ -167,12 +167,12 @@ or after that date will also return an error.
 
 #### Spatial Coverage for On-Demand OPERA RTC-S1 Products
 
-On-Demand OPERA RTC-S1 Products can only be ordered for bursts that are north of -60° latitude, which includes all global landmasses except for Antarctica. 
-Only bursts from 
+On-Demand OPERA RTC-S1 Products can only be ordered for bursts that are north of -60° latitude, 
+which includes all global landmasses except for Antarctica. Only bursts from 
 [Sentinel-1 IW SLC](https://sentiwiki.copernicus.eu/web/s1-products "Sentinel-1 Products" ){target=_blank} 
 products are supported as input. 
 
-Any jobs submitted where the Sentinel-1 burst is from an EW SLC or South of -60° latitude will return an error.
+Any job submitted where the Sentinel-1 burst is from an EW SLC or located south of -60° latitude will return an error.
 
 ## Product Packaging
 

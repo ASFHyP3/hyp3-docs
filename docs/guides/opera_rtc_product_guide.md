@@ -208,7 +208,7 @@ The files available for download include:
 ### L2 Radiometric Terrain Corrected Static Layer (RTC-STATIC) Files
 
 There are some ancillary files generated during the RTC processing workflow that change very little through time. 
-Instead of including these ancillary products with each OPERA RTC product in the archive, they are generated once 
+Instead of including these ancillary products with each OPERA RTC product, they are generated once 
 for each Sentinel-1 burst ID and archived as `Static Layer` files. 
 
 Refer to OPERA's 

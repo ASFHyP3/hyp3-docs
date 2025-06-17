@@ -192,7 +192,7 @@ When extracting the contents of a HyP3-generated zip file, you may need to speci
 the extraction of the internal directory to a directory named with the full zip file name. For many of the products, 
 this combination of directories would result in paths that are longer than can be used with Windows operating systems. 
 
-### Downloading Individual Products
+### Downloading Individual Files
 
 Downloading the full zip file ensures that you have all of the data products as well as auxiliary files and 
 relevant metadata, but some users may not require all of the files included in the product zip archive. 

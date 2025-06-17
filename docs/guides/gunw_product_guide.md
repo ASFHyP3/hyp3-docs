@@ -252,12 +252,13 @@ The output netCDF file will include the layers listed in the table below.
 |                 | parallelBaseline                      | 3D parallel baseline grid                            | meter    |
 |                 | perpendicularBaseline                 | 3D perpendicular baseline grid                       | meter    |
 
-### Ionospheric Correction Layers
+### Ionospheric Correction Layer
 
 Although the ionospheric effects for C-band SAR are only about one-sixteenth of those at L-band, the measurement 
 accuracy of Sentinel-1 C-band SAR data can still be degraded by long-wavelength ionospheric signals. Utilizing the 
 [range-split spectrum methodology](https://doi.org/10.1109/TGRS.2019.2908494){target=_blank} available within ISCE2, 
-ARIA-S1-GUNW products include ionospheric correction layers for both the reference and secondary input data.
+ARIA-S1-GUNW products include an ionospheric correction layer packaged as a differential field between the 
+secondary and reference input data, which can be directly subtracted from the unwrappedPhase field.
 
 ### Solid Earth Tides Correction Layers
 

@@ -10,7 +10,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 * A page describing [Download](https://hyp3-docs.asf.alaska.edu/using/downloading.md) options for On Demand Products in the [Using](https://hyp3-docs.asf.alaska.edu/using/) section
-* 
+
 ### Changed
 * Updated [ARIA S1 GUNW Product Guide](https://hyp3-docs.asf.alaska.edu/guides/gunw_product_guide.md) to include:
   * information about date-based ARIA S1 GUNW job submissions

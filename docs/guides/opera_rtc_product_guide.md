@@ -130,10 +130,8 @@ section of the
 
 ## Ordering On-Demand OPERA RTC-S1 Products
 
-On-Demand OPERA RTC-S1 products can be requested for any Sentinel-1 SLC burst acquired on or after April 14, 2016, 
-and before January 1, 2022, in the processing area where 
-[OPERA RTC-S1 Static Layer Files](#l2-radiometric-terrain-corrected-static-layer-rtc-static-files "Jump to the Static Layer Files section of this document" ) 
-are available in the ASF archive.
+On-Demand OPERA RTC-S1 products can be requested for any Sentinel-1 IW SLC burst acquired on or after April 14, 2016, 
+and before January 1, 2022, for locations north of -60° latitude (i.e., all global landmasses except for Antarctica).
 
 ### Submitting On-Demand OPERA RTC-S1 Jobs
 
@@ -169,25 +167,12 @@ or after that date will also return an error.
 
 #### Spatial Coverage for On-Demand OPERA RTC-S1 Products
 
-On-Demand OPERA RTC-S1 Products can only be ordered for bursts that have associated 
-[OPERA RTC-S1 Static Layer Files](#l2-radiometric-terrain-corrected-static-layer-rtc-static-files "Jump to the Static Layer Files section of this document" ) 
-available in ASF's archive. The OPERA project supports processing over all global landmasses except for Antarctica. 
+On-Demand OPERA RTC-S1 Products can only be ordered for bursts that are north of -60° latitude, which includes all global landmasses except for Antarctica. 
 Only bursts from 
 [Sentinel-1 IW SLC](https://sentiwiki.copernicus.eu/web/s1-products "Sentinel-1 Products" ){target=_blank} 
 products are supported as input. 
 
-Any jobs submitted where the Sentinel-1 burst is from an EW SLC or does not have associated static layers available 
-will return an error. 
-
-!!! warning "OPERA RTC-S1 On-Demand coverage not available in some arctic regions"
-
-    The static layers used to process acquisitions over some parts of Greenland and Arctic Canada are currently 
-    unavailable in ASF's archive. On-Demand jobs submitted for these areas will return an error, as the static 
-    layers are required for processing the OPERA RTC-S1 products. We are working with the OPERA team to add these 
-    files to the ASF archive.
-
-    This graphic illustrates the current coverage of OPERA RTC-S1 Static Layers.
-    ![ExtraFigure](../images/opera-rtc-static-layer-coverage.png "Current coverage of OPERA RTC-S1 Static Layers")
+Any jobs submitted where the Sentinel-1 burst is from an EW SLC or South of -60° latitude will return an error.
 
 ## Product Packaging
 
@@ -222,9 +207,9 @@ The files available for download include:
 
 ### L2 Radiometric Terrain Corrected Static Layer (RTC-STATIC) Files
 
-There are some ancillary products required for RTC processing that change very little through time. Instead of 
-re-generating these reference products for each Sentinel-1 burst acquisition, they are generated once for each 
-Sentinel-1 burst ID used for OPERA processing, and archived as `Static Layer` files. 
+There are some ancillary products that change very little through time. Instead of 
+re-generating these ancillary products with each OPERA RTC product, they are generated once for each 
+Sentinel-1 burst ID and archived as `Static Layer` files. 
 
 Refer to OPERA's 
 [Product Specification Document for the OPERA Radiometric Terrain Corrected SAR Backscatter from Sentinel-1 Static Layers](https://d2pn8kiwq2w21t.cloudfront.net/documents/ProductSpec_RTC-S1-STATIC.pdf "ProductSpec_RTC-S1-STATIC.pdf" ){target=_blank} 
@@ -260,6 +245,15 @@ search results using the OPERA Burst ID.
   - The search results will include only the products that have the designated burst ID. If there are too many 
     results for the RTC-STATIC products to be included in the search results, open the Search Filters panel again and 
     select only the RTC-STATIC product type to return only the static layers that correspond to that RTC footprint.
+
+!!! warning "OPERA RTC-STATIC products not available for HH and HH+HV polarized scenes"
+
+    The static layers associated with HH and HH+HV polarized acquisitions, located over some parts of Greenland and
+    Arctic Canada, are currently unavailable in ASF's archive. We are working with the OPERA team to add these 
+    files to the ASF archive.
+
+    This graphic illustrates the current coverage of OPERA RTC-S1 Static Layers.
+    ![ExtraFigure](../images/opera-rtc-static-layer-coverage.png "Current coverage of OPERA RTC-S1 Static Layers")
 
 ### Duplicate layer names
 

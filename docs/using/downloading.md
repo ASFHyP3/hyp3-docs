@@ -70,8 +70,11 @@ for the files in your Download Queue, which you can then paste into your own dow
 
 ## Programmatic Access
 
-The [HyP3 API](#accessing-products-using-the-hyp3-api) and the 
-[HyP3 Python SDK](#accessing-products-using-the-hyp3-python-sdk) provide programmatic access to On Demand products. 
+The 
+[HyP3 API](#accessing-products-using-the-hyp3-api "Jump to the Accessing Products Using the HyP3 API section of this document") 
+and the 
+[HyP3 Python SDK](#accessing-products-using-the-hyp3-python-sdk "Jump to the Accessing Products Using the HyP3 Python SDK section of this document") 
+provide programmatic access to On Demand products. 
 
 The `name` parameter is referred to as "Project Name" in the Vertex interface, but is often referred to as "Job Name" 
 in documentation for the programmatic interfaces. This parameter is helpful in grouping together jobs submitted as 
@@ -79,13 +82,17 @@ part of a particular analysis effort. It facilitates management and download of 
 share products with colleagues, and allows users to access their HyP3-generated products using the notebooks available 
 on ASF's [OpenSARLab](https://opensarlab-docs.asf.alaska.edu/ "opensarlab-docs.asf.alaska.edu" ){target=_blank}.
 
-The [HyP3 API](#accessing-products-using-the-hyp3-api) allows easy access to job URLs through the Swagger UI, 
-but the [HyP3 Python SDK](#accessing-products-using-the-hyp3-python-sdk) is better suited for 
-scripting search and download workflows for On Demand products. 
+The 
+[HyP3 API](#accessing-products-using-the-hyp3-api "Jump to the Accessing Products Using the HyP3 API section of this document") 
+allows easy access to job URLs through the Swagger UI, but the 
+[HyP3 Python SDK](#accessing-products-using-the-hyp3-python-sdk "Jump to the Accessing Products Using the HyP3 Python SDK section of this document") 
+is better suited for scripting search and download workflows for On Demand products. 
 
 ### Accessing Products Using the HyP3 API
 
-The [HyP3 API](../using/api.md) provides the ability to [Query Submitted Jobs](../using/api.md#querying-jobs). 
+The [HyP3 API](../using/api.md "hyp3-docs.asf.alaska.edu/using/api") 
+provides the ability to 
+[Query Submitted Jobs](../using/api.md#querying-jobs "hyp3-docs.asf.alaska.edu/using/api/#querying-jobs"). 
 To look up your On Demand jobs, you will need to have a valid Earthdata Login (asf-urs) session cookie, 
 which you can get by signing in to 
 [Vertex](https://search.asf.alaska.edu/ "search.asf.alaska.edu" ){target=_blank} or 
@@ -96,7 +103,8 @@ Note that the parameter fields in the UI are populated with defaults. You will n
 default values that do not align with your desired search parameters. The start and end date fields reference 
 the date/time the jobs were submitted, not the date/time of the acquisitions used to generate the products. 
 
-The returns from your [Get Jobs API request](https://hyp3-api.asf.alaska.edu/ui/#/default/get_jobs ){target=_blank} 
+The returns from your 
+[Get Jobs API request](https://hyp3-api.asf.alaska.edu/ui/#/default/get_jobs "hyp3-api.asf.alaska.edu/ui/#/default/get_jobs" ){target=_blank} 
 include download links for the browse images and thumbnails used to display the product contents in Vertex, 
 as well as the link to the complete product package with a `.zip` extension. 
 
@@ -163,25 +171,26 @@ array of the response JSON. The value is paired with the `url` key in the `files
 
 You can copy and paste each product URL directly into a browser window, or script a workflow to pull all the 
 product URLs from the response JSON into a bulk download function. It may be more convenient to use the 
-[HyP3 Python SDK](#accessing-products-using-the-hyp3-python-sdk) to script bulk download functionality.
+[HyP3 Python SDK](#accessing-products-using-the-hyp3-python-sdk "Jump to the Accessing Products Using the HyP3 Python SDK section of this document") 
+to script bulk download functionality.
 
 ### Accessing Products using the HyP3 Python SDK
 
-The [HyP3 Python SDK](../using/sdk.md) is a wrapper around the HyP3 API, and provides convenient search 
-and download functionality for On Demand products (HyP3 jobs). 
-[This example notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb){target=_blank} 
+The [HyP3 Python SDK](../using/sdk.md "hyp3-docs.asf.alaska.edu/using/sdk") is a wrapper around the HyP3 API, 
+and provides convenient search and download functionality for On Demand products (HyP3 jobs). 
+[This example notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb "SDK Example Notebook" ){target=_blank} 
 demonstrates how to use the SDK for a range of workflows. 
 
 To access product information using the SDK, you will need to authenticate using the 
-[HyP3 initializer method](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk.HyP3.__init__){target=_blank}. 
+[HyP3 initializer method](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk.HyP3.__init__ "HyP3 SDK API Reference" ){target=_blank}. 
 You can either add your credentials to your local `netrc` file, or enter your credentials manually. 
 Refer to the ***Authenticating to the API*** section in the 
-[SDK Example Notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb){target=_blank} 
+[SDK Example Notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb "SDK Example Notebook" ){target=_blank} 
 for guidance. 
 
 Use the `find_jobs` method from the `HyP3` class to generate a list of products to download (batch), then use the 
 `download_files` method from the `Batch` class to download all the products in the list. Refer to the 
-[HyP3 SDK API Reference](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk ){target=_blank} 
+[HyP3 SDK API Reference](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk "hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk" ){target=_blank} 
 for more information. 
 
 ## Product Packaging and Extraction
@@ -226,8 +235,9 @@ and can determine what individual products are required for their application.*
 ## Downloading Products Submitted by Other Users
 
 You can search for On Demand products processed under a different username. This functionality is a convenient 
-way to share products when collaborating with others, and can be accessed both in [Vertex](#using-vertex) and the 
-[HyP3 Python SDK](#using-the-hyp3-python-sdk). 
+way to share products when collaborating with others, and can be accessed both in 
+[Vertex](#using-vertex "Jump to the Using Vertex section of this document") and the 
+[HyP3 Python SDK](#using-the-hyp3-python-sdk "Jump to the Using the HyP3 Python SDK section of this document"). 
 
 ### Using Vertex
 
@@ -243,5 +253,5 @@ will not be able to look up another user's list of Project Names using this inte
 ### Using the HyP3 Python SDK
 
 The HyP3 Python SDK provides the capability to search for products submitted by other users. Refer to 
-[this sample notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb){target=_blank} 
+[this notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb "Using the HyP3 SDK to search for jobs run by another user" ){target=_blank} 
 to learn how.

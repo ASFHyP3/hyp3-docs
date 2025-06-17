@@ -108,10 +108,8 @@ and
 [spatial extent](../guides/opera_rtc_product_guide.md#spatial-coverage-for-on-demand-opera-rtc-s1-products "OPERA RTC-S1 Product Guide" ){target=_blank} 
 constraints for processing.
 
-Sentinel-1 Burst SLCs submitted for processing must have been acquired between April 14, 2016, and December 31, 2021, 
-and must have 
-[OPERA RTC-S1 Static Layer files](../guides/opera_rtc_product_guide.md#l2-radiometric-terrain-corrected-static-layer-rtc-static-files "OPERA RTC-S1 Product Guide" ){target=_blank} 
-associated with that burst ID.
+Sentinel-1 IW Burst SLCs submitted for processing must have been acquired between April 14, 2016, and December 31, 2021, 
+and must be North of -60° latitude.
 
 ```json
     {

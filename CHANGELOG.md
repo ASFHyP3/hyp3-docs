@@ -17,6 +17,8 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   * supported polarizations
   * SLC coverage constraints
 
+* Updated [OPERA RTC Product Guide](https://hyp3-docs.asf.alaska.edu/guides/opera_rtc_product_guide.md) to reflect that we now allow any IW burst SLC North of 60° latitude to be processed
+
 ## [0.10.10]
 
 ### Changed

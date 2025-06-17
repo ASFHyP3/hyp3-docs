@@ -64,9 +64,8 @@ search portal by following these steps:
    acquisition details.
 4. **Download Data** – To download, first add ARIA-S1-GUNW products to your Download Queue using the 
    shopping cart icon next to each product, then download your selected products using the 
-   [options available](https://docs.asf.alaska.edu/vertex/manual/#downloads-queue "docs.asf.alaska.edu/vertex/manual/#downloads-queue" ){target=_blank} 
-   in the Download Queue interface.
-   
+   [options available in the Download Queue interface](https://docs.asf.alaska.edu/vertex/manual/#downloads-queue "docs.asf.alaska.edu/vertex/manual/#downloads-queue" ){target=_blank}. 
+
 ## Ordering On-Demand Products
 
 If the ARIA-S1-GUNW products you need are not available in the archive, you can use ASF's On Demand platform to submit 

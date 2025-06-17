@@ -131,7 +131,7 @@ section of the
 ## Ordering On-Demand OPERA RTC-S1 Products
 
 On-Demand OPERA RTC-S1 products can be requested for any Sentinel-1 IW SLC burst acquired on or after April 14, 2016, 
-and before January 1, 2022, for locations north of -60° latitude (i.e., all global landmasses except for Antarctica).
+and before January 1, 2022, for locations north of -60° latitude (i.e. all global landmasses except for Antarctica).
 
 ### Submitting On-Demand OPERA RTC-S1 Jobs
 

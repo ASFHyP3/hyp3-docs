@@ -287,9 +287,9 @@ tropospheric delay correction are provided for both the reference and secondary 
 
 ## Data Access
 
-Refer to the [Downloads](../using/downloading.md) page for more information on viewing and downloading 
-ARIA S1 GUNW On Demand products in Vertex or programmatically. Once processing is complete, download links 
-for On Demand products are valid for 14 days.
+Refer to the [Downloads](../using/downloading.md "hyp3-docs.asf.alaska.edu/using/downloading") 
+page for more information on viewing and downloading ARIA S1 GUNW On Demand products in Vertex or programmatically. 
+Once processing is complete, download links for On Demand products are valid for 14 days.
 
 ## References
 Bekaert, David, et al. "The ARIA-S1-GUNW: The ARIA Sentinel-1 Geocoded Unwrapped Phase Product for Open InSAR Science 

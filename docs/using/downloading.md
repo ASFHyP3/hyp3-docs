@@ -246,8 +246,8 @@ the **User ID** filter to enter the username under which the desired job was sub
 
 ![On Demand Filters](../images/on-demand-filters.png)
 
-If the user who submitted the job also provides you with the Project Name, you can apply that search filter, as well. 
-The drop-down list in the Project Name field only displays the list for the user who is logged in, so you 
+If the user who submitted the job also provides you with the **Project Name**, you can apply that search filter, 
+as well. The drop-down list in the **Project Name** field only displays the list for the user who is logged in, so you 
 will not be able to look up another user's list of Project Names using this interface. 
 
 ### Using the HyP3 Python SDK

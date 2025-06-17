@@ -377,7 +377,7 @@ A shapefile indicating the extent of the RTC data coverage is included in the pa
 
 ## Data Access
 
-Refer to the [Downloads](../using/downloading.md) page for more information on viewing and downloading 
+Refer to the [Downloads](../using/downloading.md "hyp3-docs.asf.alaska.edu/using/downloading") page for more information on viewing and downloading 
 Sentinel-1 RTC On Demand products in Vertex or programmatically. Once processing is complete, download links 
 for On Demand products are valid for 14 days.
 

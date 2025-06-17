@@ -360,7 +360,7 @@ Geolocation XML files (aux files) are included for each of the PNG browse images
 {% block download_tutorial %}
 Step-by-step instructions for finding and downloading RTC On Demand products in Vertex are available in the 
 [Submit/Download Jobs](https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3#ref-n-NRdP9N "InSAR On Demand! StoryMap Tutorial - On Demand Search"){target=_blank} section of the 
-[InSAR On Demand!](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "InSAR On Demand! StoryMap Tutorial" ){target=_blank} interactive StoryMap tutorial.
+[InSAR On Demand!](https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3 "InSAR On Demand! StoryMap Tutorial" ){target=_blank} interactive StoryMap tutorial.
 {% endblock %}
 
 {% block line_of_sight %}

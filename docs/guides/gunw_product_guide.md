@@ -109,9 +109,11 @@ create a new ARIA-S1-GUNW product (see figure below).
 
 #### ARIA Frame ID Maps
 
-It can be tricky to find all of the appropriate granules for a given ARIA Frame ID for both the reference and 
-secondary acquisition dates. In the future, ASF plans to create utilities to simplify this process. In the meantime, 
-there are geojson files indicating the extent of each ARIA Frame ID that can be downloaded and used for reference.
+The ARIA project provides geojson files indicating the extent of each ARIA Frame ID. These files can be 
+downloaded and used for reference. You may find it helpful to extract the polygon for a specific frame 
+from the geojson and use the 
+[Import AOI functionality in Vertex](https://docs.asf.alaska.edu/vertex/manual/#area-of-interest-options "docs.asf.alaska.edu/vertex/manual/#area-of-interest-options" ){target=_blank} 
+to search for Sentinel-1 acquisitions over that frame. 
 
 There are different ARIA Frame ID maps for the ascending and descending orbit directions. Make sure that you are 
 using the appropriate geojson file. 

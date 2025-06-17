@@ -185,8 +185,8 @@ are not available for ARIA-S1-GUNW jobs.
 To submit an ARIA_S1_GUNW job, all you need is: 
 
 - the ARIA Frame ID number 
-- the reference date, which is the more recent pass over the ARIA Frame
-- the secondary date, which is the earlier pass over the ARIA Frame 
+- the reference date, which is the **more recent pass** over the ARIA Frame
+- the secondary date, which is the **earlier pass** over the ARIA Frame 
 
 The dates must be in YYYY-MM-DD format.
 

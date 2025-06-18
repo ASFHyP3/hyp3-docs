@@ -99,6 +99,10 @@ which you can get by signing in to
 [Earthdata Login](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
 with your Earthdata Login Credentials.
 
+You can also authenticate using an Earthdata Login token. Refer to 
+[Authentication with HyP3 API](authentication.md#authentication-with-hyp3-api "Jump to the Authentication page") 
+documentation for guidance on EDL token use.
+
 Note that the parameter fields in the UI are populated with defaults. You will need to edit or delete any of the 
 default values that do not align with your desired search parameters. The start and end date fields reference 
 the date/time the jobs were submitted, not the date/time of the acquisitions used to generate the products. 

@@ -1,14 +1,24 @@
 # Using the HyP3 API
 
-The HyP3 API is built on [OpenAPI](https://www.openapis.org/ "https://www.openapis.org/" ){target=_blank} and [Swagger](https://swagger.io/ "https://swagger.io/" ){target=_blank}.
+The HyP3 API is built on [OpenAPI](https://www.openapis.org/ "https://www.openapis.org/" ){target=_blank} 
+and [Swagger](https://swagger.io/ "https://swagger.io/" ){target=_blank}.
 A friendly interface for exploring the API is available at:
 
 #### <https://hyp3-api.asf.alaska.edu/ui/>{target=_blank}
+
+## Authentication
 
 In order to use the API, you'll need a `asf-urs` session cookie, which you can get
 by [signing in to Vertex](https://search.asf.alaska.edu/#/){target=_blank}
 
 ![vertex sign in](../images/vertex-sign-in.png)
+
+Alternatively, you can 
+[generate an Earthdata Login user token](https://urs.earthdata.nasa.gov/documentation/for_users/user_token "urs.earthdata.nasa.gov/documentation/for_users/user_token" ){target=_blank}, 
+and enter it in the `BearerAuth` field by clicking the `Authorize` button in the Swagger UI. 
+
+Refer to the [Authentication](authentication.md#authentication-with-hyp3-api "Jump to Authentication page") 
+page for more detailed guidance on authentication methods.
 
 ### Confirm you are authenticated
 
@@ -39,7 +49,8 @@ If you get a `Code 200` you should see a JSON dictionary of your user informatio
 Jobs are submitted through the API by providing a JSON payload with a list of job
 definitions.
 
-Sentinel-1 jobs are submitted using [ESA granule IDs](https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention){target=_blank}.
+Sentinel-1 jobs are submitted using 
+[ESA granule IDs](https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention){target=_blank}.
 A minimal job list for a single Sentinel-1 RTC job would look like:
 
 ```json

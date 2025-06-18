@@ -11,9 +11,6 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 * Links to the [HyP3 Authentication in SDK notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/develop/docs/hyp3_authentication.ipynb)
 
-### Changed
-* Updated HyP3 SDK to [v7.7.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#760)
-
 ## [0.10.11]
 
 ### Added

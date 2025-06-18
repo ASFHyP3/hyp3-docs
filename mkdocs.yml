@@ -56,6 +56,7 @@ nav:
       - Example Notebook: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
       - API Reference: using/sdk_api.md
     - API: using/api.md
+    - Authentication: using/authentication.md
     - Credits: using/credits.md
     - Downloads: using/downloading.md
     - Subscriptions: using/subscriptions.md

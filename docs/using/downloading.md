@@ -15,7 +15,7 @@ before results will display.
 
 Refer to the 
 [On Demand Search section of the Vertex User Manual](https://docs.asf.alaska.edu/vertex/manual/#on-demand-products-search-options "docs.asf.alaska.edu" ){target=_blank} 
-for more information. 
+for more information on On Demand Search functionality. 
 
 ### Downloading Individual Products
 

@@ -132,6 +132,7 @@ EGM96
 electro-magnetic
 endblock
 entrypoint
+EOSDIS
 EPSG:4326
 ESA
 ESA's

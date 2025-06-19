@@ -16,7 +16,7 @@ before results will display, as described in our
 
 Refer to the 
 [On Demand Search section of the Vertex User Manual](https://docs.asf.alaska.edu/vertex/manual/#on-demand-products-search-options "docs.asf.alaska.edu" ){target=_blank} 
-for more information on On Demand Search functionality. 
+for more information about On Demand Search functionality. 
 
 ### Downloading Individual Products
 
@@ -94,26 +94,33 @@ is better suited for scripting search and download workflows for On Demand produ
 The [HyP3 API](../using/api.md "hyp3-docs.asf.alaska.edu/using/api") 
 provides the ability to 
 [Query Submitted Jobs](../using/api.md#querying-jobs "hyp3-docs.asf.alaska.edu/using/api/#querying-jobs"). 
+
+#### Authentication
+
 To look up your On Demand jobs, you will need to have a valid Earthdata Login (asf-urs) session cookie, 
 which you can get by signing in to 
 [Vertex](https://search.asf.alaska.edu/ "search.asf.alaska.edu" ){target=_blank} or 
 [Earthdata Login](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
-with your Earthdata Login Credentials.
-
-You can also authenticate using an Earthdata Login token. Refer to 
+with your Earthdata Login Credentials. You can also authenticate using an 
+[Earthdata Login token](authentication.md#earthdata-login-token "Jump to the Earhtdata Login Token section of the Authentication page"). 
+Refer to 
 [Authentication with HyP3 API](authentication.md#authentication-with-hyp3-api "Jump to the Authentication page") 
-documentation for guidance on EDL token use.
+documentation for more information on the available authentication methods.
+
+#### Entering Search Parameters
 
 Note that the parameter fields in the UI are populated with defaults. You will need to edit or delete any of the 
 default values that do not align with your desired search parameters. The start and end date fields reference 
 the date/time the jobs were submitted, not the date/time of the acquisitions used to generate the products. 
 
-The returns from your 
+#### Response JSON
+
+The response from your 
 [Get Jobs API request](https://hyp3-api.asf.alaska.edu/ui/#/default/get_jobs "hyp3-api.asf.alaska.edu/ui/#/default/get_jobs" ){target=_blank} 
-include download links for the browse images and thumbnails used to display the product contents in Vertex, 
+includes download links for the browse images and thumbnails used to display the product contents in Vertex, 
 as well as the link to the complete product package with a `.zip` extension. 
 
-Here is an example of a response:
+Here is an example of a response JSON:
 ```
 {
   "jobs": [
@@ -186,12 +193,16 @@ and provides convenient search and download functionality for On Demand products
 [This example notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb "SDK Example Notebook" ){target=_blank} 
 demonstrates how to use the SDK for a range of workflows. 
 
+#### Authentication
+
 To access product information using the SDK, you will need to authenticate using the 
 [HyP3 initializer method](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk.HyP3.__init__ "HyP3 SDK API Reference" ){target=_blank}. 
 You can add Earthdata Login (EDL) credentials to your local `netrc` file, or use a prompt to enter either 
 EDL credentials or an EDL token manually. Refer to the 
 [Authenticate HyP3 in the SDK notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb "Authenticate HyP3 in the SDK notebook" ){target=_blank} 
 for authentication guidance and sample code.
+
+#### Search for Jobs
 
 Use the `find_jobs` method from the `HyP3` class to generate a list of products to download (batch), then use the 
 `download_files` method from the `Batch` class to download all the products in the list. Refer to the 

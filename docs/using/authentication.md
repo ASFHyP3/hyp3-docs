@@ -16,17 +16,19 @@ The options available for authentication depend on the interface you are using t
 
 ## Authentication in Vertex
 
-[#TODO: Add content]
+Users need to sign in with 
+[Earthdata Login credentials](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
+
 
 
 ## Authentication with HyP3 API
 
-There are a number of authentication methods available when using the 
+There are a couple of authentication methods available when using the 
 [HyP3 API](../using/api.md "hyp3-docs.asf.alaska.edu/using/api"). 
 The most common is using an 
 [Earthdata Login session cookie](#earthdata-login-session-cookie "Jump to the Earthdata Login Session Cookie section of this document"), 
 but you can also use an 
-[Earthdata Login user token](#earthdata-login-token "Jump to the Earthdata Login Token section of this document").
+[Earthdata Login token](#earthdata-login-token "Jump to the Earthdata Login Token section of this document").
 
 ### Earthdata Login Session Cookie
 
@@ -36,17 +38,14 @@ This cookie is generated when you enter your Earthdata Login credentials in a br
 [Vertex](https://search.asf.alaska.edu/ "search.asf.alaska.edu" ){target=_blank}, 
 or by using the 
 [Earthdata Login](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
-web interface. 
-
-If you are using the Swagger UI to interact with HyP3 in the same web environment as a valid asf-urs session cookie, 
-you do not need to perform further authentication. 
+web interface.
 
 ### Earthdata Login Token
 
-Earthdata Login (EDL) supports the generation of tokens that are valid for 60 days. These user tokens can be used for 
-EDL authentication instead of entering a username and password. The 
+Earthdata Login (EDL) supports the generation of tokens that are valid for 60 days. These user/bearer tokens can be 
+used for EDL authentication instead of entering a username and password. The 
 [User Token Management](https://urs.earthdata.nasa.gov/documentation/for_users/user_token "urs.earthdata.nasa.gov/documentation/for_users/user_token" ){target=_blank} 
-document provides step-by-step guidance for generating an EDL user token, which you can do either in the 
+document provides step-by-step guidance for generating an EDL token, which you can do either in the 
 [Earthdata Login web interface](https://urs.earthdata.nasa.gov/ "https://urs.earthdata.nasa.gov/" ){target=_blank} 
 or by using the User Tokens API. 
 

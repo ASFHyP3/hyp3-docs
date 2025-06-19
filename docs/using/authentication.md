@@ -2,8 +2,8 @@
 
 Users must authenticate with 
 [Earthdata Login](https://urs.earthdata.nasa.gov/ "https://urs.earthdata.nasa.gov/" ){target=_blank} 
-credentials before they can submit jobs to HyP3 for processing or access information about the resulting 
-[On Demand products](https://hyp3-docs.asf.alaska.edu/products/ "hyp3-docs.asf.alaska.edu/products" ){target=_blank}.
+credentials before they can submit jobs to [HyP3](../how_it_works.md) for processing or access information 
+about the resulting [On Demand products](../products.md "hyp3-docs.asf.alaska.edu/products").
 
 The options available for authentication depend on the interface you are using to interact with HyP3 functionality. 
 

@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.10.14]
 
 ### Changed
-* Updated [ARIA S1 GUNW Product Guide](https://hyp3-docs.asf.alaska.edu/guides/gunw_product_guide.md) to include information about ingest of on-demand products to the archive
+* Updated [ARIA S1 GUNW Product Guide](https://hyp3-docs.asf.alaska.edu/guides/gunw_product_guide) to include information about ingest of on-demand products to the archive
 
 ## [0.10.13]
 

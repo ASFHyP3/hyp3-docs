@@ -10,7 +10,7 @@ The options available for authentication depend on the interface you are using t
 - The [Vertex](https://search.asf.alaska.edu/ "search.asf.alaska.edu" ){target=_blank} search and discovery 
   interface is a map-based web application that allows users to search for Sentinel-1 acquisitions, submit them for 
   processing by HyP3, and access the resulting On Demand products.
-- Programmatic access to HyP3 is available through:
+- Programmatic access to HyP3 functionality and output products is available through:
     - The [HyP3 API](../using/api.md "hyp3-docs.asf.alaska.edu/using/api")
     - The [HyP3 Python SDK](../using/sdk.md "hyp3-docs.asf.alaska.edu/using/sdk")
 

@@ -2,6 +2,7 @@
 
 The HyP3 API is built on [OpenAPI](https://www.openapis.org/ "https://www.openapis.org/" ){target=_blank} 
 and [Swagger](https://swagger.io/ "https://swagger.io/" ){target=_blank}.
+
 A friendly interface for exploring the API is available at:
 
 #### <https://hyp3-api.asf.alaska.edu/ui/>{target=_blank}

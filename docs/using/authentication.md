@@ -55,7 +55,6 @@ and enter or paste your EDL token in the **Value** field in the BearerAuth secti
 
 ![Authorize EDL Token in API](../images/api-authorize.png "Authorize an EDL Token in the HyP3 API")
 
-
 ## Authentication with HyP3 Python SDK
 
 

@@ -9,8 +9,12 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.10.14]
 
 ### Added
-*Added tutorial link for the [HyP3 Authentication in SDK notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/develop/docs/hyp3_authentication.ipynb)
+* Added tutorial link for the [HyP3 Authentication in SDK notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/develop/docs/hyp3_authentication.ipynb)
+* [Authentication](docs/using/authentication.md) page to Using HyP3 section
 
+### Changed
+* Reworked [Downloads](docs/using/downloading.md) page to incorporate links to the [Authentication](docs/using/authentication.md) page
+* Updated [SDK example notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb) to reference new [HyP3 Authentication in SDK notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/develop/docs/hyp3_authentication.ipynb)
 
 ## [0.10.13]
 

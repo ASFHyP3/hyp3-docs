@@ -5,7 +5,7 @@ Users must authenticate with
 credentials before they can submit jobs to [HyP3](../how_it_works.md) for processing or access information 
 about the resulting [On Demand products](../products.md "hyp3-docs.asf.alaska.edu/products").
 
-The options available for authentication depend on the interface you are using to interact with HyP3 functionality. 
+The options available for authentication depend on the interface you are using to interact with HyP3 functionality.
 
 - The [Vertex](https://search.asf.alaska.edu/ "search.asf.alaska.edu" ){target=_blank} search and discovery 
   interface is a map-based web application that allows users to search for Sentinel-1 acquisitions, submit them for 
@@ -19,15 +19,16 @@ authenticate in order to look up the download URLs for these products.
 
 ## Earthdata Login (EDL)
 
-[Earthdata Login](https://urs.earthdata.nasa.gov/ "https://urs.earthdata.nasa.gov/" ){target=_blank}
+[Earthdata Login](https://urs.earthdata.nasa.gov/ "https://urs.earthdata.nasa.gov/" ){target=_blank} 
 (EDL) is the authentication method used across NASA's 
 [Earth Observation System Data Information System (EOSDIS)](https://www.earthdata.nasa.gov/about/esdis/eosdis "www.earthdata.nasa.gov/about/esdis/eosdis" ){target=_blank}. 
-It allows users to access any of the Earth Science data products served by EOSDIS, regardless of the data curator. 
+It allows users to access any of the Earth Science data products served by EOSDIS, regardless of the 
+identity of the data curator.
 
 There is no cost to 
 [register for EDL credentials](https://urs.earthdata.nasa.gov/users/new "https://urs.earthdata.nasa.gov/users/new" ){target=_blank}, 
 and the process is quick and easy. When creating your profile, make sure to select an item in the **Study Area** 
-field, as you may encounter access errors if that field is left blank. 
+field, as you may encounter access errors if that field is left blank.
 
 ![Select Study Area](../images/select-study-area.png "Select Study Area in EDL Registration")
 
@@ -36,7 +37,7 @@ field, as you may encounter access errors if that field is left blank.
 Most authentication workflows involve providing the username and password you set when registering for EDL. The 
 [Earthdata Login GUI](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
 is the most common authentication method, and EOSDIS interfaces will generally provide access to this GUI when 
-EDL credentials are required. 
+EDL credentials are required.
 
 ### Earthdata Login Token
 
@@ -46,7 +47,7 @@ used for EDL authentication instead of entering a username and password. The
 document provides step-by-step guidance for generating an EDL token, which you can do either in the 
 [Earthdata Login web interface](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov/" ){target=_blank} 
 or by using the 
-[User Tokens API](https://urs.earthdata.nasa.gov/documentation/for_users/user_token#api "urs.earthdata.nasa.gov/documentation/for_users/user_token#api" ){target=_blank}. 
+[User Tokens API](https://urs.earthdata.nasa.gov/documentation/for_users/user_token#api "urs.earthdata.nasa.gov/documentation/for_users/user_token#api" ){target=_blank}.
 
 ## Authentication in Vertex
 
@@ -54,7 +55,7 @@ Click the **Sign In** button in [Vertex](https://search.asf.alaska.edu/ "search.
 which opens a 
 [version of the Earthdata Login GUI](https://urs.earthdata.nasa.gov/oauth/authorize?response_type=code&client_id=BO_n7nTIlMljdvU6kRRB3g&redirect_uri=https://auth.asf.alaska.edu/login "ASF Authorization Login" ){target=_blank} 
 customized for ASF applications. Enter your Earthdata Login credentials to enable access to all functionality 
-in Vertex linked to EDL credentials, including On Demand capabilities. 
+in Vertex linked to EDL credentials, including On Demand capabilities.
 
 ![Sign In with EDL in Vertex](../images/vertex-sign-in.png "Sign In with Earthdata Login Credentials in Vertex")
 
@@ -73,7 +74,7 @@ You can authorize the HyP3 API by having a valid Earthdata Login (asf-urs) sessi
 This cookie is generated when you enter your Earthdata Login credentials in a browser, either by 
 [authenticating in Vertex](#authentication-in-vertex "Jump to the Authenticating in Vertex section of this document") 
 or by using the 
-[Earthdata Login](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
+[Earthdata Login](#username-and-password "Jump to the EDL Username and Password section of this document") 
 web interface directly.
 
 ### Earthdata Login Bearer Token
@@ -82,17 +83,23 @@ Request an EDL token, as described in the
 [Earthdata Login Token](#earthdata-login-token "Jump to the Earthdata Login Token section of this document") 
 section of this document.
 
-Once you have a valid EDL token, open the Swagger UI interface for the HyP3 API. Click the **Authorize** button, 
-and enter or paste your EDL token in the **Value** field in the BearerAuth section. 
+Once you have a valid EDL token: 
+
+1. Open the [Swagger UI interface for the HyP3 API](https://hyp3-api.asf.alaska.edu/ui/ "hyp3-api.asf.alaska.edu/ui" ){target=_blank}
+2. Click the **Authorize** button at the top of the Swagger UI page
+3. Enter or paste your EDL token in the **Value** field of the `BearerAuth` section
+4. Click the **Authorize** button in the `Available authorizations` window to apply the token
 
 ![Authorize EDL Token in API](../images/api-authorize.png "Authorize an EDL Token in the HyP3 API")
 
 ## Authentication with HyP3 Python SDK
 
-To authenticate to the API when using the HyP3 Python SDK, use the 
-[HyP3 initializer method](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk.HyP3.__init__ "HyP3 SDK API Reference" ){target=_blank}. 
+To authenticate to the API when using the 
+[HyP3 Python SDK](../using/sdk.md "hyp3-docs.asf.alaska.edu/using/sdk"), 
+use the 
+[HyP3 initializer method](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk.HyP3.__init__ "HyP3 SDK API Reference" ){target=_blank}.
 
-There are several options for authentication when using this method, including: 
+There are several options for authentication when using this method, including:
 
 - Adding your Earthdata Login (EDL) credentials to your local `netrc` file
 - Entering your EDL [username and password](#username-and-password "Jump to the Username and Password section of this document")

@@ -188,10 +188,10 @@ demonstrates how to use the SDK for a range of workflows.
 
 To access product information using the SDK, you will need to authenticate using the 
 [HyP3 initializer method](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk.HyP3.__init__ "HyP3 SDK API Reference" ){target=_blank}. 
-You can either add your credentials to your local `netrc` file, or enter your credentials manually. 
-Refer to the ***Authenticating to the API*** section in the 
-[SDK Example Notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb "SDK Example Notebook" ){target=_blank} 
-for guidance. 
+You can add Earthdata Login (EDL) credentials to your local `netrc` file, or use a prompt to enter either 
+EDL credentials or an EDL token manually. Refer to the 
+[Authenticate HyP3 in the SDK notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb "Authenticate HyP3 in the SDK notebook" ){target=_blank} 
+for authentication guidance and sample code.
 
 Use the `find_jobs` method from the `HyP3` class to generate a list of products to download (batch), then use the 
 `download_files` method from the `Batch` class to download all the products in the list. Refer to the 

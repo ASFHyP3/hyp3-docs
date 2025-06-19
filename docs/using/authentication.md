@@ -51,12 +51,12 @@ or by using the
 ## Authentication in Vertex
 
 Click the **Sign In** button in [Vertex](https://search.asf.alaska.edu/ "search.asf.alaska.edu" ){target=_blank}, 
-which opens a version of the 
-[Earthdata Login GUI](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
+which opens a 
+[version of the Earthdata Login GUI](https://urs.earthdata.nasa.gov/oauth/authorize?response_type=code&client_id=BO_n7nTIlMljdvU6kRRB3g&redirect_uri=https://auth.asf.alaska.edu/login "ASF Authorization Login" ){target=_blank} 
 customized for ASF applications. 
 Enter your 
 [Earthdata Login credentials](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
-to enable access to all functionality linked to EDL credentials. 
+to enable access to all functionality in Vertex linked to EDL credentials. 
 
 ![Sign In with EDL in Vertex](../images/vertex-sign-in.png "Sign In with Earthdata Login Credentials in Vertex")
 

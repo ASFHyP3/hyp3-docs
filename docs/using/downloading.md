@@ -67,7 +67,8 @@ capability in Chrome to download several items at a time.
 
 #### Copy URLs
 You can also click on **Copy URLs** (located next to the Data Download button) to copy a list of the download URLs 
-for the files in your Download Queue, which you can then paste into your own download script. 
+for the files in your Download Queue, which you can then paste into your own download script or 
+[Wget command](#downloading-with-wget "Jump to the Downloading with Wget section of this document"). 
 
 ## Programmatic Access
 
@@ -182,7 +183,7 @@ The download URL for the full product package is provided near the end of the re
 array of the response JSON. The value is paired with the `url` key in the `files` array. 
 
 You can copy and paste each product URL directly into a browser window, or script a workflow to pull all the 
-product URLs from the response JSON into a bulk download function. It may be more convenient to use the 
+product URLs from the response JSON into a bulk download function or text file. It may be more convenient to use the 
 [HyP3 Python SDK](#accessing-products-using-the-hyp3-python-sdk "Jump to the Accessing Products Using the HyP3 Python SDK section of this document") 
 to script bulk download functionality.
 
@@ -271,3 +272,32 @@ will not be able to look up another user's list of Project Names using this inte
 The HyP3 Python SDK provides the capability to search for products submitted by other users. Refer to 
 [this notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb "Using the HyP3 SDK to search for jobs run by another user" ){target=_blank} 
 to learn how.
+
+## Downloading with Wget
+
+While [authentication](authentication.md "Jump to the Authentication page") is required to look up download URLs 
+for On Demand products, it is not required for actually using the download URLs. This makes it easy to use any 
+method you prefer for downloading the products.
+
+Some users may find the 
+[Wget](https://www.gnu.org/software/wget/manual/wget.html "www.gnu.org/software/wget/manual/wget.html" ){target=_blank} 
+utility useful for downloading a long list of products.
+
+Create a text file containing a list of download URLs (i.e `urls.txt`). This list can be generated a number of 
+ways, including but not limited to: 
+
+- the [Copy URLs](#copy-urls "Jump to the Copy URLs section of this document") functionality in Vertex
+- extracting [URLS from an API response JSON](#response-json "Jump to the Response JSON section of this document")
+- converting a list of download URLs for 
+  [On Demand product zip files](#product-packaging-and-extraction "Jump to the Product Packaging and Extraction section of this document") 
+  to a list of 
+  [individual file URLs](#downloading-individual-files "Jump to the Downloading Individual Files section of this document")
+
+You can then use the 
+[input file](https://www.gnu.org/software/wget/manual/wget.html#index-input_002dfile "Wget Manual: Input File" ){target=_blank} 
+option with Wget to reference the text file containing a list of download URLs. 
+
+The command is simply the following:
+```
+wget -i urls.txt
+```

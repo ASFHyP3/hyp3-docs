@@ -79,6 +79,15 @@ or by using the
 [Earthdata Login](#username-and-password "Jump to the EDL Username and Password section of this document") 
 web interface directly.
 
+If you do not have a valid session cookie before launching the 
+[HyP3 API Swagger UI](https://hyp3-api.asf.alaska.edu/ui/ "hyp3-api.asf.alaska.edu/ui" ){target=_blank}, 
+you will see an error response when submitting an API request: 
+
+![Authentication Error](../images/authentication-error.png)
+
+You may need to refresh the browser window with the HyP3 API Swagger UI after you authenticate using either Vertex or 
+the Earthdata Login website before you will be able to submit API requests successfully.
+
 ### Earthdata Login Bearer Token
 
 Request an EDL token, as described in the 

@@ -16,10 +16,11 @@ The options available for authentication depend on the interface you are using t
 
 ## Authentication in Vertex
 
-Users need to sign in with 
-[Earthdata Login credentials](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
+Click the **Sign In** button in [Vertex](https://search.asf.alaska.edu/ "search.asf.alaska.edu" ){target=_blank} 
+and enter your 
+[Earthdata Login credentials](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank}. 
 
-
+![Sign In with EDL in Vertex](../images/vertex-sign-in.png "Sign In with Earthdata Login Credentials in Vertex")
 
 ## Authentication with HyP3 API
 
@@ -35,10 +36,10 @@ but you can also use an
 You can authorize the HyP3 API by having a valid Earthdata Login (asf-urs) session cookie in your web environment. 
 This cookie is generated when you enter your Earthdata Login credentials in a browser, either by clicking the 
 **Sign In** icon in 
-[Vertex](https://search.asf.alaska.edu/ "search.asf.alaska.edu" ){target=_blank}, 
+[Vertex](https://search.asf.alaska.edu/ "search.asf.alaska.edu" ){target=_blank} 
 or by using the 
 [Earthdata Login](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
-web interface.
+web interface directly.
 
 ### Earthdata Login Token
 

@@ -11,7 +11,8 @@ The [On Demand Search](https://search.asf.alaska.edu/#/?maxResults=1000&searchTy
 in Vertex allows you to view the status of any job you have submitted for processing and download any product 
 that has been successfully processed. You will need to sign in with 
 [Earthdata Login credentials](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
-before results will display.
+before results will display, as described in our 
+[Authentication documentation](authentication.md#authentication-in-vertex "Jump to the Authentication in Vertex section of the Authentication page").
 
 Refer to the 
 [On Demand Search section of the Vertex User Manual](https://docs.asf.alaska.edu/vertex/manual/#on-demand-products-search-options "docs.asf.alaska.edu" ){target=_blank} 

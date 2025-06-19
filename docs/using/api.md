@@ -9,7 +9,7 @@ A friendly interface for exploring the API is available at:
 ## Authentication
 
 In order to use the API, you'll need a `asf-urs` session cookie, which you can get
-by [signing in to Vertex](https://search.asf.alaska.edu/#/){target=_blank}
+by [signing in to Vertex](https://search.asf.alaska.edu/#/){target=_blank}.
 
 ![vertex sign in](../images/vertex-sign-in.png)
 

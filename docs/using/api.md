@@ -23,7 +23,7 @@ page for more detailed guidance on authentication methods.
 ### Confirm you are authenticated
 
 To confirm you are authenticated, you can run a `GET` request to our `/user` endpoint.
-Select the blue `GET` button next to `/user` and click the `Try it out` button
+Select the blue `GET` button next to `/user` and click the `Try it out` button.
 ![GET /user try](../images/get_user_try.png)
 
 Then, execute the request and look at the response

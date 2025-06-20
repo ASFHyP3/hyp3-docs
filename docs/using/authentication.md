@@ -90,7 +90,7 @@ the Earthdata Login website before you will be able to submit API requests succe
 
 ### Earthdata Login Bearer Token
 
-Request an EDL token, as described in the 
+Users can generate an EDL token, as described in the 
 [Earthdata Login Token](#earthdata-login-token "Jump to the Earthdata Login Token section of this document") 
 section of this document.
 

@@ -61,7 +61,7 @@ to enable access to all functionality in Vertex linked to EDL credentials, inclu
 
 ![Sign In with EDL in Vertex](../images/vertex-sign-in.png "Sign In with Earthdata Login Credentials in Vertex")
 
-## Authentication with HyP3 API
+## Authentication with the HyP3 API
 
 There are a couple of authentication methods available when using the 
 [HyP3 API](../using/api.md "hyp3-docs.asf.alaska.edu/using/api"). 
@@ -103,7 +103,7 @@ Once you have a valid EDL token:
 
 ![Authorize EDL Token in API](../images/api-authorize.png "Authorize an EDL Token in the HyP3 API")
 
-## Authentication with HyP3 Python SDK
+## Authentication with the HyP3 Python SDK
 
 Authentication to the API occurs during the 
 [initialization of the HyP3 object](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk.HyP3.__init__ "HyP3 SDK API Reference" ){target=_blank} 

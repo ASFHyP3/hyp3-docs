@@ -105,10 +105,9 @@ Once you have a valid EDL token:
 
 ## Authentication with HyP3 Python SDK
 
-To authenticate to the API when using the 
-[HyP3 Python SDK](../using/sdk.md "hyp3-docs.asf.alaska.edu/using/sdk"), 
-use the 
-[HyP3 initializer method](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk.HyP3.__init__ "HyP3 SDK API Reference" ){target=_blank}.
+Authentication to the API occurs during the 
+[initialization of the HyP3 object](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk.HyP3.__init__ "HyP3 SDK API Reference" ){target=_blank} 
+when using the [HyP3 Python SDK](../using/sdk.md "hyp3-docs.asf.alaska.edu/using/sdk").
 
 There are several options for authentication when using this method, including:
 

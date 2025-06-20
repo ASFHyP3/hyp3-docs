@@ -105,7 +105,7 @@ which you can get by signing in to
 with your Earthdata Login Credentials. You can also authenticate using an 
 [Earthdata Login token](authentication.md#earthdata-login-token "Jump to the Earhtdata Login Token section of the Authentication page"). 
 Refer to 
-[Authentication with HyP3 API](authentication.md#authentication-with-hyp3-api "Jump to the Authentication page") 
+[Authentication with HyP3 API](authentication.md#authentication-with-the-hyp3-api "Jump to the Authentication page") 
 documentation for more information on the available authentication methods.
 
 #### Entering Search Parameters

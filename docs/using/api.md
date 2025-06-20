@@ -18,7 +18,7 @@ Alternatively, you can
 [generate an Earthdata Login user token](https://urs.earthdata.nasa.gov/documentation/for_users/user_token "urs.earthdata.nasa.gov/documentation/for_users/user_token" ){target=_blank}, 
 and enter it in the `BearerAuth` field by clicking the `Authorize` button in the Swagger UI. 
 
-Refer to the [Authentication](authentication.md#authentication-with-hyp3-api "Jump to Authentication page") 
+Refer to the [Authentication](authentication.md#authentication-with-the-hyp3-api "Jump to Authentication page") 
 page for more detailed guidance on authentication methods.
 
 ### Confirm you are authenticated

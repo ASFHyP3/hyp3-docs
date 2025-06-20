@@ -287,7 +287,7 @@ Create a text file containing a list of download URLs (i.e `urls.txt`). This lis
 ways, including but not limited to: 
 
 - the [Copy URLs](#copy-urls "Jump to the Copy URLs section of this document") functionality in Vertex
-- extracting [URLS from an API response JSON](#response-json "Jump to the Response JSON section of this document")
+- extracting [URLs from an API response JSON](#response-json "Jump to the Response JSON section of this document")
 - converting a list of download URLs for 
   [On Demand product zip files](#product-packaging-and-extraction "Jump to the Product Packaging and Extraction section of this document") 
   to a list of 

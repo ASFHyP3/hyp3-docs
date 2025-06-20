@@ -3,6 +3,7 @@
 .kmz
 .lycheeignore
 .md-button
+.netrc
 .png
 .png.aux.xml
 .png.xml

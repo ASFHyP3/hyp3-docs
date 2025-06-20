@@ -9,7 +9,7 @@ There are a number of interfaces available for downloading products generated On
 
 The [On Demand Search](https://search.asf.alaska.edu/#/?maxResults=1000&searchType=On%20Demand "Vertex On Demand Search" ){target=_blank} 
 in Vertex allows you to view the status of any job you have submitted for processing and download any product 
-that has been successfully processed. You will need to sign in with 
+that has been successfully processed. You will need to sign in to Vertex with 
 [Earthdata Login credentials](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
 before results will display, as described in our 
 [Authentication documentation](authentication.md#authentication-in-vertex "Jump to the Authentication in Vertex section of the Authentication page").
@@ -98,10 +98,9 @@ provides the ability to
 
 #### Authentication
 
-To look up your On Demand jobs, you will need to have a valid Earthdata Login (asf-urs) session cookie, 
+To look up your On Demand jobs, you will need to have a valid ASF Earthdata Login (asf-urs) session cookie, 
 which you can get by signing in to 
-[Vertex](https://search.asf.alaska.edu/ "search.asf.alaska.edu" ){target=_blank} or 
-[Earthdata Login](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
+[Vertex](https://search.asf.alaska.edu/ "search.asf.alaska.edu" ){target=_blank} 
 with your Earthdata Login Credentials. You can also authenticate using an 
 [Earthdata Login token](authentication.md#earthdata-login-token "Jump to the Earhtdata Login Token section of the Authentication page"). 
 Refer to 
@@ -196,9 +195,9 @@ demonstrates how to use the SDK for a range of workflows.
 
 #### Authentication
 
-To access product information using the SDK, you will need to authenticate using the 
-[HyP3 initializer method](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk.HyP3.__init__ "HyP3 SDK API Reference" ){target=_blank}. 
-You can add Earthdata Login (EDL) credentials to your local `netrc` file, or use a prompt to enter either 
+To access product information using the SDK, you will need to authenticate when 
+[initializing the HyP3 object](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk.HyP3.__init__ "HyP3 SDK API Reference" ){target=_blank}. 
+You can add Earthdata Login (EDL) credentials to your local `.netrc` file, or use a prompt to enter either 
 EDL credentials or an EDL token manually. Refer to the 
 [Authenticate HyP3 in the SDK notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb "Authenticate HyP3 in the SDK notebook" ){target=_blank} 
 for authentication guidance and sample code.

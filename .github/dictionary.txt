@@ -57,6 +57,7 @@ ASF
 ASF's
 ASF-specific
 asf-tools
+asf-urs
 asf_search
 asf_tools
 ASFHyP3
@@ -72,6 +73,7 @@ base_name
 base_name_mb
 basename
 bbbbbb
+BearerAuth
 Bekaert
 beta0
 burst2safe
@@ -130,6 +132,7 @@ EGM96
 electro-magnetic
 endblock
 entrypoint
+EOSDIS
 EPSG:4326
 ESA
 ESA's
@@ -468,6 +471,7 @@ watermasking
 webpage
 Werner
 Werner's
+Wget
 WGS84
 whitespace
 Woodhouse

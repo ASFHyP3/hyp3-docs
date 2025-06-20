@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.10.14]
+## [0.10.15]
 
 ### Added
 * Added tutorial link for the [HyP3 Authentication in SDK notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/develop/docs/hyp3_authentication.ipynb)
@@ -15,6 +15,11 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 * Reworked [Downloads](docs/using/downloading.md) page to incorporate links to the [Authentication](docs/using/authentication.md) page
 * Updated [SDK example notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb) to reference new [HyP3 Authentication in SDK notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/develop/docs/hyp3_authentication.ipynb)
+
+## [0.10.14]
+
+### Changed
+* Updated [ARIA S1 GUNW Product Guide](https://hyp3-docs.asf.alaska.edu/guides/gunw_product_guide) to include information about ingest of on-demand products to the archive
 
 ## [0.10.13]
 

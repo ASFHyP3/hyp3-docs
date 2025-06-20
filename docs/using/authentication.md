@@ -111,7 +111,7 @@ when using the [HyP3 Python SDK](../using/sdk.md "hyp3-docs.asf.alaska.edu/using
 
 There are several options for authentication when using this method, including:
 
-- Adding your Earthdata Login (EDL) credentials to your local `netrc` file
+- Adding your Earthdata Login (EDL) credentials to your local `.netrc` file
 - Entering your EDL [username and password](#username-and-password "Jump to the Username and Password section of this document")
 - Entering an [EDL token](#earthdata-login-token "Jump to the Earthdata Login Token section of this document")
 

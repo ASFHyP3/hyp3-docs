@@ -196,9 +196,9 @@ demonstrates how to use the SDK for a range of workflows.
 
 #### Authentication
 
-To access product information using the SDK, you will need to authenticate using the 
-[HyP3 initializer method](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk.HyP3.__init__ "HyP3 SDK API Reference" ){target=_blank}. 
-You can add Earthdata Login (EDL) credentials to your local `netrc` file, or use a prompt to enter either 
+To access product information using the SDK, you will need to authenticate when 
+[initializing the HyP3 object](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk.HyP3.__init__ "HyP3 SDK API Reference" ){target=_blank}. 
+You can add Earthdata Login (EDL) credentials to your local `.netrc` file, or use a prompt to enter either 
 EDL credentials or an EDL token manually. Refer to the 
 [Authenticate HyP3 in the SDK notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb "Authenticate HyP3 in the SDK notebook" ){target=_blank} 
 for authentication guidance and sample code.

@@ -8,7 +8,7 @@ cost and complexity of performing such processing yourself.
 [![Vertex Image](../images/vertex.png "Click to open Vertex in a new tab")](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank}
 
 On Demand products are generated using ASF's HyP3 processing platform. Refer to the 
-[Products](../products.md "Jump to the Products page of the documentation") for more information about the 
+[Products](../products.md "Jump to the Products page of the documentation") page for more information about the 
 different On Demand products ASF offers. 
 
 ## Getting Started

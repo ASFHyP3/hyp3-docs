@@ -9,7 +9,7 @@ There are a number of interfaces available for downloading products generated On
 
 The [On Demand Search](https://search.asf.alaska.edu/#/?maxResults=1000&searchType=On%20Demand "Vertex On Demand Search" ){target=_blank} 
 in Vertex allows you to view the status of any job you have submitted for processing and download any product 
-that has been successfully processed. You will need to sign in with 
+that has been successfully processed. You will need to sign in to Vertex with 
 [Earthdata Login credentials](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
 before results will display, as described in our 
 [Authentication documentation](authentication.md#authentication-in-vertex "Jump to the Authentication in Vertex section of the Authentication page").
@@ -98,10 +98,9 @@ provides the ability to
 
 #### Authentication
 
-To look up your On Demand jobs, you will need to have a valid Earthdata Login (asf-urs) session cookie, 
+To look up your On Demand jobs, you will need to have a valid ASF Earthdata Login (asf-urs) session cookie, 
 which you can get by signing in to 
-[Vertex](https://search.asf.alaska.edu/ "search.asf.alaska.edu" ){target=_blank} or 
-[Earthdata Login](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
+[Vertex](https://search.asf.alaska.edu/ "search.asf.alaska.edu" ){target=_blank} 
 with your Earthdata Login Credentials. You can also authenticate using an 
 [Earthdata Login token](authentication.md#earthdata-login-token "Jump to the Earhtdata Login Token section of the Authentication page"). 
 Refer to 

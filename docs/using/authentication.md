@@ -34,10 +34,10 @@ field, as you may encounter access errors if that field is left blank.
 
 ### Username and Password
 
-Most authentication workflows involve providing the username and password you set when registering for EDL. The 
-[Earthdata Login GUI](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
-is the most common authentication method, and EOSDIS interfaces will generally provide access to this GUI when 
-EDL credentials are required.
+Most authentication workflows involve providing the username and password you set when registering for EDL. You may 
+be prompted to enter them into a GUI, such as when you are signing in to Vertex, they may be saved in a .netrc file 
+for automatic use with some programmatic interfaces, or you may be prompted to enter them as part of a scripted 
+workflow.
 
 ### Earthdata Login Token
 
@@ -72,21 +72,24 @@ but you can also use an
 
 ### Earthdata Login Session Cookie
 
-You can authorize the HyP3 API by having a valid Earthdata Login (asf-urs) session cookie in your web environment. 
-This cookie is generated when you enter your Earthdata Login credentials in a browser, either by 
-[authenticating in Vertex](#authentication-in-vertex "Jump to the Authenticating in Vertex section of this document") 
-or by using the 
-[Earthdata Login](#username-and-password "Jump to the EDL Username and Password section of this document") 
-web interface directly.
+You can authorize the HyP3 API by having a valid ASF Earthdata Login (asf-urs) session cookie in your web environment. 
+This cookie is generated when you 
+[sign in to Vertex](#authentication-in-vertex "Jump to the Authenticating in Vertex section of this document"). 
 
-If you do not have a valid session cookie before launching the 
+If you log in directly to the 
+[Earthdata Login GUI](#username-and-password "Jump to the EDL Username and Password section of this document"), 
+you will still need to click the **Sign In** button in Vertex to generate the ASF-specific cookie before you can 
+use the HyP3 API. If you already have a generic EDL cookie, you will not need to re-enter your credentials
+(you will be logged in automatically), but the asf-urs cookie will still be generated.
+
+If you do not have a valid asf-urs session cookie before launching the 
 [HyP3 API Swagger UI](https://hyp3-api.asf.alaska.edu/ui/ "hyp3-api.asf.alaska.edu/ui" ){target=_blank}, 
 you will see an error response when submitting an API request: 
 
 ![Authentication Error](../images/authentication-error.png)
 
-You may need to refresh the browser window with the HyP3 API Swagger UI after you authenticate using either Vertex or 
-the Earthdata Login website before you will be able to submit API requests successfully.
+You may need to refresh the browser window with the HyP3 API Swagger UI after you sign in to Vertex 
+before you will be able to submit API requests successfully.
 
 ### Earthdata Login Bearer Token
 

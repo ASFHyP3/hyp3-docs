@@ -34,11 +34,11 @@ You can add products to the Download Queue one by one using the cart icon, or yo
 products for a specific set of products and add them all to the Download Queue using the **Queue** button at the 
 top of the results list. 
 
-![Downloading Multiple Products](../images/download-vertex-multiple.png "Download Multiple On Demand Products")
-
 There are a number of options available for filtering your On Demand products, with the most useful being the 
 **Project Name** field. You can assign a project name when submitting jobs for processing to easily group items 
 together that are used for the same project. 
+
+![Downloading Multiple Products](../images/download-vertex-multiple.png "Download Multiple On Demand Products")
 
 Once you've added products to the Download Queue, either by using the individual cart icons or the bulk Queue 
 button, click the **Downloads** icon in the top right of the Vertex web interface. When you open the Download Queue, 

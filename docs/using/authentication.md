@@ -22,7 +22,7 @@ authenticate in order to look up the download URLs for these products.
 [Earthdata Login](https://urs.earthdata.nasa.gov/ "https://urs.earthdata.nasa.gov/" ){target=_blank} 
 (EDL) is the authentication method used across NASA's 
 [Earth Observation System Data Information System (EOSDIS)](https://www.earthdata.nasa.gov/about/esdis/eosdis "www.earthdata.nasa.gov/about/esdis/eosdis" ){target=_blank}. 
-It allows users to access any of the Earth Science data products served by EOSDIS, regardless of the 
+These credentials provide access to any of the Earth Science data products served by EOSDIS, regardless of the 
 identity of the data curator.
 
 There is no cost to 

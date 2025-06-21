@@ -19,9 +19,9 @@ To request On Demand products, visit
 and [Sign In with your Earthdata Login credentials](authentication.md#authentication-in-vertex).
 
 1. **Select your scenes** - RTC processing is available for Sentinel-1 GRD-H and SLC scenes with a beam mode of IW. 
-   InSAR processing requires pairs of IW SLC scenes. Use the Geographic Search in Vertex to find individual scenes to 
-   submit for RTC processing, or reference scenes to use for generating InSAR pairs. For InSAR, once you find a 
-   reference scene, use either the 
+   InSAR processing requires pairs of IW SLC scenes or bursts. Use the Geographic Search in Vertex to find individual 
+   scenes to submit for RTC processing, or to find reference scenes to use for generating InSAR pairs. For InSAR, once 
+   you find a reference scene or burst, use either the 
    [Baseline](https://docs.asf.alaska.edu/vertex/baseline/ "Vertex Baseline Documentation" ){target=_blank} 
    or [SBAS](https://docs.asf.alaska.edu/vertex/sbas/ "Vertex SBAS Documentation" ){target=_blank} 
    Search to find scene pairs to submit for processing. 

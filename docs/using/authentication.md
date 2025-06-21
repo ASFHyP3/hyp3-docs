@@ -77,7 +77,7 @@ This cookie is generated when you
 [sign in to Vertex](#authentication-in-vertex "Jump to the Authenticating in Vertex section of this document"). 
 
 If you log in directly to the 
-[Earthdata Login GUI](#username-and-password "Jump to the EDL Username and Password section of this document"), 
+[Earthdata Login GUI](https://urs.earthdata.nasa.gov/ "https://urs.earthdata.nasa.gov/" ){target=_blank}, 
 you will still need to click the **Sign In** button in Vertex to generate the ASF-specific cookie before you can 
 use the HyP3 API. If you already have a generic EDL cookie, you will not need to re-enter your credentials
 (you will be logged in automatically), but the asf-urs cookie will still be generated.

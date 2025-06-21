@@ -66,8 +66,8 @@ capability in Chrome to download several items at a time.
 
 #### Copy URLs
 You can also click on **Copy URLs** (located next to the Data Download button) to copy a list of the download URLs 
-for the files in your Download Queue, which you can then paste into your own download script or 
-[Wget command](#downloading-with-wget "Jump to the Downloading with Wget section of this document"). 
+for the files in your Download Queue, which you can then paste into your own download script or use with the 
+[`wget` utlity](#downloading-with-wget "Jump to the Downloading with Wget section of this document"). 
 
 ## Programmatic Access
 
@@ -98,13 +98,13 @@ provides the ability to
 #### Authentication
 
 To look up your On Demand jobs, you will need to have a valid ASF Earthdata Login (asf-urs) session cookie, 
-which you can get by signing in to 
-[Vertex](https://search.asf.alaska.edu/ "search.asf.alaska.edu" ){target=_blank} 
-with your Earthdata Login Credentials. You can also authenticate using an 
-[Earthdata Login token](authentication.md#earthdata-login-token "Jump to the Earhtdata Login Token section of the Authentication page"). 
+which you can get by 
+[signing in to Vertex with your Earthdata Login Credentials](./authentication.md#authentication-in-vertex "Jump to the Authentication in Vertex section of the Authentication page"). 
+You can also authenticate using an 
+[Earthdata Login token](authentication.md#earthdata-login-token "Jump to the Earthdata Login Token section of the Authentication page"). 
 Refer to 
 [Authentication with HyP3 API](authentication.md#authentication-with-the-hyp3-api "Jump to the Authentication page") 
-documentation for more information on the available authentication methods.
+documentation for more information about the available authentication methods.
 
 #### Entering Search Parameters
 

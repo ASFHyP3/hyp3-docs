@@ -67,7 +67,7 @@ capability in Chrome to download several items at a time.
 #### Copy URLs
 You can also click on **Copy URLs** (located next to the Data Download button) to copy a list of the download URLs 
 for the files in your Download Queue, which you can then paste into your own download script or use with the 
-[`wget` utlity](#downloading-with-wget "Jump to the Downloading with Wget section of this document"). 
+[`wget` utility](#downloading-with-wget "Jump to the Downloading with Wget section of this document"). 
 
 ## Programmatic Access
 

@@ -205,6 +205,7 @@ for authentication guidance and sample code.
 
 Use the `find_jobs` method from the `HyP3` class to generate a list of products to download (batch), then use the 
 `download_files` method from the `Batch` class to download all the products in the list. Refer to the 
+[Finding Existing Jobs section](https://hyp3-docs.asf.alaska.edu/using/sdk/#finding-existing-jobs "Jump to Finding Existing Jobs section of the Using SDK page") and the 
 [HyP3 SDK API Reference](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk "hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk" ){target=_blank} 
 for more information. 
 

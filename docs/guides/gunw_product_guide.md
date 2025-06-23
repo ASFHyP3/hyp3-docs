@@ -58,10 +58,10 @@ search portal by following these steps:
 
 1. **Access Vertex** – Go to the ASF Vertex website: 
    [https://search.asf.alaska.edu](https://search.asf.alaska.edu "search.asf.alaska.edu" ){target=blank}.
-2. **Search for ARIA-S1-GUNW Products** – In the dataset selector, click on “ARIA S1 GUNW” to filter for these 
+2. **Search for ARIA-S1-GUNW Products** – In the dataset selector, click on “ARIA-S1-GUNW” to filter for these 
    specific products. You can refine results by specifying a geographic region, date range, or other criteria 
    using the search filters in the “filters” panel.
-![Vertex ARIA S1 GUNW Dataset Selection](../images/vertex-GUNW-dataset-selection.png)
+![Vertex ARIA-S1-GUNW Dataset Selection](../images/vertex-GUNW-dataset-selection.png)
 3. **Preview and Select Products** – Click on individual results to view metadata, including coverage area and 
    acquisition details.
 4. **Download Data** – To download, first add ARIA-S1-GUNW products to your Download Queue using the 
@@ -75,14 +75,14 @@ ARIA-S1-GUNW jobs for On Demand processing.
 
 If the ARIA-S1-GUNW products you need are not available in the archive, you can use ASF's On Demand platform to submit 
 custom ARIA-S1-GUNW jobs for processing. Once processing is complete, there are a couple of different approaches for 
-[accessing On Demand GUNW products](#data-access "Jump to the Data Access section of this document"):
+[accessing On Demand ARIA-S1-GUNW products](#data-access "Jump to the Data Access section of this document"):
 
 - You can access them as you would any other 
   [On-Demand](#accessing-products-using-on-demand-interfaces "Jump to the On Demand Interfaces section of this document" ) 
   products from ASF.
     - The download links provided will be active for 14 days.
 - Products generated On Demand are also added to the archive and can be accessed by 
-  [searching for ARIA S1 GUNW](#accessing-products-in-the-archive "Jump to the Accessing Products in the Archive section of this document" ) 
+  [searching for ARIA-S1-GUNW](#accessing-products-in-the-archive "Jump to the Accessing Products in the Archive section of this document" ) 
   products.
     - The links to the archived products never expire. 
 
@@ -158,12 +158,12 @@ will help ensure that you find results that match the desired [ARIA Frame ID](#a
 - **Start Date** / **End Date**: restrict the date range as desired
 - **File type**: `L1 Single Look Complex (SLC)`
 - **Beam Mode**: `IW`
-- **Polarization**: select both `VV+VH` and `VV` (HH ARIA S1 GUNW products are not supported)
+- **Polarization**: select both `VV+VH` and `VV` (HH ARIA-S1-GUNW products are not supported)
     - Note that only the VV polarization will be processed, but this will include VV SLCs acquired in both 
       dual-pol and single-pol modes in the search results
 - **Direction**: match the orbit direction of the [ARIA Frame ID reference geojson](#aria-frame-id-maps "Jump to the ARIA Frame ID Maps section of this document") 
   used to select the desired ARIA Frame (or reference the `dir` attribute from the ARIA Frame ID geojson file)
-- **Subtype**: select both `SA` and `SB` (ARIA S1 GUNW products from Sentinel-1C acquisitions are not currently
+- **Subtype**: select both `SA` and `SB` (ARIA-S1-GUNW products from Sentinel-1C acquisitions are not currently
   supported)
 - **Path Start** / **Path End**: path of the desired ARIA Frame (`path` attribute from the ARIA Frame ID geojson file)
 
@@ -179,7 +179,7 @@ the SLCs available for the submitted dates do not meet this coverage constraint,
 
 !!! warning "On Demand support not currently available in Vertex for ARIA-S1-GUNW products"
 
-    On-demand ARIA S1 GUNW products cannot currently be submitted directly from Vertex, but we plan to 
+    On-demand ARIA-S1-GUNW products cannot currently be submitted directly from Vertex, but we plan to 
     make this feature available in the second half of 2025. 
 
     Vertex is still very useful for selecting Sentinel-1 SLC acquisition dates to submit for processing, 
@@ -205,7 +205,7 @@ The dates must be in YYYY-MM-DD format.
 
 #### Reference and Secondary Dates
 
-ARIA S1 GUNW products use the SLCs from the more recent pass as reference, while secondary scenes are from the 
+ARIA-S1-GUNW products use the SLCs from the more recent pass as reference, while secondary scenes are from the 
 earlier pass in the date pair. **When submitting a job using the HyP3 API or SDK, the date passed as the reference 
 date *must* be more recent than the secondary date. If they are in the opposite order, an error will be raised.**
 
@@ -214,17 +214,15 @@ Note that ***this order is opposite of the other On-Demand InSAR products availa
 [Burst InSAR](burst_insar_product_guide.md "Jump to Burst InSAR Product Guide" ) products use the 
 earlier acquisition as reference, and the more recent acquisition as secondary. This means that the ARIA unwrapped 
 interferograms have the *opposite* sign from the unwrapped interferograms generated by the other ASF On-Demand InSAR 
-workflows. In the ARIA S1 GUNW products, negative phase differences indicate movement away from the sensor and 
+workflows. In the ARIA-S1-GUNW products, negative phase differences indicate movement away from the sensor and 
 positive phase differences indicate movement towards the sensor.
 
 ## Product Packaging
 
 ### Naming convention
 
-The ARIA-S1-GUNW product names contain detailed information about their acquisition and processing, 
-as illustrated in the figure below.
-
-GUNW naming convention includes:
+The ARIA-S1-GUNW product names contain detailed information about the acquisitions and processing 
+workflows used to generate them, including:
 
 - Satellite orientation. A for ascending or D for descending
 - Satellite look direction. L for left-looking or R for right-looking
@@ -234,6 +232,8 @@ GUNW naming convention includes:
 - Longitude and latitude in whole degrees
 - Unique product hash
 - Standard product version
+
+This results in a filename constructed as illustrated in the figure below:
 
 ![GUNW naming scheme](../images/asf_gunw_names.png "Breakdown of ARIA-S1-GUNW Naming Scheme")
 
@@ -307,26 +307,26 @@ tropospheric delay correction are provided for both the reference and secondary 
 
 ## Data Access
 
-ARIA S1 GUNW On-Demand products can be accessed like any other On-Demand product, but can also be accessed by 
+ARIA-S1-GUNW On Demand products can be accessed like any other On Demand product, but can also be accessed by 
 searching the archive.
 
 ### Accessing Products using On Demand Interfaces
 
 Refer to the 
 [Downloads](../using/downloading.md "hyp3-docs.asf.alaska.edu/using/downloading") 
-page for more information on viewing and downloading ARIA S1 GUNW On Demand products in Vertex or programmatically. 
+page for more information on viewing and downloading ARIA-S1-GUNW On Demand products in Vertex or programmatically. 
 Once processing is complete, download links for On Demand products are valid for 14 days.
 
 ### Accessing Products in the Archive
 
-Once On Demand ARIA S1 GUNW jobs have been processed, they are added to the archive of ARIA-S1-GUNW products. Use the 
-[Geographic Search in Vertex](https://search.asf.alaska.edu/#/?maxResults=1000&dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA) "ASF Search for ARIA S1 GUNW Products" ){target=_blank} 
+Once On Demand ARIA-S1-GUNW jobs have been processed, they are added to the archive of ARIA-S1-GUNW products. Use the 
+[Geographic Search in Vertex](https://search.asf.alaska.edu/#/?maxResults=1000&dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA) "ASF Search for ARIA-S1-GUNW Products" ){target=_blank} 
 to find all of the products (both those generated by the ARIA project and those generated On Demand) available for your 
 area of interest. The download links for archived ARIA-S1-GUNW products never expire. 
 
 You can also search for ARIA-S1-GUNW products programmatically using the 
 [asf_search Python Package](https://pypi.org/project/asf-search/ "pypi.org/project/asf-search" ){target=_blank}. 
-Again, results will include products generated by the ARIA team along with any On Demand ARIA S1 GUNW products that 
+Again, results will include products generated by the ARIA team along with any On Demand ARIA-S1-GUNW products that 
 have completed processing.
 
 ## References

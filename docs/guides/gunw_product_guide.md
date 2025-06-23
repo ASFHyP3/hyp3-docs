@@ -179,7 +179,7 @@ the SLCs available for the submitted dates do not meet this coverage constraint,
 
 !!! warning "On Demand support not currently available in Vertex for ARIA-S1-GUNW products"
 
-    On-demand ARIA-S1-GUNW products cannot currently be submitted directly from Vertex, but we plan to 
+    On Demand ARIA-S1-GUNW products cannot currently be submitted directly from Vertex, but we plan to 
     make this feature available in the second half of 2025. 
 
     Vertex is still very useful for selecting Sentinel-1 SLC acquisition dates to submit for processing, 

@@ -36,7 +36,7 @@ which demonstrate practical applications.
     [Ordering On Demand Products section](#ordering-on-demand-products "Jump to Ordering On Demand Products section of this document") 
     for information on ordering ARIA-S1-GUNW products for specific Sentinel-1 acquisitions.
 
-## Archived and On-Demand Products
+## Archived and On Demand Products
 
 While there is a large archive of ARIA-S1-GUNW products that have already been generated and are 
 [ready for download](#accessing-existing-products "Jump to Accessing Existing Products section of this document"), 

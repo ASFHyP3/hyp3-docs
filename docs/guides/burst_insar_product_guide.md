@@ -530,7 +530,7 @@ files.
 {% endblock %}
 
 {% block download_tutorial %}
-Step-by-step instructions for finding and downloading RTC On Demand products in Vertex are available in the 
+Step-by-step instructions for finding and downloading Burst InSAR On Demand products in Vertex are available in the 
 [Downloading On Demand Products](https://storymaps.arcgis.com/stories/191bf1b6962c402086807390b3ce63b0#ref-n-4rF6zW "Burst-Based InSAR for Sentinel-1 On Demand StoryMap Tutorial - Downloading On Demand Products"){target=_blank} 
 section of the 
 [Burst-Based InSAR for Sentinel-1 On Demand](https://storymaps.arcgis.com/stories/191bf1b6962c402086807390b3ce63b0 "Burst-Based InSAR for Sentinel-1 On Demand StoryMap Tutorial" ){target=_blank} interactive StoryMap tutorial.

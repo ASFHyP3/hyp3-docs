@@ -5,7 +5,7 @@ channels:
 dependencies:
   - 'python=3.10'
   - pip
-  - hyp3_sdk=7.7.0  # also pinned in docs/using/sdk.md
+  - hyp3_sdk=7.7.1  # also pinned in docs/using/sdk.md
   - asf_tools=0.8.3  # also pinned in docs/tools/asf_tools.md
   - pip:
     - -r requirements.txt

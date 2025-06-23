@@ -58,7 +58,7 @@ search portal by following these steps:
 
 1. **Access Vertex** – Go to the ASF Vertex website: 
    [https://search.asf.alaska.edu](https://search.asf.alaska.edu "search.asf.alaska.edu" ){target=blank}.
-2. **Search for ARIA-S1-GUNW Products** – In the dataset selector, click on “ARIA-S1-GUNW” to filter for these 
+2. **Search for ARIA-S1-GUNW Products** – In the dataset selector, click on “ARIA S1 GUNW” to filter for these 
    specific products. You can refine results by specifying a geographic region, date range, or other criteria 
    using the search filters in the “filters” panel.
 ![Vertex ARIA-S1-GUNW Dataset Selection](../images/vertex-GUNW-dataset-selection.png)

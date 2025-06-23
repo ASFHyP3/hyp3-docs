@@ -7,16 +7,15 @@ There are a number of interfaces available for downloading products generated On
 
 ## On Demand Search in Vertex
 
-The [On Demand Search](https://search.asf.alaska.edu/#/?maxResults=1000&searchType=On%20Demand "Vertex On Demand Search" ){target=_blank} 
-in Vertex allows you to view the status of any job you have submitted for processing and download any product 
-that has been successfully processed. You will need to sign in to Vertex with 
-[Earthdata Login credentials](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
-before results will display, as described in our 
-[Authentication documentation](authentication.md#authentication-in-vertex "Jump to the Authentication in Vertex section of the Authentication page").
+The [On Demand Products](https://search.asf.alaska.edu/#/?maxResults=1000&searchType=On%20Demand "Vertex On Demand Search" ){target=_blank} 
+Search Type in Vertex allows you to view the status of any job you have submitted for processing and download any 
+product that has been successfully processed. You will need to 
+[sign in to Vertex with Earthdata Login credentials](authentication.md#authentication-in-vertex "Jump to the Authentication in Vertex section of the Authentication page") 
+to search for On Demand products. 
 
 Refer to the 
-[On Demand Search section of the Vertex User Manual](https://docs.asf.alaska.edu/vertex/manual/#on-demand-products-search-options "docs.asf.alaska.edu" ){target=_blank} 
-for more information about On Demand Search functionality. 
+[On Demand Products section of the Vertex User Manual](https://docs.asf.alaska.edu/vertex/manual/#on-demand-products-search-options "docs.asf.alaska.edu" ){target=_blank} 
+for more information about On Demand search functionality. 
 
 ### Downloading Individual Products
 
@@ -35,11 +34,11 @@ You can add products to the Download Queue one by one using the cart icon, or yo
 products for a specific set of products and add them all to the Download Queue using the **Queue** button at the 
 top of the results list. 
 
-![Downloading Multiple Products](../images/download-vertex-multiple.png "Download Multiple On Demand Products")
-
 There are a number of options available for filtering your On Demand products, with the most useful being the 
 **Project Name** field. You can assign a project name when submitting jobs for processing to easily group items 
 together that are used for the same project. 
+
+![Downloading Multiple Products](../images/download-vertex-multiple.png "Download Multiple On Demand Products")
 
 Once you've added products to the Download Queue, either by using the individual cart icons or the bulk Queue 
 button, click the **Downloads** icon in the top right of the Vertex web interface. When you open the Download Queue, 
@@ -67,8 +66,8 @@ capability in Chrome to download several items at a time.
 
 #### Copy URLs
 You can also click on **Copy URLs** (located next to the Data Download button) to copy a list of the download URLs 
-for the files in your Download Queue, which you can then paste into your own download script or 
-[Wget command](#downloading-with-wget "Jump to the Downloading with Wget section of this document"). 
+for the files in your Download Queue, which you can then paste into your own download script or use with the 
+[`wget` utility](#downloading-with-wget "Jump to the Downloading with Wget section of this document"). 
 
 ## Programmatic Access
 
@@ -99,13 +98,13 @@ provides the ability to
 #### Authentication
 
 To look up your On Demand jobs, you will need to have a valid ASF Earthdata Login (asf-urs) session cookie, 
-which you can get by signing in to 
-[Vertex](https://search.asf.alaska.edu/ "search.asf.alaska.edu" ){target=_blank} 
-with your Earthdata Login Credentials. You can also authenticate using an 
-[Earthdata Login token](authentication.md#earthdata-login-token "Jump to the Earhtdata Login Token section of the Authentication page"). 
+which you can get by 
+[signing in to Vertex with your Earthdata Login Credentials](./authentication.md#authentication-in-vertex "Jump to the Authentication in Vertex section of the Authentication page"). 
+You can also authenticate using an 
+[Earthdata Login token](authentication.md#earthdata-login-token "Jump to the Earthdata Login Token section of the Authentication page"). 
 Refer to 
 [Authentication with HyP3 API](authentication.md#authentication-with-the-hyp3-api "Jump to the Authentication page") 
-documentation for more information on the available authentication methods.
+documentation for more information about the available authentication methods.
 
 #### Entering Search Parameters
 
@@ -195,8 +194,8 @@ demonstrates how to use the SDK for a range of workflows.
 
 #### Authentication
 
-To access product information using the SDK, you will need to authenticate when 
-[initializing the HyP3 object](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk.HyP3.__init__ "HyP3 SDK API Reference" ){target=_blank}. 
+To access product information using the SDK, you will need to 
+[authenticate when initializing the HyP3 object](./authentication.md#authentication-with-the-hyp3-python-sdk "Jump to the Authentication with the HyP3 Python SDK section of the Authentication page"). 
 You can add Earthdata Login (EDL) credentials to your local `.netrc` file, or use a prompt to enter either 
 EDL credentials or an EDL token manually. Refer to the 
 [Authenticate HyP3 in the SDK notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb "Authenticate HyP3 in the SDK notebook" ){target=_blank} 
@@ -206,6 +205,7 @@ for authentication guidance and sample code.
 
 Use the `find_jobs` method from the `HyP3` class to generate a list of products to download (batch), then use the 
 `download_files` method from the `Batch` class to download all the products in the list. Refer to the 
+[Finding Existing Jobs section](https://hyp3-docs.asf.alaska.edu/using/sdk/#finding-existing-jobs "Jump to Finding Existing Jobs section of the Using SDK page") and the 
 [HyP3 SDK API Reference](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk "hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk" ){target=_blank} 
 for more information. 
 

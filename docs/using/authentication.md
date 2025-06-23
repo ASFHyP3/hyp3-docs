@@ -9,7 +9,7 @@ The options available for authentication depend on the interface you are using t
 
 - The [Vertex](https://search.asf.alaska.edu/ "search.asf.alaska.edu" ){target=_blank} search and discovery 
   interface is a map-based web application that allows users to search for Sentinel-1 acquisitions, submit them for 
-  processing by HyP3, and access the resulting On Demand products.
+  processing by HyP3, and access the resulting [On Demand products](../products.md "hyp3-docs.asf.alaska.edu/products").
 - Programmatic access to HyP3 functionality and output products is available through:
     - The [HyP3 API](../using/api.md "hyp3-docs.asf.alaska.edu/using/api")
     - The [HyP3 Python SDK](../using/sdk.md "hyp3-docs.asf.alaska.edu/using/sdk")
@@ -22,7 +22,7 @@ authenticate in order to look up the download URLs for these products.
 [Earthdata Login](https://urs.earthdata.nasa.gov/ "https://urs.earthdata.nasa.gov/" ){target=_blank} 
 (EDL) is the authentication method used across NASA's 
 [Earth Observation System Data Information System (EOSDIS)](https://www.earthdata.nasa.gov/about/esdis/eosdis "www.earthdata.nasa.gov/about/esdis/eosdis" ){target=_blank}. 
-It allows users to access any of the Earth Science data products served by EOSDIS, regardless of the 
+These credentials provide access to any of the Earth Science data products served by EOSDIS, regardless of the 
 identity of the data curator.
 
 There is no cost to 
@@ -77,10 +77,12 @@ This cookie is generated when you
 [sign in to Vertex](#authentication-in-vertex "Jump to the Authenticating in Vertex section of this document"). 
 
 If you log in directly to the 
-[Earthdata Login GUI](#username-and-password "Jump to the EDL Username and Password section of this document"), 
-you will still need to click the **Sign In** button in Vertex to generate the ASF-specific cookie before you can 
-use the HyP3 API. If you already have a generic EDL cookie, you will not need to re-enter your credentials
-(you will be logged in automatically), but the asf-urs cookie will still be generated.
+[Earthdata Login GUI](https://urs.earthdata.nasa.gov/ "https://urs.earthdata.nasa.gov/" ){target=_blank}, 
+you will still need to click the 
+[**Sign In** button in Vertex](#authentication-in-vertex "Jump to the Authentication in Vertex section of this document") 
+to generate the ASF-specific cookie before you can use the HyP3 API. If you have already logged in with EDL in 
+another application, you may not need to re-enter your credentials, but clicking the **Sign In** button will 
+generate the necessary asf-urs session cookie.
 
 If you do not have a valid asf-urs session cookie before launching the 
 [HyP3 API Swagger UI](https://hyp3-api.asf.alaska.edu/ui/ "hyp3-api.asf.alaska.edu/ui" ){target=_blank}, 

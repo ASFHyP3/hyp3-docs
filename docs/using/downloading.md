@@ -7,15 +7,15 @@ There are a number of interfaces available for downloading products generated On
 
 ## On Demand Search in Vertex
 
-The [On Demand Search](https://search.asf.alaska.edu/#/?maxResults=1000&searchType=On%20Demand "Vertex On Demand Search" ){target=_blank} 
-in Vertex allows you to view the status of any job you have submitted for processing and download any product 
-that has been successfully processed. You will need to sign in with 
-[Earthdata Login credentials](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
-before results will display.
+The [On Demand Products](https://search.asf.alaska.edu/#/?maxResults=1000&searchType=On%20Demand "Vertex On Demand Search" ){target=_blank} 
+Search Type in Vertex allows you to view the status of any job you have submitted for processing and download any 
+product that has been successfully processed. You will need to 
+[sign in to Vertex with Earthdata Login credentials](authentication.md#authentication-in-vertex "Jump to the Authentication in Vertex section of the Authentication page") 
+to search for On Demand products. 
 
 Refer to the 
-[On Demand Search section of the Vertex User Manual](https://docs.asf.alaska.edu/vertex/manual/#on-demand-products-search-options "docs.asf.alaska.edu" ){target=_blank} 
-for more information. 
+[On Demand Products section of the Vertex User Manual](https://docs.asf.alaska.edu/vertex/manual/#on-demand-products-search-options "docs.asf.alaska.edu" ){target=_blank} 
+for more information about On Demand search functionality. 
 
 ### Downloading Individual Products
 
@@ -34,11 +34,11 @@ You can add products to the Download Queue one by one using the cart icon, or yo
 products for a specific set of products and add them all to the Download Queue using the **Queue** button at the 
 top of the results list. 
 
-![Downloading Multiple Products](../images/download-vertex-multiple.png "Download Multiple On Demand Products")
-
 There are a number of options available for filtering your On Demand products, with the most useful being the 
 **Project Name** field. You can assign a project name when submitting jobs for processing to easily group items 
 together that are used for the same project. 
+
+![Downloading Multiple Products](../images/download-vertex-multiple.png "Download Multiple On Demand Products")
 
 Once you've added products to the Download Queue, either by using the individual cart icons or the bulk Queue 
 button, click the **Downloads** icon in the top right of the Vertex web interface. When you open the Download Queue, 
@@ -66,7 +66,8 @@ capability in Chrome to download several items at a time.
 
 #### Copy URLs
 You can also click on **Copy URLs** (located next to the Data Download button) to copy a list of the download URLs 
-for the files in your Download Queue, which you can then paste into your own download script. 
+for the files in your Download Queue, which you can then paste into your own download script or use with the 
+[`wget` utility](#downloading-with-wget "Jump to the Downloading with Wget section of this document"). 
 
 ## Programmatic Access
 
@@ -93,22 +94,32 @@ is better suited for scripting search and download workflows for On Demand produ
 The [HyP3 API](../using/api.md "hyp3-docs.asf.alaska.edu/using/api") 
 provides the ability to 
 [Query Submitted Jobs](../using/api.md#querying-jobs "hyp3-docs.asf.alaska.edu/using/api/#querying-jobs"). 
-To look up your On Demand jobs, you will need to have a valid Earthdata Login (asf-urs) session cookie, 
-which you can get by signing in to 
-[Vertex](https://search.asf.alaska.edu/ "search.asf.alaska.edu" ){target=_blank} or 
-[Earthdata Login](https://urs.earthdata.nasa.gov/ "urs.earthdata.nasa.gov" ){target=_blank} 
-with your Earthdata Login Credentials.
+
+#### Authentication
+
+To look up your On Demand jobs, you will need to have a valid ASF Earthdata Login (asf-urs) session cookie, 
+which you can get by 
+[signing in to Vertex with your Earthdata Login Credentials](./authentication.md#authentication-in-vertex "Jump to the Authentication in Vertex section of the Authentication page"). 
+You can also authenticate using an 
+[Earthdata Login token](authentication.md#earthdata-login-token "Jump to the Earthdata Login Token section of the Authentication page"). 
+Refer to 
+[Authentication with HyP3 API](authentication.md#authentication-with-the-hyp3-api "Jump to the Authentication page") 
+documentation for more information about the available authentication methods.
+
+#### Entering Search Parameters
 
 Note that the parameter fields in the UI are populated with defaults. You will need to edit or delete any of the 
 default values that do not align with your desired search parameters. The start and end date fields reference 
 the date/time the jobs were submitted, not the date/time of the acquisitions used to generate the products. 
 
-The returns from your 
+#### Response JSON
+
+The response from your 
 [Get Jobs API request](https://hyp3-api.asf.alaska.edu/ui/#/default/get_jobs "hyp3-api.asf.alaska.edu/ui/#/default/get_jobs" ){target=_blank} 
-include download links for the browse images and thumbnails used to display the product contents in Vertex, 
+includes download links for the browse images and thumbnails used to display the product contents in Vertex, 
 as well as the link to the complete product package with a `.zip` extension. 
 
-Here is an example of a response:
+Here is an example of a response JSON:
 ```
 {
   "jobs": [
@@ -170,7 +181,7 @@ The download URL for the full product package is provided near the end of the re
 array of the response JSON. The value is paired with the `url` key in the `files` array. 
 
 You can copy and paste each product URL directly into a browser window, or script a workflow to pull all the 
-product URLs from the response JSON into a bulk download function. It may be more convenient to use the 
+product URLs from the response JSON into a bulk download function or text file. It may be more convenient to use the 
 [HyP3 Python SDK](#accessing-products-using-the-hyp3-python-sdk "Jump to the Accessing Products Using the HyP3 Python SDK section of this document") 
 to script bulk download functionality.
 
@@ -181,15 +192,20 @@ and provides convenient search and download functionality for On Demand products
 [This example notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb "SDK Example Notebook" ){target=_blank} 
 demonstrates how to use the SDK for a range of workflows. 
 
-To access product information using the SDK, you will need to authenticate using the 
-[HyP3 initializer method](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk.HyP3.__init__ "HyP3 SDK API Reference" ){target=_blank}. 
-You can either add your credentials to your local `netrc` file, or enter your credentials manually. 
-Refer to the ***Authenticating to the API*** section in the 
-[SDK Example Notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb "SDK Example Notebook" ){target=_blank} 
-for guidance. 
+#### Authentication
+
+To access product information using the SDK, you will need to 
+[authenticate when initializing the HyP3 object](./authentication.md#authentication-with-the-hyp3-python-sdk "Jump to the Authentication with the HyP3 Python SDK section of the Authentication page"). 
+You can add Earthdata Login (EDL) credentials to your local `.netrc` file, or use a prompt to enter either 
+EDL credentials or an EDL token manually. Refer to the 
+[Authenticate HyP3 in the SDK notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb "Authenticate HyP3 in the SDK notebook" ){target=_blank} 
+for authentication guidance and sample code.
+
+#### Search for Jobs
 
 Use the `find_jobs` method from the `HyP3` class to generate a list of products to download (batch), then use the 
 `download_files` method from the `Batch` class to download all the products in the list. Refer to the 
+[Finding Existing Jobs section](https://hyp3-docs.asf.alaska.edu/using/sdk/#finding-existing-jobs "Jump to Finding Existing Jobs section of the Using SDK page") and the 
 [HyP3 SDK API Reference](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk "hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk" ){target=_blank} 
 for more information. 
 
@@ -255,3 +271,32 @@ will not be able to look up another user's list of Project Names using this inte
 The HyP3 Python SDK provides the capability to search for products submitted by other users. Refer to 
 [this notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb "Using the HyP3 SDK to search for jobs run by another user" ){target=_blank} 
 to learn how.
+
+## Downloading with Wget
+
+While [authentication](authentication.md "Jump to the Authentication page") is required to look up download URLs 
+for On Demand products, it is not required for actually using the download URLs. This makes it easy to use any 
+method you prefer for downloading the products.
+
+Some users may find the 
+[Wget](https://www.gnu.org/software/wget/manual/wget.html "www.gnu.org/software/wget/manual/wget.html" ){target=_blank} 
+utility useful for downloading a long list of products.
+
+Create a text file containing a list of download URLs (i.e `urls.txt`). This list can be generated a number of 
+ways, including but not limited to: 
+
+- the [Copy URLs](#copy-urls "Jump to the Copy URLs section of this document") functionality in Vertex
+- extracting [URLs from an API response JSON](#response-json "Jump to the Response JSON section of this document")
+- converting a list of download URLs for 
+  [On Demand product zip files](#product-packaging-and-extraction "Jump to the Product Packaging and Extraction section of this document") 
+  to a list of 
+  [individual file URLs](#downloading-individual-files "Jump to the Downloading Individual Files section of this document")
+
+You can then use the 
+[input file](https://www.gnu.org/software/wget/manual/wget.html#index-input_002dfile "Wget Manual: Input File" ){target=_blank} 
+option with Wget to reference the text file containing a list of download URLs. 
+
+The command is simply the following:
+```
+wget -i urls.txt
+```

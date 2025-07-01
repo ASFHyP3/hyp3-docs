@@ -13,7 +13,7 @@ along-path bursts to merge together into a single interferogram.
 ## Burst InSAR Software
 
 The Sentinel-1 Burst InSAR products are generated using the Jet Propulsion Laboratory's 
-[ISCE2 software](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2" ){target=_blank}. 
+[ISCE2 software](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2Farget=_blank}. 
 ASF is committed to transparency in product development, and we are pleased to be able to offer an InSAR product 
 that leverages open-source software for processing.
 
@@ -260,7 +260,7 @@ Burst InSAR processing is performed using the outputs from the processes detaile
 The Burst InSAR processing code is contained in the 
 [`insar_tops_burst.py`](https://github.com/ASFHyP3/hyp3-isce2/blob/main/src/hyp3_isce2/insar_tops_burst.py ){target=_blank} 
 script. This script follows the ISCE2 InSAR workflow in 
-[topsApp.py](https://github.com/isce-framework/isce2/blob/main/applications/topsApp.py#L982){target=_blank} 
+[`topsApp.py`](https://github.com/isce-framework/isce2/blob/main/applications/topsApp.py#L982){target=_blank} 
 for the steps `startup` through `geocode`. 
 
 If the reference and secondary SAFE files include multiple bursts, processing is performed on a burst-by-burst 

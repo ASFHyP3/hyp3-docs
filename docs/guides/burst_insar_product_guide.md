@@ -258,9 +258,9 @@ Burst InSAR processing is performed using the outputs from the processes detaile
 [Pre-Processing](#pre-processing "Jump to the Pre-Processing section of this document") section. 
 
 The Burst InSAR processing code is contained in the 
-[`insar_tops_burst.py`](https://github.com/ASFHyP3/hyp3-isce2/blob/main/src/hyp3_isce2/insar_tops_burst.py ){target=_blank} 
+[`insar_tops_burst.py`](https://github.com/ASFHyP3/hyp3-isce2/blob/main/src/hyp3_isce2/insar_tops_burst.py "https://github.com/ASFHyP3/hyp3-isce2/blob/main/src/hyp3_isce2/insar_tops_burst.py" ){target=_blank} 
 script. This script follows the ISCE2 InSAR workflow in 
-[`topsApp.py`](https://github.com/isce-framework/isce2/blob/main/applications/topsApp.py#L982){target=_blank} 
+[`topsApp.py`](https://github.com/isce-framework/isce2/blob/main/applications/topsApp.py#L982 "https://github.com/isce-framework/isce2/blob/main/applications/topsApp.py#L982" ){target=_blank} 
 for the steps `startup` through `geocode`. 
 
 If the reference and secondary SAFE files include multiple bursts, processing is performed on a burst-by-burst 

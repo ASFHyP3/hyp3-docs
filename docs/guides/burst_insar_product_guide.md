@@ -66,7 +66,7 @@ section for details). The number of bursts processed impacts the number of credi
 
 ## Sentinel-1 Bursts
 
-[Single Look Complex](https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1-algorithms/single-look-complex 'https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1-algorithms/single-look-complex' ){target=_blank} 
+[Single Look Complex](https://sentiwiki.copernicus.eu/web/s1-processing#S1-Processing-Single-Look-Complex "https://sentiwiki.copernicus.eu/web/s1-processing#S1-Processing-Single-Look-Complex" ){target=_blank} 
 (SLC) data is required to generate interferograms from Sentinel-1 data. The European Space Agency (ESA) packages this 
 type of data into Interferometric Wide (IW) SLC products, which are available for download from ASF. These IW SLC 
 products include three sub-swaths, each containing many individual burst SLCs.

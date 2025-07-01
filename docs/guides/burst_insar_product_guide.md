@@ -13,7 +13,7 @@ along-path bursts to merge together into a single interferogram.
 ## Burst InSAR Software
 
 The Sentinel-1 Burst InSAR products are generated using the Jet Propulsion Laboratory's 
-[ISCE2 software](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2Farget=_blank}. 
+[ISCE2 software](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2" ){target=_blank}. 
 ASF is committed to transparency in product development, and we are pleased to be able to offer an InSAR product 
 that leverages open-source software for processing.
 

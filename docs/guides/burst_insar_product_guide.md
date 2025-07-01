@@ -72,7 +72,7 @@ type of data into Interferometric Wide (IW) SLC products, which are available fo
 products include three sub-swaths, each containing many individual burst SLCs.
 
 Historically, most InSAR processing has been performed using the full IW SLC scene, but ASF has developed a method of 
-[extracting the individual SLC bursts](https://sentinel1-burst-documentation.asf.alaska.edu/ 'https://sentinel1-burst-documentation.asf.alaska.edu/' ){target=_blank} 
+[extracting the individual SLC bursts](https://sentinel1-burst-documentation.asf.alaska.edu/ "https://sentinel1-burst-documentation.asf.alaska.edu/" ){target=_blank} 
 from IW SLC products, which facilitates burst-based processing workflows.
 
 Refer to the 

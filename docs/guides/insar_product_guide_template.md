@@ -64,13 +64,19 @@ For deformation mapping, it is best to minimize the perpendicular baseline whene
 
 ## Ordering On Demand InSAR Products
 
-All of ASF's On Demand InSAR products are generated using the [HyP3 platform](https://hyp3-docs.asf.alaska.edu/products/ "hyp3-docs.asf.alaska.edu" ){target=_blank}. Jobs can be submitted for processing using the [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} data portal, the [HyP3 Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank} or the [HyP3 API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank}.
+All of ASF's On Demand InSAR products are generated using the 
+[HyP3 platform](https://hyp3-docs.asf.alaska.edu/products/ "hyp3-docs.asf.alaska.edu" ){target=_blank}. 
+Jobs can be submitted for processing using the 
+[Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} data portal, the 
+[HyP3 Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/ "https://hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank} 
+or the [HyP3 API](https://hyp3-docs.asf.alaska.edu/using/api/ "https://hyp3-docs.asf.alaska.edu/using/api" ){target=_blank}.
 
-!!! warning "Sentinel-1C Support for InSAR Processing" 
+!!! tip "InSAR Processing Now Supports Sentinel-1C!" 
 
-    GAMMA software supports Sentinel-1C acquisitions as input for InSAR processing, but ISCE2 software currently does 
-    not. Until ISCE2 is updated, users will only be able to submit jobs including Sentinel-1C SLCs for processing 
-    using [On Demand InSAR](insar_product_guide.md), not [On Demand Burst InSAR](burst_insar_product_guide.md).
+    GAMMA and ISCE2 software have both been updated to support Sentinel-1C acquisitions as input for InSAR processing. 
+    Users can now use any Sentinel-1 IW SLCs in the archive, including those acquired by Sentinel-1C, as input for 
+    either [On Demand InSAR](insar_product_guide.md) or [On Demand Burst InSAR](burst_insar_product_guide.md) 
+    processing.
 
 ### Vertex
 InSAR pairs are selected in [Vertex](https://search.asf.alaska.edu/#/ "https://search.asf.alaska.edu" ){target=_blank} using either the [Baseline Search](https://docs.asf.alaska.edu/vertex/baseline/ "https://docs.asf.alaska.edu/vertex/baseline" ){target=_blank} or the [SBAS Search](https://docs.asf.alaska.edu/vertex/sbas/ "https://docs.asf.alaska.edu/vertex/sbas" ){target=_blank} interface. The process of selecting pairs is the same for both IW SLC products and individual SLC bursts, but you will need to select the appropriate dataset when searching for content. As illustrated below, select the **Sentinel-1** option in the Dataset menu to search for IW SLC products, and select the **S1 Bursts** option to search for individual SLC bursts.

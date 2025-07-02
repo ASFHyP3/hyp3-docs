@@ -221,7 +221,7 @@ See the [ARIA-S1-GUNW Product Guide Frame ID section](../guides/gunw_product_gui
 AutoRIFT supports processing Sentinel-1, Sentinel-2, or Landsat-8 Collection 2 pairs.
 
 * Sentinel-1 jobs are submitted using [ESA granule IDs](https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention){target=_blank}
-* Sentinel-2 jobs are submitted using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-2-msi/naming-convention){target=_blank}
+* Sentinel-2 jobs are submitted using [ESA granule IDs](https://sentiwiki.copernicus.eu/web/s2-products#S2Products-NamingConventionS2-Products-Naming-Conventiontrue){target=_blank}
 * Landsat-8 Collection 2 jobs are submitted using [USGS scene IDs](https://www.usgs.gov/faqs/what-naming-convention-landsat-collection-2-level-1-and-level-2-scenes?qt-news_science_products=0#qt-news_science_products){target=_blank}
 
 To submit an example set of jobs including all supported missions, you could write a job list like:

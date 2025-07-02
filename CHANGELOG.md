@@ -8,6 +8,9 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.10.17]
 
+### Changed
+* Updated messages about Sentinel-1C support to indicate that burst-based InSAR now supports S1C as input
+
 ### Fixed
 * Fixed outdated ESA Sentinel links. 
 

@@ -24,7 +24,8 @@ footprint, and are generated using [GAMMA software](https://www.gamma-rs.ch/soft
 !!! tip "Sentinel-1C acquisitions now supported!" 
 
     ISCE2 has been updated to support processing of data collected by Sentinel-1C. Users can now submit 
-    burst-based InSAR jobs for any available Sentinel-1 burst SLCs.
+    burst-based InSAR jobs for any available bursts from Sentinel-1 IW SLCs, regardless of the platform used 
+    to acquire the data.
 
 ## Burst InSAR Job Types
 

@@ -21,15 +21,10 @@ For those who would prefer to work at the scale of a full IW SLC, our original
 [On Demand InSAR](insar_product_guide.md){target=_blank} products are still available. These products have a larger 
 footprint, and are generated using [GAMMA software](https://www.gamma-rs.ch/software){target=_blank}.
 
-!!! warning "Sentinel-1C acquisitions not yet supported" 
+!!! tip "Sentinel-1C acquisitions now supported!" 
 
-    ISCE2 software does not currently support processing Sentinel-1C acquisitions. Until the software package is 
-    updated, users will only be able to submit granules acquired by Sentinel-1A or Sentinel-1B for Burst InSAR 
-    processing. 
-
-    Users can submit full IW Sentinel-1C granules for processing to InSAR using the 
-    [On Demand InSAR](insar_product_guide.md "Sentinel-1 InSAR Product Guide") option, which leverages 
-    GAMMA software rather than ISCE2. 
+    ISCE2 has been updated to support processing of data collected by Sentinel-1C. Users can now submit 
+    burst-based InSAR jobs for any available Sentinel-1 burst SLCs.
 
 ## Burst InSAR Job Types
 

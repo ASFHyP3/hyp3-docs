@@ -21,15 +21,11 @@ For those who would prefer to work at the scale of a full IW SLC, our original
 [On Demand InSAR](insar_product_guide.md){target=_blank} products are still available. These products have a larger 
 footprint, and are generated using [GAMMA software](https://www.gamma-rs.ch/software){target=_blank}.
 
-!!! warning "Sentinel-1C acquisitions not yet supported" 
+!!! tip "Sentinel-1C acquisitions now supported!" 
 
-    ISCE2 software does not currently support processing Sentinel-1C acquisitions. Until the software package is 
-    updated, users will only be able to submit granules acquired by Sentinel-1A or Sentinel-1B for Burst InSAR 
-    processing. 
-
-    Users can submit full IW Sentinel-1C granules for processing to InSAR using the 
-    [On Demand InSAR](insar_product_guide.md "Sentinel-1 InSAR Product Guide") option, which leverages 
-    GAMMA software rather than ISCE2. 
+    ISCE2 has been updated to support processing of data collected by Sentinel-1C. Users can now submit 
+    burst-based InSAR jobs for any available bursts from Sentinel-1 IW SLCs, regardless of the platform used 
+    to acquire the data.
 
 ## Burst InSAR Job Types
 
@@ -66,13 +62,13 @@ section for details). The number of bursts processed impacts the number of credi
 
 ## Sentinel-1 Bursts
 
-[Single Look Complex](https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1-algorithms/single-look-complex 'https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1-algorithms/single-look-complex' ){target=_blank} 
+[Single Look Complex](https://sentiwiki.copernicus.eu/web/s1-processing#S1-Processing-Single-Look-Complex "https://sentiwiki.copernicus.eu/web/s1-processing#S1-Processing-Single-Look-Complex" ){target=_blank} 
 (SLC) data is required to generate interferograms from Sentinel-1 data. The European Space Agency (ESA) packages this 
 type of data into Interferometric Wide (IW) SLC products, which are available for download from ASF. These IW SLC 
 products include three sub-swaths, each containing many individual burst SLCs.
 
 Historically, most InSAR processing has been performed using the full IW SLC scene, but ASF has developed a method of 
-[extracting the individual SLC bursts](https://sentinel1-burst-documentation.asf.alaska.edu/ 'https://sentinel1-burst-documentation.asf.alaska.edu/' ){target=_blank} 
+[extracting the individual SLC bursts](https://sentinel1-burst-documentation.asf.alaska.edu/ "https://sentinel1-burst-documentation.asf.alaska.edu/" ){target=_blank} 
 from IW SLC products, which facilitates burst-based processing workflows.
 
 Refer to the 
@@ -185,7 +181,7 @@ downloading the DEM file, and downloading the orbit and auxiliary data files.
 #### Download Burst Data
 
 The Burst InSAR workflow accepts as input a reference and secondary set of 
-[Interferometric Wide swath Single Look Complex](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath "https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath" ){target=_blank} 
+[Interferometric Wide swath Single Look Complex](https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-InterferometricWideSwathS1-Mission-Interferometric-Wide-Swath "https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-InterferometricWideSwath" ){target=_blank} 
 (IW SLC) burst granules. Internally, each set of bursts must share the same polarization (VV or HH), and be 
 contiguous along a single Sentinel-1 orbit path. See 
 [Considerations for Selecting Input Bursts](#considerations-for-selecting-input-bursts "Jump to the Considerations for Selecting Input Bursts section in this document") 
@@ -258,9 +254,9 @@ Burst InSAR processing is performed using the outputs from the processes detaile
 [Pre-Processing](#pre-processing "Jump to the Pre-Processing section of this document") section. 
 
 The Burst InSAR processing code is contained in the 
-[`insar_tops_burst.py`](https://github.com/ASFHyP3/hyp3-isce2/blob/main/src/hyp3_isce2/insar_tops_burst.py ){target=_blank} 
+[`insar_tops_burst.py`](https://github.com/ASFHyP3/hyp3-isce2/blob/main/src/hyp3_isce2/insar_tops_burst.py "https://github.com/ASFHyP3/hyp3-isce2/blob/main/src/hyp3_isce2/insar_tops_burst.py" ){target=_blank} 
 script. This script follows the ISCE2 InSAR workflow in 
-[topsApp.py](https://github.com/isce-framework/isce2/blob/main/applications/topsApp.py#L982){target=_blank} 
+[`topsApp.py`](https://github.com/isce-framework/isce2/blob/main/applications/topsApp.py#L982 "https://github.com/isce-framework/isce2/blob/main/applications/topsApp.py#L982" ){target=_blank} 
 for the steps `startup` through `geocode`. 
 
 If the reference and secondary SAFE files include multiple bursts, processing is performed on a burst-by-burst 

@@ -29,7 +29,7 @@ mission to full observation capacity [as of March 26, 2025](https://dataspace.co
 The Sentinel-1 satellites each have a 12-day repeat cycle, but when there are two functioning satellites, their orbits 
 are offset 180 degrees so that one or the other will pass over the same location on earth every 6 days. Under this 
 scenario, select areas of interest are imaged with a 6-day interval, as described in the 
-[mission observation scenario](https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/observation-scenario "https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/observation-scenario" ){target=_blank}, 
+[mission observation scenario](https://sentinels.copernicus.eu/copernicus/sentinel-1/observation-scenario "https://sentinels.copernicus.eu/copernicus/sentinel-1/observation-scenario" ){target=_blank}, 
 while most landmasses are imaged on a 12-day repeat cycle.
 
 For the time period between when Sentinel-1B stopped acquiring data and Sentinel-1C started acquiring data, 

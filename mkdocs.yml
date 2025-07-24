@@ -119,8 +119,8 @@ plugins:
   - mkdocstrings:
       handlers:
           python:
-            inherited_members: true
-            rendering:
+            options:
+              inherited_members: true
               show_root_toc_entry: false
   - redirects:
       redirect_maps:

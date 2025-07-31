@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.19]
+
+### Changed
+* The cost of autoRIFT jobs has been reduced back to 25 credits, from 50 credits, on the [credits](docs/using/credits.md) page. 
+
 ## [0.10.18]
 
 ### Changed

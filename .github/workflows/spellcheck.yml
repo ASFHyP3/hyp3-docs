@@ -7,7 +7,7 @@ jobs:
     name: Spellcheck
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Spellcheck
         uses: tbroadley/spellchecker-cli-action@v1
         with:

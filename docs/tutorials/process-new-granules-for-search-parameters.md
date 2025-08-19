@@ -1,6 +1,6 @@
 # Using the HyP3 SDK to process new granules for given search parameters
 
-In the past, ASF offered subscription functionality for HyP3 products.
+In the past, ASF offered subscription functionality for HyP3 products. 
 A user could create a subscription with a particular set of search parameters (date range, area of interest, etc.), 
 and new Sentinel-1 acquisitions that met these criteria would be automatically submitted for processing.
 

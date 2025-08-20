@@ -55,7 +55,7 @@ Credits can be purchased at
 
 An email is sent to you when your order is successfully submitted. It includes the details about your purchase, 
 including the EDL username(s) to which the credits will be assigned. If you notice any errors, send an email to 
-uso@asf.alaska.edu describing the issue. 
+uso@asf.alaska.edu describing the issue.
 
 ### Order Completion
 
@@ -63,7 +63,8 @@ Once we receive your order, we will add the number of purchased credits to the s
 will be completed within two business days of the order confirmation.*** You will receive an email confirming that the 
 credits have been assigned to your username, at which point they are available for use.
 
-Credits do not expire. 
+Credits do not expire. We do not currently offer a service for automatic credit replenishment, so you will need to 
+place additional orders as necessary when your credit balance is depleted.
 
 ### Refunds
 

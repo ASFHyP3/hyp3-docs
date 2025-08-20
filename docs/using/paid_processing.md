@@ -44,12 +44,17 @@ Credits can be purchased at
       confirmation emails indicating when the order was received and processed, and if there are any issues that 
       need to be resolved.
 
-4. Enter your payment information, and click the **Continue** button to access the order confirmation and receipt pages.
+4. Enter your payment information, and click the **Continue** button.
+
+5. Review your order details, and click the **Submit Order** button if everything is correct.
+
+6. An order summary will be displayed, which you can print if desired. It will also be sent to the email you 
+   entered during checkout.
 
 ### Order Confirmation
 
-An email is sent when your order is successfully submitted. It includes the details about your purchase, including the 
-EDL username(s) to which the credits will be assigned. If you notice any errors, send an email to 
+An email is sent to you when your order is successfully submitted. It includes the details about your purchase, 
+including the EDL username(s) to which the credits will be assigned. If you notice any errors, send an email to 
 uso@asf.alaska.edu describing the issue. 
 
 ### Order Completion

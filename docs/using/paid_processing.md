@@ -9,8 +9,15 @@ allows, ASF supports a
 This deployment offers the same 
 [On Demand products](../products.md "Jump to the Products landing page of the documentation") 
 as the standard HyP3 deployment, and users access their additional credit limit by logging in with the same 
-[Earthdata Login Credentials](authentication.md#earthdata-login-edl) used for ordering 
-free On Demand products.
+[Earthdata Login Credentials](authentication.md#earthdata-login-edl) 
+used for ordering free On Demand products.
+
+The paid HyP3 deployment has a different API Endpoint than the standard HyP3 deployment. Users can interact with the 
+paid HyP3 deployment using the same methods as the standard HyP3 deployment, but will need to accommodate the 
+different API URL. Refer to the 
+[API Endpoint](#api-endpoint "Jump to the API Endpoint section of this document") 
+section for more information on how to access the paid HyP3 API Endpoint using Vertex, the HyP3 API, or the 
+HyP3 Python SDK.
 
 ## Purchasing Credits
 

@@ -33,9 +33,9 @@ Credits can be purchased at
    then click the **Continue** button. It is very important to enter your username correctly, 
    as the credits you purchase will be associated with this username. 
 
-    - You can add credits linked to multiple EDL usernames to the same cart. To add additional credits linked to a 
+    - You can purchase credits for multiple EDL usernames in one order. To add additional credits linked to a 
       different username, click the **Continue Shopping** button, and add another amount of credits to your cart. 
-      You will again be prompted for an EDL username, and you can enter the other username. 
+      You will again be prompted for an EDL username, and you can enter a different username. 
 
 3. When you are ready to check out, click the **Checkout** button. You do not need to Login on the Checkout page. 
    Simply enter your email in the *Contact Information* section, and click the **Checkout as Guest** button. 

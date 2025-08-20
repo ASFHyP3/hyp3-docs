@@ -117,7 +117,7 @@ or are using the
 
 Refer to the individual Product Guides in the 
 [Products](../products.md "Jump to the Products documentation page") 
-for details on submitting jobs for each product type.
+section for details on submitting jobs for each product type.
 
 As with the standard HyP3 deployment, you can check how many credits are remaining for your username in the 
 paid deployment to determine how many jobs you will be able to submit. 

@@ -37,7 +37,7 @@ Credits can be purchased at
       confirmation emails indicating when the order was received and processed, and if there are any issues that 
       need to be resolved.
 
-4. Enter your payment information, and click the **Continue** button to access the order confirmation and recipt pages.
+4. Enter your payment information, and click the **Continue** button to access the order confirmation and receipt pages.
 
 ### Order Confirmation
 

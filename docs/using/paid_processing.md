@@ -70,7 +70,7 @@ place additional orders as necessary when your credit balance is depleted.
 
 If you purchase credits in error, need to assign purchased credits to a different username, or if you end up not 
 needing all of your purchased credits, send an email to uso@asf.alaska.edu and we will work with you to resolve 
-the issue.
+the issue. Any refunds will be credited to the original method of payment.
 
 ## API Endpoint
 

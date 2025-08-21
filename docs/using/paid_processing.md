@@ -22,11 +22,12 @@ HyP3 Python SDK.
 ## Purchasing Credits
 
 Credits can be purchased at 
-[ASF's Web Store](https://epay.alaska.edu/C21563_ustores/web/product_detail.jsp?PRODUCTID=7530&SINGLESTORE=true "https://epay.alaska.edu" ){target=_blank}. Credit purchases will be processed within two business days, and purchased credits do not expire.
+[ASF's Web Store](https://epay.alaska.edu/C21563_ustores/web/store_cat.jsp?STOREID=141&CATID=410&SINGLESTORE=true "https://epay.alaska.edu" ){target=_blank}. 
+Credit purchases will be processed within two business days, and purchased credits do not expire.
 
 1. Select the quantity of credits you need, and click the **Add to Cart** button. Refer to the 
-   [credit cost table](credits.md#credit-cost-table) to calculate the number of credits you will need to process the 
-   products you require.
+   [credit cost table](credits.md#credit-cost-table) 
+   to calculate the number of credits you will need to process the products you require.
 
 2. Enter your 
    [Earthdata Login (EDL)](authentication.md#earthdata-login-edl) username, 

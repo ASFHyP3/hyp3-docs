@@ -25,7 +25,7 @@ Credits can be purchased at
 [ASF's Web Store](https://epay.alaska.edu/C21563_ustores/web/store_cat.jsp?STOREID=141&CATID=410&SINGLESTORE=true "https://epay.alaska.edu" ){target=_blank}. 
 Credit purchases will be processed within two business days, and purchased credits do not expire.
 
-[![Click to Purchase On Demand Processing Credits](../images/purchase-credits-button-left.png "Click to purchase On Demand Processing Credits")](https://epay.alaska.edu/C21563_ustores/web/store_cat.jsp?STOREID=141&CATID=410&SINGLESTORE=true "Click to purchase On Demand Processing Credits from epay.alaska.edu" ){target=_blank}
+[![Click to Purchase On Demand Processing Credits](../images/purchase-credits-button-small.png "Click to purchase On Demand Processing Credits")](https://epay.alaska.edu/C21563_ustores/web/store_cat.jsp?STOREID=141&CATID=410&SINGLESTORE=true "Click to purchase On Demand Processing Credits from epay.alaska.edu" ){target=_blank}
 
 1. Select the quantity of credits you need, and click the **Add to Cart** button. Refer to the 
    [credit cost table](credits.md#credit-cost-table) 

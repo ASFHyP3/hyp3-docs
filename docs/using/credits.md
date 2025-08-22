@@ -48,6 +48,8 @@ allotment on jobs of that particular type.
 | [**AutoRIFT**](https://its-live.jpl.nasa.gov/){target=_blank} |                |                               |
 | {{ table_indent() }} Standard product (120-m pixel spacing)   |             25 |  {{ max_jobs_per_month(25) }} |
 
+## Credit Allocation
+
 The credit cost of a given job is roughly proportional to the computational resources required to process the job,
 allowing us to distribute our resources more equitably.
 This supports our mission of

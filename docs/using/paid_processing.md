@@ -27,7 +27,7 @@ Credit purchases will be processed within two business days, and purchased credi
 
 [![Click to Purchase On Demand Processing Credits](../images/purchase-credits-button-small.png "Click to purchase On Demand Processing Credits")](https://epay.alaska.edu/C21563_ustores/web/store_cat.jsp?STOREID=141&CATID=410&SINGLESTORE=true "Click to purchase On Demand Processing Credits from epay.alaska.edu" ){target=_blank}
 
-1. Select the quantity of credits you need, and click the **Add to Cart** button. Refer to the 
+1. Select the quantity of credits you need, and click the **Add to Cart** icon. Refer to the 
    [credit cost table](credits.md#credit-cost-table) 
    to calculate the number of credits you will need to process the products you require.
 
@@ -35,13 +35,16 @@ Credit purchases will be processed within two business days, and purchased credi
    [Earthdata Login (EDL)](authentication.md#earthdata-login-edl) username, 
    then click the **Continue** button. It is very important to enter your username correctly, 
    as the credits you purchase will be associated with this username. 
+![Enter EDL Prompt](../images/purchase-credits-edl.png "Enter EDL Username when prompted")
 
     - You can purchase credits for multiple EDL usernames in one order. To add additional credits linked to a 
-      different username, click the **Continue Shopping** button, and add another amount of credits to your cart. 
-      You will again be prompted for an EDL username, and you can enter a different username. 
+      different username, click the **Continue Shopping** button after adding the first credit amount to your cart, 
+      then add another amount of credits to your cart. You will again be prompted for an EDL username, and you can 
+      enter a different username.
 
 3. When you are ready to check out, click the **Checkout** button. You do not need to Login on the Checkout page. 
    Simply enter your email in the *Contact Information* section, and click the **Checkout as Guest** button. 
+![Checkout as Guest](../images/purchase-credits-guest.png "Checkout as Guest")
 
     - It is very important to enter an email address at which you can be reached, as this will be used to send the 
       confirmation emails indicating when the order was received and processed, and if there are any issues that 

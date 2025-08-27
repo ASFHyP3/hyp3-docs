@@ -33,7 +33,7 @@ Credit purchases will be processed within two business days, and purchased credi
 
 2. Enter your 
    [Earthdata Login (EDL)](authentication.md#earthdata-login-edl) username, 
-   then click the **Continue** button. It is very important to enter your username correctly, 
+   then click the **Continue** button. **It is very important to enter your username correctly**, 
    as the credits you purchase will be associated with this username. 
 ![Enter EDL Prompt](../images/purchase-credits-edl.png "Enter EDL Username when prompted")
 
@@ -46,7 +46,7 @@ Credit purchases will be processed within two business days, and purchased credi
    Simply enter your email in the *Contact Information* section, and click the **Checkout as Guest** button. 
 ![Checkout as Guest](../images/purchase-credits-guest.png "Checkout as Guest")
 
-    - It is very important to enter an email address at which you can be reached, as this will be used to send the 
+    - **It is very important to enter an email address at which you can be reached**, as this will be used to send the 
       confirmation emails indicating when the order was received and processed, and if there are any issues that 
       need to be resolved.
 
@@ -74,9 +74,9 @@ place additional orders as necessary when your credit balance is depleted.
 
 ### Refunds
 
-If you purchase credits in error, need to assign purchased credits to a different username, or if you end up not 
-needing all of your purchased credits, send an email to uso@asf.alaska.edu and we will work with you to resolve 
-the issue. Any refunds will be credited to the original method of payment.
+If you purchase credits in error or need to assign purchased credits to a different username, send an email to 
+uso@asf.alaska.edu and we will work with you to understand and resolve the issue. Any refunds granted will be 
+credited to the original method of payment.
 
 ## API Endpoint
 

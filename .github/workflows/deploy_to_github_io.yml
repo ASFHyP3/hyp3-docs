@@ -31,7 +31,7 @@ jobs:
           rm docs/CNAME
           # Set site URL for dev site
           # TODO: revert
-          sed -i 's|site_url: https://hyp3-docs.asf.alaska.edu/|site_url: https://hyp3-docs.asf.alaska.edu/tbd/|' mkdocs.yml
+          sed -i 's|site_url: https://hyp3-docs.asf.alaska.edu/|site_url: https://hyp3-docs.asf.alaska.edu/fork/|' mkdocs.yml
           # sed -i 's|site_url: https://hyp3-docs.asf.alaska.edu/|site_url: https://hyp3-docs.asf.alaska.edu/hyp3-docs/|' mkdocs.yml
           mkdocs gh-deploy --force
 

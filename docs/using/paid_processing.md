@@ -1,22 +1,21 @@
-# Paid Processing
+# HyP3 Plus
 
 For users who need to process more 
 [On Demand products](../products.md "Jump to the Products landing page of the documentation") than their 
 [credit limit](credits.md "Jump to the Credits page of the documentation") 
-allows, ASF supports a 
+allows, ASF provides HyP3 Plus, a separate 
 [HyP3 deployment](../index.md) where users can pay for additional processing. 
 
-This deployment offers the same 
+HyP3 Plus offers the same 
 [On Demand products](../products.md "Jump to the Products landing page of the documentation") 
-as the standard HyP3 deployment, and users access their additional credit limit by logging in with the same 
+as ASF's standard HyP3 deployment, and users access their additional credit limit by logging in with the same 
 [Earthdata Login Credentials](authentication.md#earthdata-login-edl) 
 used for ordering free On Demand products.
 
-The paid HyP3 deployment has a different API Endpoint than the standard HyP3 deployment. Users can interact with the 
-paid HyP3 deployment using the same methods as the standard HyP3 deployment, but will need to accommodate the 
-different API URL. Refer to the 
+HyP3 Plus has a different API Endpoint than the standard HyP3 deployment. Users can interact with HyP3 Plus using 
+the same methods as the standard HyP3 deployment, but will need to accommodate the different API URL. Refer to the 
 [API Endpoint](#api-endpoint "Jump to the API Endpoint section of this document") 
-section for more information on how to access the paid HyP3 API Endpoint using Vertex, the HyP3 API, or the 
+section for more information on how to access the HyP3 Plus API Endpoint using Vertex, the HyP3 API, or the 
 HyP3 Python SDK.
 
 ## Purchasing Credits
@@ -80,7 +79,7 @@ credited to the original method of payment.
 
 ## API Endpoint
 
-The paid deployment is accessed using this API endpoint: 
+The HyP3 Plus deployment is accessed using this API endpoint: 
 [https://hyp3-enterprise.asf.alaska.edu](https://hyp3-enterprise.asf.alaska.edu/ "hyp3-enterprise.asf.alaska.edu")
 
 The standard HyP3 deployment is accessed at 
@@ -90,7 +89,7 @@ API endpoint URL used in
 [HyP3 Python SDK](sdk.md "Jump to Using the HyP3 Python SDK documentation page") 
 when submitting jobs for processing and accessing completed jobs. 
 
-In order to submit jobs using the paid deployment, you will need to direct these jobs to the correct API endpoint. 
+In order to submit jobs using HyP3 Plus, you will need to direct these jobs to the correct API endpoint. 
 
 ### Change HyP3 API in Vertex
 
@@ -104,7 +103,7 @@ To change the HyP3 API in Vertex:
 ![Open Vertex Preferences](../images/vertex-preferences.png "Open Vertex Preferences")
 3. Enter https://hyp3-enterprise.asf.alaska.edu in the **HyP3 API URL** field. 
 ![Set API for Vertex](../images/vertex-set-api.png "Set API URL in Vertex Preferences")
-     - Once you enter the API URL for the paid deployment in this field, it will be available as a drop-down menu 
+     - Once you enter the HyP3 Plus API URL in this field, it will be available as a drop-down menu 
        item for future use.
 4. Click **Done** to exit the Preferences page.
 
@@ -116,7 +115,7 @@ import hyp3_sdk as sdk
 hyp3 = sdk.HyP3()
 ```
 
-To access the paid HyP3 deployment, you will need to define the API URL for the HyP3 class: 
+To access the HyP3 Plus deployment, you will need to define the API URL for the HyP3 class: 
 ```
 import hyp3_sdk as sdk
 hyp3 = sdk.HyP3('https://hyp3-enterprise.asf.alaska.edu')
@@ -124,7 +123,7 @@ hyp3 = sdk.HyP3('https://hyp3-enterprise.asf.alaska.edu')
 
 ## Submitting Jobs
 
-The process of submitting jobs is the same for the paid HyP3 deployment as for the standard HyP3 deployment. 
+The process of submitting jobs is the same for the HyP3 Plus deployment as for the standard HyP3 deployment. 
 You just need to make sure that you have 
 [set the API endpoint](#api-endpoint "Jump to the API Endpoint section of this document") 
 to https://hyp3-enterprise.asf.alaska.edu in 
@@ -138,8 +137,8 @@ Refer to the individual Product Guides in the
 [Products](../products.md "Jump to the Products documentation page") 
 section for details on submitting jobs for each product type.
 
-As with the standard HyP3 deployment, you can check how many credits are remaining for your username in the 
-paid deployment to determine how many jobs you will be able to submit. 
+As with the standard HyP3 deployment, you can check how many credits are remaining for your username in HyP3 Plus 
+to determine how many jobs you will be able to submit. 
 
 - In Vertex, your On Demand queue in Vertex will display the number of credits you have available for use. 
 - Use the [Get /user](https://hyp3-enterprise.asf.alaska.edu/ui/#/default/get_user "https://hyp3-enterprise.asf.alaska.edu/ui/#/default/get_user") call in the HyP3 API to check your balance of credits. 
@@ -148,7 +147,7 @@ paid deployment to determine how many jobs you will be able to submit.
 
 ## Accessing Products
 
-The process of accessing completed products is the same for the paid HyP3 deployment as for the standard HyP3 
+The process of accessing completed products using HyP3 Plus is the same as for the standard HyP3 
 deployment. You just need to make sure that you have 
 [set the API endpoint](#api-endpoint "Jump to the API Endpoint section of this document") 
 to https://hyp3-enterprise.asf.alaska.edu in 
@@ -158,10 +157,10 @@ or are using the
 [Swagger API UI](sdk_api.md "Jump to the HyP3 API documentation page") at 
 [https://hyp3-enterprise.asf.alaska.edu/ui/](https://hyp3-enterprise.asf.alaska.edu/ui/).
 
-Even though the same EDL username can be used to process On Demand products in the standard and paid HyP3 
+Even though the same EDL username can be used to process On Demand products in the standard HyP3 and HyP3 Plus 
 deployments, you will not be able to search for products across both APIs. If you generate products for a single 
-project using both the standard and paid HyP3 deployments, you will need to use two separate searches to access 
-all of the products, even if the project names are the same. 
+project using both the standard HyP3 and HyP3 Plus deployments, you will need to use two separate searches to access 
+all of your products, even if the project names are the same. 
 
 When using the SDK, you can combine your results into one list using the following approach: 
 ```
@@ -180,5 +179,5 @@ methods available for downloading products once processing is complete.
 
 ## Contact Us
 
-If you have any questions or concerns about using ASF's Paid Processing service, or have any suggestions about how 
+If you have any questions or concerns about using HyP3 Plus, or have any suggestions about how 
 we might improve this service, send us an email at [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu).

@@ -48,16 +48,17 @@ allotment on jobs of that particular type.
 | [**AutoRIFT**](https://its-live.jpl.nasa.gov/){target=_blank} |                |                               |
 | {{ table_indent() }} Standard product (120-m pixel spacing)   |             25 |  {{ max_jobs_per_month(25) }} |
 
+## Credit Allocation
+
 The credit cost of a given job is roughly proportional to the computational resources required to process the job,
 allowing us to distribute our resources more equitably.
 This supports our mission of
 [making remote-sensing data accessible](https://asf.alaska.edu/about-asf/ 'asf.alaska.edu/about-asf' ){target=_blank},
 with the goal of providing valuable products to the widest breadth of users possible.
 
-If your monthly credit allotment doesn't meet your needs,
-please contact us and let us know how you would like to use our service.
-We may be able to support increased processing, depending on your requirements.
-All requests will be balanced against our mission: to make remote-sensing data accessible to the community.
+If your monthly credit allotment is not sufficient for your processing needs, you can 
+[purchase additional processing credits](paid_processing.md). 
+Please contact us if you have questions about additional processing.
 
 ## Contact Us
 

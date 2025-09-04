@@ -1,7 +1,6 @@
 name: Deploy to Github.io
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main

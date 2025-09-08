@@ -1,9 +1,9 @@
-mkdocs==1.5.3
-mkdocs-material==9.4.2
+mkdocs==1.6.1
+mkdocs-material==9.6.19
 mkdocs-asf-theme==0.4.0
 mkdocs-redirects
 mkdocs-section-index
-mkdocstrings==0.28.3
+mkdocstrings==0.30.0
 mkdocstrings-python
 mkdocs-macros-plugin
 requests

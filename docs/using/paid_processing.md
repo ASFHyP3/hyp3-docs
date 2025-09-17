@@ -79,8 +79,8 @@ credited to the original method of payment.
 
 ## API Endpoint
 
-The HyP3 Plus deployment is accessed using this API endpoint: 
-[https://hyp3-enterprise.asf.alaska.edu](https://hyp3-enterprise.asf.alaska.edu/ "hyp3-enterprise.asf.alaska.edu")
+The HyP3 Plus deployment is accessed using this API endpoint:
+[https://hyp3-plus.asf.alaska.edu](https://hyp3-plus.asf.alaska.edu/ "hyp3-plus.asf.alaska.edu")
 
 The standard HyP3 deployment is accessed at 
 [https://hyp3-api.asf.alaska.edu](https://hyp3-api.asf.alaska.edu/ "hyp3-api.asf.alaska.edu"), and is the default 
@@ -101,7 +101,7 @@ To change the HyP3 API in Vertex:
 ![Sign In with EDL in Vertex](../images/vertex-sign-in.png "Sign In with Earthdata Login Credentials in Vertex")
 2. Click on your username icon and select **Preferences**.
 ![Open Vertex Preferences](../images/vertex-preferences.png "Open Vertex Preferences")
-3. Enter https://hyp3-enterprise.asf.alaska.edu in the **HyP3 API URL** field. 
+3. Enter https://hyp3-plus.asf.alaska.edu in the **HyP3 API URL** field.
 ![Set API for Vertex](../images/vertex-set-api.png "Set API URL in Vertex Preferences")
      - Once you enter the HyP3 Plus API URL in this field, it will be available as a drop-down menu 
        item for future use.
@@ -118,55 +118,55 @@ hyp3 = sdk.HyP3()
 To access the HyP3 Plus deployment, you will need to define the API URL for the HyP3 class: 
 ```
 import hyp3_sdk as sdk
-hyp3 = sdk.HyP3('https://hyp3-enterprise.asf.alaska.edu')
+hyp3 = sdk.HyP3('https://hyp3-plus.asf.alaska.edu')
 ```
 
 ## Submitting Jobs
 
-The process of submitting jobs is the same for the HyP3 Plus deployment as for the standard HyP3 deployment. 
-You just need to make sure that you have 
-[set the API endpoint](#api-endpoint "Jump to the API Endpoint section of this document") 
-to https://hyp3-enterprise.asf.alaska.edu in 
-[Vertex](#change-hyp3-api-in-vertex) or the 
-[HyP3 Python SDK](#hyp3-python-sdk-api-endpoint "Jump to the HyP3 Python SDK API Endpoint section of this document"), 
-or are using the 
-[Swagger API UI](sdk_api.md "Jump to the HyP3 API documentation page") at 
-[https://hyp3-enterprise.asf.alaska.edu/ui/](https://hyp3-enterprise.asf.alaska.edu/ui/).
+The process of submitting jobs is the same for the HyP3 Plus deployment as for the standard HyP3 deployment.
+You just need to make sure that you have
+[set the API endpoint](#api-endpoint "Jump to the API Endpoint section of this document")
+to https://hyp3-plus.asf.alaska.edu in
+[Vertex](#change-hyp3-api-in-vertex) or the
+[HyP3 Python SDK](#hyp3-python-sdk-api-endpoint "Jump to the HyP3 Python SDK API Endpoint section of this document"),
+or are using the
+[Swagger API UI](sdk_api.md "Jump to the HyP3 API documentation page") at
+[https://hyp3-plus.asf.alaska.edu/ui/](https://hyp3-plus.asf.alaska.edu/ui/).
 
-Refer to the individual Product Guides in the 
-[Products](../products.md "Jump to the Products documentation page") 
+Refer to the individual Product Guides in the
+[Products](../products.md "Jump to the Products documentation page")
 section for details on submitting jobs for each product type.
 
 As with the standard HyP3 deployment, you can check how many credits are remaining for your username in HyP3 Plus 
 to determine how many jobs you will be able to submit. 
 
-- In Vertex, your On Demand queue in Vertex will display the number of credits you have available for use. 
-- Use the [Get /user](https://hyp3-enterprise.asf.alaska.edu/ui/#/default/get_user "https://hyp3-enterprise.asf.alaska.edu/ui/#/default/get_user") call in the HyP3 API to check your balance of credits. 
-- Use the [check_credits](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk.HyP3.check_credits "hyp3_sdk.HyP3.check_credits function") 
+- In Vertex, your On Demand queue in Vertex will display the number of credits you have available for use.
+- Use the [Get /user](https://hyp3-plus.asf.alaska.edu/ui/#/default/get_user "https://hyp3-plus.asf.alaska.edu/ui/#/default/get_user") call in the HyP3 API to check your balance of credits.
+- Use the [check_credits](https://hyp3-docs.asf.alaska.edu/using/sdk_api/#hyp3_sdk.HyP3.check_credits "hyp3_sdk.HyP3.check_credits function")
   function in the HyP3 Python SDK to check your balance of credits.
 
 ## Accessing Products
 
-The process of accessing completed products using HyP3 Plus is the same as for the standard HyP3 
-deployment. You just need to make sure that you have 
-[set the API endpoint](#api-endpoint "Jump to the API Endpoint section of this document") 
-to https://hyp3-enterprise.asf.alaska.edu in 
-[Vertex](#change-hyp3-api-in-vertex) or the 
-[HyP3 Python SDK](#hyp3-python-sdk-api-endpoint "Jump to the HyP3 Python SDK API Endpoint section of this document"), 
-or are using the 
-[Swagger API UI](sdk_api.md "Jump to the HyP3 API documentation page") at 
-[https://hyp3-enterprise.asf.alaska.edu/ui/](https://hyp3-enterprise.asf.alaska.edu/ui/).
+The process of accessing completed products using HyP3 Plus is the same as for the standard HyP3
+deployment. You just need to make sure that you have
+[set the API endpoint](#api-endpoint "Jump to the API Endpoint section of this document")
+to https://hyp3-plus.asf.alaska.edu in
+[Vertex](#change-hyp3-api-in-vertex) or the
+[HyP3 Python SDK](#hyp3-python-sdk-api-endpoint "Jump to the HyP3 Python SDK API Endpoint section of this document"),
+or are using the
+[Swagger API UI](sdk_api.md "Jump to the HyP3 API documentation page") at
+[https://hyp3-plus.asf.alaska.edu/ui/](https://hyp3-plus.asf.alaska.edu/ui/).
 
-Even though the same EDL username can be used to process On Demand products in the standard HyP3 and HyP3 Plus 
-deployments, you will not be able to search for products across both APIs. If you generate products for a single 
-project using both the standard HyP3 and HyP3 Plus deployments, you will need to use two separate searches to access 
-all of your products, even if the project names are the same. 
+Even though the same EDL username can be used to process On Demand products in the standard HyP3 and HyP3 Plus
+deployments, you will not be able to search for products across both APIs. If you generate products for a single
+project using both the standard HyP3 and HyP3 Plus deployments, you will need to use two separate searches to access
+all of your products, even if the project names are the same.
 
-When using the SDK, you can combine your results into one list using the following approach: 
+When using the SDK, you can combine your results into one list using the following approach:
 ```
 import hyp3_sdk as sdk
 hyp3 = sdk.HyP3()
-hyp3_e = sdk.HyP3('https://hyp3-enterprise.asf.alaska.edu')
+hyp3_e = sdk.HyP3('https://hyp3-plus.asf.alaska.edu')
 
 jobs = hyp3.find_jobs(...)
 jobs += hyp3_e.find_jobs(...)

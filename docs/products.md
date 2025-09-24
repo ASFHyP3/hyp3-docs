@@ -48,7 +48,7 @@ There are three different processing approaches available for generating On Dema
   - [Burst-based processing using ISCE2 software](#burst-based-insar-isce2)
   - [ARIA Frame-based processing using ISCE2 software](#aria-sentinel-1-gunw-products-isce2)
 
-For an in-depth comparison of the On Demand InSAR product options, visit our [Sentinel-1 InSAR On Demand Product Comparison StoryMap](https://storymaps.arcgis.com/stories/6cb4f1c18558441bb9b4b11337515b53, "ASF Sentinel-1 InSAR On Demand Product Comparison StoryMap" ){target=_blank}. 
+For an in-depth comparison of the On Demand InSAR product options, visit our [Sentinel-1 InSAR On Demand Product Comparison StoryMap](https://storymaps.arcgis.com/stories/6cb4f1c18558441bb9b4b11337515b53 "ASF Sentinel-1 InSAR On Demand Product Comparison StoryMap" ){target=_blank}. 
 
 ### Full-scene InSAR (GAMMA)
 

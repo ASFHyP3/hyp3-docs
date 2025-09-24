@@ -19,7 +19,7 @@ that leverages open-source software for processing.
 
 For those who would prefer to work at the scale of a full IW SLC, our original 
 [On Demand InSAR](insar_product_guide.md){target=_blank} products are still available. These products have a larger 
-footprint, and are generated using [GAMMA software](https://www.gamma-rs.ch/software){target=_blank}.
+footprint, and are generated using [GAMMA software](https://www.gamma-rs.ch/software){target=_blank}.  If unsure of which InSAR processing option best fits your needs, visit our [ASF Sentinel-1 InSAR on Demand Product Comparison StoryMap](https://storymaps.arcgis.com/stories/6cb4f1c18558441bb9b4b11337515b53 "ASF Sentinel-1 InSAR On Demand Product Comparison"){target=_blank} to explore the capabilities, characteristics, and available products for each of ASF's On Demand InSAR options. 
 
 !!! tip "Sentinel-1C acquisitions now supported!" 
 

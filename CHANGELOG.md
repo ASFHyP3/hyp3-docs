@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.10.21]
 
 ### Added
-*Added tutorial links for the [ASF Sentinel-1 InSAR on Demand Product Comparison Storymap](https://storymaps.arcgis.com/stories/6cb4f1c18558441bb9b4b11337515b53)
+*Added tutorial links for the [ASF Sentinel-1 InSAR on Demand Product Comparison StoryMap](https://storymaps.arcgis.com/stories/6cb4f1c18558441bb9b4b11337515b53)
 
 ## [0.10.20]
 

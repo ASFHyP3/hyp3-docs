@@ -9,6 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [Unreleased]
 
 ### Added
+* Added logos for the HyP3+ deployment
 * Added documentation for [paid processing](docs/using/paid_processing.md)
 
 ### Removed

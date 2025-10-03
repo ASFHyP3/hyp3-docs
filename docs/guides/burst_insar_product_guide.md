@@ -366,23 +366,23 @@ The basename of the multi-burst InSAR files follows this naming convention:
 
 **S1_rrr-bbbbbbs1ntt-bbbbbbs2ntt-bbbbbbs3ntt_IW_yyyymmdd_yyyymmdd_pp_INTzz_uuuu**
 
-- each file starts with S1, indicating Sentinel-1
-- rrr is the relative path (or orbit) number
-- bbbbbb is the first burst ID for each subswath
-- the number following s indicates the subswath
-   - s1 would indicate the first subswath
-   - there is a placeholder for each of the three subswaths, even if there aren't bursts included from all three
-      - if there are no bursts for that subswath, the value of bbbbbb would be 000000
-- ntt represents the number of bursts are included for that given subswath
-   - n02 would indicate that there are 2 bursts included for that subswath
-   - if there are no bursts for that subswath, the value of tt would be 00
-- IW indicates the beam mode
-- the first yyyymmdd indicates the date the reference bursts were acquired
-- the second yyyymmdd indicates the date the secondary bursts were acquired
-- pp indicates the polarization of the input bursts
-- INT indicates that the product is an interferogram
-- zz indicates the pixel spacing of the output InSAR product (20, 40, or 80 meters)
-- uuuu is the unique product identifier
+- each file starts with **S1**, indicating that the data was acquired by Sentinel-1
+- **rrr** is the relative path (or orbit) number
+- **bbbbbb** is the first burst ID for each subswath
+- the number following **s** indicates the subswath
+    - s1 would indicate the first subswath
+    - there is a placeholder for each of the three subswaths, even if there aren't bursts included from all three
+        - if there are no bursts for that subswath, the value of bbbbbb would be 000000
+- **ntt** represents the number of bursts are included for that given subswath
+    - n02 would indicate that there are 2 bursts included for that subswath
+    - if there are no bursts for that subswath, the value of tt would be 00
+- **IW** indicates the beam mode
+- the first **yyyymmdd** indicates the date the reference bursts were acquired
+- the second **yyyymmdd** indicates the date the secondary bursts were acquired
+- **pp** indicates the polarization of the input bursts
+- **INT** indicates that the product is an interferogram
+- **zz** indicates the pixel spacing of the output InSAR product (20, 40, or 80 meters)
+- **uuuu** is the unique product identifier
 
 To illustrate, a VV interferogram with 80-m pixel spacing containing bursts from path 123 
 for the reference date of January 1, 2024 and the secondary date of January 15, 2024, with the following bursts ids:  

@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.10.22]
+
+### Changed
+* Updated naming scheme descriptions for multi-burst InSAR products in the [Sentinel-1 Burst InSAR Product Guide](https://hyp3-docs.asf.alaska.edu/guides/burst_insar_product_guide/#naming-convention-insar_isce_multi_burst)
+
 ## [0.10.21]
 
 ### Added

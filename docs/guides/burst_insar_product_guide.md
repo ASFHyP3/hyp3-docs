@@ -364,28 +364,47 @@ used for `INSAR_ISCE_BURST`.
 
 The basename of the multi-burst InSAR files follows this naming convention: 
 
-**S1s_rrr_lonl_f_lal_f_lonu_f_lau_f_yyyymmdd_yyyymmdd_pp_INTzz_cccc**
+**S1_rrr-bbbbbbs1ntt-bbbbbbs2ntt-bbbbbbs3ntt_IW_yyyymmdd_yyyymmdd_pp_INTzz_uuuu**
 
-For example: 
+- each file starts with S1, indicating Sentinel-1
+- rrr is the relative path (or orbit) number
+- bbbbbb is the first burst ID for each subswath
+- the number following s indicates the subswath
+   - s1 would indicate the first subswath
+   - there is a placeholder for each of the three subswaths, even if there aren't bursts included from all three
+      - if there are no bursts for that subswath, the value of bbbbbb would be 000000
+- ntt represents the number of bursts are included for that given subswath
+   - n02 would indicate that there are 2 bursts included for that subswath
+   - if there are no bursts for that subswath, the value of tt would be 00
+- IW indicates the beam mode
+- the first yyyymmdd indicates the date the reference bursts were acquired
+- the second yyyymmdd indicates the date the secondary bursts were acquired
+- pp indicates the polarization of the input bursts
+- INT indicates that the product is an interferogram
+- zz indicates the pixel spacing of the output InSAR product (20, 40, or 80 meters)
+- uuuu is the unique product identifier
 
-S1A_064_E053_1_N27_3_E054_1_N27_8_20200604_20200616_VV_INT80_7EB5
+To illustrate, a VV interferogram with 80-m pixel spacing containing bursts from path 123 
+for the reference date of January 1, 2024 and the secondary date of January 15, 2024, with the following bursts ids:  
+111111_IW1, 111112_IW1, 111111_IW2  
+would have the following product name:  
+S1_123-111111s1n02-111111s2n01-000000s3n00_IW_20240101_20240115_VV_INT80_AEB4
 
 Table 2 describes the individual components:
 
-| Component    | Description                                                                                                                                                                                                                                                                                           | Example  |
-|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| **S1s**      | SAR Platform. S1 for Sentinel-1, followed by the letter of the sensor that collected the reference image.                                                                                                                                                                                             | S1A      |
-| **rrr**      | Relative orbit ID values assigned by ESA. Merged burst InSAR products can contain many relative burst IDs, so the relative orbit ID is used in lieu of relative burst IDs for these products.                                                                                                         | 064      |
-| **lonl_f**   | Minimum longitude of the output interferogram. Starts with a letter indicating hemisphere (E or W), followed by longitude to one decimal (000.0) with the decimal replaced by an underscore.                                                                                                          | E053_1   |
-| **lal_f**    | Minimum latitude of the output interferogram. Starts with a letter indicating hemisphere (N or S), followed by latitude to one decimal (00.0) with the decimal replaced by an underscore.                                                                                                             | N27_3    |
-| **lonu_f**   | Maximum longitude of the output interferogram. Starts with a letter indicating hemisphere (E or W), followed by longitude to one decimal (000.0) with the decimal replaced by an underscore.                                                                                                          | E054_1   |
-| **lau_f**    | Maximum latitude of the output interferogram. Starts with a letter indicating hemisphere (N or S), followed by latitude to one decimal (00.0) with the decimal replaced by an underscore.                                                                                                             | N27_8    |
-| **yyyymmdd** | Acquisition date of the reference image                                                                                                                                                                                                                                                               | 20200604 |
-| **yyyymmdd** | Acquisition date of the secondary image                                                                                                                                                                                                                                                               | 20200616 |
-| **pp**       | Two character combination indicating the product polarization. The first character represents the transmit polarization and the second character represents the receive polarization. Note that these products only support co-polarized inputs, so the product polarization will either be VV or HH. | VV       |
-| **INT**      | The product type (always INT for InSAR)                                                                                                                                                                                                                                                               | INT      |
-| **zz**       | The pixel spacing of the output image                                                                                                                                                                                                                                                                 | 80       |
-| **cccc**     | 4-character unique product identifier                                                                                                                                                                                                                                                                 | FD6A     |
+| Component       | Description                                                                                                                                                                                                                                                                                           | Example     |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
+| **S1**          | SAR Platform. S1 for Sentinel-1.                                                                                                                                                                                                                                                                      | S1          |
+| **rrr**         | Relative orbit ID values assigned by ESA. Merged burst InSAR products can contain many relative burst IDs, so the relative orbit ID is used in lieu of relative burst IDs for these products.                                                                                                         | 123         |
+| **bbbbbbs1ntt** | The characters represented by bbbbbb indicate the first burst ID present for subswath 1 (s1) in the path, followed by the total number of bursts included from that subswath, represented by the characters tt.                                                                                       | 111111s1n02 |
+| **bbbbbbs2ntt** | The characters represented by bbbbbb indicate the first burst ID present for subswath 2 (s2) in the path, followed by the total number of bursts included from that subswath, represented by the characters tt.                                                                                       | 111111s2n01 |
+| **bbbbbbs3ntt** | The characters represented by bbbbbb indicate the first burst ID present for subswath 3 (s3) in the path, followed by the total number of bursts included from that subswath, represented by the characters tt.                                                                                       | 000000s3n00 |
+| **yyyymmdd**    | Acquisition date of the reference bursts.                                                                                                                                                                                                                                                             | 20240101    |
+| **yyyymmdd**    | Acquisition date of the secondary bursts.                                                                                                                                                                                                                                                             | 20240115    |
+| **pp**          | Two character combination indicating the product polarization. The first character represents the transmit polarization and the second character represents the receive polarization. Note that these products only support co-polarized inputs, so the product polarization will either be VV or HH. | VV          |
+| **INT**         | The product type (always INT for InSAR).                                                                                                                                                                                                                                                              | INT         |
+| **zz**          | The pixel spacing of the output image.                                                                                                                                                                                                                                                                | 80          |
+| **cccc**        | 4-character unique product identifier.                                                                                                                                                                                                                                                                | AEB4        |
 
 *Table 2: Naming scheme for multi-burst InSAR products*
 

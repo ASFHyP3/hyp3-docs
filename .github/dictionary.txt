@@ -10,11 +10,16 @@
 .tif.xml
 .txt
 .xml
+000000s3n00
 5x1
 5x1-look
 10x
 10x2
 10x2-look
+111111_IW1
+111111_IW2
+111111s1n02
+111111s2n01
 20250418T141628Z
 20250419T010229Z
 20x4
@@ -74,6 +79,9 @@ base_name
 base_name_mb
 basename
 bbbbbb
+bbbbbbs1ntt
+bbbbbbs2ntt
+bbbbbbs3ntt
 BearerAuth
 Bekaert
 beta0
@@ -291,6 +299,7 @@ multilooking
 Multitemporal
 Muro
 MWE
+n02
 N27_3
 N27_8
 NAVD88
@@ -307,6 +316,7 @@ NoData
 non-geocoded
 NoSQL
 novertex
+ntt
 OpenAPI
 OpenSARLab
 OpenStreetMap
@@ -376,6 +386,7 @@ RTC-based
 RTC-S1
 RTC-STATIC
 Rüetschi
+s1
 S1
 S1_136231_IW2_20200604T022312_VV_7C85-BURST
 S1_136231_IW2_20200616T022313_VV_5D11-BURST
@@ -434,6 +445,7 @@ subfolder
 subfolders
 submit_aria_s1_gunw_job
 subpackage
+subswath
 superpixel
 T115-245714-IW1
 TBD
@@ -446,6 +458,7 @@ tropospheric
 Tropospheric
 troposphereHydrostatic
 troposphereWet
+tt
 Twele
 UAF
 UI
@@ -462,6 +475,7 @@ UTC
 UTCTime
 UTM
 UTM-projected
+uuuu
 v1.0
 v2
 VH

@@ -374,7 +374,7 @@ The basename of the multi-burst InSAR files follows this naming convention:
     - for example, s1 indicates the first subswath
     - there is a placeholder for each of the three subswaths, even if there aren't bursts included from all three 
 - **ntt** indicates the number of bursts included in the product for the given subswath
-    - n02 would indicate that there are 2 bursts included for that subswath
+    - for example, n02 indicates that there are 2 bursts included for that subswath
     - if there are no bursts included from that subswath, the value of **tt** would be 00
 - **IW** indicates the beam mode (interferometric wide swath)
 - the first **yyyymmdd** indicates the date the reference bursts were acquired

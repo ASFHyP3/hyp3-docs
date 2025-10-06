@@ -359,7 +359,7 @@ the following order, as illustrated in Figure 3.
 
 ### Naming Convention: INSAR_ISCE_MULTI_BURST
 
-The naming scheme for products generated using the `INSAR_ISCE_MULTI_BURST` job type is a bit different from the scheme 
+The naming scheme for products generated using the `INSAR_ISCE_MULTI_BURST` job type is different from the scheme 
 used for `INSAR_ISCE_BURST` products.
 
 The basename of the multi-burst InSAR files follows this naming convention: 

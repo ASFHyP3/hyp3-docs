@@ -369,10 +369,10 @@ The basename of the multi-burst InSAR files follows this naming convention:
 - each file starts with **S1**, indicating that the data was acquired by Sentinel-1
 - **rrr** is the relative path (or orbit) number for the bursts included in the product
 - **bbbbbb** indicates the first burst ID for each subswath
+    - if there are no bursts included for a given subswath, the value of **bbbbbb** would be 000000
 - the number following **s** indicates the subswath associated with the burst IDs
-    - s1 would indicate the first subswath
-    - there is a placeholder for each of the three subswaths, even if there aren't bursts included from all three
-        - if there are no bursts included for a given subswath, the value of **bbbbbb** would be 000000
+    - for example, s1 indicates the first subswath
+    - there is a placeholder for each of the three subswaths, even if there aren't bursts included from all three 
 - **ntt** indicates the number of bursts included in the product for the given subswath
     - n02 would indicate that there are 2 bursts included for that subswath
     - if there are no bursts included from that subswath, the value of **tt** would be 00

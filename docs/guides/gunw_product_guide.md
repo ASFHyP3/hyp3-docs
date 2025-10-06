@@ -86,11 +86,11 @@ custom ARIA-S1-GUNW jobs for processing. Once processing is complete, there are 
   products.
     - The links to the archived products never expire. 
 
-!!! warning "Sentinel-1C acquisitions not yet supported" 
+!!! warning "Sentinel-1C acquisitions not yet supported for On Demand ARIA-S1-GUNW products" 
 
-    The code used for processing ARIA-S1-GUNW products does not currently support processing SLCs acquired by the 
-    Sentinel-1C platform. Until the code has been updated to use the newest version of ISCE2, users will 
-    not be able to submit ARIA-S1-GUNW jobs that include Sentinel-1C acquisitions for On Demand processing.
+    The code used for processing ARIA-S1-GUNW products has been updated to support Sentinel-1C acquisitions, so you 
+    can now find archived ARIA-S1-GUNW products for S1C acquisitions. Development work is still underway to support 
+    S1C functionality for On Demand ARIA-S1-GUNW products, but stay tuned for the release of this capability. 
 
 ### ARIA Frame IDs
 

@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.11.0]
 
 ### Removed
-* Removed content related to merging single-burst InSAR products made obsolete with hyp3-isce2 v3.0.0:
+* Removed content related to merging single-burst InSAR products made obsolete with HyP3 ISCE2 v3.0.0:
   * "Merge HyP3 ISCE2 burst InSAR products" tutorial
   * "Merging Sentinel-1 Single-Burst InSAR Products" section of the Burst InSAR product guide
 

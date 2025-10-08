@@ -557,7 +557,7 @@ section of the
 !!! Warning "The merge_tops_burst workflow has been deprecated"
 
     In the past, Burst InSAR products generated using the `INSAR_ISCE_BURST` job type could be merged together 
-    manually using the `merge_tops_burst` workflow. This python script has been deprecated. Please use the 
+    manually using the `merge_tops_burst.py` workflow. This Python script has been deprecated. Please use the 
     [`INSAR_ISCE_MULTI_BURST`](#multi-burst-insar "Jump to the Multi-Burst InSAR section of this document") job type
     to generate interferograms that span multiple bursts.
 

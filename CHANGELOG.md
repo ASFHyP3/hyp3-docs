@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.11.0]
+
+### Removed
+* Removed "Merge HyP3 ISCE2 burst InSAR products" tutorial made obsolete with hyp3-isce2 v3.0.0.
+
 ## [0.10.22]
 
 ### Changed

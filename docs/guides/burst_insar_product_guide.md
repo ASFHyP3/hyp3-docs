@@ -554,7 +554,7 @@ section of the
 {% block merging_bursts %}
 ## Merging Sentinel-1 Single-Burst InSAR Products
 
-!!! Warning "The merge_tops_burst workflow has been deprecated"
+!!! Warning "The merge_tops_burst workflow is no longer available"
 
     In the past, Burst InSAR products generated using the `INSAR_ISCE_BURST` job type could be merged together 
     manually using the `merge_tops_burst.py` workflow. This Python script is no longer supported. Please use the 

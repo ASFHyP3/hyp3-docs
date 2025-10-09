@@ -246,8 +246,8 @@ The output netCDF file will include the layers listed in the table below.
 |                 | connectedComponents                   | 2D Connected component file                          | unitless |
 |                 | unfilteredCoherence                   | 2D Coherence [0-1] from unfiltered IFG               | unitless |
 |                 | unwrappedPhase                        | 2D Filtered unwrapped IFG geocoded                   | rad      |
-| corrections     | ionosphere                            | 2D Split spectrum ionospheric delay                  | rad      |
-|                 | ionosphereBurstRamps                  | Digital elevation model                              | rad      |
+| corrections     | ionosphere                            | 2D Split spectrum ionospheric delay correction       | rad      |
+|                 | ionosphereBurstRamps                  | 2D Split spectrum ionospheric burst ramp correction  | rad      |
 |                 | reference/solidEarthTide              | 2D/3D solid earth tide for reference granule         | rad      |
 |                 | secondary/solidEarthTide              | 2D/3D solid earth tide for secondary granule         | rad      |
 |                 | HRRR/reference/troposphereWet         | 2D/3D wet troposphere for reference granule          | rad      |

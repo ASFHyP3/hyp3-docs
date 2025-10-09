@@ -276,7 +276,7 @@ resulting in surface displacements of up to several centimeters. Correcting for 
 these predictable, cyclic motions from being misinterpreted as real ground deformation. ARIA-S1-GUNW products 
 include SET correction layers, created using the 
 [PySolid](https://github.com/insarlab/PySolid?tab=readme-ov-file "PySolid GitHub repository" ){target=_blank} 
-python package for both the reference and secondary input data. These layers are packaged within the products as 3D datasets posted laterally at 0.1-degree intervals (~11 km) and vertically at the following height intervals: -1.5km, 0km, 3km, 9km.
+python package, for both the reference and secondary input data. These layers are packaged within the products as 3D datasets posted laterally at 0.1-degree intervals (~11 km) and vertically at the following height intervals: -1.5km, 0km, 3km, 9km.
 
 ### Tropospheric Delay Correction Layers
 

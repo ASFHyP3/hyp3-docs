@@ -293,6 +293,12 @@ HRRR weather model is not available for a location of interest, (i.e. outside of
 tropospheric delay correction layer will not be included in the ARIA-S1-GUNW product. The wet and hydrostatic 
 tropospheric delay correction are provided for both the reference and secondary input data. These layers are packaged within the products as 3D datasets posted laterally at 0.05-degree intervals (~5.5 km) and vertically in 0.5 km increments between -0.5km and 9 km.
 
+### Accessing and leveraging product layers
+
+Automation of accessing, interpolating, and applying all product layers for your analyses is seamlessly supported through the 
+[ARIA-tools GitHub page](https://github.com/aria-tools/ARIA-tools "ARIA-tools GitHub repository" ){target=_blank} 
+software. A more detailed, step-by-step overview of how to access each layer using this software is provided in the complementary [Jupyter Notebook](https://github.com/aria-tools/ARIA-tools-docs/blob/master/JupyterDocs/ariaExtract/ariaExtract_tutorial.ipynb" ){target=_blank}.
+
 ## Data Access
 
 ARIA-S1-GUNW On Demand products can be accessed like any other On Demand product, but can also be accessed by 

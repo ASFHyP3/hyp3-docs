@@ -359,33 +359,52 @@ the following order, as illustrated in Figure 3.
 
 ### Naming Convention: INSAR_ISCE_MULTI_BURST
 
-The naming scheme for products generated using the `INSAR_ISCE_MULTI_BURST` job type is very different from what was 
-used for `INSAR_ISCE_BURST`.
+The naming scheme for products generated using the `INSAR_ISCE_MULTI_BURST` job type is different from the scheme 
+used for `INSAR_ISCE_BURST` products.
 
 The basename of the multi-burst InSAR files follows this naming convention: 
 
-**S1s_rrr_lonl_f_lal_f_lonu_f_lau_f_yyyymmdd_yyyymmdd_pp_INTzz_cccc**
+**S1_rrr_bbbbbbs1ntt-bbbbbbs2ntt-bbbbbbs3ntt_IW_yyyymmdd_yyyymmdd_pp_INTzz_uuuu**
 
-For example: 
+- each file starts with **S1**, indicating that the data was acquired by Sentinel-1
+- **rrr** is the relative path (or orbit) number for the bursts included in the product
+- **bbbbbb** indicates the first burst ID for each subswath
+    - if there are no bursts included for a given subswath, the value of **bbbbbb** would be 000000
+- the number following **s** indicates the subswath associated with the burst IDs
+    - for example, s1 indicates the first subswath
+    - there is a placeholder for each of the three subswaths, even if there aren't bursts included from all three 
+- **ntt** indicates the number of bursts included in the product for the given subswath
+    - for example, n02 indicates that there are 2 bursts included for that subswath
+    - if there are no bursts included from that subswath, the value of **tt** would be 00
+- **IW** indicates the beam mode (interferometric wide swath)
+- the first **yyyymmdd** indicates the date the reference bursts were acquired
+- the second **yyyymmdd** indicates the date the secondary bursts were acquired
+- **pp** indicates the polarization of the input bursts
+- **INT** indicates that the product is an interferogram
+- **zz** indicates the pixel spacing of the output InSAR product (20, 40, or 80 meters)
+- **uuuu** is the unique product identifier
 
-S1A_064_E053_1_N27_3_E054_1_N27_8_20200604_20200616_VV_INT80_7EB5
+To illustrate, the filename for a VV interferogram with 80-m pixel spacing containing bursts 
+111111_IW1, 111112_IW1, and 111111_IW2 from path 123 for the reference date of January 1, 2024 and the 
+secondary date of January 15, 2024, would have the following product name:
 
-Table 2 describes the individual components:
+S1_123_111111s1n02-111111s2n01-000000s3n00_IW_20240101_20240115_VV_INT80_AEB4
 
-| Component    | Description                                                                                                                                                                                                                                                                                           | Example  |
-|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| **S1s**      | SAR Platform. S1 for Sentinel-1, followed by the letter of the sensor that collected the reference image.                                                                                                                                                                                             | S1A      |
-| **rrr**      | Relative orbit ID values assigned by ESA. Merged burst InSAR products can contain many relative burst IDs, so the relative orbit ID is used in lieu of relative burst IDs for these products.                                                                                                         | 064      |
-| **lonl_f**   | Minimum longitude of the output interferogram. Starts with a letter indicating hemisphere (E or W), followed by longitude to one decimal (000.0) with the decimal replaced by an underscore.                                                                                                          | E053_1   |
-| **lal_f**    | Minimum latitude of the output interferogram. Starts with a letter indicating hemisphere (N or S), followed by latitude to one decimal (00.0) with the decimal replaced by an underscore.                                                                                                             | N27_3    |
-| **lonu_f**   | Maximum longitude of the output interferogram. Starts with a letter indicating hemisphere (E or W), followed by longitude to one decimal (000.0) with the decimal replaced by an underscore.                                                                                                          | E054_1   |
-| **lau_f**    | Maximum latitude of the output interferogram. Starts with a letter indicating hemisphere (N or S), followed by latitude to one decimal (00.0) with the decimal replaced by an underscore.                                                                                                             | N27_8    |
-| **yyyymmdd** | Acquisition date of the reference image                                                                                                                                                                                                                                                               | 20200604 |
-| **yyyymmdd** | Acquisition date of the secondary image                                                                                                                                                                                                                                                               | 20200616 |
-| **pp**       | Two character combination indicating the product polarization. The first character represents the transmit polarization and the second character represents the receive polarization. Note that these products only support co-polarized inputs, so the product polarization will either be VV or HH. | VV       |
-| **INT**      | The product type (always INT for InSAR)                                                                                                                                                                                                                                                               | INT      |
-| **zz**       | The pixel spacing of the output image                                                                                                                                                                                                                                                                 | 80       |
-| **cccc**     | 4-character unique product identifier                                                                                                                                                                                                                                                                 | FD6A     |
+Table 2 describes the individual components in this sample filename:
+
+| Component       | Description                                                                                                                                                                                                                                                                                           | Example     |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
+| **S1**          | SAR Platform. S1 for Sentinel-1.                                                                                                                                                                                                                                                                      | S1          |
+| **rrr**         | Relative orbit ID values assigned by ESA. Merged burst InSAR products can contain many relative burst IDs, so the relative orbit ID is used in lieu of relative burst IDs for these products.                                                                                                         | 123         |
+| **bbbbbbs1ntt** | The characters represented by bbbbbb indicate the first burst ID present for subswath 1 (s1) in the path, followed by the total number of bursts included from that subswath, represented by the characters tt.                                                                                       | 111111s1n02 |
+| **bbbbbbs2ntt** | The characters represented by bbbbbb indicate the first burst ID present for subswath 2 (s2) in the path, followed by the total number of bursts included from that subswath, represented by the characters tt.                                                                                       | 111111s2n01 |
+| **bbbbbbs3ntt** | The characters represented by bbbbbb indicate the first burst ID present for subswath 3 (s3) in the path, followed by the total number of bursts included from that subswath, represented by the characters tt.                                                                                       | 000000s3n00 |
+| **yyyymmdd**    | Acquisition date of the reference bursts.                                                                                                                                                                                                                                                             | 20240101    |
+| **yyyymmdd**    | Acquisition date of the secondary bursts.                                                                                                                                                                                                                                                             | 20240115    |
+| **pp**          | Two character combination indicating the product polarization. The first character represents the transmit polarization and the second character represents the receive polarization. Note that these products only support co-polarized inputs, so the product polarization will either be VV or HH. | VV          |
+| **INT**         | The product type (always INT for InSAR).                                                                                                                                                                                                                                                              | INT         |
+| **zz**          | The pixel spacing of the output image.                                                                                                                                                                                                                                                                | 80          |
+| **uuuu**        | 4-character unique product identifier.                                                                                                                                                                                                                                                                | AEB4        |
 
 *Table 2: Naming scheme for multi-burst InSAR products*
 
@@ -476,33 +495,33 @@ give some background on each of the files included in the product folder.
 The text file with the base filename followed directly by a `.txt` extension includes processing parameters used to 
 generate the InSAR product as well as metadata attributes for the InSAR pair. These are detailed in Table 5.
 
-| Name                            | Description                                                                                             | Possible Value                                                       |
-|---------------------------------|---------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
-| Reference Granule               | Granule name for reference burst (of the two scenes in the pair, the dataset with the oldest timestamp) | S1<wbr>_136231<wbr>_IW2<wbr>_20200604T022312<wbr>_VV<wbr>_7C85-BURST |
-| Secondary Granule               | Granule name for secondary burst (of the two scenes in the pair, the dataset with the newest timestamp) | S1<wbr>_136231<wbr>_IW2<wbr>_20200616T022313<wbr>_VV<wbr>_5D11-BURST |
-| Reference Pass Direction        | Orbit direction of the reference scene                                                                  | DESCENDING                                                           |
-| Reference Orbit Number          | Absolute orbit number of the reference scene                                                            | 30741                                                                |
-| Secondary Pass Direction        | Orbit direction of the reference scene                                                                  | DESCENDING                                                           |
-| Secondary Orbit Number          | Absolute orbit number of the secondary scene                                                            | 31091                                                                |
-| Baseline                        | Perpendicular baseline in meters                                                                        | 58.3898                                                              |
-| UTCTime                         | Time in the UTC time zone in seconds                                                                    | 12360.691361                                                         |
-| Heading                         | Spacecraft heading measured in degrees clockwise from north                                             | 193.2939317                                                          |
-| Spacecraft height               | Height in meters of the spacecraft above nadir point                                                    | 700618.6318999995                                                    |
-| Earth radius at nadir           | Ellipsoidal earth radius in meters at the point directly below the satellite                            | 6370250.0667                                                         |
-| Slant range near                | Distance in meters from satellite to nearest point imaged                                               | 799517.4338                                                          |
-| Slant range center              | Distance in meters from satellite to the center point imaged                                            | 879794.1404                                                          |
-| Slant range far                 | Distance in meters from satellite to farthest point imaged                                              | 960070.8469                                                          |
-| Range looks                     | Number of looks taken in the range direction                                                            | 20                                                                   |
-| Azimuth looks                   | Number of looks taken in the azimuth direction                                                          | 4                                                                    |
-| InSAR phase filter              | Was an InSAR phase filter used                                                                          | yes                                                                  |
-| Phase filter parameter          | Dampening factor                                                                                        | 0.5                                                                  |
-| Range bandpass filter           | Range bandpass filter applied                                                                           | no                                                                   |
-| Azimuth bandpass filter         | Azimuth bandpass filter applied                                                                         | no                                                                   |
-| DEM source                      | DEM used in processing                                                                                  | GLO-30                                                               |
-| DEM resolution                  | Pixel spacing in meters for DEM used to process this scene                                              | 30                                                                   |
-| Unwrapping type                 | Phase unwrapping algorithm used                                                                         | snaphu_mcf                                                           |
-| Speckle filter                  | Speckle filter applied                                                                                  | yes                                                                  |
-| Water mask                      | Was a water mask used                                                                                   | yes                                                                  |
+| Name                     | Description                                                                                                                        | Possible Value                                                       |
+|--------------------------|------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| Reference Granule        | Granule name(s) for reference burst or list of bursts (of the two acquisitions in the pair, the dataset with the oldest timestamp) | S1<wbr>_136231<wbr>_IW2<wbr>_20200604T022312<wbr>_VV<wbr>_7C85-BURST |
+| Secondary Granule        | Granule name(s) for secondary burst or list of bursts (of the two acquisitions in the pair, the dataset with the newest timestamp) | S1<wbr>_136231<wbr>_IW2<wbr>_20200616T022313<wbr>_VV<wbr>_5D11-BURST |
+| Reference Pass Direction | Orbit direction of the reference scene                                                                                             | DESCENDING                                                           |
+| Reference Orbit Number   | Absolute orbit number of the reference scene                                                                                       | 30741                                                                |
+| Secondary Pass Direction | Orbit direction of the reference scene                                                                                             | DESCENDING                                                           |
+| Secondary Orbit Number   | Absolute orbit number of the secondary scene                                                                                       | 31091                                                                |
+| Baseline                 | Perpendicular baseline in meters                                                                                                   | 58.3898                                                              |
+| UTC time                 | Time in the UTC time zone in seconds                                                                                               | 12360.691361                                                         |
+| Heading                  | Spacecraft heading measured in degrees clockwise from north                                                                        | 193.2939317                                                          |
+| Spacecraft height        | Height in meters of the spacecraft above nadir point                                                                               | 700618.6318999995                                                    |
+| Earth radius at nadir    | Ellipsoidal earth radius in meters at the point directly below the satellite                                                       | 6370250.0667                                                         |
+| Slant range near         | Distance in meters from satellite to nearest point imaged                                                                          | 799517.4338                                                          |
+| Slant range center       | Distance in meters from satellite to the center point imaged                                                                       | 879794.1404                                                          |
+| Slant range far          | Distance in meters from satellite to farthest point imaged                                                                         | 960070.8469                                                          |
+| Range looks              | Number of looks taken in the range direction                                                                                       | 20                                                                   |
+| Azimuth looks            | Number of looks taken in the azimuth direction                                                                                     | 4                                                                    |
+| InSAR phase filter       | Was an InSAR phase filter used                                                                                                     | yes                                                                  |
+| Phase filter parameter   | Dampening factor                                                                                                                   | 0.5                                                                  |
+| Range bandpass filter    | Range bandpass filter applied                                                                                                      | no                                                                   |
+| Azimuth bandpass filter  | Azimuth bandpass filter applied                                                                                                    | no                                                                   |
+| DEM source               | DEM used in processing                                                                                                             | GLO-30                                                               |
+| DEM resolution           | Pixel spacing in meters for DEM used to process this scene                                                                         | 30                                                                   |
+| Unwrapping type          | Phase unwrapping algorithm used                                                                                                    | snaphu_mcf                                                           |
+| Speckle filter           | Speckle filter applied                                                                                                             | yes                                                                  |
+| Water mask               | Was a water mask used                                                                                                              | yes                                                                  |
 
 *Table 5: List of InSAR parameters included in the parameter text file for all Burst InSAR products*
 

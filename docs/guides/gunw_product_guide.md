@@ -248,12 +248,12 @@ The output netCDF file will include the layers listed in the table below.
 |                 | unwrappedPhase                        | 2D Filtered unwrapped IFG geocoded                   | rad      |
 | corrections     | ionosphere                            | 2D Split spectrum ionospheric delay correction       | rad      |
 |                 | ionosphereBurstRamps                  | 2D Split spectrum ionospheric burst ramp correction  | rad      |
-|                 | reference/solidEarthTide              | 2D/3D solid earth tide for reference granule         | rad      |
-|                 | secondary/solidEarthTide              | 2D/3D solid earth tide for secondary granule         | rad      |
-|                 | HRRR/reference/troposphereWet         | 2D/3D wet troposphere for reference granule          | rad      |
-|                 | HRRR/secondary/troposphereWet         | 2D/3D wet troposphere for secondary granule          | rad      |
-|                 | HRRR/reference/troposphereHydrostatic | 2D/3D hydrostatic troposphere for reference granule  | rad      |
-|                 | HRRR/secondary/troposphereHydrostatic | 2D/3D hydrostatic troposphere for secondary granule  | rad      |
+|                 | reference/solidEarthTide              | 3D solid earth tide for reference granule            | rad      |
+|                 | secondary/solidEarthTide              | 3D solid earth tide for secondary granule            | rad      |
+|                 | HRRR/reference/troposphereWet         | 3D wet troposphere for reference granule             | rad      |
+|                 | HRRR/secondary/troposphereWet         | 3D wet troposphere for secondary granule             | rad      |
+|                 | HRRR/reference/troposphereHydrostatic | 3D hydrostatic troposphere for reference granule     | rad      |
+|                 | HRRR/secondary/troposphereHydrostatic | 3D hydrostatic troposphere for secondary granule     | rad      |
 | imagingGeometry | azimuthAngle                          | 3D azimuth angle grid                                | degree   |
 |                 | incidenceAngle                        | 3D Incidence angle grid                              | degree   |
 |                 | lookAngle                             | 3D look angle grid                                   | degree   |

@@ -266,7 +266,7 @@ Although the ionospheric effects for C-band SAR are only about one-sixteenth of 
 accuracy of Sentinel-1 C-band SAR data can still be degraded by long-wavelength ionospheric signals. Utilizing the 
 [range-split spectrum methodology](https://doi.org/10.1109/TGRS.2019.2908494 "doi.org/10.1109/TGRS.2019.2908494" ){target=_blank} available within ISCE2, 
 ARIA-S1-GUNW products include an ionospheric correction layer packaged as a differential field between the 
-secondary and reference input data, which can be directly subtracted from the unwrappedPhase field.
+secondary and reference input data. Since these layers have smooth variation in space they are downsampled to 33 arc-seconds (~1 km), and thus have to be interpolated before being subtracted from the unwrappedPhase field, which is sampled at 3 arc-seconds (~90 m).
 
 ### Solid Earth Tides Correction Layers
 
@@ -274,9 +274,9 @@ secondary and reference input data, which can be directly subtracted from the un
 (SET) are periodic deformations of the Earth's crust caused by gravitational forces from the Moon and Sun, 
 resulting in surface displacements of up to several centimeters. Correcting for SET in InSAR is crucial to prevent 
 these predictable, cyclic motions from being misinterpreted as real ground deformation. ARIA-S1-GUNW products 
-include an SET correction layer for both the reference and secondary input data that are created using the 
+include an SET correction layer that are created using the 
 [PySolid](https://github.com/insarlab/PySolid?tab=readme-ov-file "PySolid GitHub repository" ){target=_blank} 
-python package.
+python package for both the reference and secondary input data. These layers are packaged within the products as 3D datasets posted laterally at 0.1-degree intervals (~11 km) and vertically at the following height intervals: -1.5km, 0km, 3km, 9km.
 
 ### Tropospheric Delay Correction Layers
 
@@ -291,7 +291,7 @@ RAiDER uses the
 weather model to calculate the tropospheric delay correction at a spatial resolution of approximately 3 km. If the 
 HRRR weather model is not available for a location of interest, (i.e. outside of the continental U.S. and Alaska) the 
 tropospheric delay correction layer will not be included in the ARIA-S1-GUNW product. The wet and hydrostatic 
-tropospheric delay correction are provided for both the reference and secondary input data.
+tropospheric delay correction are provided for both the reference and secondary input data. These layers are packaged within the products as 3D datasets posted laterally at 0.05-degree intervals (~5.5 km) and vertically in 0.5 km increments between -0.5km and 9 km.
 
 ## Data Access
 

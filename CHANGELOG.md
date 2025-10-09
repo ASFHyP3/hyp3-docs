@@ -6,10 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.10.23]
+## [0.11.1]
 
 ### Changed
 * Updated naming scheme descriptions for multi-burst InSAR products in the [Sentinel-1 Burst InSAR Product Guide](https://hyp3-docs.asf.alaska.edu/guides/burst_insar_product_guide/#naming-convention-insar_isce_multi_burst)
+
+## [0.11.0]
+
+### Removed
+* Removed content related to merging single-burst InSAR products made obsolete with HyP3 ISCE2 v3.0.0:
+  * "Merge HyP3 ISCE2 burst InSAR products" tutorial
+  * "Merging Sentinel-1 Single-Burst InSAR Products" section of the Burst InSAR product guide
 
 ## [0.10.22]
 

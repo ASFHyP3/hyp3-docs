@@ -121,6 +121,8 @@ Once processing is complete, download links for On Demand products are valid for
 
 {% block download_tutorial %}{% endblock %}
 
+{% block merging_bursts %}{% endblock %}
+
 ## Limitations
 ### Baseline Calculation
 The baseline is defined as the difference of the platform positions when a given area is imaged. HyP3 baselines are calculated using the best state vectors available. If precise orbits are not yet available for the input granules, restituted orbits will be used. The original predicted orbits are not used for InSAR processing in HyP3. **If no restituted or precise state vectors are available, the process will not run.**

@@ -532,6 +532,18 @@ section of the
 [Burst-Based InSAR for Sentinel-1 On Demand](https://storymaps.arcgis.com/stories/191bf1b6962c402086807390b3ce63b0 "Burst-Based InSAR for Sentinel-1 On Demand StoryMap Tutorial" ){target=_blank} interactive StoryMap tutorial.
 {% endblock %}
 
+{% block merging_bursts %}
+## Merging Sentinel-1 Single-Burst InSAR Products
+
+!!! Warning "The merge_tops_burst workflow is no longer available"
+
+    In the past, Burst InSAR products generated using the `INSAR_ISCE_BURST` job type could be merged together
+    manually using the `merge_tops_burst.py` workflow. This Python script is no longer supported. Please use the
+    [`INSAR_ISCE_MULTI_BURST`](#multi-burst-insar "Jump to the Multi-Burst InSAR section of this document") job type
+    to generate interferograms that span multiple bursts.
+
+{% endblock %}
+
 {% block line_of_sight %}
 ### Line-of-Sight Measurements
 When looking at a single interferogram, the deformation measurements in the line-of-sight orientation of the sensor 

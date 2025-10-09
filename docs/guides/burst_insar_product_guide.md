@@ -535,97 +535,12 @@ section of the
 {% block merging_bursts %}
 ## Merging Sentinel-1 Single-Burst InSAR Products
 
-Burst InSAR products generated using the `INSAR_ISCE_BURST` job type can be merged together manually using the 
-[`merge_tops_burst`](https://github.com/ASFHyP3/hyp3-isce2/blob/main/src/hyp3_isce2/merge_tops_bursts.py ){target=_blank} 
-workflow. 
+!!! Warning "The merge_tops_burst workflow is no longer available"
 
-This requires software installation and sufficient compute resources. It is much easier to submit 
-[`INSAR_ISCE_MULTI_BURST`](#multi-burst-insar "Jump to the Multi-Burst InSAR section of this document") 
-jobs, which do the merging for you, but manual merging is an option if you have a specific use case that is not 
-supported by the multi-burst on-demand products.
-
-!!! warning "This workflow is only for products generated using the `INSAR_ISCE_BURST` job type"
-
-    This functionality is not available for products generated using the 
-    `INSAR_ISCE_MULTI_BURST` job type, even if the products include only one burst. 
-
-Merging is done using underlying ISCE2 functionality, and steps 9-11 of the InSAR processing workflow 
-(filtering, unwrapping, and geocoding) found in the 
-[Burst InSAR Processing](#burst-insar-processing "Jump to the Burst InSAR Processing section of this document") 
-section are repeated to ensure consistent results. You will need to install the 
-[HyP3-ISCE2 plugin]( https://github.com/ASFHyP3/hyp3-isce2 "HyP3-ISCE2 Plugin" ){target=_blank} 
-on your local machine, at which point merging can be performed using the following syntax:
-
-```bash
-python -m hyp3_isce2 ++process merge_tops_bursts PATH_TO_UNZIPPED_PRODUCTS
-```
-
-Where `PATH_TO_UNZIPPED_PRODUCTS` is the path to a directory containing **unzipped** Burst InSAR products generated 
-using the `INSAR_ISCE_BURST` job type. For example:
-
-```
-PATH_TO_UNZIPPED_PRODUCTS
-├─ S1_136232_IW2_20200604_20200616_VV_INT80_663F
-├─ S1_136231_IW2_20200604_20200616_VV_INT80_529D
-```
-
-In order to be eligible for merging, all burst products must:
-
-- Have the same reference and secondary dates
-- Have the same polarization
-- Have the same multilooking settings (20x4, 10x2 or 5x1)
-- Be from the same relative orbit
-- Be contiguous
-- Have been generated using the single-burst approach (`INSAR_ISCE_BURST` job type)
-
-The workflow should throw an error if any of these conditions are not met.
-
-### Merge Processing
-During normal ISCE2 InSAR processing, initial interferograms are formed on a burst-by-burst basis. These range-doppler 
-burst interferograms are combined during an ISCE2 step called `mergebursts`, then the remaining steps 
-(filtering, unwrapping and geocoding) are conducted on the merged results.
-
-By including select range-doppler data (wrapped interferogram, geolocation information, and line-of-sight information) 
-and select metadata in our standard Burst InSAR products, we are able to restart ISCE2 processing from the 
-`mergebursts` step, then proceed with the following steps as if it were a standard ISCE2 InSAR processing run. 
-
-This is essentially what's happening behind the scenes when multi-burst interferograms are generated using the 
-`INSAR_ISCE_MULTI_BURST` job type.
-
-The steps of the workflow are as follows:
-
-1.	Recreate a pre-`mergebursts` ISCE2 InSAR processing state using the input Burst InSAR products.
-2.	Run a modified version of ISCE2’s `mergebursts` step.
-3.	Apply the Goldstein-Werner power spectral filter with a dampening factor of 0.5.
-4.	Unwrap the wrapped phase interferogram using [SNAPHU](http://web.stanford.edu/group/radar/softwareandlinks/sw/snaphu/){target=_blank}'s minimum cost flow (MCF) unwrapping algorithm to produce the unwrapped phase interferogram.
-5.	Geocode the output products.
-
-As mentioned above, this workflow uses underlying ISCE2 functionality to perform these steps so the results of this 
-workflow should be identical to the results obtained by performing a standard multi-burst ISCE2 InSAR run 
-(assuming that the Enhanced Spectral Diversity technique is not used for co-registration).
-
-#### Merge Processing Options
-
-The processing options available for the merging are the same as those available for standard Burst InSAR products. 
-Check out the [Processing Options](#processing-options "Jump to the Processing Options section of this document") 
-section for more details.
-
-To learn about the command line argument syntax for this workflow, look at the help documentation using:
-```bash
-python -m hyp3_isce2 ++process merge_tops_bursts --help
-```
-
-#### Merged Product Packaging
-The product packaging of merged Burst InSAR products generated using the `merge_tops_bursts.py` script follows the 
-same conventions used for single-burst products (`INSAR_ISCE_BURST` job type) outlined in the 
-[Product Packaging](#product-packaging "Jump to the Product Packaging section of this document") section 
-with two exceptions:
-
-  - The four range-doppler images are not included since the products have already been merged
-  - The product name is slightly modified
-    - The burst ID (`bbbbbb`) is swapped for the zero-padded relative orbit number (`rrr`)
-    - The sub-swath number is removed 
-    - The resulting format is `S1_rrr__yyymmdd_yyymmdd_pp_INTn_uuuu`
+    In the past, Burst InSAR products generated using the `INSAR_ISCE_BURST` job type could be merged together
+    manually using the `merge_tops_burst.py` workflow. This Python script is no longer supported. Please use the
+    [`INSAR_ISCE_MULTI_BURST`](#multi-burst-insar "Jump to the Multi-Burst InSAR section of this document") job type
+    to generate interferograms that span multiple bursts.
 
 {% endblock %}
 

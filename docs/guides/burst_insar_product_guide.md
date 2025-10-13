@@ -364,7 +364,7 @@ used for `INSAR_ISCE_BURST` products.
 
 The basename of the multi-burst InSAR files follows this naming convention: 
 
-**S1_rrr_bbbbbbs1ntt-bbbbbbs2ntt-bbbbbbs3ntt_IW_yyyymmdd_yyyymmdd_pp_INTzz_uuuu**
+**S1_rrr-bbbbbbs1ntt-bbbbbbs2ntt-bbbbbbs3ntt_IW_yyyymmdd_yyyymmdd_pp_INTzz_uuuu**
 
 - each file starts with **S1**, indicating that the data was acquired by Sentinel-1
 - **rrr** is the relative path (or orbit) number for the bursts included in the product
@@ -388,7 +388,7 @@ To illustrate, the filename for a VV interferogram with 80-m pixel spacing conta
 111111_IW1, 111112_IW1, and 111111_IW2 from path 123 for the reference date of January 1, 2024 and the 
 secondary date of January 15, 2024, would have the following product name:
 
-S1_123_111111s1n02-111111s2n01-000000s3n00_IW_20240101_20240115_VV_INT80_AEB4
+S1_123-111111s1n02-111111s2n01-000000s3n00_IW_20240101_20240115_VV_INT80_AEB4
 
 Table 2 describes the individual components in this sample filename:
 

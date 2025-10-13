@@ -45,6 +45,8 @@ markdown_extensions:
       toc_depth: 4
   - attr_list
   - admonition
+  - pymdownx.fancylists:
+      inject_style: true
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.arithmatex:
@@ -58,8 +60,11 @@ extra_javascript:
 nav:
   - HyP3:
     - About: index.md
-    - HyP3 Free: hyp3_free.md
-    - HyP3+: hyp3_plus.md
+    - HyP3 Free: about/hyp3_free.md
+    - HyP3+:
+      - about/hyp3_plus.md
+      - Terms of Service: about/hyp3_plus_terms.md
+    - HyP3 Custom: about/hyp3_custom.md
   - Using HyP3:
     - using.md
     # TODO TOOL-2787: uncomment this line:

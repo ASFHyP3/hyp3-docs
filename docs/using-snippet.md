@@ -7,7 +7,7 @@ On Demand job types consume different credit amounts. Refer to the
 for more information. 
 
 If you do not have enough credits to generate all the products you need for your 
-project, you can [purchase additional credits](hyp3_plus.md). 
+project, you can [purchase additional credits](about/hyp3_plus.md).
 
 <!-- TODO TOOL-2787: uncomment this block:
 !!! warning "New On Demand users must request HyP3 access" 

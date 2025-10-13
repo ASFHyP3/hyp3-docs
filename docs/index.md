@@ -1,4 +1,4 @@
-# **Hybrid Pluggable Processing Pipeline (HyP3)**
+# HyP3
 
 The Alaska Satellite Facility's HyP3 (pronounced *"hype"*) platform supports processing Synthetic Aperture Radar (SAR) 
 imagery in a cloud-native computing environment. It addresses many common issues for users of SAR data:

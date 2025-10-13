@@ -2,7 +2,7 @@
 {% extends "base.html" %}
 {% block styles %}
     {{ super() }}
-    <link rel="stylesheet" href="{{ 'assets/stylesheets/asf.css' | url }}">
+    <link rel="stylesheet" href="{{ 'stylesheets/asf.css' | url }}">
 {% endblock %}
 {% block libs %}
 {{ super() }}
@@ -22,7 +22,7 @@ feedback.init({showIcon: false});
 {% endblock %}
 {% block scripts %}
     {{ super() }}
-    <script src="{{ 'assets/javascripts/expert-rec-search.js' | url }}"></script>
+    <script src="{{ 'javascripts/expert-rec-search.js' | url }}"></script>
 {% endblock %}
 {# Uncomment this block to enable the announcement banner:
 {% block announce %}

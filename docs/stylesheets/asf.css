@@ -1,118 +1,153 @@
 body {
-  background: rgba(248, 248, 248, 100);
+    background: rgba(248, 248, 248, 100);
 }
 
 a {
-  color: #236192;
+    color: #236192;
 }
 
 .md-header a, .md-footer a {
-  color: rgba(248, 248, 248, 100);
+    color: rgba(248, 248, 248, 100);
 }
 
 .md-header, .md-footer {
-  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.5);
-  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.5);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
 }
 
 .md-header {
-  background: rgb(101, 102, 92);
-  background: linear-gradient(180deg, rgba(101, 102, 92, 1) 0%, rgba(106, 106, 106, 1) 100%);
+    background: rgb(101, 102, 92);
+    background: linear-gradient(180deg, rgba(101, 102, 92, 1) 0%, rgba(106, 106, 106, 1) 100%);
 }
 
 .md-footer {
-  background: rgb(106, 106, 106);
-  background-image: url("../images/map.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  min-height: 574px;
-  border-top: 58px solid #ffcd00;
+    background: rgb(106, 106, 106);
+    background-image: url("../images/map.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 574px;
+    border-top: 58px solid #ffcd00;
 }
 
 .md-header__button.md-logo img {
-  height: 2.0rem;
-  width: auto;
-  display: inline-block;
-  margin-top: -7px;
+    height: 2.0rem;
+    width: auto;
+    display: inline-block;
+    margin-top: -7px;
 }
 
 .md-footer-meta.md-typeset {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .md-footer-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 20px;
-  width: 100%;
-  height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
 }
 
 .md-footer-container-item {
-  flex-shrink: 1;
-  flex-grow: 1;
-  flex-basis: auto;
-  min-width: 200px;
-  max-width: 400px;
-  margin: 0 5px 25px 0;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: auto;
+    min-width: 200px;
+    max-width: 400px;
+    margin: 0 5px 25px 0;
 }
 
 .md-footer-container-item p {
-  font-family: "Helvetica",sans-serif;
-  font-size: 14px;
-  color: white;
-  line-height: 1.5;
+    font-family: "Helvetica", sans-serif;
+    font-size: 14px;
+    color: white;
+    line-height: 1.5;
 }
 
 .md-footer-container-item h1 {
-  color: white;
+    color: white;
 }
 
 .md-footer-logo {
-  width: 225px;
-  margin-top: 20px;
-  margin-left: 5px;
+    width: 225px;
+    margin-top: 20px;
+    margin-left: 5px;
 }
 
 .md-about-us {
- max-width: 250px;
+    max-width: 250px;
 }
 
 .md-contact-info {
-  max-width: 200px;
+    max-width: 200px;
 }
 
 .md-footer-meta {
-  background-color: black;
+    background-color: black;
 }
 
 .md-copyright-link {
-  color: #1bb0ce !important;
+    color: #1bb0ce !important;
 }
 
 .md-copyright {
-  margin-left: 0;
+    margin-left: 0;
 }
 
 .md-nav__title {
-  color: black;
+    color: black;
 }
 
 .md-nav--primary .md-nav__title {
-  background: #f8f8f8;
-  box-shadow: none;
+    background: #f8f8f8;
+    box-shadow: none;
 }
 
 .md-nav--secondary .md-nav__title {
-  background: #f8f8f8;
-  box-shadow: none;
+    background: #f8f8f8;
+    box-shadow: none;
 }
 
 .expert-rec-search {
-  margin-top: 10px;
+    margin-top: 10px;
+}
+
+.tg {
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.tg td {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg th {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+
+.tg .tg-fymr {
+    border: 1px solid black;
+    text-align: left;
+    vertical-align: top
+}
+
+.tg .tg-0pky {
+    border: 1px solid black;
+    text-align: left;
+    vertical-align: top
 }

@@ -1,4 +1,4 @@
-# HyP3
+# **Hybrid Pluggable Processing Pipeline (HyP3)**
 
 The Alaska Satellite Facility's HyP3 (pronounced *"hype"*) platform supports processing Synthetic Aperture Radar (SAR) 
 imagery in a cloud-native computing environment. It addresses many common issues for users of SAR data:
@@ -8,13 +8,38 @@ imagery in a cloud-native computing environment. It addresses many common issues
 * Software for SAR processing is complicated to use and/or prohibitively expensive
 * Producing analysis-ready SAR data has a steep learning curve that acts as a barrier to entry
 
-HyP3 solves these problems by providing a free service where people can request SAR processing on demand. These
+HyP3 solves these problems by providing a service where people can request SAR processing on demand. These
 processing requests are picked up by automated systems, which handle the complexity of SAR processing on behalf of the
 user. 
 
 HyP3 doesn't require users to have a lot of knowledge of SAR processing before getting started; users only need to
 submit the input data and set a few optional parameters if desired. With HyP3, analysis-ready products are just a few
 clicks away.
+
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-fymr">
+        <a href="/about/hyp3_free/" title="HyP3 Free"><b>HyP3 Free</b></a><br><em>Supported by NASA Earthdata</em>
+    </th>
+    <th class="tg-fymr">
+        <a href="/about/hyp3_plus/" title="HyP3+"><b>HyP3+</b></a> 
+    </th>
+    <th class="tg-fymr">
+        <a href="/about/hyp3_custom/" title="HyP3 Custom"><b>HyP3 Custom</b></a>
+    </th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky"><a href="https://hyp3-api.asf.alaska.edu" title="HyP3 API" target="_blank">hyp3-api.asf.alaska.edu</a><br><br>Products expire after 14 days<br><br>Round-robin processing queue<br><br><br>Products distributed via CloudFront</td>
+    <td class="tg-0pky"><a href="https://hyp3-plus.asf.alaska.edu" title="HyP3 Plus API" target="_blank">hyp3-plus.asf.alaska.edu</a><br><br>Products expire after 30 days<br><br>Smaller user-queue with higher throughput.<br>Get your products faster!<br><br>Products provided in a public AWS S3 Bucket<br></td>
+    <td class="tg-0pky">&#x003C;Any domain!&#x003E;<br><br>Set your product expiration time<br><br>No processing competition<br><br><br>Control API and product access<br><br>Custom products<br><br>Expert consultation possible!</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">10,000 Credits/ month free*</td>
+    <td class="tg-0pky">1 Credit = $0.05</td>
+    <td class="tg-0pky">Talk to us!<br>Email: uso@asf.alaska.edu </td>
+  </tr>
+</tbody></table>
 
 ## Getting started
 

@@ -2,18 +2,20 @@
 
 For users who need to process more
 [On Demand products](../products.md "Jump to the Products landing page of the documentation") than their
-[credit limit](../using/credits.md "Jump to the Credits page of the documentation")
+[HyP3 Free credit limit](../using/credits.md "Jump to the Credits page of the documentation")
 allows, ASF provides HyP3+, a separate
 [HyP3 deployment](../index.md) where users can pay for additional processing.
 
 HyP3+ offers the same
 [On Demand products](../products.md "Jump to the Products landing page of the documentation")
-as ASF's standard HyP3 deployment, and users access their additional credit limit by logging in with the same
+as HyP3 Free, and users access their purchased credits by logging in with the same
 [Earthdata Login Credentials](../using/authentication.md#earthdata-login-edl)
 used for ordering free On Demand products.
 
-HyP3+ has a different API Endpoint than the standard HyP3 deployment. Users can interact with HyP3+ using
-the same methods as the standard HyP3 deployment, but will need to accommodate the different API URL. Refer to the
+HyP3+ has a different API Endpoint than the standard HyP3 Free deployment. Users can interact with HyP3+ using
+the same methods as HyP3 Free, but will need to accommodate the different API URL. 
+<!-- FIXME: Using -->
+Refer to the
 [API Endpoint](#api-endpoint "Jump to the API Endpoint section of this document")
 section for more information on how to access the HyP3+ API Endpoint using Vertex, the HyP3 API, or the
 HyP3 Python SDK.
@@ -25,6 +27,7 @@ Credits can be purchased at
 {target=_blank}.
 Credit purchases will be processed within two business days, and purchased credits do not expire.
 
+<!-- FIXME: Check on walkthrough -->
 [![Click to Purchase On Demand Processing Credits](../images/purchase-credits-button-small.png "Click to purchase On Demand Processing Credits")](https://epay.alaska.edu/C21563_ustores/web/store_cat.jsp?STOREID=141&CATID=410&SINGLESTORE=true "Click to purchase On Demand Processing Credits from epay.alaska.edu" )
 {target=_blank}
 
@@ -75,10 +78,11 @@ place additional orders as necessary when your credit balance is depleted.
 
 ### Refunds
 
-If you purchase credits in error or need to assign purchased credits to a different username, send an email to
-uso@asf.alaska.edu and we will work with you to understand and resolve the issue. Any refunds granted will be
+If you purchase credits in error or need to assign purchased credits to a different username, email
+ASF User Services, [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu"), and we will work with you to understand and resolve the issue. Any refunds granted will be
 credited to the original method of payment.
 
+<!-- FIXME: move whole section to using -->
 ## API Endpoint
 
 The HyP3+ deployment is accessed using this API endpoint:
@@ -188,4 +192,4 @@ methods available for downloading products once processing is complete.
 ## Contact Us
 
 If you have any questions or concerns about using HyP3+, or have any suggestions about how
-we might improve this service, send us an email at [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu).
+we might improve this service, email ASF User Services: [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu").

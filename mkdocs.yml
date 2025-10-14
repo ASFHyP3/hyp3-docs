@@ -61,13 +61,11 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
-  - HyP3:
-    - About: index.md
-    - HyP3 Free: about/hyp3_free.md
+  - About HyP3:
+    - HyP3: index.md
     - HyP3+:
       - about/hyp3_plus.md
       - Terms of Service: about/hyp3_plus_terms.md
-    - HyP3 Custom: about/hyp3_custom.md
   - Using HyP3:
     - using.md
     # TODO TOOL-2787: uncomment this line:

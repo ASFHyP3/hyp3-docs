@@ -24,20 +24,19 @@ clicks away.
     <th class="tg-fymr">
         <a href="/about/hyp3_plus/" title="HyP3+"><b>HyP3+</b></a> 
     </th>
-    <th class="tg-fymr">
-        <a href="/about/hyp3_custom/" title="HyP3 Custom"><b>HyP3 Custom</b></a>
-    </th>
   </tr></thead>
 <tbody>
   <tr>
-    <td class="tg-0pky"><a href="https://hyp3-api.asf.alaska.edu" title="HyP3 API" target="_blank">hyp3-api.asf.alaska.edu</a><br><br>Products expire after 14 days<br><br>Round-robin processing queue<br><br><br>Products distributed via CloudFront</td>
-    <td class="tg-0pky"><a href="https://hyp3-plus.asf.alaska.edu" title="HyP3 Plus API" target="_blank">hyp3-plus.asf.alaska.edu</a><br><br>Products expire after 30 days<br><br>Smaller user-queue with higher throughput.<br>Get your products faster!<br><br>Products provided in a public AWS S3 Bucket<br></td>
-    <td class="tg-0pky">&#x003C;Any domain!&#x003E;<br><br>Set your product expiration time<br><br>No processing competition<br><br><br>Control API and product access<br><br>Custom products<br><br>Expert consultation possible!</td>
+    <td class="tg-0pky">
+      <a href="https://hyp3-api.asf.alaska.edu" title="HyP3 API" target="_blank">hyp3-api.asf.alaska.edu</a><br><br>Products expire after 14 days<br><br>Round-robin processing queue<br><br><br>Products distributed via CloudFront
+    </td>
+    <td class="tg-0pky">
+      <a href="https://hyp3-plus.asf.alaska.edu" title="HyP3 Plus API" target="_blank">hyp3-plus.asf.alaska.edu</a><br><br>Products expire after 30 days<br><br>Smaller user-queue with higher throughput.<br>Get your products faster!<br><br>Products provided in a public AWS S3 Bucket<br>
+    </td>
   </tr>
   <tr>
     <td class="tg-0pky">10,000 Credits/ month free*</td>
     <td class="tg-0pky">1 Credit = $0.05</td>
-    <td class="tg-0pky">Talk to us!<br>Email: uso@asf.alaska.edu </td>
   </tr>
 </tbody></table>
 

@@ -359,7 +359,7 @@ the following order, as illustrated in Figure 3.
 
 ### Naming Convention: INSAR_ISCE_MULTI_BURST
 
-The naming scheme for `INSAR_ISCE_MULTI_BURST` products follows the naming convention below, 
+The base filename for `INSAR_ISCE_MULTI_BURST` products follows the naming convention below, 
 as illustrated in Figure 4.
 
 **S1_rrr-bbbbbbs1ntt-bbbbbbs2ntt-bbbbbbs3ntt_IW_yyyymmdd_yyyymmdd_pp_INTzz_uuuu**
@@ -367,13 +367,13 @@ as illustrated in Figure 4.
 - each file starts with **S1**, indicating that the data was acquired by Sentinel-1
 - **rrr** is the relative path (or orbit) number for the bursts included in the product
 - **bbbbbb** indicates the first burst ID for each subswath
-    - if there are no bursts included for a given subswath, the value of **bbbbbb** would be 000000
+    - if there are no bursts included for a given subswath, the value of **bbbbbb** would be `000000`
 - the number following **s** indicates the subswath associated with the burst IDs
-    - for example, s1 indicates the first subswath
+    - for example, `s1` indicates the first subswath
     - there is a placeholder for each of the three subswaths, even if there aren't bursts included from all three 
 - **ntt** indicates the number of bursts included in the product for the given subswath
-    - for example, n02 indicates that there are 2 bursts included for that subswath
-    - if there are no bursts included from that subswath, the value of **tt** would be 00
+    - for example, `n02` indicates that there are 2 bursts included for that subswath
+    - if there are no bursts included from that subswath, the value of **tt** would be `00`
 - **IW** indicates the beam mode (interferometric wide swath)
 - the first **yyyymmdd** indicates the date the reference bursts were acquired
 - the second **yyyymmdd** indicates the date the secondary bursts were acquired

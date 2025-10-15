@@ -390,23 +390,9 @@ secondary date of January 15, 2024, would have the following product name:
 
 S1_123-111111s1n02-111111s2n01-000000s3n00_IW_20240101_20240115_VV_INT80_AEB4
 
-Table 2 describes the individual components in this sample filename:
+![Figure 4](../images/asf_multi_burst_insar_names.png "Breakdown of ASF Multi-burst InSAR Naming Scheme")
 
-| Component       | Description                                                                                                                                                                                                                                                                                           | Example     |
-|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
-| **S1**          | SAR Platform. S1 for Sentinel-1.                                                                                                                                                                                                                                                                      | S1          |
-| **rrr**         | Relative orbit ID values assigned by ESA. Merged burst InSAR products can contain many relative burst IDs, so the relative orbit ID is used in lieu of relative burst IDs for these products.                                                                                                         | 123         |
-| **bbbbbbs1ntt** | The characters represented by bbbbbb indicate the first burst ID present for subswath 1 (s1) in the path, followed by the total number of bursts included from that subswath, represented by the characters tt.                                                                                       | 111111s1n02 |
-| **bbbbbbs2ntt** | The characters represented by bbbbbb indicate the first burst ID present for subswath 2 (s2) in the path, followed by the total number of bursts included from that subswath, represented by the characters tt.                                                                                       | 111111s2n01 |
-| **bbbbbbs3ntt** | The characters represented by bbbbbb indicate the first burst ID present for subswath 3 (s3) in the path, followed by the total number of bursts included from that subswath, represented by the characters tt.                                                                                       | 000000s3n00 |
-| **yyyymmdd**    | Acquisition date of the reference bursts.                                                                                                                                                                                                                                                             | 20240101    |
-| **yyyymmdd**    | Acquisition date of the secondary bursts.                                                                                                                                                                                                                                                             | 20240115    |
-| **pp**          | Two character combination indicating the product polarization. The first character represents the transmit polarization and the second character represents the receive polarization. Note that these products only support co-polarized inputs, so the product polarization will either be VV or HH. | VV          |
-| **INT**         | The product type (always INT for InSAR).                                                                                                                                                                                                                                                              | INT         |
-| **zz**          | The pixel spacing of the output image.                                                                                                                                                                                                                                                                | 80          |
-| **uuuu**        | 4-character unique product identifier.                                                                                                                                                                                                                                                                | AEB4        |
-
-*Table 2: Naming scheme for multi-burst InSAR products*
+*Figure 3: Breakdown of ASF Multi-burst InSAR naming scheme.*
 
 ### Image Files
 

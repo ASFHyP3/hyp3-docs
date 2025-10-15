@@ -359,23 +359,21 @@ the following order, as illustrated in Figure 3.
 
 ### Naming Convention: INSAR_ISCE_MULTI_BURST
 
-The naming scheme for products generated using the `INSAR_ISCE_MULTI_BURST` job type is different from the scheme 
-used for `INSAR_ISCE_BURST` products.
-
-The basename of the multi-burst InSAR files follows this naming convention: 
+The base filename for `INSAR_ISCE_MULTI_BURST` products follows the naming convention below, 
+as illustrated in Figure 4.
 
 **S1_rrr-bbbbbbs1ntt-bbbbbbs2ntt-bbbbbbs3ntt_IW_yyyymmdd_yyyymmdd_pp_INTzz_uuuu**
 
 - each file starts with **S1**, indicating that the data was acquired by Sentinel-1
 - **rrr** is the relative path (or orbit) number for the bursts included in the product
 - **bbbbbb** indicates the first burst ID for each subswath
-    - if there are no bursts included for a given subswath, the value of **bbbbbb** would be 000000
+    - if there are no bursts included for a given subswath, the value of **bbbbbb** would be `000000`
 - the number following **s** indicates the subswath associated with the burst IDs
-    - for example, s1 indicates the first subswath
+    - for example, `s1` indicates the first subswath
     - there is a placeholder for each of the three subswaths, even if there aren't bursts included from all three 
 - **ntt** indicates the number of bursts included in the product for the given subswath
-    - for example, n02 indicates that there are 2 bursts included for that subswath
-    - if there are no bursts included from that subswath, the value of **tt** would be 00
+    - for example, `n02` indicates that there are 2 bursts included for that subswath
+    - if there are no bursts included from that subswath, the value of **tt** would be `00`
 - **IW** indicates the beam mode (interferometric wide swath)
 - the first **yyyymmdd** indicates the date the reference bursts were acquired
 - the second **yyyymmdd** indicates the date the secondary bursts were acquired
@@ -384,29 +382,14 @@ The basename of the multi-burst InSAR files follows this naming convention:
 - **zz** indicates the pixel spacing of the output InSAR product (20, 40, or 80 meters)
 - **uuuu** is the unique product identifier
 
-To illustrate, the filename for a VV interferogram with 80-m pixel spacing containing bursts 
+![Figure 4](../images/asf_multi_burst_insar_names.png "Breakdown of ASF Multi-Burst InSAR Naming Scheme")
+*Figure 4: Breakdown of ASF Multi-Burst InSAR naming scheme.*
+
+As an example, the filename for a VV interferogram with 80-m pixel spacing containing bursts 
 111111_IW1, 111112_IW1, and 111111_IW2 from path 123 for the reference date of January 1, 2024 and the 
 secondary date of January 15, 2024, would have the following product name:
 
 S1_123-111111s1n02-111111s2n01-000000s3n00_IW_20240101_20240115_VV_INT80_AEB4
-
-Table 2 describes the individual components in this sample filename:
-
-| Component       | Description                                                                                                                                                                                                                                                                                           | Example     |
-|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
-| **S1**          | SAR Platform. S1 for Sentinel-1.                                                                                                                                                                                                                                                                      | S1          |
-| **rrr**         | Relative orbit ID values assigned by ESA. Merged burst InSAR products can contain many relative burst IDs, so the relative orbit ID is used in lieu of relative burst IDs for these products.                                                                                                         | 123         |
-| **bbbbbbs1ntt** | The characters represented by bbbbbb indicate the first burst ID present for subswath 1 (s1) in the path, followed by the total number of bursts included from that subswath, represented by the characters tt.                                                                                       | 111111s1n02 |
-| **bbbbbbs2ntt** | The characters represented by bbbbbb indicate the first burst ID present for subswath 2 (s2) in the path, followed by the total number of bursts included from that subswath, represented by the characters tt.                                                                                       | 111111s2n01 |
-| **bbbbbbs3ntt** | The characters represented by bbbbbb indicate the first burst ID present for subswath 3 (s3) in the path, followed by the total number of bursts included from that subswath, represented by the characters tt.                                                                                       | 000000s3n00 |
-| **yyyymmdd**    | Acquisition date of the reference bursts.                                                                                                                                                                                                                                                             | 20240101    |
-| **yyyymmdd**    | Acquisition date of the secondary bursts.                                                                                                                                                                                                                                                             | 20240115    |
-| **pp**          | Two character combination indicating the product polarization. The first character represents the transmit polarization and the second character represents the receive polarization. Note that these products only support co-polarized inputs, so the product polarization will either be VV or HH. | VV          |
-| **INT**         | The product type (always INT for InSAR).                                                                                                                                                                                                                                                              | INT         |
-| **zz**          | The pixel spacing of the output image.                                                                                                                                                                                                                                                                | 80          |
-| **uuuu**        | 4-character unique product identifier.                                                                                                                                                                                                                                                                | AEB4        |
-
-*Table 2: Naming scheme for multi-burst InSAR products*
 
 ### Image Files
 

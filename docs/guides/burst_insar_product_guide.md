@@ -390,6 +390,8 @@ secondary date of January 15, 2024, would have the following product name:
 
 S1_123-111111s1n02-111111s2n01-000000s3n00_IW_20240101_20240115_VV_INT80_AEB4
 
+A breakdown of the multi-burst naming convention is illustrated in Figure 4. 
+
 ![Figure 4](../images/asf_multi_burst_insar_names.png "Breakdown of ASF Multi-burst InSAR Naming Scheme")
 
 *Figure 3: Breakdown of ASF Multi-burst InSAR naming scheme.*

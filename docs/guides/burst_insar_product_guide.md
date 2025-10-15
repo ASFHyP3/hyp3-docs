@@ -359,10 +359,8 @@ the following order, as illustrated in Figure 3.
 
 ### Naming Convention: INSAR_ISCE_MULTI_BURST
 
-The naming scheme for products generated using the `INSAR_ISCE_MULTI_BURST` job type is different from the scheme 
-used for `INSAR_ISCE_BURST` products.
-
-The basename of the multi-burst InSAR files follows this naming convention: 
+The naming scheme for `INSAR_ISCE_MULTI_BURST` products follows the naming convention below, 
+as illustrated in Figure 4.
 
 **S1_rrr-bbbbbbs1ntt-bbbbbbs2ntt-bbbbbbs3ntt_IW_yyyymmdd_yyyymmdd_pp_INTzz_uuuu**
 
@@ -384,17 +382,14 @@ The basename of the multi-burst InSAR files follows this naming convention:
 - **zz** indicates the pixel spacing of the output InSAR product (20, 40, or 80 meters)
 - **uuuu** is the unique product identifier
 
-To illustrate, the filename for a VV interferogram with 80-m pixel spacing containing bursts 
+![Figure 4](../images/asf_multi_burst_insar_names.png "Breakdown of ASF Multi-Burst InSAR Naming Scheme")
+*Figure 4: Breakdown of ASF Multi-Burst InSAR naming scheme.*
+
+As an example, the filename for a VV interferogram with 80-m pixel spacing containing bursts 
 111111_IW1, 111112_IW1, and 111111_IW2 from path 123 for the reference date of January 1, 2024 and the 
 secondary date of January 15, 2024, would have the following product name:
 
 S1_123-111111s1n02-111111s2n01-000000s3n00_IW_20240101_20240115_VV_INT80_AEB4
-
-A breakdown of the multi-burst naming convention is illustrated in Figure 4. 
-
-![Figure 4](../images/asf_multi_burst_insar_names.png "Breakdown of ASF Multi-burst InSAR Naming Scheme")
-
-*Figure 3: Breakdown of ASF Multi-burst InSAR naming scheme.*
 
 ### Image Files
 

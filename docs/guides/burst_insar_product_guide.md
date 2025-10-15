@@ -359,7 +359,7 @@ the following order, as illustrated in Figure 3.
 
 ### Naming Convention: INSAR_ISCE_MULTI_BURST
 
-The naming scheme for products generated using the `INSAR_ISCE_MULTI_BURST` follows the naming convention below, 
+The naming scheme for `INSAR_ISCE_MULTI_BURST` products follows the naming convention below, 
 as illustrated in Figure 4.
 
 **S1_rrr-bbbbbbs1ntt-bbbbbbs2ntt-bbbbbbs3ntt_IW_yyyymmdd_yyyymmdd_pp_INTzz_uuuu**

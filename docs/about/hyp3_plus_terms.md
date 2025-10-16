@@ -14,10 +14,10 @@ b. As ASF does not have control over the creation, maintenance, or quality of th
     ii. Data Availability: ASF relies on ESA, NASA, ISRO and other third-parties to ensure that federated datasets are accessible. If the resources hosting these data are offline or experience issues, this may result in disruptions to HyP3+. ASF will not be held liable for any unavailability caused by these data outages.
 
 ## 3. Product Usage Guideline and Privacy Policy
-a. Customers are required to follow the HyP3+ Product Usage Guideline, which can be found here: FIXME and the HyP3+ Privacy policy which can be found here: FIXME
+a. Customers are required to follow the HyP3+ [Product Usage Guideline](../usage_guidelines.md) and [ASF's Privacy policy](https://engage.alaska.edu/uaf/page.aspx?pid=459).
 
-## 4. Pricing
-a. The pricing structure of HyP3+ is posted FIXME. Pricing is subject to change without notice.
+## 4. Pricin
+a. The pricing structure of HyP3+ is posted on the [Credits](../using/credits.md) page. Pricing is subject to change without notice.
 
 ## 5. Payment
 a. Payment is due at the time of purchase. Purchases will be approved within 48 hours and credits will be applied to the Customer’s account within that timeframe. Credits expire 1 year from last date of purchase.

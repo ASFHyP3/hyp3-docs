@@ -8,7 +8,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.11.2]
 ### Removed
-* ORPERA S1-RTC jobs from the credits table as they are not ready for general availability yet.
+* OPERA S1-RTC jobs from the credits table as they are not ready for general availability yet.
 
 ## [0.11.1]
 ### Added

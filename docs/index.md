@@ -1,44 +1,38 @@
-# **Hybrid Pluggable Processing Pipeline (HyP3)**
+# HyP3, ASF's on-demand processing services
 
-The Alaska Satellite Facility's HyP3 (pronounced *"hype"*) platform supports processing Synthetic Aperture Radar (SAR) 
-imagery in a cloud-native computing environment. It addresses many common issues for users of SAR data:
+Through HyP3, the Alaska Satellite Facility offers a family of cloud-native, scalable product generation services that make its data holdings more accessible. HyP3 primarily runs compute-heavy workflows, which take tens of minutes to hours of compute time, to create products that are easier to use, GIS-ready, and customized to a user’s needs.
 
-* Most SAR datasets require at least some processing to remove distortions before they are analysis-ready
-* SAR processing is computing-intensive
-* Software for SAR processing is complicated to use and/or prohibitively expensive
-* Producing analysis-ready SAR data has a steep learning curve that acts as a barrier to entry
+The HyP3 Service Family: Explore HyP3 free-of-charge through HyP3 Basic, our NASA-supported on-demand service, or purchase credits though Hyp3+, our unlimited service that can take your application global. Need help scaling your own, in-house workflows? [Contact us](contact.md)!
 
-HyP3 solves these problems by providing a service where people can request SAR processing on demand. These
-processing requests are picked up by automated systems, which handle the complexity of SAR processing on behalf of the
-user. 
-
-HyP3 doesn't require users to have a lot of knowledge of SAR processing before getting started; users only need to
-submit the input data and set a few optional parameters if desired. With HyP3, analysis-ready products are just a few
-clicks away.
-
-<table class="tg"><thead>
-  <tr>
-    <th class="tg-fymr">
-        <a href="/about/hyp3_basic/" title="HyP3 Basic"><b>HyP3 Basic</b></a><br><em>Supported by NASA Earthdata</em>
-    </th>
-    <th class="tg-fymr">
-        <a href="/about/hyp3_plus/" title="HyP3+"><b>HyP3+</b></a> 
-    </th>
-  </tr></thead>
-<tbody>
-  <tr>
-    <td class="tg-0pky">
-      <a href="https://hyp3-api.asf.alaska.edu" title="HyP3 API" target="_blank">hyp3-api.asf.alaska.edu</a><br><br>Products expire after 14 days<br><br>Round-robin processing queue<br><br><br>Products distributed via CloudFront
-    </td>
-    <td class="tg-0pky">
-      <a href="https://hyp3-plus.asf.alaska.edu" title="HyP3 Plus API" target="_blank">hyp3-plus.asf.alaska.edu</a><br><br>Products expire after 30 days<br><br>Smaller user-queue with higher throughput.<br>Get your products faster!<br><br>Products provided in a public AWS S3 Bucket<br>
-    </td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">10,000 Credits/ month free*</td>
-    <td class="tg-0pky">1 Credit = $0.05</td>
-  </tr>
-</tbody></table>
+<table class="tg">
+  <thead>
+    <tr>
+      <th class="tg-fymr">
+          <a href="/about/hyp3_basic/" title="HyP3 Basic"><b>HyP3 Basic</b></a><br><em>Supported by NASA Earthdata</em>
+      </th>
+      <th class="tg-fymr">
+          <a href="/about/hyp3_plus/" title="HyP3+"><b>HyP3+</b></a>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="tg-0pky">
+        <a href="https://hyp3-api.asf.alaska.edu" title="HyP3 API" target="_blank">hyp3-api.asf.alaska.edu</a><br><br>Products expire after 14 days<br><br>Round-robin processing queue<br><br><br>Products distributed via CloudFront
+      </td>
+      <td class="tg-0pky">
+        <a href="https://hyp3-plus.asf.alaska.edu" title="HyP3 Plus API" target="_blank">hyp3-plus.asf.alaska.edu</a><br><br>Products expire after 30 days<br><br>Smaller user-queue with higher throughput.<br>Get your products faster!<br><br>Products provided in a public AWS S3 Bucket<br>
+      </td>
+    </tr>
+    <tr>
+      <td class="tg-0pky">10,000 Credits/ month free*</td>
+      <td class="tg-0pky">1 Credit = $0.05</td>
+    </tr>
+  </tbody>
+  <caption>
+    <em>*More available by request, as our budget allows. Send requests to ASF User Services: <a href="mailto:uso@asf.alaska.edu" target="_blank" title="uso@asf.alaska.edu">uso@asf.alaska.edu</a>.</em>
+  </caption>
+</table>
 
 ## Getting started
 

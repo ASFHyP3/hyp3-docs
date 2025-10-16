@@ -1,13 +1,12 @@
 On Demand products processed by HyP3 can be requested quickly and easily, either by
 using a web interface or programmatically. These services are currently only available for [Sentinel-1 datasets](sentinel1.md "Sentinel-1 Mission" ){target=_blank}.
 
-Each user is allotted 10,000 credits per month to use for processing, and different 
-On Demand job types consume different credit amounts. Refer to the 
+Different Hyp3 job types consume different credit amounts. In Hyp3 Basic, users are allotted 10,000 credits per month for free. Refer to the
 [Credits page](using/credits.md "Jump to the Credits documentation page") 
 for more information. 
 
 If you do not have enough credits to generate all the products you need for your 
-project, you can [purchase additional credits](about/hyp3_plus.md).
+project, you can purchase additional credits in [HyP3+](about/hyp3_plus.md).
 
 <!-- TODO TOOL-2787: uncomment this block and update snippet language for post HyP3+ launch:
 {% include 'application-snippet.md' %}

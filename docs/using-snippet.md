@@ -1,7 +1,7 @@
 On Demand products processed by HyP3 can be requested quickly and easily, either by
 using a web interface or programmatically. These services are currently only available for [Sentinel-1 datasets](sentinel1.md "Sentinel-1 Mission" ){target=_blank}.
 
-Different HyP3 job types consume different credit amounts. In HyP3 Basic, users are allotted 10,000 credits per month for free. Refer to the
+Different HyP3 job types consume different credit amounts. In [HyP3 Basic](about/hyp3_basic.md), users are allotted 10,000 credits per month for free. Refer to the
 [Credits page](using/credits.md "Jump to the Credits documentation page") 
 for more information. 
 

@@ -61,8 +61,9 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
-  - About HyP3:
-    - HyP3: index.md
+  - HyP3:
+    - about.md
+    - HyP3 Basic: about/hyp3_basic.md
     - HyP3+:
       - about/hyp3_plus.md
       - Terms of Service: about/hyp3_plus_terms.md

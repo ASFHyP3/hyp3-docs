@@ -8,7 +8,7 @@ cost and complexity of performing such processing yourself.
 [![Vertex Image](../images/vertex.png "Click to open Vertex in a new tab")](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank}
 
 On Demand products are generated using ASF's 
-[HyP3 processing platform](../index.md "Jump to the HyP3 landing page of this documentation"). Refer to the 
+[HyP3 processing platform](../about.md "Jump to the HyP3 landing page of this documentation"). Refer to the
 [Products](../products.md "Jump to the Products page of the documentation") page for more information about the 
 various On Demand products ASF offers. 
 
@@ -71,14 +71,14 @@ Once On Demand products have been processed, download options will be available 
 or by adding them to the **Download Queue** 
 <img width="20" src="https://user-images.githubusercontent.com/17994518/95271856-6d749d00-07eb-11eb-81d8-365a6221e4f1.png" />.
 
- - Refer to the 
+ - Refer to the
    [Downloads](./downloading.md#on-demand-search-in-vertex "Jump to the On Demand Search in Vertex section of the Downloads page") 
    page for more information about download options. 
  - On Demand products are retained and available to download for two weeks (14 days) after processing.
 
 ## Tutorials
 
-Refer to our 
+Refer to our
 [StoryMap Tutorials](https://asf-daac.maps.arcgis.com/home/index.html "https://asf-daac.maps.arcgis.com/home/index.html" ){target=_blank} 
 for step-by-step guidance on submitting, downloading, and working with many of the different On Demand products 
 available from ASF.

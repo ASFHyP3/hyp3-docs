@@ -865,7 +865,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.3.0](https://github.com/ASFHyP3/hyp3-docs/compare/v0.2.2...v0.3.0)
 
 ### Added
-* Added a [Contact Us snippet](docs/contact-snippet.md) that is used on the [Home](docs/index.md) page
+* Added a [Contact Us snippet](docs/contact-snippet.md) that is used on the [Home](docs/about.md) page
   and a new [Contact Us](docs/contact-snippet.md) page
 * Added SAR Basics -> [Introduction to SAR](docs/guides/introduction_to_sar.md) page
 * Added Products -> InSAR -> [InSAR Product Guide](docs/guides/insar_product_guide.md) page

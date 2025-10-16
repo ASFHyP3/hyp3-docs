@@ -1,6 +1,7 @@
 import requests
 
 _CREDITS_PER_MONTH_VALUE = 10_000
+_COST_PER_CREDIT_VALUE = 0.05
 CREDITS_PER_MONTH = f'{_CREDITS_PER_MONTH_VALUE:,}'
 
 
@@ -23,3 +24,8 @@ def define_env(env):
         return f'{_CREDITS_PER_MONTH_VALUE // credit_cost:,}'
 
     env.macro(max_jobs_per_month, 'max_jobs_per_month')
+
+    def hyp3_plus_cost(credit_cost):
+        return f'${_COST_PER_CREDIT_VALUE * credit_cost:,.2f}'
+
+    env.macro(hyp3_plus_cost, 'hyp3_plus_cost')

@@ -6,14 +6,40 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-
-## [0.11.0]
+## [Unreleased]
 
 ### Added
+* Added logos for the HyP3+ deployment
 * Added documentation for [paid processing](docs/using/paid_processing.md)
 
 ### Removed
 * Removed landing page for subscriptions
+
+## [0.11.1]
+### Added
+* Added a funding credit statement to the ARIA_S1_GUNW product guide.
+
+## [0.11.0]
+
+### Removed
+* Removed content related to merging single-burst InSAR products made obsolete with HyP3 ISCE2 v3.0.0:
+  * "Merge HyP3 ISCE2 burst InSAR products" tutorial
+  * "Merging Sentinel-1 Single-Burst InSAR Products" section of the Burst InSAR product guide
+
+## [0.10.22]
+
+### Changed
+* Updated the [ARIA S1 GUNW Product Guide](https://hyp3-docs.asf.alaska.edu/guides/gunw_product_guide) to include information about Vertex support for searching for ARIA Frames and submitting On Demand jobs
+
+## [0.10.21]
+
+### Added
+*Added tutorial links for the [ASF Sentinel-1 InSAR on Demand Product Comparison StoryMap](https://storymaps.arcgis.com/stories/6cb4f1c18558441bb9b4b11337515b53)
+
+## [0.10.20]
+
+### Changed
+* Updated HyP3 SDK to [v7.7.3](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#773)
 
 ## [0.10.19]
 
@@ -839,7 +865,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.3.0](https://github.com/ASFHyP3/hyp3-docs/compare/v0.2.2...v0.3.0)
 
 ### Added
-* Added a [Contact Us snippet](docs/contact-snippet.md) that is used on the [Home](docs/index.md) page
+* Added a [Contact Us snippet](docs/contact-snippet.md) that is used on the [Home](docs/about.md) page
   and a new [Contact Us](docs/contact-snippet.md) page
 * Added SAR Basics -> [Introduction to SAR](docs/guides/introduction_to_sar.md) page
 * Added Products -> InSAR -> [InSAR Product Guide](docs/guides/insar_product_guide.md) page

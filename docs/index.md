@@ -19,7 +19,7 @@ clicks away.
 <table class="tg"><thead>
   <tr>
     <th class="tg-fymr">
-        <a href="/about/hyp3_free/" title="HyP3 Free"><b>HyP3 Free</b></a><br><em>Supported by NASA Earthdata</em>
+        <a href="/about/hyp3_basic/" title="HyP3 Basic"><b>HyP3 Basic</b></a><br><em>Supported by NASA Earthdata</em>
     </th>
     <th class="tg-fymr">
         <a href="/about/hyp3_plus/" title="HyP3+"><b>HyP3+</b></a> 

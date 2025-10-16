@@ -2,18 +2,18 @@
 
 For users who need to process more
 [On Demand products](../products.md "Jump to the Products landing page of the documentation") than their
-[HyP3 Free credit limit](../using/credits.md "Jump to the Credits page of the documentation")
+[HyP3 Basic credit limit](../using/credits.md "Jump to the Credits page of the documentation")
 allows, ASF provides HyP3+, a separate
 [HyP3 deployment](../index.md) where users can pay for additional processing.
 
 HyP3+ offers the same
 [On Demand products](../products.md "Jump to the Products landing page of the documentation")
-as HyP3 Free, and users access their purchased credits by logging in with the same
+as HyP3 Basic, and users access their purchased credits by logging in with the same
 [Earthdata Login Credentials](../using/authentication.md#earthdata-login-edl)
 used for ordering free On Demand products.
 
-HyP3+ has a different API Endpoint than the standard HyP3 Free deployment. Users can interact with HyP3+ using
-the same methods as HyP3 Free, but will need to accommodate the different API URL. 
+HyP3+ has a different API Endpoint than the standard HyP3 Basic deployment. Users can interact with HyP3+ using
+the same methods as HyP3 Basic, but will need to accommodate the different API URL. 
 <!-- FIXME: Using -->
 Refer to the
 [API Endpoint](#api-endpoint "Jump to the API Endpoint section of this document")

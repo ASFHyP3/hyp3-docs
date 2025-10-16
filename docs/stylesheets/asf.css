@@ -22,7 +22,7 @@ a {
 
 .md-footer {
     background: rgb(106, 106, 106);
-    background-image: url("/images/map.png");
+    background-image: url("/assets/images/map.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

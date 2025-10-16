@@ -1,10 +1,14 @@
 # HyP3, ASF's on-demand processing services
 
-Through HyP3, the Alaska Satellite Facility offers a family of cloud-native, scalable product generation services that make its data holdings more accessible. HyP3 primarily runs compute-heavy workflows, which take tens of minutes to hours of compute time, to create products that are easier to use, GIS-ready, and customized to a user’s needs.
+Through HyP3, the Alaska Satellite Facility offers a family of cloud-native, scalable product generation services that 
+make its data holdings more accessible. HyP3 primarily runs compute-heavy workflows, which take tens of minutes to 
+hours of compute time, to create products that are easier to use, GIS-ready, and customized to a user’s needs.
 
 ## The HyP3 Service Family
 
-Explore HyP3 free-of-charge through HyP3 Basic, our NASA-supported on-demand service, or purchase credits though HyP3+, our unlimited service that can take your application global. Need help scaling your own, in-house workflows? [Contact us](contact.md)!
+Explore HyP3 free-of-charge through HyP3 Basic, our NASA-supported On Demand processing service, or purchase credits 
+though HyP3+, our unlimited service that can take your application global. Need help scaling your own, 
+in-house workflows? [Contact us](contact.md)!
 
 <table class="tg">
   <thead>
@@ -13,7 +17,7 @@ Explore HyP3 free-of-charge through HyP3 Basic, our NASA-supported on-demand ser
           <a href="/about/hyp3_basic/" title="HyP3 Basic"><b>HyP3 Basic</b></a><br><em>Supported by NASA Earthdata</em>
       </th>
       <th class="tg-fymr">
-          <a href="/about/hyp3_plus/" title="HyP3+"><b>HyP3+</b></a>
+          <a href="/about/hyp3_plus/" title="HyP3+"><b>HyP3+</b></a><br><em>User-supported Deployment</em>
       </th>
     </tr>
   </thead>
@@ -31,10 +35,47 @@ Explore HyP3 free-of-charge through HyP3 Basic, our NASA-supported on-demand ser
       <td class="tg-0pky">1 Credit = $0.05</td>
     </tr>
   </tbody>
-  <caption>
-    <em>*More available by request, as our budget allows. Send requests to ASF User Services: <a href="mailto:uso@asf.alaska.edu" target="_blank" title="uso@asf.alaska.edu">uso@asf.alaska.edu</a>.</em>
-  </caption>
 </table>
+<style>
+  .tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    margin: 20px 0;
+  }
+  .tg th {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .tg td {
+    border: 1px solid #ccc;
+    font-size: 14px;
+    padding: 10px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .tg-0pky {
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top;
+  }
+  .tg-fymr {
+    background-color: #f0f0f0;
+    border-color: inherit;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: top;
+  }
+</style>
+
+*More available by request, as our budget allows. Send requests to ASF User Services: 
+[uso@asf.alaska.edu](mailto:uso@asf.alaska.edu)
 
 ## Getting started
 

@@ -20,7 +20,7 @@ a. Customers are required to follow the HyP3+ Product Usage Guideline, which can
 a. The pricing structure of HyP3+ is posted FIXME. Pricing is subject to change without notice.
 
 ## 5. Payment
-a. Payment is due at the time of purchase. Purchases will be approved within 48 hours and credits will be applied to the Customer’s account within that timeframe. Credits do not expire.
+a. Payment is due at the time of purchase. Purchases will be approved within 48 hours and credits will be applied to the Customer’s account within that timeframe. Credits expire 1 year from last date of purchase.
 b. Payments will not be accepted from Customers residing Iran, North Korea, Cuba, China, Russia, and Libya. Additionally, we will review requests coming from other countries listed on the [NASA Designated Countries](https://www.nasa.gov/oiir/export-control/){target=_blank} list and on the Office of [Foreign Assets Control’s Sanction Program](https://ofac.treasury.gov/sanctions-programs-and-country-information){target=_blank} list.
 
 ## 6. Refunds

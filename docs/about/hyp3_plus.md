@@ -25,7 +25,7 @@ HyP3 Python SDK.
 Credits can be purchased at
 [ASF's Web Store](https://epay.alaska.edu/C21563_ustores/web/store_cat.jsp?STOREID=141&CATID=410&SINGLESTORE=true "https://epay.alaska.edu" )
 {target=_blank}.
-Credit purchases will be processed within two business days, and purchased credits do not expire.
+Credit purchases will be processed within two business days, and purchased credits expire 1 year from last date of purchase.
 
 <!-- FIXME: Check on walkthrough -->
 [![Click to Purchase On Demand Processing Credits](../images/purchase-credits-button-small.png "Click to purchase On Demand Processing Credits")](https://epay.alaska.edu/C21563_ustores/web/store_cat.jsp?STOREID=141&CATID=410&SINGLESTORE=true "Click to purchase On Demand Processing Credits from epay.alaska.edu" )
@@ -73,7 +73,7 @@ Once we receive your order, we will add the number of purchased credits to the s
 will be completed within two business days of the order confirmation.*** You will receive an email confirming that the
 credits have been assigned to your username, at which point they are available for use.
 
-Credits do not expire. We do not currently offer a service for automatic credit replenishment, so you will need to
+Credits expire 1 year from last date of purchase. We do not currently offer a service for automatic credit replenishment, so you will need to
 place additional orders as necessary when your credit balance is depleted.
 
 ### Refunds

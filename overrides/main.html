@@ -1,25 +1,5 @@
 <!-- Extends https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/base.html -->
 {% extends "base.html" %}
-{% block styles %}
-    {{ super() }}
-    <link rel="stylesheet" href="{{ 'stylesheets/asf.css' | url }}">
-{% endblock %}
-{% block libs %}
-{{ super() }}
-<script src="https://fbm.earthdata.nasa.gov/for/ASF/feedback.js" type="text/javascript"></script>
-<script type="text/javascript">
- // This prevents the FBM flyout banner from appearing on the side of the page.
-feedback.init({showIcon: false});
-</script>
-
-<script src="https://cdn.earthdata.nasa.gov/tophat2/tophat2.js"
-        id="earthdata-tophat-script"
-        data-show-fbm="true"
-        data-show-status="false"
-        data-fbm-subject-line="How can we help you?"
-        data-current-daac="ASF DAAC">
-</script>
-{% endblock %}
 {% block scripts %}
     {{ super() }}
     <script src="{{ 'javascripts/expert-rec-search.js' | url }}"></script>

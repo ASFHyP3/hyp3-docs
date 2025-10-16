@@ -31,7 +31,7 @@ in-house workflows? [Contact us](contact.md)!
       </td>
     </tr>
     <tr>
-      <td class="tg-0pky">10,000 Credits/ month free*</td>
+      <td class="tg-0pky">10,000 <a href="/using/credits" title="Jump to Credits Documentation">Credits</a> per month free*</td>
       <td class="tg-0pky">1 Credit = $0.05</td>
     </tr>
   </tbody>

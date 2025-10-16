@@ -58,7 +58,7 @@ This supports our mission of
 with the goal of providing valuable products to the widest breadth of users possible.
 
 If your monthly credit allotment is not sufficient for your processing needs, you can
-[purchase additional processing credits](../hyp3_plus.md).
+[purchase additional processing credits](../about/hyp3_plus.md).
 Please contact us if you have questions about additional processing.
 
 ## Contact Us

@@ -38,7 +38,7 @@ To change the HyP3 API in Vertex:
        - URLs that are entered in this field will be available as a drop-down menu item for future use.
 3. Click **Done** to exit the Preferences page.
 
-### 2 Select your scenes
+### 2. Select your scenes
 
 RTC processing is available for Sentinel-1 GRD-H and SLC scenes acquired using the 
 [Interferometric Wide Swath (IW)](https://sentiwiki.copernicus.eu/web/s1-products "https://sentiwiki.copernicus.eu/web/s1-products" ){target=_blank} mode. 

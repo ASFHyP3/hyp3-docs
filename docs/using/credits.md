@@ -1,6 +1,6 @@
 # Credits
 
-On Demand users are given an allotment of **{{ CREDITS_PER_MONTH }} credits per month** to use for processing jobs,
+On Demand users are given a free allotment of **{{ CREDITS_PER_MONTH }} credits per month** to use for processing jobs,
 and each type of job costs a different number of credits, as shown in the [Credit Cost Table](#credit-cost-table).
 
 The "Maximum Jobs Per Month" column displays the maximum number of jobs that you
@@ -15,8 +15,6 @@ allotment on jobs of that particular type.
 | {{ table_indent() }} 30-m pixel spacing                       |       5 |                                {{ max_jobs_per_month(5) }} | {{ hyp3_plus_cost(5) }}                    |
 | {{ table_indent() }} 20-m pixel spacing                       |      15 |                               {{ max_jobs_per_month(15) }} | {{ hyp3_plus_cost(15) }}                   |
 | {{ table_indent() }} 10-m pixel spacing                       |      60 |                               {{ max_jobs_per_month(60) }} | {{ hyp3_plus_cost(60) }}                   |
-| [**OPERA RTC-S1**](../guides/opera_rtc_product_guide.md)      |         |                                                            |                                            |
-| {{ table_indent() }} Standard product (30-m pixel spacing)    |       1 |                                {{ max_jobs_per_month(1) }} | {{ hyp3_plus_cost(1) }}                    |
 | [**InSAR**](../guides/insar_product_guide.md)                 |         |                                                            |                                            |
 | {{ table_indent() }} 80-m pixel spacing (20x4 looks)          |      10 |                               {{ max_jobs_per_month(10) }} | {{ hyp3_plus_cost(10) }}                   |
 | {{ table_indent() }} 40-m pixel spacing (10x2 looks)          |      15 |                               {{ max_jobs_per_month(15) }} | {{ hyp3_plus_cost(15) }}                   |
@@ -58,7 +56,7 @@ This supports our mission of
 with the goal of providing valuable products to the widest breadth of users possible.
 
 If your monthly credit allotment is not sufficient for your processing needs, you can
-[purchase additional processing credits](../about/hyp3_plus.md).
+[purchase additional processing through HyP3+](../about/hyp3_plus.md).
 Please contact us if you have questions about additional processing.
 
 ## Contact Us

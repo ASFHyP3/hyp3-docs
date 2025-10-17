@@ -15,7 +15,7 @@ used for ordering free On Demand products from HyP3 Basic.
 
 ## HyP3+ API Endpoint
 
-HyP3+ has a different API Endpoint than the standard HyP3 Basic deployment: 
+HyP3+ has a different API Endpoint than the standard HyP3 Basic deployment:  
 <https://hyp3-plus.asf.alaska.edu>
 
 Users can interact with HyP3+ using the same methods as HyP3 Basic, but will need to change the API URL. 

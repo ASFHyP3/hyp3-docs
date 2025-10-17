@@ -22,8 +22,7 @@ HyP3 Python SDK, or by using the API directly.
 ## Purchasing Credits
 
 Credits can be purchased at
-[ASF's Web Store](https://epay.alaska.edu/C21563_ustores/web/store_cat.jsp?STOREID=141&CATID=410&SINGLESTORE=true "https://epay.alaska.edu" )
-{target=_blank}.
+[ASF's Web Store](https://epay.alaska.edu/C21563_ustores/web/store_cat.jsp?STOREID=141&CATID=410&SINGLESTORE=true "https://epay.alaska.edu" ){target=_blank}.
 Credit purchases will be processed within two business days, and purchased credits expire 1 year from last date of purchase.
 
 <!-- FIXME: Check on walkthrough -->

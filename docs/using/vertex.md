@@ -18,10 +18,10 @@ To request On Demand products, visit
 [ASF Data Search - Vertex](https://search.asf.alaska.edu "https://search.asf.alaska.edu" ){target=_blank} 
 and [Sign In with your Earthdata Login credentials](authentication.md#authentication-in-vertex).
 
-### 0. (Optional) Select your HyP3
+### (OPTIONAL) Select your HyP3
 
-Vertex supports requesting On Demand products through both [HyP3 Basic (default)](../about/hyp3_basic.md) and [HyP3+](../about/hyp3_plus.md)
-by changing the HyP3 API URL. To change the HyP3 API in Vertex:
+Vertex supports requesting On Demand products through both [HyP3 Basic (default)](../about/hyp3_basic.md) and 
+[HyP3+](../about/hyp3_plus.md) by changing the HyP3 API URL. To change the HyP3 API in Vertex:
 
 1. Click on your username icon and select **Preferences**.
    ![Open Vertex Preferences](../images/vertex-preferences.png "Open Vertex Preferences")

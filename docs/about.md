@@ -1,13 +1,33 @@
-# HyP3, ASF's on-demand processing services
+# HyP3: ASF's On Demand Processing Platform
 
-Through HyP3, the Alaska Satellite Facility offers a family of cloud-native, scalable product generation services that 
+The Alaska Satellite Facility's Hybrid Pluggable Processing Pipeline, or HyP3 (pronounced *"hype"*), is a cloud-native 
+processing platform developed to efficiently process Synthetic Aperture Radar (SAR) imagery. 
+
+Through HyP3, ASF offers a family of cloud-native, scalable product generation services that 
 make its data holdings more accessible. HyP3 primarily runs compute-heavy workflows, which take tens of minutes to 
 hours of compute time, to create products that are easier to use, GIS-ready, and customized to a user’s needs.
 
+## How it Works
+
+HyP3 was designed to address many common issues for users of SAR data:
+
+* Most SAR datasets require at least some processing to remove distortions before they are analysis-ready
+* SAR processing is computing-intensive
+* Software for SAR processing is complicated to use and/or prohibitively expensive
+* Producing analysis-ready SAR data has a steep learning curve that acts as a barrier to entry
+
+HyP3 solves these problems by providing an interface where users can request SAR processing on demand. These
+processing requests are picked up by automated systems, which handle the complexity of SAR processing on behalf of the
+user. 
+
+HyP3 doesn't require users to have a lot of knowledge of SAR processing before getting started; they only need to
+submit the input data and set a few optional parameters if desired. With HyP3, analysis-ready products are just a few
+clicks away.
+
 ## The HyP3 Service Family
 
-Explore HyP3 free-of-charge through HyP3 Basic, our NASA-supported On Demand processing service, or purchase credits 
-though HyP3+, our unlimited service that can take your application global. Need help scaling your own, 
+Explore HyP3 at no cost using HyP3 Basic, our NASA-supported On Demand processing service, or purchase credits 
+for use with HyP3+, our user-supported service that lets you take your application global. Need help scaling your own, 
 in-house workflows? [Contact us](contact.md)!
 
 <table class="tg">

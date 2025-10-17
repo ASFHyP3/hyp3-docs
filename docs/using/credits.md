@@ -18,10 +18,11 @@ Please [contact us](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu") if you have 
 
 ## Credit Cost Table
 
-- The `Max Jobs Per Month` column displays the maximum number of jobs that you would be able to run in a single 
-month if you spent your entire monthly HyP3 Basic credit allotment on jobs of that particular type.
-- The `HyP3+ Job Cost` column indicates the dollar cost to process a single product of that job type if you are using 
+- The **Credits** column indicates the number of credits it takes to process a single product of that job type.
+- The **HyP3+ Job Cost** column indicates the dollar cost to process a single product of that job type if you are using 
 purchased credits.
+- The **HyP3 Basic Max Jobs Per Month** column displays the maximum number of jobs that you would be able to run in a single 
+month if you spent your entire monthly HyP3 Basic credit allotment on jobs of that particular type.
 
 | Job Type                                                      | Credits | [HyP3+](../about/hyp3_plus.md)<br>Job Cost | [HyP3 Basic](../about/hyp3_basic.md)<br>Max Jobs Per Month | 
 |---------------------------------------------------------------|--------:|-------------------------------------------:|-----------------------------------------------------------:|

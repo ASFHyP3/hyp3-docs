@@ -37,6 +37,7 @@ aaaaaaaa
 acknowledgement
 adaptively
 adf
+AKT
 al.
 ANF
 antimeridian
@@ -198,6 +199,7 @@ HV
 hydrostatic
 HyP3
 hyp3
+HyP3's
 hyp3-docs
 hyp3-gamma
 HyP3-generated
@@ -231,6 +233,7 @@ ionosphereBurstRamps
 ISCE2
 ISCE2's
 ISCE3
+ISRO
 iteratively
 IW
 Jinja2
@@ -271,6 +274,7 @@ lv_phi
 lv_theta
 LVθ
 LVφ
+Majeure
 map-centric
 MapReady
 Markert
@@ -279,6 +283,7 @@ mathjax
 MCF
 mcf
 Menz
+merchantability
 Miniconda
 MintPy
 mintpy
@@ -439,6 +444,7 @@ superpixel
 T115-245714-IW1
 TBD
 tif
+timeframe
 TODO
 TopsApp
 tradeoffs
@@ -449,6 +455,7 @@ troposphereHydrostatic
 troposphereWet
 Twele
 UAF
+UAF's
 UI
 unbuffered
 uncomment

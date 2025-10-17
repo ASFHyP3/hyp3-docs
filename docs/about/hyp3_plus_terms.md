@@ -16,7 +16,7 @@ b. As ASF does not have control over the creation, maintenance, or quality of th
 ## 3. Product Usage Guideline and Privacy Policy
 a. Customers are required to follow the HyP3+ [Product Usage Guideline](../usage_guidelines.md) and [ASF's Privacy policy](https://engage.alaska.edu/uaf/page.aspx?pid=459).
 
-## 4. Pricin
+## 4. Pricing
 a. The pricing structure of HyP3+ is posted on the [Credits](../using/credits.md) page. Pricing is subject to change without notice.
 
 ## 5. Payment

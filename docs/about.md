@@ -1,10 +1,34 @@
-# HyP3, ASF's on-demand processing services
+# HyP3: ASF's On Demand Processing Platform
 
-Through HyP3, the Alaska Satellite Facility offers a family of cloud-native, scalable product generation services that make its data holdings more accessible. HyP3 primarily runs compute-heavy workflows, which take tens of minutes to hours of compute time, to create products that are easier to use, GIS-ready, and customized to a user’s needs.
+The Alaska Satellite Facility's Hybrid Pluggable Processing Pipeline, or HyP3 (pronounced *"hype"*), is a cloud-native 
+processing platform developed to efficiently process Synthetic Aperture Radar (SAR) imagery. 
+
+Through HyP3, ASF offers a family of cloud-native, scalable product generation services that 
+make its data holdings more accessible. HyP3 primarily runs compute-heavy workflows, which take tens of minutes to 
+hours of compute time, to create products that are easier to use, GIS-ready, and customized to a user’s needs.
+
+## How it Works
+
+HyP3 was designed to address many common issues for users of SAR data:
+
+* Most SAR datasets require at least some processing to remove distortions before they are analysis-ready
+* SAR processing is computing-intensive
+* Software for SAR processing is complicated to use and/or prohibitively expensive
+* Producing analysis-ready SAR data has a steep learning curve that acts as a barrier to entry
+
+HyP3 solves these problems by providing an interface where users can request SAR processing on demand. These
+processing requests are picked up by automated systems, which handle the complexity of SAR processing on behalf of the
+user. 
+
+HyP3 doesn't require users to have a lot of knowledge of SAR processing before getting started; they only need to
+submit the input data and set a few optional parameters if desired. With HyP3, analysis-ready products are just a few
+clicks away.
 
 ## The HyP3 Service Family
 
-Explore HyP3 free-of-charge through HyP3 Basic, our NASA-supported on-demand service, or purchase credits though HyP3+, our unlimited service that can take your application global. Need help scaling your own, in-house workflows? [Contact us](contact.md)!
+Explore HyP3 at no cost using HyP3 Basic, our NASA-supported On Demand processing service, or purchase credits 
+for use with HyP3+, our user-supported service that lets you take your application global. Need help scaling your own, 
+in-house workflows? [Contact us](contact.md)!
 
 <table class="tg">
   <thead>
@@ -13,7 +37,7 @@ Explore HyP3 free-of-charge through HyP3 Basic, our NASA-supported on-demand ser
           <a href="/about/hyp3_basic/" title="HyP3 Basic"><b>HyP3 Basic</b></a><br><em>Supported by NASA Earthdata</em>
       </th>
       <th class="tg-fymr">
-          <a href="/about/hyp3_plus/" title="HyP3+"><b>HyP3+</b></a>
+          <a href="/about/hyp3_plus/" title="HyP3+"><b>HyP3+</b></a><br><em>User-supported Deployment</em>
       </th>
     </tr>
   </thead>
@@ -27,14 +51,51 @@ Explore HyP3 free-of-charge through HyP3 Basic, our NASA-supported on-demand ser
       </td>
     </tr>
     <tr>
-      <td class="tg-0pky">10,000 Credits/ month free*</td>
+      <td class="tg-0pky">10,000 <a href="/using/credits" title="Jump to Credits Documentation">Credits</a> per month free*</td>
       <td class="tg-0pky">1 Credit = $0.05</td>
     </tr>
   </tbody>
-  <caption>
-    <em>*More available by request, as our budget allows. Send requests to ASF User Services: <a href="mailto:uso@asf.alaska.edu" target="_blank" title="uso@asf.alaska.edu">uso@asf.alaska.edu</a>.</em>
-  </caption>
 </table>
+<style>
+  .tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    margin: 20px 0;
+  }
+  .tg th {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .tg td {
+    border: 1px solid #ccc;
+    font-size: 14px;
+    padding: 10px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .tg-0pky {
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top;
+  }
+  .tg-fymr {
+    background-color: #f0f0f0;
+    border-color: inherit;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: top;
+  }
+</style>
+
+*More available by request, as our budget allows. Send requests to ASF User Services: 
+[uso@asf.alaska.edu](mailto:uso@asf.alaska.edu)
 
 ## Getting started
 

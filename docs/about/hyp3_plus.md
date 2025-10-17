@@ -22,28 +22,35 @@ HyP3 Python SDK, or by using the API directly.
 ## Purchasing Credits
 
 Credits can be purchased at
-[ASF's Web Store](https://epay.alaska.edu/C21563_ustores/web/store_cat.jsp?STOREID=141&CATID=410&SINGLESTORE=true "https://epay.alaska.edu" )
-{target=_blank}.
+[ASF's Web Store](https://epay.alaska.edu/C21563_ustores/web/store_cat.jsp?STOREID=141&CATID=410&SINGLESTORE=true "https://epay.alaska.edu" ){target=_blank}.
 Credit purchases will be processed within two business days, and purchased credits expire 1 year from last date of purchase.
 
+- Credits are sold in multiples of 1000. 
+- An individual credit costs $0.05, so each 1000-credit bundle costs $50.
+
 <!-- FIXME: Check on walkthrough -->
-[![Click to Purchase On Demand Processing Credits](../images/purchase-credits-button-small.png "Click to purchase On Demand Processing Credits")](https://epay.alaska.edu/C21563_ustores/web/store_cat.jsp?STOREID=141&CATID=410&SINGLESTORE=true "Click to purchase On Demand Processing Credits from epay.alaska.edu" )
+[![Click to Purchase On Demand Processing Credits](../images/purchase-credits-button-small.png "Click to purchase On Demand Processing Credits")](https://epay.alaska.edu/C21563_ustores/web/store_cat.jsp?STOREID=141&CATID=410&SINGLESTORE=true "Click to purchase On Demand Processing Credits from epay.alaska.edu" ){target=_blank}
 {target=_blank}
 
-1. Select the quantity of credits you need, and click the **Add to Cart** icon. Refer to the
+1. Enter the desired quantity of 1000-credit bundles, and click the **Add to Cart** icon. 
+   ![Credit purchase interface](../images/hyp3-credit-purchase.png "Credit purchase interface")
+   Refer to the
    [credit cost table](../using/credits.md#credit-cost-table)
    to calculate the number of credits you will need to process the products you require.
 
 2. Enter your
-   [Earthdata Login (EDL)](../using/authentication.md#earthdata-login-edl) username,
-   then click the **Continue** button. **It is very important to enter your username correctly**,
-   as the credits you purchase will be associated with this username.
+   [Earthdata Login (EDL)](../using/authentication.md#earthdata-login-edl) username. 
+   **It is very important to enter your username correctly**, as the credits you purchase will be associated with 
+   this username. Type `yes` in the **terms of service field** to indicate that you accept the HyP3+ 
+   [Terms of Service](hyp3_plus_terms.md "Jump to HyP3+ Terms of Service page"), then click **Continue**.
    ![Enter EDL Prompt](../images/purchase-credits-edl.png "Enter EDL Username when prompted")
 
     - You can purchase credits for multiple EDL usernames in one order. To add additional credits linked to a
       different username, click the **Continue Shopping** button after adding the first credit amount to your cart,
       then add another amount of credits to your cart. You will again be prompted for an EDL username, and you can
       enter a different username.
+   
+    ![Continue Shopping or Checkout](../images/hyp3-credit-continue-shopping.png "Continue Shopping or Checkout")
 
 3. When you are ready to check out, click the **Checkout** button. You do not need to Login on the Checkout page.
    Simply enter your email in the *Contact Information* section, and click the **Checkout as Guest** button.
@@ -78,25 +85,23 @@ place additional orders as necessary when your credit balance is depleted.
 ### Refunds
 
 If you purchase credits in error or need to assign purchased credits to a different username, email
-ASF User Services, [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu"), and we will work with you to understand and resolve the issue. Any refunds granted will be
-credited to the original method of payment.
+ASF User Services, [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu"), and we will work with 
+you to understand and resolve the issue. Any refunds granted will be credited to the original method of payment.
 
-<!-- FIXME: Move to SDK README -->
-### HyP3 Python SDK API Endpoint
 
-When calling the standard HyP3 API using the Python SDK, you can simply use the default:
+## HyP3 API Endpoint
 
-```
-import hyp3_sdk as sdk
-hyp3 = sdk.HyP3()
-```
+The HyP3+ deployment has a different API Endpoint URL than HyP3 Basic. 
 
-To access the HyP3+ deployment, you will need to define the API URL for the HyP3 class:
+To access your HyP3+ credits and order and 
+download HyP3+ jobs, you will need to point to the HyP3+ API: 
+[https://hyp3-plus.asf.alaska.edu](https://hyp3-plus.asf.alaska.edu)
 
-```
-import hyp3_sdk as sdk
-hyp3_plus = sdk.HyP3('https://hyp3-plus.asf.alaska.edu')
-```
+Refer to the documentation pages for using 
+[Vertex](../using/vertex.md#1-select-your-hyp3-api-optional "Jump to Using Vertex Documentation"), 
+the [HyP3 API](../using/api.md "Jump to Using API Documentation"), or the 
+[HyP3 Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/#connect-to-the-hyp3-api "Jump to Using SDK Documentation") 
+for guidance on setting the correct API Endpoint URL for each of these interfaces.
 
 ## Contact Us
 

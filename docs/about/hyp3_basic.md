@@ -1,29 +1,18 @@
-# ASF HyP3
+# HyP3 Basic
 
-***Alaska Satellite Facility's Hybrid Pluggable Processing Pipeline***
+ASF released HyP3 to the public in 2020, allowing all users to request On Demand products at no cost. 
+This service, now called HyP3 Basic, is funded by NASA, and hosted in 
+NASA's [Earthdata Cloud (EDC)](https://www.earthdata.nasa.gov/about/earthdata-cloud-evolution "https://www.earthdata.nasa.gov/about/earthdata-cloud-evolution" ){target=_blank}. 
 
-HyP3 (pronounced *"hype"*) is a service for processing Synthetic Aperture Radar (SAR) imagery that addresses many common issues for users of
-SAR data:
+Anyone can use HyP3 Basic. All you need are 
+[Earthdata Login credentials](../using/authentication.md#earthdata-login-edl "Jump to EDL Documentation"). 
 
-* Most SAR datasets require at least some processing to remove distortions before they are analysis-ready
-* SAR processing is computing-intensive
-* Software for SAR processing is complicated to use and/or prohibitively expensive
-* Producing analysis-ready SAR data has a steep learning curve that acts as a barrier to entry
+Each user receives 10,000 credits each month to use for processing any On Demand products. Different HyP3 job types 
+consume different credit amounts, as defined in the 
+[Credit Cost Table](../using/credits.md#credit-cost-table "Jump to the Credit Cost Table on the Credits Documentation page"). 
+If you need to process more data than is possible with this credit allotment, you can purchase additional credits using 
+[HyP3+](hyp3_plus.md "Jump to HyP3+ Documentation"). 
 
-HyP3 solves these problems by providing a free service where people can request SAR processing on-demand. These
-processing requests are picked up by automated systems, which handle the complexity of SAR processing on behalf of the
-user. HyP3 doesn't require users to have a lot of knowledge of SAR processing before getting started; users only need to
-submit the input data and set a few optional parameters if desired. With HyP3, analysis-ready products are just a few
-clicks away.
-
-## Getting started
-
-{% include 'using-snippet.md' %}
-
-## What's New
-
-Follow [@ASFHyP3](https://twitter.com/ASFHyP3 "https://twitter.com/ASFHyP3" ){target=_blank} on Twitter, or check our [What's New](../whats_new.md "HyP3 What's New" ){target=_blank} page to keep up to date on all things HyP3!
-
-## Contact Us
-
-{% include 'contact-snippet.md' %}
+Output products are hosted in an S3 bucket in EDC, and are retained for 14 days before being deleted. 
+For users who need more time to download products, consider using [HyP3+](hyp3_plus.md "Jump to HyP3+ Documentation"), 
+which has a 30-day retention period.

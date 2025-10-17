@@ -8,16 +8,21 @@ allows, ASF provides HyP3+, a separate
 
 HyP3+ offers the same
 [On Demand products](../products.md "Jump to the Products landing page of the documentation")
-as HyP3 Basic, and users access their purchased credits by logging in with the same
+as [HyP3 Basic](hyp3_basic.md "Jump to HyP3 Basic Documentation"), 
+and users access their purchased credits by logging in with the same 
 [Earthdata Login Credentials](../using/authentication.md#earthdata-login-edl)
 used for ordering free On Demand products from HyP3 Basic.
+
+## HyP3+ API Endpoint
 
 HyP3+ has a different API Endpoint than the standard HyP3 Basic deployment: 
 <https://hyp3-plus.asf.alaska.edu>
 
 Users can interact with HyP3+ using the same methods as HyP3 Basic, but will need to change the API URL. 
-See the [Using HyP3](../using.md) section for more information on how to request On Demand products with HyP3+ using Vertex or the
-HyP3 Python SDK, or by using the API directly.
+See the [Using HyP3](../using.md) section for more information on how to request On Demand products with HyP3+ using 
+[Vertex](../using/vertex.md#1-select-your-hyp3-api-optional "Jump to Using Vertex Documentation"), the 
+[HyP3 Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/#connect-to-the-hyp3-api "Jump to Using SDK Documentation"), 
+or by using the [HyP3 API](../using/api.md "Jump to Using API Documentation") directly.
 
 ## Purchasing Credits
 
@@ -87,21 +92,6 @@ place additional orders as necessary when your credit balance is depleted.
 If you purchase credits in error or need to assign purchased credits to a different username, email
 ASF User Services, [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu"), and we will work with 
 you to understand and resolve the issue. Any refunds granted will be credited to the original method of payment.
-
-
-## HyP3 API Endpoint
-
-The HyP3+ deployment has a different API Endpoint URL than HyP3 Basic. 
-
-To access your HyP3+ credits and order and 
-download HyP3+ jobs, you will need to point to the HyP3+ API: 
-[https://hyp3-plus.asf.alaska.edu](https://hyp3-plus.asf.alaska.edu)
-
-Refer to the documentation pages for using 
-[Vertex](../using/vertex.md#1-select-your-hyp3-api-optional "Jump to Using Vertex Documentation"), 
-the [HyP3 API](../using/api.md "Jump to Using API Documentation"), or the 
-[HyP3 Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/#connect-to-the-hyp3-api "Jump to Using SDK Documentation") 
-for guidance on setting the correct API Endpoint URL for each of these interfaces.
 
 ## Contact Us
 

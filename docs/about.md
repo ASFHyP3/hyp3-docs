@@ -67,7 +67,7 @@ in-house workflows? [Contact us](contact.md)!
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     color: #333;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     padding: 10px 10px;
     text-align: left;
@@ -75,7 +75,7 @@ in-house workflows? [Contact us](contact.md)!
   }
   .tg td {
     border: 1px solid #ccc;
-    font-size: 14px;
+    font-size: 16px;
     padding: 10px 10px;
     text-align: left;
     vertical-align: top;

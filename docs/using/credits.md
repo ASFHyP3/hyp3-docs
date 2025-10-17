@@ -1,15 +1,29 @@
 # Credits
 
-On Demand users are given a free allotment of **{{ CREDITS_PER_MONTH }} credits per month** to use for processing jobs,
-and each type of job costs a different number of credits, as shown in the [Credit Cost Table](#credit-cost-table).
+[HyP3 Basic](../about/hyp3_basic.md) On Demand users are given a free allotment of **{{ CREDITS_PER_MONTH }} credits per month** to use for 
+processing jobs, and each type of job costs a different number of credits, as shown in the 
+[Credit Cost Table](#credit-cost-table).
 
-The "Maximum Jobs Per Month" column displays the maximum number of jobs that you
-would be able to run in a single month if you spent your entire monthly credit
-allotment on jobs of that particular type.
+## Credit Allocation
+
+The credit cost of a given job is roughly proportional to the computational resources required to process the job,
+allowing us to distribute our resources more equitably.
+This supports our mission of
+[making remote-sensing data accessible](https://asf.alaska.edu/about-asf/ 'asf.alaska.edu/about-asf' ){target=_blank},
+with the goal of providing valuable products to the widest breadth of users possible.
+
+If your monthly credit allotment is not sufficient for your processing needs, you can
+[purchase additional processing credits through HyP3+](../about/hyp3_plus.md).
+Please [contact us](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu") if you have questions about additional processing.
 
 ## Credit Cost Table
 
-| Job Type                                                      | credits | [HyP3 Basic](../about/hyp3_basic.md)<br>Max Jobs Per Month | [HyP3+](../about/hyp3_plus.md)<br>Job Cost |
+- The `Max Jobs Per Month` column displays the maximum number of jobs that you would be able to run in a single 
+month if you spent your entire monthly HyP3 Basic credit allotment on jobs of that particular type.
+- The `HyP3+ Job Cost` column indicates the dollar cost to process a single product of that job type if you are using 
+purchased credits.
+
+| Job Type                                                      | Credits | [HyP3 Basic](../about/hyp3_basic.md)<br>Max Jobs Per Month | [HyP3+](../about/hyp3_plus.md)<br>Job Cost |
 |---------------------------------------------------------------|--------:|-----------------------------------------------------------:|--------------------------------------------|
 | [**RTC**](../guides/rtc_product_guide.md)                     |         |                                                            |                                            |
 | {{ table_indent() }} 30-m pixel spacing                       |       5 |                                {{ max_jobs_per_month(5) }} | {{ hyp3_plus_cost(5) }}                    |
@@ -46,18 +60,6 @@ allotment on jobs of that particular type.
 | {{ table_indent(count=2) }} 15 pairs                          |     110 |                              {{ max_jobs_per_month(110) }} | {{ hyp3_plus_cost(110) }}                  |
 | [**AutoRIFT**](https://its-live.jpl.nasa.gov/){target=_blank} |         |                                                            |                                            |
 | {{ table_indent() }} Standard product (120-m pixel spacing)   |      25 |                               {{ max_jobs_per_month(25) }} | {{ hyp3_plus_cost(25) }}                   |
-
-## Credit Allocation
-
-The credit cost of a given job is roughly proportional to the computational resources required to process the job,
-allowing us to distribute our resources more equitably.
-This supports our mission of
-[making remote-sensing data accessible](https://asf.alaska.edu/about-asf/ 'asf.alaska.edu/about-asf' ){target=_blank},
-with the goal of providing valuable products to the widest breadth of users possible.
-
-If your monthly credit allotment is not sufficient for your processing needs, you can
-[purchase additional processing through HyP3+](../about/hyp3_plus.md).
-Please contact us if you have questions about additional processing.
 
 ## Contact Us
 

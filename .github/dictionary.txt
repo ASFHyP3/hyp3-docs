@@ -55,6 +55,7 @@ area.tif
 ARIA-S1-GUNW
 ARIA-S1-GUNWs
 ARIA_S1_GUNW
+asf
 ASF
 ASF's
 ASF-specific
@@ -289,6 +290,7 @@ merchantability
 Miniconda
 MintPy
 mintpy
+mkdocs
 MkDocs
 mosaicked
 mosaicking

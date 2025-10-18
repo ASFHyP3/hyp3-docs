@@ -40,19 +40,22 @@ Requesting and downloading On Demand products can also be done programmatically:
 * [HyP3 SDK for Python](using/sdk.md "Using SDK")
 * [HyP3 REST API](using/api.md "Using API")
 
-### API Endpoints
+### HyP3 API REST Endpoints
 
-Even though the same 
+The [HyP3 API REST Endpoints](using/api.md "Jump to Using HyP3 API Documentation") 
+are different for HyP3 Basic and HyP3+. Even though the same 
 [EDL username](using/authentication.md#earthdata-login-edl "Jump to Earthdata Login Documentation") 
 can be used to process On Demand products in 
 [HyP3 Basic](about/hyp3_basic.md "Jump to HyP3 Basic Documentation") and 
 [HyP3+](about/hyp3_plus.md "Jump to HyP3+ Documentation") 
 deployments, you will not be able to search for products across both APIs. 
 
-If you generate products for a single project using both the standard HyP3 and HyP3+ deployments, 
+If you generate products for a single project using both the 
+[HyP3 Basic](about/hyp3_basic.md "Jump to HyP3 Basic Documentation") 
+and [HyP3+](about/hyp3_plus.md "Jump to HyP3+ Documentation") deployments, 
 you will need to use two separate searches to access all of your products, even if the project names are the same, 
 when using [Vertex](using/vertex.md "Jump to Using Vertex Documentation") or the 
-[HyP3 REST API](using/api.md "Jump to Using HyP3 API Documentation").
+[HyP3 API](using/api.md "Jump to Using HyP3 API Documentation").
 
 When using the [HyP3 SDK for Python](using/sdk.md "Jump to Using HyP3 SDK Documentation"), you can combine your results 
 into one list using the following approach:

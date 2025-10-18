@@ -18,7 +18,8 @@ HyP3 was designed to address many common issues for users of SAR data:
 
 HyP3 solves these problems by providing an interface where users can request SAR processing on demand. These
 processing requests are picked up by automated systems, which handle the complexity of SAR processing on behalf of the
-user. 
+user. Refer to our [Architecture](how_it_works.md "Jump to Architecture Documentation") page to learn more about the 
+structure of the HyP3 platform.
 
 HyP3 doesn't require users to have a lot of knowledge of SAR processing before getting started; they only need to
 submit the input data and set a few optional parameters if desired. With HyP3, analysis-ready products are just a few

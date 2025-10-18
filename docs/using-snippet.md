@@ -55,7 +55,7 @@ If you generate products for a single project using both the
 and [HyP3+](about/hyp3_plus.md "Jump to HyP3+ Documentation") deployments, 
 you will need to use two separate searches to access all of your products, even if the project names are the same, 
 when using [Vertex](using/vertex.md "Jump to Using Vertex Documentation") or the 
-[HyP3 REST API](using/api.md "Jump to Using HyP3 API Documentation").
+[HyP3 API](using/api.md "Jump to Using HyP3 API Documentation").
 
 When using the [HyP3 SDK for Python](using/sdk.md "Jump to Using HyP3 SDK Documentation"), you can combine your results 
 into one list using the following approach:

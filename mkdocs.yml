@@ -80,6 +80,7 @@ nav:
     - Authentication: using/authentication.md
     - Credits: using/credits.md
     - Downloads: using/downloading.md
+    - How to Cite HyP3: usage_guidelines.md
   - Products:
     - products.md
     - RTC:
@@ -99,7 +100,6 @@ nav:
         - guides/gunw_product_guide.md
         - Product Guide: guides/gunw_product_guide.md
     - AutoRIFT: https://its-live.jpl.nasa.gov/" target="_blank
-    - Usage Guidelines: usage_guidelines.md
   - Sentinel-1 Mission: sentinel1.md
   - SAR Basics:
     - guides/introduction_to_sar.md

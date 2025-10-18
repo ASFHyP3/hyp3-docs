@@ -25,10 +25,23 @@ submit the input data and set a few optional parameters if desired. With HyP3, a
 clicks away.
 
 ## The HyP3 Service Family
+<!-- TODO: Change the URL to the HyP3+ logo to the main branch once content is available -->
 
-Explore HyP3 at no cost using HyP3 Basic, our NASA-supported On Demand processing service, or purchase credits 
-for use with HyP3+, our user-supported service that lets you take your application global. Need help scaling your own, 
-in-house workflows? [Contact us](contact.md)!
+!!! tip "HyP3+ is now available!"
+ 
+    <img style="float: left;" src=https://raw.githubusercontent.com/ASFHyP3/hyp3-docs-fork/refs/heads/develop/docs/images/HyP3+_Logo_Icon_Only.png width="100">
+
+    For users who need more processing than the 10,000 credit limit allows, ASF now hosts 
+    [HyP3+](about/hyp3_plus.md "Jump to the HyP3+ Landing Page"), a user-supported 
+    version of HyP3 that allows you to purchase as many credits as you need. 
+
+    [Get to know HyP3+!](news/hyp3_plus_introduction.md "Jump to the HyP3+ Introduction")
+
+Explore HyP3 at no cost using [HyP3 Basic](about/hyp3_basic.md "Jump to HyP3 Basic Documentation"), 
+our NASA-supported On Demand processing service, or purchase credits 
+for use with [HyP3+](about/hyp3_plus.md "Jump to HyP3+ Documentation"), 
+our user-supported service that lets you take your application global. Need help scaling your own, in-house workflows? 
+[Contact us](contact.md)!
 
 <table class="tg">
   <thead>

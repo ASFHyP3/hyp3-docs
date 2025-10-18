@@ -1,5 +1,7 @@
 # Introducing HyP3+! <br> A new, sustainable HyP3 deployment
 
+*20 October 2025*
+
 ASF's on-demand processing service, HyP3, has created more than 11 million analysis-ready Sentinel-1 products since its public debut in October 2020. Five years later, our output has grown to around half a million products a month for more than 1,000 users. 
 
 This free service is currently made possible through generous funding from NASA.

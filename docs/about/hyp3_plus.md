@@ -93,6 +93,9 @@ If you purchase credits in error or need to assign purchased credits to a differ
 ASF User Services, [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu"), and we will work with 
 you to understand and resolve the issue. Any refunds granted will be credited to the original method of payment.
 
+For more information about the HyP3+ refund policy, refer to the 
+[HyP3+ Terms of Service](hyp3_plus_terms.md#6-refunds "Jump to HyP3+ Terms of Service").
+
 ## Contact Us
 
 If you have any questions or concerns about using HyP3+, or have any suggestions about how

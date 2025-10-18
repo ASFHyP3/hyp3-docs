@@ -6,16 +6,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.12.0]
 
 ### Added
 * Added logos for the HyP3+ deployment
-* Added documentation for [paid processing](docs/using/paid_processing.md)
+* Added documentation for [HyP3+](docs/about/hyp3_plus.md)
+* Added HyP3+ announcement to the [What's New](docs/whats_new.md) section
+* Amended other documentation topics to include HyP3+ references and guidance
+* Added a column for product cost when using HyP3+ in the [Credit Cost Table](docs/using/credits.md#credit-cost-table)
 
 ### Removed
 * Removed landing page for subscriptions
 
+### Changed
+* Dropped the use of the asf mkdocs theme in favor of the material theme for site rendering
+
+## [0.11.2]
+
+### Removed
+* OPERA RTC-S1 jobs from the credits table as they are not ready for general availability yet.
+
 ## [0.11.1]
+
 ### Added
 * Added a funding credit statement to the ARIA_S1_GUNW product guide.
 

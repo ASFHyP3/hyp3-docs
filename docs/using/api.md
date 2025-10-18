@@ -8,7 +8,9 @@ A friendly interface for exploring a HyP3 deployment's API is available at the `
 - **[HyP3 Basic](../about/hyp3_basic.md)**: <https://hyp3-api.asf.alaska.edu/ui/>{target=_blank}
 - **[HyP3+](../about/hyp3_plus.md)**: <https://hyp3-plus.asf.alaska.edu/ui/>{target=_blank}
 
-The process of using the HyP3 API is the same for any deployment of HyP3. Importantly, each deployment of HyP3 is completely independent, so if you submit jobs to one HyP3, you will not be able to see them in the other HyP3. 
+The process of using the HyP3 API is the same for any deployment of HyP3. Importantly, each deployment of HyP3 is 
+completely independent, so if you submit jobs to one HyP3 deployment, you will not be able to see them in a different 
+HyP3 deployment. 
 
 ## Authentication
 

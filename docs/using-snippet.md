@@ -8,7 +8,8 @@ for more information.
 If you do not have enough credits to generate all the products you need for your 
 project, you can purchase additional credits in [HyP3+](about/hyp3_plus.md).
 
-<!-- TODO TOOL-2787: uncomment this block and update snippet language for post HyP3+ launch:
+<!-- TODO TOOL-2787: uncomment this block and update snippet language if we ever decide to require that new users 
+request access to HyP3 Basic:
 {% include 'application-snippet.md' %}
 -->
 
@@ -25,6 +26,25 @@ Requesting and downloading On Demand products can also be done programmatically:
 
 * [HyP3 SDK for Python](using/sdk.md "Using SDK")
 * [HyP3 REST API](using/api.md "Using API")
+
+### API Endpoints
+
+Even though the same EDL username can be used to process On Demand products in 
+[HyP3 Basic](about/hyp3_basic.md "Jump to HyP3 Basic Documentation") and 
+[HyP3+](about/hyp3_plus.md "Jump to HyP3+ Documentation") 
+deployments, you will not be able to search for products across both APIs. If you generate products for a single
+project using both the standard HyP3 and HyP3+ deployments, you will need to use two separate searches to access
+all of your products, even if the project names are the same.
+
+When using the SDK, you can combine your results into one list using the following approach:
+```
+import hyp3_sdk as sdk
+hyp3 = sdk.HyP3()
+hyp3_plus = sdk.HyP3('https://hyp3-plus.asf.alaska.edu')
+jobs = hyp3.find_jobs(...)
+jobs += hyp3_plus.find_jobs(...)
+jobs.download_files()
+```
 
 ### Public Visibility of Jobs
 

@@ -21,7 +21,7 @@ request access to HyP3 Basic:
 ### Authentication
 
 HyP3 users must authenticate with 
-[Earthdata Login](https://urs.earthdata.nasa.gov/ "https://urs.earthdata.nasa.gov/" ){target=_blank} 
+[Earthdata Login (EDL)](https://urs.earthdata.nasa.gov/ "https://urs.earthdata.nasa.gov/" ){target=_blank} 
 credentials before they can submit jobs to HyP3 (either HyP3 Basic or HyP3+) for processing or access information 
 about the resulting [On Demand products](products.md "hyp3-docs.asf.alaska.edu/products"). Refer to our 
 [Authentication](using/authentication.md "Jump to Authentication Documentation") page for guidance.
@@ -42,7 +42,9 @@ Requesting and downloading On Demand products can also be done programmatically:
 
 ### API Endpoints
 
-Even though the same EDL username can be used to process On Demand products in 
+Even though the same 
+[EDL username](using/authentication.md#earthdata-login-edl "Jump to Earthdata Login Documentation") 
+can be used to process On Demand products in 
 [HyP3 Basic](about/hyp3_basic.md "Jump to HyP3 Basic Documentation") and 
 [HyP3+](about/hyp3_plus.md "Jump to HyP3+ Documentation") 
 deployments, you will not be able to search for products across both APIs. 

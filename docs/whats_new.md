@@ -1,6 +1,6 @@
 # What's New
 
-<!-- TODO: Change the URL to the HyP3+ logo to the main branch once content is available -->
+<!-- FIXME: Change the URL to the HyP3+ logo to the main branch once content is available -->
 
 !!! tip "HyP3+ is now available!"
  

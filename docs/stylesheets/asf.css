@@ -152,6 +152,6 @@ a {
     vertical-align: top
 }
 
-i .fa .fa-times {
+i.fa.fa-times {
     visibility: hidden;
 }

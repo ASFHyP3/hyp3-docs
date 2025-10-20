@@ -13,7 +13,7 @@ consume different credit amounts, as defined in the
 If you need to process more data than is possible with this credit allotment, you can purchase additional credits using 
 [HyP3+](hyp3_plus.md "Jump to HyP3+ Documentation"). 
 
-Output products are hosted in an S3 bucket in EDC, and are retained for 14 days before being deleted. 
+Output products are distributed via Amazon CloudFront, and are retained for 14 days before being deleted. 
 For users who need more time to download products, consider using [HyP3+](hyp3_plus.md "Jump to HyP3+ Documentation"), 
 which has a 30-day retention period.
 

@@ -30,9 +30,7 @@ jobs:
           # Remove conflicting CNAME for project site
           rm docs/CNAME
           # Set site URL for dev site
-          # TODO: revert
-          sed -i 's|site_url: https://hyp3-docs.asf.alaska.edu/|site_url: https://hyp3-docs.asf.alaska.edu/hyp3-docs-fork/|' mkdocs.yml
-          # sed -i 's|site_url: https://hyp3-docs.asf.alaska.edu/|site_url: https://hyp3-docs.asf.alaska.edu/hyp3-docs/|' mkdocs.yml
+          sed -i 's|site_url: https://hyp3-docs.asf.alaska.edu/|site_url: https://hyp3-docs.asf.alaska.edu/hyp3-docs/|' mkdocs.yml
           mkdocs gh-deploy --force
 
       - uses: actions/checkout@v5

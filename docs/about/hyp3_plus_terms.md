@@ -1,5 +1,5 @@
 # HyP3+ Terms of Service
-Effective date: Oct 15, 2025
+Effective date: October 20, 2025
 
 ## 1. Overview
 a. The following terms and conditions govern Customer access to and use of HyP3+, UAF Geophysical Institute’s (GI) Alaska Satellite Facility’s (ASF) on-demand processing service.
@@ -14,18 +14,22 @@ b. As ASF does not have control over the creation, maintenance, or quality of th
     ii. Data Availability: ASF relies on ESA, NASA, ISRO and other third-parties to ensure that federated datasets are accessible. If the resources hosting these data are offline or experience issues, this may result in disruptions to HyP3+. ASF will not be held liable for any unavailability caused by these data outages.
 
 ## 3. Product Usage Guidelines and Privacy Policy
-a. Customers are required to follow the HyP3+ [Product Usage Guidelines](../usage_guidelines.md) for citing products and services and [ASF's Privacy policy](https://engage.alaska.edu/uaf/page.aspx?pid=459).
+a. Customers are required to follow the HyP3+ 
+[Product Usage Guidelines](../usage_guidelines.md "Jump to How to Cite HyP3 Documentation") 
+for citing products and services and 
+[ASF's Privacy policy](https://engage.alaska.edu/uaf/page.aspx?pid=459 "ASF Privacy Policy" ){target=_blank}.
 
 ## 4. Pricing
-a. The pricing structure of HyP3+ is posted on the [Credits](../using/credits.md) page. Pricing is subject to change without notice.
+a. The pricing structure of HyP3+ is posted on the [Credits](../using/credits.md "Jump to Credits Documentation") page. 
+Pricing is subject to change without notice.
 
 ## 5. Payment
 a. Payment is due at the time of purchase. Purchases will be approved within two (2) business days, and credits will 
 be applied to the Customer’s account within that timeframe. Credits expire 1 year from last date of purchase.
 b. Payments will not be accepted from Customers residing Iran, North Korea, Cuba, China, Russia, and Libya. 
 Additionally, we will review requests coming from other countries listed on the 
-[NASA Designated Countries](https://www.nasa.gov/oiir/export-control/){target=_blank} list and on the Office of 
-[Foreign Assets Control’s Sanction Program](https://ofac.treasury.gov/sanctions-programs-and-country-information){target=_blank} 
+[NASA Designated Countries](https://www.nasa.gov/oiir/export-control/ "www.nasa.gov/oiir/export-control" ){target=_blank} list and on the Office of 
+[Foreign Assets Control’s Sanction Program](https://ofac.treasury.gov/sanctions-programs-and-country-information "ofac.treasury.gov/sanctions-programs-and-country-information" ){target=_blank} 
 list.
 
 ## 6. Refunds
@@ -38,7 +42,8 @@ a. ASF will operate and maintain HyP3+ using software, network resources, hostin
 b. To access HyP3+, Customer may be asked to provide certain registration details or other information. All information Customer provides must be correct, current and complete and is subject to ASF Privacy Policy. If Customer chooses or is provided with a username, password or any other piece of information as part of ASF security procedures, Customer must treat that information as confidential, and Customer must not disclose it to any other person or entity. Customer agrees to notify us immediately of any unauthorized access to or use of Customer username or password or any other breach of security. ASF has the right to disable any username, password or other identifier, at any time in ASF’s sole discretion for any or no reason, including if, in ASF opinion, Customer have violated any provision of these Terms.
 
 ## 8. Customer-Generated Products
-a. HyP3+ products, unless otherwise specified inside the product, carry a [Creative Commons 0 1.0 Universal (CC0) license](https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt){target=_blank}.
+a. HyP3+ products, unless otherwise specified inside the product, carry a 
+[Creative Commons 0 1.0 Universal (CC0) license](https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt" ){target=_blank}.
 b. ASF makes no guarantees regarding interpretations of HyP3+ data.  Any analysis, conclusions, decisions made based on the data, or products created by Customer are the sole responsibility of the Customer.
 
 ## 9. Suspension of HyP3+ Rights

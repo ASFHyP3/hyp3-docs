@@ -33,7 +33,7 @@ Credit purchases will be processed within two business days, and purchased credi
 - Credits are sold in multiples of 1000. 
 - An individual credit costs $0.05, so each 1000-credit bundle costs $50.
 
-[![Click to Purchase On Demand Processing Credits](../images/purchase-credits-button-small.png "Click to purchase On Demand Processing Credits")](https://epay.alaska.edu/C21563_ustores/web/product_detail.jsp?PRODUCTID=7604&SINGLESTORE=true "Click to purchase On Demand Processing Credits from epay.alaska.edu" ){target=_blank}
+[![Click to Purchase HyP3+ Credits](../images/purchase-credits-button-small.png "Click to purchase HyP3+ Credits")](https://epay.alaska.edu/C21563_ustores/web/product_detail.jsp?PRODUCTID=7604&SINGLESTORE=true "Click to purchase HyP3+ Credits from epay.alaska.edu" ){target=_blank}
 {target=_blank}
 
 1. Enter the desired quantity of 1000-credit bundles, and click the **Add to Cart** button. 

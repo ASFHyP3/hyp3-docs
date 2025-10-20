@@ -15,12 +15,13 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 * Amended other documentation topics to include HyP3+ references and guidance
 * Added a column for product cost when using HyP3+ in the [Credit Cost Table](docs/using/credits.md#credit-cost-table)
 
-### Removed
-* Removed landing page for subscriptions
-
 ### Changed
 * Dropped the use of the asf mkdocs theme in favor of the material theme for site rendering
 * Moved reference to the [Usage Guidance](docs/usage_guidelines.md) document from the Products menu to the Using menu with the title *How to Cite HyP3*
+* Updated HyP3 SDK to [v7.7.4](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#774)
+
+### Removed
+* Removed landing page for subscriptions
 
 ## [0.11.2]
 

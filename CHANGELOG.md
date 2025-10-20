@@ -10,7 +10,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 * Added logos for the HyP3+ deployment
-* Added documentation for [HyP3+](docs/about/hyp3_plus.md)
+* Added documentation for [HyP3+](docs/about/hyp3_plus.md), including [Terms and Conditions](docs/about/hyp3_plus_terms.md)
 * Added HyP3+ announcement to the [What's New](docs/whats_new.md) section
 * Amended other documentation topics to include HyP3+ references and guidance
 * Added a column for product cost when using HyP3+ in the [Credit Cost Table](docs/using/credits.md#credit-cost-table)

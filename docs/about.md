@@ -26,7 +26,6 @@ submit the input data and set a few optional parameters if desired. With HyP3, a
 clicks away.
 
 ## The HyP3 Service Family
-<!-- FIXME: Change the URL to the HyP3+ logo to the main branch once content is available -->
 
 !!! tip "HyP3+ is now available!"
  

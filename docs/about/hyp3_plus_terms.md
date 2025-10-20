@@ -20,8 +20,13 @@ a. Customers are required to follow the HyP3+ [Product Usage Guideline](../usage
 a. The pricing structure of HyP3+ is posted on the [Credits](../using/credits.md) page. Pricing is subject to change without notice.
 
 ## 5. Payment
-a. Payment is due at the time of purchase. Purchases will be approved within 48 hours and credits will be applied to the Customer’s account within that timeframe. Credits expire 1 year from last date of purchase.
-b. Payments will not be accepted from Customers residing Iran, North Korea, Cuba, China, Russia, and Libya. Additionally, we will review requests coming from other countries listed on the [NASA Designated Countries](https://www.nasa.gov/oiir/export-control/){target=_blank} list and on the Office of [Foreign Assets Control’s Sanction Program](https://ofac.treasury.gov/sanctions-programs-and-country-information){target=_blank} list.
+a. Payment is due at the time of purchase. Purchases will be approved within two (2) business days, and credits will 
+be applied to the Customer’s account within that timeframe. Credits expire 1 year from last date of purchase.
+b. Payments will not be accepted from Customers residing Iran, North Korea, Cuba, China, Russia, and Libya. 
+Additionally, we will review requests coming from other countries listed on the 
+[NASA Designated Countries](https://www.nasa.gov/oiir/export-control/){target=_blank} list and on the Office of 
+[Foreign Assets Control’s Sanction Program](https://ofac.treasury.gov/sanctions-programs-and-country-information){target=_blank} 
+list.
 
 ## 6. Refunds
 a. Credits lost due to failed processing jobs will be refunded automatically.
@@ -71,7 +76,7 @@ a. If any of the provisions contained in the Terms are determined to be void, in
 a. HyP3+ support coverage hours provided by ASF are Monday through Friday, 9:00 AM to 5:00 PM AKT, excluding holidays or campus closures. Please see UAF’s holiday schedule at <https://www.alaska.edu/hr/benefits/leave/holidays.php>{target=_blank}. Hours are subject to change with notice.
 b. ASF will provide basic support services to assist with any issues related to HyP3+.
 c. This support is limited to HyP3+ functionality and does not cover issues with external data or dependencies beyond ASF’s control.
-d. Response Times: ASF will aim to respond to support requests within 48 hours during regular business hours.
+d. Response Times: ASF will aim to respond to support requests within two (2) business days.
 e. Support will primarily be provided via email. Support requests (reporting incidents or requesting help) should be submitted to ASF User Services: [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu").
 
 ## 17. Feedback

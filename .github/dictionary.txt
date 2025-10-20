@@ -87,6 +87,7 @@ Changelog
 Clauss
 CLI
 CloudFormation
+CloudFront
 CNAME
 conda
 Conda

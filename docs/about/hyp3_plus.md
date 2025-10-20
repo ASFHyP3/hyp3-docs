@@ -27,17 +27,17 @@ or by using the [HyP3 API](../using/api.md "Jump to Using API Documentation") di
 ## Purchasing Credits
 
 Credits can be purchased at
-[ASF's Web Store](https://epay.alaska.edu/C21563_ustores/web/store_cat.jsp?STOREID=141&CATID=410&SINGLESTORE=true "https://epay.alaska.edu" ){target=_blank}.
+[ASF's Web Store](https://epay.alaska.edu/C21563_ustores/web/product_detail.jsp?PRODUCTID=7604&SINGLESTORE=true "https://epay.alaska.edu" ){target=_blank}.
 Credit purchases will be processed within two business days, and purchased credits expire 1 year from last date of purchase.
 
 - Credits are sold in multiples of 1000. 
 - An individual credit costs $0.05, so each 1000-credit bundle costs $50.
 
 <!-- FIXME: Check on walkthrough -->
-[![Click to Purchase On Demand Processing Credits](../images/purchase-credits-button-small.png "Click to purchase On Demand Processing Credits")](https://epay.alaska.edu/C21563_ustores/web/store_cat.jsp?STOREID=141&CATID=410&SINGLESTORE=true "Click to purchase On Demand Processing Credits from epay.alaska.edu" ){target=_blank}
+[![Click to Purchase On Demand Processing Credits](../images/purchase-credits-button-small.png "Click to purchase On Demand Processing Credits")](https://epay.alaska.edu/C21563_ustores/web/product_detail.jsp?PRODUCTID=7604&SINGLESTORE=true "Click to purchase On Demand Processing Credits from epay.alaska.edu" ){target=_blank}
 {target=_blank}
 
-1. Enter the desired quantity of 1000-credit bundles, and click the **Add to Cart** icon. 
+1. Enter the desired quantity of 1000-credit bundles, and click the **Add to Cart** button. 
    ![Credit purchase interface](../images/hyp3-credit-purchase.png "Credit purchase interface")
    Refer to the
    [credit cost table](../using/credits.md#credit-cost-table)

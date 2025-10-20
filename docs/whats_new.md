@@ -1,5 +1,15 @@
 # What's New
 
+!!! tip "HyP3+ is now available!"
+ 
+    !["HyP3+ logo"](images/HyP3+_Logo_Icon_Only.png){ width="100";  style="float: left;" }
+
+    For users who need more processing than the 10,000 credit limit allows, ASF now hosts 
+    [HyP3+](about/hyp3_plus.md "Jump to the HyP3+ Landing Page"), a user-supported 
+    version of HyP3 that allows you to purchase as many credits as you need. 
+
+    [Get to know HyP3+!](news/hyp3_plus_introduction.md "Jump to the HyP3+ Introduction")
+
 Follow [@ASFHyP3](https://twitter.com/ASFHyP3 "https://twitter.com/ASFHyP3" ){target=_blank} on Twitter 
 to keep up to date on all things HyP3!
 

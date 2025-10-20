@@ -1,6 +1,5 @@
 mkdocs==1.5.3
 mkdocs-material==9.4.2
-mkdocs-asf-theme==0.4.0
 mkdocs-redirects
 mkdocs-section-index
 mkdocstrings==0.28.3

@@ -2,8 +2,8 @@
 
 There are a number of interfaces available for downloading products generated On Demand using the HyP3 platform. 
 
-- [On Demand Search](#on-demand-search-in-vertex) interface in Vertex
-- [Programmatically](#programmatic-access) using the HyP3 API or HyP3 Python SDK
+- [On Demand Search](#on-demand-search-in-vertex "Jump to Vertex On Demand Search section") interface in Vertex
+- [Programmatically](#programmatic-access "Jump to Programmatic Access section") using the HyP3 API or HyP3 Python SDK
 
 ## On Demand Search in Vertex
 

@@ -8,7 +8,7 @@ cost and complexity of performing such processing yourself.
 [![Vertex Image](../images/vertex.png "Click to open Vertex in a new tab")](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank}
 
 On Demand products are generated using ASF's 
-[HyP3 processing platform](../index.md "Jump to the HyP3 landing page of this documentation"). Refer to the 
+[HyP3 processing platform](../about.md "Jump to the HyP3 landing page of this documentation"). Refer to the
 [Products](../products.md "Jump to the Products page of the documentation") page for more information about the 
 various On Demand products ASF offers. 
 
@@ -16,9 +16,29 @@ various On Demand products ASF offers.
 
 To request On Demand products, visit 
 [ASF Data Search - Vertex](https://search.asf.alaska.edu "https://search.asf.alaska.edu" ){target=_blank} 
-and [Sign In with your Earthdata Login credentials](authentication.md#authentication-in-vertex).
+and [Sign In with your Earthdata Login credentials](authentication.md#authentication-in-vertex "Jump to Authentication in Vertex Documentation").
 
-### 1. Select your scenes
+### 1. Select your HyP3 API (*OPTIONAL*)
+
+Vertex supports requesting On Demand products through both 
+[HyP3 Basic (default)](../about/hyp3_basic.md "Jump to HyP3 Basic Documentation") and 
+[HyP3+](../about/hyp3_plus.md "Jump to HyP3+ Documentation") by changing the HyP3 API URL. 
+
+**If you are only using the free [HyP3 Basic](../about/hyp3_basic.md "Jump to HyP3 Basic Documentation") service, 
+you do not need to make any changes to the HyP3 API in Vertex.** 
+
+To change the HyP3 API in Vertex:
+
+1. Click on your username icon and select **Preferences**.
+   ![Open Vertex Preferences](../images/vertex-preferences.png "Open Vertex Preferences")
+2. Enter your desired HyP3 API URL in the **HyP3 API URL** field.
+   ![Set API for Vertex](../images/vertex-set-api.png "Set API URL in Vertex Preferences")
+       - HyP3 Basic: <https://hyp3-api.asf.alaska.edu>
+       - HyP3+: <https://hyp3-plus.asf.alaska.edu>
+       - URLs that are entered in this field will be available as a drop-down menu item for future use.
+3. Click **Done** to exit the Preferences page.
+
+### 2. Select your scenes
 
 RTC processing is available for Sentinel-1 GRD-H and SLC scenes acquired using the 
 [Interferometric Wide Swath (IW)](https://sentiwiki.copernicus.eu/web/s1-products "https://sentiwiki.copernicus.eu/web/s1-products" ){target=_blank} mode. 
@@ -41,7 +61,7 @@ Click the **On Demand icon**
 <img width="20" src="https://raw.githubusercontent.com/ASFHyP3/hyp3-docs/6ba90fdafcf60ec017b3f4a83738334a5574be71/docs/images/HyP3-graphic-only.png" /> 
 displayed next to valid source granules or pairs to select the job type and add them to the On Demand queue.
 
-### 2. Submit your request
+### 3. Submit your request
 
 After selecting your scenes, access the **On Demand Queue** 
 <img width="30" src="https://user-images.githubusercontent.com/17994518/95892024-588b9280-0d32-11eb-8734-f1a54a9d2a20.png" /> 
@@ -59,26 +79,26 @@ You may process jobs worth up to a total of {{ CREDITS_PER_MONTH }}
 credits per month. See our [Credits](./credits.md "Jump to the Credits page of this documentation") 
 page for more details.
 
-### 3. Monitor your request
+### 4. Monitor your request
 The [**On Demand Products**](https://docs.asf.alaska.edu/vertex/manual/#on-demand-products-search-options "Vertex Manual: On Demand Search Options" ){target=_blank} 
 Search Type displays your running and completed requests. New requests are typically available for download 
 within an hour or two, but wait time will depend on processing load and product type.
 
-### 4. Download your data 
+### 5. Download your data 
 Once On Demand products have been processed, download options will be available in the results of an 
 **On Demand Products** search. Products can be downloaded individually through your browser 
 <img width="22" src="https://user-images.githubusercontent.com/17994518/95271858-6ea5ca00-07eb-11eb-9217-a280ca57a5e6.png" /> 
 or by adding them to the **Download Queue** 
 <img width="20" src="https://user-images.githubusercontent.com/17994518/95271856-6d749d00-07eb-11eb-81d8-365a6221e4f1.png" />.
 
- - Refer to the 
+ - Refer to the
    [Downloads](./downloading.md#on-demand-search-in-vertex "Jump to the On Demand Search in Vertex section of the Downloads page") 
    page for more information about download options. 
  - On Demand products are retained and available to download for two weeks (14 days) after processing.
 
 ## Tutorials
 
-Refer to our 
+Refer to our
 [StoryMap Tutorials](https://asf-daac.maps.arcgis.com/home/index.html "https://asf-daac.maps.arcgis.com/home/index.html" ){target=_blank} 
 for step-by-step guidance on submitting, downloading, and working with many of the different On Demand products 
 available from ASF.

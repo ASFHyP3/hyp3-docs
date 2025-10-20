@@ -20,6 +20,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 * Dropped the use of the asf mkdocs theme in favor of the material theme for site rendering
+* Moved reference to the [Usage Guidance](docs/usage_guidelines.md) document from the Products menu to the Using menu with the title *How to Cite HyP3*
 
 ## [0.11.2]
 

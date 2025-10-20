@@ -1,5 +1,5 @@
 # HyP3+ Terms of Service
-Effective date: Oct 15, 2025
+Effective date: October 20, 2025
 
 ## 1. Overview
 a. The following terms and conditions govern Customer access to and use of HyP3+, UAF Geophysical Institute’s (GI) Alaska Satellite Facility’s (ASF) on-demand processing service.

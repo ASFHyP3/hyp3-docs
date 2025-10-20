@@ -48,10 +48,10 @@ our user-supported service that lets you take your application global. Need help
   <thead>
     <tr>
       <th class="tg-fymr">
-          <a href="/about/hyp3_basic/" title="HyP3 Basic"><b>HyP3 Basic</b></a><br><em>Supported by NASA Earthdata</em>
+          <a href="about/hyp3_basic/" title="HyP3 Basic"><b>HyP3 Basic</b></a><br><em>Supported by NASA Earthdata</em>
       </th>
       <th class="tg-fymr">
-          <a href="/about/hyp3_plus/" title="HyP3+"><b>HyP3+</b></a><br><em>User-supported Deployment</em>
+          <a href="about/hyp3_plus/" title="HyP3+"><b>HyP3+</b></a><br><em>User-supported Deployment</em>
       </th>
     </tr>
   </thead>

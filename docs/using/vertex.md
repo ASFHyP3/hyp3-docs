@@ -33,8 +33,8 @@ To change the HyP3 API in Vertex:
    ![Open Vertex Preferences](../images/vertex-preferences.png "Open Vertex Preferences")
 2. Enter your desired HyP3 API URL in the **HyP3 API URL** field.
    ![Set API for Vertex](../images/vertex-set-api.png "Set API URL in Vertex Preferences")
-       - HyP3 Basic: <https://hyp3-api.asf.alaska.edu>
-       - HyP3+: <https://hyp3-plus.asf.alaska.edu>
+       - HyP3 Basic: <https://hyp3-api.asf.alaska.edu>{target=_blank}
+       - HyP3+: <https://hyp3-plus.asf.alaska.edu>{target=_blank}
        - URLs that are entered in this field will be available as a drop-down menu item for future use.
 3. Click **Done** to exit the Preferences page.
 

@@ -10,7 +10,7 @@ To ensure this service is accessible to the entire community, we have created a 
 
 Growing uncertainty around federal funding and the continued growth of on-demand processing needs could soon leave us unable to meet the needs of our user community with our existing HyP3 service. 
 
-To support on-demand processing going forward, we are piloting **[HyP3+](../about/hyp3_plus.md)**, a user-sustained deployment of HyP3 available to the public with the ability to purchase processing credits using a credit card. It works just like our basic HyP3 service support by NASA, but you are not constrained by monthly credit allotments, and output products are retained for 30 days instead of 14. For more information, see the [feature comparison table](../about.md#the-hyp3-service-family).
+To support on-demand processing going forward, we are piloting **[HyP3+](../about/hyp3_plus.md)**, a user-sustained deployment of HyP3 available to the public with the ability to purchase processing credits using a credit card. It works just like our basic HyP3 service support by NASA, but you are not constrained by monthly credit allotments, and output products are retained for 30 days instead of 14. For more information, see the HyP3 family [feature comparison table](../about.md#the-hyp3-service-family).
 
 Our on-demand processing platform has become a core component of ASF’s [mission](https://asf.alaska.edu/about-asf/) to make remote-sensing data accessible, so we are pricing our HyP3+ credits to just cover our costs. Any surplus will be reinvested into our user community and our mission. 
 

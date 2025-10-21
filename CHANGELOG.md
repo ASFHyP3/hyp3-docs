@@ -11,7 +11,6 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Fixed
 * Fixed the missing cell in the HyP3 credits table.
 
-
 ## [0.12.1]
 
 ### Fixed

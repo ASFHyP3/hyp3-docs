@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for your interest in helping make custom on-demand SAR processing accessible!
+Thank you for your interest in helping make custom On Demand SAR processing accessible!
 
 We're excited you would like to contribute to HyP3! Whether you're finding bugs, 
 adding new features, fixing anything broken, or improving documentation, get 

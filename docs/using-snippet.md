@@ -1,18 +1,30 @@
 On Demand products processed by HyP3 can be requested quickly and easily, either by
-using a web interface or programmatically. These services are currently only available for [Sentinel-1 datasets](sentinel1.md "Sentinel-1 Mission" ){target=_blank}.
+using the [Vertex web interface](#web-access "Jump to Web Access section") 
+or [programmatically](#programmatic-access "Jump to Programmatic Access section"). 
+These services are currently only available for 
+[Sentinel-1 datasets](sentinel1.md "Sentinel-1 Mission" ){target=_blank}.
 
-<!-- TODO TOOL-2787: uncomment this block:
-!!! warning "New On Demand users must request HyP3 access" 
+Different HyP3 job types consume different credit amounts. In 
+[HyP3 Basic](about/hyp3_basic.md "Jump to HyP3 Basic Documentation"), 
+users are allotted 10,000 credits per month for free. Refer to the
+[Credits page](using/credits.md "Jump to the Credits documentation page") 
+for more information. 
 
-    To ensure responsible use of ASF's On Demand resources, new users must submit an [access request form](#TODO: add link to access request form). Requests will be processed within 48 hours (#TODO: adjust this limit as necessary), and the user will receive an email indicating if their request has been approved. Users must be approved before they can submit jobs for On Demand processing. Refer to the [Requesting Access](using/request_access.md) page for more information.
+If you do not have enough credits to generate all the products you need for your 
+project, you can purchase additional credits in [HyP3+](about/hyp3_plus.md "Jump to HyP3+ Documentation").
 
-On Demand services are provided at no cost to the user, and anyone can request access to this service. To ensure that the processing is equitably distributed throughout the user community, we have implemented a number of policies: 
-
-- Users must have [Earthdata Login Credentials](https://urs.earthdata.nasa.gov/ 'https://urs.earthdata.nasa.gov/' ){target=_blank}
-- **Users must [request access to On Demand services](using/request_access.md)**, using their Earthdata Login credentials
-- Each user is given a [monthly allotment of credits](using/credits.md) to use for processing, and [different job types consume different credit amounts](using/credits.md#credit-cost-table)
-- Job processing rotates through the users in the queue, so it will take longer to process all of your jobs when there are more users in the queue, especially if you submit a large batch of jobs
+<!-- TODO TOOL-2787: uncomment this block and update snippet language if we ever decide to require that new users 
+request access to HyP3 Basic:
+{% include 'application-snippet.md' %}
 -->
+
+### Authentication
+
+HyP3 users must authenticate with 
+[Earthdata Login (EDL)](https://urs.earthdata.nasa.gov/ "https://urs.earthdata.nasa.gov/" ){target=_blank} 
+credentials before they can submit jobs to HyP3 (either HyP3 Basic or HyP3+) for processing or access information 
+about the resulting [On Demand products](products.md "hyp3-docs.asf.alaska.edu/products"). Refer to our 
+[Authentication](using/authentication.md "Jump to Authentication Documentation") page for guidance.
 
 ### Web Access 
 
@@ -27,6 +39,34 @@ Requesting and downloading On Demand products can also be done programmatically:
 
 * [HyP3 SDK for Python](using/sdk.md "Using SDK")
 * [HyP3 REST API](using/api.md "Using API")
+
+### HyP3 API REST Endpoints
+
+The [HyP3 API REST Endpoints](using/api.md "Jump to Using HyP3 API Documentation") 
+are different for HyP3 Basic and HyP3+. Even though the same 
+[EDL username](using/authentication.md#earthdata-login-edl "Jump to Earthdata Login Documentation") 
+can be used to process On Demand products in 
+[HyP3 Basic](about/hyp3_basic.md "Jump to HyP3 Basic Documentation") and 
+[HyP3+](about/hyp3_plus.md "Jump to HyP3+ Documentation") 
+deployments, you will not be able to search for products across both APIs. 
+
+If you generate products for a single project using both the 
+[HyP3 Basic](about/hyp3_basic.md "Jump to HyP3 Basic Documentation") 
+and [HyP3+](about/hyp3_plus.md "Jump to HyP3+ Documentation") deployments, 
+you will need to use two separate searches to access all of your products, even if the project names are the same, 
+when using [Vertex](using/vertex.md "Jump to Using Vertex Documentation") or the 
+[HyP3 API](using/api.md "Jump to Using HyP3 API Documentation").
+
+When using the [HyP3 SDK for Python](using/sdk.md "Jump to Using HyP3 SDK Documentation"), you can combine your results 
+into one list using the following approach:
+```
+import hyp3_sdk as sdk
+hyp3 = sdk.HyP3()
+hyp3_plus = sdk.HyP3('https://hyp3-plus.asf.alaska.edu')
+jobs = hyp3.find_jobs(...)
+jobs += hyp3_plus.find_jobs(...)
+jobs.download_files()
+```
 
 ### Public Visibility of Jobs
 

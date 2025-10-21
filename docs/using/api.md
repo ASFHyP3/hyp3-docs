@@ -1,11 +1,16 @@
 # Using the HyP3 API
 
-The HyP3 API is built on [OpenAPI](https://www.openapis.org/ "https://www.openapis.org/" ){target=_blank} 
+HyP3's API is built on [OpenAPI](https://www.openapis.org/ "https://www.openapis.org/" ){target=_blank} 
 and [Swagger](https://swagger.io/ "https://swagger.io/" ){target=_blank}.
 
-A friendly interface for exploring the API is available at:
+A friendly interface for exploring a HyP3 deployment's API is available at the `/ui/` endpoint:
 
-#### <https://hyp3-api.asf.alaska.edu/ui/>{target=_blank}
+- **[HyP3 Basic](../about/hyp3_basic.md)**: <https://hyp3-api.asf.alaska.edu/ui/>{target=_blank}
+- **[HyP3+](../about/hyp3_plus.md)**: <https://hyp3-plus.asf.alaska.edu/ui/>{target=_blank}
+
+The process of using the HyP3 API is the same for any deployment of HyP3. Importantly, each deployment of HyP3 is 
+completely independent, so if you submit jobs to one HyP3 deployment, you will not be able to see them in a different 
+HyP3 deployment. 
 
 ## Authentication
 

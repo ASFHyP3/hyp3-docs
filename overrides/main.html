@@ -1,5 +1,9 @@
-{% extends "partials/main.html" %}
-
+<!-- Extends https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/base.html -->
+{% extends "base.html" %}
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ 'javascripts/expert-rec-search.js' | url }}"></script>
+{% endblock %}
 {# Uncomment this block to enable the announcement banner:
 {% block announce %}
 <div id="announcement-content">

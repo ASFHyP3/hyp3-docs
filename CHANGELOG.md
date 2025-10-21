@@ -6,12 +6,40 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.11.2]
+## [0.12.2]
 
 ### Changed
 * Updated naming scheme descriptions for multi-burst InSAR products in the [Sentinel-1 Burst InSAR Product Guide](https://hyp3-docs.asf.alaska.edu/guides/burst_insar_product_guide/#naming-convention-insar_isce_multi_burst)
 
+## [0.12.1]
+
+### Fixed
+* Missing links to HyP3+ and the HyP3 family feature comparison table were added to the HyP3+ announcement.
+
+## [0.12.0]
+
+### Added
+* Added logos for the HyP3+ deployment
+* Added documentation for [HyP3+](docs/about/hyp3_plus.md), including [Terms and Conditions](docs/about/hyp3_plus_terms.md)
+* Added HyP3+ announcement to the [What's New](docs/whats_new.md) section
+* Amended other documentation topics to include HyP3+ references and guidance
+* Added a column for product cost when using HyP3+ in the [Credit Cost Table](docs/using/credits.md#credit-cost-table)
+
+### Changed
+* Dropped the use of the asf mkdocs theme in favor of the material theme for site rendering
+* Moved reference to the [Usage Guidance](docs/usage_guidelines.md) document from the Products menu to the Using menu with the title *How to Cite HyP3*
+* Updated HyP3 SDK to [v7.7.4](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#774)
+
+### Removed
+* Removed landing page for subscriptions
+
+## [0.11.2]
+
+### Removed
+* OPERA RTC-S1 jobs from the credits table as they are not ready for general availability yet.
+
 ## [0.11.1]
+
 ### Added
 * Added a funding credit statement to the ARIA_S1_GUNW product guide.
 
@@ -248,7 +276,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.9.2]
 
 ### Added
-* Added [Requesting Access page](docs/using/request_access.md), not yet listed in the site index
+* Added [Requesting Access page](docs/using/requesting_access.md), not yet listed in the site index
 * Added references to requesting access in the [Using HyP3](docs/using-snippet.md) documentation, commented out until new users must apply for access
 
 ### Changed
@@ -861,7 +889,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.3.0](https://github.com/ASFHyP3/hyp3-docs/compare/v0.2.2...v0.3.0)
 
 ### Added
-* Added a [Contact Us snippet](docs/contact-snippet.md) that is used on the [Home](docs/index.md) page
+* Added a [Contact Us snippet](docs/contact-snippet.md) that is used on the [Home](docs/about.md) page
   and a new [Contact Us](docs/contact-snippet.md) page
 * Added SAR Basics -> [Introduction to SAR](docs/guides/introduction_to_sar.md) page
 * Added Products -> InSAR -> [InSAR Product Guide](docs/guides/insar_product_guide.md) page

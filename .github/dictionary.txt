@@ -43,6 +43,7 @@ acknowledgement
 adaptively
 adf
 AEB4
+AKT
 al.
 ANF
 antimeridian
@@ -60,6 +61,7 @@ area.tif
 ARIA-S1-GUNW
 ARIA-S1-GUNWs
 ARIA_S1_GUNW
+asf
 ASF
 ASF's
 ASF-specific
@@ -94,6 +96,7 @@ Changelog
 Clauss
 CLI
 CloudFormation
+CloudFront
 CNAME
 conda
 Conda
@@ -136,6 +139,7 @@ E053_1
 E054_1
 Earthdata
 EarthScope
+EDC
 EDL
 EGM2008
 EGM96
@@ -207,10 +211,13 @@ HV
 hydrostatic
 HyP3
 hyp3
+HyP3's
 hyp3-docs
 hyp3-gamma
 HyP3-generated
 HyP3-ISCE2
+HyP3-related
+hyp3_plus_cost
 hyp3_sdk
 IaC
 Iain
@@ -239,6 +246,7 @@ ionosphereBurstRamps
 ISCE2
 ISCE2's
 ISCE3
+ISRO
 iteratively
 IW
 Jinja2
@@ -279,6 +287,7 @@ lv_phi
 lv_theta
 LVθ
 LVφ
+Majeure
 map-centric
 MapReady
 Markert
@@ -287,9 +296,11 @@ mathjax
 MCF
 mcf
 Menz
+merchantability
 Miniconda
 MintPy
 mintpy
+mkdocs
 MkDocs
 mosaicked
 mosaicking
@@ -454,6 +465,7 @@ superpixel
 T115-245714-IW1
 TBD
 tif
+timeframe
 TODO
 TopsApp
 tradeoffs
@@ -465,6 +477,7 @@ troposphereWet
 tt
 Twele
 UAF
+UAF's
 UI
 unbuffered
 uncomment

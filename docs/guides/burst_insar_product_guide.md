@@ -215,12 +215,12 @@ reference and secondary SAFE files:
 When selecting input bursts that span across sub-swaths in the same relative path, you must also take care not to 
 leave gaps. The bursts in neighboring sub-swaths can only be offset along the path by one burst. 
 
-For example, the grouping of bursts shown in the image on the left in Figure 1 can be submitted for processing, 
+For example, the grouping of bursts shown in the image on the left in Figure 4 can be submitted for processing, 
 while the grouping in the image on the right would not be valid.
 
-![Figure 1](../images/burst-contiguity.png "Illustration of acceptable offsets for bursts across sub-swaths")
+![Figure 4](../images/burst-contiguity.png "Illustration of acceptable offsets for bursts across sub-swaths")
 
-*Figure 1: Illustration of acceptable maximum offsets for bursts across sub-swaths.*
+*Figure 4: Illustration of acceptable maximum offsets for bursts across sub-swaths.*
 
 #### Download the DEM File
 
@@ -339,7 +339,7 @@ a metadata file, and a README file.
 ### Naming Convention: INSAR_ISCE_BURST
 
 The Burst InSAR product names are packed with information pertaining to the processing of the data, presented in 
-the following order, as illustrated in Figure 2.
+the following order, as illustrated in Figure 3.
 
 - The imaging platform name, always S1 for Sentinel-1.
 - Relative burst ID values assigned by ESA. Each value identifies a consistent burst footprint; relative burst ID 
@@ -353,14 +353,14 @@ the following order, as illustrated in Figure 2.
   was submitted for processing.
 - The filename ends with the ASF product ID, a 4 digit hexadecimal number.
 
-![Figure 2](../images/asf_burst_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
+![Figure 3](../images/asf_burst_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
 
-*Figure 2: Breakdown of ASF Burst InSAR naming scheme.*
+*Figure 3: Breakdown of ASF Burst InSAR naming scheme.*
 
 ### Naming Convention: INSAR_ISCE_MULTI_BURST
 
 The base filename for `INSAR_ISCE_MULTI_BURST` products follows the naming convention below, 
-as illustrated in Figure 3.
+as illustrated in Figure 4.
 
 **S1_rrr_bbbbbbs1ntt-bbbbbbs2ntt-bbbbbbs3ntt_IW_yyyymmdd_yyyymmdd_pp_INTzz_uuuu**
 
@@ -382,9 +382,8 @@ as illustrated in Figure 3.
 - **zz** indicates the pixel spacing of the output InSAR product (20, 40, or 80 meters)
 - **uuuu** is the unique product identifier
 
-![Figure 3](../images/asf_multi_burst_insar_names.png "Breakdown of ASF Multi-Burst InSAR Naming Scheme")
-
-*Figure 3: Breakdown of ASF Multi-Burst InSAR naming scheme.*
+![Figure 4](../images/asf_multi_burst_insar_names.png "Breakdown of ASF Multi-Burst InSAR Naming Scheme")
+*Figure 4: Breakdown of ASF Multi-Burst InSAR naming scheme.*
 
 As an example, the filename for a VV interferogram with 80-m pixel spacing containing bursts 
 111111_IW1, 111112_IW1, and 111111_IW2 from path 123 for the reference date of January 1, 2024 and the 

@@ -435,7 +435,7 @@ as the individual bursts are already merged together.
 An *unwrapped phase browse image* is included for the unwrapped (unw_phase) phase file, which is in PNG format 
 and is 2048 pixels wide.
 
-The tags and extensions used and example file names for each raster are listed in Table 3 below.
+The tags and extensions used and example file names for each raster are listed in Table 1 below.
 
 {% set base_name = 'S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>' %}
 
@@ -457,7 +457,7 @@ The tags and extensions used and example file names for each raster are listed i
 | _wrapped_phase_rdr.tif | Wrapped Range-Doppler interferogram | {{ base_name }}_wrapped_phase_rdr.tif                                            |
 | _unw_phase.png         | Unwrapped phase browse image        | {{ base_name }}_unw_phase.png<br/>⸻<br/>{{ base_name_mb }}_unw_phase.png         |
 
-*Table 3: Image files in product package*
+*Table 1: Image files in product package*
 
 ### Metadata Files
 
@@ -468,7 +468,7 @@ The product package also includes a number of metadata files.
 | .README.md.txt | Main README file for Burst InSAR products  | {{ base_name }}.README.md.txt<br/>⸻<br/>{{ base_name_mb }}.README.md.txt |
 | .txt           | Parameters and metadata for the InSAR pair | {{ base_name }}.txt<br/>⸻<br/>{{ base_name_mb }}.txt                     |
 
-*Table 4: Metadata files in product package*
+*Table 2: Metadata files in product package*
 
 #### README File
 The text file with extension `.README.md.txt` explains the files included in the folder, and is customized to reflect 
@@ -477,7 +477,7 @@ give some background on each of the files included in the product folder.
 
 #### InSAR Parameter File
 The text file with the base filename followed directly by a `.txt` extension includes processing parameters used to 
-generate the InSAR product as well as metadata attributes for the InSAR pair. These are detailed in Table 5.
+generate the InSAR product as well as metadata attributes for the InSAR pair. These are detailed in Table 3.
 
 | Name                     | Description                                                                                                                        | Possible Value                                                       |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
@@ -507,10 +507,10 @@ generate the InSAR product as well as metadata attributes for the InSAR pair. Th
 | Speckle filter           | Speckle filter applied                                                                                                             | yes                                                                  |
 | Water mask               | Was a water mask used                                                                                                              | yes                                                                  |
 
-*Table 5: List of InSAR parameters included in the parameter text file for all Burst InSAR products*
+*Table 3: List of InSAR parameters included in the parameter text file for all Burst InSAR products*
 
 For jobs processed using the `INSAR_ISCE_BURST` job type, the parameter file will also include some additional entries, 
-as indicated in Table 6. These additional entries are not included in the parameter file for `INSAR_ISCE_MULTI_BURST` 
+as indicated in Table 4. These additional entries are not included in the parameter file for `INSAR_ISCE_MULTI_BURST` 
 files. 
 
 | Name                            | Description                                                                                             | Possible Value                                                       |
@@ -525,7 +525,7 @@ files.
 | Multilook Range Pixel Size      | Distance-based spacing of range-doppler SLC samples after multilooking in meters                        | 46.59124229430646                                                    |
 | Radar sensing stop              | Last date and time for data collection                                                                  | 2020-06-04T02:23:16.030988                                           |
 
-*Table 6: List of additional InSAR parameters included in the parameter text file `INSAR_ISCE_BURST` job types.*
+*Table 4: List of additional InSAR parameters included in the parameter text file `INSAR_ISCE_BURST` job types.*
 {% endblock %}
 
 {% block download_tutorial %}

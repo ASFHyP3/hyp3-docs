@@ -215,12 +215,12 @@ reference and secondary SAFE files:
 When selecting input bursts that span across sub-swaths in the same relative path, you must also take care not to 
 leave gaps. The bursts in neighboring sub-swaths can only be offset along the path by one burst. 
 
-For example, the grouping of bursts shown in the image on the left in Figure 1 can be submitted for processing, 
+For example, the grouping of bursts shown in the image on the left in Figure 3 can be submitted for processing,
 while the grouping in the image on the right would not be valid.
 
-![Figure 1](../images/burst-contiguity.png "Illustration of acceptable offsets for bursts across sub-swaths")
+![Figure 3](../images/burst-contiguity.png "Illustration of acceptable offsets for bursts across sub-swaths")
 
-*Figure 1: Illustration of acceptable maximum offsets for bursts across sub-swaths.*
+*Figure 3: Illustration of acceptable maximum offsets for bursts across sub-swaths.*
 
 #### Download the DEM File
 
@@ -339,7 +339,7 @@ a metadata file, and a README file.
 ### Naming Convention: INSAR_ISCE_BURST
 
 The Burst InSAR product names are packed with information pertaining to the processing of the data, presented in 
-the following order, as illustrated in Figure 2.
+the following order, as illustrated in Figure 4.
 
 - The imaging platform name, always S1 for Sentinel-1.
 - Relative burst ID values assigned by ESA. Each value identifies a consistent burst footprint; relative burst ID 
@@ -353,14 +353,14 @@ the following order, as illustrated in Figure 2.
   was submitted for processing.
 - The filename ends with the ASF product ID, a 4 digit hexadecimal number.
 
-![Figure 2](../images/asf_burst_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
+![Figure 4](../images/asf_burst_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
 
-*Figure 2: Breakdown of ASF Burst InSAR naming scheme.*
+*Figure 4: Breakdown of ASF Burst InSAR naming scheme.*
 
 ### Naming Convention: INSAR_ISCE_MULTI_BURST
 
 The base filename for `INSAR_ISCE_MULTI_BURST` products follows the naming convention below, 
-as illustrated in Figure 3.
+as illustrated in Figure 5.
 
 **S1_rrr_bbbbbbs1ntt-bbbbbbs2ntt-bbbbbbs3ntt_IW_yyyymmdd_yyyymmdd_pp_INTzz_uuuu**
 
@@ -382,9 +382,9 @@ as illustrated in Figure 3.
 - **zz** indicates the pixel spacing of the output InSAR product (20, 40, or 80 meters)
 - **uuuu** is the unique product identifier
 
-![Figure 3](../images/asf_multi_burst_insar_names.png "Breakdown of ASF Multi-Burst InSAR Naming Scheme")
+![Figure 5](../images/asf_multi_burst_insar_names.png "Breakdown of ASF Multi-Burst InSAR Naming Scheme")
 
-*Figure 3: Breakdown of ASF Multi-Burst InSAR naming scheme.*
+*Figure 5: Breakdown of ASF Multi-Burst InSAR naming scheme.*
 
 As an example, the filename for a VV interferogram with 80-m pixel spacing containing bursts 
 111111_IW1, 111112_IW1, and 111111_IW2 from path 123 for the reference date of January 1, 2024 and the 
@@ -435,7 +435,7 @@ as the individual bursts are already merged together.
 An *unwrapped phase browse image* is included for the unwrapped (unw_phase) phase file, which is in PNG format 
 and is 2048 pixels wide.
 
-The tags and extensions used and example file names for each raster are listed in Table 3 below.
+The tags and extensions used and example file names for each raster are listed in Table 2 below.
 
 {% set base_name = 'S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>' %}
 
@@ -457,7 +457,7 @@ The tags and extensions used and example file names for each raster are listed i
 | _wrapped_phase_rdr.tif | Wrapped Range-Doppler interferogram | {{ base_name }}_wrapped_phase_rdr.tif                                            |
 | _unw_phase.png         | Unwrapped phase browse image        | {{ base_name }}_unw_phase.png<br/>⸻<br/>{{ base_name_mb }}_unw_phase.png         |
 
-*Table 3: Image files in product package*
+*Table 2: Image files in product package*
 
 ### Metadata Files
 
@@ -468,7 +468,7 @@ The product package also includes a number of metadata files.
 | .README.md.txt | Main README file for Burst InSAR products  | {{ base_name }}.README.md.txt<br/>⸻<br/>{{ base_name_mb }}.README.md.txt |
 | .txt           | Parameters and metadata for the InSAR pair | {{ base_name }}.txt<br/>⸻<br/>{{ base_name_mb }}.txt                     |
 
-*Table 4: Metadata files in product package*
+*Table 3: Metadata files in product package*
 
 #### README File
 The text file with extension `.README.md.txt` explains the files included in the folder, and is customized to reflect 
@@ -477,7 +477,7 @@ give some background on each of the files included in the product folder.
 
 #### InSAR Parameter File
 The text file with the base filename followed directly by a `.txt` extension includes processing parameters used to 
-generate the InSAR product as well as metadata attributes for the InSAR pair. These are detailed in Table 5.
+generate the InSAR product as well as metadata attributes for the InSAR pair. These are detailed in Table 4.
 
 | Name                     | Description                                                                                                                        | Possible Value                                                       |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
@@ -507,10 +507,10 @@ generate the InSAR product as well as metadata attributes for the InSAR pair. Th
 | Speckle filter           | Speckle filter applied                                                                                                             | yes                                                                  |
 | Water mask               | Was a water mask used                                                                                                              | yes                                                                  |
 
-*Table 5: List of InSAR parameters included in the parameter text file for all Burst InSAR products*
+*Table 4: List of InSAR parameters included in the parameter text file for all Burst InSAR products*
 
 For jobs processed using the `INSAR_ISCE_BURST` job type, the parameter file will also include some additional entries, 
-as indicated in Table 6. These additional entries are not included in the parameter file for `INSAR_ISCE_MULTI_BURST` 
+as indicated in Table 5. These additional entries are not included in the parameter file for `INSAR_ISCE_MULTI_BURST`
 files. 
 
 | Name                            | Description                                                                                             | Possible Value                                                       |
@@ -525,7 +525,7 @@ files.
 | Multilook Range Pixel Size      | Distance-based spacing of range-doppler SLC samples after multilooking in meters                        | 46.59124229430646                                                    |
 | Radar sensing stop              | Last date and time for data collection                                                                  | 2020-06-04T02:23:16.030988                                           |
 
-*Table 6: List of additional InSAR parameters included in the parameter text file `INSAR_ISCE_BURST` job types.*
+*Table 5: List of additional InSAR parameters included in the parameter text file `INSAR_ISCE_BURST` job types.*
 {% endblock %}
 
 {% block download_tutorial %}

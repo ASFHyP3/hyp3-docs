@@ -2,8 +2,8 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4646138.svg)](https://doi.org/10.5281/zenodo.4646138)
 
-HyP3 documentation is built using [MkDocs](https://www.mkdocs.org/) and the
-[ASF Theme](https://github.com/ASFHyP3/mkdocs-asf-theme).
+HyP3 documentation is built using [MkDocs](https://www.mkdocs.org/) and a customized version of the
+[Material Theme](https://squidfunk.github.io/mkdocs-material/).
 
 ## How to
 

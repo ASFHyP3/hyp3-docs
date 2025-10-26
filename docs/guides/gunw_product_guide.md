@@ -29,6 +29,9 @@ for a more thorough overview and installation instructions, and
 [tutorials led by EarthScope Consortium](https://www.youtube.com/watch?v=_a9T59VTz7Q&t=12734s "EarthScope Tutorials on YouTube" ){target=_blank}, 
 which demonstrate practical applications.
 
+This work was funded in part by the [Enabling Cloud-Based InSAR Science for an Exploding NASA InSAR Data Archive](https://www.earthdata.nasa.gov/about/competitive-programs/access/cloud-based-insar "https://www.earthdata.nasa.gov/about/competitive-programs/access/cloud-based-insar" ){target=_blank}
+project under NASA's [ACCESS](https://www.earthdata.nasa.gov/about/competitive-programs/access "https://www.earthdata.nasa.gov/about/competitive-programs/access" ){target=_blank} program.
+
 !!! tip "ARIA-S1-GUNW products are not produced globally"
 
     ARIA-S1-GUNW products are routinely produced only for specific locations, so the ASF archive may not contain 

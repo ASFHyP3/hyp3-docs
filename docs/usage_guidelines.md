@@ -1,4 +1,4 @@
-# Product Usage Guidelines
+# How to Cite HyP3 Products
 
 When using this data in a publication or presentation, we ask that you include the
 acknowledgement provided with each product. DOIs are also provided for citation

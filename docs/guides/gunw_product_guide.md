@@ -319,9 +319,11 @@ have completed processing.
 
 ### Accessing and Leveraging Product Layers with ARIA-tools
 
-Automation of accessing, interpolating, and applying all product layers for your analyses is seamlessly supported through the 
-[ARIA-tools GitHub page](https://github.com/aria-tools/ARIA-tools "ARIA-tools GitHub repository" ){target=_blank} 
-software. A more detailed, step-by-step overview of how to access each layer using this software is provided in the complementary [Jupyter Notebook](https://github.com/aria-tools/ARIA-tools-docs/blob/master/JupyterDocs/ariaExtract/ariaExtract_tutorial.ipynb" ){target=_blank}.
+The [ARIA-tools Python package](https://github.com/aria-tools/ARIA-tools "ARIA-tools GitHub repository" ){target=_blank} supports automated workflows for accessing, subsetting, interpolating, and correcting ARIA-S1-GUNW layers. 
+
+Refer to the [Downloading GUNW products using ariaDownload.py Jupyter Notebook](https://github.com/aria-tools/ARIA-tools-docs/blob/master/JupyterDocs/ariaDownload/ariaDownload_tutorial.ipynb "ariaDownload_tutorial.ipynb" ){target=_blank} to learn how to use ARIA-tools to search for and download ARIA-S1-GUNW products from ASF's archive. 
+
+The [Manipulating Layers of ARIA standard GUNW products Jupyter Notebook](https://github.com/aria-tools/ARIA-tools-docs/blob/master/JupyterDocs/ariaExtract/ariaExtract_tutorial.ipynb "ariaExtract_tutorial.ipynb" ){target=_blank} demonstrates using ARIA-tools to extract and subset ARIA-S1-GUNW layers, and presents workflows for applying the [included correction layers](#product-elements "Jump to the Product Elements section of this documentation") and generating displacement maps.
 
 ## References
 Bekaert, David, et al. "The ARIA-S1-GUNW: The ARIA Sentinel-1 Geocoded Unwrapped Phase Product for Open InSAR Science 

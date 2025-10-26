@@ -123,8 +123,9 @@ custom ARIA-S1-GUNW jobs for processing. Once processing is complete, there are 
 !!! tip "Sentinel-1C acquisitions now supported for ARIA-S1-GUNW products" 
 
     The code used for processing ARIA-S1-GUNW products has been updated to support Sentinel-1C acquisitions. You 
-    can now find archived ARIA-S1-GUNW products that include S1C acquisitions, and S1C acquisitions will be used for 
-    On Demand processing as appropriate. 
+    can now find archived ARIA-S1-GUNW products that include S1C acquisitions, and S1C acquisitions can be submitted 
+    for processing ARIA-S1-GUNW On Demand using the HyP3 API or SDK. Vertex support for submitting requests for 
+    On Demand ARIA-S1-GUNW products including S1C acquisitions is coming soon. 
 
 ### ARIA Frame ID Maps
 

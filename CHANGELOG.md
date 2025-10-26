@@ -6,18 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.12.4]
-
-### Changed
-* Updated the [ARIA S1 GUNW Product Guide](https://hyp3-docs.asf.alaska.edu/guides/gunw_product_guide)
-  * announced support for Sentinel-1C acquisitions
-  * updated layer descriptions
-  * added links for ARIA-tools tutorial notebooks
-
 ## [0.12.3]
 
 ### Changed
 * Updated naming scheme descriptions for multi-burst InSAR products in the [Sentinel-1 Burst InSAR Product Guide](https://hyp3-docs.asf.alaska.edu/guides/burst_insar_product_guide/#naming-convention-insar_isce_multi_burst)
+* Updated the [ARIA S1 GUNW Product Guide](https://hyp3-docs.asf.alaska.edu/guides/gunw_product_guide)
+  * announced support for Sentinel-1C acquisitions
+  * updated layer descriptions
+  * added links for ARIA-tools tutorial notebooks
 
 ## [0.12.2]
 

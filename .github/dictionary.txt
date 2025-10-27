@@ -459,8 +459,6 @@ subfolder
 subfolders
 submit_aria_s1_gunw_job
 subpackage
-subswath
-subswaths
 superpixel
 T115-245714-IW1
 TBD

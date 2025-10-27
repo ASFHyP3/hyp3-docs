@@ -268,9 +268,12 @@ The output netCDF file will include the layers listed in the table below.
 
 Although the ionospheric effects for C-band SAR are only about one-sixteenth of those at L-band, the measurement 
 accuracy of Sentinel-1 C-band SAR data can still be degraded by long-wavelength ionospheric signals. Utilizing the 
-[range-split spectrum methodology](https://doi.org/10.1109/TGRS.2019.2908494 "doi.org/10.1109/TGRS.2019.2908494" ){target=_blank} available within ISCE2, 
+[range-split spectrum methodology](https://doi.org/10.1109/TGRS.2019.2908494 "doi.org/10.1109/TGRS.2019.2908494" ){target=_blank} 
+available within ISCE2, 
 ARIA-S1-GUNW products include an ionospheric correction layer packaged as a differential field between the 
-secondary and reference input data. Since these layers have smooth variation in space they are downsampled to 33 arc-seconds (~1 km), and thus have to be interpolated before being subtracted from the unwrappedPhase field, which is sampled at 3 arc-seconds (~90 m).
+secondary and reference input data. Since these layers have smooth variation in space they are downsampled to 
+33 arc-seconds (~1 km), and thus have to be interpolated before being subtracted from the unwrappedPhase field, 
+which is sampled at 3 arc-seconds (~90 m).
 
 ### Solid Earth Tides Correction Layers
 
@@ -280,7 +283,9 @@ resulting in surface displacements of up to several centimeters. Correcting for 
 these predictable, cyclic motions from being misinterpreted as real ground deformation. ARIA-S1-GUNW products 
 include SET correction layers, created using the 
 [PySolid](https://github.com/insarlab/PySolid?tab=readme-ov-file "PySolid GitHub repository" ){target=_blank} 
-python package, for both the reference and secondary input data. These layers are packaged within the products as 3D datasets posted laterally at 0.1-degree intervals (~11 km) and vertically at the following height intervals: -1.5km, 0km, 3km, 9km.
+python package, for both the reference and secondary input data. These layers are packaged within the products as 3D 
+datasets posted laterally at 0.1-degree intervals (~11 km) and vertically at the following height intervals: 
+-1.5 km, 0 km, 3 km, 9 km.
 
 ### Tropospheric Delay Correction Layers
 

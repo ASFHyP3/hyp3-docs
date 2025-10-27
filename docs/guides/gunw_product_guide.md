@@ -120,11 +120,12 @@ custom ARIA-S1-GUNW jobs for processing. Once processing is complete, there are 
   products.
     - The links to the archived products never expire. 
 
-!!! warning "Sentinel-1C acquisitions not yet supported for On Demand ARIA-S1-GUNW products" 
+!!! tip "Sentinel-1C acquisitions now supported for ARIA-S1-GUNW products" 
 
-    The code used for processing ARIA-S1-GUNW products has been updated to support Sentinel-1C acquisitions, so you 
-    can now find archived ARIA-S1-GUNW products for S1C acquisitions. Development work is still underway to support 
-    S1C functionality for On Demand ARIA-S1-GUNW products, so stay tuned for the release of this capability. 
+    The code used for processing ARIA-S1-GUNW products has been updated to support Sentinel-1C acquisitions. You 
+    can now find archived ARIA-S1-GUNW products that include S1C acquisitions, and S1C acquisitions can be submitted 
+    for processing ARIA-S1-GUNW On Demand using the HyP3 API or SDK. Vertex support for submitting requests for 
+    On Demand ARIA-S1-GUNW products including S1C acquisitions is coming soon. 
 
 ### ARIA Frame ID Maps
 
@@ -249,14 +250,14 @@ The output netCDF file will include the layers listed in the table below.
 |                 | connectedComponents                   | 2D Connected component file                          | unitless |
 |                 | unfilteredCoherence                   | 2D Coherence [0-1] from unfiltered IFG               | unitless |
 |                 | unwrappedPhase                        | 2D Filtered unwrapped IFG geocoded                   | rad      |
-| corrections     | ionosphere                            | 2D Split spectrum ionospheric delay                  | rad      |
-|                 | ionosphereBurstRamps                  | Digital elevation model                              | rad      |
-|                 | reference/solidEarthTide              | 2D/3D solid earth tide for reference granule         | rad      |
-|                 | secondary/solidEarthTide              | 2D/3D solid earth tide for secondary granule         | rad      |
-|                 | HRRR/reference/troposphereWet         | 2D/3D wet troposphere for reference granule          | rad      |
-|                 | HRRR/secondary/troposphereWet         | 2D/3D wet troposphere for secondary granule          | rad      |
-|                 | HRRR/reference/troposphereHydrostatic | 2D/3D hydrostatic troposphere for reference granule  | rad      |
-|                 | HRRR/secondary/troposphereHydrostatic | 2D/3D hydrostatic troposphere for secondary granule  | rad      |
+| corrections     | ionosphere                            | 2D Split spectrum ionospheric delay correction       | rad      |
+|                 | ionosphereBurstRamps                  | 2D Split spectrum ionospheric burst ramp correction  | rad      |
+|                 | reference/solidEarthTide              | 3D solid earth tide for reference granule            | rad      |
+|                 | secondary/solidEarthTide              | 3D solid earth tide for secondary granule            | rad      |
+|                 | HRRR/reference/troposphereWet         | 3D wet troposphere for reference granule             | rad      |
+|                 | HRRR/secondary/troposphereWet         | 3D wet troposphere for secondary granule             | rad      |
+|                 | HRRR/reference/troposphereHydrostatic | 3D hydrostatic troposphere for reference granule     | rad      |
+|                 | HRRR/secondary/troposphereHydrostatic | 3D hydrostatic troposphere for secondary granule     | rad      |
 | imagingGeometry | azimuthAngle                          | 3D azimuth angle grid                                | degree   |
 |                 | incidenceAngle                        | 3D Incidence angle grid                              | degree   |
 |                 | lookAngle                             | 3D look angle grid                                   | degree   |
@@ -267,9 +268,12 @@ The output netCDF file will include the layers listed in the table below.
 
 Although the ionospheric effects for C-band SAR are only about one-sixteenth of those at L-band, the measurement 
 accuracy of Sentinel-1 C-band SAR data can still be degraded by long-wavelength ionospheric signals. Utilizing the 
-[range-split spectrum methodology](https://doi.org/10.1109/TGRS.2019.2908494 "doi.org/10.1109/TGRS.2019.2908494" ){target=_blank} available within ISCE2, 
+[range-split spectrum methodology](https://doi.org/10.1109/TGRS.2019.2908494 "doi.org/10.1109/TGRS.2019.2908494" ){target=_blank} 
+available within ISCE2, 
 ARIA-S1-GUNW products include an ionospheric correction layer packaged as a differential field between the 
-secondary and reference input data, which can be directly subtracted from the unwrappedPhase field.
+secondary and reference input data. Since these layers have smooth variation in space they are downsampled to 
+33 arc-seconds (~1 km), and thus have to be interpolated before being subtracted from the unwrappedPhase field, 
+which is sampled at 3 arc-seconds (~90 m).
 
 ### Solid Earth Tides Correction Layers
 
@@ -277,9 +281,11 @@ secondary and reference input data, which can be directly subtracted from the un
 (SET) are periodic deformations of the Earth's crust caused by gravitational forces from the Moon and Sun, 
 resulting in surface displacements of up to several centimeters. Correcting for SET in InSAR is crucial to prevent 
 these predictable, cyclic motions from being misinterpreted as real ground deformation. ARIA-S1-GUNW products 
-include an SET correction layer for both the reference and secondary input data that are created using the 
+include SET correction layers, created using the 
 [PySolid](https://github.com/insarlab/PySolid?tab=readme-ov-file "PySolid GitHub repository" ){target=_blank} 
-python package.
+python package, for both the reference and secondary input data. These layers are packaged within the products as 3D 
+datasets posted laterally at 0.1-degree intervals (~11 km) and vertically at the following height intervals: 
+-1.5 km, 0 km, 3 km, 9 km.
 
 ### Tropospheric Delay Correction Layers
 
@@ -294,7 +300,7 @@ RAiDER uses the
 weather model to calculate the tropospheric delay correction at a spatial resolution of approximately 3 km. If the 
 HRRR weather model is not available for a location of interest, (i.e. outside of the continental U.S. and Alaska) the 
 tropospheric delay correction layer will not be included in the ARIA-S1-GUNW product. The wet and hydrostatic 
-tropospheric delay correction are provided for both the reference and secondary input data.
+tropospheric delay correction are provided for both the reference and secondary input data. These layers are packaged within the products as 3D datasets posted laterally at 0.05-degree intervals (~5.5 km) and vertically in 0.5 km increments between -0.5 km and 9 km.
 
 ## Data Access
 
@@ -319,6 +325,14 @@ You can also search for ARIA-S1-GUNW products programmatically using the
 [asf_search Python Package](https://pypi.org/project/asf-search/ "pypi.org/project/asf-search" ){target=_blank}. 
 Again, results will include products generated by the ARIA team along with any On Demand ARIA-S1-GUNW products that 
 have completed processing.
+
+### Accessing and Leveraging Product Layers with ARIA-tools
+
+The [ARIA-tools Python package](https://github.com/aria-tools/ARIA-tools "ARIA-tools GitHub repository" ){target=_blank} supports automated workflows for accessing, subsetting, interpolating, and correcting ARIA-S1-GUNW layers. 
+
+Refer to the [Downloading GUNW products using ariaDownload.py Jupyter Notebook](https://github.com/aria-tools/ARIA-tools-docs/blob/master/JupyterDocs/ariaDownload/ariaDownload_tutorial.ipynb "ariaDownload_tutorial.ipynb" ){target=_blank} to learn how to use ARIA-tools to search for and download ARIA-S1-GUNW products from ASF's archive. 
+
+The [Manipulating Layers of ARIA standard GUNW products Jupyter Notebook](https://github.com/aria-tools/ARIA-tools-docs/blob/master/JupyterDocs/ariaExtract/ariaExtract_tutorial.ipynb "ariaExtract_tutorial.ipynb" ){target=_blank} demonstrates using ARIA-tools to extract and subset ARIA-S1-GUNW layers, and presents workflows for applying the [included correction layers](#product-elements "Jump to the Product Elements section of this documentation") and generating displacement maps.
 
 ## References
 Bekaert, David, et al. "The ARIA-S1-GUNW: The ARIA Sentinel-1 Geocoded Unwrapped Phase Product for Open InSAR Science 

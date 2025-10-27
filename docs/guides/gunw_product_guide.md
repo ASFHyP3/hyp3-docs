@@ -300,7 +300,7 @@ RAiDER uses the
 weather model to calculate the tropospheric delay correction at a spatial resolution of approximately 3 km. If the 
 HRRR weather model is not available for a location of interest, (i.e. outside of the continental U.S. and Alaska) the 
 tropospheric delay correction layer will not be included in the ARIA-S1-GUNW product. The wet and hydrostatic 
-tropospheric delay correction are provided for both the reference and secondary input data. These layers are packaged within the products as 3D datasets posted laterally at 0.05-degree intervals (~5.5 km) and vertically in 0.5 km increments between -0.5km and 9 km.
+tropospheric delay correction are provided for both the reference and secondary input data. These layers are packaged within the products as 3D datasets posted laterally at 0.05-degree intervals (~5.5 km) and vertically in 0.5 km increments between -0.5 km and 9 km.
 
 ## Data Access
 

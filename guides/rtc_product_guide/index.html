@@ -1,0 +1,3597 @@
+<!-- Extends https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/base.html -->
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Alaska Satellite Facility's Hybrid Pluggable Processing Pipeline">
+      
+      
+        <meta name="author" content="ASF APD/Tools Team">
+      
+      
+        <link rel="canonical" href="https://hyp3-docs.asf.alaska.edu/hyp3-docs/guides/rtc_product_guide/">
+      
+      
+        <link rel="prev" href="./">
+      
+      
+        <link rel="next" href="../rtc_atbd/">
+      
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>Product Guide - HyP3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/asf.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sentinel-1-rtc-product-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Adapted from https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/partials/header.html -->
+
+<!-- Determine classes -->
+
+
+  
+
+
+<!-- Header -->
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="Header"
+  >
+
+    
+    <!-- Link to ASF -->
+    <a
+      href="https://asf.alaska.edu/"
+      title="ASF"
+      class="md-header__button md-logo"
+      aria-label="ASF"
+      data-md-component="logo"
+    >
+      <img src="../../images/ASFLogo-Blue2.png" alt="logo" />
+    </a>
+    
+
+    <!-- Link to home -->
+    <a
+      href="../.."
+      title="HyP3"
+      class="md-header__button md-logo"
+      aria-label="HyP3"
+      data-md-component="logo"
+    >
+      
+  <img src="../../images/HyP3-graphic-only.png" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HyP3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Product Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color palette toggle -->
+    
+
+    <!-- Site language selector -->
+    
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      <div class="expert-rec-search">
+  <ci-search></ci-search>
+</div>
+    
+
+    <!-- Repository information -->
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ASFHyP3" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ASF HyP3
+  </div>
+</a>
+      </div>
+    
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!-- Extends https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/base.html -->
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+<!--  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="HyP3" class="md-nav__button md-logo" aria-label="HyP3" data-md-component="logo">
+      
+  <img src="../../images/HyP3-graphic-only.png" alt="logo">
+
+    </a>
+    HyP3
+  </label> -->
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ASFHyP3" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ASF HyP3
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../about/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    HyP3
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            HyP3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/hyp3_basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HyP3 Basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../about/hyp3_plus/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    HyP3+
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            HyP3+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/hyp3_plus_terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terms of Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../using/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Using HyP3
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Using HyP3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/vertex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vertex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../using/sdk/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    SDK
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            SDK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example Notebook
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/sdk_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/credits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Credits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/downloading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Downloads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage_guidelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to Cite HyP3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../products/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Products
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Products
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    RTC
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            RTC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sentinel-1-mission" class="md-nav__link">
+    Sentinel-1 Mission
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sar-distortions" class="md-nav__link">
+    SAR Distortions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-elevation-models" class="md-nav__link">
+    Digital Elevation Models
+  </a>
+  
+    <nav class="md-nav" aria-label="Digital Elevation Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copernicus-dem" class="md-nav__link">
+    Copernicus DEM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pixel-spacing" class="md-nav__link">
+    Pixel Spacing
+  </a>
+  
+    <nav class="md-nav" aria-label="Pixel Spacing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dem-resolution" class="md-nav__link">
+    DEM Resolution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processing-options-and-optional-files" class="md-nav__link">
+    Processing Options and Optional Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Processing Options and Optional Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#processing-options" class="md-nav__link">
+    Processing Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Processing Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#radiometry" class="md-nav__link">
+    Radiometry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale" class="md-nav__link">
+    Scale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixel-spacing_1" class="md-nav__link">
+    Pixel Spacing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dem-name" class="md-nav__link">
+    DEM Name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dem-matching" class="md-nav__link">
+    DEM Matching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speckle-filter" class="md-nav__link">
+    Speckle Filter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-files" class="md-nav__link">
+    Optional Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dem" class="md-nav__link">
+    DEM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incidence-angle-map" class="md-nav__link">
+    Incidence Angle Map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scattering-area-map" class="md-nav__link">
+    Scattering Area Map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgb-decomposition" class="md-nav__link">
+    RGB Decomposition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radiometric-terrain-correction-workflow" class="md-nav__link">
+    Radiometric Terrain Correction Workflow
+  </a>
+  
+    <nav class="md-nav" aria-label="Radiometric Terrain Correction Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-processing" class="md-nav__link">
+    Pre-processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terrain-correction" class="md-nav__link">
+    Terrain Correction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radiometric-correction" class="md-nav__link">
+    Radiometric Correction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geocoding" class="md-nav__link">
+    Geocoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-processing" class="md-nav__link">
+    Post-Processing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-packaging" class="md-nav__link">
+    Product Packaging
+  </a>
+  
+    <nav class="md-nav" aria-label="Product Packaging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-convention" class="md-nav__link">
+    Naming Convention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-files" class="md-nav__link">
+    Image Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-files" class="md-nav__link">
+    Metadata Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Metadata Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#readme-file" class="md-nav__link">
+    README File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arcgis-compatible-xml-files" class="md-nav__link">
+    ArcGIS-Compatible XML Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auxiliary-geolocation-files" class="md-nav__link">
+    Auxiliary Geolocation Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-file" class="md-nav__link">
+    Log File
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shapefile" class="md-nav__link">
+    Shapefile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-access" class="md-nav__link">
+    Data Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sar-scales" class="md-nav__link">
+    SAR Scales
+  </a>
+  
+    <nav class="md-nav" aria-label="SAR Scales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-scale" class="md-nav__link">
+    Power Scale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amplitude-scale" class="md-nav__link">
+    Amplitude Scale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decibel-db-scale" class="md-nav__link">
+    Decibel (dB) Scale
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtc-use-examples" class="md-nav__link">
+    RTC Use Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="RTC Use Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change-detection-using-rtc-data" class="md-nav__link">
+    Change Detection Using RTC Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Change Detection Using RTC Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seasonal-change" class="md-nav__link">
+    Seasonal Change
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantifying-change-over-time" class="md-nav__link">
+    Quantifying Change over Time
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identifying-surface-water" class="md-nav__link">
+    Identifying Surface Water
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combination-of-rtc-imagery-with-other-remote-sensing-data" class="md-nav__link">
+    Combination of RTC Imagery with other Remote Sensing Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arcgis-toolbox" class="md-nav__link">
+    ArcGIS Toolbox
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-examples-in-the-literature" class="md-nav__link">
+    Application Examples in the Literature
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Examples in the Literature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crop-monitoring" class="md-nav__link">
+    Crop Monitoring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disaster-response" class="md-nav__link">
+    Disaster Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#land-classification-and-change-detection" class="md-nav__link">
+    Land Classification and Change Detection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StoryMap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rtc_atbd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Theoretical Basis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../insar_product_guide/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    InSAR
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            InSAR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../insar_product_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StoryMap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../burst_insar_product_guide/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Burst InSAR
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Burst InSAR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../burst_insar_product_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://storymaps.arcgis.com/stories/191bf1b6962c402086807390b3ce63b0" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StoryMap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../gunw_product_guide/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ARIA S1 GUNW
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            ARIA S1 GUNW
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gunw_product_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://its-live.jpl.nasa.gov/" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AutoRIFT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sentinel1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sentinel-1 Mission
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../introduction_to_sar/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    SAR Basics
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            SAR Basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction_to_sar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to SAR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Digital Elevation Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../water_masking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Water Masking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://asf.alaska.edu/information/sar-information/what-is-sar/#sar_faq" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SAR FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tutorials/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using HyP3 Python SDK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authenticate HyP3 in the SDK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search another user's jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Update existing job name
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/process-new-granules-for-search-parameters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Process new granules for search parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InSAR time series with MintPy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_isce2_burst_stack_for_ts_analysis.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InSAR burst time series with MintPy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://asf-daac.maps.arcgis.com/home/index.html" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StoryMap Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Other Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Other Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/arcgis_toolbox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ArcGIS Toolbox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tools/asf_tools/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ASF Tools for Python
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            ASF Tools for Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/asf_tools_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Developers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how_it_works/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plugins/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plugins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/.github/blob/main/CODE_OF_CONDUCT.md" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code of Conduct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../whats_new/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    What's New
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            What's New
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../news/hyp3_plus_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducing HyP3+
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact Us
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sentinel-1-mission" class="md-nav__link">
+    Sentinel-1 Mission
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sar-distortions" class="md-nav__link">
+    SAR Distortions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#digital-elevation-models" class="md-nav__link">
+    Digital Elevation Models
+  </a>
+  
+    <nav class="md-nav" aria-label="Digital Elevation Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copernicus-dem" class="md-nav__link">
+    Copernicus DEM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pixel-spacing" class="md-nav__link">
+    Pixel Spacing
+  </a>
+  
+    <nav class="md-nav" aria-label="Pixel Spacing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dem-resolution" class="md-nav__link">
+    DEM Resolution
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processing-options-and-optional-files" class="md-nav__link">
+    Processing Options and Optional Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Processing Options and Optional Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#processing-options" class="md-nav__link">
+    Processing Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Processing Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#radiometry" class="md-nav__link">
+    Radiometry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scale" class="md-nav__link">
+    Scale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pixel-spacing_1" class="md-nav__link">
+    Pixel Spacing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dem-name" class="md-nav__link">
+    DEM Name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dem-matching" class="md-nav__link">
+    DEM Matching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speckle-filter" class="md-nav__link">
+    Speckle Filter
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-files" class="md-nav__link">
+    Optional Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dem" class="md-nav__link">
+    DEM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#incidence-angle-map" class="md-nav__link">
+    Incidence Angle Map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scattering-area-map" class="md-nav__link">
+    Scattering Area Map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgb-decomposition" class="md-nav__link">
+    RGB Decomposition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radiometric-terrain-correction-workflow" class="md-nav__link">
+    Radiometric Terrain Correction Workflow
+  </a>
+  
+    <nav class="md-nav" aria-label="Radiometric Terrain Correction Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-processing" class="md-nav__link">
+    Pre-processing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terrain-correction" class="md-nav__link">
+    Terrain Correction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#radiometric-correction" class="md-nav__link">
+    Radiometric Correction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geocoding" class="md-nav__link">
+    Geocoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-processing" class="md-nav__link">
+    Post-Processing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-packaging" class="md-nav__link">
+    Product Packaging
+  </a>
+  
+    <nav class="md-nav" aria-label="Product Packaging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-convention" class="md-nav__link">
+    Naming Convention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-files" class="md-nav__link">
+    Image Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-files" class="md-nav__link">
+    Metadata Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Metadata Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#readme-file" class="md-nav__link">
+    README File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arcgis-compatible-xml-files" class="md-nav__link">
+    ArcGIS-Compatible XML Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auxiliary-geolocation-files" class="md-nav__link">
+    Auxiliary Geolocation Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-file" class="md-nav__link">
+    Log File
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shapefile" class="md-nav__link">
+    Shapefile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-access" class="md-nav__link">
+    Data Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sar-scales" class="md-nav__link">
+    SAR Scales
+  </a>
+  
+    <nav class="md-nav" aria-label="SAR Scales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-scale" class="md-nav__link">
+    Power Scale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amplitude-scale" class="md-nav__link">
+    Amplitude Scale
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decibel-db-scale" class="md-nav__link">
+    Decibel (dB) Scale
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rtc-use-examples" class="md-nav__link">
+    RTC Use Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="RTC Use Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change-detection-using-rtc-data" class="md-nav__link">
+    Change Detection Using RTC Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Change Detection Using RTC Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seasonal-change" class="md-nav__link">
+    Seasonal Change
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantifying-change-over-time" class="md-nav__link">
+    Quantifying Change over Time
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identifying-surface-water" class="md-nav__link">
+    Identifying Surface Water
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combination-of-rtc-imagery-with-other-remote-sensing-data" class="md-nav__link">
+    Combination of RTC Imagery with other Remote Sensing Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arcgis-toolbox" class="md-nav__link">
+    ArcGIS Toolbox
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-examples-in-the-literature" class="md-nav__link">
+    Application Examples in the Literature
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Examples in the Literature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crop-monitoring" class="md-nav__link">
+    Crop Monitoring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disaster-response" class="md-nav__link">
+    Disaster Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#land-classification-and-change-detection" class="md-nav__link">
+    Land Classification and Change Detection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="sentinel-1-rtc-product-guide">Sentinel-1 RTC Product Guide<a class="headerlink" href="#sentinel-1-rtc-product-guide" title="Permanent link">&para;</a></h1>
+<p>This document is a guide for users of Radiometrically Terrain Corrected (RTC) Sentinel-1 products generated by the Alaska Satellite Facility (ASF). Users can request RTC products <a href="https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank" title="Vertex On Demand Tutorial">On Demand</a> in ASF's <a href="https://search.asf.alaska.edu/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a> data portal, or make use of our <a href="https://hyp3-docs.asf.alaska.edu/using/sdk/" target="_blank" title="HyP3 Python SDK Documentation">Python SDK</a> or <a href="https://hyp3-docs.asf.alaska.edu/using/api/" target="_blank" title="HyP3 API Documentation">API</a>.</p>
+<p>SAR datasets inherently contain <a href="#sar-distortions" title="Jump to SAR Distortions section of document">geometric and radiometric distortions</a> due to terrain being imaged by a side-looking instrument. <a href="#radiometric-terrain-correction-workflow" title="Jump to RTC Workflow section of document">Radiometric terrain correction</a> corrects these distortions and creates analysis-ready data suitable for use in GIS applications or time-series analysis. RTC processing is a required first step for many amplitude-based SAR applications.</p>
+<p>ASF's <a href="https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank" title="Vertex On Demand Tutorial">Sentinel-1 On-Demand RTC</a> products are generated using <a href="https://gamma-rs.ch/" target="_blank" title="https://gamma-rs.ch">GAMMA Software</a>. Products are distributed as GeoTIFFs (one for each available polarization) projected to the appropriate UTM Zone for the location of the scene.</p>
+<p>A Digital Elevation Model (DEM) is required for radiometric terrain correction. The <a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM" target="_blank" title="Copernicus DEM">GLO-30 Copernicus DEM</a> is used to process all RTC On Demand products. Refer to the <a href="#digital-elevation-models" title="Jump to the DEM Section of this document">Digital Elevation Model section</a> for more information.</p>
+<p>For a step-by-step tutorial on ordering On-Demand RTC Products using Vertex, visit our <a href="https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35" target="_blank" title="RTC On Demand! StoryMap">RTC On Demand! StoryMap</a>, which also includes links to sample workflows using Sentinel-1 RTC products for GIS applications.</p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<h3 id="sentinel-1-mission">Sentinel-1 Mission<a class="headerlink" href="#sentinel-1-mission" title="Permanent link">&para;</a></h3>
+<p>The 
+<a href="https://sentiwiki.copernicus.eu/web/s1-mission" target="_blank" title="https://sentiwiki.copernicus.eu/web/s1-mission">Sentinel-1 mission</a> 
+collects C-band band SAR from a pair of polar-orbiting satellites launched by the European Space Agency (ESA) as part 
+of the 
+<a href="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions" target="_blank" title="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions">Copernicus program</a>. 
+The Sentinel-1A satellite was launched April 3, 2014, the Sentinel-1B satellite was launched April 25, 2016, 
+and the Sentinel-1C satellite was launched December 5, 2024. </p>
+<p>Sentinel-1A is still collecting data, but 
+<a href="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite" target="_blank" title="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite">Sentinel-1B ended its mission</a> 
+on December 23, 2021. Sentinel-1C has now replaced Sentinel-1B in the constellation, returning the Sentinel-1 
+mission to full observation capacity <a href="https://dataspace.copernicus.eu/news/2025-3-25-sentinel-1c-user-data-opening-26th-march" target="_blank" title="https://dataspace.copernicus.eu/news/2025-3-25-sentinel-1c-user-data-opening-26th-march">as of March 26, 2025</a>. </p>
+<p>The Sentinel-1 satellites each have a 12-day repeat cycle, but when there are two functioning satellites, their orbits 
+are offset 180 degrees so that one or the other will pass over the same location on earth every 6 days. Under this 
+scenario, select areas of interest are imaged with a 6-day interval, as described in the 
+<a href="https://sentinels.copernicus.eu/copernicus/sentinel-1/observation-scenario" target="_blank" title="https://sentinels.copernicus.eu/copernicus/sentinel-1/observation-scenario">mission observation scenario</a>, 
+while most landmasses are imaged on a 12-day repeat cycle.</p>
+<p>For the time period between when Sentinel-1B stopped acquiring data and Sentinel-1C started acquiring data, 
+coverage was more sparse. Some areas did not have any imagery acquired between December 2021 and April 2025. 
+Depending on your area of interest, you may have limited data available during that time. For more information, 
+visit our <a href="../../sentinel1/">Sentinel-1 Mission page</a>.</p>
+<p>Because this is a polar-orbiting satellite constellation, areas near the poles may have a number of overlapping paths, 
+resulting in even more frequent acquisitions with similar footprints. </p>
+<p>The relatively short interval between acquisitions makes this SAR dataset a very useful tool for monitoring rapid or 
+sudden landscape changes. In addition, SAR can image the earth's surface through cloud or smoke cover and does not 
+require sunlight, so valid imagery can be collected on every pass. This is particularly useful for monitoring 
+conditions during natural disasters such as hurricanes or wildfires, or in areas that are prone to frequent cloud cover.</p>
+<h3 id="sar-distortions">SAR Distortions<a class="headerlink" href="#sar-distortions" title="Permanent link">&para;</a></h3>
+<p>There are a number of distortions inherent to SAR data due to the side-looking nature of the sensor, and these impacts will be more prevalent in areas with rugged terrain. The process of radiometric terrain correction addresses the geometric distortions that lead to geolocation errors in terrain features, and also normalizes the backscatter values based on the actual area contributing returns. This process generates an image that aligns well with other geospatial data and is suitable for GIS applications or time-series analysis.</p>
+<p>The key distortions present in SAR images are foreshortening, layover and shadow (Figure 1). </p>
+<p><img alt="Figure 1" src="../../images/sar_distortions.png" title="Distortions induced by side-looking SAR. Ground points a, b, c are ‘seen’ by radar as points a’, b’, c’ in the slant range." /></p>
+<p><em>Figure 1: Distortions induced by side-looking SAR. Ground points a, b, c are ‘seen’ by radar as points a’, b’, c’ in the slant range. Credit: Franz J. Meyer</em></p>
+<p>In the case of <strong>foreshortening</strong>, the backscatter from the front side of the mountain is compressed, with returns from a large area arriving back to the sensor at about the same time. This results in the front slope being displayed as a narrow, bright band. </p>
+<p>When <strong>layover</strong> occurs, returns from the front slope (and potentially even some of the area before the slope starts) are received at the same time as returns from the back slope. Thus, area in the front of the slope is projected onto the back side in the slant range image. In this case, the data from the front slope cannot be extracted from the returns.</p>
+<p>Another condition that results in missing data is radar <strong>shadow</strong>. In this case, the angle of the back slope is such that the sensor can not image it at all. These areas with steep back slopes offer no information to the SAR sensor.</p>
+<p>When RTC is performed, foreshortened areas are corrected based on the DEM. Areas impacted by layover or shadow, however, do not actually have data returns to correct. In this case, the pixels in the resulting RTC image will have a value of No Data. We do not interpolate missing data; users who would like to fill holes with estimated values will need to do so as appropriate for their particular application.</p>
+<p>The RTC product package includes a Layover-Shadow mask (see <a href="#image-files" title="Jump to Image Files section of document">Image Files section</a>) If you find that there are No Data pixels in your image, you can refer to that reference raster to see if the missing pixels are due to layover or shadow effects.</p>
+<h2 id="digital-elevation-models">Digital Elevation Models<a class="headerlink" href="#digital-elevation-models" title="Permanent link">&para;</a></h2>
+<p>The quality of the terrain corrections are related to the quality of the digital elevation models (DEMs) used in the process of geometrically and radiometrically correcting the SAR imagery. </p>
+<p>We use the 2022 Release of the 
+<a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM" target="_blank" title="Copernicus DEM">Copernicus GLO-30 Public DEM</a>, 
+<a href="https://registry.opendata.aws/copernicus-dem/" target="_blank" title="Registry of Open Data on AWS - Copernicus DEM">available on AWS</a>. </p>
+<div class="admonition tip">
+<p class="admonition-title">Coverage gaps in Copernicus DEM GLO-30 filled using GLO-90</p>
+<p>The Copernicus DEM GLO-30 dataset does not provide coverage over Armenia and Azerbaijan. In the past, we have not supported On Demand product generation over those areas using the Copernicus DEM option. We now use the Copernicus DEM GLO-90 to fill those gaps. </p>
+<p>Users should be aware that the GLO-90 dataset has a pixel spacing of 90 meters, which is not as detailed as the 30-m pixel spacing in the GLO-30 DEM. </p>
+</div>
+<p>Table 1 summarizes ASF's source DEM. Note that we currently only support using the Copernicus 30-m DEM for processing RTC. The source DEM is resampled to the pixel spacing of the output RTC product, and it is reprojected to the UTM Zone (WGS84) for the area covered by the Sentinel-1 scene undergoing correction. A geoid correction is applied before it is used for RTC processing.</p>
+<table>
+<thead>
+<tr>
+<th>Resolution</th>
+<th>DEM</th>
+<th>Vertical Datum</th>
+<th>Area</th>
+<th>Posting</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Medium</td>
+<td>GLO-30</td>
+<td>EGM2008</td>
+<td>Global</td>
+<td>1 arc second</td>
+<td>Default</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 1: DEM used for RTC processing. The Copernicus DEM is the only option available when processing RTC and InSAR products</em></p>
+<p>When ordering On-Demand RTC products, you can choose to <a href="#dem" title="Jump to Optional Files - DEM section in document">include a copy of the DEM used for RTC processing</a> in the RTC product package. This DEM copy is converted to 16-bit signed integer format, but is otherwise the same as the DEM used in the RTC process. Pixel values indicate the elevation in meters. Note that the elevation values will differ from the original source DEM in all cases, due to the geoid correction applied to prepare the DEM for use in RTC processing.</p>
+<h3 id="copernicus-dem">Copernicus DEM<a class="headerlink" href="#copernicus-dem" title="Permanent link">&para;</a></h3>
+<p>The <a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM" target="_blank" title="Copernicus DEM">GLO-30 Copernicus DEM</a> provides global coverage at 30-m pixel spacing (with the current exception of an area covering Armenia and Azerbaijan, see Figure 3). </p>
+<p>When an On Demand RTC job is requested, we download the required DEM tiles from the Copernicus Digital Elevation Model (DEM) GLO-30 Public dataset available in the <a href="https://registry.opendata.aws/copernicus-dem/" target="_blank" title="https://registry.opendata.aws/copernicus-dem">Registry of Open Data on AWS</a>, managed by <a href="https://www.sinergise.com/" target="_blank" title="https://www.sinergise.com">Sinergise</a>. We mosaic the tiles and reproject them to the appropriate UTM Zone for the location of the SAR granule to be processed, resampling them to match the pixel spacing and alignment of the RTC product. A geoid correction is applied before it is used for RTC processing.</p>
+<p>For the area that does not have coverage with the GLO-30 DEM, we use the Copernicus DEM GLO-90 dataset, which provides elevation data at 90-meter pixel spacing. Users ordering products over this area should be aware that a lower-resolution DEM is used for processing.</p>
+<p>Figure 2 shows the coverage of the Copernicus DEM GLO-30 Public dataset, and Figure 3 details the land area currently only covered by the GLO-90 DEM at 90-m pixel spacing.</p>
+<p><img alt="Figure 2" src="../../images/cop-coverage-map.png" title="Copernicus DEM GLO-30 coverage map" /></p>
+<p><em>Figure 2: Copernicus DEM GLO-30 coverage map</em></p>
+<p><img alt="Figure 3" src="../../images/cop-missing-100.png" title="Detail of area currently not covered by Copernicus DEM GLO-30. Jobs over this area will be filled with GLO-90 tiles." /></p>
+<p><em>Figure 3: Detail of area currently not covered by Copernicus DEM GLO-30. On Demand jobs requested over this area will use the Copernicus DEM GLO-90.</em></p>
+<h2 id="pixel-spacing">Pixel Spacing<a class="headerlink" href="#pixel-spacing" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">On Demand Sentinel-1 RTC now available at 10-m and 20-m pixel spacing</p>
+<p>There are now three pixel spacing options available for On Demand Sentinel-1 RTC products. Users can choose to output the RTC products at a pixel spacing of 30, 20, or 10 meters.</p>
+</div>
+<p>RTC products can be output at 30-meter, 20-meter, or 10-meter pixel spacing. In most cases, the input SAR image has a resolution closer to the 10-m products, while the Copernicus DEM (used by default for RTC processing) has a pixel spacing of 30 m. The 10-m RTC product will be closer to the resolution of the source SAR granule, but the 30-m RTC product has a much smaller file size. </p>
+<p><img alt="Figure 5" src="../../images/pixel-spacing-compare.png" title="Comparison of RTC products generated with different pixel spacing settings" /></p>
+<p><em>Figure 5: Comparison of RTC products generated with different pixel spacing settings</em></p>
+<p>It is <em>much</em> faster to process, download and analyze 30-m RTC products than 10-m products, so it's a good idea to start with the coarser resolution option if possible. If the 30-m pixel spacing is not sufficient for your use case, try the 20-m RTC products. If even more detail is required, the 10-m products may be the best option.</p>
+<p>The 20-m product may be a good trade-off between resolution and file size. The amount of detail in the 20-m product is much closer to the 10-m product, but the file size is much closer to the 30-m product. Consider the file sizes for the RTC VV GeoTIFFs displayed in the comparison image:</p>
+<table>
+<thead>
+<tr>
+<th>Pixel Spacing</th>
+<th>File Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30 m</td>
+<td>267 MB</td>
+</tr>
+<tr>
+<td>20 m</td>
+<td>600 MB</td>
+</tr>
+<tr>
+<td>10 m</td>
+<td>2350 MB</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dem-resolution">DEM Resolution<a class="headerlink" href="#dem-resolution" title="Permanent link">&para;</a></h3>
+<p>Keep in mind that the same DEM is used for processing the RTC products, regardless of the output pixel spacing. By default, the DEM is the Copernicus Global DEM, which has a pixel spacing of 30 meters. </p>
+<p>When processing 10-m RTC products, the source DEM is resampled to a pixel spacing of 10 meters. This resampled DEM can optionally be included in the product package, and the pixel spacing will align with the output RTC product. The same is true for the 20-m products; the DEM is resampled to a pixel spacing of 20 meters, and the resampled version is optionally included in the product package. </p>
+<p><em>The pixel spacing of the output DEM file does <strong>not</strong> indicate that the source DEM used for the 10-m or 20-m products is of higher resolution.</em></p>
+<h2 id="processing-options-and-optional-files">Processing Options and Optional Files<a class="headerlink" href="#processing-options-and-optional-files" title="Permanent link">&para;</a></h2>
+<p>There are a number of options users can set when ordering RTC On Demand products. Some of these options set parameters used in the RTC processing workflow, others allow users to add additional files to the product package that are not included by default. </p>
+<p>Table 2 lists all of the options as displayed in the Vertex user interface and the HyP3 API, and the <a href="#processing-options" title="Jump to Processing Options section in document">Processing Options</a> and <a href="#optional-files" title="Jump to Optional Files section in document">Optional Files</a> sections provide more information about each option.</p>
+<table>
+<thead>
+<tr>
+<th>Option Name in Vertex</th>
+<th>Option Name in HyP3 API/SDK</th>
+<th>Possible Values</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Radiometry</td>
+<td>radiometry</td>
+<td>(gamma0, sigma0)</td>
+<td>gamma0</td>
+<td>Backscatter coefficient normalization, either by ground area (sigma0) or illuminated area projected into the look direction (gamma0)</td>
+</tr>
+<tr>
+<td>Scale</td>
+<td>scale</td>
+<td>(power, decibel, amplitude)</td>
+<td>power</td>
+<td>Scale of output backscatter values</td>
+</tr>
+<tr>
+<td>Pixel Spacing</td>
+<td>resolution</td>
+<td>(10.0, 20.0, 30.0)</td>
+<td>30.0</td>
+<td>Product pixel spacing in meters</td>
+</tr>
+<tr>
+<td>DEM Name</td>
+<td>dem_name</td>
+<td>(copernicus)</td>
+<td>copernicus</td>
+<td>Name of the DEM to use for processing: <em>copernicus</em> will use the Copernicus GLO-30 Public DEM</td>
+</tr>
+<tr>
+<td>Apply DEM Matching</td>
+<td>dem_matching</td>
+<td>(true, false)</td>
+<td>false</td>
+<td>Coregisters SAR data to the DEM, rather than using dead reckoning based on orbit files</td>
+</tr>
+<tr>
+<td>Apply Speckle Filter</td>
+<td>speckle_filter</td>
+<td>(true, false)</td>
+<td>false</td>
+<td>Apply an Enhanced Lee speckle filter</td>
+</tr>
+<tr>
+<td>Include DEM</td>
+<td>include_dem</td>
+<td>(true, false)</td>
+<td>false</td>
+<td>Include a copy of the DEM used for RTC processing in the product package</td>
+</tr>
+<tr>
+<td>Include Incidence Angle Map</td>
+<td>include_inc_map</td>
+<td>(true, false)</td>
+<td>false</td>
+<td>Include the local incidence angle map in the product package</td>
+</tr>
+<tr>
+<td>Include Scattering Area Map</td>
+<td>include_scattering_area</td>
+<td>(true, false)</td>
+<td>false</td>
+<td>Include the scattering area map in the product package</td>
+</tr>
+<tr>
+<td>Include RGB Decomposition</td>
+<td>include_rgb</td>
+<td>(true, false)</td>
+<td>false</td>
+<td>Include a false-color RGB decomposition GeoTIFF in the product package</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 2: Processing Options</em></p>
+<h3 id="processing-options">Processing Options<a class="headerlink" href="#processing-options" title="Permanent link">&para;</a></h3>
+<h4 id="radiometry">Radiometry<a class="headerlink" href="#radiometry" title="Permanent link">&para;</a></h4>
+<p>The <strong>radiometry</strong> option allows users to set their preferred backscatter coefficient normalization to either gamma-nought (gamma0 or γ<sub>0</sub>) or sigma-nought (sigma0 or σ<sub>0</sub>) radiometry. As illustrated in Figure 6, the scattering coefficient gamma0 is normalized by the illuminated area projected into the look direction (A<sub>γ</sub> - the yellow area with the red outline in the diagram), and the sigma0 is normalized by the ground area (A<sub>σ</sub> - the grey area with the purple outline in the diagram).</p>
+<p><img alt="Figure 6" src="../../images/three_rader_backscatter_convention.jpg" title="Normalization areas for SAR backscatter" /></p>
+<p><em>Figure 6:  Normalization areas for SAR backscatter, from David Small, 2011, Flattening Gamma: Radiometric Terrain Correction for SAR Imagery, IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 49, NO. 8, AUGUST 2011</em></p>
+<p>Although both sigma0 and gamma0 backscatter include the impact of local topography, the sensitivity of the impact is different. For applications where topographic impacts are an important consideration, gamma0 is generally the preferred choice.</p>
+<h4 id="scale">Scale<a class="headerlink" href="#scale" title="Permanent link">&para;</a></h4>
+<p>The <strong>scale</strong> option allows users to choose the scale of the output backscatter images from the three commonly used scales for calibrated SAR values: power, amplitude, or decibel (dB). Refer to the <a href="#sar-scales" title="Jump to SAR Scales section in document">SAR Scale</a> section for more information.</p>
+<h4 id="pixel-spacing_1">Pixel Spacing<a class="headerlink" href="#pixel-spacing_1" title="Permanent link">&para;</a></h4>
+<p>The <strong>resolution</strong> parameter sets the pixel spacing of the output images. Users have the option to set a pixel spacing of 30, 20, or 10 meters. </p>
+<ul>
+<li>The 30-m product has a much smaller file size, and is easier to work with for large areas of interest. It generally aligns with the native resolution of the DEM used for RTC processing. </li>
+<li>The 10-m product provides much more detail of surface features, and is closer to the native resolution of the source Sentinel-1 data. The file sizes are also much larger than those of the 30-m products. </li>
+<li>The 20-m product may be a good compromise between the native resolution of the source SAR imagery and the source DEM. The level of detail in the image is much closer to the 10-m product than the 30-m product, while the file size is much closer to the 30-m product than the 10-m product.</li>
+</ul>
+<p>Refer to the <a href="#pixel-spacing" title="Jump to Pixel Spacing section in document">Pixel Spacing</a> section for more information. Note that the source Sentinel-1 imagery and the source DEM used for RTC processing are the same regardless of the option selected for the output pixel spacing.</p>
+<h4 id="dem-name">DEM Name<a class="headerlink" href="#dem-name" title="Permanent link">&para;</a></h4>
+<p>The <strong>dem_name</strong> parameter selects the DEM to use for RTC processing. We use the <a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM" target="_blank" title="Copernicus DEM">Copernicus Global 30-m DEM</a>. </p>
+<h4 id="dem-matching">DEM Matching<a class="headerlink" href="#dem-matching" title="Permanent link">&para;</a></h4>
+<p>The <strong>dem_matching</strong> option allows users to either try to coregister the SAR image to the DEM file, or simply use the Sentinel-1 orbit files for geocoding the RTC products.</p>
+<p>The process of terrain corrected geocoding includes 4 steps:</p>
+<ol style="list-style-type: decimal;" type="1">
+<li>Calculate the initial lookup table and simulated image with the image processing parameters and DEM.</li>
+<li>(Optional) Measure initial offset between simulated SAR image and actual SAR image. </li>
+<li>(Optional) Perform refinement of lookup table by offset measurement with respect to the simulated SAR image. </li>
+<li>Produce terrain geocoded SAR image and DEM in SAR range-Doppler coordinates (RDC). </li>
+</ol>
+<p>When DEM matching is applied, the optional steps 2 and 3 are performed. Using this option can improve the quality of the RTC calculations, as the features in the SAR image are matched to the features in the DEM, minimizing the offsets in geometry during the backscatter normalization calculations. Refer to the <a href="#terrain-correction" title="Jump to the Terrain Correction section of document">Terrain Correction</a> section for more information.</p>
+<p>DEM Matching is not always beneficial, however. If the georeferencing of the DEM doesn't match the georeferencing of the Sentinel-1 imagery, DEM matching can result in variable offsets in the output images from one Sentinel-1 acquisition to the next, making it difficult to overlay images for time series analysis. Coregistration also works best when there are distinct topographic features that allow for reliable matching between the SAR image and the DEM. In areas that lack distinctive topographic features, there may also be substantial and inconsistent image offsets.</p>
+<p>If you are interested in optimizing the RTC calculations, and are less concerned about consistent geolocation through time, the DEM Matching option is likely a good choice. <strong><em>In cases where consistency is more important than accuracy, consider not applying DEM Matching, or at least testing the outputs to make sure they are suitable for your application.</em></strong></p>
+<p>The orbit files of the Sentinel-1 data are generally quite accurate, and not applying the DEM matching should output files with consistent geolocation. While it may not optimize the RTC calculations, it may be a better option for time series analysis, where having consistent alignment of images from one acquisition to the next is more important than optimizing the backscatter normalization.</p>
+<h4 id="speckle-filter">Speckle Filter<a class="headerlink" href="#speckle-filter" title="Permanent link">&para;</a></h4>
+<p>When the <strong>speckle_filter</strong> option is selected, an Enhanced Lee filter is applied during RTC processing to remove speckle while preserving edges of features. Speckle occurs due to interference among signal waves, as they interact with different scatterers on the surface of the earth and return to the sensor. It appears as granular noise in the image. Refer to the <a href="../introduction_to_sar/#speckle" target="_blank" title="Speckle section of Introduction to SAR">Speckle section of our Introduction to SAR</a> document for more information.</p>
+<p>When applied, the filter is set to a dampening factor of 1, with a box size of 7x7 pixels. The number of looks depends on the multilooking treatment for the RTC processing, and is based on the pixel spacing and the input scene type. Refer to the readme file included with the RTC product to determine the number of looks used for the filter, which is the number of looks taken for RTC processing multiplied by 30.</p>
+<p>Applying a speckle filter can smooth the appearance of the image, but it comes at a cost to the resolution of the output RTC product. Keep in mind also that there are other speckle filters that may be better suited to a specific application. We do not currently offer any customization of the type of speckle filter used, or the parameters (window size, multilooking, dampening, etc.) used for the filter.</p>
+<p>You may also want to try applying other spatial speckle filters with custom settings, which can be accomplished programmatically or using GIS software. Some temporal analyses may also mitigate the impacts of speckle, such as calculating the median or mean pixel values of multiple images collected over a period of time. In both cases, it may be better not to apply a speckle filter during RTC processing.</p>
+<p>If you are unsure whether to apply this option, try generating some of your RTC products with and without the speckle filter applied, and check to see which product works best for your particular application. </p>
+<h3 id="optional-files">Optional Files<a class="headerlink" href="#optional-files" title="Permanent link">&para;</a></h3>
+<p>In addition to the processing options, users can choose to add a number of ancillary files to the product package. These files are not included by default, as they increase the size of the product package and may not be of interest to all users. </p>
+<p>In Vertex, check the box in the "Include" section of the options to add these optional files to the product package. When using the HyP3 API or SDK, set the parameter to true.</p>
+<h4 id="dem">DEM<a class="headerlink" href="#dem" title="Permanent link">&para;</a></h4>
+<p>Set the <strong>include_dem</strong> parameter to true to include a copy of the DEM file used for RTC processing. This DEM is <em>not</em> generated from the Sentinel-1 data, but is the reference DEM used for the RTC calculations. Pixel values indicate the elevation in meters. Refer to the <a href="#digital-elevation-models" title="Jump to DEM section in document">Digital Elevation Models</a> section for more information on the DEMs we use for RTC processing.</p>
+<p>This DEM file is intended as a quick reference to aid in interpretation of the RTC image, and should not be used as a stand-alone DEM product. The DEM used for RTC processing has a geoid correction applied before it is used for RTC, so elevation values in this file will differ from the source DEM. </p>
+<p>The DEM is resampled to match the pixel spacing of the output product, so <strong>the pixel spacing of this file is not a reflection of the resolution of the source DEM.</strong> Refer to the readme file included in the RTC product package for details on the pixel spacing of the included DEM file.</p>
+<h4 id="incidence-angle-map">Incidence Angle Map<a class="headerlink" href="#incidence-angle-map" title="Permanent link">&para;</a></h4>
+<p>Set the <strong>include_inc_map</strong> parameter to true to include the local incidence angle map in the product package. The cell values in this raster indicate the angle between the incident radar beam and the direction perpendicular to the ground surface, expressed in radians.</p>
+<h4 id="scattering-area-map">Scattering Area Map<a class="headerlink" href="#scattering-area-map" title="Permanent link">&para;</a></h4>
+<p>Set the <strong>include_scattering_area</strong> parameter to true to include the scattering area map in the product package. This map expresses the scattering area for each pixel in the RTC image in square meters. The values are calculated based on the effectively illuminated gamma-0 terrain surface using a digital elevation model, the local incidence angle map, and the layover-shadow map.</p>
+<p>This layer can be used to generate composites using the Local Resolution Weighting method, as described in the article <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9352976" target="_blank" title="Wide-Area Analysis-Ready Radar Backscatter Composites">Wide-Area Analysis-Ready Radar Backscatter Composites</a> by David Small et al., 2022.</p>
+<h4 id="rgb-decomposition">RGB Decomposition<a class="headerlink" href="#rgb-decomposition" title="Permanent link">&para;</a></h4>
+<p>Set the <strong>include_rgb</strong> parameter to true to include a full-resolution GeoTIFF of a false-color RGB Decomposition of the co- and cross-polarized RTC values. A low-resolution false-color browse image in PNG format is included in the product package by default, but selecting this option includes the RGB Decomposition image as a GeoTIFF with the same pixel spacing as the RTC images. </p>
+<p>This option is only available for dual-polarization products, as it uses both the co- and cross-polarized RTC values to determine the RGB values. A full description of the approach ASF uses for generating RGB Decomposition products is available <a href="https://github.com/ASFHyP3/hyp3-lib/blob/develop/docs/rgb_decomposition.md" target="_blank" title="RGB Decomposition from ASF">here</a>.</p>
+<p>In general, blue indicates areas with low backscatter in both co- and cross-polarizations (calm water, dry sand, frozen ground), green indicates high cross-pol values (vegetation or other volume scatterers), and red indicates areas with low cross-pol but relatively high co-pol values (urban areas or sparsely vegetated landscapes). </p>
+<h2 id="radiometric-terrain-correction-workflow">Radiometric Terrain Correction Workflow<a class="headerlink" href="#radiometric-terrain-correction-workflow" title="Permanent link">&para;</a></h2>
+<h3 id="pre-processing">Pre-processing<a class="headerlink" href="#pre-processing" title="Permanent link">&para;</a></h3>
+<p>The first step of pre-processing is the selection of the best DEM for the terrain correction. The DEM tiles are assembled to ensure sufficient coverage for the terrain correction of the Sentinel-1 granule. The application of the calibration parameters and multi-looking are the only pre-processing steps applied to the SAR image.</p>
+<h3 id="terrain-correction">Terrain Correction<a class="headerlink" href="#terrain-correction" title="Permanent link">&para;</a></h3>
+<p>The terrain correction is performed in slant range geometry. A look-up table is created to map between DEM space and SAR space. The actual mapping of the initial image into projected space is only applied once to mitigate the propagation of any resampling errors. All intermediate steps only update the look-up table used for the mapping.</p>
+<p>By default, images are not coregistered to the DEM. While RTC results can be improved by matching imagery to a high-quality DEM, different acquisitions over the same area may not always be matched to the DEM in the same way, due in part to the presence of speckle. This can introduce spatial inconsistencies to the dataset, especially when viewing a time-series of RTC images. For consistency, we use the geolocation from the Sentinel-1 state vectors by default rather than matching the geolocation based on DEM features.</p>
+<p>When ordering products On Demand, the <a href="#dem-matching" title="Jump to Processing Options - DEM Matching section in document">DEM Matching option</a> is available for selection. When this option is applied, the first step is the co-registration of the SAR image with a simulated SAR image derived from the DEM. An initial offset is first attempted as a single match; if it fails, a larger number of image chips are used to determine an average offset in azimuth and range direction. This initial offset is then refined using strict matching criteria. </p>
+<p>Matching may fail for three different reasons: (1) no match can be found, (2) the magnitude of the residual offset errors is greater than 2 pixels, or (3) the maximum calculated offset is greater than 50 m. In any of these cases, the <em>dead reckoning</em> approach is taken when matching fails. This approach solely relies on the geolocations calculated from state vectors (the same approach used when DEM matching is <em>not</em> selected as an option) - no geolocation refinement is applied.</p>
+<h3 id="radiometric-correction">Radiometric Correction<a class="headerlink" href="#radiometric-correction" title="Permanent link">&para;</a></h3>
+<p>During processing, a surface scattering area image for the scene is calculated and saved. This projected area image is used to create the RTC product - the SAR image is multiplied by the ratio of an ellipsoidal scattering image (used during calibration) and this scattering area image. Note that this image is always projected to gamma-nought (γ<sub>0</sub>). </p>
+<h3 id="geocoding">Geocoding<a class="headerlink" href="#geocoding" title="Permanent link">&para;</a></h3>
+<p>In a final step, the RTC product is geocoded into map-projected space. Thus, radiometric terrain correction results in a geocoded radiometrically calibrated multi-looked image with gamma-nought (γ<sub>0</sub>) power scale values by default, though there are options to process to sigma-nought (σ<sub>0</sub>) <a href="#radiometry" title="Jump to Processing Options - Radiometry section in document">radiometry</a> and amplitude or decibel (dB) <a href="#scale" title="Jump to Processing Options - Scale section in document">scale</a>.</p>
+<h3 id="post-processing">Post-Processing<a class="headerlink" href="#post-processing" title="Permanent link">&para;</a></h3>
+<p>After the terrain correction is completed, the RTC products are exported to GeoTIFF format. If the scene being processed is dual polarization, users have the option to <a href="#rgb-decomposition" title="Jump to Optional Files - RGB Decomposition section in document">add a full-resolution RGB Decomposition GeoTIFF</a> to the RTC product package.  Side products including the <a href="#dem" title="Jump to Optional Files - DEM section in document">DEM</a>, layover-shadow map (always included), <a href="#scattering-area-map" title="Jump to Optional Files - Scattering Area Map section in document">scattering area map</a>, and <a href="#incidence-angle-map" title="Jump to Optional Files - Incidence Angle Map section in document">incidence angle map</a> are converted into GeoTIFF format. In addition, a README text file, browse images, item-specific ArcGIS-compatible XML metadata files, a log file, and a shapefile indicating the data extent are generated for the product.</p>
+<h2 id="product-packaging">Product Packaging<a class="headerlink" href="#product-packaging" title="Permanent link">&para;</a></h2>
+<h3 id="naming-convention">Naming Convention<a class="headerlink" href="#naming-convention" title="Permanent link">&para;</a></h3>
+<p>The naming convention for the RTC products follows this pattern for its base names:</p>
+<p><code>S1x_yy_aaaaaaaaTbbbbbb_ppo_RTCzz_u_defklm_ssss</code></p>
+<p>Example: S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Definition</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x</td>
+<td>Sentinel-1 Platform: A, B, or C</td>
+<td>A</td>
+</tr>
+<tr>
+<td>yy</td>
+<td>Beam Mode</td>
+<td>IW</td>
+</tr>
+<tr>
+<td>aaaaaaaa</td>
+<td>Start Year-Month-Day</td>
+<td>20180128</td>
+</tr>
+<tr>
+<td>bbbbbb</td>
+<td>Start Hour-Minute-Second</td>
+<td>161201</td>
+</tr>
+<tr>
+<td>pp</td>
+<td>Polarization: Dual-pol (D) vs. Single-pol (S), Primary Polarization (H or V)</td>
+<td>DV</td>
+</tr>
+<tr>
+<td>o</td>
+<td>Orbit Type: Precise (P), Restituted (R), or Original Predicted (O)</td>
+<td>P</td>
+</tr>
+<tr>
+<td>zz</td>
+<td>Terrain Correction Pixel Spacing (m)</td>
+<td>30</td>
+</tr>
+<tr>
+<td>u</td>
+<td>Software Package Used: GAMMA (G)</td>
+<td>G</td>
+</tr>
+<tr>
+<td>d</td>
+<td>Gamma-0 (g) or Sigma-0 (s) Output</td>
+<td>g</td>
+</tr>
+<tr>
+<td>e</td>
+<td>Power (p), Decibel (d), or Amplitude (a) Output</td>
+<td>p</td>
+</tr>
+<tr>
+<td>f</td>
+<td>Unmasked (u) or Water Masked (w)</td>
+<td>u</td>
+</tr>
+<tr>
+<td>k</td>
+<td>Not Filtered (n) or Filtered (f)</td>
+<td>n</td>
+</tr>
+<tr>
+<td>l</td>
+<td>Entire Area (e) or Clipped Area (c)</td>
+<td>e</td>
+</tr>
+<tr>
+<td>m</td>
+<td>Dead Reckoning (d) or DEM Matching (m)</td>
+<td>d</td>
+</tr>
+<tr>
+<td>ssss</td>
+<td>Product ID</td>
+<td>FD6A</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 3: Naming convention for RTC products</em></p>
+<h3 id="image-files">Image Files<a class="headerlink" href="#image-files" title="Permanent link">&para;</a></h3>
+<p>All files are stored in a folder named using the above convention, and the base name for each file matches the folder name. Multiple types of image files are present in this folder, and some of the files are optional. Users can choose to include the RGB Decomposition GeoTIFF, scattering area map, DEM, and incidence angle map rasters when ordering On-Demand RTC products.</p>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_VV.tif, _VH.tif, _HH.tif, _HV.tif</td>
+<td>Terrain corrected product stored in separate files for each available polarization in GeoTIFF format</td>
+<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_VV.tif</td>
+</tr>
+<tr>
+<td>.png</td>
+<td>Grayscale browse image</td>
+<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.png</td>
+</tr>
+<tr>
+<td>_rgb.png</td>
+<td>Color browse image</td>
+<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.png</td>
+</tr>
+<tr>
+<td>.kmz</td>
+<td>Zipped Google Earth image</td>
+<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A.kmz</td>
+</tr>
+<tr>
+<td>_rgb.kmz</td>
+<td>Zipped Google Earth color image</td>
+<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.kmz</td>
+</tr>
+<tr>
+<td>_rgb.tif</td>
+<td>Color decomposition in GeoTIFF format (optional)</td>
+<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_rgb.tif</td>
+</tr>
+<tr>
+<td>_area.tif</td>
+<td>Scattering area map in GeoTIFF format (optional)</td>
+<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_area.tif</td>
+</tr>
+<tr>
+<td>_dem.tif</td>
+<td>DEM used for terrain correction in GeoTIFF format (optional)</td>
+<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_dem.tif</td>
+</tr>
+<tr>
+<td>_inc_map.tif</td>
+<td>Incidence angle file in GeoTIFF format (optional)</td>
+<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_inc_map.tif</td>
+</tr>
+<tr>
+<td>_ls_map.tif</td>
+<td>Layover/shadow mask in GeoTIFF format</td>
+<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_ls_map.tif</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 4: Image files in product package</em></p>
+<p>The RTC products (one for each available polarization) are generated as 32-bit floating-point single-band GeoTIFF files, as are the incidence angle and scattering area maps. The RGB Decomposition is a 3-band unsigned 8-bit GeoTIFF file, the layover/shadow mask is a single-band unsigned 8-bit GeoTIFF, and the DEM is a 16-bit signed integer GeoTIFF. The browse images (both grayscale and color) are generated in PNG format, and are each 2048 pixels wide. Finally, KMZ files suitable for viewing in Google Earth are included. Note that colorized products (RGB Decomposition GeoTIFF or color browse PNG) can only be created for dual-polarization (SDV and SDH) granules, not for single-polarization (SSV or SSH).</p>
+<h3 id="metadata-files">Metadata Files<a class="headerlink" href="#metadata-files" title="Permanent link">&para;</a></h3>
+<p>The product package also includes a number of metadata files.</p>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.README.md.txt</td>
+<td>README file</td>
+<td>S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.README.md.txt</td>
+</tr>
+<tr>
+<td>.log</td>
+<td>Log file of the processing steps</td>
+<td>S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.log</td>
+</tr>
+<tr>
+<td>.tif.xml</td>
+<td>ArcGIS compliant XML metadata for GeoTIFF files</td>
+<td>S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A<wbr>_VV.tif.xml</td>
+</tr>
+<tr>
+<td>.png.xml</td>
+<td>ArcGIS compliant XML metadata for PNG files</td>
+<td>S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.png.xml</td>
+</tr>
+<tr>
+<td>.png.aux.xml</td>
+<td>Geolocation metadata for PNG browse images</td>
+<td>S1A<wbr>_IW<wbr>_20180128T161201<wbr>_DVP<wbr>_RTC30<wbr>_G<wbr>_gpuned<wbr>_FD6A.png.aux.xml</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 5: Metadata files and their extensions</em></p>
+<h4 id="readme-file">README File<a class="headerlink" href="#readme-file" title="Permanent link">&para;</a></h4>
+<p>The text file with extension .README.md.txt explains the files included in the folder, and is customized to reflect that particular product. Users unfamiliar with RTC products should start by reading this README file, which will give some background on each of the files included in the product folder.</p>
+<h4 id="arcgis-compatible-xml-files">ArcGIS-Compatible XML Files<a class="headerlink" href="#arcgis-compatible-xml-files" title="Permanent link">&para;</a></h4>
+<p>There is an ArcGIS-compatible XML file for each raster in the product folder. When ArcGIS Desktop users view any of the rasters in ArcCatalog or the Catalog window in ArcMap, they can open the Item Description to view the contents of the associated XML file. ArcGIS Pro users can access the information from the Metadata tab. These files will not appear as separate items in ArcCatalog, though if you use Windows Explorer to look at the contents of the folder you will see them listed individually. Because each one is named identically to the product it describes (with the addition of the .xml extension), ArcGIS recognizes the appropriate file as the raster’s associated metadata, and integrates the metadata accordingly.</p>
+<p>ArcGIS users should take care not to change these XML files outside of the ArcGIS environment; changing the filename or content directly may render the files unreadable by ArcGIS.</p>
+<p>Those not using ArcGIS will still find the contents of these XML files useful, but will have to contend with the XML tagging when viewing the files as text or in a browser.</p>
+<h4 id="auxiliary-geolocation-files">Auxiliary Geolocation Files<a class="headerlink" href="#auxiliary-geolocation-files" title="Permanent link">&para;</a></h4>
+<p>Geolocation XML files (aux files) are included for each of the PNG browse images to allow for proper display in GIS platforms.</p>
+<h4 id="log-file">Log File<a class="headerlink" href="#log-file" title="Permanent link">&para;</a></h4>
+<p>A log file detailing the processing parameters and outputs is also included for reference.</p>
+<h3 id="shapefile">Shapefile<a class="headerlink" href="#shapefile" title="Permanent link">&para;</a></h3>
+<p>A shapefile indicating the extent of the RTC data coverage is included in the package.</p>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_shape.dbf _shape.prj _shape.shp _shape.shx</td>
+<td>Shapefile (.shp) and supporting files</td>
+<td>S1A_IW_20180128T161201_DVP_RTC30_G_gpuned_FD6A_shape.shp</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 6: Shapefile files and their extensions</em></p>
+<h2 id="data-access">Data Access<a class="headerlink" href="#data-access" title="Permanent link">&para;</a></h2>
+<p>Refer to the <a href="../../using/downloading/" title="hyp3-docs.asf.alaska.edu/using/downloading">Downloads</a> page for more information on viewing and downloading 
+Sentinel-1 RTC On Demand products in Vertex or programmatically. Once processing is complete, download links 
+for On Demand products are valid for 14 days.</p>
+<p>Step-by-step instructions for finding and downloading RTC On Demand products in Vertex are available in the 
+<a href="https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35#ref-n-xrlWHw" target="_blank" title="RTC On Demand! StoryMap Tutorial - Data Access">Access Products</a> section of the 
+<a href="https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35" target="_blank" title="RTC On Demand! StoryMap Tutorial">RTC On Demand!</a> interactive StoryMap tutorial.</p>
+<h2 id="sar-scales">SAR Scales<a class="headerlink" href="#sar-scales" title="Permanent link">&para;</a></h2>
+<h3 id="power-scale">Power Scale<a class="headerlink" href="#power-scale" title="Permanent link">&para;</a></h3>
+<p>The default output of Sentinel-1 RTC products from HyP3 is in power scale. The values in this scale are generally very close to zero, so the dynamic range of the RTC image can be easily skewed by a few bright scatterers in the image. Power scale is appropriate for statistical analysis of the RTC dataset, but may not always be the best option for data visualization.</p>
+<p>When viewing an RTC image in power scale in a GIS environment, it may appear mostly or all black, and you may need to adjust the stretch to see features in the image. Often applying a stretch of 2 standard deviations, or setting the Min-Max stretch values to 0 and 0.3, will greatly improve the appearance of the image. You can adjust the stretch as desired to display your image to full advantage. Be aware that this does not change the actual pixel values.</p>
+<p>In some cases, it may be desirable to convert the actual pixel values to a different scale. Two other scales commonly used for SAR data are amplitude and decibel (dB).</p>
+<h3 id="amplitude-scale">Amplitude Scale<a class="headerlink" href="#amplitude-scale" title="Permanent link">&para;</a></h3>
+<p>Values in the amplitude scale are the square root of the power scale values. This brightens the darker pixels (values &lt;1) and darkens the brighter pixels (values &gt;1), narrowing the dynamic range of the image. </p>
+<p>In many cases, amplitude scale presents a pleasing grayscale display of RTC images. Amplitude scale works well for calculating log difference ratios, as described in the <a href="#change-detection-using-rtc-data" title="Jump to Change Detection Using RTC Data section in document">Change Detection Using RTC Data</a> use case example.</p>
+<h3 id="decibel-db-scale">Decibel (dB) Scale<a class="headerlink" href="#decibel-db-scale" title="Permanent link">&para;</a></h3>
+<p>The decibel (dB) scale is calculated by multiplying 10 times the Log10 of the power scale values. This scale allows for better differentiation among very dark pixels. </p>
+<p>This is often a good scale to use for identifying water on the landscape; the water pixels generally remain very dark compared to the much brighter pixels of the surrounding landscape. Refer to the <a href="#identifying-surface-water" title="Jump to Identifying Surface Water section in document">Identifying Surface Water</a> use case example for more information.</p>
+<p>This scale is not always the best choice for general visualization of RTC products, as it can give a washed-out appearance to terrain features. In addition, because it is a logarithmic scale, dB pixel values are not appropriate for some types of statistical analyses.</p>
+<h2 id="rtc-use-examples">RTC Use Examples<a class="headerlink" href="#rtc-use-examples" title="Permanent link">&para;</a></h2>
+<p>The RTC products are presented as Cloud-Optimized GeoTIFFs (COGs), a user-friendly format that is compatible with GIS software. The products include pre-generated overviews, so users will not need to generate pyramids to display the images efficiently in a GIS or web-mapping environment.</p>
+<p>The following sections present examples of how one might use RTC datasets to identify areas of change and integrate RTC datasets into other datasets for enhanced results. We also present a bibliography of some of the scientific literature making use of Sentinel-1 RTC datasets.</p>
+<h3 id="change-detection-using-rtc-data">Change Detection Using RTC Data<a class="headerlink" href="#change-detection-using-rtc-data" title="Permanent link">&para;</a></h3>
+<p>There are a number of ways that SAR data sets can be used to identify areas of change. Here are two examples of what you can do in a GIS environment.</p>
+<h4 id="seasonal-change">Seasonal Change<a class="headerlink" href="#seasonal-change" title="Permanent link">&para;</a></h4>
+<p>Stacking RTC images into a multiband image (Figure 7) allows the user to display different times of the year at the same time, using the color bands to highlight areas that differ in radar backscatter values from one month to the next.</p>
+<p>To generate this type of image, choose three images that capture different seasons or months of interest. These can either be individual RTC images from different times of the year, or rasters displaying the monthly median calculated from multiple RTC images collected in the same month.</p>
+<p>Combine the three images into a multiband raster and assign each to a different color band. The resulting RGB image highlights areas where there are distinctive differences among the three source image values.</p>
+<p><img alt="Figure 7" src="../../images/seasonal-change-example.jpg" title="Monthly median VH gamma-0 power values for May, July and September, displayed as a multiband RGB (May, July, Sept) image" /></p>
+<p><em>Figure 7: Monthly median VH gamma-0 power values for May, July and September, displayed as a multiband RGB (May, July, Sept) image. Contains modified Copernicus Sentinel data 2017, processed by ESA.</em></p>
+<h4 id="quantifying-change-over-time">Quantifying Change over Time<a class="headerlink" href="#quantifying-change-over-time" title="Permanent link">&para;</a></h4>
+<p>A simple and informative approach to change detection is the calculation of the log difference between two RTC datasets from different dates. By calculating Log10(date2/date1) and applying a classified symbology, it is easy to identify areas where change occurred, as well as the direction of the change. Negative values indicate a decrease in radar backscatter over time, while positive values indicate an increase in backscatter.</p>
+<p>In the example below (Figure 8), RTC images from before and after heavy rains caused a dam breach. The area where the reservoir was located displays a significant increase in backscatter (symbolized in red). This positive change is driven by land that was once covered by standing water, which generally has very low backscatter, now being exposed saturated soil, which generally returns very high backscatter values. In surrounding areas, decreases in radar backscatter (symbolized by blue) are possibly the result of agricultural fields undergoing desiccation/hardening of the surface soil following the heavy rainfall and standing water. Areas with little change in backscatter are displayed in yellow.</p>
+<p><img alt="Figure 8" src="../../images/log-difference-raster.png" title="Log Difference Raster with Classified Symbology" /></p>
+<p><em>Figure 8: Log Difference Raster with Classified Symbology. Contains modified Copernicus Sentinel data 2020, processed by ESA.</em></p>
+<h3 id="identifying-surface-water">Identifying Surface Water<a class="headerlink" href="#identifying-surface-water" title="Permanent link">&para;</a></h3>
+<p>Calm surface water has a very low radar cross section. Because freshwater has a high dielectric constant, most of the signal is reflected off the smooth surface of the water and away from the sensor, resulting in little to no backscatter. As such, surface water can often be delineated using a simple threshold value, where all pixels below the threshold are assumed to be water. It is often best to use datasets in dB scale for this process (refer to the <a href="#decibel--db--scale" title="Jump to dB Scale section in document">dB Scale Section</a>).</p>
+<p>When using the threshold approach, surface water can be easily visualized by applying a classified symbology with two classes, using the threshold as the break point between the classes. There is no universal threshold value; it will need to be determined based on the surface water characteristics in the RTC image. </p>
+<p>When an RTC image contains significant surface water coverage, there is often a bimodal distribution of pixel values. The first peak in a histogram of the pixel values for the image can be expected to contain mostly water pixels, while the second peak contains all remaining pixels. A good first step in selecting a threshold value is to set the break point between classes at the lowest point between those two peaks, then adjust the value as needed to generate a good water mask for the image (Figure 9).</p>
+<p><img alt="Figure 9" src="../../images/water-histogram.png" title="Setting the break point to fall between the two peaks of the histogram" /></p>
+<p><em>Figure 9: Setting the break point to fall between the two peaks of the histogram</em></p>
+<p>Once you have determined the appropriate threshold (Figure 10), you can reclassify the RTC image to include only those pixels that fall below the threshold value, providing a water mask that can be used for analysis or to overlay with other imagery to show the water extent. </p>
+<p><img alt="Figure 10" src="../../images/water-mask.png" title="Water Mask" /></p>
+<p><em>Figure 10: Water Mask. Contains modified Copernicus Sentinel data 2020, processed by ESA.</em></p>
+<h3 id="combination-of-rtc-imagery-with-other-remote-sensing-data">Combination of RTC Imagery with other Remote Sensing Data<a class="headerlink" href="#combination-of-rtc-imagery-with-other-remote-sensing-data" title="Permanent link">&para;</a></h3>
+<p>One of the main advantages of using RTC imagery is that it aligns geographically with other geospatial datasets. This makes it possible to combine SAR data with other remote sensing data, such as optical data. In the example below, the backscatter information of the Sentinel-1 SAR image (Figure 11) is used to enhance the spectral information of the optical Landsat 8 image (Figure 12) in the urban area of Pavia, Italy. </p>
+<p><img alt="Figure 11" src="../../images/sentinel-1-rtc-image.jpg" title="Sentinel-1 RTC image" /></p>
+<p><em>Figure 11: Sentinel-1 RTC image.</em></p>
+<p><img alt="Figure 12" src="../../images/landsat-false-color-composite.jpg" title="False color composite (bands 5, 4, 3) of a Landsat 8 image" /></p>
+<p><em>Figure 12: False color composite (bands 5, 4, 3) of a Landsat 8 image</em></p>
+<p>Figure 13 shows the image fusion result of an IHS transformation. In this transformation, the color channels red, green and blue (RGB) are first converted into a different color representation: intensity, hue and saturation (IHS). In the second step, the optical intensity is replaced by the SAR image values before IHS is transformed back to RGB.</p>
+<p><img alt="Figure 13" src="../../images/sar-optical-fusion.jpg" title="Image fusion result of SAR and optical imagery" /></p>
+<p><em>Figure 13: Image fusion result of SAR and optical imagery</em></p>
+<p>The color values for the two rivers in the SAR image are far more similar to each other than in the optical image. The vegetated areas (highlighted in red) show up more uniformly in the data fusion result than in the optical false color composite image. Image fusion uses the complementary nature of the different sources to generate an enhanced product.</p>
+<h2 id="arcgis-toolbox">ArcGIS Toolbox<a class="headerlink" href="#arcgis-toolbox" title="Permanent link">&para;</a></h2>
+<p>ASF has developed a custom ArcGIS Toolbox for working with RTC datasets in either ArcGIS Desktop or ArcGIS Pro. It includes tools for converting between different SAR scales, calculating the log difference between two images, generating RGB Decomposition (false-color) products, and reclassifying a raster to generate a water mask. For more information and to download the toolbox, visit our website:  <a href="https://asf.alaska.edu/how-to/data-tools/gis-tools/" target="_blank" title="https://asf.alaska.edu/how-to/data-tools/gis-tools">https://asf.alaska.edu/how-to/data-tools/gis-tools/</a>.</p>
+<h2 id="application-examples-in-the-literature">Application Examples in the Literature<a class="headerlink" href="#application-examples-in-the-literature" title="Permanent link">&para;</a></h2>
+<p>The following journal articles represent some of the work being done using Radiometric Terrain Corrected Sentinel-1 data sets.</p>
+<h3 id="crop-monitoring">Crop Monitoring<a class="headerlink" href="#crop-monitoring" title="Permanent link">&para;</a></h3>
+<p>Clauss, K., Ottinger M. and Kuenzer, C. 2018. Mapping rice areas with Sentinel-1 time series and superpixel segmentation. <em>International Journal of Remote Sensing</em>, <strong>39</strong>(5):1399-1420. DOI: <a href="https://doi.org/10.1080/01431161.2017.1404162" target="_blank" title="https://doi.org/10.1080/01431161.2017.1404162">10.1080/01431161.2017.1404162</a></p>
+<p>Nguyen, D.B., Gruber A. and Wagner, W. 2016. Mapping rice extent and cropping scheme in the Mekong Delta using Sentinel-1A data. <em>Remote Sensing Letters</em>, <strong>7</strong>(12):1209-1218. DOI: <a href="https://doi.org/10.1080/2150704X.2016.1225172" target="_blank" title="https://doi.org/10.1080/2150704X.2016.1225172">10.1080/2150704X.2016.1225172</a></p>
+<h3 id="disaster-response">Disaster Response<a class="headerlink" href="#disaster-response" title="Permanent link">&para;</a></h3>
+<p>Markert, K.N., Chishtie, F., Anderson, E.R., Saah, D., Griffin, R.E. 2018. On the merging of optical and SAR satellite imagery for surface water mapping applications. <em>Results In Physics</em>, <strong>9</strong>:275-277. DOI: <a href="https://doi.org/10.1016/j.rinp.2018.02.054" target="_blank" title="https://doi.org/10.1016/j.rinp.2018.02.054">10.1016/j.rinp.2018.02.054</a></p>
+<p>Twele, A., Cao, W., Plank, S. and Martinis, S. 2016. Sentinel-1-based flood mapping: a fully automated processing chain. <em>International Journal of Remote Sensing</em>, <strong>37</strong>(13):2990-3004. DOI: <a href="https://doi.org/10.1080/01431161.2016.1192304" target="_blank" title="https://doi.org/10.1080/01431161.2016.1192304">10.1080/01431161.2016.1192304</a></p>
+<h3 id="land-classification-and-change-detection">Land Classification and Change Detection<a class="headerlink" href="#land-classification-and-change-detection" title="Permanent link">&para;</a></h3>
+<p>Muro, J., Canty, M., Conradsen, K., Hüttich, C., Nielsen, A.A., Skriver, H., Remy, F., Strauch, A., Thonfeld, F. and Menz, G. 2016. Short-Term change detection in wetlands using Sentinel-1 time series. <em>Remote Sensing</em>, <strong>8</strong>(10):795. DOI: <a href="https://doi.org/10.3390/rs8100795" target="_blank" title="https://doi.org/10.3390/rs8100795">10.3390/rs8100795</a></p>
+<p>Rüetschi, M., Schaepman, M.E., Small, D. 2018. Using Multitemporal Sentinel-1 C-band backscatter to monitor phenology and classify deciduous and coniferous forests in Northern Switzerland. <em>Remote Sensing</em>, <strong>10</strong>(1):55. DOI: <a href="https://doi.org/10.3390/rs10010055" target="_blank" title="https://doi.org/10.3390/rs10010055">10.3390/rs10010055</a></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Adapted from https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/partials/footer.html -->
+
+<!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+      
+      <nav
+        class="md-footer__inner md-grid"
+        aria-label="Footer"
+        
+      >
+
+        <!-- Link to previous page -->
+        
+          
+          <a
+            href="./"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="Previous: RTC"
+          >
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                RTC
+              </div>
+            </div>
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          
+          <a
+            href="../rtc_atbd/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="Next: Theoretical Basis"
+          >
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Theoretical Basis
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+      <!-- ASF Footer information-->
+      <div class="md-grid">
+        <div class="md-footer-container md-grid">
+          <div class="md-footer-container-item">
+            <img src="../../images/asf-logo-blue-nav.png"
+                 alt="ASF Logo"
+                 class="md-footer-logo">
+          </div>
+          <div class="md-footer-container-item md-about-us">
+            <h1>About Us</h1>
+            <p>
+              The Alaska Satellite Facility downlinks, processes, archives, and
+              distributes remote-sensing data to scientific users around the world.
+              ASF’s mission is to make remote-sensing data accessible.
+            </p>
+            <p>
+              <a href="https://asf.alaska.edu/about-asf/" target="_blank">
+                Read More
+              </a>
+            </p>
+          </div>
+          <div class="md-footer-container-item md-contact-info">
+            <h1>Contact Info</h1>
+            <p>
+              Alaska Satellite Facility<br>
+              2156 Koyukuk Drive<br>
+              Fairbanks, AK 99775<br>
+              (907) 474-5041<br>
+              uso@asf.alaska.edu<br>
+            </p>
+            <p>
+              <a href="javascript:feedback.showForm();">Send Us A Message</a>
+            </p>
+          </div>
+        </div>
+      </div>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Adapted from https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/partials/copyright.html -->
+
+<!-- Copyright and theme information -->
+<div class="md-copyright">
+  <div class="md-copyright__highlight">
+    
+      &copy; <span id="copyright-year"></span>
+      <script type="text/javascript">
+          current_year = new Date().getFullYear();
+          document.getElementById("copyright-year").innerHTML=current_year;
+      </script>
+      Alaska Satellite Facility
+    
+    <!-- ASF non-discrimination disclaimer-->
+    &nbsp;&nbsp;
+    <a href="https://www.alaska.edu/nondiscrimination"
+       target="_blank"
+       class="md-copyright-link">
+      UA is an AA/EO employer and educational institution and prohibits
+      illegal discrimination against any individual
+    </a>
+  </div>
+</div>
+
+      <!-- Social links -->
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.facebook.com/AKSatellite" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m279.14 288 14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/Ak_Satellite" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UChCfI0oVWw4qDwEidnDskJQ" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gitter.im/ASFHyP3/community" target="_blank" rel="noopener" title="gitter.im" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M66.4 322.5H16V0h50.4v322.5zM166.9 76.1h-50.4V512h50.4V76.1zm100.6 0h-50.4V512h50.4V76.1zM368 76h-50.4v247H368V76z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+    
+      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+    <script src="../../javascripts/expert-rec-search.js"></script>
+
+  </body>
+</html>

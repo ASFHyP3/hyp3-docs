@@ -1,0 +1,2735 @@
+<!-- Extends https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/base.html -->
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Alaska Satellite Facility's Hybrid Pluggable Processing Pipeline">
+      
+      
+        <meta name="author" content="ASF APD/Tools Team">
+      
+      
+        <link rel="canonical" href="https://hyp3-docs.asf.alaska.edu/hyp3-docs/guides/opera_rtc_product_guide/">
+      
+      
+      
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>OPERA RTC for Sentinel-1 (RTC-S1) Product Guide - HyP3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/asf.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#opera-rtc-for-sentinel-1-rtc-s1-product-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Adapted from https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/partials/header.html -->
+
+<!-- Determine classes -->
+
+
+  
+
+
+<!-- Header -->
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="Header"
+  >
+
+    
+    <!-- Link to ASF -->
+    <a
+      href="https://asf.alaska.edu/"
+      title="ASF"
+      class="md-header__button md-logo"
+      aria-label="ASF"
+      data-md-component="logo"
+    >
+      <img src="../../images/ASFLogo-Blue2.png" alt="logo" />
+    </a>
+    
+
+    <!-- Link to home -->
+    <a
+      href="../.."
+      title="HyP3"
+      class="md-header__button md-logo"
+      aria-label="HyP3"
+      data-md-component="logo"
+    >
+      
+  <img src="../../images/HyP3-graphic-only.png" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HyP3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OPERA RTC for Sentinel-1 (RTC-S1) Product Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color palette toggle -->
+    
+
+    <!-- Site language selector -->
+    
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      <div class="expert-rec-search">
+  <ci-search></ci-search>
+</div>
+    
+
+    <!-- Repository information -->
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ASFHyP3" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ASF HyP3
+  </div>
+</a>
+      </div>
+    
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!-- Extends https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/base.html -->
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+<!--  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="HyP3" class="md-nav__button md-logo" aria-label="HyP3" data-md-component="logo">
+      
+  <img src="../../images/HyP3-graphic-only.png" alt="logo">
+
+    </a>
+    HyP3
+  </label> -->
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ASFHyP3" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ASF HyP3
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../about/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    HyP3
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            HyP3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/hyp3_basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HyP3 Basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../about/hyp3_plus/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    HyP3+
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            HyP3+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/hyp3_plus_terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terms of Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../using/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Using HyP3
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Using HyP3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/vertex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vertex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../using/sdk/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    SDK
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            SDK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example Notebook
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/sdk_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/credits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Credits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/downloading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Downloads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage_guidelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to Cite HyP3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../products/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Products
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Products
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../rtc_product_guide/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    RTC
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            RTC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rtc_product_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StoryMap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rtc_atbd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Theoretical Basis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../insar_product_guide/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    InSAR
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            InSAR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../insar_product_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StoryMap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../burst_insar_product_guide/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Burst InSAR
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Burst InSAR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../burst_insar_product_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://storymaps.arcgis.com/stories/191bf1b6962c402086807390b3ce63b0" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StoryMap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../gunw_product_guide/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ARIA S1 GUNW
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            ARIA S1 GUNW
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gunw_product_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://its-live.jpl.nasa.gov/" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AutoRIFT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sentinel1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sentinel-1 Mission
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../introduction_to_sar/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    SAR Basics
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            SAR Basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction_to_sar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to SAR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Digital Elevation Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../water_masking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Water Masking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://asf.alaska.edu/information/sar-information/what-is-sar/#sar_faq" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SAR FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tutorials/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using HyP3 Python SDK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authenticate HyP3 in the SDK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search another user's jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Update existing job name
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/process-new-granules-for-search-parameters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Process new granules for search parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InSAR time series with MintPy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_isce2_burst_stack_for_ts_analysis.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InSAR burst time series with MintPy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://asf-daac.maps.arcgis.com/home/index.html" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StoryMap Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Other Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Other Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/arcgis_toolbox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ArcGIS Toolbox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tools/asf_tools/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ASF Tools for Python
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            ASF Tools for Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/asf_tools_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Developers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how_it_works/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plugins/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plugins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/.github/blob/main/CODE_OF_CONDUCT.md" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code of Conduct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../whats_new/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    What's New
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            What's New
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../news/hyp3_plus_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducing HyP3+
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact Us
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#opera-rtc-s1-products" class="md-nav__link">
+    OPERA RTC-S1 Products
+  </a>
+  
+    <nav class="md-nav" aria-label="OPERA RTC-S1 Products">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#digital-elevation-model-dem" class="md-nav__link">
+    Digital Elevation Model (DEM)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polarization" class="md-nav__link">
+    Polarization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archived-opera-rtc-s1-products" class="md-nav__link">
+    Archived OPERA RTC-S1 Products
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opera-rtc-s1-products-on-demand" class="md-nav__link">
+    OPERA RTC-S1 Products On Demand
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#searching-for-archived-opera-rtc-s1-products" class="md-nav__link">
+    Searching for Archived OPERA RTC-S1 Products
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ordering-on-demand-opera-rtc-s1-products" class="md-nav__link">
+    Ordering On-Demand OPERA RTC-S1 Products
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordering On-Demand OPERA RTC-S1 Products">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#submitting-on-demand-opera-rtc-s1-jobs" class="md-nav__link">
+    Submitting On-Demand OPERA RTC-S1 Jobs
+  </a>
+  
+    <nav class="md-nav" aria-label="Submitting On-Demand OPERA RTC-S1 Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#date-range-for-on-demand-opera-rtc-s1-products" class="md-nav__link">
+    Date Range for On-Demand OPERA RTC-S1 Products
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spatial-coverage-for-on-demand-opera-rtc-s1-products" class="md-nav__link">
+    Spatial Coverage for On-Demand OPERA RTC-S1 Products
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-packaging" class="md-nav__link">
+    Product Packaging
+  </a>
+  
+    <nav class="md-nav" aria-label="Product Packaging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#l2-radiometric-terrain-corrected-rtc-files" class="md-nav__link">
+    L2 Radiometric Terrain Corrected (RTC) Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l2-radiometric-terrain-corrected-static-layer-rtc-static-files" class="md-nav__link">
+    L2 Radiometric Terrain Corrected Static Layer (RTC-STATIC) Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-layer-names" class="md-nav__link">
+    Duplicate layer names
+  </a>
+  
+    <nav class="md-nav" aria-label="Duplicate layer names">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-incidence-angle" class="md-nav__link">
+    Local Incidence Angle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validity-mask" class="md-nav__link">
+    Validity Mask
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naming-convention" class="md-nav__link">
+    Naming Convention
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-access" class="md-nav__link">
+    Data Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-demand-rtc-product-options-from-asf" class="md-nav__link">
+    On-Demand RTC Product Options from ASF
+  </a>
+  
+    <nav class="md-nav" aria-label="On-Demand RTC Product Options from ASF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spatial-extent" class="md-nav__link">
+    Spatial Extent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-options" class="md-nav__link">
+    Processing Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgb-decomposition" class="md-nav__link">
+    RGB Decomposition
+  </a>
+  
+    <nav class="md-nav" aria-label="RGB Decomposition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opera-rtc-s1-rgb-decomposition" class="md-nav__link">
+    OPERA RTC-S1 RGB Decomposition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rtc-gamma-rgb-decomposition" class="md-nav__link">
+    RTC GAMMA RGB Decomposition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sentinel-1-mission" class="md-nav__link">
+    Sentinel-1 Mission
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="opera-rtc-for-sentinel-1-rtc-s1-product-guide">OPERA RTC for Sentinel-1 (RTC-S1) Product Guide<a class="headerlink" href="#opera-rtc-for-sentinel-1-rtc-s1-product-guide" title="Permanent link">&para;</a></h1>
+<p>This document is a guide for users of the 
+<a href="https://www.jpl.nasa.gov/go/opera/products/rtc-product/" target="_blank" title="www.jpl.nasa.gov/go/opera/products/rtc-product">OPERA Radiometric Terrain Corrected Backscatter for Sentinel-1 (RTC-S1)</a> 
+products. These products were developed by the 
+<a href="https://www.jpl.nasa.gov/go/opera/" target="_blank" title="www.jpl.nasa.gov/go/opera">Observational Products for End-Users from Remote Sensing Analysis (OPERA)</a> 
+project at NASA's 
+<a href="https://www.jpl.nasa.gov/" target="_blank" title="www.jpl.nasa.gov/">Jet Propulsion Laboratory</a> (JPL).</p>
+<div class="admonition tip">
+<p class="admonition-title">OPERA RTC-S1 Products Now Available On Demand</p>
+<p>If OPERA RTC-S1 products are not available for your full time range or area of interest, you can now request 
+that they be generated using ASF's On Demand processing platform!</p>
+</div>
+<p>OPERA RTC-S1 products are archived in the 
+<a href="https://www.earthdata.nasa.gov/data/catalog/asf-opera-l2-rtc-s1-v1-1" target="_blank" title="Earthdata Data Catalog">OPERA_L2_RTC-S1_V1</a> 
+collection.</p>
+<h2 id="opera-rtc-s1-products">OPERA RTC-S1 Products<a class="headerlink" href="#opera-rtc-s1-products" title="Permanent link">&para;</a></h2>
+<p>OPERA's 
+<a href="https://www.jpl.nasa.gov/go/opera/products/rtc-product/" target="_blank" title="https://www.jpl.nasa.gov/go/opera/products/rtc-product/">Radiometric Terrain Corrected (RTC) Synthetic Aperture Radar (SAR) Backscatter for Sentinel-1 (S1)</a> 
+product consists of radar backscatter normalized with respect to topography. The RTC algorithm used for the 
+OPERA RTC-S1 products was developed by 
+<a href="https://ntrs.nasa.gov/citations/20220000810" target="_blank" title="An Efficient Area-Based Algorithm for SAR Radiometric Terrain Correction and Map Projection">Gustavo Shiroma and others</a>, 
+and is available in the 
+<a href="https://github.com/isce-framework/isce3" target="_blank" title="github.com/isce-framework/isce3">ISCE3 open source software library</a>.</p>
+<p>The RTC-S1 Level-2 products are projected 
+into the appropriate UTM Zone or Polar Stereographic coordinate system for the location of each individual product 
+and provided in 
+<a href="https://cogeo.org/" target="_blank" title="https://cogeo.org/">Cloud-Optimized GeoTIFF (COG)</a> 
+format. The pixel values of the products represent gamma-0 power. The pixel spacing is 30 meters, and no 
+speckle filter has been applied.</p>
+<p>RTC products provide users with imagery of the earth's surface regardless of atmospheric conditions. This allows 
+users to monitor surface processes during natural disasters, such as hurricanes or wildfires, or in areas that are 
+prone to frequent cloud cover. Backscatter values can be used to determine surface water extent, soil moisture 
+trends, surface roughness, and vegetation conditions.</p>
+<h4 id="digital-elevation-model-dem">Digital Elevation Model (DEM)<a class="headerlink" href="#digital-elevation-model-dem" title="Permanent link">&para;</a></h4>
+<p>Radiometric Terrain Correction requires the use of a Digital Elevation Model (DEM) both for 
+<a href="https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b#ref-n-uKhHbd" target="_blank" title="OPERA Sentinel-1 RTC StoryMap Tutorial">correcting distortions caused by topography</a>
+and for geocoding the output product. The OPERA RTC-S1 products are processed using the 
+<a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM" target="_blank" title="Copernicus DEM">Copernicus GLO-30 DEM</a>.</p>
+<h4 id="polarization">Polarization<a class="headerlink" href="#polarization" title="Permanent link">&para;</a></h4>
+<p>Most Sentinel-1 acquisitions are collected in two 
+<a href="../introduction_to_sar/#polarizations">polarizations</a>, 
+and the OPERA project generates RTC-S1 products for all available polarizations. </p>
+<p>Sentinel-1 acquisitions over land generally have a vertical primary polarization, meaning that the SAR signal is sent 
+out in a vertical orientation, but both the co-polarized returns (also vertically polarized) and the cross-polarized 
+returns (horizontally polarized) are measured. This results in both VV and VH RTC-S1 products. </p>
+<p>In some areas, particularly remote islands and regions close to the Arctic Ocean, acquisitions are collected with a 
+horizontal primary polarization. This results in HH and HV RTC-S1 products. </p>
+<p>Different polarizations are sensitive to different surface characteristics, with VV being more sensitive to surface 
+roughness, VH or HV being more sensitive to volume scatterers such as vegetation, and HH being more sensitive to 
+double-bounce scattering from objects that stand perpendicular to the ground. </p>
+<h3 id="archived-opera-rtc-s1-products">Archived OPERA RTC-S1 Products<a class="headerlink" href="#archived-opera-rtc-s1-products" title="Permanent link">&para;</a></h3>
+<p>The OPERA project has generated RTC-S1 products in all available polarizations for all Sentinel-1 acquisitions 
+over landmasses (except Antarctica) since January 1, 2022. As new Sentinel-1 SLCs are acquired and added to 
+ASF's archive, the OPERA project continues to process them to RTC-S1 products. New RTC-S1 products 
+are generally available well within 12 hours of the Sentinel-1 SLC acquisition.</p>
+<p>RTC-S1 products generated by the OPERA project are all archived by ASF and can be accessed using a number of methods: </p>
+<ul>
+<li>ASF's <a href="https://search.asf.alaska.edu/#/?dataset=OPERA-S1&amp;productTypes=RTC" target="_blank" title="search.asf.alaska.edu">Vertex Data Search</a>, 
+    which is a user-friendly and map-centric interface specialized for search and discover of ASF's SAR holdings</li>
+<li>Programmatically using the <a href="https://docs.asf.alaska.edu/asf_search/basics/" target="_blank" title="docs.asf.alaska.edu">asf_search Python package</a></li>
+<li>NASA's <a href="https://search.earthdata.nasa.gov/search/granules?p=C2777436413-ASF" target="_blank" title="search.earthdata.nasa.gov">Earthdata Search</a> 
+    interface, which provides access to all of NASA's Earth Science datasets</li>
+</ul>
+<p>For more information on options for accessing archived OPERA RTC-S1 products, refer to ASF's 
+<a href="https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b" target="_blank" title="OPERA Sentinel-1 RTC StoryMap Tutorial">OPERA Sentinel-1 RTC tutorial</a>. 
+For more information on the technical specifications of the OPERA RTC-S1 products, refer to JPL's 
+<a href="https://www.jpl.nasa.gov/go/opera/products/rtc-product/" target="_blank" title="OPERA RTC Product">RTC Product Documentation</a>.</p>
+<h3 id="opera-rtc-s1-products-on-demand">OPERA RTC-S1 Products On Demand<a class="headerlink" href="#opera-rtc-s1-products-on-demand" title="Permanent link">&para;</a></h3>
+<p>You can also order OPERA RTC-S1 products from ASF On Demand. This is particularly useful if you need a time 
+series of RTC-S1 products that extends beyond the start of the archive. On-Demand processing is available for any 
+Sentinel-1 burst with the same burst ID (footprint) as an existing OPERA RTC-S1 product. </p>
+<p>On-Demand RTC-S1 products are generated using the same code that is used by the OPERA project, but are processed 
+using ASF's 
+<a href="https://hyp3-docs.asf.alaska.edu/" target="_blank">HyP3</a> 
+cloud-native processing platform instead of JPL's 
+<a href="https://software.nasa.gov/software/NPO-52101-1" target="_blank">OPERA Science Data System (SDS)</a> 
+processing management software. </p>
+<p>Archived and On-Demand RTC-S1 products can be used interchangeably in a time series analysis.</p>
+<h2 id="searching-for-archived-opera-rtc-s1-products">Searching for Archived OPERA RTC-S1 Products<a class="headerlink" href="#searching-for-archived-opera-rtc-s1-products" title="Permanent link">&para;</a></h2>
+<p>To search for existing OPERA RTC-S1 products in 
+<a href="https://search.asf.alaska.edu/#/?dataset=OPERA-S1&amp;productTypes=RTC" target="_blank" title="search.asf.alaska.edu">Vertex</a>, 
+select <code>OPERA-S1</code> from the <code>Dataset</code> drop-down menu. </p>
+<p><img alt="Figure 2" src="../../images/opera-rtc-vertex-search.png" title="Search for OPERA RTC-S1 Products" /></p>
+<p>Because the OPERA RTC-S1 footprints are so small, there are millions of files in the archive. It is important to 
+make use of the available search filters to find the products you want.</p>
+<ol style="list-style-type: decimal;" type="1">
+<li>Set an Area of Interest</li>
+<li>Set a date range</li>
+<li>In the Search Filters menu, select the <code>L2 Radiometric Terrain Corrected (RTC)</code> File Type</li>
+</ol>
+<p>For step-by-step guidance on searching for OPERA RTC-S1 products using 
+<a href="https://search.asf.alaska.edu/#/?dataset=OPERA-S1&amp;productTypes=RTC" target="_blank" title="search.asf.alaska.edu">Vertex</a> 
+or the 
+<a href="https://docs.asf.alaska.edu/asf_search/basics/" target="_blank" title="docs.asf.alaska.edu">asf_search Python package</a>, 
+refer to the 
+<a href="https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b#ref-n-r602VT" target="_blank" title="OPERA Sentinel-1 RTC: ASF Data Search">ASF Data Search</a> 
+section of the 
+<a href="https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b" target="_blank" title="OPERA Sentinel-1 RTC StoryMap Tutorial">OPERA Sentinel-1 RTC StoryMap tutorial</a>.</p>
+<p>For more information about using 
+<a href="https://search.earthdata.nasa.gov/search/granules?p=C2777436413-ASF&amp;q=opera%20rtc&amp;tl=1701400109!3!!&amp;lat=37.29921784409428&amp;long=-123.9521484375&amp;zoom=7" target="-blank" title="Earthdata Search for OPERA RTC-S1">Earthdata Search</a> 
+to access OPERA RTC-S1 products, refer to the 
+<a href="https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b#ref-n-pe7EfH" target="_blank" title="OPERA Sentinel-1 RTC: Earthdata Search">Earthdata Search</a> 
+section of the 
+<a href="https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b" target="_blank" title="OPERA Sentinel-1 RTC StoryMap Tutorial">OPERA Sentinel-1 RTC StoryMap tutorial</a>.</p>
+<h2 id="ordering-on-demand-opera-rtc-s1-products">Ordering On-Demand OPERA RTC-S1 Products<a class="headerlink" href="#ordering-on-demand-opera-rtc-s1-products" title="Permanent link">&para;</a></h2>
+<p>On-Demand OPERA RTC-S1 products can be requested for any Sentinel-1 IW SLC burst acquired on or after April 14, 2016, 
+and before January 1, 2022, for locations north of -60° latitude (i.e. all global landmasses except for Antarctica).</p>
+<h3 id="submitting-on-demand-opera-rtc-s1-jobs">Submitting On-Demand OPERA RTC-S1 Jobs<a class="headerlink" href="#submitting-on-demand-opera-rtc-s1-jobs" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">OPERA RTC-S1 On Demand not yet available in Vertex</p>
+<p>OPERA RTC-S1 On Demand jobs can be submitted using the <a href="../../using/sdk/" target="_blank">HyP3 Python SDK</a> 
+or <a href="../../using/api/" target="_blank">HyP3 API</a>. Support in Vertex is coming soon!</p>
+</div>
+<p>To order an On-Demand OPERA RTC-S1 product, a user must pass a <strong>Sentinel-1 Burst SLC granule for the co-polarized 
+return</strong> (either VV or HH) as input to either the 
+<a href="../../using/sdk/" target="_blank">HyP3 Python SDK</a> 
+or 
+<a href="../../using/api/" target="_blank">HyP3 API</a>. If a cross-pol burst is passed as input, an error will be returned.</p>
+<p>The output product will include RTC-S1 rasters for all available polarizations (generally VV and VH or HH and HV), 
+so requiring users to pass a co-polarized burst as input ensures that there will not be accidental duplication of 
+processing effort if both the co-pol and cross-pol inputs for the same Sentinel-1 burst are submitted for processing. </p>
+<p>To ensure successful processing, review the 
+<a href="#date-range-for-on-demand-opera-rtc-s1-products" title="Jump to Date Range section in this document">date range</a> and 
+<a href="#spatial-coverage-for-on-demand-opera-rtc-s1-products" title="Jump to Spatial Extent section in this document">spatial coverage</a> 
+limitations below. </p>
+<h4 id="date-range-for-on-demand-opera-rtc-s1-products">Date Range for On-Demand OPERA RTC-S1 Products<a class="headerlink" href="#date-range-for-on-demand-opera-rtc-s1-products" title="Permanent link">&para;</a></h4>
+<p>The OPERA RTC-S1 code requires that input Sentinel-1 SLCs were processed using ESA's Sentinel-1 Instrument Processing 
+Facility (IPF) version 2.70, implemented April 13, 2016, or newer. As such, <strong>we do not support On-Demand processing 
+for Sentinel-1 acquisitions prior to April 14, 2016</strong>. Jobs submitted for earlier bursts will return an error. </p>
+<p>All supported Sentinel-1 acquisitions since January 1, 2022, have been processed to OPERA RTC-S1 products by the OPERA 
+project and are already available for download from ASF's archive. Any On-Demand jobs submitted for acquisitions on 
+or after that date will also return an error. </p>
+<h4 id="spatial-coverage-for-on-demand-opera-rtc-s1-products">Spatial Coverage for On-Demand OPERA RTC-S1 Products<a class="headerlink" href="#spatial-coverage-for-on-demand-opera-rtc-s1-products" title="Permanent link">&para;</a></h4>
+<p>On-Demand OPERA RTC-S1 Products can only be ordered for bursts that are north of -60° latitude, 
+which includes all global landmasses except for Antarctica. Only bursts from 
+<a href="https://sentiwiki.copernicus.eu/web/s1-products" target="_blank" title="Sentinel-1 Products">Sentinel-1 IW SLC</a> 
+products are supported as input. </p>
+<p>Any job submitted where the Sentinel-1 burst is from an EW SLC or located south of -60° latitude will return an error.</p>
+<h2 id="product-packaging">Product Packaging<a class="headerlink" href="#product-packaging" title="Permanent link">&para;</a></h2>
+<p>The products generated by the OPERA SDS are available for download as individual files associated with the 
+OPERA_L2_RTC-S1_V1 record corresponding to the Sentinel-1 burst used as input for the product.</p>
+<p>Products generated On Demand using ASF's HyP3 platform are delivered as zip files that include all the files 
+available for the products generated by the OPERA SDS. The zip file also includes the color browse image (which is 
+not georeferenced) used for displaying archived OPERA RTC-S1 products in Vertex. </p>
+<p>The naming convention for On-Demand OPERA RTC-S1 products generated using HyP3 is the same as for 
+the OPERA RTC-S1 products generated using the OPERA SDS.</p>
+<h3 id="l2-radiometric-terrain-corrected-rtc-files">L2 Radiometric Terrain Corrected (RTC) Files<a class="headerlink" href="#l2-radiometric-terrain-corrected-rtc-files" title="Permanent link">&para;</a></h3>
+<p>OPERA RTC-S1 products are available as a collection of files associated with a source Sentinel-1 burst. If you search 
+for OPERA-S1 products in Vertex, the results for each Sentinel-1 burst provide access to a number of files. If you 
+click on an item in the left panel of the search results, the associated files are listed in the right panel. </p>
+<p><img alt="Figure 3" src="../../images/opera-rtc-vertex-results.png" title="OPERA RTC-S1 Search Results" /></p>
+<p>The files available for download include: </p>
+<ul>
+<li>HDF5 file containing product metadata, specifically orbit position and velocity (no actual RTC images are 
+  included in this file)</li>
+<li>A single-band 32-bit float Cloud-Optimized GeoTIFF (COG) file for each available polarization containing the 
+  RTC values (most commonly VV and VH, but HH and HV in some areas)</li>
+<li><a href="#validity-mask">Mask</a> COG file indicating pixels in the RTC products that contain valid data and indicating 
+  which pixels are impacted by layover and/or shadow</li>
+<li>Metadata XML file containing information about the product in ISO format</li>
+<li><a href="#local-incidence-angle">Local Incidence Angle</a> COG file </li>
+</ul>
+<h3 id="l2-radiometric-terrain-corrected-static-layer-rtc-static-files">L2 Radiometric Terrain Corrected Static Layer (RTC-STATIC) Files<a class="headerlink" href="#l2-radiometric-terrain-corrected-static-layer-rtc-static-files" title="Permanent link">&para;</a></h3>
+<p>There are some ancillary files generated during the RTC processing workflow that change very little through time. 
+Instead of including these ancillary products with each OPERA RTC product, they are generated once 
+for each Sentinel-1 burst ID and archived as <code>Static Layer</code> files. </p>
+<p>Refer to OPERA's 
+<a href="https://d2pn8kiwq2w21t.cloudfront.net/documents/ProductSpec_RTC-S1-STATIC.pdf" target="_blank" title="ProductSpec_RTC-S1-STATIC.pdf">Product Specification Document for the OPERA Radiometric Terrain Corrected SAR Backscatter from Sentinel-1 Static Layers</a> 
+for more information on these files.</p>
+<p>These <code>RTC-STATIC</code> products include the following COG files: </p>
+<ul>
+<li><a href="#local-incidence-angle">local incidence angle</a></li>
+<li>incidence angle</li>
+<li><a href="#validity-mask">mask</a> (layover/shadow validity mask)</li>
+<li>number of looks</li>
+<li>RTC Area Normalization Factor (ANF) gamma0 to beta0</li>
+<li>RTC ANF gamma0 to sigma0</li>
+</ul>
+<p>You can access the RTC-STATIC files the same way that you would the RTC-S1 files. Applying a <code>File Type</code> filter of 
+<code>L2 Radiometric Terrain Corrected Static Layer (RTC-STATIC)</code> in Vertex will restrict search results to just the 
+static layers. Click the <code>Filters...</code> button to access the <code>File Type</code> drop-down menu.</p>
+<p><img alt="Figure 4" src="../../images/opera-rtc-vertex-static.png" title="Search for RTC-STATIC files" /></p>
+<p>If you want to find the static layers that correspond to a specific RTC footprint, you can filter your RTC-STATIC 
+search results using the OPERA Burst ID. </p>
+<p><img alt="Figure 5" src="../../images/opera-rtc-vertex-static-id.png" title="Search for Static Files using a Burst ID" /></p>
+<ul>
+<li>In Vertex, search for both <code>RTC</code> and <code>RTC-STATIC</code> file types for your area of interest. </li>
+<li>Because the static layers all have an acquisition date set to <code>04/03/2014, 00:00:00Z</code>, the static 
+    files may not be included in the results if a date range has been applied to the search. </li>
+<li>Select an RTC product from the results list that has the desired footprint, and click on the icon button
+    next to the Opera Burst ID.</li>
+<li>Select the option to <code>Add OPERA Burst ID to Search</code> and click the Search button again.</li>
+<li>Make sure to clear any date range filters that do not include April 3, 2014.</li>
+<li>The search results will include only the products that have the designated burst ID. If there are too many 
+    results for the RTC-STATIC products to be included in the search results, open the Search Filters panel again and 
+    select only the RTC-STATIC product type to return only the static layers that correspond to that RTC footprint.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">OPERA RTC-STATIC products not available for HH and HH+HV polarized scenes</p>
+<p>The static layers associated with HH and HH+HV polarized acquisitions, located over some parts of Greenland and
+Arctic Canada, are currently unavailable in ASF's archive. We are working with the OPERA team to add these 
+files to the ASF archive.</p>
+<p>This graphic illustrates the current coverage of OPERA RTC-S1 Static Layers.
+<img alt="ExtraFigure" src="../../images/opera-rtc-static-layer-coverage.png" title="Current coverage of OPERA RTC-S1 Static Layers" /></p>
+</div>
+<h3 id="duplicate-layer-names">Duplicate layer names<a class="headerlink" href="#duplicate-layer-names" title="Permanent link">&para;</a></h3>
+<p>There are <strong>Local Incidence Angle</strong> and <strong>Mask</strong> files listed in association with both the <code>RTC</code> search results 
+and the <code>RTC-STATIC</code> search results. </p>
+<h4 id="local-incidence-angle">Local Incidence Angle<a class="headerlink" href="#local-incidence-angle" title="Permanent link">&para;</a></h4>
+<p>The Local Incidence Angle file can be downloaded using either link, but it is the same file. It is always named with 
+this pattern: 
+<code>OPERA_L2_RTC-S1-STATIC_Txxx-xxxxxx-IWx_20140403_S1A_30_v1.0_local_incidence_angle.tif</code></p>
+<p>The download URL behind the local incidence angle listings in both the <code>RTC</code> and <code>RTC-STATIC</code> results 
+reference the same source file.</p>
+<h4 id="validity-mask">Validity Mask<a class="headerlink" href="#validity-mask" title="Permanent link">&para;</a></h4>
+<p>There is a file called <code>Mask</code> listed with both the <code>RTC</code> and the <code>RTC-STATIC</code> search results. Unlike the 
+local incidence angle file, these two mask files are NOT the same. Both are validity masks with the same pixel 
+value categories: </p>
+<table>
+<thead>
+<tr>
+<th>Pixel Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Valid sample not affected by layover or shadow</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Valid sample affected by shadow</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Valid sample affected by layover</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Valid sample affected by layover and shadow</td>
+</tr>
+<tr>
+<td>255</td>
+<td>Invalid sample (fill value)</td>
+</tr>
+</tbody>
+</table>
+<p>The main difference between the two files is that the data extent matches the other associated files. The 
+<code>RTC-STATIC</code> files have a larger extent than the <code>RTC</code> files, as data is included for the full raster footprint, 
+including the NoData pixels that are present around the edges of the RTC data products.</p>
+<p><img alt="Figure 5" src="../../images/opera-mask-compare.png" title="Comparison of the two OPERA RTC-S1 validity masks" /></p>
+<p>The mask file in the map on the left is the mask linked to the <code>RTC</code> search results.</p>
+<ul>
+<li><code>OPERA_L2_RTC-S1_T115-245714-IW1_20250418T141628Z_20250419T010229Z_S1A_30_v1.0_mask.tif</code></li>
+</ul>
+<p>The extent of NoData padding around the area that has valid radar data for that particular burst is displayed with a 
+transparent pink color in this illustration, but would normally appear transparent. The mask values are only applied 
+to the pixels with valid radiometry within the radar burst.</p>
+<p>The mask file in the map on the right is the mask linked to the <code>RTC-STATIC</code> search results.</p>
+<ul>
+<li><code>OPERA_L2_RTC-S1-STATIC_T115-245714-IW1_20140403_S1A_30_v1.0_mask.tif</code></li>
+</ul>
+<p>It includes validity mask values for the full extent of the burst footprint, including the NoData padding around the 
+pixels with valid radiometry within the radar burst. All of the static layers include data for this entire area.</p>
+<p>There may, however, also be differences in the actual pixel values when comparing an RTC-STATIC validity mask to 
+the validity mask included with a specific RTC product. Because orbits can shift slightly, the layover 
+or shadow conditions for any given pixel may be different from one pass to another.</p>
+<p>For investigating the layover/shadow impacts for a specific RTC product, users will generally be better served by 
+using the validity mask delivered with that product rather than the mask available as a static layer.</p>
+<h3 id="naming-convention">Naming Convention<a class="headerlink" href="#naming-convention" title="Permanent link">&para;</a></h3>
+<p>The file names of OPERA RTC-S1 products are designed to be unique and descriptive. </p>
+<p>The following file-naming convention is used:</p>
+<p><code>OPERA_L2_RTC-S1_[BurstID]_[StartDateTime]_[ProductGenerationDateTime] _[Sensor]_[PixelSpacing]_[ProductVersion]_[LayerName].Ext</code></p>
+<p>For example: OPERA_L2_RTC-S1_T115-245714-IW1_20250418T141628Z_20250419T010229Z_S1A_30_v1.0_VV.tif</p>
+<p>Table 1 describes the dynamic elements in the naming scheme.</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BurstID</td>
+<td>Unique burst identification string consistent with ESA burst map convention in the form of T[TrackNumber]-[ID]-[SubSwath]</td>
+<td>T115-245714-IW1</td>
+</tr>
+<tr>
+<td>StartDateTime</td>
+<td>The acquisition start date and time in UTC of the S1 SAFE file that was used as an input for processing (i.e. burst SLC) in the format YYYYMMDDTHHMMSSZ</td>
+<td>20250418T141628Z</td>
+</tr>
+<tr>
+<td>ProductGenerationDateTime</td>
+<td>The date and time (UTC) at which the product was generated by OPERA in the format YYYYMMDDTHHMMSSZ</td>
+<td>20250419T010229Z</td>
+</tr>
+<tr>
+<td>Sensor</td>
+<td>The input product sensor, including the specific Sentinel-1 platform</td>
+<td>S1A</td>
+</tr>
+<tr>
+<td>PixelSpacing</td>
+<td>Product pixel spacing in meters</td>
+<td>30</td>
+</tr>
+<tr>
+<td>ProductVersion</td>
+<td>OPERA RTC-S1 product version number with four characters, including the letter “v” and two digits indicating the major and minor versions, which are delimited by a period</td>
+<td>v1.0</td>
+</tr>
+<tr>
+<td>LayerName</td>
+<td>Name of the RTC-S1 product layer, if applicable</td>
+<td>VV</td>
+</tr>
+<tr>
+<td>Ext</td>
+<td>File extension: “tif”, “h5”, or “png”</td>
+<td>tif</td>
+</tr>
+</tbody>
+</table>
+<p>Example file names for each of the files associated with OPERA RTC-S1 products:</p>
+<p>OPERA_L2_RTC-S1_T069-147170-IW1_20210205T163901Z_20220101T140222Z_S1A_30_v1.0.h5</p>
+<p>OPERA_L2_RTC-S1_T069-147170-IW1_20210205T163901Z_20220101T140222Z_S1A_30_v1.0_VV.tif</p>
+<p>OPERA_L2_RTC-S1_T069-147170-IW1_20210205T163901Z_20220101T140222Z_S1A_30_v1.0_VH.tif</p>
+<p>OPERA_L2_RTC-S1_T069-147170-IW1_20210205T163901Z_20220101T140222Z_S1A_30_v1.0_mask.tif</p>
+<h2 id="data-access">Data Access<a class="headerlink" href="#data-access" title="Permanent link">&para;</a></h2>
+<p>Refer to the <a href="../../using/downloading/">Downloads</a> page for more information on viewing and downloading 
+OPERA RTC-S1 On Demand products in Vertex or programmatically. Once processing is complete, download links 
+for On Demand products are valid for 14 days.</p>
+<!--[#TODO: Add Vertex screen shot and any appropriate hints once interface is available]-->
+<!--[OR link to a StoryMap that details the download process]-->
+
+<p>We plan to support adding standard OPERA RTC-S1 products generated On Demand to the OPERA_L2_RTC-S1_V1 collection, 
+expanding the archive based on user needs. Stay tuned for that functionality!</p>
+<h2 id="on-demand-rtc-product-options-from-asf">On-Demand RTC Product Options from ASF<a class="headerlink" href="#on-demand-rtc-product-options-from-asf" title="Permanent link">&para;</a></h2>
+<p>In addition to OPERA RTC-S1 products, which use an RTC algorithm available in JPL's open-source 
+<a href="https://github.com/isce-framework/isce3" target="_blank" title="github.com/isce-framework/isce3">ISCE3 software</a> 
+to perform radiometric terrain correction, ASF also offers 
+<a href="../rtc_product_guide/" target="_blank" title="Sentinel-1 RTC Product Guide">On-Demand RTC products</a> 
+generated using commercial <a href="https://gamma-rs.ch/gamma-software" target="_blank" title="gamma-rs.ch/gamma-software">GAMMA</a> 
+SAR processing software. </p>
+<p>These products are both high-quality Sentinel-1 RTC options, and you can use either with confidence for any given 
+RTC-based analysis workflow. However, because ISCE3 and GAMMA use different algorithms for RTC processing, 
+a time-series analysis will be more consistent if you don't mix and match OPERA RTC-S1 products and ASF's RTC GAMMA 
+products. </p>
+<p>There are some key characteristics that differ between the two products, which may help you decide which would be 
+most appropriate for your particular application. </p>
+<h3 id="spatial-extent">Spatial Extent<a class="headerlink" href="#spatial-extent" title="Permanent link">&para;</a></h3>
+<p>OPERA RTC-S1 products are processed on the basis of an individual 
+<a href="https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8" target="_blank" title="Sentinel-1 Bursts StoryMap tutorial">radar burst</a> 
+extracted from a Sentinel-1 
+Interferometric Wide-Swath (IW) Single Look Complex (SLC) file, while ASF's RTC GAMMA On Demand products are 
+generated using the Sentinel-1 Level 1 IW SLC or Ground Range Detected (GRD) file.</p>
+<p>Advantages of burst-based products:</p>
+<ul>
+<li><strong>RTC footprint is much smaller.</strong> Each IW SLC contains many individual bursts (most often about 27), and you 
+    may not need such extensive spatial coverage for your analysis. If you have a fairly small area of interest, 
+    you can download and mosaic only the bursts you need.</li>
+<li><strong>File sizes are smaller.</strong> This is particularly important for users with limited internet access. Each OPERA 
+    RTC-S1 GeoTIFF file is on the order of 8 MB, and you can download each polarization separately. In contrast, ASF's 
+    RTC GAMMA products are delivered as a zip file, which includes all available polarizations. These zip 
+    files are generally upwards of 500 MB for products generated at 30-m pixel spacing, and they can be challenging to 
+    download successfully over slower connections.</li>
+<li><strong>Footprints are consistent.</strong> The individual Sentinel-1 bursts always have the same extent from one 
+    acquisition to the next, which makes it very easy to generate a time series over an area of interest. The framing of
+    the full Sentinel-1 IW Level 1 products can shift over time, so there is no guarantee that acquisitions with the 
+    same frame number will cover the same extent. This is particularly impactful when the area of interest is near 
+    the top or bottom of a Sentinel-1 IW Level 1 scene.</li>
+</ul>
+<p>If your area of interest is large, and is well-covered by a full Sentinel-1 IW scene (or requires several full 
+scenes to cover the entire area), you may find it easier to work with the full-scene RTC GAMMA products, as there 
+would be fewer individual files to manage. </p>
+<h3 id="processing-options">Processing Options<a class="headerlink" href="#processing-options" title="Permanent link">&para;</a></h3>
+<p><strong>On-Demand processing of OPERA RTC-S1 products is currently confined to the default settings of the archived 
+products.</strong> OPERA RTC-S1 products are output in gamma-0 power with 30-m pixel spacing. While we expect to offer 
+some customization options in the future, the only method currently available for ordering products with a different 
+radiometry, scale, or pixel spacing is to order ASF's <a href="../rtc_product_guide/">On-Demand Sentinel-1 RTC products</a> 
+processed using GAMMA software. </p>
+<p>Learn more about the options available for processing full-scene Sentinel-1 RTC GAMMA products and why you might 
+find them useful in the 
+<a href="https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35#ref-n-ycU3H8" target="_blank">Processing Options section</a> 
+of the 
+<a href="https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35" target="_blank" title="RTC On Demand!">RTC On Demand! tutorial</a>. </p>
+<h3 id="rgb-decomposition">RGB Decomposition<a class="headerlink" href="#rgb-decomposition" title="Permanent link">&para;</a></h3>
+<p>It can be helpful to combine co-polarized and cross-polarized RTC values into a false-color image. There are a 
+number of methods for combining VV and VH or HH and HV into the red, green, and blue channels, which is commonly 
+called RGB Decomposition. </p>
+<p>The RGB Decomposition approach used by the OPERA team for the RTC-S1 products is very different from the approach 
+ASF uses for the Sentinel-1 RTC On Demand products processed using GAMMA.</p>
+<h4 id="opera-rtc-s1-rgb-decomposition">OPERA RTC-S1 RGB Decomposition<a class="headerlink" href="#opera-rtc-s1-rgb-decomposition" title="Permanent link">&para;</a></h4>
+<p>The OPERA project uses a simple approach to combining polarizations to generate a color browse image, which is 
+displayed in Vertex when you search for OPERA RTC-S1 products. This RGB Decomposition assigns the co-pol values 
+(VV or HH) to both the red and blue bands, while the cross-pol values (VH or HV) are assigned to the green band. 
+Scalars are applied to the different bands to balance the color range. </p>
+<p>In these color images, water generally appears black, areas with vegetation appear more green, and other areas 
+appear pink.</p>
+<p>You can download these browse images from the Vertex interface by selecting an RTC-S1 product from the list of 
+search results and clicking the download icon above the image preview in the center panel, as shown in Figure 1. 
+Note that these browse images are not georeferenced, though you can use the individual RTC GeoTIFFs as a 
+reference for manually georeferencing the browse images. </p>
+<p><img alt="Figure 1" src="../../images/opera-browse-download.png" title="Interface for downloading an OPERA RTC-S1 RGB Decomposition" /></p>
+<p>This approach is also used to generate the imagery tiles for OPERA RTC-S1 that will be displayed in NASA's 
+<a href="https://worldview.earthdata.nasa.gov/" target="_blank" title="worldview.earthdata.nasa.gov/">Worldview</a>
+platform. </p>
+<p>You can also create your own OPERA RTC-S1 RGB Decompositions using GIS software. </p>
+<ul>
+<li>In ArcGIS, use the 
+    <a href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/data-management/composite-bands.htm" target="_blank">Composite Bands geoprocessing tool</a> 
+    or 
+    <a href="https://pro.arcgis.com/en/pro-app/latest/help/analysis/raster-functions/composite-bands-function.htm" target="_blank">raster function template</a> 
+    to assign the VV and VH layers to the desired color channels. </li>
+<li>In QGIS, use the 
+    <a href="https://docs.qgis.org/3.40/en/docs/training_manual/rasters/data_manipulation.html" target="_blank">Build Virtual Raster</a> 
+    algorithm. </li>
+</ul>
+<h4 id="rtc-gamma-rgb-decomposition">RTC GAMMA RGB Decomposition<a class="headerlink" href="#rtc-gamma-rgb-decomposition" title="Permanent link">&para;</a></h4>
+<p>Sentinel-1 RTC On-Demand products processed using GAMMA software include a georeferenced RGB Decomposition 
+browse image in the product package by default. You also have the 
+<a href="https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35#ref-n-AYvRBH" target="_blank" title="RGB Decomposition Option">option to include a full-resolution RGB Decomposition GeoTIFF</a> 
+in the output package when submitting the RTC job for processing. </p>
+<p>The 
+<a href="https://github.com/ASFHyP3/hyp3-lib/blob/main/docs/rgb_decomposition.md" target="_blank" title="RGB Decomposition">algorithm used to generate the RGB Decomposition images</a> 
+included in the product package is very different from the approach used by the OPERA team. It uses a series of 
+thresholds to determine which values to attribute to the different color bands, and applies scalars to each band 
+to generate an intuitive false-color image. </p>
+<p>For pixels with very low values in both the co- and cross-pol RTC products, the co-pol values are assigned 
+to the blue channel. High cross-pol values are assigned to the green channel. For pixels with high co-pol values but 
+low cross-pol values, the co-pol values are assigned to the red channel. </p>
+<p>In these images, water generally appears blue, vegetated areas look green, and other regions (urban areas, agricultural 
+fields, sparsely vegetated areas) are yellow or orange.</p>
+<p>If you want to generate a full-resolution RGB image from an RTC GAMMA product but neglected to select the option 
+to include it in the product package, you can also use the RGB Decomposition Tool in 
+<a href="https://www.earthdata.nasa.gov/data/tools/asf-arcgis-toolbox" target="_blank">ASF's ArcGIS Toolbox</a>.</p>
+<h2 id="sentinel-1-mission">Sentinel-1 Mission<a class="headerlink" href="#sentinel-1-mission" title="Permanent link">&para;</a></h2>
+<p>The 
+<a href="https://sentiwiki.copernicus.eu/web/s1-mission" target="_blank" title="https://sentiwiki.copernicus.eu/web/s1-mission">Sentinel-1 mission</a> 
+collects C-band band SAR from a pair of polar-orbiting satellites launched by the European Space Agency (ESA) as part 
+of the 
+<a href="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions" target="_blank" title="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions">Copernicus program</a>. 
+The Sentinel-1A satellite was launched April 3, 2014, Sentinel-1B was launched April 25, 2016, and Sentinel-1C was 
+launched December 5, 2024. </p>
+<p>Sentinel-1A is still collecting data, but 
+<a href="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite" target="_blank" title="https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite">Sentinel-1B ended its mission</a> 
+on December 23, 2021. Sentinel-1C has now replaced Sentinel-1B in the constellation, returning the Sentinel-1 
+mission to full observation capacity <a href="https://dataspace.copernicus.eu/news/2025-3-25-sentinel-1c-user-data-opening-26th-march" target="_blank" title="https://dataspace.copernicus.eu/news/2025-3-25-sentinel-1c-user-data-opening-26th-march">as of March 26, 2025</a>. </p>
+<p>The Sentinel-1 satellites each have a 12-day repeat cycle, but when there are two functioning satellites, their orbits 
+are offset 180 degrees so that one or the other will pass over the same location on earth every 6 days. Under this 
+scenario, select areas of interest are imaged with a 6-day interval, as described in the 
+<a href="https://sentinels.copernicus.eu/copernicus/sentinel-1/observation-scenario" target="_blank" title="https://sentinels.copernicus.eu/copernicus/sentinel-1/observation-scenario">mission observation scenario</a>, 
+while most landmasses are imaged on a 12-day repeat cycle.</p>
+<p>For the time period between when Sentinel-1B stopped acquiring data and Sentinel-1C started acquiring data, 
+coverage was more sparse. Some areas did not have any imagery acquired between December 2021 and April 2025. 
+Depending on your area of interest, you may have limited data available during that time. For more information, 
+visit our <a href="../../sentinel1/">Sentinel-1 Mission page</a>.</p>
+<p>Because this is a polar-orbiting satellite constellation, areas near the poles may have overlapping orbits, 
+resulting in more frequent acquisitions than indicated by the observation scenario. </p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Adapted from https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/partials/footer.html -->
+
+<!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+      <!-- ASF Footer information-->
+      <div class="md-grid">
+        <div class="md-footer-container md-grid">
+          <div class="md-footer-container-item">
+            <img src="../../images/asf-logo-blue-nav.png"
+                 alt="ASF Logo"
+                 class="md-footer-logo">
+          </div>
+          <div class="md-footer-container-item md-about-us">
+            <h1>About Us</h1>
+            <p>
+              The Alaska Satellite Facility downlinks, processes, archives, and
+              distributes remote-sensing data to scientific users around the world.
+              ASF’s mission is to make remote-sensing data accessible.
+            </p>
+            <p>
+              <a href="https://asf.alaska.edu/about-asf/" target="_blank">
+                Read More
+              </a>
+            </p>
+          </div>
+          <div class="md-footer-container-item md-contact-info">
+            <h1>Contact Info</h1>
+            <p>
+              Alaska Satellite Facility<br>
+              2156 Koyukuk Drive<br>
+              Fairbanks, AK 99775<br>
+              (907) 474-5041<br>
+              uso@asf.alaska.edu<br>
+            </p>
+            <p>
+              <a href="javascript:feedback.showForm();">Send Us A Message</a>
+            </p>
+          </div>
+        </div>
+      </div>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Adapted from https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/partials/copyright.html -->
+
+<!-- Copyright and theme information -->
+<div class="md-copyright">
+  <div class="md-copyright__highlight">
+    
+      &copy; <span id="copyright-year"></span>
+      <script type="text/javascript">
+          current_year = new Date().getFullYear();
+          document.getElementById("copyright-year").innerHTML=current_year;
+      </script>
+      Alaska Satellite Facility
+    
+    <!-- ASF non-discrimination disclaimer-->
+    &nbsp;&nbsp;
+    <a href="https://www.alaska.edu/nondiscrimination"
+       target="_blank"
+       class="md-copyright-link">
+      UA is an AA/EO employer and educational institution and prohibits
+      illegal discrimination against any individual
+    </a>
+  </div>
+</div>
+
+      <!-- Social links -->
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.facebook.com/AKSatellite" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m279.14 288 14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/Ak_Satellite" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UChCfI0oVWw4qDwEidnDskJQ" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gitter.im/ASFHyP3/community" target="_blank" rel="noopener" title="gitter.im" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M66.4 322.5H16V0h50.4v322.5zM166.9 76.1h-50.4V512h50.4V76.1zm100.6 0h-50.4V512h50.4V76.1zM368 76h-50.4v247H368V76z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+    
+      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+    <script src="../../javascripts/expert-rec-search.js"></script>
+
+  </body>
+</html>

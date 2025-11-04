@@ -1,0 +1,3690 @@
+<!-- Extends https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/base.html -->
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The Alaska Satellite Facility's Hybrid Pluggable Processing Pipeline">
+      
+      
+        <meta name="author" content="ASF APD/Tools Team">
+      
+      
+        <link rel="canonical" href="https://hyp3-docs.asf.alaska.edu/hyp3-docs/guides/insar_product_guide/">
+      
+      
+        <link rel="prev" href="./">
+      
+      
+        <link rel="next" href="../burst_insar_product_guide/">
+      
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>Product Guide - HyP3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/asf.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sentinel-1-insar-product-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Adapted from https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/partials/header.html -->
+
+<!-- Determine classes -->
+
+
+  
+
+
+<!-- Header -->
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="Header"
+  >
+
+    
+    <!-- Link to ASF -->
+    <a
+      href="https://asf.alaska.edu/"
+      title="ASF"
+      class="md-header__button md-logo"
+      aria-label="ASF"
+      data-md-component="logo"
+    >
+      <img src="../../images/ASFLogo-Blue2.png" alt="logo" />
+    </a>
+    
+
+    <!-- Link to home -->
+    <a
+      href="../.."
+      title="HyP3"
+      class="md-header__button md-logo"
+      aria-label="HyP3"
+      data-md-component="logo"
+    >
+      
+  <img src="../../images/HyP3-graphic-only.png" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HyP3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Product Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Color palette toggle -->
+    
+
+    <!-- Site language selector -->
+    
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      <div class="expert-rec-search">
+  <ci-search></ci-search>
+</div>
+    
+
+    <!-- Repository information -->
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ASFHyP3" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ASF HyP3
+  </div>
+</a>
+      </div>
+    
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!-- Extends https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/base.html -->
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+<!--  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="HyP3" class="md-nav__button md-logo" aria-label="HyP3" data-md-component="logo">
+      
+  <img src="../../images/HyP3-graphic-only.png" alt="logo">
+
+    </a>
+    HyP3
+  </label> -->
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ASFHyP3" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ASF HyP3
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../about/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    HyP3
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            HyP3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/hyp3_basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HyP3 Basic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../about/hyp3_plus/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    HyP3+
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            HyP3+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/hyp3_plus_terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terms of Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../using/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Using HyP3
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Using HyP3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/vertex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vertex
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../using/sdk/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    SDK
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            SDK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example Notebook
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/sdk_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/authentication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/credits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Credits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using/downloading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Downloads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../usage_guidelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to Cite HyP3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../products/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Products
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Products
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../rtc_product_guide/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    RTC
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            RTC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rtc_product_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StoryMap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rtc_atbd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Theoretical Basis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    InSAR
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            InSAR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brief-overview-of-insar" class="md-nav__link">
+    Brief Overview of InSAR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wavelengths" class="md-nav__link">
+    Wavelengths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polarizations" class="md-nav__link">
+    Polarizations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baselines" class="md-nav__link">
+    Baselines
+  </a>
+  
+    <nav class="md-nav" aria-label="Baselines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perpendicular-baseline" class="md-nav__link">
+    Perpendicular Baseline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporal-baseline" class="md-nav__link">
+    Temporal Baseline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-baseline" class="md-nav__link">
+    Critical Baseline
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ordering-on-demand-insar-products" class="md-nav__link">
+    Ordering On Demand InSAR Products
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordering On Demand InSAR Products">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vertex" class="md-nav__link">
+    Vertex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3-sdk-and-api" class="md-nav__link">
+    HyP3 SDK and API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#considerations-for-selecting-an-insar-pair" class="md-nav__link">
+    Considerations for Selecting an InSAR Pair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-options-and-optional-files" class="md-nav__link">
+    Processing Options and Optional Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Processing Options and Optional Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#processing-options" class="md-nav__link">
+    Processing Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-files" class="md-nav__link">
+    Optional Files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#insar-workflow" class="md-nav__link">
+    InSAR Workflow
+  </a>
+  
+    <nav class="md-nav" aria-label="InSAR Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-processing" class="md-nav__link">
+    Pre-Processing
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#select-an-insar-pair" class="md-nav__link">
+    Select an InSAR Pair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ingest-slc-data-into-gamma-format" class="md-nav__link">
+    Ingest SLC data into GAMMA format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepare-the-dem-file" class="md-nav__link">
+    Prepare the DEM File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate-overlapping-bursts" class="md-nav__link">
+    Calculate Overlapping Bursts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interferogram-creation-co-registration-and-refinement" class="md-nav__link">
+    Interferogram Creation, Co-registration and Refinement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-unwrapping" class="md-nav__link">
+    Phase Unwrapping
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase Unwrapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filtering" class="md-nav__link">
+    Filtering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#masking" class="md-nav__link">
+    Masking
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-point" class="md-nav__link">
+    Reference point
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geocoding-and-product-creation" class="md-nav__link">
+    Geocoding and Product Creation
+  </a>
+  
+    <nav class="md-nav" aria-label="Geocoding and Product Creation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geocoding" class="md-nav__link">
+    Geocoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product-creation" class="md-nav__link">
+    Product Creation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-packaging" class="md-nav__link">
+    Product Packaging
+  </a>
+  
+    <nav class="md-nav" aria-label="Product Packaging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-convention" class="md-nav__link">
+    Naming Convention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-files" class="md-nav__link">
+    Image Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-files" class="md-nav__link">
+    Metadata Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Metadata Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#readme-file" class="md-nav__link">
+    README File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insar-parameter-file" class="md-nav__link">
+    InSAR Parameter File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arcgis-compatible-xml-files" class="md-nav__link">
+    ArcGIS-Compatible XML Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auxiliary-geolocation-files" class="md-nav__link">
+    Auxiliary Geolocation Files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-access" class="md-nav__link">
+    Data Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    Limitations
+  </a>
+  
+    <nav class="md-nav" aria-label="Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baseline-calculation" class="md-nav__link">
+    Baseline Calculation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coherence" class="md-nav__link">
+    Coherence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#line-of-sight-measurements" class="md-nav__link">
+    Line-of-Sight Measurements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-unwrapping-reference-point" class="md-nav__link">
+    Phase Unwrapping Reference Point
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase Unwrapping Reference Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impacts-on-displacement-measurements" class="md-nav__link">
+    Impacts on Displacement Measurements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displacement-values-from-a-single-interferogram" class="md-nav__link">
+    Displacement Values from a Single Interferogram
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-sources" class="md-nav__link">
+    Error Sources
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Sources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atmospheric-delay" class="md-nav__link">
+    Atmospheric Delay
+  </a>
+  
+    <nav class="md-nav" aria-label="Atmospheric Delay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#turbulent-delay" class="md-nav__link">
+    Turbulent Delay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stratified-delay" class="md-nav__link">
+    Stratified Delay
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dem-errors" class="md-nav__link">
+    DEM Errors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orbit-uncertainties" class="md-nav__link">
+    Orbit Uncertainties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StoryMap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../burst_insar_product_guide/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Burst InSAR
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Burst InSAR
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../burst_insar_product_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://storymaps.arcgis.com/stories/191bf1b6962c402086807390b3ce63b0" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StoryMap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../gunw_product_guide/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ARIA S1 GUNW
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            ARIA S1 GUNW
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gunw_product_guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Product Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://its-live.jpl.nasa.gov/" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AutoRIFT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sentinel1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sentinel-1 Mission
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../introduction_to_sar/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    SAR Basics
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            SAR Basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction_to_sar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to SAR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Digital Elevation Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../water_masking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Water Masking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://asf.alaska.edu/information/sar-information/what-is-sar/#sar_faq" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SAR FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tutorials/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using HyP3 Python SDK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authenticate HyP3 in the SDK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search another user's jobs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Update existing job name
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/process-new-granules-for-search-parameters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Process new granules for search parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InSAR time series with MintPy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_isce2_burst_stack_for_ts_analysis.ipynb" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    InSAR burst time series with MintPy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://asf-daac.maps.arcgis.com/home/index.html" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StoryMap Tutorials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Other Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Other Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/arcgis_toolbox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ArcGIS Toolbox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tools/asf_tools/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ASF Tools for Python
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            ASF Tools for Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/asf_tools_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Developers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Developers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how_it_works/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plugins/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plugins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ASFHyP3/.github/blob/main/CODE_OF_CONDUCT.md" target="_blank" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code of Conduct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../whats_new/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    What's New
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            What's New
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../news/hyp3_plus_introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducing HyP3+
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact Us
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brief-overview-of-insar" class="md-nav__link">
+    Brief Overview of InSAR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wavelengths" class="md-nav__link">
+    Wavelengths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polarizations" class="md-nav__link">
+    Polarizations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baselines" class="md-nav__link">
+    Baselines
+  </a>
+  
+    <nav class="md-nav" aria-label="Baselines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perpendicular-baseline" class="md-nav__link">
+    Perpendicular Baseline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporal-baseline" class="md-nav__link">
+    Temporal Baseline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#critical-baseline" class="md-nav__link">
+    Critical Baseline
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ordering-on-demand-insar-products" class="md-nav__link">
+    Ordering On Demand InSAR Products
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordering On Demand InSAR Products">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vertex" class="md-nav__link">
+    Vertex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hyp3-sdk-and-api" class="md-nav__link">
+    HyP3 SDK and API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#considerations-for-selecting-an-insar-pair" class="md-nav__link">
+    Considerations for Selecting an InSAR Pair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-options-and-optional-files" class="md-nav__link">
+    Processing Options and Optional Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Processing Options and Optional Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#processing-options" class="md-nav__link">
+    Processing Options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-files" class="md-nav__link">
+    Optional Files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#insar-workflow" class="md-nav__link">
+    InSAR Workflow
+  </a>
+  
+    <nav class="md-nav" aria-label="InSAR Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-processing" class="md-nav__link">
+    Pre-Processing
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#select-an-insar-pair" class="md-nav__link">
+    Select an InSAR Pair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ingest-slc-data-into-gamma-format" class="md-nav__link">
+    Ingest SLC data into GAMMA format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepare-the-dem-file" class="md-nav__link">
+    Prepare the DEM File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate-overlapping-bursts" class="md-nav__link">
+    Calculate Overlapping Bursts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interferogram-creation-co-registration-and-refinement" class="md-nav__link">
+    Interferogram Creation, Co-registration and Refinement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-unwrapping" class="md-nav__link">
+    Phase Unwrapping
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase Unwrapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filtering" class="md-nav__link">
+    Filtering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#masking" class="md-nav__link">
+    Masking
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-point" class="md-nav__link">
+    Reference point
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geocoding-and-product-creation" class="md-nav__link">
+    Geocoding and Product Creation
+  </a>
+  
+    <nav class="md-nav" aria-label="Geocoding and Product Creation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#geocoding" class="md-nav__link">
+    Geocoding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product-creation" class="md-nav__link">
+    Product Creation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-packaging" class="md-nav__link">
+    Product Packaging
+  </a>
+  
+    <nav class="md-nav" aria-label="Product Packaging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-convention" class="md-nav__link">
+    Naming Convention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-files" class="md-nav__link">
+    Image Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata-files" class="md-nav__link">
+    Metadata Files
+  </a>
+  
+    <nav class="md-nav" aria-label="Metadata Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#readme-file" class="md-nav__link">
+    README File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insar-parameter-file" class="md-nav__link">
+    InSAR Parameter File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arcgis-compatible-xml-files" class="md-nav__link">
+    ArcGIS-Compatible XML Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auxiliary-geolocation-files" class="md-nav__link">
+    Auxiliary Geolocation Files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-access" class="md-nav__link">
+    Data Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    Limitations
+  </a>
+  
+    <nav class="md-nav" aria-label="Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baseline-calculation" class="md-nav__link">
+    Baseline Calculation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coherence" class="md-nav__link">
+    Coherence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#line-of-sight-measurements" class="md-nav__link">
+    Line-of-Sight Measurements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-unwrapping-reference-point" class="md-nav__link">
+    Phase Unwrapping Reference Point
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase Unwrapping Reference Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#impacts-on-displacement-measurements" class="md-nav__link">
+    Impacts on Displacement Measurements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#displacement-values-from-a-single-interferogram" class="md-nav__link">
+    Displacement Values from a Single Interferogram
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-sources" class="md-nav__link">
+    Error Sources
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Sources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atmospheric-delay" class="md-nav__link">
+    Atmospheric Delay
+  </a>
+  
+    <nav class="md-nav" aria-label="Atmospheric Delay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#turbulent-delay" class="md-nav__link">
+    Turbulent Delay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stratified-delay" class="md-nav__link">
+    Stratified Delay
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dem-errors" class="md-nav__link">
+    DEM Errors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orbit-uncertainties" class="md-nav__link">
+    Orbit Uncertainties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="sentinel-1-insar-product-guide">Sentinel-1 InSAR Product Guide<a class="headerlink" href="#sentinel-1-insar-product-guide" title="Permanent link">&para;</a></h1>
+<p>This document is a guide for users of Interferometric Synthetic Aperture Radar (InSAR) Sentinel-1 products generated by the Alaska Satellite Facility (ASF). Users can request InSAR products <a href="https://search.asf.alaska.edu/#/?topic=onDemand" target="_blank" title="https://search.asf.alaska.edu/#/?topic=onDemand">On Demand</a> in ASF's <a href="https://search.asf.alaska.edu/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a> data portal, or make use of our HyP3 <a href="https://hyp3-docs.asf.alaska.edu/using/sdk/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/sdk">Python SDK</a> or <a href="https://hyp3-docs.asf.alaska.edu/using/api/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/api">API</a>. </p>
+<p>This process requires <a href="https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-InterferometricWideSwathS1-Mission-Interferometric-Wide-Swath" target="_blank" title="https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-InterferometricWideSwath">Sentinel-1 IW SLC products</a> as input. Input pairs can be selected in <a href="https://search.asf.alaska.edu/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a> using either the <a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank" title="https://docs.asf.alaska.edu/vertex/baseline/">Baseline Tool</a> or the <a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank" title="https://docs.asf.alaska.edu/vertex/sbas">SBAS Tool</a> search interfaces. On Demand InSAR products only include co-polarized interferograms (VV or HH). Cross-polarized interferograms (VH or HV) are not available using this service.</p>
+<p>For a step-by-step tutorial on ordering On-Demand InSAR Products using Vertex, visit our <a href="https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank" title="InSAR On Demand! https://arcg.is/eiP8G0">InSAR On Demand! StoryMap</a>. To learn more about the files included in the On Demand InSAR product packages and how to work with them, refer to our <a href="https://storymaps.arcgis.com/stories/8be186e4125741518118d0102e6835e5" target="_blank" title="Exploring Sentinel-1 InSAR https://arcg.is/11DaW90">Exploring Sentinel-1 InSAR StoryMap</a>.</p>
+<p>InSAR processing requires a Digital Elevation Model (DEM) for the removal of topographic phase. We use the <a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM" target="_blank" title="Copernicus DEM">GLO-30 Copernicus DEM</a> when processing our On Demand InSAR products. Refer to the <a href="#prepare-the-dem-file" title="Jump to the Prepare the DEM File Section of this document">Prepare the DEM File section</a> for more information. </p>
+<div class="admonition tip">
+<p class="admonition-title">On Demand Burst-Based InSAR Now Available</p>
+<p>ASF also offers burst-based Sentinel-1 InSAR products. This On Demand processing option allows users to submit InSAR jobs for <a href="https://storymaps.arcgis.com/stories/88c8fe67933340779eddef212d76b8b8" target="_blank" title="Sentinel-1 Bursts Tutorial https://arcg.is/zSafi0">individual SLC bursts</a> rather than the full <a href="https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-InterferometricWideSwathS1-Mission-Interferometric-Wide-Swath" target="_blank" title="https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-InterferometricWideSwath">Sentinel-1 IW SLC products</a>. Refer to our <a href="../burst_insar_product_guide/">Sentinel-1 Burst InSAR Product Guide</a> for more information on this option.</p>
+</div>
+<p>Users are cautioned to read the sections on <a href="#limitations" title="Jump to the Limitations section of this document">limitations</a> and <a href="#error-sources" title="Jump to the Error Sources section of this document">error sources</a> in InSAR products before attempting to use InSAR data. For a more complete description of the properties of SAR, see our <a href="../introduction_to_sar/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/guides/introduction_to_sar">Introduction to SAR</a> guide. </p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Interferometric Synthetic Aperture Radar (InSAR) processing uses two SAR images collected over the same area to determine geometric properties of the surface. Missions such as Sentinel-1 are <a href="https://sentiwiki.copernicus.eu/web/s1-applications#S1Applications-OverviewofS1Applications" target="_blank" title="https://sentiwiki.copernicus.eu/web/s1-applications#S1Applications-OverviewofS1Applications">designed for</a> monitoring surface deformation using InSAR, which is optimal when acquisitions are made from a consistent location in space (<a href="#baselines" title="Jump to Baselines section of this document">short perpendicular baseline</a>) over regular time intervals.</p>
+<p>The phase measurements of two SAR images acquired at different times from the same place in orbit are differenced to detect and quantify surface changes, such as deformation caused by earthquakes, volcanoes, or groundwater subsidence.</p>
+<p>InSAR can also be used to generate digital elevation models, but the optimal mission for DEM generation has the opposite characteristics of the Sentinel-1 mission. Topography is best mapped when the two acquisitions are obtained as close together as possible in time (<a href="#baselines" title="Jump to Baselines section of this document">short temporal baseline</a>), but from different vantage points in space (larger perpendicular baseline than would be optimal for deformation mapping).</p>
+<h3 id="brief-overview-of-insar">Brief Overview of InSAR<a class="headerlink" href="#brief-overview-of-insar" title="Permanent link">&para;</a></h3>
+<p>SAR is an active sensor that transmits pulses and listens for echoes. These echoes are recorded in phase and amplitude, with the phase being used to determine the distance from the sensor to the target and the amplitude yielding information about the roughness and dielectric constant of that target.</p>
+<p><img alt="Figure 1" src="../../images/phase_diff.png" title="Difference in range shows movement of the surface imaged" /></p>
+<p><em>Figure 1: Two passes of an imaging SAR taken at time T<sub>0</sub> and T<sub>0</sub> + ∆t, will give two distances to the ground, R<sub>1</sub> and R<sub>2</sub>.  A difference between R<sub>1</sub> and R<sub>2</sub> shows motion on the ground.  In this case, a subsidence makes R<sub>2</sub> greater than R<sub>1</sub>.  Credit: <a href="https://site.tre-altamira.com/insar/" target="_blank" title="https://site.tre-altamira.com/insar">TRE ALTAMIRA</a></em></p>
+<p>InSAR exploits the phase difference between two SAR images to create an interferogram that shows where the phase and, therefore, the distance to the target has changed from one pass to the next, as illustrated in Figure 1.  There are several factors that influence the interferogram, including earth curvature, topographic effects, atmospheric delays, surface motion, and noise.  With proper processing, Sentinel-1 InSAR can be used to detect changes in the earth's surface down to the centimeter scale. Applications include volcanic deformation, subsidence, landslide detection, and earthquake assessment.</p>
+<h3 id="wavelengths">Wavelengths<a class="headerlink" href="#wavelengths" title="Permanent link">&para;</a></h3>
+<p>The SAR sensors on the Sentinel-1 satellites transmit C-band signals, with a wavelength of 5.6 cm. The signal wavelength impacts the penetration capability of the signal, so it is important to be aware of the sensor wavelength when working with SAR datasets. C-band SAR will penetrate more deeply into canopy or surfaces than an X-band signal, but not nearly as deep as an L-band SAR signal, which, with a wavelength on the order of 25 cm, is better able to penetrate canopy and return signals from the forest floor.</p>
+<p>Different wavelengths are also sensitive to different levels of deformation. To detect very small changes over relatively short periods of time, you may require a signal with a smaller wavelength (such as X-band). However, signals with shorter wavelengths are also more prone to decorrelation due to small changes in surface conditions such as vegetation growth.</p>
+<p>For slower processes that require a longer time interval to detect movement, longer wavelengths (such as L-band) may be necessary. C-band sits in the middle. It can detect fairly small changes over fairly short periods of time, but is not as sensitive to small changes as X-band or as able to monitor surface dynamics under canopy as L-band.</p>
+<h3 id="polarizations">Polarizations<a class="headerlink" href="#polarizations" title="Permanent link">&para;</a></h3>
+<p>Polarization refers to the direction of travel of an electromagnetic wave.  A horizontal wave is transmitted so that it oscillates in a plane parallel to the surface imaged, while a vertical wave oscillates in a plane perpendicular to the surface imaged.</p>
+<p>Most modern SAR systems can transmit chirps with either a horizontal or vertical polarization. In addition, some of these sensors can listen for either horizontal or vertical backscatter. This results in the potential for 4 different types of returns: HH, HV, VV, and VH, with the first letter indicating the transmission method and the second the receive method. For example, VH is a vertically polarized transmit signal with horizontally polarized echoes recorded.</p>
+<p>For InSAR applications, processing is generally performed on the co-pol (VV or HH) data and not on the cross-pol (VH or HV) data. Each image used in an InSAR pair must be the same polarization - two HH acquisitions of the same area could form a valid pair, and two VV acquisitions of the same area could form a valid pair, but you cannot pair an HH acquisition with a VV acquisition to generate an interferogram.</p>
+<p>On Demand InSAR products only include co-polarized interferograms. Cross-polarized interferograms are not available using this service.</p>
+<h3 id="baselines">Baselines<a class="headerlink" href="#baselines" title="Permanent link">&para;</a></h3>
+<h4 id="perpendicular-baseline">Perpendicular Baseline<a class="headerlink" href="#perpendicular-baseline" title="Permanent link">&para;</a></h4>
+<p>The term <em>baseline</em> refers to the physical distance between the two vantage points from which images used as an InSAR pair are acquired. The baseline is decomposed into perpendicular (also called normal) and parallel components, as shown in Figure 2.</p>
+<p>To monitor surface deformation, the perpendicular baseline for the two acquisitions should be very small in order to maximize the coherence of the phase measurements.</p>
+<p>In order to determine topography, two slightly different vantage points are required. Sensitivity to topography depends on the perpendicular baseline, the sensor wavelength, the distance between the satellite and the ground, and the sensor look angle.</p>
+<p><img alt="Figure 2" src="../../images/baseline_asf.png" title="Geometry of InSAR Baselines." /></p>
+<p><em>Figure 2: Geometry of InSAR baselines. Two satellite passes image the same area on the ground from positions S<sub>1</sub> and S<sub>2 </sub>, resulting in a baseline of B, which can be decomposed into </em><strong><em>perpendicular</em></strong><em> (B<sub>⟂ </sub>) and </em><strong><em>parallel</em></strong><em> (B<sub>∥ </sub>) components. Here Y is the direction of travel, referred to as the </em><strong><em>along-track</em></strong><em> or </em><strong><em>azimuth</em></strong><em> direction, and X is the direction perpendicular to motion, referred to as the </em><strong><em>cross-track</em></strong><em> or </em><strong><em>range</em></strong><em> direction. Credit: ASF</em></p>
+<h4 id="temporal-baseline">Temporal Baseline<a class="headerlink" href="#temporal-baseline" title="Permanent link">&para;</a></h4>
+<p>In contrast to the (physical) baseline, the <em>temporal baseline</em> refers to the time separation between imaging passes. Along-track interferometry measures motion in the millisecond to second range. This technique can detect ocean currents and rapidly moving objects like boats. Differential interferometry is the standard method used to detect motion in the range of days to years. This is the type of interferometry that is performed by the Sentinel-1 HyP3 InSAR processing algorithm. Table 1 lists different temporal baselines, their common names, and what they can be used to measure.</p>
+<table>
+<thead>
+<tr>
+<th>Duration</th>
+<th>Known as</th>
+<th>Measurement of</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ms to sec</td>
+<td>along-track</td>
+<td>ocean currents, moving object detection, MTI</td>
+</tr>
+<tr>
+<td>days</td>
+<td>differential</td>
+<td>glacier/ice fields/lava flows, surface water extent, hydrology</td>
+</tr>
+<tr>
+<td>days to years</td>
+<td>differential</td>
+<td>subsidence, seismic events, volcanic activity, crustal displacement</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 1: Temporal baselines and what they measure. Different geophysical phenomena can be detected based upon the temporal baseline. In general, the longer the temporal baseline, the smaller the motion that can be detected.</em></p>
+<h4 id="critical-baseline">Critical Baseline<a class="headerlink" href="#critical-baseline" title="Permanent link">&para;</a></h4>
+<p>Large baselines are better than small for topographic mapping. However, as the baseline increases, coherence decreases. At some point, it is impossible to create an interferogram because of baseline decorrelation. The maximum viable baseline per platform, referred to as the <em>critical baseline</em>, is a function of the distance to the ground, the wavelength, and the viewing geometry of the platform.</p>
+<p>For Sentinel-1, this critical baseline is about 5 km. In practice, if the perpendicular baseline between images is more than 3/4 of the critical baseline, interferogram creation will be problematic due to the level of noise.</p>
+<p>For deformation mapping, it is best to minimize the perpendicular baseline whenever possible, but there may be tradeoffs in terms of finding suitable temporal baselines. In most cases, however, pairs selected for deformation mapping will have perpendicular baselines <em>much</em> smaller than the critical baseline.</p>
+<h2 id="ordering-on-demand-insar-products">Ordering On Demand InSAR Products<a class="headerlink" href="#ordering-on-demand-insar-products" title="Permanent link">&para;</a></h2>
+<p>All of ASF's On Demand InSAR products are generated using the 
+<a href="https://hyp3-docs.asf.alaska.edu/products/" target="_blank" title="hyp3-docs.asf.alaska.edu">HyP3 platform</a>. 
+Jobs can be submitted for processing using the 
+<a href="https://search.asf.alaska.edu/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a> data portal, the 
+<a href="https://hyp3-docs.asf.alaska.edu/using/sdk/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/sdk">HyP3 Python SDK</a> 
+or the <a href="https://hyp3-docs.asf.alaska.edu/using/api/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/api">HyP3 API</a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">InSAR Processing Now Supports Sentinel-1C!</p>
+<p>GAMMA and ISCE2 software have both been updated to support Sentinel-1C acquisitions as input for InSAR processing. 
+Users can now use any Sentinel-1 IW SLCs in the archive, including those acquired by Sentinel-1C, as input for 
+either <a href="./">On Demand InSAR</a> or <a href="../burst_insar_product_guide/">On Demand Burst InSAR</a> 
+processing.</p>
+</div>
+<h3 id="vertex">Vertex<a class="headerlink" href="#vertex" title="Permanent link">&para;</a></h3>
+<p>InSAR pairs are selected in <a href="https://search.asf.alaska.edu/#/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a> using either the <a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank" title="https://docs.asf.alaska.edu/vertex/baseline">Baseline Search</a> or the <a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank" title="https://docs.asf.alaska.edu/vertex/sbas">SBAS Search</a> interface. The process of selecting pairs is the same for both IW SLC products and individual SLC bursts, but you will need to select the appropriate dataset when searching for content. As illustrated below, select the <strong>Sentinel-1</strong> option in the Dataset menu to search for IW SLC products, and select the <strong>S1 Bursts</strong> option to search for individual SLC bursts.</p>
+<p><img alt="Vertex Dataset Selection" src="../../images/vertex-dataset-selection.png" /></p>
+<p>The <a href="https://docs.asf.alaska.edu/vertex/baseline/" target="_blank" title="https://docs.asf.alaska.edu/vertex/baseline">Baseline</a> tool is the best option for selecting specific InSAR pairs. Use the <a href="https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options" target="_blank" title="https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options">Geographic Search</a> to find an image that covers your time and area of interest, select that item in the results, and click the Baseline button in the center panel. The Baseline tool then displays all of the scenes that could be used to generate an interferogram using the selected image. Scroll through the results to find pairs to add to the On Demand queue, or click on items displayed in the plot to highlight that particular image pair.</p>
+<p>The <a href="https://docs.asf.alaska.edu/vertex/sbas/" target="_blank" title="https://docs.asf.alaska.edu/vertex/sbas">SBAS</a> tool is designed for generating time series of InSAR pairs. As with the Baseline search, you can launch the SBAS search from the center panel of a <a href="https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options" target="_blank" title="https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options">Geographic Search</a> result. It will display all of the valid InSAR pairs through time based on the acquisition location of the input scene. This functionality is designed for processing a series of interferograms to be used in SBAS (Small BAseline Subset) analysis. The results can be adjusted based on baseline criteria (both perpendicular and temporal), and restricted to specific periods of time. Once the list is refined, you have the option to add all of the InSAR pairs displayed in the results to the On Demand queue.</p>
+<h3 id="hyp3-sdk-and-api">HyP3 SDK and API<a class="headerlink" href="#hyp3-sdk-and-api" title="Permanent link">&para;</a></h3>
+<p>The <a href="https://hyp3-docs.asf.alaska.edu/using/sdk/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/sdk">HyP3 SDK</a> and <a href="https://hyp3-docs.asf.alaska.edu/using/api/" target="_blank" title="https://hyp3-docs.asf.alaska.edu/using/api">API</a> provide support for creating interferograms based on a pair of selected granules. To identify granules you'd like to process, we suggest using the Geographic, Baseline and SBAS search tools in <a href="https://search.asf.alaska.edu/" target="_blank" title="https://search.asf.alaska.edu">Vertex</a>. If you'd prefer to request interferogram processing programmatically, we suggest using Vertex's companion Python package: <a href="https://docs.asf.alaska.edu/asf_search/basics/" target="_blank" title="https://docs.asf.alaska.edu/asf_search/basics"><code>asf_search</code></a>. <a href="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb#Submitting-Sentinel-1-InSAR-jobs" target="_blank" title="https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb#Submitting-Sentinel-1-InSAR-jobs">This HyP3 SDK Jupyter Notebook</a> provides you with an example of how you can use the <code>asf_search</code> and <code>hyp3_sdk</code> packages together to identify and create stacks of InSAR products.</p>
+<h3 id="considerations-for-selecting-an-insar-pair">Considerations for Selecting an InSAR Pair<a class="headerlink" href="#considerations-for-selecting-an-insar-pair" title="Permanent link">&para;</a></h3>
+<p>When selecting an InSAR pair, observe the following required conditions:</p>
+<ol style="list-style-type: decimal;" type="1">
+<li>Images from an identical orbit direction (either ascending or descending)</li>
+<li>Images with identical incidence angles and beam mode</li>
+<li>Images with identical resolution and wavelength (usually from the same sensor)</li>
+<li>Images with the same viewing geometry (same path and frame)</li>
+<li>Images with identical polarizations (both HH or VV)</li>
+</ol>
+<p>In addition, the following suggestions may be helpful:</p>
+<ol style="list-style-type: decimal;" type="1">
+<li>Use images from similar seasons/growth/weather conditions</li>
+<li>For deformation mapping: limited spatial separation of acquisition locations (small physical baseline)</li>
+<li>For topographic mapping: limited time separation between images (small temporal baseline)</li>
+</ol>
+<p>To analyze deformation caused by a single discrete event, such as an earthquake, select images that bracket the event as closely in time as possible. Keeping the window narrowly focused on the time of the event will reduce the impacts of other processes that may mask the signal of the event of interest.</p>
+<h3 id="processing-options-and-optional-files">Processing Options and Optional Files<a class="headerlink" href="#processing-options-and-optional-files" title="Permanent link">&para;</a></h3>
+<p>There are several options users can set when ordering InSAR On Demand products, including setting some processing parameters and selecting additional files to include in the output product package.</p>
+<div class="admonition tip">
+<p class="admonition-title">New: Adaptive Phase Filter parameter is now customizable!</p>
+<p>There is now an option to adjust the adaptive phase filter parameter value when submitting On Demand InSAR jobs.
+This option is available in 
+<a href="https://search.asf.alaska.edu/" target="_blank" title="https://search.asf.alaska.edu/">Vertex</a>, 
+as well as in the <a href="../../using/api/" target="_blank">HyP3 API</a> and <a href="../../using/sdk/" target="_blank">Python SDK</a>! 
+Refer to the <a href="#adaptive-phase-filter">Adaptive Phase Filter section</a> for more information.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Connected Components file not available for GAMMA-generated InSAR products from ASF</p>
+<p>ASF uses GAMMA software's <a href="#phase-unwrapping">Minimum Cost Flow (MCF) algorithm</a> to phase unwrap full-scene 
+Sentinel-1 InSAR products. This workflow does not generate a connected components file, such as what is generated 
+when using <a href="https://web.stanford.edu/group/radar/softwareandlinks/sw/snaphu/" target="_blank" title="https://web.stanford.edu/group/radar/softwareandlinks/sw/snaphu/">SNAPHU</a> for phase unwrapping.</p>
+<p>If you require connected components files for your analysis, consider using ASF's 
+<a href="../burst_insar_product_guide/">Burst InSAR On Demand</a> option, which uses the ISCE2 software package 
+to process individual Sentinel-1 SLC bursts to InSAR products. The 
+<a href="../burst_insar_product_guide/#image-files">Burst InSAR product package</a> contains a connected components file.</p>
+</div>
+<h4 id="processing-options">Processing Options<a class="headerlink" href="#processing-options" title="Permanent link">&para;</a></h4>
+<p>When submitting jobs for processing, there are a number of parameters that can be set by the user.</p>
+<h5 id="number-of-looks">Number of Looks<a class="headerlink" href="#number-of-looks" title="Permanent link">&para;</a></h5>
+<p>The <strong>number of looks</strong> drives the resolution and pixel spacing of the output products. Selecting 10x2 looks will yield larger products with 80 m resolution and pixel spacing of 40 m. Selecting 20x4 looks reduces the resolution to 160 m and reduces the size of the products (roughly 1/4 the size of 10x2 look products), with a pixel spacing of 80 m. The default is 20x4 looks.</p>
+<h5 id="adaptive-phase-filter">Adaptive Phase Filter<a class="headerlink" href="#adaptive-phase-filter" title="Permanent link">&para;</a></h5>
+<p>When ordering InSAR On Demand products, users can choose to set a custom value for the Goldstein-Werner <strong>adaptive phase filter</strong> (adf). This filter improves fringe visibility and reduces phase noise in interferograms, particularly for InSAR pairs with low coherence. The filter impacts both wrapped and unwrapped interferograms, as well as the optional displacement maps generated from the unwrapped interferogram.</p>
+<p>Users can set the adaptive phase filter parameter (𝛼) value within the range of 0 to 1, with 0 indicating that no filtering occurs, and 1 indicating the strongest level of filtering. The default value is 0.6. The value should generally be greater than 0.2, and interferograms with very low coherence will benefit from higher values (closer to 1). Setting this value to 0 will result in no filter being applied.</p>
+<p>The filter is applied adaptively, meaning that regions with high coherence (where fringe patterns are easily discernible) will have more smoothing applied, while regions with low coherence will undergo less smoothing, so as not to remove residues that may represent actual deformation signals. Using this filter approach allows more of the interferogram to be unwrapped. For more information, refer to Goldstein and Werner's 1998 paper, <a href="https://doi.org/10.1029/1998GL900033" target="_blank" title="https://doi.org/10.1029/1998GL900033">Radar interferogram filtering for geophysical applications</a>.</p>
+<h5 id="apply-water-mask">Apply Water Mask<a class="headerlink" href="#apply-water-mask" title="Permanent link">&para;</a></h5>
+<p>There is an option to apply a <strong>water mask</strong>. This mask includes coastal waters and most inland waterbodies. Masking waterbodies can have a significant impact during the phase unwrapping, as water can sometimes exhibit enough coherence between acquisitions to allow for unwrapping to occur over waterbodies, which is invalid. </p>
+<p>A GeoTIFF of the water mask is always included with the InSAR product package, but when this option is selected, the conditional water mask will be applied along with coherence and intensity thresholds during the phase unwrapping process. Water masking is turned off by default. </p>
+<p>The water mask is generated by ASF using data from <a href="https://www.openstreetmap.org/about" target="_blank">OpenStreetMap</a> and/or <a href="https://esa-worldcover.org/en/about/about" target="_blank">ESA WorldCover</a> depending on location. Areas within Canada, Alaska, and Russia are primarily covered by ESA WorldCover data, while the rest of the world is covered by OpenStreetMap data. Refer to the <a href="../../water_masking/" target="_blank" title="Water Masking Documentation">Water Masking</a> documentation page for more details. </p>
+<p>This water mask is available for all longitudes, but data is only available from -85 to 85 degrees latitude. All areas between 85 and 90 degrees north latitude are treated as water, and all areas between 85 and 90 degrees south latitude are treated as land for the purposes of the water mask. </p>
+<p>Water masks were previously generated from the <a href="http://www.soest.hawaii.edu/wessel/gshhg" target="_blank" title="http://www.soest.hawaii.edu/wessel/gshhg">Global Self-consistent,
+Hierarchical, High-resolution Geography Database (GSHHG)</a> dataset, but we transitioned to using the OpenStreetMap/ESA WorldCover datasets in February 2024 to improve performance. In addition to being a more recent and accurate dataset, this also allows us to mask most inland waterbodies. When using the GSHHG dataset, we only masked large inland waterbodies; with the new mask, all but the smallest inland waterbodies are masked.</p>
+<p>We originally applied a 3 km buffer on coastlines and a 5 km buffer on the shorelines of inland waterbodies in the water mask dataset before using it to mask the interferograms, in an effort to reduce the chance that valid land pixels would be excluded from phase unwrapping. It appears, however, that the inclusion of more water pixels is more detrimental to phase unwrapping than the exclusion of some land pixels, so as of September 27, 2022, the water mask used for this option is no longer buffered. </p>
+<p>Visit our <a href="https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb" target="_blank" title="InSAR Water Masking StoryMap">InSAR Water Masking Tutorial</a> for more information about how different water masking approaches can impact the quality of an interferogram.</p>
+<h4 id="optional-files">Optional Files<a class="headerlink" href="#optional-files" title="Permanent link">&para;</a></h4>
+<p>In addition to the processing options, users can choose to add a number of ancillary files to the product package. These files are not included by default, as they increase the size of the product package and may not be of interest to all users.</p>
+<p>In Vertex, check the box in the "Include" section of the options to add these optional files to the product package. When using the HyP3 API or SDK, set the parameter to true.</p>
+<ol style="list-style-type: decimal;" type="1">
+<li>
+<p>The <strong>look vectors</strong> are stored in two files. The look vector refers the look direction back towards the sensor. The lv_theta (θ) indicates the SAR look vector elevation angle at each pixel, ranging from -π/2 (down) to π/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface. The lv_phi (φ) map indicates the SAR look vector orientation angle at each pixel, ranging from -π (west) to π (west). The look vector orientation angle is defined as the angle between the East direction and the projection of the look vector on the horizontal surface plane. The orientation angle increases towards north, with the North direction corresponding to π/2 (and south to -π/2). Both angles are expressed in radians. The default is to not include these files in the output product bundle.</p>
+</li>
+<li>
+<p>The <strong>displacement maps</strong> convert the phase difference values from the unwrapped interferogram into measurements of ground displacement in meters. The line-of-sight displacement map indicates the amount of movement away from or towards the sensor. The vertical displacement calculates the vertical component of the line-of-sight displacement, using the assumption that all deformation is in the vertical direction. These files are excluded from the product package by default.</p>
+</li>
+<li>
+<p>The <strong>wrapped phase GeoTIFF</strong> can be included in the output package. The browse version of this GeoTIFF (_color_phase.png) is always included, but the GeoTIFF version is not included by default. The specific color ramp displayed in the png is most valuable for many users, but some may wish to work with the actual wrapped phase values.</p>
+</li>
+<li>
+<p>The <strong>incidence angle maps</strong> indicate the angle of the radar signal. The local incidence angle is defined as the angle between the incident radar signal and the local surface normal, expressed in radians, while the ellipsoid incidence angle indicates the angle between the incident radar beam and the direction perpendicular to the WGS84 ellipsoid model. These files are excluded from the product package by default.</p>
+</li>
+<li>
+<p>A copy of the <strong>DEM</strong> used for processing can optionally be included in the product package. The file has been projected to a UTM Zone coordinate system, and pixel values indicate the elevation in meters. The elevation values will differ from the original <a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM" target="_blank" title="Copernicus DEM">Copernicus DEM GLO-30</a> dataset, as a geoid correction has been applied. The source DEM is also downsampled to twice the pixel spacing of the output product to smooth it for use in processing, then resampled again to match the pixel spacing of the InSAR product. The DEM is excluded by default.</p>
+</li>
+</ol>
+<h2 id="insar-workflow">InSAR Workflow<a class="headerlink" href="#insar-workflow" title="Permanent link">&para;</a></h2>
+<p>The InSAR workflow used in HyP3 was developed by ASF using GAMMA software. The steps include pre-processing steps, interferogram preparation, and product creation. Once these steps are performed, an output product package will be created. See <a href="#product-packaging" title="Jump to Product Packaging section of this document">product packaging</a> for details on the individual files included in the package.  </p>
+<h3 id="pre-processing">Pre-Processing<a class="headerlink" href="#pre-processing" title="Permanent link">&para;</a></h3>
+<p>Pre-processing steps prepare the SAR images to be used in interferometry. The pre-processing steps include image selection, ingest (including calibration), creation of a suitable DEM, and calculation of the burst overlap.</p>
+<h4 id="select-an-insar-pair">Select an InSAR Pair<a class="headerlink" href="#select-an-insar-pair" title="Permanent link">&para;</a></h4>
+<p>Although it is possible to start from RAW data, Sentinel-1 InSAR processing is typically done using <a href="https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-InterferometricWideSwathS1-Mission-Interferometric-Wide-Swath" target="_blank" title="https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-InterferometricWideSwath">Interferometric Wide swath Single Look Complex</a> (IW SLC) data as the input.  This means that the data has been formed into an image through SAR processing, but has not been multi-looked.  </p>
+<p>The SLC pair is <a href="#ordering-on-demand-insar-products" title="Jump to Ordering On Demand InSAR Products section of this document">defined by the user</a>, either through the Vertex interface, or using the HyP3 API or SDK. To ensure consistency, the older SLC image is always used as the reference image, and the younger SLC image is always used as the secondary image. This means that positive values in the resulting unwrapped interferogram represent movement away from the SAR platform and negative values represent movement towards the SAR platform. However, these values are relative to the reference point of the unwrapped interferogram. See the <a href="#reference-point" title="Jump to Reference Point section of this document">phase unwrapping section</a> for more details.</p>
+<h4 id="ingest-slc-data-into-gamma-format">Ingest SLC data into GAMMA format<a class="headerlink" href="#ingest-slc-data-into-gamma-format" title="Permanent link">&para;</a></h4>
+<p>Once the InSAR pair has been identified, the selected SLC data are ingested into GAMMA internal format. This is performed by the GAMMA program <em>par_s1_slc</em>. GAMMA format has raw data files (only data, no headers or line leaders) with metadata stored in external files with a .par extension.  </p>
+<p>During ingest into GAMMA's internal format, the SLC data is calibrated by applying the calibration coefficients that are supplied with each product. This process puts the SAR backscatter into a known scale where the diffuse volume scattering of the Amazon rainforest is a constant -6.5 dB.</p>
+<p>Immediately after ingesting the SLC, the state vectors are updated to use the best available state vectors. The state vector types in order of absolute correctness are original predicted (O), restituted (R), and precision (P). In practice, one will never receive an InSAR product that uses the original predicted orbit - only granules for which a restituted or precision orbit is available can be used in HyP3 InSAR processing. The orbit type used for generating the InSAR product is indicated in the product filename, as shown in Figure 3.</p>
+<p><img alt="Figure 3" src="../../images/orbit_in_name.png" title="Position of the orbit type in InSAR product names" /></p>
+<p><em>Figure 3: Position of the orbit type in the HyP3 product name.</em>  </p>
+<h4 id="prepare-the-dem-file">Prepare the DEM File<a class="headerlink" href="#prepare-the-dem-file" title="Permanent link">&para;</a></h4>
+<p>In order to create differential InSAR products that show motion on the ground, one must subtract the topographic phase from the interferogram. The topographic phase, in this case, is replicated by using an <a href="../../dems/" target="_blank" title="HyP3 DEM Documentation">existing DEM</a> to calculate the actual topographic phase. This phase is then removed from the interferogram leaving just the motion or deformation signal (plus atmospheric delays and noise).</p>
+<p>The DEM that is used for HyP3 InSAR processing is the 2022 Release of the <a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM" target="_blank" title="Copernicus DEM">Copernicus GLO-30 Public DEM</a> dataset <a href="https://registry.opendata.aws/copernicus-dem/" target="_blank" title="https://registry.opendata.aws/copernicus-dem">publicly available on AWS</a>. </p>
+<p>The <a href="https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM" target="_blank" title="Copernicus DEM">Copernicus DEM</a> provides higher-quality products over a wider area than the older DEMs (SRTM and NED) previously used to generate ASF's On Demand products. Refer to our <a href="../../dems/" target="_blank" title="HyP3 DEM Documentation">Digital Elevation Model Documentation</a> for more information. The Copernicus DEM provides global coverage at 30-m pixel spacing, except for <a href="../../dems/#copernicus-dem" target="_blank" title="HyP3 Copernicus DEM Documentation">areas over Armenia and Azerbaijan</a>. These gaps in coverage are filled with the Copernicus GLO-90 Public DEM, which has 90-m pixel spacing. </p>
+<p>The DEM tiles necessary to cover the input granules for the InSAR product are downloaded. A geoid correction is applied to the DEM, and it is resampled to match the <a href="#processing-options" title="Jump to Processing Options section of this document">output resolution</a> of the InSAR product (160 m for 20x4 products, 80 m for 10x2 products) and projected to the appropriate UTM Zone for the granule location.</p>
+<h4 id="calculate-overlapping-bursts">Calculate Overlapping Bursts<a class="headerlink" href="#calculate-overlapping-bursts" title="Permanent link">&para;</a></h4>
+<p>The IW SLC Sentinel-1 data comes in three sub-swaths. However, a further subdivision is made in the data, wherein <em>bursts</em> occur. Bursts are the fundamental building block for Sentinel-1 imagery. Each one is a portion of the final image, around 1500 lines long and one sub-swath width wide. Thus, the more busts, the longer the file is in length.</p>
+<p>Each burst is precisely timed to repeat at a given time interval. This consistent repeat combined with precise velocity control gives rise to the fact that the bursts start at the same time on each pass around the globe. </p>
+<p>For example, a burst images a piece of the Galápagos Islands. The next time that same piece of the island is imaged, the time of day will be the same, to within few milliseconds. Only the frames containing overlapping bursts can be used to perform InSAR processing. This means that <strong>if there is no burst overlap in the pair selected as input, the InSAR process will not run</strong>.</p>
+<p>Repeatable burst timing is exploited by HyP3 in order to calculate the bursts that overlap between two scenes.  These overlapping bursts are the only ones used in the rest of the InSAR process. The rest are discarded.</p>
+<h3 id="interferogram-creation-co-registration-and-refinement">Interferogram Creation, Co-registration and Refinement<a class="headerlink" href="#interferogram-creation-co-registration-and-refinement" title="Permanent link">&para;</a></h3>
+<p>Before the interferogram is created, the lookup table that maps from the SLC image space into a ground range image space is created. At this time, the interferogram of the topography is simulated using the previously prepared DEM.</p>
+<p>Once these steps have been performed, the two SLCs are co-registered to within 0.02 pixels. This is done by iteratively using the following steps:</p>
+<ol style="list-style-type: decimal;" type="1">
+<li>Resample the secondary SLC using previously calculated offset polynomial</li>
+<li>Match the reference and secondary SLC images using intensity cross-correlation</li>
+<li>Estimate range and azimuth offset polynomial coefficients from results of matching</li>
+<li>Create a differential interferogram using the co-registered SLCs and the simulated interferogram</li>
+<li>Update offset polynomial by adding the current estimates</li>
+</ol>
+<p>Note that these steps are automatically run 4 times.  At that point, <strong>if the last offset calculated was more than 0.02 pixels, then the procedure will fail to complete</strong>.</p>
+<p>Provided the images passed the check for convergence, the next co-registration step employs the <em>Enhanced Spectral Diversity</em> (ESD) algorithm to match the two scenes to better than 1/100th of a pixel. This is accomplished by examining the overlap area between subsequent bursts. If there is even a small offset, the phase between the bursts will not match. This phase mismatch is then used to calculate the corresponding azimuth offset.</p>
+<p>To finish interferogram processing, steps 1 through 4 are run once again, this time with the offsets from the ESD included. The output of this entire process is a <em>wrapped interferogram</em>.</p>
+<h3 id="phase-unwrapping">Phase Unwrapping<a class="headerlink" href="#phase-unwrapping" title="Permanent link">&para;</a></h3>
+<p>All of the phase differences in wrapped interferograms lie between -π and π. Phase unwrapping attempts to assign multiples of 2π to add to each pixel in the interferogram to restrict the number of 2π jumps in the phase to the regions where they may actually occur. These regions are areas of radar layover or areas of deformation exceeding half a wavelength in the sensor's line of sight. Thermal noise and interferometric decorrelation can also result in these 2π phase discontinuities called <em>residues</em>. </p>
+<p>The phase unwrapping algorithm used for these products is Minimum Cost Flow (MCF) and Triangulation. Refer to this <a href="https://www.gamma-rs.ch/uploads/media/2002-5_TR_Phase_Unwrapping.pdf" target="_blank" title="https://www.gamma-rs.ch/uploads/media/2002-5_TR_Phase_Unwrapping.pdf">Technical Report from GAMMA Remote Sensing</a> for more information on the MCF phase unwrapping approach.</p>
+<p>Note that the MCF algorithm does not generate a connected components file. If you require this file, consider using ASF's <a href="./">Burst InSAR On Demand</a> option, which includes a connected components file in each output product package.</p>
+<h4 id="filtering">Filtering<a class="headerlink" href="#filtering" title="Permanent link">&para;</a></h4>
+<p>Before the interferogram can be unwrapped, it must be filtered to remove noise. This is accomplished using an adaptive spectral filtering algorithm. This adaptive interferogram filtering aims to reduce phase noise, increase the accuracy of the interferometric phase, and reduce the number of interferogram residues as an aid to phase unwrapping. In this case, residues are points in the interferogram where the sum of the phase differences between pixels around a closed path is not 0.0, which indicates a jump in phase.</p>
+<h4 id="masking">Masking<a class="headerlink" href="#masking" title="Permanent link">&para;</a></h4>
+<p>Another step before unwrapping is to create a validity mask to guide the phase unwrapping process. This mask is generated by applying thresholds to the coherence and/or amplitude (backscatter intensity) values for an image pair. For On Demand InSAR products, we set the amplitude threshold to be 0.0 (in power scale), so that data is only excluded based on the coherence threshold.</p>
+<p>Coherence is estimated from the normalized interferogram. The pixel values in this file range from 0.0 (total decorrelation) to 1.0 (perfectly coherent). Any input pixel with a coherence value less than 0.1 is given a validity mask value of zero and not used during unwrapping.</p>
+<div class="admonition tip">
+<p class="admonition-title">Change to Validity Mask Thresholds</p>
+<p>In the past, we also used an amplitude threshold of 0.2 (in power scale) when generating the validity mask. While this approach tends to mask out inland waters, providing a less noisy interferogram in some cases, it also masks arid regions that have low amplitude values but reasonably high coherence. As of March 2022, we have set the amplitude threshold to 0.0, so that coherence is the only driver of the validity mask.</p>
+</div>
+<p>In some cases, pixels over water may still meet the coherence threshold criteria for inclusion, even though they are not valid for use during phase unwrapping. When the <a href="#apply-water-mask" title="Jump to the Apply Water Mask item in the Processing Options section of this document">water masking option</a> is applied, the validity mask is further amended to apply 0 values to any pixels classified as water in the water mask. </p>
+<p>When processing scenes with extensive coverage by coastal waters or large inland waterbodies, there can be erroneous deformation signals or phase jumps introduced if unwrapping proceeds over water as if it were land. In such cases, choosing the option to apply the water mask can significantly improve the results. Refer to our <a href="https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb" target="_blank" title="InSAR Water Masking StoryMap">InSAR Water Masking Tutorial</a> for more information.</p>
+<h4 id="reference-point">Reference point<a class="headerlink" href="#reference-point" title="Permanent link">&para;</a></h4>
+<p>In order to perform phase unwrapping, a reference point must be selected. The unwrapping will proceed relative to this reference point; the 2π integer multiples will be applied to the wrapped phase using this pixel as the starting point. The unwrapped phase value is set to 0 at the reference point.</p>
+<p>Ideally, the reference point for phase unwrapping would be located in an area with high coherence in a stable region close to an area with surface deformation. Choosing an optimal reference point requires knowledge of the site characteristics and examination of the interferogram, which is not practical in an automated, global workflow. </p>
+<p>By default, ASF's On Demand InSAR products use the location of the pixel with the highest coherence value as the reference point. The coherence map is examined to determine the maximum value, and all pixels with this value are examined using a 9-pixel window. The pixel with the highest sum of values within its 9-pixel window is selected as the reference point. If more than one pixel has the same 9-pixel sum, the pixel closest to the origin pixel (bottom left corner for ascending scenes, top right corner for descending scenes) is selected.</p>
+<p>This may be an appropriate reference point location in many cases, as it meets the criteria of having high coherence, and stable areas have higher coherence than areas undergoing significant deformation. If a user wants to set a different location as the phase unwrapping reference point, however, a correction can be applied to the unwrapped interferogram.</p>
+<p>The location of the reference point is included in the product readme file, as well as the parameter metadata text file, 
+both of which are included in the product package by default.</p>
+<p>For more information on the impact of the phase unwrapping reference point location on unwrapped phase and displacement measurements, refer to the <a href="#phase-unwrapping-reference-point" title="Jump to Phase Unwrapping Reference Point part of the Limitations section in this document">Limitations</a> section of this document, which also includes instructions for applying a correction based on a custom reference point. </p>
+<h3 id="geocoding-and-product-creation">Geocoding and Product Creation<a class="headerlink" href="#geocoding-and-product-creation" title="Permanent link">&para;</a></h3>
+<p>After the phase is unwrapped, the final steps are geocoding and product creation.  </p>
+<h4 id="geocoding">Geocoding<a class="headerlink" href="#geocoding" title="Permanent link">&para;</a></h4>
+<p>Geocoding is the process of reprojecting pixels from SAR slant range space (where all the calculations have been performed) into map-projected ground range space (where analysis of products is simplest). Using the look up table previously computed, this process takes each pixel in the input product and relocates it to the UTM zone of the DEM used in processing. This is accomplished using nearest-neighbor resampling so that original pixel values are preserved.</p>
+<h4 id="product-creation">Product Creation<a class="headerlink" href="#product-creation" title="Permanent link">&para;</a></h4>
+<p>Files are next exported from GAMMA internal format into the widely-used GeoTIFF format, complete with geolocation information. GeoTIFFs are created for amplitude, coherence, and unwrapped phase by default, and a water mask GeoTIFF is also included in the product package. Optionally, GeoTIFFs of wrapped phase, look vectors, displacement maps (line-of-sight and vertical), and incidence angle maps can be included, as can a copy of the DEM used for processing.</p>
+<h2 id="product-packaging">Product Packaging<a class="headerlink" href="#product-packaging" title="Permanent link">&para;</a></h2>
+<p>HyP3 InSAR output is a zip file containing various files, including GeoTIFFs, PNG browse images with geolocation information, Google Earth KMZ files, a metadata file, and a README file.</p>
+<h3 id="naming-convention">Naming Convention<a class="headerlink" href="#naming-convention" title="Permanent link">&para;</a></h3>
+<p>The InSAR product names are packed with information pertaining to the processing of the data, presented in the 
+following order, as illustrated in Figure 4. </p>
+<ul>
+<li>The platform names, one of Sentinel-1A, Sentinel-1B, or Sentinel-1C, are abbreviated with the letters <code>A</code>, <code>B</code>, or <code>C</code><ul>
+<li>Two of these letters follow <code>S1</code>, indicating the platform(s) used to acquire the reference and 
+  secondary images, in that order (<code>S1AA</code>, <code>S1BA</code>, <code>S1AC</code>, etc.)</li>
+</ul>
+</li>
+<li>The reference start date and time and the secondary start date and time, with the date and time 
+  separated by the letter T</li>
+<li>The polarizations for the pair, either HH or VV, the orbit type, and the days of separation for the pair</li>
+<li>The product type (always INT for InSAR) and the pixel spacing, which will be either 80 or 40, based upon the 
+  number of looks selected when the job was submitted for processing</li>
+<li>The software package used for processing is always GAMMA for GAMMA InSAR products</li>
+<li>User-defined options are denoted by three characters indicating whether the product is water masked (w) or not (u), 
+  the scene is clipped (e for entire area, c for clipped), and whether a single sub-swath was processed or the entire 
+  granule (either 1, 2, 3, or F for full swath)<ul>
+<li><em>Currently, only the water masking is available as a user-selected option; the products always include the 
+  full granule extent with all three sub-swaths</em></li>
+</ul>
+</li>
+<li>The filename ends with the ASF product ID, a 4 digit hexadecimal number</li>
+</ul>
+<p><img alt="Figure 4" src="../../images/asf_insar_names.png" title="Breakdown of ASF InSAR Naming Scheme" /></p>
+<p><em>Figure 4: Breakdown of ASF InSAR naming scheme.</em></p>
+<h3 id="image-files">Image Files<a class="headerlink" href="#image-files" title="Permanent link">&para;</a></h3>
+<p>All of the main InSAR product files are 32-bit floating-point single-band GeoTIFFs. To learn more about the rasters included in the product package, refer to the <a href="https://storymaps.arcgis.com/stories/8be186e4125741518118d0102e6835e5" target="_blank" title="Exploring Sentinel-1 InSAR StoryMap https://arcg.is/11DaW90">Exploring Sentinel-1 InSAR StoryMap</a> tutorial.</p>
+<ul>
+<li>The <em>amplitude</em> image is the calibrated radiometric backscatter from the reference granule in sigma-nought power. The image is terrain corrected using a geometric correction, but not radiometrically corrected. </li>
+<li>The <em>coherence</em> file pixel values range from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent. </li>
+<li>The <em>unwrapped phase</em> file shows the results of the phase unwrapping process. Negative values indicate movement towards the sensor, and positive values indicate movement away from the sensor. This is the main interferogram output.</li>
+<li>The <em>wrapped phase</em> file indicates the interferogram phase after applying the adaptive filter immediately before unwrapping. Values range from negative pi to positive pi. <em>(optional)</em></li>
+<li>The <em>line-of-sight displacement</em> file indicates the displacement in meters along the look direction of the sensor. The sign is opposite to that of the unwrapped phase: positive values indicate motion towards the sensor and negative values indicate motion away from the sensor. <em>(optional)</em></li>
+<li>The <em>vertical displacement</em> is generated from the line of sight displacement values, and makes the assumption that deformation only occurs in the vertical direction. Note that this assumption may not hold true in cases where the deformation also has a horizontal component. Positive values indicate uplift, and negative values indicate subsidence. <em>(optional)</em></li>
+<li>The <em>look vectors</em> theta (θ) and phi (φ) describe the elevation and orientation angles of the sensor's look direction. <em>(optional)</em></li>
+<li>The <em>incidence angle</em> maps indicate the angle between the incident signal and the surface normal of either the terrain (local incidence angle) or the ellipsoid (ellipsoid incidence angle). <em>(optional)</em></li>
+<li>The <em>DEM</em> file gives the local terrain heights in meters, with a geoid correction applied. <em>(optional)</em></li>
+<li>The <em>water mask</em> file indicates coastal waters and most inland waterbodies. Pixel values of 1 indicate land and 0 indicate water. This file is in 8-bit unsigned integer format.</li>
+</ul>
+<p>If the <strong>water mask</strong> option is selected, the water mask is applied prior to phase unwrapping to exclude water pixels from the process. The water mask is generated using the <a href="https://www.openstreetmap.org/about" target="_blank">OpenStreetMap</a> and <a href="https://esa-worldcover.org/en/about/about" target="_blank">ESA WorldCover</a> datasets. Refer to the <a href="#apply-water-mask">Water Masking Processing Option section</a> and our <a href="https://storymaps.arcgis.com/stories/485916be1b1d46889aa436794b5633cb" target="_blank" title="InSAR Water Masking StoryMap">InSAR Water Masking Tutorial</a> for more information about water masking.</p>
+<p><strong>Browse images</strong> are included for the wrapped (color_phase) and unwrapped (unw_phase) phase files, which are in PNG format and are each 2048 pixels wide. The browse images are displayed using a cyclic color ramp to generate fringes. </p>
+<ul>
+<li>Each fringe in a wrapped (color_phase) browse image represents a 2-pi phase difference, and the line-of-sight displacement for each fringe is equivalent to half the wavelength of the sensor. The wavelength of Sentinel-1 is about 5.6 cm, so each 2-pi fringe represents a line-of-sight displacement of about 2.8 cm.</li>
+<li>Each fringe in an unwrapped (unw_phase) browse image represents a phase difference of 6 pi. Because each 2-pi difference is equivalent to half the wavelength of the sensor, each 6-pi fringe represents about 8.3 cm of line-of-sight displacement for these Sentinel-1 products.</li>
+</ul>
+<p><strong>KMZ files</strong> are included for the wrapped (color_phase) and unwrapped (unw_phase) phase images, which allow users to view the outputs in Google Earth or other platforms that support kmz files. </p>
+<p>The tags and extensions used and example file names for each raster are listed in Table 2 below. </p>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_amp.tif</td>
+<td>Amplitude</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_amp.tif</td>
+</tr>
+<tr>
+<td>_corr.tif</td>
+<td>Normalized coherence file</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_corr.tif</td>
+</tr>
+<tr>
+<td>_unw_phase.tif</td>
+<td>Unwrapped geocoded interferogram</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_unw_phase.tif</td>
+</tr>
+<tr>
+<td>_wrapped_phase.tif</td>
+<td>Wrapped geocoded interferogram</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_wrapped_phase.tif</td>
+</tr>
+<tr>
+<td>_los_disp.tif</td>
+<td>Line-of-sight displacement</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_los_disp.tif</td>
+</tr>
+<tr>
+<td>_vert_disp.tif</td>
+<td>Vertical displacement</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_vert_disp.tif</td>
+</tr>
+<tr>
+<td>_lv_phi.tif</td>
+<td>Look vector φ (orientation)</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_lv_phi.tif</td>
+</tr>
+<tr>
+<td>_lv_theta.tif</td>
+<td>Look vector θ (elevation)</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_lv_theta.tif</td>
+</tr>
+<tr>
+<td>_dem.tif</td>
+<td>Digital elevation model</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_dem.tif</td>
+</tr>
+<tr>
+<td>_inc_map_ell.tif</td>
+<td>Ellipsoid incidence angle</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_inc_map_ell.tif</td>
+</tr>
+<tr>
+<td>_inc_map.tif</td>
+<td>Local incidence angle</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_inc_map.tif</td>
+</tr>
+<tr>
+<td>_water_mask.tif</td>
+<td>Water mask</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_water_mask.tif</td>
+</tr>
+<tr>
+<td>_color_phase.kmz</td>
+<td>Wrapped phase kmz file</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_color_phase.kmz</td>
+</tr>
+<tr>
+<td>_unw_phase.kmz</td>
+<td>Unwrapped phase kmz file</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_unw_phase.kmz</td>
+</tr>
+<tr>
+<td>_color_phase.png</td>
+<td>Wrapped phase browse image</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_color_phase.png</td>
+</tr>
+<tr>
+<td>_unw_phase.png</td>
+<td>Unwrapped phase browse image</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_unw_phase.png</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 2: Image files in product package</em></p>
+<h3 id="metadata-files">Metadata Files<a class="headerlink" href="#metadata-files" title="Permanent link">&para;</a></h3>
+<p>The product package also includes a number of metadata files.</p>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.README.md.txt</td>
+<td>Main README file for GAMMA InSAR</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>.README.md.txt</td>
+</tr>
+<tr>
+<td>.txt</td>
+<td>Parameters and metadata for the InSAR pair</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>.txt</td>
+</tr>
+<tr>
+<td>.tif.xml</td>
+<td>ArcGIS compliant XML metadata for GeoTIFF files</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_unw_phase.tif.xml</td>
+</tr>
+<tr>
+<td>.png.xml</td>
+<td>ArcGIS compliant XML metadata for PNG files</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_color_phase.png.xml</td>
+</tr>
+<tr>
+<td>.png.aux.xml</td>
+<td>Geolocation information for png browse images</td>
+<td>S1AB<wbr>_20171111T150004<wbr>_20171117T145926<wbr>_VVP006<wbr>_INT80<wbr>_G<wbr>_ueF<wbr>_4D09<wbr>_color_phase.png.aux.xml</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 3: Metadata files in product package</em></p>
+<h4 id="readme-file">README File<a class="headerlink" href="#readme-file" title="Permanent link">&para;</a></h4>
+<p>The text file with extension .README.md.txt explains the files included in the folder, and is customized to reflect that particular product. Users unfamiliar with InSAR products should start by reading this README file, which will give some background on each of the files included in the product folder.</p>
+<h4 id="insar-parameter-file">InSAR Parameter File<a class="headerlink" href="#insar-parameter-file" title="Permanent link">&para;</a></h4>
+<p>The text file with extension .txt includes processing parameters used to generate the InSAR product as well as metadata attributes for the InSAR pair.  These are detailed in Table 4.  </p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Possible Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reference Granule</td>
+<td>ESA granule name for reference scene (of the two scenes in the pair, the dataset with the oldest timestamp)</td>
+<td>S1A<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20200116T032559<wbr>_20200116T032627<wbr>_030820<wbr>_038928<wbr>_F5DC</td>
+</tr>
+<tr>
+<td>Secondary Granule</td>
+<td>ESA granule name for secondary scene (of the two scenes in the pair, the dataset with the newest timestamp)</td>
+<td>S1B<wbr>_IW<wbr>_SLC<wbr>__1SDV<wbr>_20200128T032559<wbr>_20200128T032627<wbr>_030995<wbr>_038F51<wbr>_7D4F</td>
+</tr>
+<tr>
+<td>Reference Pass Direction</td>
+<td>Orbit direction of the reference scene</td>
+<td>DESCENDING</td>
+</tr>
+<tr>
+<td>Reference Orbit Number</td>
+<td>Absolute orbit number of the reference scene</td>
+<td>30741</td>
+</tr>
+<tr>
+<td>Secondary Pass Direction</td>
+<td>Orbit direction of the reference scene</td>
+<td>DESCENDING</td>
+</tr>
+<tr>
+<td>Secondary Orbit Number</td>
+<td>Absolute orbit number of the secondary scene</td>
+<td>31091</td>
+</tr>
+<tr>
+<td>Baseline</td>
+<td>Perpendicular baseline in meters</td>
+<td>58.3898</td>
+</tr>
+<tr>
+<td>UTCTime</td>
+<td>Time in the UTC time zone in seconds</td>
+<td>12360.691361</td>
+</tr>
+<tr>
+<td>Heading</td>
+<td>Spacecraft heading measured in degrees clockwise from north</td>
+<td>193.2939317</td>
+</tr>
+<tr>
+<td>Spacecraft height</td>
+<td>Height in meters of the spacecraft above nadir point</td>
+<td>700618.6318999995</td>
+</tr>
+<tr>
+<td>Earth radius at nadir</td>
+<td>Ellipsoidal earth radius in meters at the point directly below the satellite</td>
+<td>6370250.0667</td>
+</tr>
+<tr>
+<td>Slant range near</td>
+<td>Distance in meters from satellite to nearest point imaged</td>
+<td>799517.4338</td>
+</tr>
+<tr>
+<td>Slant range center</td>
+<td>Distance in meters from satellite to the center point imaged</td>
+<td>879794.1404</td>
+</tr>
+<tr>
+<td>Slant range far</td>
+<td>Distance in meters from satellite to farthest point imaged</td>
+<td>960070.8469</td>
+</tr>
+<tr>
+<td>Range looks</td>
+<td>Number of looks taken in the range direction</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Azimuth looks</td>
+<td>Number of looks taken in the azimuth direction</td>
+<td>4</td>
+</tr>
+<tr>
+<td>InSAR phase filter</td>
+<td>Name of the phase filter used</td>
+<td>adf</td>
+</tr>
+<tr>
+<td>Phase filter parameter</td>
+<td>Dampening factor</td>
+<td>0.6</td>
+</tr>
+<tr>
+<td>Resolution of output (m)</td>
+<td>Pixel spacing in meters for output products</td>
+<td>80</td>
+</tr>
+<tr>
+<td>Range bandpass filter</td>
+<td>Range bandpass filter applied</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Azimuth bandpass filter</td>
+<td>Azimuth bandpass filter applied</td>
+<td>no</td>
+</tr>
+<tr>
+<td>DEM source</td>
+<td>DEM used in processing</td>
+<td>GLO-30</td>
+</tr>
+<tr>
+<td>DEM resolution</td>
+<td>Pixel spacing in meters for DEM used to process this scene</td>
+<td>160</td>
+</tr>
+<tr>
+<td>Unwrapping type</td>
+<td>Phase unwrapping algorithm used</td>
+<td>mcf</td>
+</tr>
+<tr>
+<td>Phase at Reference Point</td>
+<td>Original unwrapped phase value at the reference point (set to 0 in output unwrapped phase raster)</td>
+<td>-4.21967</td>
+</tr>
+<tr>
+<td>Azimuth line of the reference point in SAR space</td>
+<td>Row number (in SAR space) of the reference point</td>
+<td>2737.0</td>
+</tr>
+<tr>
+<td>Range pixel of the reference point in SAR space</td>
+<td>Column number (in SAR space) of the reference point</td>
+<td>739.0</td>
+</tr>
+<tr>
+<td>Y coordinate of the reference point in the map projection</td>
+<td>Latitude of the reference point in projected coordinates (UTM Zone - meters)</td>
+<td>4112453.3223</td>
+</tr>
+<tr>
+<td>X coordinate of the reference point in the map projection</td>
+<td>Longitude of the reference point in projected coordinates (UTM Zone - meters)</td>
+<td>589307.6248</td>
+</tr>
+<tr>
+<td>Latitude of the reference point (WGS84)</td>
+<td>Latitude of the reference point in WGS84 Geographic Coordinate System (degrees)</td>
+<td>37.1542125</td>
+</tr>
+<tr>
+<td>Longitude of the reference point (WGS84)</td>
+<td>Longitude of the reference point in WGS84 Geographic Coordinate System (degrees)</td>
+<td>40.00574707</td>
+</tr>
+<tr>
+<td>Unwrapping threshold</td>
+<td>Minimum coherence required to unwrap a given pixel</td>
+<td>none</td>
+</tr>
+<tr>
+<td>Speckle filter</td>
+<td>Speckle filter applied</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 4: List of InSAR parameters included in the parameter text file</em></p>
+<h4 id="arcgis-compatible-xml-files">ArcGIS-Compatible XML Files<a class="headerlink" href="#arcgis-compatible-xml-files" title="Permanent link">&para;</a></h4>
+<p>There is an ArcGIS-compatible XML file for each raster in the product folder. When ArcGIS Desktop users view any of the rasters in ArcCatalog or the Catalog window in ArcMap, they can open the Item Description to view the contents of the associated XML file. ArcGIS Pro users can access the information from the Metadata tab. These files will not appear as separate items in ArcCatalog, though if you use Windows Explorer to look at the contents of the folder you will see them listed individually. Because each one is named identically to the product it describes (with the addition of the .xml extension), ArcGIS recognizes the appropriate file as the raster’s associated metadata, and integrates the metadata accordingly.</p>
+<p>ArcGIS users should take care not to change these XML files outside of the ArcGIS environment; changing the filename or content directly may render the files unreadable by ArcGIS.</p>
+<p>Those not using ArcGIS will still find the contents of these XML files useful, but will have to contend with the XML tagging when viewing the files as text or in a browser.</p>
+<h4 id="auxiliary-geolocation-files">Auxiliary Geolocation Files<a class="headerlink" href="#auxiliary-geolocation-files" title="Permanent link">&para;</a></h4>
+<p>Geolocation XML files (aux files) are included for each of the PNG browse images to allow for proper display in GIS platforms.</p>
+<h2 id="data-access">Data Access<a class="headerlink" href="#data-access" title="Permanent link">&para;</a></h2>
+<p>Refer to the <a href="../../using/downloading/" title="hyp3-docs.asf.alaska.edu/using/downloading">Downloads</a> 
+page for more information on viewing and downloading On Demand InSAR products in Vertex or programmatically. 
+Once processing is complete, download links for On Demand products are valid for 14 days.</p>
+<p>Step-by-step instructions for finding and downloading InSAR On Demand products in Vertex are available in the 
+<a href="https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3#ref-n-NRdP9N" target="_blank" title="InSAR On Demand! StoryMap Tutorial - On Demand Search">Submit/Download Jobs</a> section of the 
+<a href="https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank" title="InSAR On Demand! StoryMap Tutorial">InSAR On Demand!</a> interactive StoryMap tutorial.</p>
+<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
+<h3 id="baseline-calculation">Baseline Calculation<a class="headerlink" href="#baseline-calculation" title="Permanent link">&para;</a></h3>
+<p>The baseline is defined as the difference of the platform positions when a given area is imaged. HyP3 baselines are calculated using the best state vectors available. If precise orbits are not yet available for the input granules, restituted orbits will be used. The original predicted orbits are not used for InSAR processing in HyP3. <strong>If no restituted or precise state vectors are available, the process will not run.</strong></p>
+<h3 id="coherence">Coherence<a class="headerlink" href="#coherence" title="Permanent link">&para;</a></h3>
+<p>The phase measurements in the two images used in InSAR must be coherent in order to detect change. Random changes in phase from one acquisition to the next can mask actual surface deformation. Vegetation is a common driver of decorrelation, as changes can easily take place in the interval between two acquisitions due to growth, seasonal changes, or wind effects. It will be difficult to generate valid interferograms with C-band data in heavily vegetated regions due to lack of coherence even with fairly short time intervals.</p>
+<p>Consider seasonality when selecting image pairs. Decorrelation can be particularly high when comparing phase from different seasons. Changes in the condition of vegetation (especially deciduous canopies), snow, moisture, or freeze/thaw state can impact phase measurements. In cases where a temporal baseline is required that spans seasons, it may be better to use an annual interferogram if possible so that the images are more comparable in terms of seasonality.</p>
+<h3 id="line-of-sight-measurements">Line-of-Sight Measurements<a class="headerlink" href="#line-of-sight-measurements" title="Permanent link">&para;</a></h3>
+<p>When looking at a single interferogram, the deformation measurements in the line-of-sight orientation of the sensor indicate relative motion towards or away from the sensor. InSAR is not sensitive to motion in the azimuth direction of the satellite, so motion that occurs in the same direction as the satellite's direction of travel will not be detected.</p>
+<p>A single interferogram cannot be used to determine the relative contributions of vertical and horizontal movement to the line-of-sight displacement measurement. The vertical displacement map is generated based on the assumption that the movement is entirely in the vertical direction, which may not be realistic for some processes. To determine how much of the signal is driven by vertical vs. horizontal movement, you must either use a time series of interferograms, or use reference measurements with known vertical and horizontal components (such as GNSS measurements from the region of deformation) to deconstruct the line-of-sight displacement.</p>
+<p>All displacement values are calculated relative to a <a href="#phase-unwrapping-reference-point" title="Jump to Phase Unwrapping Reference Point part of Limitations section in this document">reference point</a>, which may or may not be an appropriate benchmark for measuring particular areas of displacement within the interferogram.</p>
+<h3 id="phase-unwrapping-reference-point">Phase Unwrapping Reference Point<a class="headerlink" href="#phase-unwrapping-reference-point" title="Permanent link">&para;</a></h3>
+<p>The reference point for phase unwrapping is set to be the location of the pixel with the highest coherence value. As described in the <a href="#reference-point" title="Jump to Reference Point section of this document">phase unwrapping section</a>, this may not always be an ideal location to use as a reference point. If it is located in an area undergoing deformation, or in a patch of coherent pixels that is separated from the area undergoing deformation by a gap of incoherent pixels, the unwrapping may be of lower quality than if the reference point was in a more suitable location.</p>
+<p>Even when there are not phase unwrapping errors introduced by phase discontinuities, it is important to be aware that unwrapped phase differences and displacement values are all calculated relative to the reference point. The phase difference value of the reference point is set to 0 during phase unwrapping, so any displacement values will be relative to that benchmark. If the location of the default reference point is in the middle of an area that underwent deformation, displacement values may be different than expected.</p>
+<p>If you are interested in the amount of displacement in a particular area, you may wish to choose your own reference point. The ideal reference point would be in an area of high coherence beyond where deformation has occurred. The unwrapped phase measurements can be adjusted to be relative to this new reference point, and displacement values can be recalculated accordingly. To adjust the values in the unwrapped phase GeoTIFF, simply select a reference point that is optimal for your use case and subtract the unwrapped phase value of that reference point from each pixel in the unwrapped phase raster:</p>
+<p><strong>ΔΨ<sup>&ast;</sup></strong> = <strong>ΔΨ</strong> - Δψ<sub>ref</sub></p>
+<p>where <strong>ΔΨ<sup>&ast;</sup></strong> is the adjusted unwrapped phase, <strong>ΔΨ</strong> is the original unwrapped phase, and Δψ<sub>ref</sub> is the unwrapped phase value at the new reference point.</p>
+<h4 id="impacts-on-displacement-measurements">Impacts on Displacement Measurements<a class="headerlink" href="#impacts-on-displacement-measurements" title="Permanent link">&para;</a></h4>
+<p>The measurements in the displacement maps are calculated from the unwrapped phase values, so will similarly be impacted by the location of the reference point. You may wish to recalculate the displacement values relative to a new reference point. The approach for correcting the displacement maps will be different for the line-of-sight and vertical measurements.</p>
+<h5 id="correcting-line-of-sight-displacement-maps">Correcting Line-of-Sight Displacement Maps<a class="headerlink" href="#correcting-line-of-sight-displacement-maps" title="Permanent link">&para;</a></h5>
+<p>If you have already corrected the unwrapped phase raster, you can calculate a new line-of-sight (LOS) displacement map by applying the following calculation on a pixel-by-pixel basis using the unwrapped phase GeoTIFF:</p>
+<p><strong>ΔΩ<sup>&ast;</sup></strong> = - <strong>ΔΨ<sup>&ast;</sup></strong> λ / 4π</p>
+<p>where <strong>ΔΩ<sup>&ast;</sup></strong> is the adjusted line-of-sight displacement in meters, <strong>ΔΨ<sup>&ast;</sup></strong> is the <a href="#phase-unwrapping-reference-point" title="Jump to Phase Unwrapping Reference Point part of Limitations section in this document">adjusted unwrapped phase</a>, and λ is the wavelength of the sensor in meters (0.055465763 for Sentinel-1).</p>
+<p>Setting the <strong>ΔΨ<sup>&ast;</sup></strong> value to be negative reverses the sign so that the difference is relative to the earth rather than the sensor. A positive phase difference value indicates subsidence, which is unintuitive when thinking about movement on the earth's surface. Applying the negative will return positive displacement values for uplift and negative values for subsidence.</p>
+<p>If you are not interested in adjusted unwrapped phase values, you can also directly correct the LOS Displacement map included optionally in the InSAR product package:</p>
+<p><strong>ΔΩ<sup>&ast;</sup></strong> = <strong>ΔΩ</strong> - Δω<sub>ref</sub></p>
+<p>where <strong>ΔΩ<sup>&ast;</sup></strong> is the adjusted line-of-sight displacement in meters, <strong>ΔΩ</strong> is the original line-of-sight displacement in meters, and Δω<sub>ref</sub> is the line-of-sight displacement value at the new reference point.</p>
+<h5 id="correcting-vertical-displacement-maps">Correcting Vertical Displacement Maps<a class="headerlink" href="#correcting-vertical-displacement-maps" title="Permanent link">&para;</a></h5>
+<p>Vertical displacement maps cannot be adjusted directly, and must be recalculated from the adjusted unwrapped phase image. You will also need the θ look vector map (lv_theta GeoTIFF) for this calculation. The look vector maps are not included in the InSAR product package by default; the option to Include Look Vectors must be selected when ordering the product.</p>
+<p>To calculate an adjusted vertical displacement raster, calculate the <a href="#phase-unwrapping-reference-point" title="Jump to Phase Unwrapping Reference Point part of Limitations section in this document">adjusted unwrapped phase</a>, then apply the following:</p>
+<p><strong>Δϒ<sup>&ast;</sup></strong> = - <strong>ΔΨ<sup>&ast;</sup></strong> λ cos(½π - <strong><em>LV</em><sub>θ</sub></strong>) / 4π</p>
+<p>where <strong>Δϒ<sup>&ast;</sup></strong> is the adjusted vertical displacement in meters, <strong>ΔΨ<sup>&ast;</sup></strong> is the adjusted unwrapped phase, λ is the wavelength of the sensor in meters (0.055465763 for Sentinel-1), and <strong><em>LV</em><sub>θ</sub></strong> is the theta look vector (from the lv_theta GeoTIFF).</p>
+<p>As with the LOS Displacement maps, setting the <strong>ΔΨ<sup>&ast;</sup></strong> value to be negative reverses the sign so that the difference is relative to the earth rather than the sensor. Applying the negative will return positive displacement values for uplift and negative values for subsidence.</p>
+<h4 id="displacement-values-from-a-single-interferogram">Displacement Values from a Single Interferogram<a class="headerlink" href="#displacement-values-from-a-single-interferogram" title="Permanent link">&para;</a></h4>
+<p>In general, calculating displacement values from a single interferogram is not recommended. While the displacement rasters provided with ASF's On Demand InSAR products can be helpful in visualizing changes, we do not recommend that you rely on a single interferogram when coming to conclusions about surface displacement, even if you apply a correction based on a manually selected reference point. It will be more robust to use a time series approach to more accurately determine the pattern of movement. When using SAR time-series software such as <a href="https://mintpy.readthedocs.io/en/latest/" target="_blank" title="https://mintpy.readthedocs.io/en/latest">MintPy</a>, you have the option to select a specific reference point, and the values of the input rasters will be adjusted accordingly.</p>
+<h2 id="error-sources">Error Sources<a class="headerlink" href="#error-sources" title="Permanent link">&para;</a></h2>
+<p>On Demand InSAR products do not currently correct for some common sources of error in interferometry, such as atmospheric effects. Further processing or time series analysis can be performed by the user to identify or reduce the impact of some of these errors when using On Demand InSAR products for analysis.</p>
+<h3 id="atmospheric-delay">Atmospheric Delay<a class="headerlink" href="#atmospheric-delay" title="Permanent link">&para;</a></h3>
+<p>While SAR signals can penetrate clouds, atmospheric conditions can delay the transmission of the signal. This results in phase differences that can look like surface deformation signals but are actually driven by differences in the atmospheric conditions between the pair of acquisitions used to generate the interferogram.</p>
+<p>In some cases, atmospheric errors can be corrected by using an atmospheric model to remove the impacts of the turbulent delay from the interferogram. Another approach is to use time series analysis to identify outliers.</p>
+<p><strong><em>Always doubt your interferogram first!</em></strong> View the interferogram critically, and consider if fringe patterns could potentially be driven by atmospheric effects. In general, it is best to avoid drawing conclusions from the outcome of a single interferogram.</p>
+<p>Tropospheric phase may be less impactful when considering small-scale deformation. As such, if you are using ASF's <a href="../burst_insar_product_guide/" target="_blank" title="Sentinel-1 Burst InSAR Product Guide">Sentinel-1 Burst InSAR products</a> to look at deformation signals that are smaller than 1 km&sup2;, you should consider using methods other than the typical atmospheric model-based corrections to remove the effects of atmospheric delay. Potential methods in this case include applying band-pass or high-pass spatial filters, or spatial averaging filters such as the approach outlined in <a href="https://doi.org/10.1016/j.rse.2020.111983" target="_blank" title="https://doi.org/10.1016/j.rse.2020.111983">Bekaert et al., 2020</a>.</p>
+<h4 id="turbulent-delay">Turbulent Delay<a class="headerlink" href="#turbulent-delay" title="Permanent link">&para;</a></h4>
+<p>These delays are generally caused by differences in water vapor distribution from one image to the next. They often manifest as wobbly or sausage-shaped fringes, and can potentially mask the signal of a small earthquake.</p>
+<h4 id="stratified-delay">Stratified Delay<a class="headerlink" href="#stratified-delay" title="Permanent link">&para;</a></h4>
+<p>This type of delay is driven mostly by pressure and temperature differences or gradients through the atmospheric column, and often correlates with topography. This atmospheric signature can be confused with movement caused by volcanic activity. If there are multiple volcanoes in an image, and they all exhibit similar patterns, the signal is likely being driven by this type of atmospheric delay.</p>
+<h3 id="dem-errors">DEM Errors<a class="headerlink" href="#dem-errors" title="Permanent link">&para;</a></h3>
+<p>A DEM is used to remove topographic phase impacts, but if there are inaccuracies in the DEM, residual impacts of those errors can remain in the interferogram.</p>
+<h3 id="orbit-uncertainties">Orbit Uncertainties<a class="headerlink" href="#orbit-uncertainties" title="Permanent link">&para;</a></h3>
+<p>This is generally not an issue for Sentinel-1 data, as the orbits are very precise and generally reliable. On Demand InSAR products are only processed once <a href="#baseline-calculation" title="Jump to Baseline Calculation section of this document">restituted or precise orbits</a> are available. Orbit uncertainties are more problematic when working with datasets from older missions.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Adapted from https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/partials/footer.html -->
+
+<!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+      
+      <nav
+        class="md-footer__inner md-grid"
+        aria-label="Footer"
+        
+      >
+
+        <!-- Link to previous page -->
+        
+          
+          <a
+            href="./"
+            class="md-footer__link md-footer__link--prev"
+            aria-label="Previous: InSAR"
+          >
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                InSAR
+              </div>
+            </div>
+          </a>
+        
+
+        <!-- Link to next page -->
+        
+          
+          <a
+            href="../burst_insar_product_guide/"
+            class="md-footer__link md-footer__link--next"
+            aria-label="Next: Burst InSAR"
+          >
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Burst InSAR
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+      <!-- ASF Footer information-->
+      <div class="md-grid">
+        <div class="md-footer-container md-grid">
+          <div class="md-footer-container-item">
+            <img src="../../images/asf-logo-blue-nav.png"
+                 alt="ASF Logo"
+                 class="md-footer-logo">
+          </div>
+          <div class="md-footer-container-item md-about-us">
+            <h1>About Us</h1>
+            <p>
+              The Alaska Satellite Facility downlinks, processes, archives, and
+              distributes remote-sensing data to scientific users around the world.
+              ASF’s mission is to make remote-sensing data accessible.
+            </p>
+            <p>
+              <a href="https://asf.alaska.edu/about-asf/" target="_blank">
+                Read More
+              </a>
+            </p>
+          </div>
+          <div class="md-footer-container-item md-contact-info">
+            <h1>Contact Info</h1>
+            <p>
+              Alaska Satellite Facility<br>
+              2156 Koyukuk Drive<br>
+              Fairbanks, AK 99775<br>
+              (907) 474-5041<br>
+              uso@asf.alaska.edu<br>
+            </p>
+            <p>
+              <a href="javascript:feedback.showForm();">Send Us A Message</a>
+            </p>
+          </div>
+        </div>
+      </div>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <!--
+  Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Adapted from https://github.com/squidfunk/mkdocs-material/blob/9.4.2/src/templates/partials/copyright.html -->
+
+<!-- Copyright and theme information -->
+<div class="md-copyright">
+  <div class="md-copyright__highlight">
+    
+      &copy; <span id="copyright-year"></span>
+      <script type="text/javascript">
+          current_year = new Date().getFullYear();
+          document.getElementById("copyright-year").innerHTML=current_year;
+      </script>
+      Alaska Satellite Facility
+    
+    <!-- ASF non-discrimination disclaimer-->
+    &nbsp;&nbsp;
+    <a href="https://www.alaska.edu/nondiscrimination"
+       target="_blank"
+       class="md-copyright-link">
+      UA is an AA/EO employer and educational institution and prohibits
+      illegal discrimination against any individual
+    </a>
+  </div>
+</div>
+
+      <!-- Social links -->
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.facebook.com/AKSatellite" target="_blank" rel="noopener" title="www.facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m279.14 288 14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/Ak_Satellite" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UChCfI0oVWw4qDwEidnDskJQ" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://gitter.im/ASFHyP3/community" target="_blank" rel="noopener" title="gitter.im" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M66.4 322.5H16V0h50.4v322.5zM166.9 76.1h-50.4V512h50.4V76.1zm100.6 0h-50.4V512h50.4V76.1zM368 76h-50.4v247H368V76z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+    
+      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+    <script src="../../javascripts/expert-rec-search.js"></script>
+
+  </body>
+</html>

@@ -31,7 +31,7 @@ clicks away.
  
     !["HyP3+ logo"](images/HyP3+_Logo_Icon_Only.png){ width="100";  style="float: left;" }
 
-    For users who need more processing than the 10,000 credit limit allows, ASF now hosts 
+    For users who need more processing than the {{ CREDITS_PER_MONTH }} credit limit allows, ASF now hosts
     [HyP3+](about/hyp3_plus.md "Jump to the HyP3+ Landing Page"), a user-supported 
     version of HyP3 that allows you to purchase as many credits as you need. 
 
@@ -64,7 +64,7 @@ our user-supported service that lets you take your application global. Need help
       </td>
     </tr>
     <tr>
-      <td class="tg-0pky">10,000 <a href="/using/credits" title="Jump to Credits Documentation">Credits</a> per month free*</td>
+      <td class="tg-0pky">{{ CREDITS_PER_MONTH }} <a href="/using/credits" title="Jump to Credits Documentation">Credits</a> per month free*</td>
       <td class="tg-0pky">1 Credit = $0.05</td>
     </tr>
   </tbody>

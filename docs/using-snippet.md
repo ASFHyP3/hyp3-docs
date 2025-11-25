@@ -6,7 +6,7 @@ These services are currently only available for
 
 Different HyP3 job types consume different credit amounts. In 
 [HyP3 Basic](about/hyp3_basic.md "Jump to HyP3 Basic Documentation"), 
-users are allotted 10,000 credits per month for free. Refer to the
+users are allotted {{ CREDITS_PER_MONTH }} credits per month for free. Refer to the
 [Credits page](using/credits.md "Jump to the Credits documentation page") 
 for more information. 
 

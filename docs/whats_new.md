@@ -6,7 +6,7 @@
 credits per user per month.** Due to NASA budget reductions, we have had to reduce our On Demand processing capacity,
 and can no longer support the same volume of product generation as we have in the past.
 
-ASF's HyP3 has generated over 12 million analysis-ready Sentinel-1 products since its public debut in October 2020, made
+HyP3 has generated over 12 million analysis-ready Sentinel-1 products since its public debut in October 2020, made
 possible through generous funding from NASA. We now generate about half a million products a month on behalf of more
 than 1,000 users.
 

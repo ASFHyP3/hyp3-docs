@@ -86,7 +86,7 @@ nav:
     - RTC:
       - guides/rtc_product_guide.md
       - Product Guide: guides/rtc_product_guide.md
-      - StoryMap: https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35" target="_blank
+      - StoryMap: tutorials/rtc_storymap.md
       - Theoretical Basis: guides/rtc_atbd.md
     - InSAR:
       - guides/insar_product_guide.md

@@ -36,7 +36,7 @@ For Sentinel-1 RTC applications:
   [20-m pixel spacing](https://hyp3-docs.asf.alaska.edu/guides/rtc_product_guide/#pixel-spacing), which consumes fewer
   processing credits than 10-m pixel spacing while still providing much more detail than 30-m products.
 
-For applications requiring more than {{ CREDITS_PER_MONTH }} credits worth of processing each month:
+For applications requiring more than 8,000 credits worth of processing each month:
 
 - Consider ASF’s recently-launched [HyP3+](https://hyp3-docs.asf.alaska.edu/about/hyp3_plus/) service, which allows
   users to purchase additional processing credits.

@@ -6,7 +6,7 @@ ASF's on-demand processing service, HyP3, has created more than 11 million analy
 
 This free service is currently made possible through generous funding from NASA.
 
-To ensure this service is accessible to the entire community, we have created a credit system and implemented a round-robin processing queue. The current monthly allocation of 10,000 credits per user has served the majority of our users well, but we regularly receive requests for credit increases. We’re happy to grant them when our budget allows!
+To ensure this service is accessible to the entire community, we have created a credit system and implemented a round-robin processing queue. The current monthly allocation of {{ CREDITS_PER_MONTH }} credits per user has served the majority of our users well, but we regularly receive requests for credit increases. We’re happy to grant them when our budget allows!
 
 Growing uncertainty around federal funding and the continued growth of on-demand processing needs could soon leave us unable to meet the needs of our user community with our existing HyP3 service. 
 

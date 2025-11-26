@@ -29,9 +29,9 @@ For Sentinel-1 InSAR applications:
 
 For Sentinel-1 RTC applications:
 
-- Consider the [OPERA RTC-S1](https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b) dataset available
-  through ASF. This data product includes near-global coverage from 2016 to present at 30-m pixel spacing, potentially
-  eliminating the need for on-demand processing.
+- Consider the [OPERA RTC-S1](https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b "OPERA Sentinel-1 RTC StoryMap Tutorial" ){target=_blank} 
+  dataset available through ASF. This data product includes near-global coverage from 2016 to present at 30-m pixel 
+  spacing, potentially eliminating the need for on-demand processing.
 - For applications requiring a finer resolution, consider requesting On Demand RTC products with
   [20-m pixel spacing](https://hyp3-docs.asf.alaska.edu/guides/rtc_product_guide/#pixel-spacing), which consumes fewer
   processing credits than 10-m pixel spacing while still providing much more detail than 30-m products.

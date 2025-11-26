@@ -7,7 +7,7 @@ NASA's [Earthdata Cloud (EDC)](https://www.earthdata.nasa.gov/about/earthdata-cl
 Anyone can use HyP3 Basic. All you need are 
 [Earthdata Login credentials](../using/authentication.md#earthdata-login-edl "Jump to EDL Documentation"). 
 
-Each user receives {{ CREDITS_PER_MONTH }} credits each month to use for processing any On Demand products. Different HyP3 job types
+Each user receives {{ CREDITS_PER_MONTH }} credits each month to use for processing any On Demand products. Different HyP3 job types 
 consume different credit amounts, as defined in the 
 [Credit Cost Table](../using/credits.md#credit-cost-table "Jump to the Credit Cost Table on the Credits Documentation page"). 
 If you need to process more data than is possible with this credit allotment, you can purchase additional credits using 

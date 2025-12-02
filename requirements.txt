@@ -1,8 +1,8 @@
-mkdocs==1.5.3
-mkdocs-material==9.4.2
+mkdocs==1.6.1
+mkdocs-material==9.7.0
 mkdocs-redirects
 mkdocs-section-index
-mkdocstrings==0.28.3
+mkdocstrings==1.0.0
 mkdocstrings-python
 mkdocs-macros-plugin
 requests

@@ -38,7 +38,8 @@ month if you spent your entire monthly HyP3 Basic credit allotment on jobs of th
 | [**Burst InSAR**](../guides/burst_insar_product_guide.md)     |                |                                            |                                                            |
 | {{ table_indent() }} 80-m pixel spacing (20x4 looks)          |                |                                            |                                                            |
 | {{ table_indent(count=2) }} 1–4 pairs                         |       1        |          {{ hyp3_plus_cost(1) }}           |                {{ max_jobs_per_month(1) }}                 |
-| {{ table_indent(count=2) }} 5–15 pairs                        |       5        |          {{ hyp3_plus_cost(5) }}           |                {{ max_jobs_per_month(5) }}                 |
+| {{ table_indent(count=2) }} 5–12 pairs                        |       5        |          {{ hyp3_plus_cost(5) }}           |                {{ max_jobs_per_month(5) }}                 |
+| {{ table_indent(count=2) }} 13–15 pairs                       |       10       |          {{ hyp3_plus_cost(10) }}          |                {{ max_jobs_per_month(10) }}                |
 | {{ table_indent() }} 40-m pixel spacing (10x2 looks)          |                |                                            |                                                            |
 | {{ table_indent(count=2) }} 1–3 pairs                         |       1        |          {{ hyp3_plus_cost(1) }}           |                {{ max_jobs_per_month(1) }}                 |
 | {{ table_indent(count=2) }} 4–9 pairs                         |       5        |          {{ hyp3_plus_cost(5) }}           |                {{ max_jobs_per_month(5) }}                 |

@@ -100,12 +100,10 @@ ARIA-S1-GUNW jobs for On Demand processing.
 
 ## Ordering On Demand Products
 
-!!! tip "ARIA-S1-GUNW On Demand Search now available in Vertex!"
+Users can now view and select ARIA Frames and submit On Demand processing jobs directly in Vertex!    
 
-    Users can now view and select ARIA Frames and submit On Demand processing jobs directly in Vertex!    
-
-    Simply activate the On Demand toggle switch in the Geographic Search interface for the ARIA S1 GUNW Dataset 
-    to view ARIA frames and select date pairs to submit for processing.
+Simply activate the On Demand toggle switch in the Geographic Search interface for the ARIA S1 GUNW Dataset 
+to view ARIA frames and select date pairs to submit for processing.
 
 If the ARIA-S1-GUNW products you need are not available in the archive, you can use ASF's On Demand platform to submit 
 custom ARIA-S1-GUNW jobs for processing. Once processing is complete, there are a couple of different approaches for 
@@ -118,14 +116,7 @@ custom ARIA-S1-GUNW jobs for processing. Once processing is complete, there are 
 - Products generated On Demand are also added to the archive and can be accessed by 
   [searching for ARIA-S1-GUNW](#accessing-products-in-the-archive "Jump to the Accessing Products in the Archive section of this document" ) 
   products.
-    - The links to the archived products never expire. 
-
-!!! tip "Sentinel-1C acquisitions now supported for ARIA-S1-GUNW products" 
-
-    The code used for processing ARIA-S1-GUNW products has been updated to support Sentinel-1C acquisitions. You 
-    can now find archived ARIA-S1-GUNW products that include S1C acquisitions, and S1C acquisitions can be submitted 
-    for processing ARIA-S1-GUNW On Demand using the HyP3 API or SDK. Vertex support for submitting requests for 
-    On Demand ARIA-S1-GUNW products including S1C acquisitions is coming soon. 
+    - The links to the archived products never expire.
 
 ### ARIA Frame ID Maps
 

@@ -100,11 +100,6 @@ ARIA-S1-GUNW jobs for On Demand processing.
 
 ## Ordering On Demand Products
 
-Users can now view and select ARIA Frames and submit On Demand processing jobs directly in Vertex!    
-
-Simply activate the On Demand toggle switch in the Geographic Search interface for the ARIA S1 GUNW Dataset 
-to view ARIA frames and select date pairs to submit for processing.
-
 If the ARIA-S1-GUNW products you need are not available in the archive, you can use ASF's On Demand platform to submit 
 custom ARIA-S1-GUNW jobs for processing. Once processing is complete, there are a couple of different approaches for 
 [accessing On Demand ARIA-S1-GUNW products](#data-access "Jump to the Data Access section of this document"):

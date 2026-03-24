@@ -143,6 +143,8 @@ for the **ARIA S1 GUNW** Dataset and activate the **On Demand** toggle switch to
 
     - Recall that there are different frame maps available for Ascending and Descending orbit directions. Verify that 
       you have selected the desired orbit direction.
+    - To select a different direction, click on the Filters button and use the **Direction** filter in the 
+      **Additional Filters** section to select Ascending or Descending.
 
 2. Click on the desired frame and click **Build SBAS SLC Stack** to find available date pairings for that frame.
 
@@ -156,7 +158,19 @@ dates that have the required 90% coverage of the ARIA Frame to submit for proces
 
 ![Submit an ARIA GUNW job](../images/aria-gunw-submit-job.png "Submit an ARIA S1 GUNW Job for On Demand Processing")
 
-If ARIA-S1-GUNW jobs are submitted from the SBAS interface _without_ **Frame Mode** turned on, the jobs will fail.
+!!! warning "ARIA-S1-GUNW Jobs Require SBAS Frame Mode"
+
+    If ARIA-S1-GUNW jobs are submitted from the SBAS interface _without_ **Frame Mode** turned on, the jobs will fail. 
+    
+    To avoid potential errors when submitting ARIA-S1-GUNW jobs, it is best to use the ARIA-S1-GUNW 
+    Geographic Search interface to launch the SBAS tool, which automatically provides the correct settings to 
+    support ARIA-S1-GUNW SBAS stacks. 
+
+    If you do access the SBAS tool using a Sentinel-1 Geographic Search, you will need to activate the **Frame Mode** 
+    toggle _AND_ enter a valid ARIA Frame ID instead of a Sentinel-1 Scene name before you can submit 
+    ARIA-S1-GUNW jobs for On Demand processing.
+    
+    !["ARIA GUNW Frame Mode"](../images/aria-gunw-frame-mode.png){ style="float: center;" }
 
 ### Submit On Demand ARIA-S1-GUNW Jobs
 
@@ -178,6 +192,17 @@ To submit an ARIA_S1_GUNW job programmatically, all you need is:
 - the secondary date, which is the **earlier pass** over the ARIA Frame 
 
 The dates must be in YYYY-MM-DD format.
+
+!!! warning "ARIA-S1-GUNW Jobs Require Frame ID"
+    
+    ARIA-S1-GUNW jobs require a valid ARIA Frame ID when they are submitted for On Demand processing. 
+
+    If a Sentinel-1 SLC Scene is referenced for a job listed in the **ARIA-S1-GUNW** tab of the On Demand Queue in 
+    Vertex, processing will fail. These jobs must reference an 
+    [ARIA Frame ID](#search-for-sentinel-1-slc-acquisition-dates-for-an-aria-frame-id) 
+    rather than a Sentinel-1 Scene.
+
+    !["ARIA GUNW Frame Mode"](../images/aria-gunw-invalid.png){ width="85%"; style="float: center;" }
 
 #### Reference and Secondary Dates
 

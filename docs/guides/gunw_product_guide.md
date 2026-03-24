@@ -185,17 +185,9 @@ On Demand ARIA-S1-GUNW jobs can be submitted using the following methods:
 Unlike ASF's other On Demand InSAR workflows, customizable processing options (multilooking, filter strength, etc.) 
 are not available for ARIA-S1-GUNW jobs.
 
-To submit an ARIA_S1_GUNW job programmatically, all you need is: 
-
-- the ARIA Frame ID number 
-- the reference date, which is the **more recent pass** over the ARIA Frame
-- the secondary date, which is the **earlier pass** over the ARIA Frame 
-
-The dates must be in YYYY-MM-DD format.
-
 !!! warning "ARIA-S1-GUNW Jobs Require Frame ID"
     
-    ARIA-S1-GUNW jobs require a valid ARIA Frame ID when they are submitted for On Demand processing. 
+    ARIA-S1-GUNW jobs require a valid ARIA Frame ID when they are submitted for On Demand processing in Vertex. 
 
     If a Sentinel-1 SLC Scene is referenced for a job listed in the **ARIA-S1-GUNW** tab of the On Demand Queue in 
     Vertex, processing will fail. These jobs must reference an 
@@ -203,6 +195,14 @@ The dates must be in YYYY-MM-DD format.
     rather than a Sentinel-1 Scene.
 
     !["ARIA GUNW Frame Mode"](../images/aria-gunw-invalid.png){ width="85%"; style="float: center;" }
+
+To submit an ARIA_S1_GUNW job programmatically, all you need is: 
+
+- the ARIA Frame ID number 
+- the reference date, which is the **more recent pass** over the ARIA Frame
+- the secondary date, which is the **earlier pass** over the ARIA Frame 
+
+The dates must be in YYYY-MM-DD format.
 
 #### Reference and Secondary Dates
 

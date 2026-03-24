@@ -114,8 +114,8 @@ This displays an ARIA Frame ID map, which serves as the interface for selecting 
 ### ARIA Frame ID Maps
 
 As described in the [ARIA Frame IDs section](#aria-frame-ids "Jump to the ARIA Frame IDs section"), ARIA-S1-GUNW 
-products are processed based on frames that are consistent through time, and the frame extents are different 
-for the two orbit directions (Ascending and Descending). 
+products are processed based on frames that are consistent through time. There is a different set of ARIA Frame IDs 
+for each orbit direction (Ascending and Descending). 
 
 ***By default, Vertex displays frames for the Ascending orbit direction.*** To view the frames for the Descending orbit 
 direction, click the **Filters** button and set the **Flight Direction** option to the desired direction.

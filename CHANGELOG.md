@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.12.10]
+
+### Changed
+* Updated OPERA RTC-S1 Product guide to reflect that the whole archive has been processed.
+
 ## [0.12.9]
 
 ### Changed

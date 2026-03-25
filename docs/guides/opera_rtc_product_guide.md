@@ -60,7 +60,7 @@ double-bounce scattering from objects that stand perpendicular to the ground.
 ### Archived OPERA RTC-S1 Products
 
 The OPERA project has generated RTC-S1 products in all available polarizations for all Sentinel-1 acquisitions 
-over landmasses (except Antarctica) since January 1, 2022. As new Sentinel-1 SLCs are acquired and added to 
+over landmasses (except Antarctica). As new Sentinel-1 SLCs are acquired and added to 
 ASF's archive, the OPERA project continues to process them to RTC-S1 products. New RTC-S1 products 
 are generally available well within 12 hours of the Sentinel-1 SLC acquisition.
 
@@ -79,7 +79,7 @@ For more information on the technical specifications of the OPERA RTC-S1 product
 
 ## Searching for Archived OPERA RTC-S1 Products
 
-To search for existing OPERA RTC-S1 products in 
+To search for OPERA RTC-S1 products in 
 [Vertex](https://search.asf.alaska.edu/#/?dataset=OPERA-S1&productTypes=RTC "search.asf.alaska.edu" ){target=_blank}, 
 select `OPERA-S1` from the `Dataset` drop-down menu. 
 

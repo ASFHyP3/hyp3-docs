@@ -7,9 +7,9 @@ products. These products were developed by the
 project at NASA's 
 [Jet Propulsion Laboratory](https://www.jpl.nasa.gov/ "www.jpl.nasa.gov/" ){target=_blank} (JPL).
 
-OPERA RTC-S1 products are archived in the 
+OPERA RTC-S1 products have been processed for the entire Sentinel-1 archive and are archived in the 
 [OPERA_L2_RTC-S1_V1](https://www.earthdata.nasa.gov/data/catalog/asf-opera-l2-rtc-s1-v1-1 "Earthdata Data Catalog" ){target=_blank} 
-collection.
+collection. 
 
 ## OPERA RTC-S1 Products
 

@@ -117,22 +117,31 @@ As described in the [ARIA Frame IDs section](#aria-frame-ids "Jump to the ARIA F
 products are processed based on frames that are consistent through time. There is a different set of ARIA Frame IDs 
 for each orbit direction (Ascending and Descending). 
 
-***By default, Vertex displays frames for the Ascending orbit direction.*** To view the frames for the Descending orbit 
-direction, click the **Filters** button and set the **Flight Direction** option to the desired direction.
+#### Flight Direction
+
+By default, Vertex displays frames for the ***Ascending*** orbit direction. To view the frames for the 
+***Descending*** orbit direction, click the **Filters** button and set the **Flight Direction** option to the 
+desired direction.
 
 ![Display Descending Frames](../images/aria-gunw-descending.png "Display Descending Frames")
+
+#### ARIA Frame ID GeoJSON
 
 The ARIA project provides a 
 [geojson file indicating the extent of each ARIA Frame ID](https://github.com/ASFHyP3/asf-enumeration/blob/develop/src/asf_enumeration/frame_maps/aria_frames.geojson "https://github.com/ASFHyP3/asf-enumeration/blob/develop/src/asf_enumeration/frame_maps/aria_frames.geojson" ){target=_blank}, 
 which can be downloaded and used for reference outside of Vertex. When the **On Demand** toggle is activated, a 
 download link for this geojson is displayed next to the toggle switch.
 
-While the ARIA processing code takes a list of reference and secondary Sentinel-1 IW SLC granules as input, 
-**On Demand users just pass the ARIA Frame ID and the dates of the desired primary and secondary passes over that frame 
-into the On Demand job specification** rather than assembling these lists manually. This ensures that there is full 
-coverage over the desired ARIA Frame.
+### Processing Parameters
 
-### Search for Sentinel-1 SLC Acquisition Dates for an ARIA Frame ID
+While the ARIA processing code takes a list of reference and secondary Sentinel-1 IW SLC granules as input, 
+On Demand users do not need to assemble these lists manually. 
+
+To ensure full coverage over the desired ARIA Frame and avoid failures caused by incomplete granule lists, 
+the ARIA-S1-GUNW On Demand job specification simply takes the **ARIA Frame ID** and the 
+**dates of the desired primary and secondary passes** over that frame. 
+
+### Search for ARIA-S1-GUNW Date Pairs
 
 Whether you are submitting jobs using Vertex or programmatically, Vertex provides a good interface for finding 
 suitable primary and secondary acquisition dates for a specific ARIA Frame ID. 
@@ -142,21 +151,41 @@ suitable primary and secondary acquisition dates for a specific ARIA Frame ID.
 for the **ARIA S1 GUNW** Dataset and activate the **On Demand** toggle switch to view the ARIA frames. 
 
     - Recall that there are different frame maps available for Ascending and Descending orbit directions. Verify that 
-      you have selected the desired orbit direction.
-    - To select a different direction, click on the Filters button and use the **Direction** filter in the 
+      you have [selected the desired orbit direction](#flight-direction "Jump to the Flight Direction Section").
+    - To select a different direction, click on the **Filters** button and use the **Direction** filter in the 
       **Additional Filters** section to select Ascending or Descending.
-
-2. Click on the desired frame and click **Build SBAS SLC Stack** to find available date pairings for that frame.
 
 ![Build ARIA GUNW SBAS SLC Stack](../images/aria-gunw-build-stack.png "Build ARIA GUNW SBAS SLC Stack")
 
-This opens the [SBAS Tool](https://docs.asf.alaska.edu/vertex/sbas/) in **Frame Mode**, allowing users to select 
-dates that have the required 90% coverage of the ARIA Frame to submit for processing. 
+2. Click on the desired frame and click **Build SBAS SLC Stack** to find available date pairings for that frame. 
+   This opens the [SBAS Tool](https://docs.asf.alaska.edu/vertex/sbas/) with the necessary parameters already set
+   to support ARIA-S1-GUNW jobs: 
 
-3. Click on the **On Demand** icon for the desired date pair to 
-[add it to the On Demand Queue](../using/vertex.md#1-select-your-scenes "Jump to the Using Vertex page of this documentation").
+    - The tool opens in **Frame Mode**
+    - The **Dataset** is set to ARIA-S1-GUNW
+    - The **Frame** field is populated with the selected ARIA Frame ID
+
+![Open SBAS Tool in Frame Mode](../images/aria-gunw-sbas-search.png "Open the SBAS Tool Optimized for ARIA-S1-GUNW Jobs")
+
+- Only date pairs that have the required 90% minimum coverage of the selected ARIA Frame are included in the results. 
+
+3. Adjust the SBAS parameters to refine the date pairs displayed in the list of results.
+
+    - Click the **SBAS Filters** button to set or adjust the date range for the listed pairs
+    - Use the vertical slider to restrict the results based on [perpendicular baseline](insar_product_guide.md#perpendicular-baseline "Jump to Perpendicular Baseline content") values (distance between the sensor location for the two acquisition dates)
+    - Use the horizontal slider to refine [temporal baseline](insar_product_guide.md#temporal-baseline "Jump to Temporal Baseline content") values (the number of days between the two acquisition dates) included in the results
+
+![SBAS Frame Mode](../images/aria-gunw-frame-sbas.png "Open the SBAS Tool in Frame Mode")
+
+4. Click on the **On Demand** icon for a desired date pair, click the **ARIA_S1_GUNW** job type, and click 
+   **Add 1 SLC Pair** to 
+   [add it to the On Demand Queue](../using/vertex.md#2-select-your-scenes "Jump to the Using Vertex page of this documentation").
 
 ![Submit an ARIA GUNW job](../images/aria-gunw-submit-job.png "Submit an ARIA S1 GUNW Job for On Demand Processing")
+
+   - To add all of the date pairs listed in the results to the On Demand Queue, click the **On Demand** button 
+     at the top of the results list. Click on the **ARIA_S1_GUNW** job type, then click the option to add all of the 
+     SLC pairs to the On Demand Queue.
 
 !!! warning "ARIA-S1-GUNW Jobs Require SBAS Frame Mode"
 
@@ -191,7 +220,7 @@ are not available for ARIA-S1-GUNW jobs.
 
     If a Sentinel-1 SLC Scene is referenced for a job listed in the **ARIA-S1-GUNW** tab of the On Demand Queue in 
     Vertex, processing will fail. These jobs must reference an 
-    [ARIA Frame ID](#search-for-sentinel-1-slc-acquisition-dates-for-an-aria-frame-id) 
+    [ARIA Frame ID](#search-for-aria-s1-gunw-date-pairs) 
     rather than a Sentinel-1 Scene.
 
     !["ARIA GUNW Frame Mode"](../images/aria-gunw-invalid.png){ width="85%"; style="float: center;" }

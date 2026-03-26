@@ -171,6 +171,7 @@ geocoding
 geoid
 geoid_adjust
 geojson
+GeoJSON
 geolocated
 Geolocation
 geolocation

@@ -105,7 +105,7 @@ custom ARIA-S1-GUNW jobs for processing.
 
 To order ARIA-S1-GUNW products using 
 [Vertex](https://search.asf.alaska.edu/#/?dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA)), 
-select **ARIA-S1-GUNW** from the Dataset menu, and turn on the **On Demand** toggle switch. 
+select **ARIA-S1-GUNW** from the Dataset menu for a **Geographic Search**, and turn on the **On Demand** toggle switch. 
 
 ![ARIA S1 GUNW On Demand Toggle](../images/aria-gunw-on-demand-toggle.png "ARIA S1 GUNW On Demand Toggle Switch")
 
@@ -143,8 +143,8 @@ the ARIA-S1-GUNW On Demand job specification simply takes the **ARIA Frame ID** 
 
 ### Search for ARIA-S1-GUNW Date Pairs
 
-Whether you are submitting jobs using Vertex or programmatically, Vertex provides a good interface for finding 
-suitable primary and secondary acquisition dates for a specific ARIA Frame ID. 
+Whether you are submitting jobs using Vertex or programmatically, Vertex provides a good interface 
+for finding suitable primary and secondary acquisition dates for a specific ARIA Frame ID. 
 
 1. Perform a Vertex 
 [Geographic Search](https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options "Vertex Manual: Geographic Search Options" ){target=_blank} 

@@ -205,16 +205,24 @@ for the **ARIA S1 GUNW** Dataset and activate the **On Demand** toggle switch to
 
 ### Submit On Demand ARIA-S1-GUNW Jobs
 
-On Demand ARIA-S1-GUNW jobs can be submitted using the following methods: 
-
-- directly through Vertex
-- using the `ARIA_S1_GUNW` job type in the 
-  [HyP3 API](../using/api.md#submitting-aria-s1-gunw-jobs "hyp3-docs.asf.alaska.edu/using/api/#submitting-aria-s1-gunw-jobs" ){target=_blank}
-- using the `submit_aria_s1_gunw_job` method of the `HyP3` class in the 
-  [HyP3 Python SDK](../using/sdk.md "hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank}
+On Demand ARIA-S1-GUNW jobs can be submitted for processing using the 
+[On Demand Queue in Vertex](#submit-jobs-in-vertex "Submit Jobs in Vertex") or 
+[programmatically](#submit-jobs-programmatically "Submit Jobs Programmatically").
 
 Unlike ASF's other On Demand InSAR workflows, customizable processing options (multilooking, filter strength, etc.) 
 are not available for ARIA-S1-GUNW jobs.
+
+#### Submit Jobs in Vertex
+
+Once you have added the desired jobs to your [On Demand Queue](#search-for-aria-s1-gunw-date-pairs) in Vertex, 
+click the large **On Demand** icon in the top right corner of Vertex and select **On Demand Queue** 
+to view your On Demand Queue and 
+[submit your processing request](../using/vertex.md#3-submit-your-request "Submit Your Request").
+
+![Open On Demand Queue](../images/aria-gunw-on-demand-queue.png "Open the On Demand Queue in Vertex")
+
+Review the list of jobs in the ARIA_S1_GUNW tab of the queue, then click the **Submit Jobs** button at the 
+bottom of the window. You will have the option to enter a Project Name before completing the submission. 
 
 !!! warning "ARIA-S1-GUNW Jobs Require Frame ID"
     
@@ -227,7 +235,16 @@ are not available for ARIA-S1-GUNW jobs.
 
     !["ARIA GUNW Frame Mode"](../images/aria-gunw-invalid.png){ width="85%"; style="float: center;" }
 
-To submit an ARIA_S1_GUNW job programmatically, all you need is: 
+#### Submit Jobs Programmatically
+
+There are two options for submitting jobs programmatically: 
+
+- Use the `ARIA_S1_GUNW` job type in the 
+  [HyP3 API](../using/api.md#submitting-aria-s1-gunw-jobs "hyp3-docs.asf.alaska.edu/using/api/#submitting-aria-s1-gunw-jobs" ){target=_blank}
+- Use the `submit_aria_s1_gunw_job` method of the `HyP3` class in the 
+  [HyP3 Python SDK](../using/sdk.md "hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank}
+
+To submit an ARIA-S1-GUNW job using either of these programmatic approaches, the necessary parameters are: 
 
 - the ARIA Frame ID number 
 - the reference date, which is the **more recent pass** over the ARIA Frame

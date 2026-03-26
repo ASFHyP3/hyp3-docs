@@ -45,17 +45,22 @@ RTC processing is available for Sentinel-1 GRD-H and SLC scenes acquired using t
 InSAR processing requires pairs of IW SLC scenes or bursts. 
 
 Use the [**Geographic Search**](https://docs.asf.alaska.edu/vertex/manual/ "https://docs.asf.alaska.edu/vertex/manual/" ){target=_blank} 
-in Vertex to find individual scenes to submit for RTC processing, or to find reference scenes to use for generating 
-InSAR pairs. 
+in Vertex to find individual scenes to submit for [RTC](../guides/rtc_product_guide.md) processing, 
+or to find reference scenes to use for generating InSAR pairs. 
 
- - For InSAR, once 
-   you find a reference scene or burst, use either the 
+ - For full-scene [Sentinel-1 InSAR](../guides/insar_product_guide.md "Sentinel-1 InSAR Product Guide"), once 
+   you find a reference scene using a Geographic Search for the **Sentinel-1** Dataset, use either the 
    [Baseline](https://docs.asf.alaska.edu/vertex/baseline/ "Vertex Baseline Documentation" ){target=_blank} 
    or [SBAS](https://docs.asf.alaska.edu/vertex/sbas/ "Vertex SBAS Documentation" ){target=_blank} 
    Search to find SLC pairs to submit for processing. 
- - For burst-based InSAR processing, search for the **Sentinel-1 Bursts** Dataset instead of **Sentinel-1**.
- - To process ARIA S1 GUNW products On Demand, search for the **ARIA S1 GUNW Dataset** instead of **Sentinel-1**, 
-   and [activate the On Demand toggle to view the ARIA Frames](../guides/gunw_product_guide.md#aria-frame-id-maps "Jump to the ARIA S1 GUNW Product Guide").
+ - For [Burst-based InSAR](../guides/burst_insar_product_guide.md "Sentinel-1 Burst InSAR Product Guide") 
+   processing, search for the **Sentinel-1 Bursts** Dataset instead of Sentinel-1 to find reference images to 
+   use with the 
+   [Baseline](https://docs.asf.alaska.edu/vertex/baseline/ "Vertex Baseline Documentation" ){target=_blank} 
+   or [SBAS](https://docs.asf.alaska.edu/vertex/sbas/ "Vertex SBAS Documentation" ){target=_blank} tools.
+ - To process [ARIA S1 GUNW](../guides/gunw_product_guide.md "ARIA Sentinel-1 GUNW Product Guide") 
+   products On Demand, search for the **ARIA S1 GUNW** Dataset instead of Sentinel-1, 
+   and [activate the On Demand toggle to view the ARIA Frames](../guides/gunw_product_guide.md#ordering-on-demand-products "Jump to the Ordering On Demand Products section of the ARIA S1 GUNW Product Guide") to select a reference frame for building a frame-based SBAS stack.
 
 Click the **On Demand icon**
 <img width="20" src="https://raw.githubusercontent.com/ASFHyP3/hyp3-docs/6ba90fdafcf60ec017b3f4a83738334a5574be71/docs/images/HyP3-graphic-only.png" /> 

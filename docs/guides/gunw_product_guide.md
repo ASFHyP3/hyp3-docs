@@ -169,6 +169,20 @@ for the **ARIA S1 GUNW** Dataset and activate the **On Demand** toggle switch to
 
 - Only date pairs that have the required 90% minimum coverage of the selected ARIA Frame are included in the results. 
 
+!!! warning "ARIA-S1-GUNW Jobs Require SBAS Frame Mode"
+
+    If ARIA-S1-GUNW jobs are submitted from the SBAS interface _without_ **Frame Mode** turned on, the jobs will fail. 
+    
+    To avoid potential errors when submitting ARIA-S1-GUNW jobs, it is best to use the ARIA-S1-GUNW 
+    Geographic Search interface to launch the SBAS tool, which automatically provides the correct settings to 
+    support ARIA-S1-GUNW SBAS stacks. 
+
+    If you do access the SBAS tool using a Sentinel-1 Geographic Search, you will need to activate the **Frame Mode** 
+    toggle _AND_ enter a valid ARIA Frame ID instead of a Sentinel-1 Scene name before you can submit 
+    ARIA-S1-GUNW jobs for On Demand processing.
+    
+    !["ARIA GUNW Frame Mode"](../images/aria-gunw-frame-mode.png){ style="float: center;" }
+
 3. Adjust the SBAS parameters to refine the date pairs displayed in the list of results.
 
     - Click the **SBAS Filters** button to set or adjust the date range for the listed pairs
@@ -183,23 +197,11 @@ for the **ARIA S1 GUNW** Dataset and activate the **On Demand** toggle switch to
 
 ![Submit an ARIA GUNW job](../images/aria-gunw-submit-job.png "Submit an ARIA S1 GUNW Job for On Demand Processing")
 
+   ![Submit All Jobs in Results](../images/aria-gunw-bulk-add.png "Submit all the ARIA S1 GUNW Jobs in the SBAS Results for On Demand Processing"){ width="30%"; style="float: right;" margin-left: "1em";}
+
    - To add all of the date pairs listed in the results to the On Demand Queue, click the **On Demand** button 
-     at the top of the results list. Click on the **ARIA_S1_GUNW** job type, then click the option to add all of the 
+     at the top of the results list. Click on the **ARIA_S1_GUNW** job type, then select the option to add all of the 
      SLC pairs to the On Demand Queue.
-
-!!! warning "ARIA-S1-GUNW Jobs Require SBAS Frame Mode"
-
-    If ARIA-S1-GUNW jobs are submitted from the SBAS interface _without_ **Frame Mode** turned on, the jobs will fail. 
-    
-    To avoid potential errors when submitting ARIA-S1-GUNW jobs, it is best to use the ARIA-S1-GUNW 
-    Geographic Search interface to launch the SBAS tool, which automatically provides the correct settings to 
-    support ARIA-S1-GUNW SBAS stacks. 
-
-    If you do access the SBAS tool using a Sentinel-1 Geographic Search, you will need to activate the **Frame Mode** 
-    toggle _AND_ enter a valid ARIA Frame ID instead of a Sentinel-1 Scene name before you can submit 
-    ARIA-S1-GUNW jobs for On Demand processing.
-    
-    !["ARIA GUNW Frame Mode"](../images/aria-gunw-frame-mode.png){ style="float: center;" }
 
 ### Submit On Demand ARIA-S1-GUNW Jobs
 

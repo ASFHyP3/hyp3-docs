@@ -6,11 +6,155 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.11.0]
+## [0.13.0]
 
 ### Changed
 * Menu navigation updated to include entries for OPERA RTC-S1 resources
 * [HyP3 Products page](docs/products.md) updated to include OPERA RTC-S1 
+
+## [0.12.9]
+
+### Changed
+* Updated HyP3 SDK to [v7.7.6](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#776)
+
+## [0.12.8]
+
+### Changed
+* Updated cost for 20x4 Burst InSAR jobs with 13-15 pairs from 5 to 10 credits.
+
+## [0.12.7]
+* Reduced credit allotment to 8,000 per month from 10,000 per month on the `using/credits` page.
+
+## [0.12.6]
+
+### Changed
+* Updated ASF Tools for Python to [v0.8.4](https://github.com/ASFHyP3/asf-tools/blob/main/CHANGELOG.md#084)
+
+## [0.12.5]
+
+### Changed
+* Updated InSAR burst time series with MintPy tutorial to be compatible with recent versions of hyp3_sdk and asf_search.
+
+## [0.12.4]
+
+### Changed
+* Updated HyP3 SDK to [v7.7.5](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#775)
+
+## [0.12.3]
+
+### Changed
+* Updated naming scheme descriptions for multi-burst InSAR products in the [Sentinel-1 Burst InSAR Product Guide](https://hyp3-docs.asf.alaska.edu/guides/burst_insar_product_guide/#naming-convention-insar_isce_multi_burst)
+* Updated the [ARIA S1 GUNW Product Guide](https://hyp3-docs.asf.alaska.edu/guides/gunw_product_guide)
+  * announced support for submitting Sentinel-1C for On Demand products in the HyP3 API and SDK 
+  * updated layer descriptions
+  * added links for ARIA-tools tutorial notebooks
+
+## [0.12.2]
+
+### Fixed
+* Fixed the missing cell in the HyP3 credits table.
+
+## [0.12.1]
+
+### Fixed
+* Missing links to HyP3+ and the HyP3 family feature comparison table were added to the HyP3+ announcement.
+
+## [0.12.0]
+
+### Added
+* Added logos for the HyP3+ deployment
+* Added documentation for [HyP3+](docs/about/hyp3_plus.md), including [Terms and Conditions](docs/about/hyp3_plus_terms.md)
+* Added HyP3+ announcement to the [What's New](docs/whats_new.md) section
+* Amended other documentation topics to include HyP3+ references and guidance
+* Added a column for product cost when using HyP3+ in the [Credit Cost Table](docs/using/credits.md#credit-cost-table)
+
+### Changed
+* Dropped the use of the asf mkdocs theme in favor of the material theme for site rendering
+* Moved reference to the [Usage Guidance](docs/usage_guidelines.md) document from the Products menu to the Using menu with the title *How to Cite HyP3*
+* Updated HyP3 SDK to [v7.7.4](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#774)
+
+### Removed
+* Removed landing page for subscriptions
+
+## [0.11.2]
+
+### Removed
+* OPERA RTC-S1 jobs from the credits table as they are not ready for general availability yet.
+
+## [0.11.1]
+
+### Added
+* Added a funding credit statement to the ARIA_S1_GUNW product guide.
+
+## [0.11.0]
+
+### Removed
+* Removed content related to merging single-burst InSAR products made obsolete with HyP3 ISCE2 v3.0.0:
+  * "Merge HyP3 ISCE2 burst InSAR products" tutorial
+  * "Merging Sentinel-1 Single-Burst InSAR Products" section of the Burst InSAR product guide
+
+## [0.10.22]
+
+### Changed
+* Updated the [ARIA S1 GUNW Product Guide](https://hyp3-docs.asf.alaska.edu/guides/gunw_product_guide) to include information about Vertex support for searching for ARIA Frames and submitting On Demand jobs
+
+## [0.10.21]
+
+### Added
+*Added tutorial links for the [ASF Sentinel-1 InSAR on Demand Product Comparison StoryMap](https://storymaps.arcgis.com/stories/6cb4f1c18558441bb9b4b11337515b53)
+
+## [0.10.20]
+
+### Changed
+* Updated HyP3 SDK to [v7.7.3](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#773)
+
+## [0.10.19]
+
+### Changed
+* The cost of autoRIFT jobs has been reduced back to 25 credits, from 50 credits, on the [credits](docs/using/credits.md) page. 
+
+## [0.10.18]
+
+### Changed
+* Updated HyP3 SDK to [v7.7.2](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#772)
+
+## [0.10.17]
+
+### Changed
+* Updated messages about Sentinel-1C support to indicate that burst-based InSAR now supports S1C as input
+
+### Fixed
+* Fixed outdated ESA Sentinel links. 
+
+## [0.10.16]
+
+### Changed
+* Updated HyP3 SDK to [v7.7.1](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#771)
+
+## [0.10.15]
+
+### Added
+* Added tutorial link for the [HyP3 Authentication in SDK notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/develop/docs/hyp3_authentication.ipynb)
+* [Authentication](docs/using/authentication.md) page to Using HyP3 section
+
+### Changed
+* Reworked [Downloads](docs/using/downloading.md) page to incorporate links to the [Authentication](docs/using/authentication.md) page
+* Updated [SDK example notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb) to reference new [HyP3 Authentication in SDK notebook](https://github.com/ASFHyP3/hyp3-sdk/blob/develop/docs/hyp3_authentication.ipynb)
+
+## [0.10.14]
+
+### Changed
+* Updated [ARIA S1 GUNW Product Guide](https://hyp3-docs.asf.alaska.edu/guides/gunw_product_guide) to include information about ingest of on-demand products to the archive
+
+## [0.10.13]
+
+### Changed
+* Updated HyP3 SDK to [v7.7.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#770)
+
+## [0.10.12]
+
+### Changed
+* Updated HyP3 SDK to [v7.6.0](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#760)
 
 ## [0.10.11]
 
@@ -175,7 +319,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.9.2]
 
 ### Added
-* Added [Requesting Access page](docs/using/request_access.md), not yet listed in the site index
+* Added [Requesting Access page](docs/using/requesting_access.md), not yet listed in the site index
 * Added references to requesting access in the [Using HyP3](docs/using-snippet.md) documentation, commented out until new users must apply for access
 
 ### Changed
@@ -788,7 +932,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.3.0](https://github.com/ASFHyP3/hyp3-docs/compare/v0.2.2...v0.3.0)
 
 ### Added
-* Added a [Contact Us snippet](docs/contact-snippet.md) that is used on the [Home](docs/index.md) page
+* Added a [Contact Us snippet](docs/contact-snippet.md) that is used on the [Home](docs/about.md) page
   and a new [Contact Us](docs/contact-snippet.md) page
 * Added SAR Basics -> [Introduction to SAR](docs/guides/introduction_to_sar.md) page
 * Added Products -> InSAR -> [InSAR Product Guide](docs/guides/insar_product_guide.md) page

@@ -1,13 +1,10 @@
 # Available HyP3 Products
 
-On-demand SAR products generated using HyP3 are currently available for the 
+On Demand SAR products generated using HyP3 are currently available for the 
 [Sentinel-1 mission](sentinel1.md "Sentinel-1 Mission") 
-only. Unless otherwise noted, On-Demand products are available for 14 days after they have been processed.
-On-demand SAR products generated using HyP3 are currently available for the 
-[Sentinel-1 mission](sentinel1.md "Sentinel-1 Mission") 
-only. Unless otherwise noted, on-demand products are available for 14 days after they have been processed.
+only. Unless otherwise noted, On Demand products are available for 14 days after they have been processed.
 
-A Digital Elevation Model (DEM) is required to generate each of the On-Demand products offered by ASF, and we 
+A Digital Elevation Model (DEM) is required to generate each of the On Demand products offered by ASF, and we 
 generally use the 
 [GLO-30 Copernicus DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM "Copernicus DEM" ){target=_blank} 
 in our processing workflows. For more information, refer to our 
@@ -21,10 +18,13 @@ being imaged by a side-looking instrument. Radiometric Terrain Correction (RTC) 
 these distortions and creates analysis-ready data suitable for use in GIS applications.
 RTC processing is a required first step for many amplitude-based SAR applications.
 
-There are two different processing approaches available for generating On-Demand RTC products from Sentinel-1: 
+There are two different Sentinel-1 RTC products available from ASF: 
 
   - [Full-scene processing using GAMMA software](#full-scene-rtc-gamma) 
   - [OPERA RTC-S1 products](#opera-rtc-s1), processed on the basis of individual SLC bursts
+
+The full-scene RTC products can be generated On Demand, while the OPERA RTC-S1 products are 
+already processed and available in the archive. 
 
 ### Full-scene RTC (GAMMA)
 
@@ -41,7 +41,8 @@ Users also have the option to
 To learn more, refer to the [Sentinel-1 RTC Product Guide](guides/rtc_product_guide.md 
 "Sentinel-1 RTC Product Guide").
 
-For step-by-step instructions on searching for, ordering, downloading and using On-Demand RTC products, visit our 
+For step-by-step instructions on searching for, ordering, downloading and using Sentinel-1 full-scene On Demand RTC 
+products, visit ASF's 
 [RTC On Demand!](https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35 "RTC On Demand! StoryMap" ){target=_blank} 
 tutorial.
 
@@ -80,11 +81,13 @@ same area to identify regions where the distance between the sensor and the Eart
 surface has changed. This allows for the detection and quantification of surface 
 deformation or ground movement. 
 
-There are three different processing approaches available for generating On-Demand InSAR products from Sentinel-1: 
+There are three different processing approaches available for generating On Demand InSAR products from Sentinel-1: 
 
   - [Full-scene processing using GAMMA software](#full-scene-insar-gamma) 
   - [Burst-based processing using ISCE2 software](#burst-based-insar-isce2)
   - [ARIA Frame-based processing using ISCE2 software](#aria-sentinel-1-gunw-products-isce2)
+
+For an in-depth comparison of the On Demand InSAR product options, visit our [Sentinel-1 InSAR On Demand Product Comparison StoryMap](https://storymaps.arcgis.com/stories/6cb4f1c18558441bb9b4b11337515b53 "ASF Sentinel-1 InSAR On Demand Product Comparison StoryMap" ){target=_blank}. 
 
 ### Full-scene InSAR (GAMMA)
 
@@ -118,17 +121,19 @@ tutorial.
 ### ARIA Sentinel-1 GUNW Products (ISCE2)
 
 There is an extensive archive of 
-[ARIA S1 GUNW](https://aria.jpl.nasa.gov/products/standard-displacement-products.html "https://aria.jpl.nasa.gov" ){target=_blank} 
-(Geocoded Unwrapped Interferogram) products 
+[ARIA-S1-GUNW](https://aria.jpl.nasa.gov/products/standard-displacement-products.html "https://aria.jpl.nasa.gov" ){target=_blank} 
+(ARIA Sentinel-1 Geocoded Unwrapped Interferogram) products 
 [available from ASF](https://search.asf.alaska.edu/#/?maxResults=1000&dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA) "Vertex search for ARIA S1 GUNW" ){target=_blank}, 
 but they are only generated in specific geographic locations. If the existing archive does not provide the 
-products you need, you can generate ARIA GUNW products on demand. 
+products you need, you can generate ARIA-S1-GUNW products On Demand. 
 
-ARIA S1 GUNW products are delivered as netCDF files with 90-m pixel spacing. Products generated On Demand use the same 
+ARIA-S1-GUNW products are delivered as netCDF files with 90-m pixel spacing. Products generated On Demand use the same 
 [ISCE2](https://github.com/isce-framework/isce2#readme "https://github.com/isce-framework/isce2" ){target=_blank}-based 
-code used to generate the archived products to ensure interoperability.
+code used to generate the archived products to ensure interoperability, and ARIA S1 GUNW products generated On Demand 
+are automatically added to the archive. This allows all users to access products generated On Demand indefinitely, 
+in contrast to the 14-day availability period that applies to most On Demand products generated by ASF.
 
-The ARIA S1 GUNW products use a set [framing system](guides/gunw_product_guide.md#aria-frame-ids "ARIA Sentinel-1 GUNW 
+The ARIA-S1-GUNW products use a set [framing system](guides/gunw_product_guide.md#aria-frame-ids "ARIA Sentinel-1 GUNW 
 Product Guide: ARIA Frame IDs") to select consistent bursts from input Sentinel-1 IW SLCs to generate interferograms. 
 Refer to the 
 [ARIA Sentinel-1 GUNW Product Guide](guides/gunw_product_guide.md "ARIA Sentinel-1 GUNW Product Guide") 

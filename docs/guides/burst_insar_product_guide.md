@@ -19,17 +19,13 @@ that leverages open-source software for processing.
 
 For those who would prefer to work at the scale of a full IW SLC, our original 
 [On Demand InSAR](insar_product_guide.md){target=_blank} products are still available. These products have a larger 
-footprint, and are generated using [GAMMA software](https://www.gamma-rs.ch/software){target=_blank}.
+footprint, and are generated using [GAMMA software](https://www.gamma-rs.ch/software){target=_blank}.  If unsure of which InSAR processing option best fits your needs, visit our [ASF Sentinel-1 InSAR on Demand Product Comparison StoryMap](https://storymaps.arcgis.com/stories/6cb4f1c18558441bb9b4b11337515b53 "ASF Sentinel-1 InSAR On Demand Product Comparison"){target=_blank} to explore the capabilities, characteristics, and available products for each of ASF's On Demand InSAR options. 
 
-!!! warning "Sentinel-1C acquisitions not yet supported" 
+!!! tip "Sentinel-1C acquisitions now supported!" 
 
-    ISCE2 software does not currently support processing Sentinel-1C acquisitions. Until the software package is 
-    updated, users will only be able to submit granules acquired by Sentinel-1A or Sentinel-1B for Burst InSAR 
-    processing. 
-
-    Users can submit full IW Sentinel-1C granules for processing to InSAR using the 
-    [On Demand InSAR](insar_product_guide.md "Sentinel-1 InSAR Product Guide") option, which leverages 
-    GAMMA software rather than ISCE2. 
+    ISCE2 has been updated to support processing of data collected by Sentinel-1C. Users can now submit 
+    burst-based InSAR jobs for any available bursts from Sentinel-1 IW SLCs, regardless of the platform used 
+    to acquire the data.
 
 ## Burst InSAR Job Types
 
@@ -66,13 +62,13 @@ section for details). The number of bursts processed impacts the number of credi
 
 ## Sentinel-1 Bursts
 
-[Single Look Complex](https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1-algorithms/single-look-complex 'https://sentinels.copernicus.eu/web/sentinel/technical-guides/sentinel-1-sar/products-algorithms/level-1-algorithms/single-look-complex' ){target=_blank} 
+[Single Look Complex](https://sentiwiki.copernicus.eu/web/s1-processing#S1-Processing-Single-Look-Complex "https://sentiwiki.copernicus.eu/web/s1-processing#S1-Processing-Single-Look-Complex" ){target=_blank} 
 (SLC) data is required to generate interferograms from Sentinel-1 data. The European Space Agency (ESA) packages this 
 type of data into Interferometric Wide (IW) SLC products, which are available for download from ASF. These IW SLC 
 products include three sub-swaths, each containing many individual burst SLCs.
 
 Historically, most InSAR processing has been performed using the full IW SLC scene, but ASF has developed a method of 
-[extracting the individual SLC bursts](https://sentinel1-burst-documentation.asf.alaska.edu/ 'https://sentinel1-burst-documentation.asf.alaska.edu/' ){target=_blank} 
+[extracting the individual SLC bursts](https://sentinel1-burst-documentation.asf.alaska.edu/ "https://sentinel1-burst-documentation.asf.alaska.edu/" ){target=_blank} 
 from IW SLC products, which facilitates burst-based processing workflows.
 
 Refer to the 
@@ -185,7 +181,7 @@ downloading the DEM file, and downloading the orbit and auxiliary data files.
 #### Download Burst Data
 
 The Burst InSAR workflow accepts as input a reference and secondary set of 
-[Interferometric Wide swath Single Look Complex](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath "https://sentinel.esa.int/web/sentinel/user-guides/sentinel-1-sar/acquisition-modes/interferometric-wide-swath" ){target=_blank} 
+[Interferometric Wide swath Single Look Complex](https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-InterferometricWideSwathS1-Mission-Interferometric-Wide-Swath "https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-InterferometricWideSwath" ){target=_blank} 
 (IW SLC) burst granules. Internally, each set of bursts must share the same polarization (VV or HH), and be 
 contiguous along a single Sentinel-1 orbit path. See 
 [Considerations for Selecting Input Bursts](#considerations-for-selecting-input-bursts "Jump to the Considerations for Selecting Input Bursts section in this document") 
@@ -219,12 +215,12 @@ reference and secondary SAFE files:
 When selecting input bursts that span across sub-swaths in the same relative path, you must also take care not to 
 leave gaps. The bursts in neighboring sub-swaths can only be offset along the path by one burst. 
 
-For example, the grouping of bursts shown in the image on the left in Figure 4 can be submitted for processing, 
+For example, the grouping of bursts shown in the image on the left in Figure 3 can be submitted for processing,
 while the grouping in the image on the right would not be valid.
 
-![Figure 4](../images/burst-contiguity.png "Illustration of acceptable offsets for bursts across sub-swaths")
+![Figure 3](../images/burst-contiguity.png "Illustration of acceptable offsets for bursts across sub-swaths")
 
-*Figure 4: Illustration of acceptable maximum offsets for bursts across sub-swaths.*
+*Figure 3: Illustration of acceptable maximum offsets for bursts across sub-swaths.*
 
 #### Download the DEM File
 
@@ -258,9 +254,9 @@ Burst InSAR processing is performed using the outputs from the processes detaile
 [Pre-Processing](#pre-processing "Jump to the Pre-Processing section of this document") section. 
 
 The Burst InSAR processing code is contained in the 
-[`insar_tops_burst.py`](https://github.com/ASFHyP3/hyp3-isce2/blob/main/src/hyp3_isce2/insar_tops_burst.py ){target=_blank} 
+[`insar_tops_burst.py`](https://github.com/ASFHyP3/hyp3-isce2/blob/main/src/hyp3_isce2/insar_tops_burst.py "https://github.com/ASFHyP3/hyp3-isce2/blob/main/src/hyp3_isce2/insar_tops_burst.py" ){target=_blank} 
 script. This script follows the ISCE2 InSAR workflow in 
-[topsApp.py](https://github.com/isce-framework/isce2/blob/main/applications/topsApp.py#L982){target=_blank} 
+[`topsApp.py`](https://github.com/isce-framework/isce2/blob/main/applications/topsApp.py#L982 "https://github.com/isce-framework/isce2/blob/main/applications/topsApp.py#L982" ){target=_blank} 
 for the steps `startup` through `geocode`. 
 
 If the reference and secondary SAFE files include multiple bursts, processing is performed on a burst-by-burst 
@@ -343,7 +339,7 @@ a metadata file, and a README file.
 ### Naming Convention: INSAR_ISCE_BURST
 
 The Burst InSAR product names are packed with information pertaining to the processing of the data, presented in 
-the following order, as illustrated in Figure 3.
+the following order, as illustrated in Figure 4.
 
 - The imaging platform name, always S1 for Sentinel-1.
 - Relative burst ID values assigned by ESA. Each value identifies a consistent burst footprint; relative burst ID 
@@ -357,41 +353,44 @@ the following order, as illustrated in Figure 3.
   was submitted for processing.
 - The filename ends with the ASF product ID, a 4 digit hexadecimal number.
 
-![Figure 3](../images/asf_burst_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
+![Figure 4](../images/asf_burst_insar_names.png "Breakdown of ASF InSAR Naming Scheme")
 
-*Figure 3: Breakdown of ASF Burst InSAR naming scheme.*
+*Figure 4: Breakdown of ASF Burst InSAR naming scheme.*
 
 ### Naming Convention: INSAR_ISCE_MULTI_BURST
 
-The naming scheme for products generated using the `INSAR_ISCE_MULTI_BURST` job type is very different from what was 
-used for `INSAR_ISCE_BURST`.
+The base filename for `INSAR_ISCE_MULTI_BURST` products follows the naming convention below, 
+as illustrated in Figure 5.
 
-The basename of the multi-burst InSAR files follows this naming convention: 
+**S1_rrr_bbbbbbs1ntt-bbbbbbs2ntt-bbbbbbs3ntt_IW_yyyymmdd_yyyymmdd_pp_INTzz_uuuu**
 
-**S1s_rrr_lonl_f_lal_f_lonu_f_lau_f_yyyymmdd_yyyymmdd_pp_INTzz_cccc**
+- each file starts with **S1**, indicating that the data was acquired by Sentinel-1
+- **rrr** is the relative path (or orbit) number for the bursts included in the product
+- **bbbbbb** indicates the first burst ID for each sub-swath
+    - if there are no bursts included for a given sub-swath, the value of **bbbbbb** would be `000000`
+- the number following **s** indicates the sub-swath associated with the burst IDs
+    - for example, `s1` indicates the first sub-swath
+    - there is a placeholder for each of the three sub-swaths, even if there aren't bursts included from all three 
+- **ntt** indicates the number of bursts included in the product for the given sub-swath
+    - for example, `n02` indicates that there are 2 bursts included for that sub-swath
+    - if there are no bursts included from that sub-swath, the value of **tt** would be `00`
+- **IW** indicates the beam mode (interferometric wide swath)
+- the first **yyyymmdd** indicates the date the reference bursts were acquired
+- the second **yyyymmdd** indicates the date the secondary bursts were acquired
+- **pp** indicates the polarization of the input bursts
+- **INT** indicates that the product is an interferogram
+- **zz** indicates the pixel spacing of the output InSAR product (20, 40, or 80 meters)
+- **uuuu** is the unique product identifier
 
-For example: 
+![Figure 5](../images/asf_multi_burst_insar_names.png "Breakdown of ASF Multi-Burst InSAR Naming Scheme")
 
-S1A_064_E053_1_N27_3_E054_1_N27_8_20200604_20200616_VV_INT80_7EB5
+*Figure 5: Breakdown of ASF Multi-Burst InSAR naming scheme.*
 
-Table 2 describes the individual components:
+As an example, the filename for a VV interferogram with 80-m pixel spacing containing bursts 
+111111_IW1, 111112_IW1, and 111111_IW2 from path 123 for the reference date of January 1, 2024 and the 
+secondary date of January 15, 2024, would have the following product name:
 
-| Component    | Description                                                                                                                                                                                                                                                                                           | Example  |
-|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| **S1s**      | SAR Platform. S1 for Sentinel-1, followed by the letter of the sensor that collected the reference image.                                                                                                                                                                                             | S1A      |
-| **rrr**      | Relative orbit ID values assigned by ESA. Merged burst InSAR products can contain many relative burst IDs, so the relative orbit ID is used in lieu of relative burst IDs for these products.                                                                                                         | 064      |
-| **lonl_f**   | Minimum longitude of the output interferogram. Starts with a letter indicating hemisphere (E or W), followed by longitude to one decimal (000.0) with the decimal replaced by an underscore.                                                                                                          | E053_1   |
-| **lal_f**    | Minimum latitude of the output interferogram. Starts with a letter indicating hemisphere (N or S), followed by latitude to one decimal (00.0) with the decimal replaced by an underscore.                                                                                                             | N27_3    |
-| **lonu_f**   | Maximum longitude of the output interferogram. Starts with a letter indicating hemisphere (E or W), followed by longitude to one decimal (000.0) with the decimal replaced by an underscore.                                                                                                          | E054_1   |
-| **lau_f**    | Maximum latitude of the output interferogram. Starts with a letter indicating hemisphere (N or S), followed by latitude to one decimal (00.0) with the decimal replaced by an underscore.                                                                                                             | N27_8    |
-| **yyyymmdd** | Acquisition date of the reference image                                                                                                                                                                                                                                                               | 20200604 |
-| **yyyymmdd** | Acquisition date of the secondary image                                                                                                                                                                                                                                                               | 20200616 |
-| **pp**       | Two character combination indicating the product polarization. The first character represents the transmit polarization and the second character represents the receive polarization. Note that these products only support co-polarized inputs, so the product polarization will either be VV or HH. | VV       |
-| **INT**      | The product type (always INT for InSAR)                                                                                                                                                                                                                                                               | INT      |
-| **zz**       | The pixel spacing of the output image                                                                                                                                                                                                                                                                 | 80       |
-| **cccc**     | 4-character unique product identifier                                                                                                                                                                                                                                                                 | FD6A     |
-
-*Table 2: Naming scheme for multi-burst InSAR products*
+S1_123_111111s1n02-111111s2n01-000000s3n00_IW_20240101_20240115_VV_INT80_AEB4
 
 ### Image Files
 
@@ -436,7 +435,7 @@ as the individual bursts are already merged together.
 An *unwrapped phase browse image* is included for the unwrapped (unw_phase) phase file, which is in PNG format 
 and is 2048 pixels wide.
 
-The tags and extensions used and example file names for each raster are listed in Table 3 below.
+The tags and extensions used and example file names for each raster are listed in Table 2 below.
 
 {% set base_name = 'S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>' %}
 
@@ -458,7 +457,7 @@ The tags and extensions used and example file names for each raster are listed i
 | _wrapped_phase_rdr.tif | Wrapped Range-Doppler interferogram | {{ base_name }}_wrapped_phase_rdr.tif                                            |
 | _unw_phase.png         | Unwrapped phase browse image        | {{ base_name }}_unw_phase.png<br/>⸻<br/>{{ base_name_mb }}_unw_phase.png         |
 
-*Table 3: Image files in product package*
+*Table 2: Image files in product package*
 
 ### Metadata Files
 
@@ -469,7 +468,7 @@ The product package also includes a number of metadata files.
 | .README.md.txt | Main README file for Burst InSAR products  | {{ base_name }}.README.md.txt<br/>⸻<br/>{{ base_name_mb }}.README.md.txt |
 | .txt           | Parameters and metadata for the InSAR pair | {{ base_name }}.txt<br/>⸻<br/>{{ base_name_mb }}.txt                     |
 
-*Table 4: Metadata files in product package*
+*Table 3: Metadata files in product package*
 
 #### README File
 The text file with extension `.README.md.txt` explains the files included in the folder, and is customized to reflect 
@@ -478,40 +477,40 @@ give some background on each of the files included in the product folder.
 
 #### InSAR Parameter File
 The text file with the base filename followed directly by a `.txt` extension includes processing parameters used to 
-generate the InSAR product as well as metadata attributes for the InSAR pair. These are detailed in Table 5.
+generate the InSAR product as well as metadata attributes for the InSAR pair. These are detailed in Table 4.
 
-| Name                            | Description                                                                                             | Possible Value                                                       |
-|---------------------------------|---------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
-| Reference Granule               | Granule name for reference burst (of the two scenes in the pair, the dataset with the oldest timestamp) | S1<wbr>_136231<wbr>_IW2<wbr>_20200604T022312<wbr>_VV<wbr>_7C85-BURST |
-| Secondary Granule               | Granule name for secondary burst (of the two scenes in the pair, the dataset with the newest timestamp) | S1<wbr>_136231<wbr>_IW2<wbr>_20200616T022313<wbr>_VV<wbr>_5D11-BURST |
-| Reference Pass Direction        | Orbit direction of the reference scene                                                                  | DESCENDING                                                           |
-| Reference Orbit Number          | Absolute orbit number of the reference scene                                                            | 30741                                                                |
-| Secondary Pass Direction        | Orbit direction of the reference scene                                                                  | DESCENDING                                                           |
-| Secondary Orbit Number          | Absolute orbit number of the secondary scene                                                            | 31091                                                                |
-| Baseline                        | Perpendicular baseline in meters                                                                        | 58.3898                                                              |
-| UTCTime                         | Time in the UTC time zone in seconds                                                                    | 12360.691361                                                         |
-| Heading                         | Spacecraft heading measured in degrees clockwise from north                                             | 193.2939317                                                          |
-| Spacecraft height               | Height in meters of the spacecraft above nadir point                                                    | 700618.6318999995                                                    |
-| Earth radius at nadir           | Ellipsoidal earth radius in meters at the point directly below the satellite                            | 6370250.0667                                                         |
-| Slant range near                | Distance in meters from satellite to nearest point imaged                                               | 799517.4338                                                          |
-| Slant range center              | Distance in meters from satellite to the center point imaged                                            | 879794.1404                                                          |
-| Slant range far                 | Distance in meters from satellite to farthest point imaged                                              | 960070.8469                                                          |
-| Range looks                     | Number of looks taken in the range direction                                                            | 20                                                                   |
-| Azimuth looks                   | Number of looks taken in the azimuth direction                                                          | 4                                                                    |
-| InSAR phase filter              | Was an InSAR phase filter used                                                                          | yes                                                                  |
-| Phase filter parameter          | Dampening factor                                                                                        | 0.5                                                                  |
-| Range bandpass filter           | Range bandpass filter applied                                                                           | no                                                                   |
-| Azimuth bandpass filter         | Azimuth bandpass filter applied                                                                         | no                                                                   |
-| DEM source                      | DEM used in processing                                                                                  | GLO-30                                                               |
-| DEM resolution                  | Pixel spacing in meters for DEM used to process this scene                                              | 30                                                                   |
-| Unwrapping type                 | Phase unwrapping algorithm used                                                                         | snaphu_mcf                                                           |
-| Speckle filter                  | Speckle filter applied                                                                                  | yes                                                                  |
-| Water mask                      | Was a water mask used                                                                                   | yes                                                                  |
+| Name                     | Description                                                                                                                        | Possible Value                                                       |
+|--------------------------|------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| Reference Granule        | Granule name(s) for reference burst or list of bursts (of the two acquisitions in the pair, the dataset with the oldest timestamp) | S1<wbr>_136231<wbr>_IW2<wbr>_20200604T022312<wbr>_VV<wbr>_7C85-BURST |
+| Secondary Granule        | Granule name(s) for secondary burst or list of bursts (of the two acquisitions in the pair, the dataset with the newest timestamp) | S1<wbr>_136231<wbr>_IW2<wbr>_20200616T022313<wbr>_VV<wbr>_5D11-BURST |
+| Reference Pass Direction | Orbit direction of the reference scene                                                                                             | DESCENDING                                                           |
+| Reference Orbit Number   | Absolute orbit number of the reference scene                                                                                       | 30741                                                                |
+| Secondary Pass Direction | Orbit direction of the reference scene                                                                                             | DESCENDING                                                           |
+| Secondary Orbit Number   | Absolute orbit number of the secondary scene                                                                                       | 31091                                                                |
+| Baseline                 | Perpendicular baseline in meters                                                                                                   | 58.3898                                                              |
+| UTC time                 | Time in the UTC time zone in seconds                                                                                               | 12360.691361                                                         |
+| Heading                  | Spacecraft heading measured in degrees clockwise from north                                                                        | 193.2939317                                                          |
+| Spacecraft height        | Height in meters of the spacecraft above nadir point                                                                               | 700618.6318999995                                                    |
+| Earth radius at nadir    | Ellipsoidal earth radius in meters at the point directly below the satellite                                                       | 6370250.0667                                                         |
+| Slant range near         | Distance in meters from satellite to nearest point imaged                                                                          | 799517.4338                                                          |
+| Slant range center       | Distance in meters from satellite to the center point imaged                                                                       | 879794.1404                                                          |
+| Slant range far          | Distance in meters from satellite to farthest point imaged                                                                         | 960070.8469                                                          |
+| Range looks              | Number of looks taken in the range direction                                                                                       | 20                                                                   |
+| Azimuth looks            | Number of looks taken in the azimuth direction                                                                                     | 4                                                                    |
+| InSAR phase filter       | Was an InSAR phase filter used                                                                                                     | yes                                                                  |
+| Phase filter parameter   | Dampening factor                                                                                                                   | 0.5                                                                  |
+| Range bandpass filter    | Range bandpass filter applied                                                                                                      | no                                                                   |
+| Azimuth bandpass filter  | Azimuth bandpass filter applied                                                                                                    | no                                                                   |
+| DEM source               | DEM used in processing                                                                                                             | GLO-30                                                               |
+| DEM resolution           | Pixel spacing in meters for DEM used to process this scene                                                                         | 30                                                                   |
+| Unwrapping type          | Phase unwrapping algorithm used                                                                                                    | snaphu_mcf                                                           |
+| Speckle filter           | Speckle filter applied                                                                                                             | yes                                                                  |
+| Water mask               | Was a water mask used                                                                                                              | yes                                                                  |
 
-*Table 5: List of InSAR parameters included in the parameter text file for all Burst InSAR products*
+*Table 4: List of InSAR parameters included in the parameter text file for all Burst InSAR products*
 
 For jobs processed using the `INSAR_ISCE_BURST` job type, the parameter file will also include some additional entries, 
-as indicated in Table 6. These additional entries are not included in the parameter file for `INSAR_ISCE_MULTI_BURST` 
+as indicated in Table 5. These additional entries are not included in the parameter file for `INSAR_ISCE_MULTI_BURST`
 files. 
 
 | Name                            | Description                                                                                             | Possible Value                                                       |
@@ -526,11 +525,11 @@ files.
 | Multilook Range Pixel Size      | Distance-based spacing of range-doppler SLC samples after multilooking in meters                        | 46.59124229430646                                                    |
 | Radar sensing stop              | Last date and time for data collection                                                                  | 2020-06-04T02:23:16.030988                                           |
 
-*Table 6: List of additional InSAR parameters included in the parameter text file `INSAR_ISCE_BURST` job types.*
+*Table 5: List of additional InSAR parameters included in the parameter text file `INSAR_ISCE_BURST` job types.*
 {% endblock %}
 
 {% block download_tutorial %}
-Step-by-step instructions for finding and downloading RTC On Demand products in Vertex are available in the 
+Step-by-step instructions for finding and downloading Burst InSAR On Demand products in Vertex are available in the 
 [Downloading On Demand Products](https://storymaps.arcgis.com/stories/191bf1b6962c402086807390b3ce63b0#ref-n-4rF6zW "Burst-Based InSAR for Sentinel-1 On Demand StoryMap Tutorial - Downloading On Demand Products"){target=_blank} 
 section of the 
 [Burst-Based InSAR for Sentinel-1 On Demand](https://storymaps.arcgis.com/stories/191bf1b6962c402086807390b3ce63b0 "Burst-Based InSAR for Sentinel-1 On Demand StoryMap Tutorial" ){target=_blank} interactive StoryMap tutorial.
@@ -539,97 +538,12 @@ section of the
 {% block merging_bursts %}
 ## Merging Sentinel-1 Single-Burst InSAR Products
 
-Burst InSAR products generated using the `INSAR_ISCE_BURST` job type can be merged together manually using the 
-[`merge_tops_burst`](https://github.com/ASFHyP3/hyp3-isce2/blob/main/src/hyp3_isce2/merge_tops_bursts.py ){target=_blank} 
-workflow. 
+!!! Warning "The merge_tops_burst workflow is no longer available"
 
-This requires software installation and sufficient compute resources. It is much easier to submit 
-[`INSAR_ISCE_MULTI_BURST`](#multi-burst-insar "Jump to the Multi-Burst InSAR section of this document") 
-jobs, which do the merging for you, but manual merging is an option if you have a specific use case that is not 
-supported by the multi-burst on-demand products.
-
-!!! warning "This workflow is only for products generated using the `INSAR_ISCE_BURST` job type"
-
-    This functionality is not available for products generated using the 
-    `INSAR_ISCE_MULTI_BURST` job type, even if the products include only one burst. 
-
-Merging is done using underlying ISCE2 functionality, and steps 9-11 of the InSAR processing workflow 
-(filtering, unwrapping, and geocoding) found in the 
-[Burst InSAR Processing](#burst-insar-processing "Jump to the Burst InSAR Processing section of this document") 
-section are repeated to ensure consistent results. You will need to install the 
-[HyP3-ISCE2 plugin]( https://github.com/ASFHyP3/hyp3-isce2 "HyP3-ISCE2 Plugin" ){target=_blank} 
-on your local machine, at which point merging can be performed using the following syntax:
-
-```bash
-python -m hyp3_isce2 ++process merge_tops_bursts PATH_TO_UNZIPPED_PRODUCTS
-```
-
-Where `PATH_TO_UNZIPPED_PRODUCTS` is the path to a directory containing **unzipped** Burst InSAR products generated 
-using the `INSAR_ISCE_BURST` job type. For example:
-
-```
-PATH_TO_UNZIPPED_PRODUCTS
-├─ S1_136232_IW2_20200604_20200616_VV_INT80_663F
-├─ S1_136231_IW2_20200604_20200616_VV_INT80_529D
-```
-
-In order to be eligible for merging, all burst products must:
-
-- Have the same reference and secondary dates
-- Have the same polarization
-- Have the same multilooking settings (20x4, 10x2 or 5x1)
-- Be from the same relative orbit
-- Be contiguous
-- Have been generated using the single-burst approach (`INSAR_ISCE_BURST` job type)
-
-The workflow should throw an error if any of these conditions are not met.
-
-### Merge Processing
-During normal ISCE2 InSAR processing, initial interferograms are formed on a burst-by-burst basis. These range-doppler 
-burst interferograms are combined during an ISCE2 step called `mergebursts`, then the remaining steps 
-(filtering, unwrapping and geocoding) are conducted on the merged results.
-
-By including select range-doppler data (wrapped interferogram, geolocation information, and line-of-sight information) 
-and select metadata in our standard Burst InSAR products, we are able to restart ISCE2 processing from the 
-`mergebursts` step, then proceed with the following steps as if it were a standard ISCE2 InSAR processing run. 
-
-This is essentially what's happening behind the scenes when multi-burst interferograms are generated using the 
-`INSAR_ISCE_MULTI_BURST` job type.
-
-The steps of the workflow are as follows:
-
-1.	Recreate a pre-`mergebursts` ISCE2 InSAR processing state using the input Burst InSAR products.
-2.	Run a modified version of ISCE2’s `mergebursts` step.
-3.	Apply the Goldstein-Werner power spectral filter with a dampening factor of 0.5.
-4.	Unwrap the wrapped phase interferogram using [SNAPHU](http://web.stanford.edu/group/radar/softwareandlinks/sw/snaphu/){target=_blank}'s minimum cost flow (MCF) unwrapping algorithm to produce the unwrapped phase interferogram.
-5.	Geocode the output products.
-
-As mentioned above, this workflow uses underlying ISCE2 functionality to perform these steps so the results of this 
-workflow should be identical to the results obtained by performing a standard multi-burst ISCE2 InSAR run 
-(assuming that the Enhanced Spectral Diversity technique is not used for co-registration).
-
-#### Merge Processing Options
-
-The processing options available for the merging are the same as those available for standard Burst InSAR products. 
-Check out the [Processing Options](#processing-options "Jump to the Processing Options section of this document") 
-section for more details.
-
-To learn about the command line argument syntax for this workflow, look at the help documentation using:
-```bash
-python -m hyp3_isce2 ++process merge_tops_bursts --help
-```
-
-#### Merged Product Packaging
-The product packaging of merged Burst InSAR products generated using the `merge_tops_bursts.py` script follows the 
-same conventions used for single-burst products (`INSAR_ISCE_BURST` job type) outlined in the 
-[Product Packaging](#product-packaging "Jump to the Product Packaging section of this document") section 
-with two exceptions:
-
-  - The four range-doppler images are not included since the products have already been merged
-  - The product name is slightly modified
-    - The burst ID (`bbbbbb`) is swapped for the zero-padded relative orbit number (`rrr`)
-    - The sub-swath number is removed 
-    - The resulting format is `S1_rrr__yyymmdd_yyymmdd_pp_INTn_uuuu`
+    In the past, Burst InSAR products generated using the `INSAR_ISCE_BURST` job type could be merged together
+    manually using the `merge_tops_burst.py` workflow. This Python script is no longer supported. Please use the
+    [`INSAR_ISCE_MULTI_BURST`](#multi-burst-insar "Jump to the Multi-Burst InSAR section of this document") job type
+    to generate interferograms that span multiple bursts.
 
 {% endblock %}
 

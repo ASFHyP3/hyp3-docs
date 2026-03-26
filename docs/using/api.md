@@ -1,19 +1,35 @@
 # Using the HyP3 API
 
-The HyP3 API is built on [OpenAPI](https://www.openapis.org/ "https://www.openapis.org/" ){target=_blank} and [Swagger](https://swagger.io/ "https://swagger.io/" ){target=_blank}.
-A friendly interface for exploring the API is available at:
+HyP3's API is built on [OpenAPI](https://www.openapis.org/ "https://www.openapis.org/" ){target=_blank} 
+and [Swagger](https://swagger.io/ "https://swagger.io/" ){target=_blank}.
 
-#### <https://hyp3-api.asf.alaska.edu/ui/>{target=_blank}
+A friendly interface for exploring a HyP3 deployment's API is available at the `/ui/` endpoint:
 
-In order to use the API, you'll need a `asf-urs` session cookie, which you can get
-by [signing in to Vertex](https://search.asf.alaska.edu/#/){target=_blank}
+- **[HyP3 Basic](../about/hyp3_basic.md)**: <https://hyp3-api.asf.alaska.edu/ui/>{target=_blank}
+- **[HyP3+](../about/hyp3_plus.md)**: <https://hyp3-plus.asf.alaska.edu/ui/>{target=_blank}
+
+The process of using the HyP3 API is the same for any deployment of HyP3. Importantly, each deployment of HyP3 is 
+completely independent, so if you submit jobs to one HyP3 deployment, you will not be able to see them in a different 
+HyP3 deployment. 
+
+## Authentication
+
+In order to use the API, you'll need an `asf-urs` session cookie, which you can get
+by [signing in to Vertex](https://search.asf.alaska.edu/#/){target=_blank}.
 
 ![vertex sign in](../images/vertex-sign-in.png)
+
+Alternatively, you can 
+[generate an Earthdata Login user token](https://urs.earthdata.nasa.gov/documentation/for_users/user_token "urs.earthdata.nasa.gov/documentation/for_users/user_token" ){target=_blank}, 
+and enter it in the `BearerAuth` field by clicking the `Authorize` button in the Swagger UI. 
+
+Refer to the [Authentication](authentication.md#authentication-with-the-hyp3-api "Jump to Authentication page") 
+page for more detailed guidance on authentication methods.
 
 ### Confirm you are authenticated
 
 To confirm you are authenticated, you can run a `GET` request to our `/user` endpoint.
-Select the blue `GET` button next to `/user` and click the `Try it out` button
+Select the blue `GET` button next to `/user` and click the `Try it out` button.
 ![GET /user try](../images/get_user_try.png)
 
 Then, execute the request and look at the response
@@ -39,7 +55,8 @@ If you get a `Code 200` you should see a JSON dictionary of your user informatio
 Jobs are submitted through the API by providing a JSON payload with a list of job
 definitions.
 
-Sentinel-1 jobs are submitted using [ESA granule IDs](https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention){target=_blank}.
+Sentinel-1 jobs are submitted using 
+[ESA granule IDs](https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention){target=_blank}.
 A minimal job list for a single Sentinel-1 RTC job would look like:
 
 ```json
@@ -209,7 +226,7 @@ See the [ARIA-S1-GUNW Product Guide Frame ID section](../guides/gunw_product_gui
 AutoRIFT supports processing Sentinel-1, Sentinel-2, or Landsat-8 Collection 2 pairs.
 
 * Sentinel-1 jobs are submitted using [ESA granule IDs](https://sentiwiki.copernicus.eu/web/s1-products#S1-Products-SAR-Naming-Convention){target=_blank}
-* Sentinel-2 jobs are submitted using [ESA granule IDs](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-2-msi/naming-convention){target=_blank}
+* Sentinel-2 jobs are submitted using [ESA granule IDs](https://sentiwiki.copernicus.eu/web/s2-products#S2Products-NamingConventionS2-Products-Naming-Conventiontrue){target=_blank}
 * Landsat-8 Collection 2 jobs are submitted using [USGS scene IDs](https://www.usgs.gov/faqs/what-naming-convention-landsat-collection-2-level-1-and-level-2-scenes?qt-news_science_products=0#qt-news_science_products){target=_blank}
 
 To submit an example set of jobs including all supported missions, you could write a job list like:

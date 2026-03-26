@@ -32,7 +32,7 @@ scenario, most global landmasses are imaged every 12 days. However, some areas o
 including Europe and areas undergoing rapid changes due to uplift or subsidence activity, are imaged every 6 days. 
 
 Refer to the 
-[Sentinel-1 Observation Scenario](https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/observation-scenario "https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/observation-scenario" ){target=_blank} 
+[Sentinel-1 Observation Scenario](https://sentinels.copernicus.eu/copernicus/sentinel-1/observation-scenario "https://sentinels.copernicus.eu/copernicus/sentinel-1/observation-scenario" ){target=_blank} 
 for more information on the acquisition plans that have been used to meet mission goals under different 
 constellation configurations.
 
@@ -56,7 +56,7 @@ The gaps in coverage were particularly noticeable the first few months after Sen
 continued to have little or no coverage in the period from December 2021 to April 2025, when Sentinel-1C began 
 acquiring data regularly. Keep this in mind as you search for data in your area of interest. If there are fewer 
 results than you would expect, you can 
-[download acquisition plans for the mission from ESA](https://sentinel.esa.int/web/sentinel/copernicus/sentinel-1/acquisition-plans "Sentinel-1 Acquisition Plans" ){target=_blank} to view the acquisition plan for your area and time period of interest.
+[download acquisition plans for the mission from ESA](https://sentinels.copernicus.eu/copernicus/sentinel-1/acquisition-plans "Sentinel-1 Acquisition Plans" ){target=_blank} to view the acquisition plan for your area and time period of interest.
 
 ## The Future of the Sentinel-1 Mission
 

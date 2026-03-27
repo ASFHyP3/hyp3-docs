@@ -61,9 +61,10 @@ The RTC algorithm used for the OPERA RTC-S1 products was developed by
 and is available in the 
 [ISCE3 open source software library](https://github.com/isce-framework/isce3 "github.com/isce-framework/isce3" ){target=_blank}. 
 
-The products are processed on the basis of individual Sentinel-1 SLC bursts, and output as Cloud-Optimized GeoTIFFs
-(COGs) in a UTM Zone or Polar Stereographic projection. The pixel values represent gamma-0 power, and pixel spacing 
-is 30 meters. No speckle filter has been applied.
+The products are processed on the basis of individual 
+[Sentinel-1 SLC bursts](https://documentation.dataspace.copernicus.eu/Data/SentinelMissions/Sentinel1.html#sentinel-1-level-1-single-look-complex-slc "https://documentation.dataspace.copernicus.eu/Data/SentinelMissions/Sentinel1.html" ){target=_blank}, 
+and output as Cloud-Optimized GeoTIFFs (COGs) in a UTM Zone or Polar Stereographic projection. 
+The pixel values represent gamma-0 power, and pixel spacing is 30 meters. No speckle filter has been applied.
 
 Refer to the [OPERA RTC for Sentinel-1 (RTC-S1) Product Guide](guides/opera_rtc_product_guide.md "OPERA RTC-S1 Product Guide") 
 to learn more about the products. 

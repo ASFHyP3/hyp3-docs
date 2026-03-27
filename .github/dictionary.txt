@@ -427,6 +427,7 @@ scatterers
 SDH
 SDK
 SDS
+SDS-generated
 SDV
 Sentinel-1A
 Sentinel-1B

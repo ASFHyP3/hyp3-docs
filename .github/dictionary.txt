@@ -116,6 +116,7 @@ customizable
 DAAC
 date1
 date2
+Datos
 Decompositions
 Decorrelation
 decorrelation
@@ -145,6 +146,7 @@ EDL
 EGM2008
 EGM96
 electro-magnetic
+Encuentra
 endblock
 entrypoint
 EOSDIS
@@ -284,6 +286,7 @@ lon
 lonl_f
 lonu_f
 lookAngle
+los
 ls_map.tif
 lv_phi
 lv_theta

@@ -60,7 +60,7 @@ horizontal primary polarization. This results in HH and HV RTC-S1 products.
 
 Different polarizations are sensitive to different surface characteristics, with VV being more sensitive to surface 
 roughness, VH or HV being more sensitive to volume scatterers such as vegetation, and HH being more sensitive to 
-double-bounce scattering from objects that stand perpendicular to the ground. 
+double-bounce scattering from objects that are perpendicular to the surface. 
 
 ### Processing Platforms
 

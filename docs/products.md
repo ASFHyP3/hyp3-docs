@@ -39,6 +39,7 @@ and in
 [power, amplitude, or dB scale](guides/rtc_product_guide.md#scale "RTC Scale Documentation"). 
 Users also have the option to 
 [apply a speckle filter](guides/rtc_product_guide.md#speckle-filter "RTC Speckle Filter Documentation"). 
+
 To learn more, refer to the [Sentinel-1 RTC Product Guide](guides/rtc_product_guide.md 
 "Sentinel-1 RTC Product Guide").
 
@@ -64,9 +65,13 @@ The products are processed on the basis of individual Sentinel-1 SLC bursts, and
 is 30 meters. No speckle filter has been applied.
 
 Refer to the [OPERA RTC for Sentinel-1 (RTC-S1) Product Guide](guides/opera_rtc_product_guide.md "OPERA RTC-S1 Product Guide") 
-to learn more about the products. Step-by-step guidance for OPERA RTC-S1 data access options is available in 
+to learn more about the products. 
+
+Step-by-step guidance for OPERA RTC-S1 data access options is available in 
 ASF's [OPERA Sentinel-1 RTC](https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b "OPERA Sentinel-1 RTC StoryMap" ){target=_blank} 
-tutorial.
+tutorial (in English) or 
+[OPERA Sentinel-1 RTC: Encuentra y Accede a los Datos](https://storymaps.arcgis.com/stories/ee1c4de3e5eb44de8f377c18d95e05fa) 
+tutorial (in Spanish).
 
 ## InSAR
 

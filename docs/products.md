@@ -60,6 +60,7 @@ The RTC algorithm used for the OPERA RTC-S1 products was developed by
 [Gustavo Shiroma and others](https://ntrs.nasa.gov/citations/20220000810 "An Efficient Area-Based Algorithm for SAR Radiometric Terrain Correction and Map Projection" ){target=_blank}, 
 and is available in the 
 [ISCE3 open source software library](https://github.com/isce-framework/isce3 "github.com/isce-framework/isce3" ){target=_blank}. 
+
 The products are processed on the basis of individual Sentinel-1 SLC bursts, and output as Cloud-Optimized GeoTIFFs
 (COGs) in a UTM Zone or Polar Stereographic projection. The pixel values represent gamma-0 power, and pixel spacing 
 is 30 meters. No speckle filter has been applied.

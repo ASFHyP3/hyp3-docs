@@ -33,16 +33,21 @@ users to monitor surface processes during natural disasters, such as hurricanes 
 prone to frequent cloud cover. Backscatter values can be used to determine surface water extent, soil moisture 
 trends, surface roughness, and vegetation conditions.
 
-#### Digital Elevation Model (DEM)
+### Project Extent
+
+On-Demand OPERA RTC-S1 products are available for any Sentinel-1 IW SLC burst acquired on or after April 14, 2016, 
+for locations over land north of -60° latitude (i.e. all global landmasses except for Antarctica).
+
+### Digital Elevation Model (DEM)
 
 Radiometric Terrain Correction requires the use of a Digital Elevation Model (DEM) both for 
 [correcting distortions caused by topography](https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b#ref-n-uKhHbd "OPERA Sentinel-1 RTC StoryMap Tutorial" ){target=_blank}
 and for geocoding the output product. The OPERA RTC-S1 products are processed using the 
 [Copernicus GLO-30 DEM](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM "Copernicus DEM" ){target=_blank}.
 
-#### Polarization
+### Polarization
 
-Most Sentinel-1 acquisitions are collected in two 
+Most Sentinel-1 acquisitions over land are collected in two 
 [polarizations](introduction_to_sar.md#polarizations), 
 and the OPERA project generates RTC-S1 products for all available polarizations. 
 
@@ -56,11 +61,6 @@ horizontal primary polarization. This results in HH and HV RTC-S1 products.
 Different polarizations are sensitive to different surface characteristics, with VV being more sensitive to surface 
 roughness, VH or HV being more sensitive to volume scatterers such as vegetation, and HH being more sensitive to 
 double-bounce scattering from objects that stand perpendicular to the ground. 
-
-### Project Extent
-
-On-Demand OPERA RTC-S1 products are available for any Sentinel-1 IW SLC burst acquired on or after April 14, 2016, 
-for locations over land north of -60° latitude (i.e. all global landmasses except for Antarctica).
 
 ### Processing Platforms
 
@@ -79,7 +79,7 @@ All OPERA RTC-S1 products, regardless of the production system used for generati
 [OPERA_L2_RTC-S1_V1 collection](https://www.earthdata.nasa.gov/data/catalog/asf-opera-l2-rtc-s1-v1-1 "OPERA_L2_RTC-S1-V1" ){target=_blank} and 
 [available from ASF](https://search.asf.alaska.edu/#/?dataset=OPERA-S1&productTypes=RTC "Vertex search for OPERA RTC-S1 Products" ){target=_blank}. 
 
-### Archived OPERA RTC-S1 Products
+## Accessing OPERA RTC-S1 Products
 
 OPERA RTC-S1 products in all available polarizations are archived for all Sentinel-1 acquisitions 
 over landmasses (except Antarctica) since April 14, 2016. As new Sentinel-1 SLCs are acquired and added to 
@@ -99,9 +99,9 @@ For more information on options for accessing archived OPERA RTC-S1 products, re
 For more information on the technical specifications of the OPERA RTC-S1 products, refer to JPL's 
 [RTC Product Documentation](https://www.jpl.nasa.gov/go/opera/products/rtc-product/ "OPERA RTC Product" ){target=_blank}.
 
-## Searching for Archived OPERA RTC-S1 Products
+### ASF Data Search / Vertex
 
-To search for existing OPERA RTC-S1 products in 
+To search for OPERA RTC-S1 products in 
 [Vertex](https://search.asf.alaska.edu/#/?dataset=OPERA-S1&productTypes=RTC "search.asf.alaska.edu" ){target=_blank}, 
 select `OPERA-S1` from the `Dataset` drop-down menu. 
 
@@ -114,18 +114,21 @@ make use of the available search filters to find the products you want.
 2. Set a date range
 3. In the Search Filters menu, select the `L2 Radiometric Terrain Corrected (RTC)` File Type
 
-For step-by-step guidance on searching for OPERA RTC-S1 products using 
+For step-by-step guidance on searching for OPERA RTC-S1 products interactively using 
 [Vertex](https://search.asf.alaska.edu/#/?dataset=OPERA-S1&productTypes=RTC "search.asf.alaska.edu" ){target=_blank} 
-or the 
+or programmatically using the 
 [asf_search Python package](https://docs.asf.alaska.edu/asf_search/basics/ "docs.asf.alaska.edu" ){target=_blank}, 
 refer to the 
 [ASF Data Search](https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b#ref-n-r602VT "OPERA Sentinel-1 RTC: ASF Data Search" ){target=_blank} 
 section of the 
 [OPERA Sentinel-1 RTC StoryMap tutorial](https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b "OPERA Sentinel-1 RTC StoryMap Tutorial" ){target=_blank}.
 
-For more information about using 
-[Earthdata Search](https://search.earthdata.nasa.gov/search/granules?p=C2777436413-ASF&q=opera%20rtc&tl=1701400109!3!!&lat=37.29921784409428&long=-123.9521484375&zoom=7 "Earthdata Search for OPERA RTC-S1"){target=-blank} 
-to access OPERA RTC-S1 products, refer to the 
+### Earthdata Search
+
+OPERA RTC-S1 products are also available in 
+[Earthdata Search](https://search.earthdata.nasa.gov/search/granules?p=C2777436413-ASF&q=opera%20rtc&tl=1701400109!3!!&lat=37.29921784409428&long=-123.9521484375&zoom=7 "Earthdata Search for OPERA RTC-S1"){target=-blank}.
+
+To learn more about accessing OPERA RTC-S1 products in Earthdata Search, refer to the 
 [Earthdata Search](https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b#ref-n-pe7EfH "OPERA Sentinel-1 RTC: Earthdata Search" ){target=_blank} 
 section of the 
 [OPERA Sentinel-1 RTC StoryMap tutorial](https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b "OPERA Sentinel-1 RTC StoryMap Tutorial" ){target=_blank}.
@@ -135,7 +138,7 @@ section of the
 The products generated by the OPERA SDS are available for download as individual files associated with the 
 OPERA_L2_RTC-S1_V1 record corresponding to the Sentinel-1 burst used as input for the product.
 
-Products generated On Demand using ASF's HyP3 platform are delivered as zip files that include all the files 
+Products generated using ASF's HyP3 platform are delivered as zip files that include all the files 
 available for the products generated by the OPERA SDS. The zip file also includes the color browse image (which is 
 not georeferenced) used for displaying archived OPERA RTC-S1 products in Vertex. 
 
@@ -302,7 +305,7 @@ OPERA_L2_RTC-S1_T069-147170-IW1_20210205T163901Z_20220101T140222Z_S1A_30_v1.0_ma
 
 ## On-Demand RTC Product Options from ASF
 
-In addition to OPERA RTC-S1 products, which use an RTC algorithm available in JPL's open-source 
+In addition to the OPERA RTC-S1 products, which are generated using an RTC algorithm available in JPL's open-source 
 [ISCE3 software](https://github.com/isce-framework/isce3 "github.com/isce-framework/isce3" ){target=_blank} 
 to perform radiometric terrain correction, ASF also offers 
 [On-Demand RTC products](rtc_product_guide.md "Sentinel-1 RTC Product Guide" ){target=_blank} 

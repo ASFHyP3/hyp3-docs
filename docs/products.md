@@ -63,8 +63,9 @@ The products are processed on the basis of individual Sentinel-1 SLC bursts, and
 (COGs) in a UTM Zone or Polar Stereographic projection. The pixel values represent gamma-0 power, and pixel spacing 
 is 30 meters. No speckle filter has been applied.
 
-More information about accessing OPERA RTC-S1 products is available in our 
-[OPERA Sentinel-1 RTC](https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b "OPERA Sentinel-1 RTC StoryMap" ){target=_blank} 
+Refer to the [OPERA RTC for Sentinel-1 (RTC-S1) Product Guide](guides/opera_rtc_product_guide.md "OPERA RTC-S1 Product Guide") 
+to learn more about the products. Step-by-step guidance for OPERA RTC-S1 data access options is available in 
+ASF's [OPERA Sentinel-1 RTC](https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b "OPERA Sentinel-1 RTC StoryMap" ){target=_blank} 
 tutorial.
 
 ## InSAR

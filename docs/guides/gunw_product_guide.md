@@ -100,90 +100,151 @@ ARIA-S1-GUNW jobs for On Demand processing.
 
 ## Ordering On Demand Products
 
-!!! tip "ARIA-S1-GUNW On Demand Search now available in Vertex!"
-
-    Users can now view and select ARIA Frames and submit On Demand processing jobs directly in Vertex!    
-
-    Simply activate the On Demand toggle switch in the Geographic Search interface for the ARIA S1 GUNW Dataset 
-    to view ARIA frames and select date pairs to submit for processing.
-
 If the ARIA-S1-GUNW products you need are not available in the archive, you can use ASF's On Demand platform to submit 
-custom ARIA-S1-GUNW jobs for processing. Once processing is complete, there are a couple of different approaches for 
-[accessing On Demand ARIA-S1-GUNW products](#data-access "Jump to the Data Access section of this document"):
+custom ARIA-S1-GUNW jobs for processing. 
 
-- You can access them as you would any other 
-  [On Demand](#accessing-products-using-on-demand-interfaces "Jump to the On Demand Interfaces section of this document" ) 
-  products from ASF.
-    - The download links provided will be active for 14 days.
-- Products generated On Demand are also added to the archive and can be accessed by 
-  [searching for ARIA-S1-GUNW](#accessing-products-in-the-archive "Jump to the Accessing Products in the Archive section of this document" ) 
-  products.
-    - The links to the archived products never expire. 
+To order ARIA-S1-GUNW products using 
+[Vertex](https://search.asf.alaska.edu/#/?dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA)), 
+select **ARIA-S1-GUNW** from the Dataset menu for a **Geographic Search**, and turn on the **On Demand** toggle switch. 
 
-!!! tip "Sentinel-1C acquisitions now supported for ARIA-S1-GUNW products" 
+![ARIA S1 GUNW On Demand Toggle](../images/aria-gunw-on-demand-toggle.png "ARIA S1 GUNW On Demand Toggle Switch")
 
-    The code used for processing ARIA-S1-GUNW products has been updated to support Sentinel-1C acquisitions. You 
-    can now find archived ARIA-S1-GUNW products that include S1C acquisitions, and S1C acquisitions can be submitted 
-    for processing ARIA-S1-GUNW On Demand using the HyP3 API or SDK. Vertex support for submitting requests for 
-    On Demand ARIA-S1-GUNW products including S1C acquisitions is coming soon. 
+This displays an ARIA Frame ID map, which serves as the interface for selecting input scenes to submit for processing.
 
 ### ARIA Frame ID Maps
 
 As described in the [ARIA Frame IDs section](#aria-frame-ids "Jump to the ARIA Frame IDs section"), ARIA-S1-GUNW 
-products are processed based on frames that are consistent through time. The ARIA project provides a 
-[geojson file indicating the extent of each ARIA Frame ID](https://github.com/ASFHyP3/asf-enumeration/blob/develop/src/asf_enumeration/frame_maps/aria_frames.geojson "https://github.com/ASFHyP3/asf-enumeration/blob/develop/src/asf_enumeration/frame_maps/aria_frames.geojson" ){target=_blank}. 
-This file can be downloaded and used for reference, but it can also be displayed in Vertex by activating the 
-**On Demand** toggle switch when performing a Geographic Search for ARIA S1 GUNW products. Activating this 
-toggle also reveals a download button for the geojson.
+products are processed based on frames that are consistent through time. There is a different set of ARIA Frame IDs 
+for each orbit direction (Ascending and Descending). 
 
-![ARIA S1 GUNW On Demand Toggle](../images/aria-gunw-on-demand-toggle.png "ARIA S1 GUNW On Demand Toggle Switch")
+#### Flight Direction
 
-By default, Vertex displays frames for the Ascending orbit direction. To view the frames for the Descending orbit 
-direction, click the **Filters** button and set the **Flight Direction** option to the desired direction.
+By default, Vertex displays frames for the ***Ascending*** orbit direction. To view the frames for the 
+***Descending*** orbit direction, click the **Filters** button and set the **Flight Direction** option to the 
+desired direction.
 
 ![Display Descending Frames](../images/aria-gunw-descending.png "Display Descending Frames")
 
-### Search for Sentinel-1 SLC Acquisition Dates for an ARIA Frame ID
+#### ARIA Frame ID GeoJSON
 
-The ARIA processing code takes a list of reference and secondary Sentinel-1 IW SLC granules as input, but 
-it can be tricky to find all of the necessary granules for a given ARIA Frame ID. To ensure that there is 
-full coverage over the desired ARIA Frame, **users just pass the ARIA Frame ID and the dates of the 
-desired primary and secondary passes over that frame into the On Demand job specification** rather than 
-assembling lists of primary and secondary SLCs.
+The ARIA project provides a 
+[geojson file indicating the extent of each ARIA Frame ID](https://github.com/ASFHyP3/asf-enumeration/blob/develop/src/asf_enumeration/frame_maps/aria_frames.geojson "https://github.com/ASFHyP3/asf-enumeration/blob/develop/src/asf_enumeration/frame_maps/aria_frames.geojson" ){target=_blank}, 
+which can be downloaded and used for reference outside of Vertex. When the **On Demand** toggle is activated, a 
+download link for this geojson is displayed next to the toggle switch.
 
-To find suitable primary and secondary acquisition dates to use for a specific ARIA Frame ID, use a 
+### Processing Parameters
+
+While the ARIA processing code takes a list of reference and secondary Sentinel-1 IW SLC granules as input, 
+On Demand users do not need to assemble these lists manually. 
+
+To ensure full coverage over the desired ARIA Frame and avoid failures caused by incomplete granule lists, 
+the ARIA-S1-GUNW On Demand job specification simply takes the **ARIA Frame ID** and the 
+**dates of the desired primary and secondary passes** over that frame. 
+
+### Search for ARIA-S1-GUNW Date Pairs
+
+Whether you are submitting jobs using Vertex or programmatically, Vertex provides a good interface 
+for finding suitable primary and secondary acquisition dates for a specific ARIA Frame ID. 
+
+1. Perform a Vertex 
 [Geographic Search](https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options "Vertex Manual: Geographic Search Options" ){target=_blank} 
-for the **ARIA S1 GUNW** Dataset in 
-[Vertex](https://search.asf.alaska.edu/#/ "search.asf.alaska.edu" ){target=_blank}, 
-and activate the On Demand toggle switch to view the ARIA frames. By default, Vertex displays the frames for the 
-ascending orbit direction, so you will need to adjust the flight direction setting in the filters to view descending 
-frames. 
+for the **ARIA S1 GUNW** Dataset and activate the **On Demand** toggle switch to view the ARIA frames. 
 
-Click on the desired frame and click **Build SBAS SLC Stack** to find available date pairings for that frame.
+    - Recall that there are different frame maps available for Ascending and Descending orbit directions. Verify that 
+      you have [selected the desired orbit direction](#flight-direction "Jump to the Flight Direction Section").
+    - To select a different direction, click on the **Filters** button and use the **Direction** filter in the 
+      **Additional Filters** section to select Ascending or Descending.
 
 ![Build ARIA GUNW SBAS SLC Stack](../images/aria-gunw-build-stack.png "Build ARIA GUNW SBAS SLC Stack")
 
-This opens the [SBAS Tool](https://docs.asf.alaska.edu/vertex/sbas/) in Frame Mode, allowing users to select dates 
-that have the required 90% coverage of the ARIA Frame to submit for processing. Click on the **On Demand** icon for the 
-desired date pair to 
-[add it to the On Demand Queue](../using/vertex.md#1-select-your-scenes "Jump to the Using Vertex page of this documentation").
+2. Click on the desired frame and click **Build SBAS SLC Stack** to find available date pairings for that frame. 
+   This opens the [SBAS Tool](https://docs.asf.alaska.edu/vertex/sbas/) with the necessary parameters already set
+   to support ARIA-S1-GUNW jobs: 
+
+    - The tool opens in **Frame Mode**
+    - The **Dataset** is set to ARIA-S1-GUNW
+    - The **Frame** field is populated with the selected ARIA Frame ID
+
+![Open SBAS Tool in Frame Mode](../images/aria-gunw-sbas-search.png "Open the SBAS Tool Optimized for ARIA-S1-GUNW Jobs")
+
+- Only date pairs that have the required 90% minimum coverage of the selected ARIA Frame are included in the results. 
+
+!!! warning "ARIA-S1-GUNW Jobs Require SBAS Frame Mode"
+
+    If ARIA-S1-GUNW jobs are submitted from the SBAS interface _without_ **Frame Mode** turned on, the jobs will fail. 
+    
+    To avoid potential errors when submitting ARIA-S1-GUNW jobs, it is best to use the ARIA-S1-GUNW 
+    Geographic Search interface to launch the SBAS tool, which automatically provides the correct settings to 
+    support ARIA-S1-GUNW SBAS stacks. 
+
+    If you do access the SBAS tool using a Sentinel-1 Geographic Search, you will need to activate the **Frame Mode** 
+    toggle _AND_ enter a valid ARIA Frame ID instead of a Sentinel-1 Scene name before you can submit 
+    ARIA-S1-GUNW jobs for On Demand processing.
+    
+    !["ARIA GUNW Frame Mode"](../images/aria-gunw-frame-mode.png){ style="float: center;" }
+
+3. Adjust the SBAS parameters to refine the date pairs displayed in the list of results.
+
+    - Click the **SBAS Filters** button to set or adjust the date range for the listed pairs
+    - Use the vertical slider to restrict the results based on [perpendicular baseline](insar_product_guide.md#perpendicular-baseline "Jump to Perpendicular Baseline content") values (distance between the sensor location for the two acquisition dates)
+    - Use the horizontal slider to refine [temporal baseline](insar_product_guide.md#temporal-baseline "Jump to Temporal Baseline content") values (the number of days between the two acquisition dates) included in the results
+
+![SBAS Frame Mode](../images/aria-gunw-frame-sbas.png "Open the SBAS Tool in Frame Mode")
+
+4. Click on the **On Demand** icon for a desired date pair, click the **ARIA_S1_GUNW** job type, and click 
+   **Add 1 SLC Pair** to 
+   [add it to the On Demand Queue](../using/vertex.md#2-select-your-scenes "Jump to the Using Vertex page of this documentation").
 
 ![Submit an ARIA GUNW job](../images/aria-gunw-submit-job.png "Submit an ARIA S1 GUNW Job for On Demand Processing")
 
+   ![Submit All Jobs in Results](../images/aria-gunw-bulk-add.png "Submit all the ARIA S1 GUNW Jobs in the SBAS Results for On Demand Processing"){ width="30%"; style="float: right;" margin-left: "1em";}
+
+   - To add all of the date pairs listed in the results to the On Demand Queue, click the **On Demand** button 
+     at the top of the results list. Click on the **ARIA_S1_GUNW** job type, then select the option to add all of the 
+     SLC pairs to the On Demand Queue.
+
 ### Submit On Demand ARIA-S1-GUNW Jobs
 
-On Demand ARIA-S1-GUNW jobs can be submitted using the following methods: 
-
-- directly through Vertex
-- using the `ARIA_S1_GUNW` job type in the 
-  [HyP3 API](../using/api.md#submitting-aria-s1-gunw-jobs "hyp3-docs.asf.alaska.edu/using/api/#submitting-aria-s1-gunw-jobs" ){target=_blank}
-- using the `submit_aria_s1_gunw_job` method of the `HyP3` class in the 
-  [HyP3 Python SDK](../using/sdk.md "hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank}
+On Demand ARIA-S1-GUNW jobs can be submitted for processing using the 
+[On Demand Queue in Vertex](#submit-jobs-in-vertex "Submit Jobs in Vertex") or 
+[programmatically](#submit-jobs-programmatically "Submit Jobs Programmatically").
 
 Unlike ASF's other On Demand InSAR workflows, customizable processing options (multilooking, filter strength, etc.) 
 are not available for ARIA-S1-GUNW jobs.
 
-To submit an ARIA_S1_GUNW job programmatically, all you need is: 
+#### Submit Jobs in Vertex
+
+Once you have added the desired jobs to your [On Demand Queue](#search-for-aria-s1-gunw-date-pairs) in Vertex, 
+click the large **On Demand** icon in the top right corner of Vertex and select **On Demand Queue** 
+to view your On Demand Queue and 
+[submit your processing request](../using/vertex.md#3-submit-your-request "Submit Your Request").
+
+![Open On Demand Queue](../images/aria-gunw-on-demand-queue.png "Open the On Demand Queue in Vertex")
+
+Review the list of jobs in the ARIA_S1_GUNW tab of the queue, then click the **Submit Jobs** button at the 
+bottom of the window. You will have the option to enter a Project Name before completing the submission. 
+
+!!! warning "ARIA-S1-GUNW Jobs Require Frame ID"
+    
+    ARIA-S1-GUNW jobs require a valid ARIA Frame ID when they are submitted for On Demand processing in Vertex. 
+
+    If a Sentinel-1 SLC Scene is referenced for a job listed in the **ARIA-S1-GUNW** tab of the On Demand Queue in 
+    Vertex, processing will fail. These jobs must reference an 
+    [ARIA Frame ID](#search-for-aria-s1-gunw-date-pairs) 
+    rather than a Sentinel-1 Scene.
+
+    !["ARIA GUNW Frame Mode"](../images/aria-gunw-invalid.png){ width="85%"; style="float: center;" }
+
+#### Submit Jobs Programmatically
+
+There are two options for submitting jobs programmatically: 
+
+- Use the `ARIA_S1_GUNW` job type in the 
+  [HyP3 API](../using/api.md#submitting-aria-s1-gunw-jobs "hyp3-docs.asf.alaska.edu/using/api/#submitting-aria-s1-gunw-jobs" ){target=_blank}
+- Use the `submit_aria_s1_gunw_job` method of the `HyP3` class in the 
+  [HyP3 Python SDK](../using/sdk.md "hyp3-docs.asf.alaska.edu/using/sdk" ){target=_blank}
+
+To submit an ARIA-S1-GUNW job using either of these programmatic approaches, the necessary parameters are: 
 
 - the ARIA Frame ID number 
 - the reference date, which is the **more recent pass** over the ARIA Frame

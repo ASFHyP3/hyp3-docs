@@ -20,8 +20,8 @@ RTC processing is a required first step for many amplitude-based SAR application
 
 There are two different Sentinel-1 RTC products available from ASF: 
 
-  - [Full-scene processing using GAMMA software](#full-scene-rtc-gamma) 
-  - [OPERA RTC-S1 products](#opera-rtc-s1), which are processed on the basis of individual SLC bursts
+  - Full-scene [RTC processed using GAMMA software](#full-scene-rtc-gamma) 
+  - Burst-based [OPERA RTC-S1 products](#opera-rtc-s1)
 
 The full-scene RTC products are available On Demand, while the OPERA RTC-S1 products are 
 already processed and available in the archive. 

@@ -94,7 +94,7 @@ OPERA RTC-S1 products can be accessed using a number of methods:
   - NASA's [Earthdata Search](https://search.earthdata.nasa.gov/search/granules?p=C2777436413-ASF "search.earthdata.nasa.gov" ){target=_blank} 
     interface, which provides access to all of NASA's Earth Science datasets
 
-For more information on options for accessing archived OPERA RTC-S1 products, refer to ASF's 
+For more information on options for accessing OPERA RTC-S1 products, refer to ASF's 
 [OPERA Sentinel-1 RTC tutorial](https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b "OPERA Sentinel-1 RTC StoryMap Tutorial" ){target=_blank}. 
 For more information on the technical specifications of the OPERA RTC-S1 products, refer to JPL's 
 [RTC Product Documentation](https://www.jpl.nasa.gov/go/opera/products/rtc-product/ "OPERA RTC Product" ){target=_blank}.

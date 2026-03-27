@@ -82,7 +82,7 @@ All OPERA RTC-S1 products, regardless of the production system used for generati
 ## Accessing OPERA RTC-S1 Products
 
 OPERA RTC-S1 products in all available polarizations are archived for all Sentinel-1 acquisitions 
-over landmasses (except Antarctica) since April 14, 2016. As new Sentinel-1 SLCs are acquired and added to 
+over landmasses (except Antarctica) since April 14, 2016. As new Sentinel-1 SLCs are added to 
 ASF's archive, the OPERA project continues to process them to RTC-S1 products. New RTC-S1 products 
 are generally available within 12 hours of the Sentinel-1 acquisition.
 

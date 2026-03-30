@@ -9,6 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.13.1]
 
 ### Changed
+* Changed ARIA links from `aria.jpl.nasa.gov` to `aria.caltech.edu`.
 * Corrected StoryMap link on the [HyP3 Products page](docs/products.md) to open content in a new tab
 
 ## [0.13.0]

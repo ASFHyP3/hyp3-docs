@@ -10,13 +10,14 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 * Changed ARIA links from `aria.jpl.nasa.gov` to `aria.caltech.edu`.
+* Corrected StoryMap link on the [HyP3 Products page](docs/products.md) to open content in a new tab
 
 ## [0.13.0]
 
 ### Changed
 * Menu navigation updated to include entries for OPERA RTC-S1 resources
 * [HyP3 Products page](docs/products.md) updated to include OPERA RTC-S1 
-* Improved guidance for ordering ARIA-S1-GUNW products On Demand.
+* Improved guidance for ordering ARIA-S1-GUNW products On Demand
 
 ## [0.12.9]
 

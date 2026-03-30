@@ -143,8 +143,8 @@ the ARIA-S1-GUNW On Demand job specification simply takes the **ARIA Frame ID** 
 
 ### Search for ARIA-S1-GUNW Date Pairs
 
-Whether you are submitting jobs using Vertex or programmatically, Vertex provides a good interface 
-for finding suitable primary and secondary acquisition dates for a specific ARIA Frame ID. 
+Vertex provides a good interface for finding suitable primary and secondary acquisition dates for a 
+specific ARIA Frame ID. 
 
 1. Perform a Vertex 
 [Geographic Search](https://docs.asf.alaska.edu/vertex/manual/#geographic-search-options "Vertex Manual: Geographic Search Options" ){target=_blank} 

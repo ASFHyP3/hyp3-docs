@@ -6,6 +6,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.13.2]
+
+## Changed
+* Updated links in [ARIA Sentinel-1 GUNW Product Guide](docs/guides/gunw_product_guide.md)
+
+## [0.13.1]
+
+### Changed
+* Changed ARIA links from `aria.jpl.nasa.gov` to `aria.caltech.edu`
+* Corrected StoryMap link on the [HyP3 Products page](docs/products.md) to open content in a new tab
+
+## [0.13.0]
+
+### Changed
+* Menu navigation updated to include entries for OPERA RTC-S1 resources
+* [HyP3 Products page](docs/products.md) updated to include OPERA RTC-S1 
+* Improved guidance for ordering ARIA-S1-GUNW products On Demand
+
+## [0.12.9]
+
+### Changed
+* Updated HyP3 SDK to [v7.7.6](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#776)
+
+## [0.12.8]
+
+### Changed
+* Updated cost for 20x4 Burst InSAR jobs with 13-15 pairs from 5 to 10 credits.
+
 ## [0.12.7]
 * Reduced credit allotment to 8,000 per month from 10,000 per month on the `using/credits` page.
 

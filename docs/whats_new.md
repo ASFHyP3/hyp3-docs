@@ -6,7 +6,7 @@
 credits per user per month.** Due to NASA budget reductions, we have had to reduce our On Demand processing capacity,
 and can no longer support the same volume of product generation as we have in the past.
 
-ASF's HyP3 has generated over 12 million analysis-ready Sentinel-1 products since its public debut in October 2020, made
+HyP3 has generated over 12 million analysis-ready Sentinel-1 products since its public debut in October 2020, made
 possible through generous funding from NASA. We now generate about half a million products a month on behalf of more
 than 1,000 users.
 
@@ -49,7 +49,7 @@ If you have questions or concerns about this change, please email [uso@asf.alask
  
     !["HyP3+ logo"](images/HyP3+_Logo_Icon_Only.png){ width="100";  style="float: left;" }
 
-    For users who need more processing than the {{ CREDITS_PER_MONTH }} credit limit allows, ASF now hosts 
+    For users who need more processing than the 10,000 credit limit allows, ASF now hosts 
     [HyP3+](about/hyp3_plus.md "Jump to the HyP3+ Landing Page"), a user-supported 
     version of HyP3 that allows you to purchase as many credits as you need. 
 

@@ -10,7 +10,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Changed
 * Updated links in [ARIA Sentinel-1 GUNW Product Guide](docs/guides/gunw_product_guide.md)
-* Embedded StoryMaps in md pages rather than automatically opening them in a separate tab
+* Embedded StoryMaps in markdown pages rather than automatically opening them in a separate tab
 
 ## [0.13.1]
 

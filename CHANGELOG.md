@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.13.2]
 
 ## Changed
-* ARIA-S1-GUNW products page.
+* Updated links in [ARIA Sentinel-1 GUNW Product Guide](docs/guides/gunw_product_guide.md)
 
 ## [0.13.1]
 

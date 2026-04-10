@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.13.3]
+
+### Added
+* Added multiburst_sbas.ipynb to demonstrate searching and ordering a multiburst InSAR project from the HyP3 SDK
+* Added two images as assets to provide visual examples of valid and invalid multiburst collections
+
+## Changed
+* Updates tutorial.md to add a link to [multiburst_sbas.ipynb](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/multiburst_sbas.ipynb)
+
 ## [0.13.2]
 
 ## Changed

@@ -9,8 +9,8 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.13.3]
 
 ### Added
-* Added multiburst_sbas.ipynb to demonstrate searching and ordering a multiburst InSAR project from the HyP3 SDK
-* Added two images as assets to provide visual examples of valid and invalid multiburst collections
+* Added multiburst_sbas.ipynb to demonstrate searching and ordering a multi-burst InSAR project from the HyP3 SDK
+* Added two images as assets to provide visual examples of valid and invalid multi-burst collections
 
 ## Changed
 * Updates tutorial.md to add a link to [multiburst_sbas.ipynb](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/multiburst_sbas.ipynb)

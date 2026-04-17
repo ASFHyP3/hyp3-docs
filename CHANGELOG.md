@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.13.3]
+
+### Added
+* Updated [Requesting Access](docs/using/requesting_access.md) to include tentative whitelist changeover dates
+* Reveal button to link to Vertex to apply for Earth Data profile whitelisting
+* Add [Requesting Access](docs/using/requesting_access.md) link to `Hyp3 Basic` page and to side panel navigation under `Using Hyp3`
 
 ## [0.13.2]
 

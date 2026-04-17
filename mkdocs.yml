@@ -126,9 +126,9 @@ nav:
       - Multi-Burst InSAR SBAS Stack: https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/multiburst_sbas.ipynb" target="_blank
     - StoryMap Tutorials:
       - tutorials/agol_tutorials.md
-      - RTC On Demand!: tutorials/rtc_storymap.md
-      - InSAR On Demand!: tutorials/insar_storymap.md
-      - Burst-Based InSAR: tutorials/burst_insar_storymap.md
+      - RTC On Demand!: tutorials/rtc_storymap_tutorial.md
+      - InSAR On Demand!: tutorials/insar_storymap_tutorial.md
+      - Burst-Based InSAR: tutorials/burst_insar_storymap_tutorial.md
   - Other Tools:
     - ArcGIS Toolbox: tools/arcgis_toolbox.md
     - ASF Tools for Python:

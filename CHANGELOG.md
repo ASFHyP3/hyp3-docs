@@ -11,6 +11,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 * Included link to the multi-burst SBAS stack tutorial notebook in the Sentinel-1 Burst InSAR Product Guide
+* Included links to product guide content in the multi-burst SBAS stack tutorial notebook
 
 ## [0.13.2]
 

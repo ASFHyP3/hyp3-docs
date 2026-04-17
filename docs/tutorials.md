@@ -4,24 +4,24 @@
 
 We provide step-by-step tutorials for using HyP3 programmatically via Jupyter Notebooks. 
 
-* [Using the HyP3 Python SDK](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb "Using the HyP3 SDK Tutorial" ){target=_blank}
+* [Using the HyP3 Python SDK](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb "Using the HyP3 SDK Tutorial" ){target=_blank}  
   -- This notebook walks through ordering and accessing RTC, InSAR, and autoRIFT products in Python using the HyP3 SDK.
-* [Authenticating a HyP3 Session with the SDK](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb "Authenticating a HyP3 Session with the SDK Tutorial" ){target=_blank}
- -- This notebook provides guidance on the options available for authenticating HyP3 with your [Earthdata Login credentials](using/authentication.md) when using the HyP3 SDK. 
-* [Using the HyP3 SDK to search for jobs run by another user](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb "Using the HyP3 SDK to search for jobs run by another user" ){target=_blank}
+* [Authenticating a HyP3 Session with the SDK](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb "Authenticating a HyP3 Session with the SDK Tutorial" ){target=_blank}  
+  -- This notebook provides guidance on the options available for authenticating HyP3 with your [Earthdata Login credentials](using/authentication.md) when using the HyP3 SDK. 
+* [Using the HyP3 SDK to search for jobs run by another user](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb "Using the HyP3 SDK to search for jobs run by another user" ){target=_blank}  
   -- This notebook walks through using the HyP3 SDK to search for jobs run by another user.
-* [Using the HyP3 SDK to update a job name](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb "Using the HyP3 SDK to update a job name"){target=_blank}
+* [Using the HyP3 SDK to update a job name](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb "Using the HyP3 SDK to update a job name"){target=_blank}  
   -- This notebook walks through using the HyP3 SDK to rename one of your previously submitted jobs. 
-* [Using the HyP3 SDK to process new granules for given search parameters](./tutorials/process-new-granules-for-search-parameters.md)
+* [Using the HyP3 SDK to process new granules for given search parameters](./tutorials/process-new-granules-for-search-parameters.md "Using the HyP3 SDK to process new granules for given search parameters Tutorial" ){target=_blank}    
   -- These notebooks demonstrate how to process new granules that match particular search parameters,
      which is particularly useful for ongoing monitoring of a geographic area of interest.
-* [Time series analysis with HyP3 and MintPy](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb "Time series analysis with HyP3 and MintPy Tutorial" ){target=_blank}
+* [Time series analysis with HyP3 and MintPy](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb "Time series analysis with HyP3 and MintPy Tutorial" ){target=_blank}  
   -- This notebook walks through performing a time-series analysis of the 2019 
   Ridgecrest, CA earthquake with HyP3 On Demand InSAR products and MintPy.
-* [Time series analysis with HyP3 ISCE2 burst InSAR products and MintPy](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_isce2_burst_stack_for_ts_analysis.ipynb "Time series analysis with HyP3 ISCE2 burst InSAR products and MintPy Tutorial" ){target=_blank}
+* [Time series analysis with HyP3 ISCE2 burst InSAR products and MintPy](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_isce2_burst_stack_for_ts_analysis.ipynb "Time series analysis with HyP3 ISCE2 burst InSAR products and MintPy Tutorial" ){target=_blank}  
   -- This notebook walks through performing a time-series analysis of the 2014
   Mount Edgecumbe, AK volcano with HyP3 On Demand Burst InSAR products and MintPy.
-* [Search and Order a Multi-Burst SBAS Stack of Interferograms](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/multiburst_sbas.ipynb "Search and Order a Multi-Burst SBAS Stack of Interferograms with the HyP3 SDK Tutorial" ){target=_blank}
+* [Search and Order a Multi-Burst SBAS Stack of Interferograms](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/multiburst_sbas.ipynb "Search and Order a Multi-Burst SBAS Stack of Interferograms with the HyP3 SDK Tutorial" ){target=_blank}  
  -- This notebook illustrates how to use the HyP3 Python SDK to search for sets of Sentinel-1 bursts to use for 
  generating On Demand 
  [Multi-Burst InSAR products](guides/burst_insar_product_guide.md#multi-burst-insar "Sentinel-1 Burst InSAR Product Guide: Multi-Burst InSAR") 

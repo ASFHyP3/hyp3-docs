@@ -8,9 +8,9 @@ We provide step-by-step tutorials for using HyP3 programmatically via Jupyter No
   -- This notebook walks through ordering and accessing RTC, InSAR, and autoRIFT products in Python using the HyP3 SDK.
 * [Authenticating a HyP3 Session with the SDK](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb "Authenticating a HyP3 Session with the SDK Tutorial" ){target=_blank}  
   -- This notebook provides guidance on the options available for authenticating HyP3 with your [Earthdata Login credentials](using/authentication.md) when using the HyP3 SDK. 
-* [Using the HyP3 SDK to search for jobs run by another user](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb "Using the HyP3 SDK to search for jobs run by another user" ){target=_blank}  
+* [Using the HyP3 SDK to search for jobs run by another user](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb "Using the HyP3 SDK to search for jobs run by another user Tutorial" ){target=_blank}  
   -- This notebook walks through using the HyP3 SDK to search for jobs run by another user.
-* [Using the HyP3 SDK to update a job name](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb "Using the HyP3 SDK to update a job name"){target=_blank}  
+* [Using the HyP3 SDK to update a job name](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb "Using the HyP3 SDK to update a job name Tutorial"){target=_blank}  
   -- This notebook walks through using the HyP3 SDK to rename one of your previously submitted jobs. 
 * [Using the HyP3 SDK to process new granules for given search parameters](./tutorials/process-new-granules-for-search-parameters.md "Using the HyP3 SDK to process new granules for given search parameters Tutorial" ){target=_blank}    
   -- These notebooks demonstrate how to process new granules that match particular search parameters,

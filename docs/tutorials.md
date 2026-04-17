@@ -19,8 +19,11 @@ We provide step-by-step tutorials for using HyP3 programmatically via Jupyter No
 * [Time series analysis with HyP3 ISCE2 burst InSAR products and MintPy](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_isce2_burst_stack_for_ts_analysis.ipynb "Time series analysis with HyP3 ISCE2 burst InSAR products and MintPy Tutorial" ){target=_blank}
   -- This notebook walks through performing a time-series analysis of the 2014
   Mount Edgecumbe, AK volcano with HyP3 On Demand Burst InSAR products and MintPy.
-* [Search and Order a Multi-Burst SBAS Stack of Interferograms with the HyP3 SDK](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/multiburst_sbas.ipynb "Search and Order a Multi-Burst SBAS Stack of Interferograms with the HyP3 SDK Tutorial" ){target=_blank}
-
+* [Search and Order a Multi-Burst SBAS Stack of Interferograms](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/multiburst_sbas.ipynb "Search and Order a Multi-Burst SBAS Stack of Interferograms with the HyP3 SDK Tutorial" ){target=_blank}
+ -- This notebook illustrates how to use the HyP3 Python SDK to search for sets of Sentinel-1 bursts to use for 
+ generating On Demand 
+ [Multi-Burst InSAR products](guides/burst_insar_product_guide.md#multi-burst-insar "Sentinel-1 Burst InSAR Product Guide: Multi-Burst InSAR") 
+ and build an SBAS stack of multi-burst pairings to submit for processing.
 
 ## StoryMaps
 

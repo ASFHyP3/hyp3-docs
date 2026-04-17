@@ -12,7 +12,7 @@ We provide step-by-step tutorials for using HyP3 programmatically via Jupyter No
   -- This notebook walks through using the HyP3 SDK to search for jobs run by another user.
 * [Using the HyP3 SDK to update a job name](https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb "Using the HyP3 SDK to update a job name Tutorial"){target=_blank}  
   -- This notebook walks through using the HyP3 SDK to rename one of your previously submitted jobs. 
-* [Using the HyP3 SDK to process new granules for given search parameters](./tutorials/process-new-granules-for-search-parameters.md "Using the HyP3 SDK to process new granules for given search parameters Tutorial" ){target=_blank}    
+* [Using the HyP3 SDK to process new granules for given search parameters](./tutorials/process-new-granules-for-search-parameters.md "Using the HyP3 SDK to process new granules for given search parameters Tutorial" ){target=_blank}  
   -- These notebooks demonstrate how to process new granules that match particular search parameters,
      which is particularly useful for ongoing monitoring of a geographic area of interest.
 * [Time series analysis with HyP3 and MintPy](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb "Time series analysis with HyP3 and MintPy Tutorial" ){target=_blank}  

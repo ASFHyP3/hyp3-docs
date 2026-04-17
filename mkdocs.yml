@@ -86,22 +86,22 @@ nav:
     - RTC:
       - guides/rtc_product_guide.md
       - Product Guide: guides/rtc_product_guide.md
-      - StoryMap: https://storymaps.arcgis.com/stories/2ead3222d2294d1fae1d11d3f98d7c35" target="_blank
+      - StoryMap: tutorials/rtc_storymap.md
       - Theoretical Basis: guides/rtc_atbd.md
     - OPERA RTC-S1:
         - guides/opera_rtc_product_guide.md
         - Product Guide: guides/opera_rtc_product_guide.md
         - Product Specs: https://www.jpl.nasa.gov/go/opera/products/rtc-product/" target="_blank
-        - StoryMap (English): https://storymaps.arcgis.com/stories/dc2807b444924fc3a76c117a2c909f8b" target="_blank
-        - StoryMap (Spanish): https://storymaps.arcgis.com/stories/ee1c4de3e5eb44de8f377c18d95e05fa" target="_blank
+        - StoryMap (English): tutorials/opera-rtc-storymap-eng.md
+        - StoryMap (Spanish): tutorials/opera-rtc-storymap-esp.md
     - InSAR:
       - guides/insar_product_guide.md
       - Product Guide: guides/insar_product_guide.md
-      - StoryMap: https://storymaps.arcgis.com/stories/68a8a3253900411185ae9eb6bb5283d3" target="_blank
+      - StoryMap: tutorials/insar_storymap.md
     - Burst InSAR:
       - guides/burst_insar_product_guide.md
       - Product Guide: guides/burst_insar_product_guide.md
-      - StoryMap: https://storymaps.arcgis.com/stories/191bf1b6962c402086807390b3ce63b0" target="_blank
+      - StoryMap: tutorials/burst_insar_storymap.md
     - ARIA S1 GUNW:
         - guides/gunw_product_guide.md
         - Product Guide: guides/gunw_product_guide.md
@@ -115,14 +115,20 @@ nav:
     - SAR FAQ: https://asf.alaska.edu/information/sar-information/what-is-sar/#sar_faq" target="_blank
   - Tutorials:
     - tutorials.md
-    - Using HyP3 Python SDK: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
-    - Authenticate HyP3 in the SDK: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb" target="_blank
-    - Search another user's jobs: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb" target="_blank
-    - Update existing job name: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb" target="_blank
-    - Process new granules for search parameters: tutorials/process-new-granules-for-search-parameters.md
-    - InSAR time series with MintPy: https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank
-    - InSAR burst time series with MintPy: https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_isce2_burst_stack_for_ts_analysis.ipynb" target="_blank
-    - StoryMap Tutorials: https://asf-daac.maps.arcgis.com/home/index.html" target="_blank
+    - Jupyter Notebooks:
+      - Using HyP3 Python SDK: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
+      - Authenticate HyP3 in the SDK: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb" target="_blank
+      - Search another user's jobs: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb" target="_blank
+      - Update existing job name: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb" target="_blank
+      - Process new granules for search parameters: tutorials/process-new-granules-for-search-parameters.md
+      - InSAR time series with MintPy: https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank
+      - InSAR burst time series with MintPy: https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_isce2_burst_stack_for_ts_analysis.ipynb" target="_blank
+      - Multi-Burst InSAR SBAS Stack: https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/multiburst_sbas.ipynb" target="_blank
+    - StoryMap Tutorials:
+      - tutorials/agol_tutorials.md
+      - RTC On Demand!: tutorials/rtc_storymap_tutorial.md
+      - InSAR On Demand!: tutorials/insar_storymap_tutorial.md
+      - Burst-Based InSAR: tutorials/burst_insar_storymap_tutorial.md
   - Other Tools:
     - ArcGIS Toolbox: tools/arcgis_toolbox.md
     - ASF Tools for Python:

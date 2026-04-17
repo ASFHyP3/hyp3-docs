@@ -6,20 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.13.3]
+
+## [0.13.2]
 
 ### Added
 * Added multiburst_sbas.ipynb to demonstrate searching and ordering a multi-burst InSAR project from the HyP3 SDK
 * Added two images as assets to provide visual examples of valid and invalid multi-burst collections
 
 ## Changed
-* Updates tutorial.md to add a link to [multiburst_sbas.ipynb](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/multiburst_sbas.ipynb)
-
-## [0.13.2]
-
-## Changed
 * Updated links in [ARIA Sentinel-1 GUNW Product Guide](docs/guides/gunw_product_guide.md)
 * Embedded StoryMaps in markdown pages rather than automatically opening them in a separate tab
+* Updated tutorial.md to adjust formatting an add a link to [multiburst_sbas.ipynb](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/multiburst_sbas.ipynb)
+* Moved lists of tutorials into categories in the navigation menu
 
 ## [0.13.1]
 

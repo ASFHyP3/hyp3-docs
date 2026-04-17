@@ -122,11 +122,12 @@ nav:
           - Process new granules for search parameters: tutorials/process-new-granules-for-search-parameters.md
           - InSAR time series with MintPy: https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank
           - InSAR burst time series with MintPy: https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_isce2_burst_stack_for_ts_analysis.ipynb" target="_blank
+          - Multi-Burst InSAR SBAS Stack: https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/multiburst_sbas.ipynb" target="_blank
       - StoryMap Tutorials:
           - tutorials/agol_tutorials.md
-          - RTC On Demand!: tutorials/rtc_storymap.md
-          - InSAR On Demand!: tutorials/insar_storymap.md
-          - Burst-Based InSAR: tutorials/burst_insar_storymap.md
+          - RTC On Demand!: tutorials/rtc_storymap_tutorial.md
+          - InSAR On Demand!: tutorials/insar_storymap_tutorial.md
+          - Burst-Based InSAR: tutorials/burst_insar_storymap_tutorial.md
   - Other Tools:
       - ArcGIS Toolbox: tools/arcgis_toolbox.md
       - ASF Tools for Python:

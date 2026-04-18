@@ -60,6 +60,11 @@ This job type supports pairings of 1 to 15 contiguous along-track bursts (refer 
 section for details). The number of bursts processed impacts the number of credits consumed. Refer to the 
 [Credit Cost Table](../using/credits.md#credit-cost-table "Credit Cost Table" ){target=_blank} for more details.
 
+Refer to the 
+[Search and Order a Multi-Burst SBAS Stack of Interferograms](https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/multiburst_sbas.ipynb "Search and Order a Multi-Burst SBAS Stack of Interferograms with the HyP3 SDK Tutorial" ){target=_blank} 
+Jupyter Notebook Tutorial to learn how to use the HyP3 Python SDK to search for sets of Sentinel-1 bursts and build 
+an SBAS stack of multi-burst pairings to submit for On Demand processing.
+
 ## Sentinel-1 Bursts
 
 [Single Look Complex](https://sentiwiki.copernicus.eu/web/s1-processing#S1-Processing-Single-Look-Complex "https://sentiwiki.copernicus.eu/web/s1-processing#S1-Processing-Single-Look-Complex" ){target=_blank} 

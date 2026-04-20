@@ -13,16 +13,21 @@ and users access their purchased credits by logging in with the same
 [Earthdata Login Credentials](../using/authentication.md#earthdata-login-edl)
 used for ordering free On Demand products from HyP3 Basic.
 
-## HyP3+ API Endpoint
+## Submitting jobs with HyP3+
+
+### HyP3+ API Endpoint
 
 HyP3+ has a different API Endpoint than the standard HyP3 Basic deployment:  
 <https://hyp3-plus.asf.alaska.edu>
 
 Users can interact with HyP3+ using the same methods as HyP3 Basic, but will need to change the API URL. 
-See the [Using HyP3](../using.md) section for more information on how to request On Demand products with HyP3+ using 
-[Vertex](../using/vertex.md#1-select-your-hyp3-api-optional "Jump to Using Vertex Documentation"), the 
+See the [Using HyP3](../using.md) section for more information on how to request On Demand products with HyP3+ using the 
 [HyP3 Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/#connect-to-the-hyp3-api "Jump to Using SDK Documentation"), 
 or by using the [HyP3 API](../using/api.md "Jump to Using API Documentation") directly.
+
+### Vertex+
+Navigate to [Vertex+]() and interact with it like normal
+[Vertex](../using/vertex.md#1-select-your-hyp3-api-optional "Jump to Using Vertex Documentation"), 
 
 ## Purchasing Credits
 
@@ -99,3 +104,6 @@ For more information about the HyP3+ refund policy, refer to the
 
 If you have any questions or concerns about using HyP3+, or have any suggestions about how
 we might improve this service, email ASF User Services: [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu").
+
+
+##

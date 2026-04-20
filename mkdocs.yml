@@ -62,82 +62,82 @@ extra_javascript:
 
 nav:
   - HyP3:
-      - about.md
-      - HyP3 Basic: about/hyp3_basic.md
-      - HyP3+:
-          - about/hyp3_plus.md
-          - Terms of Service: about/hyp3_plus_terms.md
+    - about.md
+    - HyP3 Basic: about/hyp3_basic.md
+    - HyP3+:
+        - about/hyp3_plus.md
+        - Terms of Service: about/hyp3_plus_terms.md
   - Using HyP3:
-      - using.md
-      - Requesting Access: using/requesting_access.md
-      - Vertex: using/vertex.md
-      - SDK:
-          - using/sdk.md
-          - Example Notebook: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
-          - API Reference: using/sdk_api.md
-      - API: using/api.md
-      - Authentication: using/authentication.md
-      - Credits: using/credits.md
-      - Downloads: using/downloading.md
-      - How to Cite HyP3: usage_guidelines.md
+    - using.md
+    - Requesting Access: using/requesting_access.md
+    - Vertex: using/vertex.md
+    - SDK:
+        - using/sdk.md
+        - Example Notebook: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
+        - API Reference: using/sdk_api.md
+    - API: using/api.md
+    - Authentication: using/authentication.md
+    - Credits: using/credits.md
+    - Downloads: using/downloading.md
+    - How to Cite HyP3: usage_guidelines.md
   - Products:
-      - products.md
-      - RTC:
-          - guides/rtc_product_guide.md
-          - Product Guide: guides/rtc_product_guide.md
-          - StoryMap: tutorials/rtc_storymap.md
-          - Theoretical Basis: guides/rtc_atbd.md
-      - OPERA RTC-S1:
-          - guides/opera_rtc_product_guide.md
-          - Product Guide: guides/opera_rtc_product_guide.md
-          - Product Specs: https://www.jpl.nasa.gov/go/opera/products/rtc-product/" target="_blank
-          - StoryMap (English): tutorials/opera-rtc-storymap-eng.md
-          - StoryMap (Spanish): tutorials/opera-rtc-storymap-esp.md
-      - InSAR:
-          - guides/insar_product_guide.md
-          - Product Guide: guides/insar_product_guide.md
-          - StoryMap: tutorials/insar_storymap.md
-      - Burst InSAR:
-          - guides/burst_insar_product_guide.md
-          - Product Guide: guides/burst_insar_product_guide.md
-          - StoryMap: tutorials/burst_insar_storymap.md
-      - ARIA S1 GUNW:
-          - guides/gunw_product_guide.md
-          - Product Guide: guides/gunw_product_guide.md
-      - AutoRIFT: https://its-live.jpl.nasa.gov/" target="_blank
+    - products.md
+    - RTC:
+        - guides/rtc_product_guide.md
+        - Product Guide: guides/rtc_product_guide.md
+        - StoryMap: tutorials/rtc_storymap.md
+        - Theoretical Basis: guides/rtc_atbd.md
+    - OPERA RTC-S1:
+        - guides/opera_rtc_product_guide.md
+        - Product Guide: guides/opera_rtc_product_guide.md
+        - Product Specs: https://www.jpl.nasa.gov/go/opera/products/rtc-product/" target="_blank
+        - StoryMap (English): tutorials/opera-rtc-storymap-eng.md
+        - StoryMap (Spanish): tutorials/opera-rtc-storymap-esp.md
+    - InSAR:
+        - guides/insar_product_guide.md
+        - Product Guide: guides/insar_product_guide.md
+        - StoryMap: tutorials/insar_storymap.md
+    - Burst InSAR:
+        - guides/burst_insar_product_guide.md
+        - Product Guide: guides/burst_insar_product_guide.md
+        - StoryMap: tutorials/burst_insar_storymap.md
+    - ARIA S1 GUNW:
+        - guides/gunw_product_guide.md
+        - Product Guide: guides/gunw_product_guide.md
+    - AutoRIFT: https://its-live.jpl.nasa.gov/" target="_blank
   - Sentinel-1 Mission: sentinel1.md
   - SAR Basics:
-      - guides/introduction_to_sar.md
-      - Introduction to SAR: guides/introduction_to_sar.md
-      - Digital Elevation Models: dems.md
-      - Water Masking: water_masking.md
-      - SAR FAQ: https://asf.alaska.edu/information/sar-information/what-is-sar/#sar_faq" target="_blank
+    - guides/introduction_to_sar.md
+    - Introduction to SAR: guides/introduction_to_sar.md
+    - Digital Elevation Models: dems.md
+    - Water Masking: water_masking.md
+    - SAR FAQ: https://asf.alaska.edu/information/sar-information/what-is-sar/#sar_faq" target="_blank
   - Tutorials:
-      - tutorials.md
-      - Jupyter Notebooks:
-          - Using HyP3 Python SDK: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
-          - Authenticate HyP3 in the SDK: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb" target="_blank
-          - Search another user's jobs: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb" target="_blank
-          - Update existing job name: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb" target="_blank
-          - Process new granules for search parameters: tutorials/process-new-granules-for-search-parameters.md
-          - InSAR time series with MintPy: https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank
-          - InSAR burst time series with MintPy: https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_isce2_burst_stack_for_ts_analysis.ipynb" target="_blank
-          - Multi-Burst InSAR SBAS Stack: https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/multiburst_sbas.ipynb" target="_blank
-      - StoryMap Tutorials:
-          - tutorials/agol_tutorials.md
-          - RTC On Demand!: tutorials/rtc_storymap_tutorial.md
-          - InSAR On Demand!: tutorials/insar_storymap_tutorial.md
-          - Burst-Based InSAR: tutorials/burst_insar_storymap_tutorial.md
+    - tutorials.md
+    - Jupyter Notebooks:
+        - Using HyP3 Python SDK: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/sdk_example.ipynb" target="_blank
+        - Authenticate HyP3 in the SDK: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_authentication.ipynb" target="_blank
+        - Search another user's jobs: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/search_other_user_jobs.ipynb" target="_blank
+        - Update existing job name: https://github.com/ASFHyP3/hyp3-sdk/blob/main/docs/hyp3_job_name_change.ipynb" target="_blank
+        - Process new granules for search parameters: tutorials/process-new-granules-for-search-parameters.md
+        - InSAR time series with MintPy: https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb" target="_blank
+        - InSAR burst time series with MintPy: https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_isce2_burst_stack_for_ts_analysis.ipynb" target="_blank
+        - Multi-Burst InSAR SBAS Stack: https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/multiburst_sbas.ipynb" target="_blank
+    - StoryMap Tutorials:
+        - tutorials/agol_tutorials.md
+        - RTC On Demand!: tutorials/rtc_storymap_tutorial.md
+        - InSAR On Demand!: tutorials/insar_storymap_tutorial.md
+        - Burst-Based InSAR: tutorials/burst_insar_storymap_tutorial.md
   - Other Tools:
-      - ArcGIS Toolbox: tools/arcgis_toolbox.md
-      - ASF Tools for Python:
-          - tools/asf_tools.md
-          - API Reference: tools/asf_tools_api.md
+    - ArcGIS Toolbox: tools/arcgis_toolbox.md
+    - ASF Tools for Python:
+        - tools/asf_tools.md
+        - API Reference: tools/asf_tools_api.md
   - Developers:
-      - Architecture: how_it_works.md
-      - Plugins: plugins.md
-      - Contributing: contributing.md
-      - Code of Conduct: https://github.com/ASFHyP3/.github/blob/main/CODE_OF_CONDUCT.md" target="_blank
+    - Architecture: how_it_works.md
+    - Plugins: plugins.md
+    - Contributing: contributing.md
+    - Code of Conduct: https://github.com/ASFHyP3/.github/blob/main/CODE_OF_CONDUCT.md" target="_blank
   - What's New:
       - whats_new.md
       - Introducing HyP3+: news/hyp3_plus_introduction.md
@@ -150,14 +150,14 @@ plugins:
       module_name: macros
   - mkdocstrings:
       handlers:
-        python:
-          options:
-            inherited_members: true
-            show_root_toc_entry: false
+      python:
+        options:
+          inherited_members: true
+          show_root_toc_entry: false
   - redirects:
       redirect_maps:
         # full link to our hosted docs needed b/c mkdocs-redirects doesn't support hash fragments
         #    See: https://github.com/datarobot/mkdocs-redirects/issues/16
-        getting_started.md: "https://hyp3-docs.asf.alaska.edu/#getting-started"
-        tutorials/mintpy.md: "https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb"
-        using/quota.md: "using/credits.md"
+      getting_started.md: 'https://hyp3-docs.asf.alaska.edu/#getting-started'
+      tutorials/mintpy.md: 'https://github.com/ASFHyP3/hyp3-docs/blob/main/docs/tutorials/hyp3_insar_stack_for_ts_analysis.ipynb'
+      using/quota.md: 'using/credits.md'

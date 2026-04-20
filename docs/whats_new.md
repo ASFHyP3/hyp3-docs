@@ -9,6 +9,9 @@ Due to increased demand and reduced budget, ASF is implementing user whitelistin
 who have submitted On Demand jobs since June 2025 will be automatically whitelisted, but anyone who has not submitted 
 jobs for processing in that time will need to request access.
 
+Refer to the [Requesting Access](using/requesting_access.md "Jump to the Requesting Access page") page for more 
+information.
+
 <!-- #TODO: confirm the dates for whitelist grandfathering -->
 
 ## Nov 26, 2025

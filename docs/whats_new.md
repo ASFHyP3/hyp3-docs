@@ -5,9 +5,9 @@
 **Effective May 4th, 2026, new On Demand users will need to request access before they will be able to submit 
 On Demand jobs for processing using ASF's HyP3 platform.** 
 
-Due to increased demand and reduced budget, ASF is implementing user whitelisting as a way to control HyP3 processing 
-costs. Users who have submitted On Demand jobs since June 2025 will be automatically whitelisted, but anyone who has 
-not submitted jobs for processing in that time will need to 
+Due to increased demand and a reduced budget, ASF is implementing user whitelisting as a way to control HyP3 processing 
+costs. Users who submitted On Demand jobs August 1, 2025 and May 1, 2026, will be automatically whitelisted, 
+but anyone who has not submitted jobs for processing in that time will need to 
 [request access](using/requesting_access.md "Jump to the Requesting Access page").
 
 <!-- #TODO: confirm the dates for whitelist grandfathering -->

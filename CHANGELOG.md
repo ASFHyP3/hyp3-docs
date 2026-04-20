@@ -11,7 +11,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 * Add [Requesting Access](docs/using/requesting_access.md) documentation
 * Add [Requesting Access](docs/using/requesting_access.md) link to `Hyp3 Basic` page and to side panel navigation under `Using Hyp3`
-* Document the change to require access requests on the [What's New](docs/whats_new.md#april-22-2026) page
+* Added entry to [What's New](docs/whats_new.md#april-22-2026) page about requesting access
 
 ## [0.13.2]
 

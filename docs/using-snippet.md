@@ -13,7 +13,6 @@ for more information.
 If you do not have enough credits to generate all the products you need for your 
 project, you can purchase additional credits in [HyP3+](about/hyp3_plus.md "Jump to HyP3+ Documentation").
 
-request access to HyP3 Basic:
 {% include 'application-snippet.md' %}
 
 

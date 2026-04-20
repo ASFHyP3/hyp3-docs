@@ -33,6 +33,7 @@ acquisitions and find images to submit for On Demand processing. It also provide
 tools for selecting pairs and stacks for InSAR analysis.
 
 * [Vertex](using/vertex.md "Using Vertex")
+* [Vertex+](about/hyp3_plus.md#vertex "Jump to HyP3+ Documentation")
 
 ### Programmatic Access
 Requesting and downloading On Demand products can also be done programmatically:

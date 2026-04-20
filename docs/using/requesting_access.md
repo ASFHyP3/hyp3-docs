@@ -5,7 +5,7 @@ before submitting jobs for On Demand processing using the HyP3 platform.
 HyP3 accounts are limited to one per person.
 If you have used HyP3 for On Demand processing in the past, you will be able to continue using our service without requesting access.
 
- [Request Access](https://search-test.asf.alaska.edu/#/?isOnDemandOpen=true){ .md-button .md-button--primary .middle } 
+ [Request Access](https://search.asf.alaska.edu/#/?isOnDemandOpen=true){ .md-button .md-button--primary .middle } 
 
 You will need an [Earthdata Login](https://urs.earthdata.nasa.gov/ 'https://urs.earthdata.nasa.gov/' ){target=_blank} 
 (EDL) account before requesting access.
@@ -19,11 +19,11 @@ using a different Earthdata Login account.
 Once your access request has been approved, you can submit jobs for On Demand processing using your EDL credentials. 
 *You only need to complete this approval process once.* 
 
-## Existing HyP3 users do not need to request access
+!!! tip Existing HyP3 users do not need to request access
 
-Existing On Demand users (i.e. users who signed up before May 4th 2026) do *not* need to undergo this process.
-If you are no longer able to process On Demand jobs and you believe you should still have access, you can either 
-submit an access request or email [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu") for more information.
+    Existing On Demand users (i.e. users who signed up before May 4th 2026) do *not* need to undergo this process.
+    If you are no longer able to process On Demand jobs and you believe you should still have access, you can either 
+    submit an access request or email [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu") for more information.
 
 ## Workshops and Tutorials
 

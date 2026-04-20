@@ -1,6 +1,6 @@
 !!! warning "New On Demand users must request HyP3 access"
 
-    To ensure responsible use of ASF's On Demand resources, new users must submit an [access request form](#TODO: add link to access request form). Requests will be processed within 48 hours (#TODO: adjust this limit as necessary), and the user will receive an email indicating if their request has been approved. Users must be approved before they can submit jobs for On Demand processing. Refer to the [Requesting Access](using/requesting_access.md) page for more information.
+    To ensure responsible use of ASF's On Demand resources, new users must submit an [access request form](https://search.asf.alaska.edu/#/?isOnDemandOpen=true). Requests will be processed within two business days, and the user will receive an email indicating if their request has been approved. Users must be approved before they can submit jobs for On Demand processing. Refer to the [Requesting Access](using/requesting_access.md) page for more information.
 
 On Demand services are provided at no cost to the user, and anyone can request access to this service. To ensure that the processing is equitably distributed throughout the user community, we have implemented a number of policies:
 

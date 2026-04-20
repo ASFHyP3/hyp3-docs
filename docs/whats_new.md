@@ -1,5 +1,16 @@
 # What's New
 
+## April 22, 2026
+
+**Effective May 4th, 2026, new On Demand users will need to request access before they will be able to submit 
+On Demand jobs for processing using ASF's HyP3 platform.** 
+
+Due to increased demand and reduced budget, ASF is implementing user whitelisting as a way to control costs. Users 
+who have submitted On Demand jobs since June 2025 will be automatically whitelisted, but anyone who has not submitted 
+jobs for processing in that time will need to request access.
+
+<!-- #TODO: confirm the dates for whitelist grandfathering -->
+
 ## Nov 26, 2025
 
 **Effective December 1st, monthly credit allotments for ASF’s HyP3 On Demand processing service will be reduced to 8,000
@@ -49,7 +60,7 @@ If you have questions or concerns about this change, please email [uso@asf.alask
  
     !["HyP3+ logo"](images/HyP3+_Logo_Icon_Only.png){ width="100";  style="float: left;" }
 
-    For users who need more processing than the 10,000 credit limit allows, ASF now hosts 
+    For users who need more processing than the {{ CREDITS_PER_MONTH }} credit limit allows, ASF now hosts 
     [HyP3+](about/hyp3_plus.md "Jump to the HyP3+ Landing Page"), a user-supported 
     version of HyP3 that allows you to purchase as many credits as you need. 
 

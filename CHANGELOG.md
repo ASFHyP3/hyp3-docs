@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.13.3]
+
+### Added
+* Add [Requesting Access](docs/using/requesting_access.md) documentation
+* Add [Requesting Access](docs/using/requesting_access.md) link to `HyP3 Basic` page and to side panel navigation under `Using HyP3`
+* Added entry to [What's New](docs/whats_new.md#april-22-2026) page about requesting access
 
 ## [0.13.3]
 
@@ -90,7 +96,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 * Added logos for the HyP3+ deployment
 * Added documentation for [HyP3+](docs/about/hyp3_plus.md), including [Terms and Conditions](docs/about/hyp3_plus_terms.md)
-* Added HyP3+ announcement to the [What's New](docs/whats_new.md) section
+* Added HyP3+ announcement to the [What's New](docs/whats_new.md#nov-26-2025) section
 * Amended other documentation topics to include HyP3+ references and guidance
 * Added a column for product cost when using HyP3+ in the [Credit Cost Table](docs/using/credits.md#credit-cost-table)
 

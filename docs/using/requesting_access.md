@@ -1,13 +1,17 @@
 # Requesting Access
 
-<!-- TODO TOOL-2787: update this language after the feature has been released -->
-Starting on **TODO: date**, new users will be required to request access
-before submitting jobs for On Demand processing using the HyP3 platform.
-HyP3 accounts are limited to one per person.
-If you have used HyP3 for On Demand processing in the past, you will be able to continue using our service without requesting access.
+Starting on May 4th, 2026, new users will be required to request access before submitting jobs for On Demand processing 
+using the HyP3 platform. HyP3 accounts are limited to one per person. If you submitted On Demand processing jobs to 
+HyP3 between August 1, 2025, and May 1, 2026, you will be able to continue using our service without requesting access.
 
-<!-- TODO TOOL-2787: uncomment the following line and add button link: -->
-<!-- [Request Access](#){ .md-button .md-button--primary .middle } -->
+<!-- #TODO: verify grandfathering dates -->
+
+ [Request Access](https://search.asf.alaska.edu/#/?isOnDemandOpen=true){ .md-button .md-button--primary .middle } 
+
+!!! tip
+
+    New users must be logged in to see the Request Access form above through Vertex. If you are a new user
+    and don't see the request form when clicking the button above, verify you are logged in to Vertex.
 
 You will need an [Earthdata Login](https://urs.earthdata.nasa.gov/ 'https://urs.earthdata.nasa.gov/' ){target=_blank} 
 (EDL) account before requesting access.
@@ -21,13 +25,12 @@ using a different Earthdata Login account.
 Once your access request has been approved, you can submit jobs for On Demand processing using your EDL credentials. 
 *You only need to complete this approval process once.* 
 
-<!-- TODO TOOL-2787: uncomment this block: -->
-<!-- !!! tip "Existing HyP3 users do not need to request access"
+!!! tip Existing HyP3 users do not need to request access
 
-    Existing On Demand users (i.e. users who signed up before TODO: date) do *not* need to undergo this process.
-    If you are no longer able to process On Demand jobs and you believe you should still have access, you can either 
-    submit an access request or email [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu") for more information.
--->
+    Existing On Demand users who have submitted jobs between August 1, 2025, and May 1, 2026, do *not* need to request 
+    access. If you are no longer able to process On Demand jobs and you believe you should still have access, you can 
+    either submit an access request or email [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu") 
+    for more information.
 
 ## Workshops and Tutorials
 
@@ -41,4 +44,4 @@ If you would like to request a unique access code, please email
 ## Contact Us
 
 Email ASF User Services at [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu "uso@asf.alaska.edu") with any questions 
-regarding access to HyP3. 
+regarding access to HyP3.

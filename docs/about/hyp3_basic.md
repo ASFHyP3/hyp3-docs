@@ -4,8 +4,8 @@ ASF released HyP3 to the public in 2020, allowing all users to request On Demand
 This service, now called HyP3 Basic, is funded by NASA, and hosted in 
 NASA's [Earthdata Cloud (EDC)](https://www.earthdata.nasa.gov/about/earthdata-cloud-evolution "https://www.earthdata.nasa.gov/about/earthdata-cloud-evolution" ){target=_blank}. 
 
-Anyone can use HyP3 Basic. All you need are 
-[Earthdata Login credentials](../using/authentication.md#earthdata-login-edl "Jump to EDL Documentation"). 
+Anyone can use HyP3 Basic. All you need is an 
+[Earthdata Login](../using/authentication.md#earthdata-login-edl "Jump to EDL Documentation") and to [whitelist your profile](../using/requesting_access.md "Jump to requesting access").
 
 Each user receives {{ CREDITS_PER_MONTH }} credits each month to use for processing any On Demand products. Different HyP3 job types 
 consume different credit amounts, as defined in the 

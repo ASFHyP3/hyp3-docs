@@ -13,11 +13,21 @@ and users access their purchased credits by logging in with the same
 [Earthdata Login Credentials](../using/authentication.md#earthdata-login-edl)
 used for ordering free On Demand products from HyP3 Basic.
 
-## Submitting HyP3+ Jobs
+[Vertex+](https://vertex-plus.asf.alaska.edu/) is a separate deployment of ASF's Data Search Vertex interface, 
+designed specifically for working with HyP3+. It provides the same functionality as the standard deployment of Vertex, 
+but is set to use the [HyP3+ API Endpoint](#hyp3-api-endpoint). 
 
-### HyP3+ API Endpoint
+You can use the Vertex+ interface to search for available datasets, submit HyP3+ On Demand jobs for processing, 
+and access finished products. 
 
-HyP3+ has a different API Endpoint than the standard HyP3 Basic deployment:  
+## HyP3+ API Endpoint
+
+The lowest level interface for using HyP3 is the Application Programming Interface (API). All other access methods, 
+including Vertex and the HyP3 Python SDK, are built upon the 
+[HyP3 API](../using/api "Jump to the Using HyP3 API Documentation"). 
+
+HyP3+ has a different API Endpoint than the standard HyP3 Basic deployment, so HyP3+ users will interact with the 
+following API URL:  
 <https://hyp3-plus.asf.alaska.edu>
 
 Users can interact with HyP3+ using the same methods as HyP3 Basic, but will need to change the API URL. 
@@ -25,11 +35,8 @@ See the [Using HyP3](../using.md) section for more information on how to request
 [HyP3 Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/#connect-to-the-hyp3-api "Jump to Using SDK Documentation") 
 or by using the [HyP3 API](../using/api.md "Jump to Using API Documentation") directly.
 
-### Vertex+
-
-[Vertex+](https://vertex-plus.asf.alaska.edu/) is the enterprise deployment of Vertex specifically for submitting jobs to HyP3+. It otherwise functions the same as the standard deployment of Vertex. 
-
-You can also submit jobs to HyP3+ using the standard version of Vertex by [updating the HyP3 API in Vertex](../using/vertex/#1-select-your-hyp3-api-optional "Jump to Update API Documentation").
+You can also submit jobs to HyP3+ using the standard version of Vertex (instead of using Vertex+) by 
+[updating the HyP3 API in Vertex](../using/vertex.md#1-select-your-hyp3-api-optional "Jump to Update API Documentation").
 
 ## Purchasing Credits
 

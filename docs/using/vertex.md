@@ -14,7 +14,7 @@ ASF offers free processing using the [HyP3 Basic](../about/hyp3_basic.md "Jump t
 but for users who need to process more
 [On Demand products](../products.md "Jump to the Products landing page of the documentation") than their
 [HyP3 Basic credit limit](../using/credits.md "Jump to the Credits page of the documentation")
-allows, ASF provides HyP3+, a separate
+allows, ASF provides [HyP3+](../about/hyp3_plus.md "Jump to HyP3+ Documentation"), a separate
 [HyP3 deployment](../about.md) where users can purchase additional credits.
 
 ## Vertex Deployments

@@ -19,29 +19,30 @@ allows, ASF provides [HyP3+](../about/hyp3_plus.md "Jump to HyP3+ Documentation"
 
 ## Vertex Deployments
 
+There are two different versions of Vertex that users can leverage, depending on which HyP3 
+deployment they are using. 
+
+### Vertex
+
 Users ordering On Demand products leveraging the standard [HyP3 Basic](../about/hyp3_basic.md "Jump to HyP3 Basic Documentation") 
-deployment can search for, order, and access On Demand products using ASF's standard Vertex Data Search interface. 
+deployment can search for, order, and access On Demand products using ASF's standard 
+[Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} Data Search interface. 
 
 [![Vertex Image](../images/vertex.png "Click to open Vertex in a new tab")](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank}
 
+### Vertex+
+
 [HyP3+](../about/hyp3_plus.md) users can leverage 
 [Vertex+](https://vertex-plus.asf.alaska.edu/ "https://vertex-plus.asf.alaska.edu" ){target=_blank}, 
-which is optimized for use with the HyP3+ deployment. 
+which is optimized for use with the [HyP3+](../about/hyp3_plus.md "Jump to HyP3+ Documentation") deployment. 
 
 [![Vertex_Plus_Image](../images/vertex-plus.png "Click to open Vertex+ in a new tab")](https://vertex-plus.asf.alaska.edu/ "https://vertex-plus.asf.alaska.edu" ){target=_blank}
 
 ## Getting Started
 
-To request On Demand products, visit one of the following Vertex deployments: 
-
-- For [HyP3 Basic](../about/hyp3_basic.md "About HyP3 Basic"):  
-[ASF Data Search - Vertex](https://search.asf.alaska.edu "https://search.asf.alaska.edu" ){target=_blank} 
-- For [HyP3+](../about/hyp3_plus.md "About HyP3+"):  
-[Vertex+](https://vertex-plus.asf.alaska.edu/ "https://vertex-plus.asf.alaska.edu" ){target=_blank}
-
 In either version of Vertex, you will need to 
-[Sign In with your Earthdata Login credentials](authentication.md#authentication-in-vertex "Jump to Authentication in Vertex Documentation") 
-in order to order or access On Demand jobs.
+[Sign In with your Earthdata Login](authentication.md#authentication-in-vertex "Jump to Authentication in Vertex Documentation") 
+credentials in order to order or access On Demand jobs.
 
 ### 1. Select your scenes
 
@@ -120,7 +121,7 @@ available from ASF.
 [HyP3 Basic](../about/hyp3_basic.md "About HyP3 Basic") and [HyP3+](../about/hyp3_plus.md "About HyP3+") use 
 different API URL endpoints. 
 
-In general, it is more straightforward to use [Vertex](https://search.asf.alaska.edu "https://search.asf.alaska.edu" ){target=_blank}  
+In general, it is more straightforward to use [Vertex](https://search.asf.alaska.edu "https://search.asf.alaska.edu" ){target=_blank} 
 to interact with [HyP3 Basic](../about/hyp3_basic.md "About HyP3 Basic") and [Vertex+](https://vertex-plus.asf.alaska.edu/ "https://vertex-plus.asf.alaska.edu" ){target=_blank} to interact 
 with [HyP3+](../about/hyp3_plus.md "About HyP3+"). If you use this approach, you don't have to adjust the HyP3 API URL settings at all, as they are set to 
 point to the appropriate endpoint.

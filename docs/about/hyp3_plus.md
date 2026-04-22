@@ -13,6 +13,8 @@ and users access their purchased credits by logging in with the same
 [Earthdata Login Credentials](../using/authentication.md#earthdata-login-edl)
 used for ordering free On Demand products from HyP3 Basic.
 
+## Vertex+
+
 [Vertex+](https://vertex-plus.asf.alaska.edu/) is a separate deployment of ASF's Data Search Vertex interface, 
 designed specifically for working with HyP3+. It provides the same functionality as the standard deployment of Vertex, 
 but is set to use the [HyP3+ API Endpoint](#hyp3-api-endpoint). 
@@ -35,8 +37,10 @@ See the [Using HyP3](../using.md) section for more information on how to request
 [HyP3 Python SDK](https://hyp3-docs.asf.alaska.edu/using/sdk/#connect-to-the-hyp3-api "Jump to Using SDK Documentation") 
 or by using the [HyP3 API](../using/api.md "Jump to Using API Documentation") directly.
 
-You can also submit jobs to HyP3+ using the standard version of Vertex (instead of using Vertex+) by 
-[updating the HyP3 API in Vertex](../using/vertex.md#1-select-your-hyp3-api-optional "Jump to Update API Documentation").
+You can also submit jobs to HyP3+ using the standard version of Vertex by 
+[updating the HyP3 API in Vertex](../using/vertex.md#hyp3-api-endpoints "Jump to Update API Documentation"). 
+It is more straightforward to use Vertex+ to interact with HyP3+ jobs, however, as it eliminates the 
+need to manually set the API Endpoint. 
 
 ## Purchasing Credits
 

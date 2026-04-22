@@ -5,40 +5,45 @@ The Alaska Satellite Facility offers
 ASF's Data Search web portal. You can submit scenes to be processed into higher-level products, avoiding the 
 cost and complexity of performing such processing yourself.
 
-[![Vertex Image](../images/vertex.png "Click to open Vertex in a new tab")](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank}
-
 On Demand products are generated using ASF's 
 [HyP3 processing platform](../about.md "Jump to the HyP3 landing page of this documentation"). Refer to the
 [Products](../products.md "Jump to the Products page of the documentation") page for more information about the 
 various On Demand products ASF offers. 
 
+ASF offers free processing using the [HyP3 Basic](../about/hyp3_basic.md "Jump to HyP3 Basic Documentation") platform, 
+but for users who need to process more
+[On Demand products](../products.md "Jump to the Products landing page of the documentation") than their
+[HyP3 Basic credit limit](../using/credits.md "Jump to the Credits page of the documentation")
+allows, ASF provides HyP3+, a separate
+[HyP3 deployment](../about.md) where users can purchase additional credits.
+
+## Vertex Deployments
+
+Users ordering On Demand products leveraging the standard [HyP3 Basic](../about/hyp3_basic.md "Jump to HyP3 Basic Documentation") 
+deployment can search for, order, and access On Demand products using ASF's standard Vertex Data Search interface. 
+
+[![Vertex Image](../images/vertex.png "Click to open Vertex in a new tab")](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank}
+
+[HyP3+](../about/hyp3_plus.md) users can leverage 
+[Vertex+](https://vertex-plus.asf.alaska.edu/ "https://vertex-plus.asf.alaska.edu" ){target=_blank}, 
+which is optimized for use with the HyP3+ deployment. 
+
+[![Vertex_Plus_Image](../images/vertex-plus.png "Click to open Vertex+ in a new tab")](https://vertex-plus.asf.alaska.edu/ "https://vertex-plus.asf.alaska.edu" ){target=_blank}
+
 ## Getting Started
 
-To request On Demand products, visit 
+To request On Demand products, visit one of the following Vertex deployments: 
+
+- For [HyP3 Basic](../about/hyp3_basic.md "About HyP3 Basic"):  
 [ASF Data Search - Vertex](https://search.asf.alaska.edu "https://search.asf.alaska.edu" ){target=_blank} 
-and [Sign In with your Earthdata Login credentials](authentication.md#authentication-in-vertex "Jump to Authentication in Vertex Documentation").
+- For [HyP3+](../about/hyp3_plus.md "About HyP3+"):  
+[Vertex+](https://vertex-plus.asf.alaska.edu/ "https://vertex-plus.asf.alaska.edu" ){target=_blank}
 
-### 1. Select your HyP3 API (*OPTIONAL*)
+In either version of Vertex, you will need to 
+[Sign In with your Earthdata Login credentials](authentication.md#authentication-in-vertex "Jump to Authentication in Vertex Documentation") 
+in order to order or access On Demand jobs.
 
-Vertex supports requesting On Demand products through both 
-[HyP3 Basic (default)](../about/hyp3_basic.md "Jump to HyP3 Basic Documentation") and 
-[HyP3+](../about/hyp3_plus.md "Jump to HyP3+ Documentation") by changing the HyP3 API URL. 
-
-**If you are only using the free [HyP3 Basic](../about/hyp3_basic.md "Jump to HyP3 Basic Documentation") service, 
-you do not need to make any changes to the HyP3 API in Vertex.** 
-
-To change the HyP3 API in Vertex:
-
-1. Click on your username icon and select **Preferences**.
-   ![Open Vertex Preferences](../images/vertex-preferences.png "Open Vertex Preferences")
-2. Enter your desired HyP3 API URL in the **HyP3 API URL** field.
-   ![Set API for Vertex](../images/vertex-set-api.png "Set API URL in Vertex Preferences")
-       - HyP3 Basic: <https://hyp3-api.asf.alaska.edu>{target=_blank}
-       - HyP3+: <https://hyp3-plus.asf.alaska.edu>{target=_blank}
-       - URLs that are entered in this field will be available as a drop-down menu item for future use.
-3. Click **Done** to exit the Preferences page.
-
-### 2. Select your scenes
+### 1. Select your scenes
 
 RTC processing is available for Sentinel-1 GRD-H and SLC scenes acquired using the 
 [Interferometric Wide Swath (IW)](https://sentiwiki.copernicus.eu/web/s1-products "https://sentiwiki.copernicus.eu/web/s1-products" ){target=_blank} mode. 
@@ -66,7 +71,7 @@ Click the **On Demand icon**
 <img width="20" src="https://raw.githubusercontent.com/ASFHyP3/hyp3-docs/6ba90fdafcf60ec017b3f4a83738334a5574be71/docs/images/HyP3-graphic-only.png" /> 
 displayed next to valid source granules or pairs to select the job type and add them to the On Demand queue.
 
-### 3. Submit your request
+### 2. Submit your request
 
 After selecting your scenes, access the **On Demand Queue** 
 <img width="30" src="https://user-images.githubusercontent.com/17994518/95892024-588b9280-0d32-11eb-8734-f1a54a9d2a20.png" /> 
@@ -84,12 +89,12 @@ You may process jobs worth up to a total of {{ CREDITS_PER_MONTH }}
 credits per month. See our [Credits](./credits.md "Jump to the Credits page of this documentation") 
 page for more details.
 
-### 4. Monitor your request
+### 3. Monitor your request
 The [**On Demand Products**](https://docs.asf.alaska.edu/vertex/manual/#on-demand-products-search-options "Vertex Manual: On Demand Search Options" ){target=_blank} 
 Search Type displays your running and completed requests. New requests are typically available for download 
 within an hour or two, but wait time will depend on processing load and product type.
 
-### 5. Download your data 
+### 4. Download your data 
 Once On Demand products have been processed, download options will be available in the results of an 
 **On Demand Products** search. Products can be downloaded individually through your browser 
 <img width="22" src="https://user-images.githubusercontent.com/17994518/95271858-6ea5ca00-07eb-11eb-9217-a280ca57a5e6.png" /> 
@@ -109,3 +114,27 @@ for step-by-step guidance on submitting, downloading, and working with many of t
 available from ASF.
 
 [![StoryMap Tutorials](../images/story-map-tutorials.png "Click to open ASF AGOL Homepage")](https://asf-daac.maps.arcgis.com/home/index.html "https://asf-daac.maps.arcgis.com/home/index.html" ){target=_blank}
+
+## HyP3 API Endpoints
+
+[HyP3 Basic](../about/hyp3_basic.md "About HyP3 Basic") and [HyP3+](../about/hyp3_plus.md "About HyP3+") use 
+different API URL endpoints. 
+
+In general, it is more straightforward to use [Vertex](https://search.asf.alaska.edu "https://search.asf.alaska.edu" ){target=_blank}  
+to interact with [HyP3 Basic](../about/hyp3_basic.md "About HyP3 Basic") and [Vertex+](https://vertex-plus.asf.alaska.edu/ "https://vertex-plus.asf.alaska.edu" ){target=_blank} to interact 
+with [HyP3+](../about/hyp3_plus.md "About HyP3+"). If you use this approach, you don't have to adjust the HyP3 API URL settings at all, as they are set to 
+point to the appropriate endpoint.
+
+Users *can* use the same Vertex interface (either Vertex or Vertex+) to access both HyP3 deployments if they prefer. 
+To do so, they will need to manually change the HyP3 API URL Endpoint to point to the desired HyP3 deployment.
+
+To change the HyP3 API URL in Vertex or Vertex+:
+
+1. Click on your username icon and select **Preferences**.
+   ![Open Vertex Preferences](../images/vertex-preferences.png "Open Vertex Preferences")
+2. Enter your desired HyP3 API URL in the **HyP3 API URL** field.
+   ![Set API for Vertex](../images/vertex-set-api.png "Set API URL in Vertex Preferences")
+       - HyP3 Basic: <https://hyp3-api.asf.alaska.edu>{target=_blank}
+       - HyP3+: <https://hyp3-plus.asf.alaska.edu>{target=_blank}
+       - URLs that are entered in this field will be available as a drop-down menu item for future use.
+3. Click **Done** to exit the Preferences page.

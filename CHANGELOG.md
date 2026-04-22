@@ -13,6 +13,12 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 * Add [Requesting Access](docs/using/requesting_access.md) link to `HyP3 Basic` page and to side panel navigation under `Using HyP3`
 * Added entry to [What's New](docs/whats_new.md#april-22-2026) page about requesting access
 
+## [0.13.3]
+
+### Changed
+* Included link to the multi-burst SBAS stack tutorial notebook in the Sentinel-1 Burst InSAR Product Guide
+* Included links to product guide content in the multi-burst SBAS stack tutorial notebook
+
 ## [0.13.2]
 
 ### Added

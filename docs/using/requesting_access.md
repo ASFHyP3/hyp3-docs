@@ -8,6 +8,11 @@ HyP3 between August 1, 2025, and May 1, 2026, you will be able to continue using
 
  [Request Access](https://search.asf.alaska.edu/#/?isOnDemandOpen=true){ .md-button .md-button--primary .middle } 
 
+!!! tip
+
+    New users must be logged in to see the Request Access form above through Vertex. If you are a new user
+    and don't see the request form when clicking the button above, verify you are logged in to Vertex.
+
 You will need an [Earthdata Login](https://urs.earthdata.nasa.gov/ 'https://urs.earthdata.nasa.gov/' ){target=_blank} 
 (EDL) account before requesting access.
 You can [register here](https://urs.earthdata.nasa.gov/users/new 'https://urs.earthdata.nasa.gov/users/new' ){target=_blank}

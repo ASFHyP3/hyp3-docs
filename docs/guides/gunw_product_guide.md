@@ -193,7 +193,7 @@ for the **ARIA S1 GUNW** Dataset and activate the **On Demand** toggle switch to
 
 4. Click on the **On Demand** icon for a desired date pair, click the **ARIA_S1_GUNW** job type, and click 
    **Add 1 SLC Pair** to 
-   [add it to the On Demand Queue](../using/vertex.md#2-select-your-scenes "Jump to the Using Vertex page of this documentation").
+   [add it to the On Demand Queue](../using/vertex.md#1-select-your-scenes "Jump to the Using Vertex page of this documentation").
 
 ![Submit an ARIA GUNW job](../images/aria-gunw-submit-job.png "Submit an ARIA S1 GUNW Job for On Demand Processing")
 

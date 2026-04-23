@@ -11,7 +11,7 @@ system capacity, resulting in long wait times and unprocessed jobs for many user
 
 To facilitate timely processing of all submitted jobs, we are reducing the monthly credit allotment 
 to 4,000 credits per user to better align request volume with processing capacity. Refer to the 
-[credits table](using/credits.md#credit-cost-table "Credit Cost Table") to determine the 
+[credit cost table](using/credits.md#credit-cost-table "Credit Cost Table") to determine the 
 number of products you can order per month. 
 
 ASF remains committed to providing On Demand processing within the constraints of our limited resources. We are making 

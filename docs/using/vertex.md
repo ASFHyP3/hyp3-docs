@@ -6,15 +6,15 @@ ASF's Data Search web portal. You can submit scenes to be processed into higher-
 cost and complexity of performing such processing yourself.
 
 On Demand products are generated using ASF's 
-[HyP3 processing platform](../about.md "Jump to the HyP3 landing page of this documentation"). Refer to the
-[Products](../products.md "Jump to the Products page of the documentation") page for more information about the 
+[HyP3 processing platform](../about.md "HyP3 Documentation"). Refer to the
+[Products](../products.md "Products Documentation") page for more information about the 
 various On Demand products ASF offers. 
 
-ASF offers free processing using the [HyP3 Basic](../about/hyp3_basic.md "Jump to HyP3 Basic Documentation") platform, 
+ASF offers free processing using the [HyP3 Basic](../about/hyp3_basic.md "HyP3 Basic Documentation") platform, 
 but for users who need to process more
-[On Demand products](../products.md "Jump to the Products landing page of the documentation") than their
-[HyP3 Basic credit limit](../using/credits.md "Jump to the Credits page of the documentation")
-allows, ASF provides [HyP3+](../about/hyp3_plus.md "Jump to HyP3+ Documentation"), a separate
+[On Demand products](../products.md "Products Documentation") than their
+[HyP3 Basic credit limit](../using/credits.md "Credits Documentation")
+allows, ASF provides [HyP3+](../about/hyp3_plus.md "HyP3+ Documentation"), a separate
 [HyP3 deployment](../about.md) where users can purchase additional credits.
 
 ## Vertex Deployments
@@ -24,7 +24,7 @@ deployment they are using.
 
 ### Vertex
 
-Users ordering On Demand products leveraging the standard [HyP3 Basic](../about/hyp3_basic.md "Jump to HyP3 Basic Documentation") 
+Users ordering On Demand products leveraging the standard [HyP3 Basic](../about/hyp3_basic.md "HyP3 Basic Documentation") 
 deployment can search for, order, and access On Demand products using ASF's standard 
 [Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank} Data Search interface. 
 
@@ -32,16 +32,16 @@ deployment can search for, order, and access On Demand products using ASF's stan
 
 ### Vertex+
 
-[HyP3+](../about/hyp3_plus.md) users can leverage 
+[HyP3+](../about/hyp3_plus.md "HyP3+ Documentation") users can leverage 
 [Vertex+](https://vertex-plus.asf.alaska.edu/ "https://vertex-plus.asf.alaska.edu" ){target=_blank}, 
-which is optimized for use with the [HyP3+](../about/hyp3_plus.md "Jump to HyP3+ Documentation") deployment. 
+which is optimized for use with the [HyP3+](../about/hyp3_plus.md "HyP3+ Documentation") deployment. 
 
 [![Vertex_Plus_Image](../images/vertex-plus.png "Click to open Vertex+ in a new tab")](https://vertex-plus.asf.alaska.edu/ "https://vertex-plus.asf.alaska.edu" ){target=_blank}
 
 ## Getting Started
 
 In either version of Vertex, you will need to 
-[Sign In with your Earthdata Login](authentication.md#authentication-in-vertex "Jump to Authentication in Vertex Documentation") 
+[Sign In with your Earthdata Login](authentication.md#authentication-in-vertex "Authentication in Vertex Documentation") 
 credentials in order to order or access On Demand jobs.
 
 ### 1. Select your scenes
@@ -51,7 +51,7 @@ RTC processing is available for Sentinel-1 GRD-H and SLC scenes acquired using t
 InSAR processing requires pairs of IW SLC scenes or bursts. 
 
 Use the [**Geographic Search**](https://docs.asf.alaska.edu/vertex/manual/ "https://docs.asf.alaska.edu/vertex/manual/" ){target=_blank} 
-in Vertex to find individual scenes to submit for [RTC](../guides/rtc_product_guide.md) processing, 
+in Vertex to find individual scenes to submit for [RTC](../guides/rtc_product_guide.md "Sentinel-1 RTC Product Guide") processing, 
 or to find reference scenes to use for generating InSAR pairs. 
 
  - For full-scene [Sentinel-1 InSAR](../guides/insar_product_guide.md "Sentinel-1 InSAR Product Guide"), once 
@@ -66,7 +66,7 @@ or to find reference scenes to use for generating InSAR pairs.
    or [SBAS](https://docs.asf.alaska.edu/vertex/sbas/ "Vertex SBAS Documentation" ){target=_blank} tools.
  - To process [ARIA S1 GUNW](../guides/gunw_product_guide.md "ARIA Sentinel-1 GUNW Product Guide") 
    products On Demand, search for the **ARIA S1 GUNW** Dataset instead of Sentinel-1, 
-   and [activate the On Demand toggle to view the ARIA Frames](../guides/gunw_product_guide.md#ordering-on-demand-products "Jump to the Ordering On Demand Products section of the ARIA S1 GUNW Product Guide") to select a reference frame for building a frame-based SBAS stack.
+   and [activate the On Demand toggle to view the ARIA Frames](../guides/gunw_product_guide.md#ordering-on-demand-products "ARIA S1 GUNW Product Guide: Ordering On Demand Products") to select a reference frame for building a frame-based SBAS stack.
 
 Click the **On Demand icon**
 <img width="20" src="https://raw.githubusercontent.com/ASFHyP3/hyp3-docs/6ba90fdafcf60ec017b3f4a83738334a5574be71/docs/images/HyP3-graphic-only.png" /> 
@@ -87,7 +87,7 @@ project name. If you deselect any of the job types, they will remain in your que
 submitted for processing.
 
 You may process jobs worth up to a total of {{ CREDITS_PER_MONTH }} 
-credits per month. See our [Credits](./credits.md "Jump to the Credits page of this documentation") 
+credits per month. See our [Credits](./credits.md "Credits Documentation") 
 page for more details.
 
 ### 3. Monitor your request
@@ -103,7 +103,7 @@ or by adding them to the **Download Queue**
 <img width="20" src="https://user-images.githubusercontent.com/17994518/95271856-6d749d00-07eb-11eb-81d8-365a6221e4f1.png" />.
 
  - Refer to the
-   [Downloads](./downloading.md#on-demand-search-in-vertex "Jump to the On Demand Search in Vertex section of the Downloads page") 
+   [Downloads](./downloading.md#on-demand-search-in-vertex "Downloading: On Demand Search in Vertex") 
    page for more information about download options. 
  - On Demand products are retained and available to download for two weeks (14 days) after processing.
 

@@ -1,17 +1,17 @@
 On Demand products processed by HyP3 can be requested quickly and easily, either by
-using the [Vertex web interface](#web-access "Jump to Web Access section") 
-or [programmatically](#programmatic-access "Jump to Programmatic Access section"). 
+using the [Vertex web interface](#web-access "Web Access Documentation") 
+or [programmatically](#programmatic-access "Programmatic Access Documentation"). 
 These services are currently only available for 
-[Sentinel-1 datasets](sentinel1.md "Sentinel-1 Mission" ){target=_blank}.
+[Sentinel-1 datasets](sentinel1.md "Sentinel-1 Mission Documentation").
 
 Different HyP3 job types consume different credit amounts. In 
-[HyP3 Basic](about/hyp3_basic.md "Jump to HyP3 Basic Documentation"), 
+[HyP3 Basic](about/hyp3_basic.md "HyP3 Basic Documentation"), 
 users are allotted {{ CREDITS_PER_MONTH }} credits per month for free. Refer to the
-[Credits page](using/credits.md "Jump to the Credits documentation page") 
+[Credits page](using/credits.md "Credits Documentation") 
 for more information. 
 
 If you do not have enough credits to generate all the products you need for your 
-project, you can purchase additional credits in [HyP3+](about/hyp3_plus.md "Jump to HyP3+ Documentation").
+project, you can purchase additional credits in [HyP3+](about/hyp3_plus.md "HyP3+ Documentation").
 
 <!-- TODO TOOL-2787: uncomment this block and update snippet language if we ever decide to require that new users 
 request access to HyP3 Basic:
@@ -23,14 +23,19 @@ request access to HyP3 Basic:
 HyP3 users must authenticate with 
 [Earthdata Login (EDL)](https://urs.earthdata.nasa.gov/ "https://urs.earthdata.nasa.gov/" ){target=_blank} 
 credentials before they can submit jobs to HyP3 (either HyP3 Basic or HyP3+) for processing or access information 
-about the resulting [On Demand products](products.md "hyp3-docs.asf.alaska.edu/products"). Refer to our 
-[Authentication](using/authentication.md "Jump to Authentication Documentation") page for guidance.
+about the resulting [On Demand products](products.md "Products Documentation"). Refer to our 
+[Authentication](using/authentication.md "Authentication Documentation") page for guidance.
 
 ### Web Access 
 
-ASF's Data Search [Vertex](using/vertex.md "Using Vertex") portal provides a rich interface to explore Sentinel-1
-acquisitions and find images to submit for On Demand processing. It also provides
-tools for selecting pairs and stacks for InSAR analysis.
+ASF's Data Search [Vertex](using/vertex.md "Using Vertex Documentation") portal provides a rich interface to explore Sentinel-1
+acquisitions and find images to submit for [HyP3 Basic](about/hyp3_basic "HyP3 Basic Documentation") 
+On Demand processing. It also provides tools for selecting pairs and stacks for InSAR analysis.
+
+The [Vertex+](using/vertex.md#vertex_1 "Vertex Deployments Documentation") 
+interface is optimized for [HyP3+](about/hyp3_plus.md "HyP3+ Documentation") users. It provides the same 
+functionality as the standard Vertex portal, but connects to the 
+[HyP3+ API Endpoint](about/hyp3_plus.md#hyp3-api-endpoint "HyP3 API Endpoint Documentation") by default.
 
 ### Programmatic Access
 Requesting and downloading On Demand products can also be done programmatically:
@@ -40,22 +45,23 @@ Requesting and downloading On Demand products can also be done programmatically:
 
 ### HyP3 API REST Endpoints
 
-The [HyP3 API REST Endpoints](using/api.md "Jump to Using HyP3 API Documentation") 
-are different for HyP3 Basic and HyP3+. Even though the same 
-[EDL username](using/authentication.md#earthdata-login-edl "Jump to Earthdata Login Documentation") 
+The [HyP3 API REST Endpoints](using/api.md "Using HyP3 API Documentation") 
+are different for [HyP3 Basic](about/hyp3_basic.md "HyP3 Basic Documentation")
+and [HyP3+](about/hyp3_plus.md "HyP3+ Documentation"). Even though the same 
+[EDL username](using/authentication.md#earthdata-login-edl "Earthdata Login Documentation") 
 can be used to process On Demand products in 
-[HyP3 Basic](about/hyp3_basic.md "Jump to HyP3 Basic Documentation") and 
-[HyP3+](about/hyp3_plus.md "Jump to HyP3+ Documentation") 
+[HyP3 Basic](about/hyp3_basic.md "HyP3 Basic Documentation") and 
+[HyP3+](about/hyp3_plus.md "HyP3+ Documentation") 
 deployments, you will not be able to search for products across both APIs. 
 
 If you generate products for a single project using both the 
-[HyP3 Basic](about/hyp3_basic.md "Jump to HyP3 Basic Documentation") 
-and [HyP3+](about/hyp3_plus.md "Jump to HyP3+ Documentation") deployments, 
+[HyP3 Basic](about/hyp3_basic.md "HyP3 Basic Documentation") 
+and [HyP3+](about/hyp3_plus.md "HyP3+ Documentation") deployments, 
 you will need to use two separate searches to access all of your products, even if the project names are the same, 
-when using [Vertex](using/vertex.md "Jump to Using Vertex Documentation") or the 
-[HyP3 API](using/api.md "Jump to Using HyP3 API Documentation").
+when using [Vertex](using/vertex.md "Using Vertex Documentation") or the 
+[HyP3 API](using/api.md "Using HyP3 API Documentation").
 
-When using the [HyP3 SDK for Python](using/sdk.md "Jump to Using HyP3 SDK Documentation"), you can combine your results 
+When using the [HyP3 SDK for Python](using/sdk.md "Using HyP3 SDK Documentation"), you can combine your results 
 into one list using the following approach:
 ```
 import hyp3_sdk as sdk

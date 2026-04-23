@@ -16,17 +16,17 @@ number of products you can order per month.
 
 ASF remains committed to providing On Demand processing within the constraints of our limited resources. We are making 
 this change to make sure all available processing time is used effectively and is equitably distributed. Refer to the 
-credit reduction post from [Nov. 26, 2025](#nov-26-2025) for suggestions on processing options that use fewer credits. 
+credit reduction post from [Nov. 26, 2025](#nov-26-2025 "What's New: Nov. 26, 2025") 
+for suggestions on processing options that use fewer credits. 
 
 The [HyP3+](about/hyp3_plus.md "HyP3+ Documentation") platform is an option for applications requiring more than 4,000 
 credits per month. HyP3+ users 
-[purchase processing credits](about/hyp3_plus.md#purchasing-credits) 
+[purchase processing credits](about/hyp3_plus.md#purchasing-credits "Purchasing HyP3+ Credits") 
 to run On Demand jobs, and can purchase as many credits as they need to complete a project. 
 HyP3+ jobs are run in a separate environment with no limitations on processing capacity, so jobs are guaranteed 
 to run to completion with little to no wait time before processing begins. 
 
-[Learn more about the differences 
-between HyP3 and HyP3+](https://hyp3-docs.asf.alaska.edu/about/#the-hyp3-service-family "The HyP3 Service Family").
+[Learn more about the differences between HyP3 and HyP3+](https://hyp3-docs.asf.alaska.edu/about/#the-hyp3-service-family "Compare HyP3 Basic and HyP3+").
 
 If you have questions or concerns about this change, please email 
 [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu).

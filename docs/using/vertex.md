@@ -45,7 +45,7 @@ which is optimized for use with the [HyP3+](../about/hyp3_plus.md "HyP3+ Documen
 ## Getting Started
 
 In either version of Vertex, you will need to 
-[Sign In with your Earthdata Login](authentication.md#authentication-in-vertex "Authentication in Vertex Documentation") 
+[sign in with your Earthdata Login](authentication.md#authentication-in-vertex "Authentication in Vertex Documentation") 
 credentials in order to order or access On Demand jobs.
 
 ### 1. Select your scenes

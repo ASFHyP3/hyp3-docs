@@ -25,7 +25,7 @@ and access finished products.
 
 ## HyP3+ API Endpoint
 
-The lowest level interface for using HyP3 is the Application Programming Interface (API). All other access methods, 
+The lowest-level interface for using HyP3 is the Application Programming Interface (API). All other access methods, 
 including Vertex and the HyP3 Python SDK, are built upon the 
 [HyP3 API](../using/api.md "Using HyP3 API Documentation"). 
 

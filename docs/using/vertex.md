@@ -1,7 +1,11 @@
 # On Demand Sentinel-1 Processing in Vertex
 
 The Alaska Satellite Facility offers 
-[On Demand processing of Sentinel-1 datasets to Radiometric Terrain Correction (RTC) or Interferometric SAR (InSAR) products through Vertex](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=_blank}, 
+[On Demand processing](https://search.asf.alaska.edu/#/?topic=onDemand "Vertex On Demand Documentation" ){target=_blank} 
+of Sentinel-1 datasets to 
+[Radiometric Terrain Correction (RTC)](../products.md#rtc "RTC On Demand Products") 
+or [Interferometric SAR (InSAR)](../products.md#insar "InSAR On Demand Products") products through 
+[Vertex](https://search.asf.alaska.edu/ "https://search.asf.alaska.edu" ){target=_blank}, 
 ASF's Data Search web portal. You can submit scenes to be processed into higher-level products, avoiding the 
 cost and complexity of performing such processing yourself.
 
@@ -15,7 +19,7 @@ but for users who need to process more
 [On Demand products](../products.md "Products Documentation") than their
 [HyP3 Basic credit limit](../using/credits.md "Credits Documentation")
 allows, ASF provides [HyP3+](../about/hyp3_plus.md "HyP3+ Documentation"), a separate
-[HyP3 deployment](../about.md) where users can purchase additional credits.
+[HyP3 deployment](../about.md "HyP3 Documentation") where users can purchase additional credits.
 
 ## Vertex Deployments
 

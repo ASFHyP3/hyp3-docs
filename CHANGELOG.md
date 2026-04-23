@@ -11,6 +11,10 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 * Vertex+ documentation
+* [What's New](docs/whats_new.md#apr-24-2026) entry about credit limit reduction
+
+### Changed
+* Credit limit reduced from 8,000 to 4,000 
 
 ## [0.13.3]
 

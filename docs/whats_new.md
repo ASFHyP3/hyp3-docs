@@ -6,8 +6,8 @@
 credits per user per month.**
 
 Due to increased demand and recent changes to our operating costs, ASF no longer has sufficient processing capacity 
-to cover the average number of monthly On Demand job requests. Our system has been running at full capacity 
-since April 2, which has resulted in long wait times and unprocessed jobs for many users. 
+to cover the average number of monthly On Demand job requests. In recent weeks, processing requests have far outpaced 
+our system capacity, resulting in long wait times and unprocessed jobs for many users. 
 
 To facilitate timely processing of all submitted jobs, we are reducing the monthly credit allotment 
 to 4,000 credits per user to better align request volume with processing capacity. Refer to the 

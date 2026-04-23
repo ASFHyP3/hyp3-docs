@@ -6,8 +6,8 @@
 credits per user per month.**
 
 Due to increased demand and recent changes to our operating costs, ASF no longer has sufficient processing capacity 
-to cover the average number of monthly On Demand job requests. In recent weeks, processing requests have far outpaced 
-our system capacity, resulting in long wait times and unprocessed jobs for many users. 
+to cover the current level of On Demand job requests. In recent weeks, processing requests have far outpaced our 
+system capacity, resulting in long wait times and unprocessed jobs for many users.
 
 To facilitate timely processing of all submitted jobs, we are reducing the monthly credit allotment 
 to 4,000 credits per user to better align request volume with processing capacity. Refer to the 
@@ -18,10 +18,10 @@ ASF remains committed to providing On Demand processing within the constraints o
 this change to make sure all available processing time is used effectively and is equitably distributed. Refer to the 
 credit reduction post from [Nov. 26, 2025](#nov-26-2025) for suggestions on processing options that use fewer credits. 
 
-For applications requiring more than 4,000 credits per month, consider using the 
-[HyP3+](about/hyp3_plus.md "HyP3+ Documentation") platform. HyP3+ users 
+The [HyP3+](about/hyp3_plus.md "HyP3+ Documentation") platform is an option for applications requiring more than 4,000 
+credits per month. HyP3+ users 
 [purchase processing credits](about/hyp3_plus.md#purchasing-credits) 
-to run On Demand jobs, and can purchase as many credits they need to complete a project. 
+to run On Demand jobs, and can purchase as many credits as they need to complete a project. 
 HyP3+ jobs are run in a separate environment with no limitations on processing capacity, so jobs are guaranteed 
 to run to completion with little to no wait time before processing begins. 
 

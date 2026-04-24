@@ -26,7 +26,7 @@ to run On Demand jobs, and can purchase as many credits as they need to complete
 HyP3+ jobs are run in a separate environment with no limitations on processing capacity, so jobs are guaranteed 
 to run to completion with little to no wait time before processing begins. 
 
-[Learn more about the differences between HyP3 and HyP3+](https://hyp3-docs.asf.alaska.edu/about/#the-hyp3-service-family "Compare HyP3 Basic and HyP3+").
+[Learn more about the differences between HyP3 and HyP3+](about.md#the-hyp3-service-family "Compare HyP3 Basic and HyP3+").
 
 If you have questions or concerns about this change, please email 
 [uso@asf.alaska.edu](mailto:uso@asf.alaska.edu).

@@ -16,7 +16,8 @@ used for ordering free On Demand products from HyP3 Basic.
 Due to US Federal government restrictions, **ASF is unable to provide HyP3+ services to users from 
 countries on 
 [NASA's Designated Countries List](https://www.nasa.gov/wp-content/uploads/2026/03/designated-country-list-3-18-2026.pdf?emrc=44fa68 "NASA's Designated Countries List" ){target=_blank}**, 
-including China, Iran, North Korea, Russia or Taiwan, as defined in the [HyP3+ Terms of Service](../about/hyp3_plus_terms.md#13-export-control-laws-and-sanctions-compliance "HyP3+ Terms of Service: Export Control Laws and Sanctions Compliance").
+such as China, Iran, North Korea, Russia, or Taiwan. Refer to the 
+[HyP3+ Terms of Service](../about/hyp3_plus_terms.md#13-export-control-laws-and-sanctions-compliance "HyP3+ Terms of Service: Export Control Laws and Sanctions Compliance").
 
 ## Vertex+
 

@@ -42,9 +42,11 @@ which is optimized for use with the [HyP3+](../about/hyp3_plus.md "HyP3+ Documen
 
 [![Vertex_Plus_Image](../images/vertex-plus.png "Click to open Vertex+ in a new tab")](https://vertex-plus.asf.alaska.edu/ "https://vertex-plus.asf.alaska.edu" ){target=_blank}
 
-Note that ASF is unable to provide HyP3+ services to users from countries on 
-[NASA's Designated Countries List](https://www.nasa.gov/wp-content/uploads/2026/03/designated-country-list-3-18-2026.pdf?emrc=44fa68 "NASA's Designated Countries List" ){target=_blank}, such as China, Iran, North Korea, Russia, or Taiwan. Refer to the 
-[HyP3+ Terms of Service](../about/hyp3_plus_terms.md#13-export-control-laws-and-sanctions-compliance "HyP3+ Terms of Service: Export Control Laws and Sanctions Compliance").
+Note that ASF is unable to provide HyP3+ access to users from 
+[designated countries](https://www.nasa.gov/wp-content/uploads/2026/03/designated-country-list-3-18-2026.pdf?emrc=44fa68 "NASA's Designated Countries List" ){target=_blank}, 
+including China, Iran, North Korea, Russia, and Taiwan, due to Export Control restrictions. Refer to the 
+[HyP3+ Terms of Service](../about/hyp3_plus_terms.md#13-export-control-laws-and-sanctions-compliance "HyP3+ Terms of Service: Export Control Laws and Sanctions Compliance") 
+for more information.
 
 ## Getting Started
 

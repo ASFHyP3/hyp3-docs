@@ -13,6 +13,10 @@ and users access their purchased credits by logging in with the same
 [Earthdata Login Credentials](../using/authentication.md#earthdata-login-edl "Earthdata Login Documentation")
 used for ordering free On Demand products from HyP3 Basic.
 
+**Users from countries listed on 
+[NASA's Designated Countries List](https://www.nasa.gov/wp-content/uploads/2026/03/designated-country-list-3-18-2026.pdf?emrc=44fa68 "NASA's Designated Countries List" ){target=_blank} 
+are not eligible to use HyP3+**, as defined in the [HyP3+ Terms of Service](https://hyp3-docs.asf.alaska.edu/about/hyp3_plus_terms/#13-export-control-laws-and-sanctions-compliance).
+
 ## Vertex+
 
 [Vertex+](https://vertex-plus.asf.alaska.edu/ "https://vertex-plus.asf.alaska.edu" ){target=_blank} 

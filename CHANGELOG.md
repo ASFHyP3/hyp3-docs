@@ -12,6 +12,9 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Added
 * Clear references to limitations for users from restricted countries
 
+### Changed 
+* Corrected broken link on the [Using HyP3](docs/using.md) page
+
 ## [0.13.4]
 
 ### Added

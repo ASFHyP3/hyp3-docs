@@ -29,7 +29,7 @@ about the resulting [On Demand products](products.md "Products Documentation"). 
 ### Web Access 
 
 ASF's Data Search [Vertex](using/vertex.md "Using Vertex Documentation") portal provides a rich interface to explore Sentinel-1
-acquisitions and find images to submit for [HyP3 Basic](about/hyp3_basic "HyP3 Basic Documentation") 
+acquisitions and find images to submit for [HyP3 Basic](about/hyp3_basic.md "HyP3 Basic Documentation") 
 On Demand processing. It also provides tools for selecting pairs and stacks for InSAR analysis.
 
 The [Vertex+](using/vertex.md#vertex_1 "Vertex Deployments Documentation") 

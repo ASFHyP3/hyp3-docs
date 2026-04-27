@@ -7,6 +7,11 @@ and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.13.5]
+
+### Added
+* Clear references to limitations for users from restricted countries
+
 ## [0.13.4]
 
 ### Added

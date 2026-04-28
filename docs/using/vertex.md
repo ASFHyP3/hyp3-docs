@@ -42,6 +42,12 @@ which is optimized for use with the [HyP3+](../about/hyp3_plus.md "HyP3+ Documen
 
 [![Vertex_Plus_Image](../images/vertex-plus.png "Click to open Vertex+ in a new tab")](https://vertex-plus.asf.alaska.edu/ "https://vertex-plus.asf.alaska.edu" ){target=_blank}
 
+Note that ASF is unable to provide HyP3+ access to users from 
+[designated countries](https://www.nasa.gov/wp-content/uploads/2026/03/designated-country-list-3-18-2026.pdf?emrc=44fa68 "NASA's Designated Countries List" ){target=_blank}, 
+including China, Iran, North Korea, Russia, and Taiwan, due to Export Control restrictions. Refer to the 
+[HyP3+ Terms of Service](../about/hyp3_plus_terms.md#13-export-control-laws-and-sanctions-compliance "HyP3+ Terms of Service: Export Control Laws and Sanctions Compliance") 
+for more information.
+
 ## Getting Started
 
 In either version of Vertex, you will need to 
@@ -137,9 +143,9 @@ To change the HyP3 API URL in Vertex or Vertex+:
 
 1. Click on your username icon and select **Preferences**.
    ![Open Vertex Preferences](../images/vertex-preferences.png "Open Vertex Preferences")
-2. Enter your desired HyP3 API URL in the **HyP3 API URL** field.
+2. Enter your desired HyP3 API URL in the **HyP3 API URL** field. URLs entered here will be available 
+   as a drop-down menu item for future use.
    ![Set API for Vertex](../images/vertex-set-api.png "Set API URL in Vertex Preferences")
        - HyP3 Basic: <https://hyp3-api.asf.alaska.edu>{target=_blank}
        - HyP3+: <https://hyp3-plus.asf.alaska.edu>{target=_blank}
-       - URLs that are entered in this field will be available as a drop-down menu item for future use.
 3. Click **Done** to exit the Preferences page.

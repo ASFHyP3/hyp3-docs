@@ -1,36 +1,5 @@
 # What's New
 
-## Apr 24, 2026
-
-**Effective April 24, monthly credit allotments for ASF’s HyP3 On Demand processing service will be reduced to 4,000
-credits per user per month.**
-
-Due to increased demand and recent changes to our operating costs, ASF no longer has sufficient processing capacity 
-to cover the current level of On Demand job requests. In recent weeks, processing requests have far outpaced our 
-system capacity, resulting in long wait times and unprocessed jobs for many users.
-
-To facilitate timely processing of all submitted jobs, we are reducing the monthly credit allotment 
-to 4,000 credits per user to better align request volume with processing capacity. Refer to the 
-[credit cost table](using/credits.md#credit-cost-table "Credit Cost Table") to determine the 
-number of products you can order per month. 
-
-ASF remains committed to providing On Demand processing within the constraints of our limited resources. We are making 
-this change to make sure all available processing time is used effectively and is equitably distributed. Refer to the 
-credit reduction post from [Nov. 26, 2025](#nov-26-2025 "What's New: Nov. 26, 2025") 
-for suggestions on processing options that use fewer credits. 
-
-The [HyP3+](about/hyp3_plus.md "HyP3+ Documentation") platform is an option for applications requiring more than 4,000 
-credits per month. HyP3+ users 
-[purchase processing credits](about/hyp3_plus.md#purchasing-credits "Purchasing HyP3+ Credits") 
-to run On Demand jobs, and can purchase as many credits as they need to complete a project. 
-HyP3+ jobs are run in a separate environment with no limitations on processing capacity, so jobs are guaranteed 
-to run to completion with little to no wait time before processing begins. 
-
-[Learn more about the differences between HyP3 and HyP3+](about.md#the-hyp3-service-family "Compare HyP3 Basic and HyP3+").
-
-If you have questions or concerns about this change, please email 
-[uso@asf.alaska.edu](mailto:uso@asf.alaska.edu).
-
 ## Nov 26, 2025
 
 **Effective December 1st, monthly credit allotments for ASF’s HyP3 On Demand processing service will be reduced to 8,000

@@ -2,7 +2,7 @@ import requests
 
 # IMPORTANT: Update the email template when _CREDITS_PER_MONTH_VALUE changes:
 #   https://github.com/ASFHyP3/hyp3-operations/blob/main/templates/approved.md.j2
-_CREDITS_PER_MONTH_VALUE = 4_000
+_CREDITS_PER_MONTH_VALUE = 8_000
 _COST_PER_CREDIT_VALUE = 0.05
 CREDITS_PER_MONTH = f'{_CREDITS_PER_MONTH_VALUE:,}'
 

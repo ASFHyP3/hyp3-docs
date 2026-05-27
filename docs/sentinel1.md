@@ -21,18 +21,30 @@ More information about the mission is available from the [European Space Agency 
 The Sentinel-1 mission was designed to be a two-satellite constellation, though there have been periods when 
 only one satellite has been available for image acquisition.
 
-- Sentinel-1A was launched April 3, 2014, and is still actively acquiring imagery. 
+- Sentinel-1A was launched April 3, 2014, and is still actively acquiring imagery. It will be phased out 
+  starting July 2026, once Sentinel-1C has been 
+  [moved into position](https://dataspace.copernicus.eu/news/2026-4-2-sentinel-1d-user-data-opening-and-future-plans "https://dataspace.copernicus.eu/news/2026-4-2-sentinel-1d-user-data-opening-and-future-plans" ){target=_blank} 
+  one day behind the Sentinel-1A orbit.
 - Sentinel-1B  was launched April 25, 2016, but [ended its mission](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite" ){target=_blank} on December 23, 2021.
 - Sentinel-1C was launched December 5, 2024, replacing Sentinel-1B in the constellation, and 
-  [has been acquiring imagery regularly since March 26, 2025](https://dataspace.copernicus.eu/news/2025-3-25-sentinel-1c-user-data-opening-26th-march "https://dataspace.copernicus.eu/news/2025-3-25-sentinel-1c-user-data-opening-26th-march" ){target=_blank}.
+  has been [acquiring imagery regularly since March 26, 2025](https://dataspace.copernicus.eu/news/2025-3-25-sentinel-1c-user-data-opening-26th-march "https://dataspace.copernicus.eu/news/2025-3-25-sentinel-1c-user-data-opening-26th-march" ){target=_blank}. In June 2026, 
+  [Sentinel-1C will be maneuvered into position one day behind the Sentinel-1A orbit](https://dataspace.copernicus.eu/news/2026-4-2-sentinel-1d-user-data-opening-and-future-plans "https://dataspace.copernicus.eu/news/2026-4-2-sentinel-1d-user-data-opening-and-future-plans" ){target=_blank}. 
+  It will not collect data during that transition period, which is expected to last about two weeks.
+- Sentinel-1D was launched November 4, 2025, and 
+  [calibrated data is available from April 17, 2026](https://sentinels.copernicus.eu/-/sentinel-1d-user-data-opening-from-17-april-2026 "https://sentinels.copernicus.eu/-/sentinel-1d-user-data-opening-from-17-april-2026" ){target=_blank}. 
+  Sentinel-1D is positioned one day behind the original Sentinel-1C (former Sentinel-1B) orbit.
 
 Each Sentinel-1 satellite has a 12-day repeat cycle, and they all use the same orbit pattern. When there are two active 
 sensors in the constellation, their orbits are offset 180 degrees to allow repeat passes every 6 days. In this 
 scenario, most global landmasses are imaged every 12 days. However, some areas of particular interest to the EC, 
 including Europe and areas undergoing rapid changes due to uplift or subsidence activity, are imaged every 6 days. 
 
+Note that the acquisition plan with the Sentinel-1C and 1D constellation will be 
+[shifted by one day](https://dataspace.copernicus.eu/news/2026-4-2-sentinel-1d-user-data-opening-and-future-plans "https://dataspace.copernicus.eu/news/2026-4-2-sentinel-1d-user-data-opening-and-future-plans" ){target=_blank} 
+compared to the original Sentinel-1A and 1B acquisition plan.
+
 Refer to the 
-[Sentinel-1 Observation Scenario](https://sentinels.copernicus.eu/copernicus/sentinel-1/observation-scenario "https://sentinels.copernicus.eu/copernicus/sentinel-1/observation-scenario" ){target=_blank} 
+[Sentinel-1 Acquisition Plans](https://sentinels.copernicus.eu/copernicus/sentinel-1/acquisition-plans "https://sentinels.copernicus.eu/copernicus/sentinel-1/acquisition-plans" ){target=_blank} 
 for more information on the acquisition plans that have been used to meet mission goals under different 
 constellation configurations.
 
@@ -57,10 +69,3 @@ continued to have little or no coverage in the period from December 2021 to Apri
 acquiring data regularly. Keep this in mind as you search for data in your area of interest. If there are fewer 
 results than you would expect, you can 
 [download acquisition plans for the mission from ESA](https://sentinels.copernicus.eu/copernicus/sentinel-1/acquisition-plans "Sentinel-1 Acquisition Plans" ){target=_blank} to view the acquisition plan for your area and time period of interest.
-
-## The Future of the Sentinel-1 Mission
-
-Now that Sentinel-1C has replaced Sentinel-1B, and Sentinel-1A continues to acquire data, the constellation has 
-returned to the same observation scenario used when both Sentinel-1A and Sentinel-1B were active. The 
-Sentinel-1A platform is approaching the end of its mission, however, and 
-[plans are underway to launch Sentinel-1D to replace it](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Ariane_6_to_take_Sentinel-1D_into_orbit ){target=_blank}. 

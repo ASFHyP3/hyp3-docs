@@ -14,7 +14,8 @@ sudden landscape changes. In addition, SAR can image the earth's surface through
 require sunlight, so valid imagery can be collected on every pass. This is particularly useful for monitoring 
 conditions during natural disasters such as hurricanes or wildfires, or in areas that are prone to frequent cloud cover.
 
-More information about the mission is available from the [European Space Agency Sentinel-1 Mission website](https://sentiwiki.copernicus.eu/web/s1-mission "Sentinel-1 Mission" ){target=_blank}.
+More information about the mission is available from the 
+[European Space Agency Sentinel-1 Mission website](https://sentiwiki.copernicus.eu/web/s1-mission "Sentinel-1 Mission" ){target=_blank}.
 
 ## The Sentinel-1 Constellation
 

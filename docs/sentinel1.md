@@ -36,7 +36,7 @@ only one satellite has been available for image acquisition.
   Sentinel-1D is positioned one day behind the original Sentinel-1C (former Sentinel-1B) orbit.
 
 Each Sentinel-1 satellite has a 12-day repeat cycle, and they all use the same orbit pattern. When there are two active 
-sensors in the constellation, their orbits are offset 180 degrees to allow repeat passes every 6 days. In this 
+sensors in the constellation, their orbits are offset to allow repeat passes every 6 days. In this 
 scenario, most global landmasses are imaged every 12 days. However, some areas of particular interest to the EC, 
 including Europe and areas undergoing rapid changes due to uplift or subsidence activity, are imaged every 6 days. 
 
@@ -46,8 +46,9 @@ compared to the original Sentinel-1A and 1B acquisition plan.
 
 Refer to the 
 [Sentinel-1 Acquisition Plans](https://sentinels.copernicus.eu/copernicus/sentinel-1/acquisition-plans "https://sentinels.copernicus.eu/copernicus/sentinel-1/acquisition-plans" ){target=_blank} 
-for more information on the acquisition plans that have been used to meet mission goals under different 
-constellation configurations.
+for more information on the acquisition plans that have been used to meet the 
+[mission observation scenario](https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-SARObservationScenarioS1-Mission-Observation-Scenario "https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-SARObservationScenarioS1-Mission-Observation-Scenario" ){target=_blank} 
+under different constellation configurations.
 
 ## Transition from Sentinel-1B to Sentinel-1C
 

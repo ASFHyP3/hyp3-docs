@@ -457,24 +457,20 @@ The
 collects C-band band SAR from a pair of polar-orbiting satellites launched by the European Space Agency (ESA) as part 
 of the 
 [Copernicus program](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions" ){target=_blank}. 
-The Sentinel-1A satellite was launched April 3, 2014, Sentinel-1B was launched April 25, 2016, and Sentinel-1C was 
-launched December 5, 2024. 
+The first Sentinel-1 satellite was launched in 2014, and the mission is positioned to continue acquiring data for many 
+years to come. For more information about the mission and the satellites comprising it, refer to the 
+[Sentinel-1 Mission page](../sentinel1.md "Sentinel-1 Mission"). 
 
-Sentinel-1A is still collecting data, but 
-[Sentinel-1B ended its mission](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite" ){target=_blank} 
-on December 23, 2021. Sentinel-1C has now replaced Sentinel-1B in the constellation, returning the Sentinel-1 
-mission to full observation capacity [as of March 26, 2025](https://dataspace.copernicus.eu/news/2025-3-25-sentinel-1c-user-data-opening-26th-march "https://dataspace.copernicus.eu/news/2025-3-25-sentinel-1c-user-data-opening-26th-march" ){target=_blank}. 
+Sentinel-1 satellites each have a 12-day repeat cycle. They all use the same orbit pattern, but the timing of the two 
+satellites in the constellation are offset so that every location has the potential to be imaged with the same geometry 
+every six days. 
 
-The Sentinel-1 satellites each have a 12-day repeat cycle, but when there are two functioning satellites, their orbits 
-are offset 180 degrees so that one or the other will pass over the same location on earth every 6 days. Under this 
-scenario, select areas of interest are imaged with a 6-day interval, as described in the 
-[mission observation scenario](https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-SARObservationScenarioS1-Mission-Observation-Scenario "https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-SARObservationScenarioS1-Mission-Observation-Scenario" ){target=_blank}, 
-while most landmasses are imaged on a 12-day repeat cycle.
+Most landmasses are imaged on a 12-day repeat cycle, but select areas of interest are imaged with a 
+6-day interval, as described in the 
+[mission observation scenario](https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-SARObservationScenarioS1-Mission-Observation-Scenario "https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-SARObservationScenarioS1-Mission-Observation-Scenario" ){target=_blank}. Because Sentinel-1 is a polar-orbiting satellite 
+constellation, multiple orbit paths cover areas near the poles, resulting in more frequent acquisitions. 
 
-For the time period between when Sentinel-1B stopped acquiring data and Sentinel-1C started acquiring data, 
-coverage was more sparse. Some areas did not have any imagery acquired between December 2021 and April 2025. 
-Depending on your area of interest, you may have limited data available during that time. For more information, 
-visit our [Sentinel-1 Mission page](../sentinel1.md).
-
-Because this is a polar-orbiting satellite constellation, areas near the poles may have overlapping orbits, 
-resulting in more frequent acquisitions than indicated by the observation scenario. 
+The relatively short interval between acquisitions makes this SAR dataset a very useful tool for monitoring rapid or 
+sudden landscape changes. In addition, SAR can image the earth's surface through cloud or smoke cover and does not 
+require sunlight, so valid imagery can be collected on every pass. This is particularly useful for monitoring 
+conditions during natural disasters such as hurricanes or wildfires, or in areas that are prone to frequent cloud cover.

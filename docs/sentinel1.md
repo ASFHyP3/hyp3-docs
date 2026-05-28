@@ -22,8 +22,8 @@ More information about the mission is available from the
 The Sentinel-1 mission was designed to be a two-satellite constellation, though there have been periods when 
 only one satellite has been available for image acquisition.
 
-- Sentinel-1A was launched April 3, 2014, and is still actively acquiring imagery. It will be phased out 
-  starting July 2026, once Sentinel-1C has been 
+- Sentinel-1A was launched April 3, 2014, and is still actively acquiring imagery. It will stop collecting data on 
+  June 29, 2026, once Sentinel-1C has been 
   [moved into position](https://dataspace.copernicus.eu/news/2026-4-2-sentinel-1d-user-data-opening-and-future-plans "https://dataspace.copernicus.eu/news/2026-4-2-sentinel-1d-user-data-opening-and-future-plans" ){target=_blank} 
   one day behind the Sentinel-1A orbit.
 - Sentinel-1B  was launched April 25, 2016, but [ended its mission](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite" ){target=_blank} on December 23, 2021.

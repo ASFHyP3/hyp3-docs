@@ -11,7 +11,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 * Updated Sentinel-1 Mission page to include information about Sentinel-1D and adjustments to the constellation
-* Updated broken links to the Sentinel-1 Mission Observation Scenario to direct to the Acquisition Plan page
+* Updated broken links to the Sentinel-1 Mission Observation Scenario
 
 ## [0.13.6]
 

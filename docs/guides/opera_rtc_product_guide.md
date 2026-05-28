@@ -452,29 +452,4 @@ to include it in the product package, you can also use the RGB Decomposition Too
 
 ## Sentinel-1 Mission
 
-The 
-[Sentinel-1 mission](https://sentiwiki.copernicus.eu/web/s1-mission "https://sentiwiki.copernicus.eu/web/s1-mission" ){target=_blank} 
-collects C-band band SAR from a pair of polar-orbiting satellites launched by the European Space Agency (ESA) as part 
-of the 
-[Copernicus program](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions" ){target=_blank}. 
-The Sentinel-1A satellite was launched April 3, 2014, Sentinel-1B was launched April 25, 2016, and Sentinel-1C was 
-launched December 5, 2024. 
-
-Sentinel-1A is still collecting data, but 
-[Sentinel-1B ended its mission](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite" ){target=_blank} 
-on December 23, 2021. Sentinel-1C has now replaced Sentinel-1B in the constellation, returning the Sentinel-1 
-mission to full observation capacity [as of March 26, 2025](https://dataspace.copernicus.eu/news/2025-3-25-sentinel-1c-user-data-opening-26th-march "https://dataspace.copernicus.eu/news/2025-3-25-sentinel-1c-user-data-opening-26th-march" ){target=_blank}. 
-
-The Sentinel-1 satellites each have a 12-day repeat cycle, but when there are two functioning satellites, their orbits 
-are offset 180 degrees so that one or the other will pass over the same location on earth every 6 days. Under this 
-scenario, select areas of interest are imaged with a 6-day interval, as described in the 
-[mission observation scenario](https://sentinels.copernicus.eu/copernicus/sentinel-1/observation-scenario "https://sentinels.copernicus.eu/copernicus/sentinel-1/observation-scenario" ){target=_blank}, 
-while most landmasses are imaged on a 12-day repeat cycle.
-
-For the time period between when Sentinel-1B stopped acquiring data and Sentinel-1C started acquiring data, 
-coverage was more sparse. Some areas did not have any imagery acquired between December 2021 and April 2025. 
-Depending on your area of interest, you may have limited data available during that time. For more information, 
-visit our [Sentinel-1 Mission page](../sentinel1.md).
-
-Because this is a polar-orbiting satellite constellation, areas near the poles may have overlapping orbits, 
-resulting in more frequent acquisitions than indicated by the observation scenario. 
+{% include 'sentinel-1-snippet.md' %}

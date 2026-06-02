@@ -7,6 +7,11 @@ and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.13.8]
+
+### Changed
+* Updated the InSAR Product Guide naming convention to include Sentinel-1D mission identifiers
+
 ## [0.13.7]
 
 ### Changed

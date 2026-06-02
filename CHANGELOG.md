@@ -6,15 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+## [0.13.9]
+
+### Changed
+* Updated product guide naming conventions to include Sentinel-1D mission identifiers
+
 ## [0.13.8]
 
 ### Changed
 * Dropped `polyfill.io` as a dependency
-
-## [0.13.8]
-
-### Changed
-* Updated the InSAR Product Guide naming convention to include Sentinel-1D mission identifiers
 
 ## [0.13.7]
 

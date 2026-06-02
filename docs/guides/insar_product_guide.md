@@ -220,7 +220,7 @@ following order, as illustrated in Figure 4.
 
 - The platform names, one of Sentinel-1A, Sentinel-1B, Sentinel-1C, or Sentinel-1D, are abbreviated with the letters `A`, `B`, `C`, or `D`
     - Two of these letters follow `S1`, indicating the platform(s) used to acquire the reference and 
-      secondary images, in that order (`S1AA`, `S1BA`, `S1AC`, `S1AD`, etc.)
+      secondary images, in that order (`S1AA`, `S1BA`, `S1AC`, `S1CD`, etc.)
 - The reference start date and time and the secondary start date and time, with the date and time 
   separated by the letter T
 - The polarizations for the pair, either HH or VV, the orbit type, and the days of separation for the pair

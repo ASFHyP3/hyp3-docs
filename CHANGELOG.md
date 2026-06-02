@@ -9,7 +9,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.13.8]
 
 ### Changed
-* Dropped polyfill io as a dependency
+* Dropped `polyfill.io` as a dependency
 
 ## [0.13.8]
 

@@ -115,6 +115,16 @@ sets of up to 15 contiguous along-track bursts to generate a single output inter
 [Sentinel-1 Burst InSAR Product Guide](guides/burst_insar_product_guide.md "Sentinel-1 Burst InSAR Product Guide") 
 for more information.
 
+!!! warning "Sentinel-1D acquisitions not yet supported in ISCE2" 
+
+    ISCE2 software does not currently support processing Sentinel-1D acquisitions. Until the software package is 
+    updated, users will not be able to include Sentinel-1D bursts in pairs submitted for Burst InSAR 
+    processing. 
+
+    Users can submit full IW Sentinel-1D granules for processing to InSAR using the 
+    [On Demand InSAR](insar_product_guide.md "Sentinel-1 InSAR Product Guide") option, which leverages 
+    GAMMA software rather than ISCE2. 
+
 For step-by-step instructions on searching for, ordering and downloading On Demand Burst InSAR products, visit our 
 [Burst-Based InSAR for Sentinel-1 On Demand](https://storymaps.arcgis.com/stories/191bf1b6962c402086807390b3ce63b0 "Burst-Based InSAR for Sentinel-1 On Demand StoryMap" ){target=_blank} 
 tutorial.

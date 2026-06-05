@@ -16,5 +16,3 @@ jobs:
     permissions:
       contents: read
       pull-requests: read
-    secrets:
-      USER_TOKEN: ${{ secrets.TOOLS_BOT_PAK }}

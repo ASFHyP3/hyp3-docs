@@ -103,6 +103,12 @@ ARIA-S1-GUNW jobs for On Demand processing.
 If the ARIA-S1-GUNW products you need are not available in the archive, you can use ASF's On Demand platform to submit 
 custom ARIA-S1-GUNW jobs for processing. 
 
+!!! warning "Sentinel-1D acquisitions not yet supported" 
+
+    ISCE2 software, which is used for processing ARIA GUNW products, does not currently support processing 
+    SLCs acquired by the newly launched Sentinel-1D platform. Until the software package is updated, users will 
+    not be able to submit ARIA-S1-GUNW jobs that include Sentinel-1D acquisitions for On-Demand processing.
+
 To order ARIA-S1-GUNW products using 
 [Vertex](https://search.asf.alaska.edu/#/?dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA)), 
 select **ARIA-S1-GUNW** from the Dataset menu for a **Geographic Search**, and turn on the **On Demand** toggle switch. 

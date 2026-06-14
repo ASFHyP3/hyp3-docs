@@ -12,6 +12,7 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ### Changed
 * Updated product guide naming conventions to include Sentinel-1D mission identifiers
 * Documented lack of support for Sentinel-1D acquisitions in ISCE2 software
+* Updated HyP3 SDK to [v7.7.7](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#777)
 
 ## [0.13.8]
 

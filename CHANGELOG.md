@@ -7,6 +7,11 @@ and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.13.10]
+
+### Changed
+* Remove references to the obsolete Download All function
+
 ## [0.13.9]
 
 ### Changed

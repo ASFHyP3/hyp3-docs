@@ -10,7 +10,8 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.13.10]
 
 ### Changed
-* Remove references to the obsolete Download All function
+* Removed references to the obsolete Download All function
+* Updated HyP3 SDK to [v7.7.7](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#777)
 
 ## [0.13.9]
 

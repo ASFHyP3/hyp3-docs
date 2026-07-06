@@ -7,6 +7,12 @@ and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.13.11]
+
+### Changed
+* Updated messages about Sentinel-1D support to indicate that burst-based InSAR now supports S1D as input
+* Clarified that ARIA-S1-GUNW processing does not yet support Sentinel-1D acquisitions
+
 ## [0.13.10]
 
 ### Changed

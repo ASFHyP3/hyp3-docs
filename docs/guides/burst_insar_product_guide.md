@@ -21,15 +21,11 @@ For those who would prefer to work at the scale of a full IW SLC, our original
 [On Demand InSAR](insar_product_guide.md){target=_blank} products are still available. These products have a larger 
 footprint, and are generated using [GAMMA software](https://www.gamma-rs.ch/software){target=_blank}.  If unsure of which InSAR processing option best fits your needs, visit our [ASF Sentinel-1 InSAR on Demand Product Comparison StoryMap](https://storymaps.arcgis.com/stories/6cb4f1c18558441bb9b4b11337515b53 "ASF Sentinel-1 InSAR On Demand Product Comparison"){target=_blank} to explore the capabilities, characteristics, and available products for each of ASF's On Demand InSAR options. 
 
-!!! tip "Sentinel-1D acquisitions not yet supported" 
+!!! tip "Sentinel-1D acquisitions now supported!" 
 
-    ISCE2 software does not currently support processing Sentinel-1D acquisitions. Until the software package is 
-    updated, users will not be able to include Sentinel-1D bursts in pairs submitted for Burst InSAR 
-    processing. 
-
-    Users can submit full IW Sentinel-1D granules for processing to InSAR using the 
-    [On Demand InSAR](insar_product_guide.md "Sentinel-1 InSAR Product Guide") option, which leverages 
-    GAMMA software rather than ISCE2. 
+    ISCE2 has been updated to support processing of data collected by Sentinel-1D. Users can now submit 
+    burst-based InSAR jobs for any available bursts from Sentinel-1 IW SLCs, regardless of the platform used 
+    to acquire the data.
 
 ## Burst InSAR Job Types
 

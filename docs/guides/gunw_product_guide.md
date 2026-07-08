@@ -105,9 +105,9 @@ custom ARIA-S1-GUNW jobs for processing.
 
 !!! warning "Sentinel-1D acquisitions not yet supported" 
 
-    ISCE2 software, which is used for processing ARIA GUNW products, does not currently support processing 
-    SLCs acquired by the newly launched Sentinel-1D platform. Until the software package is updated, users will 
-    not be able to submit ARIA-S1-GUNW jobs that include Sentinel-1D acquisitions for On-Demand processing.
+    The code used for processing ARIA-S1-GUNW products does not currently support processing SLCs acquired by the 
+    Sentinel-1D platform. Until the code has been updated to use the newest version of ISCE2, users will 
+    not be able to submit ARIA-S1-GUNW jobs that include Sentinel-1D acquisitions for On Demand processing.
 
 To order ARIA-S1-GUNW products using 
 [Vertex](https://search.asf.alaska.edu/#/?dataset=SENTINEL-1%20INTERFEROGRAM%20(BETA)), 

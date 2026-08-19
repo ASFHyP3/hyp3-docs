@@ -438,16 +438,18 @@ These range-doppler files are not included in products generated using `INSAR_IS
 as the individual bursts are already merged together.
 
 An *unwrapped phase browse image* is included for the unwrapped (unw_phase) phase file, which is in PNG format 
-and is 2048 pixels wide.
+and is 2048 pixels wide. For jobs processed using `INSAR_ISCE_MULTI_BURST`, the final product includes the amplitude file and kmz files for
+the wrapped phase and amplitude.
 
 The tags and extensions used and example file names for each raster are listed in Table 2 below.
 
 {% set base_name = 'S1<wbr>_136231<wbr>_IW2<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_12E3<wbr>' %}
 
-{% set base_name_mb = 'S1A<wbr>_064<wbr>_E053_1<wbr>_N27_3<wbr>_E054_1<wbr>_N27_8<wbr>_20200604<wbr>_20200616<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>' %}
+{% set base_name_mb = 'S1<wbr>_044<wbr>_092582s1n01-092581s2n03-000000s3n00<wbr>_IW<wbr>_20251004<wbr>_20251121<wbr>_VV<wbr>_INT80<wbr>_7EB5<wbr>' %}
 
 | Extension              | Description                         | Example (single-burst)<br/>⸻<br/>Example (multi-burst)                           |
 |------------------------|-------------------------------------|----------------------------------------------------------------------------------|
+| _amp.tif               | Amplitude file                      | {{ base_name_mb }}_amp.tif                                                          |
 | _conncomp.tif          | Connected Components                | {{ base_name }}_conncomp.tif<br/>⸻<br/>{{ base_name_mb }}_conncomp.tif           |
 | _corr.tif              | Normalized coherence file           | {{ base_name }}_corr.tif<br/>⸻<br/>{{ base_name_mb }}_corr.tif                   |
 | _unw_phase.tif         | Unwrapped geocoded interferogram    | {{ base_name }}_unw_phase.tif<br/>⸻<br/>{{ base_name_mb }}_unw_phase.tif         |
@@ -461,6 +463,8 @@ The tags and extensions used and example file names for each raster are listed i
 | _los_rdr.tif           | Range-Doppler look vectors          | {{ base_name }}_los_rdr.tif                                                      |
 | _wrapped_phase_rdr.tif | Wrapped Range-Doppler interferogram | {{ base_name }}_wrapped_phase_rdr.tif                                            |
 | _unw_phase.png         | Unwrapped phase browse image        | {{ base_name }}_unw_phase.png<br/>⸻<br/>{{ base_name_mb }}_unw_phase.png         |
+| _amp.kmz               | Amplitude KMZ browse image          | {{ base_name_mb }}_amp.kmz         |
+| _wrapped_phase.kmz     | Wrapped phase KMZ browse image      | {{ base_name_mb }}_wrapped_phase.kmz         |
 
 *Table 2: Image files in product package*
 

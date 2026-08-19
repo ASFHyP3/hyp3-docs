@@ -438,8 +438,7 @@ These range-doppler files are not included in products generated using `INSAR_IS
 as the individual bursts are already merged together.
 
 An *unwrapped phase browse image* is included for the unwrapped (unw_phase) phase file, which is in PNG format 
-and is 2048 pixels wide. For jobs processed using `INSAR_ISCE_MULTI_BURST`, the final product includes the amplitude file and kmz files for
-the wrapped phase and amplitude.
+and is 2048 pixels wide. For jobs processed using `INSAR_ISCE_MULTI_BURST`, the final product includes the interferogram amplitude as a single-band GeoTIFF along with browse KMZ files for both the wrapped phase and amplitude.
 
 The tags and extensions used and example file names for each raster are listed in Table 2 below.
 

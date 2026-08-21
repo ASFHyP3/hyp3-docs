@@ -408,7 +408,7 @@ output product:
 - The *normalized coherence* file contains pixel values that range from 0.0 to 1.0, with 0.0 being completely non-coherent and 1.0 being perfectly coherent.
 - The *unwrapped geocoded interferogram* file shows the results of the phase unwrapping process. Negative values indicate movement towards the sensor, and positive values indicate movement away from the sensor. This is the main interferogram output.
 - The *wrapped geocoded interferogram* file indicates the interferogram phase after applying the adaptive filter immediately before unwrapping. Values range from negative pi to positive pi.
-- An *amplitude* image is included for products `INSAR_ISCE_MULTI_BURST` jobs, the final product includes the interferogram amplitude as a single-band GeoTIFF along with browse KMZ files for both the wrapped phase and amplitude.
+- An interferogram *amplitude* image is included for products generated using the `INSAR_ISCE_MULTI_BURST` job type.
 - The *connected components* file delineates regions unwrapped as contiguous units by the SNAPHU unwrapping algorithm.
 - The *look vectors* theta (θ) and phi (φ) describe the elevation and orientation angles of the look vector in radians. The look vectors refer to the look direction back towards the sensor.
     - The *lv_theta* (θ) file indicates the SAR look vector elevation angle (in radians) at each pixel, ranging from -π/2 (down) to π/2 (up). The look vector elevation angle is defined as the angle between the horizontal surface and the look vector with positive angles indicating sensor positions above the surface.

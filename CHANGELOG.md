@@ -9,7 +9,9 @@ and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.13.13]
 
 ### Changed
-* Updated HyP3 SDK to [v7.7.8](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#778)
+* Updated HyP3 SDK to [v7.7.8](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#778).
+* Upgraded the conda environment and build workflows to use Python 3.11.
+
 
 ## [0.13.12]
 

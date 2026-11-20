@@ -39,7 +39,7 @@ Note that the acquisition plan for the second-generation constellation (Sentinel
 from the original Sentinel-1A and 1B acquisition plan.
 
 Refer to the [Sentinel-1 Acquisition Plans](https://sentinels.copernicus.eu/copernicus/sentinel-1/acquisition-plans "https://sentinels.copernicus.eu/copernicus/sentinel-1/acquisition-plans" ){target=_blank} 
-page to access the acquisition plans that have been used to meet the [mission observation scenario](https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-SARObservationScenarioS1-Mission-Observation-Scenario "https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-SARObservationScenarioS1-Mission-Observation-Scenario" ){target=_blank} 
+page to access the acquisition plans that have been used to meet the [mission observation scenario](https://sentiwiki.copernicus.eu/web/s1-mission#Observation-and-Production-Scenarios "https://sentiwiki.copernicus.eu/web/s1-mission#Observation-and-Production-Scenarios" ){target=_blank} 
 under different constellation configurations.
 
 ## Transition from Sentinel-1B to Sentinel-1C

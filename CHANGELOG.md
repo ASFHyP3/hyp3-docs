@@ -6,12 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [PEP 440](https://www.python.org/dev/peps/pep-0440/)
 and uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+## [0.13.14]
+
+### Changed
+* Updated the S1 Mission page to reflect orbit adjustments made in June 2026
+
 ## [0.13.13]
 
 ### Changed
 * Updated HyP3 SDK to [v7.7.8](https://github.com/ASFHyP3/hyp3-sdk/blob/main/CHANGELOG.md#778).
 * Upgraded the conda environment and build workflows to use Python 3.11.
-
 
 ## [0.13.12]
 

@@ -22,16 +22,11 @@ More information about the mission is available from the
 The Sentinel-1 mission was designed to be a two-satellite constellation, though there have been periods when 
 only one satellite has been available for image acquisition.
 
-- Sentinel-1A was launched April 3, 2014, and is still actively acquiring imagery. It will 
-  [stop collecting data on June 29, 2026](https://dataspace.copernicus.eu/news/2026-5-28-sentinel-1-orbital-reconfiguration-dates "https://dataspace.copernicus.eu/news/2026-5-28-sentinel-1-orbital-reconfiguration-dates" ){target=_blank}, 
-  once Sentinel-1C has been moved into position one day behind the Sentinel-1A orbit.
-- Sentinel-1B  was launched April 25, 2016, but [ended its mission](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite" ){target=_blank} on December 23, 2021.
-- Sentinel-1C was launched December 5, 2024, replacing Sentinel-1B in the constellation, and 
-  has been [acquiring imagery regularly since March 26, 2025](https://dataspace.copernicus.eu/news/2025-3-25-sentinel-1c-user-data-opening-26th-march "https://dataspace.copernicus.eu/news/2025-3-25-sentinel-1c-user-data-opening-26th-march" ){target=_blank}. In June 2026, 
-  [Sentinel-1C will be maneuvered into position one day behind the Sentinel-1A orbit](https://dataspace.copernicus.eu/news/2026-4-2-sentinel-1d-user-data-opening-and-future-plans "https://dataspace.copernicus.eu/news/2026-4-2-sentinel-1d-user-data-opening-and-future-plans" ){target=_blank}. 
-  It will not collect data during that transition period, which is expected to last about two weeks.
+- Sentinel-1A was launched April 3, 2014, and acquired imagery until it was [decommissioned on June 29, 2026](https://defence-industry-space.ec.europa.eu/sentinel-1a-concludes-its-mission-leaving-lasting-legacy-copernicus-2026-06-30_en "https://defence-industry-space.ec.europa.eu/sentinel-1a-concludes-its-mission-leaving-lasting-legacy-copernicus-2026-06-30_en" ){target=_blank}.
+- Sentinel-1B  was launched April 25, 2016, but [its mission ended on December 23, 2021](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite" ){target=_blank}.
+- Sentinel-1C was launched December 5, 2024, replacing Sentinel-1B in the constellation, and has been [acquiring imagery regularly since March 26, 2025](https://dataspace.copernicus.eu/news/2025-3-25-sentinel-1c-user-data-opening-26th-march "https://dataspace.copernicus.eu/news/2025-3-25-sentinel-1c-user-data-opening-26th-march" ){target=_blank}. In June 2026, [Sentinel-1C was maneuvered into position one day behind the Sentinel-1A orbit](https://dataspace.copernicus.eu/news/2026-5-28-sentinel-1-orbital-reconfiguration-dates "https://dataspace.copernicus.eu/news/2026-5-28-sentinel-1-orbital-reconfiguration-dates" ){target=_blank}. It did not collect data during the transition period, which took place from June 9 to 23, 2026.
 - Sentinel-1D was launched November 4, 2025, and 
-  [calibrated data is available from April 17, 2026](https://sentinels.copernicus.eu/-/sentinel-1d-user-data-opening-from-17-april-2026 "https://sentinels.copernicus.eu/-/sentinel-1d-user-data-opening-from-17-april-2026" ){target=_blank}. 
+  [calibrated data is available for acquisitions starting April 17, 2026](https://sentinels.copernicus.eu/-/sentinel-1d-user-data-opening-from-17-april-2026 "https://sentinels.copernicus.eu/-/sentinel-1d-user-data-opening-from-17-april-2026" ){target=_blank}. 
   Sentinel-1D is positioned one day behind the original Sentinel-1C (former Sentinel-1B) orbit.
 
 Each Sentinel-1 satellite has a 12-day repeat cycle, and they all use the same orbit pattern. When there are two active 
@@ -39,22 +34,18 @@ sensors in the constellation, their orbits are offset to allow repeat passes eve
 scenario, most global landmasses are imaged every 12 days. However, some areas of particular interest to the EC, 
 including Europe and areas undergoing rapid changes due to uplift or subsidence activity, are imaged every 6 days. 
 
-Note that the acquisition plan with the Sentinel-1C and 1D constellation will be 
+Note that the acquisition plan for the second-generation constellation (Sentinel-1C and 1D) is 
 [shifted by one day](https://dataspace.copernicus.eu/news/2026-4-2-sentinel-1d-user-data-opening-and-future-plans "https://dataspace.copernicus.eu/news/2026-4-2-sentinel-1d-user-data-opening-and-future-plans" ){target=_blank} 
-compared to the original Sentinel-1A and 1B acquisition plan.
+from the original Sentinel-1A and 1B acquisition plan.
 
-Refer to the 
-[Sentinel-1 Acquisition Plans](https://sentinels.copernicus.eu/copernicus/sentinel-1/acquisition-plans "https://sentinels.copernicus.eu/copernicus/sentinel-1/acquisition-plans" ){target=_blank} 
-for more information on the acquisition plans that have been used to meet the 
-[mission observation scenario](https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-SARObservationScenarioS1-Mission-Observation-Scenario "https://sentiwiki.copernicus.eu/web/s1-mission#S1Mission-SARObservationScenarioS1-Mission-Observation-Scenario" ){target=_blank} 
+Refer to the [Sentinel-1 Acquisition Plans](https://sentinels.copernicus.eu/copernicus/sentinel-1/acquisition-plans "https://sentinels.copernicus.eu/copernicus/sentinel-1/acquisition-plans" ){target=_blank} 
+page to access the acquisition plans that have been used to meet the [mission observation scenario](https://sentiwiki.copernicus.eu/web/s1-mission#Observation-and-Production-Scenarios "https://sentiwiki.copernicus.eu/web/s1-mission#Observation-and-Production-Scenarios" ){target=_blank} 
 under different constellation configurations.
 
 ## Transition from Sentinel-1B to Sentinel-1C
 
-As of December 23, 2021, Sentinel-1B was no longer able to acquire data. An anomaly related to the power supply 
-could not be repaired, and the satellite has been decommissioned. Refer to 
-[ESA documentation of the end of the Sentinel-1B mission](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite "Mission Ends for Copernicus Sentinel-1B Satellite" ){target=_blank} 
-for more information.
+Sentinel-1B stopped acquiring data on December 23, 2021. An anomaly related to the power supply could not be repaired, 
+and the [satellite was decommissioned](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1/Mission_ends_for_Copernicus_Sentinel-1B_satellite "Mission Ends for Copernicus Sentinel-1B Satellite" ){target=_blank}.
 
 The loss of Sentinel-1B resulted in a significant reduction in the spatial and temporal coverage of the Sentinel-1 
 mission. Refer to 
@@ -66,7 +57,7 @@ the summer of 2022 until August 15.
 ![Y-K Delta Gap](images/s1b_hole_alaska.png "Lack of acquisitions over the Yukon-Kuskokwim Delta, Alaska")
 
 The gaps in coverage were particularly noticeable the first few months after Sentinel-1B lost power, but some areas 
-continued to have little or no coverage in the period from December 2021 to April 2025, when Sentinel-1C began 
-acquiring data regularly. Keep this in mind as you search for data in your area of interest. If there are fewer 
-results than you would expect, you can 
-[download acquisition plans for the mission from ESA](https://sentinels.copernicus.eu/copernicus/sentinel-1/acquisition-plans "Sentinel-1 Acquisition Plans" ){target=_blank} to view the acquisition plan for your area and time period of interest.
+continued to have little or no coverage from December 2021 until April 2025, when Sentinel-1C began acquiring data 
+regularly. Keep this in mind as you search for Sentinel-1 data in your area of interest. If there are 
+fewer results than you would expect, you can 
+[download acquisition plans for the mission from ESA](https://sentinels.copernicus.eu/copernicus/sentinel-1/acquisition-plans "Sentinel-1 Acquisition Plans" ){target=_blank} to view the acquisition plan for your area and time period of interest. 
